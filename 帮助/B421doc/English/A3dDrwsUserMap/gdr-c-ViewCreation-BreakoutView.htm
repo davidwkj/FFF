@@ -1,0 +1,322 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Breakout Views"/>
+<meta name="abstract" content="Breakout views are created by removing material locally from a generated view to visualize the remaining visible internal part."/>
+<meta name="description" content="Breakout views are created by removing material locally from a generated view to visualize the remaining visible internal part."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewCreation-BreakoutView.htm#gdr-t-ViewCreation-BreakoutView"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewCreation-BreakoutViewModify.htm#gdr-t-ViewCreation-BreakoutViewModify"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-ViewCreation-BreakoutView"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Breakout Views</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-ViewCreation-BreakoutView">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-conditions of breakout creation"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-breakout removal"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Graphic dress-up properties of breakout view profiles"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+    About Breakout Views</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Breakout views are created by removing material locally from a
+generated view to visualize the remaining visible internal
+part.</span>
+
+    
+<p>A <span class="glossterm" id="breakout" onmouseout="hideTerm()" onmouseover="showTerm('breakout.xml')">breakout</span> view is not a direct projection from the view
+containing the <span class="glossterm" id="cutting-profile" onmouseout="hideTerm()" onmouseover="showTerm('cutting-profile.xml')">cutting profile</span>. In other words, it is not
+positioned in agreement with the standard arrangement of views. A
+breakout view is often a partial section.</p>
+<p>The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#c-ConditionsApplicableToBreakoutCreation" id="toc_rg" title="This sub-topic describes the information about the conditions that apply when creating breakout views.">
+      Conditions Applicable to Breakout Creation</a></li><li><a href="#c-CreationOfBreakoutsInViewHavingBrokenProfiles" id="toc_rg" title="This sub-topic describes the creation of breakouts in a view which already contains single/multiple broken profile(s).">Creation of Breakouts in a View Containing Single/Multiple Broken Profile(s)</a></li><li><a href="#c-BreakoutRemoval" id="toc_rg" title="This sub-topic provides information about the removal of breakouts.">
+      Breakout Removal
+    </a></li><li><a href="#c-PropogationOfBreakoutSpecifications" id="toc_rg" title="This sub-topic provides information about the propagation of breakout specifications to other views.">Propagation of Breakout Specifications</a></li><li><a href="#c-TheCutInSectionViewsCapability" id="toc_rg" title="This sub-topic provides information about the Cut in section views capability relating to breakouts.">
+      The Cut in Section Views Capability</a></li><li><a href="#c-Patterns" id="toc_rg" title="This sub-topic provides information about the patterns which are used to represent breakouts.">
+      Patterns</a></li><li><a href="#c-LineTypes" id="toc_rg" title="">
+      Line Types</a></li><li><a href="#c-AboutGraphicDressupPropertiesofBreakoutViewProfiles" id="toc_rg" title="If you modify the graphic dress-up properties of a breakout operator profile, then, they remain persistent even after updating the view and get applied to all the profile lines of the breakout operator.">About Graphic Dress-Up Properties of Breakout View Profiles</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-t-ViewCreation-BreakoutView.htm#gdr-t-ViewCreation-BreakoutView" title="You can create a breakout view from a generated view by using a cutting profile to section a view in desired dimensions to visualize the internal area.">Creating a Breakout View</a></td></tr><tr><td><a href="gdr-t-ViewCreation-BreakoutViewModify.htm#gdr-t-ViewCreation-BreakoutViewModify" title="You can modify a breakout view, through the modification of its profile and then its depth.">Modifying a Breakout View</a></td></tr></table></td></tr></table>
+
+  
+
+  
+  
+  <div/><div class="nested1" id="c-ConditionsApplicableToBreakoutCreation">
+    <h2 class="topictitle2">
+      Conditions Applicable to Breakout Creation</h2>
+
+    
+    <div><p><span>This sub-topic describes the information about the conditions that apply when creating breakout views. </span>
+</p>
+
+      <p>
+        You can create breakout views on:</p>
+      <ul>
+        <li>
+         Projection views</li>
+ <li><span class="glossterm" id="auxiliary-view" onmouseout="hideTerm()" onmouseover="showTerm('auxiliary-view.xml')">Auxiliary views</span></li>
+ <li><span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">Section views</span></li>
+ <li>Detail/clipping views</li>
+<li>A view that already contains breakouts</li>
+<li>A view that already contains broken profile(s)</li>
+ 
+      
+      </ul>
+
+      <p>However, you cannot create breakout views on <span class="glossterm" id="section-cut" onmouseout="hideTerm()" onmouseover="showTerm('section-cut.xml')">section cuts</span>. </p>
+      
+      <p>
+        <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>When generating breakout views using the Approximate generation
+mode, or when switching a breakout view from the Exact to
+the <span class="glossterm" id="approximate-mode" onmouseout="hideTerm()" onmouseover="showTerm('approximate-mode.xml')">Approximate mode</span> (i.e. by right-clicking the view and selecting <span class="menucascade"><span class="uicontrol">Properties &gt; Generation </span></span>tab,<span class="uicontrol"> View generation mode</span>), the breakout propagation direction must be perpendicular to the
+view plane. In other words, the breakout profile must be parallel
+to view plane.
+</td></tr></table>
+
+      </p>
+    </div>
+
+    
+    
+  </div>
+
+  <div class="nested1" id="c-CreationOfBreakoutsInViewHavingBrokenProfiles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Creation of Breakouts in a View Containing Single/Multiple Broken Profile(s)</h2>
+
+<div><p><span>This sub-topic describes the creation of breakouts in a view which already contains single/multiple broken profile(s). </span>
+</p>
+<p>You can create a breakout view which already contains a single or multiple broken profile(s).</p><p>A view having single/multiple broken profile(s) can be divided into a number of zones. Consider the following view containing two broken operator profiles: <br/><img src="../GdrUserImages/brokenviewzones01NLS.png"/><br/><ul><li>Three zones are defined as shown: Zone 1, Zone 2 and Zone 3.</li>
+<li>Broken region is the area between the broken operator profile lines. </li>
+</ul>
+</p><p>In this case, you can create valid breakout profile types such as breakout in single zone, breakout partially in the broken region zone or breakout in the neighboring broken region zone. The following table describes these types: </p><p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="42.46823956442831%" id="d84255e139">Types of profiles</th>
+<th class="cellrowborder" valign="top" width="39.382940108892925%" id="d84255e141">Description</th>
+<th class="cellrowborder" valign="top" width="18.148820326678766%" id="d84255e143">Breakout creation</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="42.46823956442831%" headers="d84255e139 ">Breakout in single zone<br/><img border="1" src="../GdrUserImages/breakoutsinglezone.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="39.382940108892925%" headers="d84255e141 ">A breakout profile is in a single zone, if all the breakout profile points lie completely in either Zone 1, Zone 2 or Zone 3. That is,  none of the breakout profile segments  intersect/cut any broken operator profile lines.</td>
+<td class="cellrowborder" valign="top" width="18.148820326678766%" headers="d84255e143 ">Possible</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="42.46823956442831%" headers="d84255e139 ">Breakout partially in the broken region zone<br/><img border="1" src="../GdrUserImages/breakoutpartialzone.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="39.382940108892925%" headers="d84255e141 ">A breakout profile is partially in the broken region  zone, if some of the profile points of breakout are present in the broken region and remaining of them are strictly present in a single zone.</td>
+<td class="cellrowborder" valign="top" width="18.148820326678766%" headers="d84255e143 ">Possible</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="42.46823956442831%" headers="d84255e139 ">Breakout across the broken region zone <p><br/><img src="../GdrUserImages/breakoutacrossbrokenzone.png"/><br/></p><p>This scenario is possible only when a breakout is already present in the view and then a broken profile is created. In this case,  the breakout profile points are present on both the  sides of the broken region.</p></td>
+<td class="cellrowborder" valign="top" width="39.382940108892925%" headers="d84255e141 ">A breakout profile is across the broken region zone, if some of the profile points of breakout are present in Zone 1 and some of the profile points of breakout are present in the adjacent Zone 2. In this case, some of the breakout profile segments are crossing the broken region zone.</td>
+<td class="cellrowborder" valign="top" width="18.148820326678766%" headers="d84255e143 ">Not possible</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="42.46823956442831%" headers="d84255e139 ">Breakout completely in the broken region zone<p><br/><img border="1" src="../GdrUserImages/breakoutcompletebrokenzone.png"/><br/></p><p>This scenario is possible only when a breakout is already present in the view and then a broken profile is created. In this case,  the whole breakout profile is encompassed inside the broken region.</p></td>
+<td class="cellrowborder" valign="top" width="39.382940108892925%" headers="d84255e141 ">A breakout profile is completely in the broken region zone, if all the points of the breakout profile are present inside the broken region. </td>
+<td class="cellrowborder" valign="top" width="18.148820326678766%" headers="d84255e143 ">Not possible</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="42.46823956442831%" headers="d84255e139 ">Breakout in the neighboring broken region zone<br/><img border="1" src="../GdrUserImages/breakoutneighbzone.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="39.382940108892925%" headers="d84255e141 ">A breakout profile is in the neighboring broken region zone, if some points of breakout profile are present in the broken region zone of the broken operator 1 and some points are present in the broken region zone of the broken operator 2 and some points may/may not be present in the zone which is between these two broken operator profiles.</td>
+<td class="cellrowborder" valign="top" width="18.148820326678766%" headers="d84255e143 ">Possible</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note:
+		If you create an invalid breakout profile (across the broken region zone or completely in the broken region zone), then, a message is displayed informing that such a breakout profile cannot be created.</p>
+</p><div class="section" id="c-CreationOfBreakoutsInViewHavingBrokenProfiles__cs-VisualizationOfBrokenBreakoutProfile"><h3 class="sectiontitle">Visualization of Broken/Breakout Profile</h3><p>You can visualize the breakout profile fully or in a truncated mode or not visualize at all depending on the type of the breakout profile  (explained in  the table above), when you click on the <span class="uicontrol">Breakout.X</span> node in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>.</p><p>The following table gives the summary of visualization results for different breakout types:</p><p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d84255e219">Breakout Type</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d84255e221">Breakout Visualization</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d84255e219 ">Breakout in single zone</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d84255e221 ">Fully seen</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d84255e219 ">Breakout partially in broken region zone</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d84255e221 ">Fully seen/truncated</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d84255e219 ">Breakout across the broken region zone</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d84255e221 ">Not seen (You  need to right-click the view  and select <span class="uicontrol">View Definition &gt; Unbreak</span> to visualize this particular breakout profile).</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d84255e219 ">Breakout completely in the broken region zone</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d84255e221 ">Not seen (You  need to right-click the view  and select <span class="uicontrol">View Definition &gt; Unbreak</span> to visualize this particular breakout profile).</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d84255e219 ">Breakout in neighboring broken region zone</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d84255e221 ">Fully seen</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p></div>
+</div>
+</div>
+<div class="nested1" id="c-BreakoutRemoval">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+      Breakout Removal
+    </h2>
+
+    
+    <div><p><span>This sub-topic provides information about the removal of breakouts.
+    </span>
+</p>
+
+      <p>To remove a breakout, choose either of the following
+methods:</p>
+<p>
+<ul>
+<li>Once the breakout view is created, right-click the view, and
+select <span class="uicontrol">XXX object &gt; View Definition &gt; Remove breakout</span>.
+All the breakouts will be removed.</li>
+
+<li>Right-click the edge of a resulting breakout and select <span class="uicontrol">XXX object &gt; View Definition &gt; Remove breakout</span>. Only this breakout is removed.</li>
+
+</ul>
+
+</p>
+
+    </div>
+
+    
+  </div>
+<div class="nested1" id="c-PropogationOfBreakoutSpecifications">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Propagation of Breakout Specifications</h2>
+
+    
+    
+    
+    <div><p><span>This sub-topic provides information about the propagation of breakout specifications to other views.</span>
+</p>
+<div class="section" id="c-PropogationOfBreakoutSpecifications__s-PropagationOfSpecifications"><h3 class="sectiontitle">Propagation of Specifications: Definition</h3> 
+   
+  <p>Propagating a specification means generating a view (B) from another view
+	 (A) on which you previously performed an operation, and including this
+	 operation in the generated view (B). 
+  </p> 
+  <p>For example, you create a broken or breakout view (view
+	 A). When you select 
+	 <span class="uicontrol">Propagate Broken</span> or 
+	 <span class="uicontrol">Propagate Breakout</span>, you can then generate a
+	 projection view (view B) with the broken/breakout area.
+  </p> 
+</div>
+</div>
+<div class="nested2" id="c-HowToPropogateBreakoutSpecifications">
+      <h3 class="topictitle3">
+        How to Propagate Breakout Specifications
+      </h3>
+
+      
+      <div><p><span>Breakout specifications can be propagated when creating projection views, auxiliary views, section views and detail views from a breakout view.</span>
+
+        
+      </p>
+
+        <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Breakout specifications are not propagated to section cuts.
+</td></tr></table>
+<p>To propagate the specifications, select  <span class="uicontrol">Propagate Breakout</span> in the <span class="uicontrol">Creation Options</span> panel, in the <span class="uicontrol">Propagate Operator Specifications</span> list</p><p>You can also propagate the specifications manually. Right-click the view, select <span class="uicontrol">View Definition &gt; Apply Breakout To</span>
+and click another view to apply the breakout to it.</p></div>
+
+    </div>
+
+  </div>
+<div class="nested1" id="c-TheCutInSectionViewsCapability">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+      The Cut in Section Views Capability</h2>
+
+    <div><p><span>This sub-topic provides information about the <span class="uicontrol">Cut in section views</span> capability relating to breakouts.
+</span>
+</p>
+ 
+  <p>In an assembly, you can specify whether a product should or should not be
+	 sectioned when generated into section views or breakout views. (This capability
+	 is not available for section cuts). 
+  </p> 
+  <p>The 3D part not intended to be cut, should have a dedicated Boolean
+	 property named E_DrwUncutInSections, valuated as TRUE through product 
+	 <span class="uicontrol">Properties</span>. 
+  </p> 
+  <p>You can also do this when overloading element properties in a generated
+	 view. 
+	 <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>If you choose not to cut the elements in section
+		views (that is clear the 
+		<span class="uicontrol">Cut in section views</span> check box), this capability
+		does not work for section views generated using the Approximate generation mode
+		(selected elements will be cut nonetheless). Likewise, if you switch an exact
+		view to the approximate mode, the elements for which you cleared the 
+		<span class="uicontrol">Cut in section views</span> check box will be cut in the
+		view. 
+	 </td></tr></table>
+ 
+  </p> 
+  <p>In other way, you can specify using a drafting extension. For more
+	 information, see 
+	 <a href="gdr-t-ViewCreation-SectionsInAssemblyContext.htm#gdr-t-ViewCreation-SectionsInAssemblyContext" title="You can specify whether a product should or should not be sectioned when generated into section views or breakout views using a drafting extension.">Creating Sections in Assembly Context</a>.
+	 
+  </p> 
+</div>
+</div>
+<div class="nested1" id="c-Patterns">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+      Patterns</h2>
+
+    
+    <div><p><span>This sub-topic provides information about the patterns which are used to represent breakouts.</span>
+</p>
+ 
+  <p>Patterns are defined in the standards. For more
+	 information, see 
+	 <a href="standards-r-ad-PatternParams.htm#standards-r-ad-PatternParams" title="Pattern definitions are located in the Standard Definition dialog box, in the drafting category &gt; Patterns node, available via MePreferencesStandards.">Pattern Definition</a>.
+	 
+  </p> 
+  <p>You may modify the pattern (hatching, dotting, coloring
+	 or motif) by right-clicking it and selecting 
+	 <span class="uicontrol">Properties</span>. In
+	 the 
+	 <span class="uicontrol">Properties</span> dialog box, select a new pattern or
+	 modify some graphical attributes of the existing pattern. 
+  </p> 
+  <p> 
+	 <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>In case of parts which use a material to which a
+		specific pattern is associated, views generated using the 
+		<span class="uicontrol">Approximate</span> generation mode do not inherit the
+		material properties from the 3D, and therefore do not use the pattern
+		associated to this material. Furthermore, as the pattern properties are not
+		persistent, the pattern may change after switching an exact view to the
+		approximate mode and vice versa. 
+	 </td></tr></table>
+ 
+  </p> 
+</div>
+</div>
+<div class="nested1" id="c-LineTypes">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+      Line Types</h2>
+
+    <p>This sub-topic provides information about line types in breakout views.<p>If you choose the zigzag linetype (linetype #8), note that this linetype is just a graphical dress-up of the view. This means that if one line is relimited on the breakout line, then it will be relimited on the theoretical line as shown here, and not on the visualized zigzag line.<br/><img border="1" src="../GdrUserImages/breakout_zigzaglinetype.gif"/><br/></p></p>
+
+    
+    
+  </div>
+
+<div class="nested1" id="c-AboutGraphicDressupPropertiesofBreakoutViewProfiles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">About Graphic Dress-Up Properties of Breakout View Profiles</h2>
+
+<div><p><span>If you modify the graphic dress-up properties of a breakout operator profile, then, they remain persistent even after updating the view and get applied to all the  profile lines of the breakout operator.</span>
+<p>Note:
+		Persistency of graphic dress-up properties is available only for views created using the Exact or the Approximate mode of view projection.</p>
+</p>
+<p>If you select any profile line  of a breakout operator profile and modify its graphic properties such as color, linetype, linethickness, delete, layer and hide/show, and update the view or use <samp class="codeph">c:force update</samp>, then all the profile lines of that breakout operator are assigned with  the new graphic dress-up properties.</p><p>Note:
+		The graphic properties of the breakout operators modified through the <span>context menu</span> command  <span class="uicontrol">Properties </span>or through the<span class="uicontrol"> Graphic Properties</span>, take precedence over overloading of the graphic properties done using the  contextual command <span class="uicontrol">XXX object &gt; Overload Properties</span>.</p>
+<div class="section" id="c-AboutGraphicDressupPropertiesofBreakoutViewProfiles__cs-SwitchingBetweenExactAndApproximateViewModes"><h3 class="sectiontitle">Switching Between Exact and Approximate View Modes</h3><p><ul><li>The graphic dress-up properties for the operators are maintained independently for Exact and Approximate view modes. Therefore, if you switch between these two view modes, you can visualize the latest set of modified graphic dress-up properties for those particular operator profile lines in that particular view mode. However, if there is no last modification available for those operator profile lines for that view mode, then the default properties set in the standard for that operator in that view mode are seen.</li>
+<li>For example, you can assign one set of graphic dress-up values for the breakout operator in <span class="glossterm" id="exact-view" onmouseout="hideTerm()" onmouseover="showTerm('exact-view.xml')">exact view</span> mode and another set of graphic dress-up values for the same breakout operator in approximate view mode. When you switch between exact and approximate view modes, you can visualize the profile lines of that same breakout operator differently.</li>
+</ul>
+</p></div>
+<div class="section" id="c-AboutGraphicDressupPropertiesofBreakoutViewProfiles__cs-EditingTheBreakoutOperatorProfile"><h3 class="sectiontitle">Editing the Breakout Operator Profile</h3><p>Graphic dress-up properties assigned to profile lines of a breakout operator are retained even after performing edition of the same operator.</p></div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

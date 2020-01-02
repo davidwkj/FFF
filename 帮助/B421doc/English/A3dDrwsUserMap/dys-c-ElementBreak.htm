@@ -1,0 +1,100 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Breaking Elements"/>
+<meta name="abstract" content="This topic provides more information about breaking elements."/>
+<meta name="description" content="This topic provides more information about breaking elements."/>
+<meta name="DC.Relation" scheme="URI" content="dys-t-OperationProfilePerform-ElementBreak.htm#dys-t-OperationProfilePerform-ElementBreak"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dys-c-ElementBreak"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Breaking Elements</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dys-c-ElementBreak">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Breaking Elements</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic provides more information about breaking elements. </span>
+
+    
+    <p>
+      The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#BreakCommand" id="toc_rg" title="Using the Break command, you can isolate points.">About the Break Command</a></li><li><a href="#CompositeCorners" id="toc_rg" title="You cannot break composite curves (which are projected/intersected elements composed of several curves).">Composite Corners</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="dys-t-OperationProfilePerform-ElementBreak.htm#dys-t-OperationProfilePerform-ElementBreak" title="You can apply the Break command to intersecting lines and create a point at the geometry intersection. Break lets you break any type of curve, except the composite curves. You can use any element to break curves.">Breaking Elements</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  
+
+  <div/>
+  
+  <div class="nested1" id="BreakCommand">
+    <h2 class="topictitle2">About the Break Command</h2>
+
+    
+    <div><p>Using the <span class="uicontrol">Break</span> command, you can isolate points.</p>
+
+      
+<p>
+<ul>
+<li>If you select a point that limits and is common to two
+elements, the point will be duplicated.</li>
+
+<li>If you select a coincident point, this point becomes
+independent (it is no more assigned a coincidence constraint).
+In the following example, applying <span class="uicontrol">Break</span> <img height="22" width="22" src="../Icons22/I_Break.png"/> onto the circle center isolates it and lets you therefore move the
+circle:<p><br/><img src="../DysUserImages/break01NLS.png"/><br/></p></li>
+<li>You can isolate a point by right-clicking the point and selecting <span class="uicontrol">Point.x object &gt; Isolate Point(s)</span> after you apply <span class="uicontrol">Break</span>.<p>Note:
+		A new separate feature <span class="uicontrol">Point.x</span> is added to the tree for the isolated point, isolated using the <span class="uicontrol">Isolate Point(s)</span> command.</p>
+<br/><img src="../DysUserImages/break03.png"/><br/><img src="../DysUserImages/break04.png"/></li>
+<li>If you move the pointer over different entities when using the <span class="uicontrol">Break</span> command, the point's representation is also updated that is the start point and the break point. <br/><img src="../DysUserImages/break05NLS.png"/><br/><p>The different parts of the curve get highlighted when you sequentially move the pointer over different elements when selecting the breaking element. Thus the highlighted elements are changed whenever the entity under the pointer changes while selecting the breaking element.</p><p>If you select a circle as a breaking element, the start point is indicated across the horizontal axis as shown below: <br/><img src="../DysUserImages/break02NLS.png"/><br/></p><p>The break point changes as you move the pointer   over the circle.<br/><img src="../DysUserImages/break12NLS.png"/><br/></p><p>After applying break, the circle is broken at the indicated point. The broken entity is highlighted in blue and a point is created. The 
+       circle is now composed of two segments. Coincidence constraints are 
+       created and represented by two small concentric circles.</p><p><br/><img src="../DysUserImages/break12.png"/><br/></p></li>
+
+</ul>
+
+</p>
+
+      
+      
+      
+      
+    </div>
+
+      
+    
+    
+    
+  </div>
+
+  
+  <div class="nested1" id="CompositeCorners">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Composite Corners</h2>
+
+    
+    <div><p>You cannot break composite curves (which are projected/intersected
+elements composed of several curves).</p>
+
+      <p>
+         However, you can work around
+this functional restriction by projecting or intersecting the
+composite curve elements and break these items using one another.
+
+      </p>
+    </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

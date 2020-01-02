@@ -1,0 +1,5 @@
+G:\R421\BSF\.\CAAAerospaceSheetMetalDoc.edu\CAAAslAeroSheetMetal.doc\src\CAAAslTaFeatures.htm
+G:\R421\BSF\.\CAAAerospaceSheetMetalDoc.edu\CAAAslAeroSheetMetal.doc\src\CAAAslTcToc.htm
+G:\R421\BSF\.\CAAAerospaceSheetMetalDoc.edu\CAAAslAeroSheetMetal.doc\src\CAAAslUcJoggle.htm
+G:\R421\BSF\.\CAAAerospaceSheetMetalDoc.edu\CAAAslAeroSheetMetal.doc\src\CAAAslUcSurfacicFlange.htm
+G:\R421\BSF\.\CAAAerospaceSheetMetalDoc.edu\CAAAslAeroSheetMetal.doc\src\CAAAslUcWeb.htm

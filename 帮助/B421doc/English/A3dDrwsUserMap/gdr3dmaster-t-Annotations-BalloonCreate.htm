@@ -1,0 +1,101 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating Balloons"/>
+<meta name="abstract" content="You can create balloons corresponding to the references defined on the different parts of an assembly. You can set text properties for balloons either before or after you create them."/>
+<meta name="description" content="You can create balloons corresponding to the references defined on the different parts of an assembly. You can set text properties for balloons either before or after you create them."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-Annotations-BalloonCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating Balloons</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-Annotations-BalloonCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::balloons"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-balloons::creating"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Balloon"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Creating Balloons</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span><span>You can</span> create balloons corresponding to the references defined on the different parts of an assembly.<span> You can
+						set text properties 
+						for balloons either before or after you create them</span>.</span>
+
+ 
+						</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-CreateaBalloon" id="toc_rg" title="You can create a balloon.">Create a Balloon</a></li><li><a href="#t-PositionaBalloononanExistingAnnotation" id="toc_rg" title="You can position a balloon on an existing annotation on a specific point at its anchor position. You can also snap the balloon position to any predefined place.">Position a Balloon on an Existing Annotation</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> with geometrical elements.</td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+
+			
+</div>
+<div class="nested1" id="t-CreateaBalloon"><h2 class="topictitle2">Create a Balloon</h2>
+
+<div><p><span>You can create a balloon.</span>
+</p>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">Annotation</span> section of the <span>action bar</span>, click <span class="uicontrol">Balloon</span>
+			<img height="22" width="22" src="../Icons22/I_D3M_Balloon.png"/>.<p> 
+			<p>Note:
+		You can create balloons according to the number of reports available in the representation (drawing or a layout). A bill of material is a specific report. Therefore, you can create balloons referencing the report items. If the representation contains:</p>
+<p><ul><li>	No report: Balloon's text is pre-valued with an automatic numbering. This number is automatically incremented with a numerical value each time a balloon is created. If you overload this value with another number, the next pre-entered value will be the previous value incremented by one. In any case, this number is reset to 1 for each session. </li>
+<li>One report: By default, balloon's text is pre-valued with a reference to an item of this report if the selected geometry corresponds to a reported item. Otherwise, it is pre-valued with an automatic numbering.</li>
+<li>Several reports: Balloon's text is pre-valued with a reference to a reported item if one report is selected and the selected geometry allows it. Otherwise, it is pre-valued with an automatic numbering.</li>
+</ul>
+</p><p>Note that, in all these cases, you can modify the pre-value during the creation. You can also create positional links between balloons and:<ul><li>Generative edges or 2D elements in <span><span>Drawings</span></span> <span>app</span>.</li>
+<li>3D edges of the 3D part, which contains the layout or 2D elements in <span>2D Layout for 3D Design</span> <span>app</span>.</li>
+</ul>
+</p> </p></p></li>
+<li class="stepexpand"><p>Select a report.<p>If there are more than one reports available, you need to select the report you want to refer.</p><p>  <p>Note:
+		You can change the active <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> during the command only to select a report. The sheet which is active when the command starts is memorized and the balloon is created in this sheet. Only reports can be selected in other sheets. As soon as the report is selected, the active sheet reverts to the memorized sheet.</p>
+</p></p></li>
+
+			<li class="stepexpand"><p>Select the geometry.<p>If there is no report available or if only one report is available, you can select the geometry or indicate the leader anchor point.<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>If the geometry selection and the report selection are not consistent, it is impossible to create a balloon with a reference to the report. In this case, the created balloon will be valued with an automatic numbering.</td></tr></table>
+</p></p></li>
+
+			<li class="stepexpand"><p><span class="run-in">Optional: </span>Move the pointer so that the balloon leader orientation is snapped on the horizontal or vertical privileged direction. <p>These directions are computed in sheet for balloons oriented in sheet and computed in view for balloons oriented in view.</p><p> <p>The balloon leader turns blue indicating the snapping on the privileged direction.</p></p></p></li>
+<li class="stepexpand"><p>Click in the sheet to define the balloon anchor point.
+			<p> <p>An immersive dialog box appears, with the value pre-entered in the box and simultaneously previewed on the drawing or layout.</p>
+		<br/><img src="../DraftingInfraUserImages/dbBalloonCreationNLS.png"/><br/><p>Note:
+		The value of this balloon is automatically incremented when creating 
+		several balloons. Also, several balloons can reference the same reported item.</p>
+</p></p></li>
+
+		<li class="stepexpand"><p><span>Enter another string or a value</span>.<p>You can add some string, remove the <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span> link or select a report. If a report is selected, the text of the balloon is completely replaced by a new attribute link to the item of the selected report.</p></p></li>
+
+		<li class="stepexpand"><p>Click <img src="../IconsSmall/I_DRM_OK.png"/>.<p> The balloon is created. <p>
+		<br/><img height="239" width="392" src="../DraftingInfraUserImages/creatingballoons03NLS.gif"/><br/></p>
+<p>Notes:
+		<ul><li>A balloon can be used to reference a reported item. To achieve this, an attribute link to the first column's attribute of the reported item is inserted instead of the text of the  balloon.</li>
+<li>A balloon can reference a report only if the geometry to annotate allows it. Consider the following cases:<ul><li>Geometry type is consistent: generative edges in <span><span>Drawings</span></span><span>app</span> and edges or faces in <span>2D Layout for 3D Design</span> <span>app</span>.</li>
+<li>Geometry corresponds to a report item.</li>
+</ul>
+</li>
+</ul>
+</p>
+</p>		</p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-PositionaBalloononanExistingAnnotation"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Position a Balloon on an Existing Annotation</h2>
+
+<div><p><span>You can position a balloon on an existing annotation on a specific point at its anchor position. You can also snap the balloon position to any predefined place.</span>
+</p>
+<div class="p"><!--xxx--><span class="run-in">Before you begin: </span>Create a balloon.</div>
+<ol><li class="stepexpand"><p>Click <span class="uicontrol">Balloon</span>
+			<img height="22" width="22" src="../Icons22/I_D3M_Balloon.png"/>.</p></li>
+<li class="stepexpand"><p>Click in the sheet to define the balloon anchor point.<p> The balloon leader is placed at the indicated location.</p></p></li>
+<li class="stepexpand"><p>Move the pointer over <span>an existing annotation (in this case, </span>the reference balloon<span>)</span>.<p> The attachment points are displayed. <br/><img src="../DraftingInfraUserImages/balloonhotpoint.png"/><br/><p>The nearest attachment point location is highlighted to show that the annotation will be positioned with reference to it if that point is selected. </p></p></p></li>
+<li class="stepexpand"><p>Select on <span>a required</span> attachment point to position the balloon.<p> <br/><img src="../DraftingInfraUserImages/balloonhotpoint01.png"/><br/><p>The leader is removed. An immersive dialog box appears, with the value pre-entered in the box and simultaneously previewed on the .</p> </p></p></li>
+<li class="stepexpand"><p>In the immersive dialog box, enter a value and click <img src="../IconsSmall/I_DRM_OK.png"/>.<p> The balloon is created and positioned at the selected attachment point of the reference balloon. Its angle is set to the same value as that of the reference text, and an orientation link is also created between both balloons.  If required, you can change the position of the balloon.</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Select the balloon and drag to change it's position.<p> The balloon is snapped to the selected position.</p></p></li>
+</ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

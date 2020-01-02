@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 2015-2018, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM	name="2D Presentation PLM Modeler"
+			product="@name" appname="@name"
+			href="CAADifModelerItfDoc/CAADifTcToc.htm"
+			topictype="all"
+			icon="CAAIcons/images/homelogoSymb.png"
+			dir="CAADifModelerItfDoc"
+			childtoc="CAADifModelerItfDoc/CATIA_Dif_ModelerToc.xml">
+		<PITEM name="CATDifModelerUseItf" type="framework" />
+	</DITEM>
+</Root>

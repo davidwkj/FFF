@@ -1,0 +1,114 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Defining a Sheet"/>
+<meta name="abstract" content="This topic explains the concepts that you need to understand to define a sheet either using the sheet styles defined by the administrator or by creating your own sheet styles (to add specific formats)."/>
+<meta name="description" content="This topic explains the concepts that you need to understand to define a sheet either using the sheet styles defined by the administrator or by creating your own sheet styles (to add specific formats)."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-SheetDefine"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Defining a Sheet</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-SheetDefine">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-sheets::defining"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::New"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::drawings"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-drawings::creating"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1> About Defining a Sheet</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic explains the concepts that you need to understand to define a sheet either using the sheet styles defined by the administrator or by creating your own sheet styles (to add specific formats).</span>
+
+</p>
+<ul><li><a href="#gdr3dmaster-c-SheetDefine__cs-Administration" id="toc_rg" title="">Administration</a></li><li><a href="#gdr3dmaster-c-SheetDefine__cs-UserDefinedSheetFormats" id="toc_rg" title="">User-Defined Sheet Formats</a></li><li><a href="#gdr3dmaster-c-SheetDefine__cs-AbouttheSheetBrowser" id="toc_rg" title="">About the Sheet Browser</a></li><li><a href="#gdr3dmaster-c-SheetDefine__cs-NamingUniqueness" id="toc_rg" title="">Naming Uniqueness</a></li></ul>
+</p></td></tr></table></td></tr></table>
+<a name="CATKnowledge.View"><!-- --></a>
+<div><div class="section" id="gdr3dmaster-c-SheetDefine__cs-Administration"><h2 class="sectiontitle">Administration</h2>
+		<ul>
+			<li>Standards and <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> styles are defined by the administrator, who can also add unlimited styles in the 
+			Standards Editor. Once created, this standard  appears in the <span class="wintitle">Drawing / Representation DS</span> dialog box. Note that 
+			any customized standard is based on one of the four international standards 
+			(ANSI, ISO, ASME or JIS) as far as basic parameters are concerned.  <p>Note:
+		<p>Make sure you customize the units accordingly from <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="menucascade"><span class="uicontrol"> &gt; Main Preferences</span> &gt; <span class="uicontrol">Modeling</span></span> section, under <span class="uicontrol">Knowledge Units</span>, set the <span class="uicontrol">Length</span> to <span class="uicontrol">Inch</span> and then click <span class="uicontrol">OK</span>.</p></p>
+  </li>
+
+		</ul>
+
+		</div>
+<div class="section" id="gdr3dmaster-c-SheetDefine__cs-UserDefinedSheetFormats"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">User-Defined Sheet Formats</h2><p><ul>
+			<li>You can create your own sheet formats, define them locally 
+			for a given <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>, via the sheet properties.</li>
+
+			<li>The global scale is a scaling factor which applies to all views 
+			in a given sheet. It does not determine the position of the views (or 
+			any other object) contained in the sheet. 
+			When the grid is displayed, the position of the view in the sheet is 
+			not determined by the grid, it only deals with what is drawn directly 
+			in the sheet.</li>
+
+			<li>The modification of the sheet scale property 
+          impacts only the design views.</li>
+<li>At any time after defining a sheet, you can change the standard 
+			(which you can update), sheet style or orientation. To do this, click
+			<span class="uicontrol">Page Layout</span> from the <span class="wintitle">View Layout</span> section of the <span>action bar</span>, to display the <span class="uicontrol">Page Layout</span> 
+			dialog box.</li>
+
+			<li>You can also change the standard and the sheet properties in the
+			<span class="uicontrol">Properties</span> dialog box. To do this, right-click the sheet, 
+			and select <span class="uicontrol">Properties</span>.</li>
+
+			<li>If you select a new standard, the value in the <span class="uicontrol">Apply to</span> 
+			box becomes <span class="uicontrol">All sheets</span> and the new standard is applied 
+			to all drawing sheet annotations.</li>
+
+		</ul>
+</p></div>
+<div class="section" id="gdr3dmaster-c-SheetDefine__cs-AbouttheSheetBrowser"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">About the Sheet Browser</h2><p> The <span class="uicontrol">Sheet Browser</span> is displayed by default for the first time a  is 
+				. It is docked at the top and cannot be moved. To hide the browser, select <span class="uicontrol">Sheet Browser</span>
+				<img src="../Icons22/I_D3M_SheetBrowser.png"/> from the <span class="wintitle">View</span> section of the <span>action bar</span>.</p><p>The 
+  <span class="uicontrol">Sheet Browser</span> is composed of a group of immersive
+  buttons that are displayed horizontally. The browser contains: 
+<ul>
+  <li>The list of design sheets: Displays the names of sheets.
+  </li>
+
+  <li>The list of detail sheets: Displays the names of sheets and also bears a
+	 distinguishable icon.
+  </li>
+
+  
+  
+</ul>
+Only one 
+<span class="uicontrol">Sheet Browser</span> is available per tab per 
+<span>app</span>
+and its display state is saved as per the 
+<span>app</span>.
+If several tabs are open at the same time, then several individual browsers are
+displayed for these tabs. Consider the following points: 
+<ul>
+  <li>When the 
+	 <span class="uicontrol">Sheet Browser</span> is displayed or hidden while being in
+	 a specific 
+	 <span>app</span>,
+	 other tabs running that same 
+	 <span>app</span>
+	 are not updated synchronously. They are updated the next time they are
+	 activated.
+  </li>
+
+  
+  
+</ul>
+
+</p>  </div>
+<div class="section" id="gdr3dmaster-c-SheetDefine__cs-NamingUniqueness"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Naming Uniqueness</h2> <p>The sheet name uniqueness can be verified during creation and edition by selecting the appropriate check box in <span class="uicontrol">Me &gt; Preferences</span>.</p><p>Select <span class="uicontrol">Ensure uniqueness of sheet names</span> check box from <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Administration</span></span> section, under <span class="uicontrol">Naming Uniqueness</span></p></div>
+</div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,156 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Sheets"/>
+<meta name="abstract" content="Below are some information about how paper spaces, model spaces and sheets are managed."/>
+<meta name="description" content="Below are some information about how paper spaces, model spaces and sheets are managed."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dxf-c-SpacesSheet"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Sheets</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dxf-c-SpacesSheet">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Sheets</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Below are some information about how paper spaces, model spaces and sheets are managed.</span>
+<p>Options for spaces and sheets are found in the <a href="../PreferencesMap/gdrpref-c-DXF2D.htm#gdrpref-c-DXF2D" title="The DXF 2D options let you customize the import and export of DXF 2D files for Converter for IGES.">DXF 2D</a> <span>tab</span> (Import and Export) of the <span><span class="wintitle">Preferences</span></span>.</p>
+    <p>
+      The following topics are discussed:
+    </p>
+    
+  </p>
+<ul><li><a href="#c-AtImport" id="toc_rg" title="An AutoCAD file is usually made of a model space that contains the geometry and a paper space (or several in AutoCAD 2000). AutoCAD recommends that the paper space contains the title box and one or several viewports (A viewport is a window to the model space). However other configurations are possible.">At Import</a></li><li><a href="#c-AtExport" id="toc_rg" title="You can define which sheets of a multi-sheets drawing are exported.">At Export</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  
+
+  <div class="nested1" id="c-AtImport">
+    <h2 class="topictitle2">At Import</h2>
+
+    
+    <div><p><span>An AutoCAD file is usually made of a model space that contains the geometry and a paper space (or several in AutoCAD 2000). AutoCAD recommends
+that the paper space contains the title box and one or several
+viewports (A viewport is a window to the model space). However
+other configurations are possible.</span>
+
+    <a name="ix-DXF/DWG::paper spaces in background"> </a>
+  <a name="ix-DXF/DWG::keep model space"> </a><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Viewports
+with a not null twist angle (group code 51) are not correctly
+handled during import.</td></tr></table>
+</p>
+ 
+  <p><span>Drafting</span>
+	 provides a simple method to manipulate a sheet. A sheet contains: 
+  <ul> 
+	 <li>A main view which supports the geometry directly
+		created in the sheet. 
+	 </li>
+ 
+	 <li>A background view dedicated to frames and title
+		blocks. 
+	 </li>
+ 
+	 <li>Interactive or generated views. 
+	 </li>
+ 
+  </ul>
+ 
+  </p> 
+  <p> 
+  <ul> 
+	 <li>When 
+		<span class="uicontrol">Paper Spaces in
+		  Background</span> is selected, the data lying on the paper spaces are put
+		in the background view of the layout sheet. The viewports are created in the
+		working view. 
+	 </li>
+ 
+	 <li>When 
+		<span class="uicontrol">Paper Spaces in
+		  Background</span> is not selected, the data lying on the paper spaces are
+		put in a new auxiliary view of the sheet. This auxiliary view is visible in the
+		3D. You can change the view support for auxiliary views 
+	 </li>
+ 
+  </ul>
+ 
+  <ul> 
+	 <li>When 
+		<span class="uicontrol">Keep Model
+		  Space</span> is not selected: 
+		<ul> 
+		  <li>When the model space is referenced by no
+			 viewport (or if there is no viewport in the imported file), it is created in
+			 its own sheet (unless it is empty). 
+		  </li>
+ 
+		  <li>When the model space is referenced at least
+			 partially by one or several viewports, it is not created in its own sheet. Only
+			 layouts are created. They contain eventual viewports. The entities found
+			 completely or partially in the clipping view are imported. The entities found
+			 completely outside the clipping view are not imported. In this case, select 
+			 <span class="uicontrol">Keep model
+				space</span> to force the creation of the model space in its own sheet
+			 with all its entities. 
+		  </li>
+ 
+		</ul>
+ 
+	 </li>
+ 
+  </ul>
+ 
+  </p> 
+</div>
+
+
+    
+
+    
+  </div>
+
+
+  <div class="nested1" id="c-AtExport">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">At Export</h2>
+
+    
+    <div><p><span>You can define which sheets of a multi-sheets drawing are exported.</span>
+
+      <a name="ix-DXF/DWG::exported sheets"> </a>
+    </p>
+
+      <p>Select the required <span class="uicontrol">Exported sheets</span> option:<ul>
+<li><span class="uicontrol">Only current</span>: Exports the data to a file
+with the name entered in the <span class="wintitle">Save as</span> dialog box.</li>
+
+<li><span class="uicontrol">All</span>: Exports the data to several files.
+The name of each file is made of the name entered in the <span class="wintitle">Save
+as</span> dialog box and the name of the sheet
+(Drawing1_sheet_1.DXF, Drawing_sheet_2.DXF, ...).<p>Note:
+		With this option, the detail sheets are not exported because each DXF file embeds all the details referenced by its corresponding sheet.</p>
+</li>
+
+</ul>
+</p>
+
+
+            
+    </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

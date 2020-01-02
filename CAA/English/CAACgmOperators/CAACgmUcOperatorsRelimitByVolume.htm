@@ -1,0 +1,339 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Triming a shell or a wire by a volume</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Triming a shell or a wire by a volume</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>CATICGMTopRelimitByVolume operator enables you to trim a shell or a 
+		wire by a volume.The body to be trimmed can be a multi-domain body and 
+		can contain a mixture of shells and lumps. All the cells of the input 
+		body are trimmed by the volume and the portions to be kept have to be 
+		specified. The CATICGMTopRelimitByVolume operator is a multi-run 
+		operator.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAGMModelRelimitByVolume Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMModelRelimitByVolume?</a></li>
+				<li><a href="#How">How to Launch CAAGMModelRelimitByVolume</a></li>
+				<li><a href="#Where">Where to Find the CAAGMModelRelimitByVolume 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this use case, you learn how to use the CATICGMTopRelimitByVolume operator 
+to trim a shell and&nbsp; a wire by a volume. CATICGMTopRelimitByVolume is to be used according to the general 
+scheme of topological operators. If need be, you can take a look at &quot;Overview of 
+the Topological Operators&quot; [<a href="#References">1</a>] for more information.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAGMModelRelimitByVolume Use Case</h2>
+<p>CAAGMModelRelimitByVolume is a use case of the CAAGMOperatorsInterfaces.edu framework 
+that illustrates the GMOperatorsInterfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMModelRelimitByVolume Do</h3>
+<p>The use case:</p>
+<ul>
+	<li>Load the CGM container from the ShellWireRelimitByVolume.NCGM input file 
+	.</li>
+	<li>Create the topdata, config and journal.</li>
+	<li>Retrieve the input data (Volume Shell and Wire body ) from CGM 
+	container.</li>
+	<li>Relimit the Shell by Volume:
+	<ol>
+		<li>Create the CATICGMTopRelimitByVolume operator.</li>
+		<li>Specify the portions of the shell to be kept after relimitation 
+		(inside and outside are tested).</li>
+	</ol>
+	</li>
+	<li>Runs the CAAGMModelRelimitByVolume and retrieve the resulting body.</li>
+	<li>Relimit the Wire by Volume:&nbsp;
+	<ol>
+		<li>Create the CATICGMTopRelimitByVolume operator.</li>
+		<li>Specify the portions of the wire to be kept after relimitation 
+		(inside and outside are tested).</li>
+	</ol>
+	</li>
+	<li>Runs the CAAGMModelRelimitByVolume and retrieve the resulting body.</li>
+</ul>
+<p><strong>Note</strong>: This article only focuses on the operations related to 
+the CATICGMTopRelimitByVolume operator. Refer to &quot;Overview of the Topological Operators&quot; 
+[<a href="#References">3</a>] for more information on the operations which are 
+not detailed in the article.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMModelRelimitByVolume</h3>
+<p>To launch CAAGMModelRelimitByVolume, you will need to set up the build time environment, 
+then compile CAAGMModelRelimitByVolume.m, set up the run time environment, and then 
+execute the use case [<a href="#References">2</a>].</p>
+<p>If you simply type CAAGMModelRelimitByVolume with only one argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example: </p>
+<p>CAAGMModelRelimitByVolume <code>
+InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\FunctionTests\InputData\ShellWireRelimitByVolume.NCGM e:\ShellWireRelimitByVolumeResult.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<p><img alt="" src="images/CATICGMTopRelimitByVolumeimg76.jpg"></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsCleanCrv.m'>
+<h3><a name="Where">CAAGMModelRelimitByVolume Where to Find the 
+CAAGMModelRelimitByVolume Code</a></h3>
+<p>The CAAGMModelRelimitByVolume use case is made of a main named 
+CAAGMModelRelimitByVolume.cpp 
+located in the CAAGMModelRelimitByVolume.m module of the CAAGMOperatorsInterfaces.edu 
+framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\CAAGMModelRelimitByVolume.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">2</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The use case is divided into the following main steps:</p>
+<ul>
+	<li><a href="#Creating the curves making up the wire">Preleminary Operations </a></li>
+	<li><a href="#Creating the wire to be corrected">Relimit Shell by Volume </a></li>
+	<li><a href="#Creating the wire to be corrected">Relimit Wire by Volume</a></li>
+</ul>
+	<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creating the curves making up the wire"></a>Preleminary Operations </h3>
+<p>In this operation, the geometrical container is loaded from the input NCGM 
+file in order to get the body that will be treated by CATICGMTopRelimitByVolume 
+operator.</p>
+	<p>The topological journal and software configuration are also retrieved.</p>
+	<p>The following code illustrates how to&nbsp; retrieve these informations:</p>
+<pre class="code">
+ // Load the CGM Container 
+//
+CATGeoFactory* piGeomFactory = <strong>CATLoadCGMContainer</strong>(filetoread);
+cout &lt;&lt; &quot;Get The Geo factory : OK &quot; &lt;&lt; endl;
+
+// Get the software config
+//
+CATSoftwareConfiguration * pConfig = new <strong>CATSoftwareConfiguration</strong>();
+cout &lt;&lt; &quot;Get the software config : OK &quot; &lt;&lt; endl;
+
+// Get the Topological journal
+//
+CATCGMJournalList* pJournal = new <strong>CATCGMJournalList</strong>(pConfig, NULL);
+cout &lt;&lt; &quot;Get the Topological journal : OK &quot; &lt;&lt; endl;
+
+CATTopData topdata(pConfig, pJournal);
+
+// Retrieve the input data
+int Tag[3] = { 1659, 14127,17776 };
+
+// Get the Volume Body
+//
+CATBody * pBodySolid = (CATBody*)piGeomFactory-&gt;<strong>FindObjectFromTag</strong>(Tag[0]);
+cout &lt;&lt; &quot;Get the Volume Body (Tag = 1659) : OK &quot; &lt;&lt; endl;
+
+// Get the Shell Body
+//
+CATBody * pBodyShell = (CATBody*)piGeomFactory-&gt;<strong>FindObjectFromTag</strong>(Tag[1]);
+cout &lt;&lt; &quot;Get the Shell Body (Tag = 14127) : OK &quot; &lt;&lt; endl;
+
+// Get the Wire Body
+//
+CATBody * pBodyWire = (CATBody*)piGeomFactory-&gt;<strong>FindObjectFromTag</strong>(Tag[2]);
+cout &lt;&lt; &quot;Get the Wire Body (Tag = 17776) : OK &quot; &lt;&lt; endl;
+</pre>
+	<p>
+	Here are the messages on the standard output:</p>
+	<p>
+&nbsp;<img alt="" src="images/CATICGMTopRelimitByVolumeimg77.gif"><br></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creating the wire to be corrected"></a>Relimit Shell by volume</h3>
+	<p>In first time, the CATICGMTopRelimitByVolume is used for relimiting a 
+	shell by a volume.</p>
+<p><img alt="" src="images/CATICGMTopRelimitByVolumeimg7B.jpg"></p>
+	<p>For use of the operator CATICGMTopRelimitByVolume, you must follow the general scheme of all the topological operators:</p>
+<ul>
+	<li>Create an operator instance.</li>
+	<li>Run it.</li>
+	<li>Retrieve the resulting body.</li>
+</ul>
+	<p>The following code illustrates how to use CATICGMTopRelimitByVolume 
+	operator :</p>
+<pre class="code">
+ CATICGMTopRelimitByVolume * pRelimitByVolumeOp = NULL;
+pRelimitByVolumeOp = <strong>CATCGMCreateRelimitByVolume</strong>(piGeomFactory, &amp;topdata, pBodyShell, pBodySolid);
+
+cout &lt;&lt; &quot;Create the CATICGMTopRelimitByVolume operator OK&quot; &lt;&lt; endl;
+
+// Selection of the skin which is inside the volume
+//
+pRelimitByVolumeOp-&gt;<strong>SetSelectionType</strong>(1);
+cout &lt;&lt; &quot;Selection of the skin which is inside the volume&quot; &lt;&lt; endl;
+
+// Run CATICGMTopRelimitByVolume operator 
+//
+pRelimitByVolumeOp-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run CATICGMTopRelimitByVolume operator OK&quot; &lt;&lt; endl;
+
+// Get the result
+//
+CATBody * pResultingBodyInside = pRelimitByVolumeOp-&gt;GetResult(pJournal);
+if (pResultingBodyInside)
+cout &lt;&lt; &quot;\nGet the Inside Result Body of Shell : OK \n\t\t\t tag body = &quot; &lt;&lt; pResultingBodyInside-&gt;GetPersistentTag() &lt;&lt; endl;
+else
+{
+::CATCloseCGMContainer(piGeomFactory);
+cout &lt;&lt; &quot;\n=== ERROR === Relimit Shell by Volume : Get the Inside Result Body KO&quot; &lt;&lt; endl;
+return (1);
+}</pre>
+	<p>
+	Here are the messages on the standard output:</p>
+	<p>
+	<img alt="" src="images/CATICGMTopRelimitByVolumeimg82.gif"></p>
+	<p>
+	Below a picture showing the body result when the skin which is inside the 
+	volume is selected : </p>
+	<p>
+	<img alt="" src="images/CATICGMTopRelimitByVolumeimg7D.jpg"></p>
+	<p>
+	&nbsp;</p>
+	<p>
+	Below the body result when the skin which is outside the volume is selected 
+	: </p>
+	<p>
+	<img alt="" src="images/CATICGMTopRelimitByVolumeimg7E.jpg"></p>
+	<p>
+	&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creating a CATTopCleanCrvOperator operator instance"></a>Relimit 
+Wire by a Volume</h3>
+<p>In second time, the CATICGMTopRelimitByVolume is used for relimiting a wire 
+by a volume..</p>
+	<p><img alt="" src="images/CATICGMTopRelimitByVolumeimg79.jpg"></p>
+	<p>The following code illustrates how to use CATICGMTopRelimitByVolume 
+	operator :</p>
+<pre class="code">
+ cout &lt;&lt; &quot;\n\n===============================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;=== PART 2 : Relimit Wire by Volume ===&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;===============================================\n&quot; &lt;&lt; endl;
+
+// CATICGMTopRelimitByVolume operator creation
+//
+CATICGMTopRelimitByVolume * pRelimitWireByVolumeOp = NULL;
+pRelimitWireByVolumeOp = <strong>CATCGMCreateRelimitByVolume</strong>(piGeomFactory, &amp;topdata, pBodyWire, pBodySolid);
+cout &lt;&lt; &quot;\nCreate the CATICGMTopRelimitByVolume operator OK&quot; &lt;&lt; endl;
+
+// Get the wire which is inside the volume 
+//
+pRelimitWireByVolumeOp-&gt;SetSelectionType(1);
+cout &lt;&lt; &quot;Get the wire which is inside the volume&quot; &lt;&lt; endl;
+
+// Run CATICGMTopRelimitByVolume operator
+// 
+pRelimitWireByVolumeOp-&gt;Run();
+cout &lt;&lt; &quot;Run CATICGMTopRelimitByVolume operator OK&quot; &lt;&lt; endl;
+
+// get the result
+//
+CATBody * pResultingWireBodyInside = pRelimitWireByVolumeOp-&gt;GetResult(pJournal);
+if (pResultingWireBodyInside)
+cout &lt;&lt; &quot;\nGet the Inside Result Body : OK \n\t\t\t tag body = &quot; &lt;&lt; pResultingWireBodyInside-&gt;GetPersistentTag() &lt;&lt; endl;
+
+// Get the wire which is outside the volume 
+//
+pRelimitWireByVolumeOp-&gt;SetSelectionType(2);
+cout &lt;&lt; &quot;\nGet the wire which is outside the volume&quot; &lt;&lt; endl;
+
+// Run CATICGMTopRelimitByVolume operator
+// 
+pRelimitWireByVolumeOp-&gt;Run();
+cout &lt;&lt; &quot;Run CATICGMTopRelimitByVolume operator OK&quot; &lt;&lt; endl;
+
+// get the result
+CATBody * pResultingWireBodyOutside = pRelimitWireByVolumeOp-&gt;GetResult(pJournal);
+if (pResultingWireBodyOutside)
+cout &lt;&lt; &quot;\nGet the Outside Result Body : OK \n\t\t\t tag body = &quot; &lt;&lt; pResultingWireBodyOutside-&gt;GetPersistentTag() &lt;&lt; endl;</pre>
+	<p>
+	Here are the messages on the standard output:</p>
+	<p>
+	<img alt="" src="images/CATICGMTopRelimitByVolumeimg84.gif"></p>
+	Below a picture showing the body result when the wire which is inside the 
+	volume is selected :
+	<p><img alt="" src="images/CATICGMTopRelimitByVolumeimg7F.jpg"></p>
+	<p>Below a picture showing the body result when the wire which is outside 
+	the volume is selected : </p>
+	<p><img alt="" src="images/CATICGMTopRelimitByVolumeimg80.jpg"></p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The CATICGMTopRelimitByVolume operator enables to trim easily a shell or a 
+wire by a volume.&nbsp; it is a transient object and its execution does not 
+modify the input operands.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="CAACgmUcTopOverview.htm">Overview of Topological Operators</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Dec 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

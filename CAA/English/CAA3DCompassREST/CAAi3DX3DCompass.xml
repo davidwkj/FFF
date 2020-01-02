@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    <ITEM name="3DCompass" href="CAA3DCompassREST/CAAi3DX3DCompassToc.htm" >
+		 
+		<ITEM name="3DCompass Role and Openness" href="CAA3DCompassREST/CAAi3DXTa3DCompassIntro.htm" icon="CAAIcons/images/I_Overview.gif"  topictype="Ta"/>
+		<ITEM name="About 3DCompass Web Services" href="CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm" icon="CAAIcons/images/I_Understanding.gif"  topictype="Ta"/>
+        <ITEM name="Experiencing 3DCompass Web Services" href="CAA3DCompassREST/CAAi3DXTa3DCompassExperiencing.htm" icon="CAAIcons/images/I_HowTo.gif"  topictype="Ta"/>					
+		
+	</ITEM>
+</Root>

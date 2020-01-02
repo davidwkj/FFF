@@ -1,0 +1,118 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating Threads With a Reference"/>
+<meta name="abstract" content="You can create a thread with a reference, either circular (circle or point) or linear (line). For example, you can apply a thread to a hole with a line as reference."/>
+<meta name="description" content="You can create a thread with a reference, either circular (circle or point) or linear (line). For example, you can apply a thread to a hole with a line as reference."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-DressUp-ThreadNoReference.htm#gdr3dmaster-t-DressUp-ThreadNoReference"/>
+<meta name="DC.Relation" scheme="URI" content="../Headers/dsdocKBHeader.htm?id=QA00000045331"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-DressUp-ThreadWithReference"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating Threads With a Reference</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-DressUp-ThreadWithReference">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::threads with reference"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-threads::creating with reference"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Thread with Reference"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+				
+				Creating Threads With a Reference
+				</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span> You can create a thread 
+						with a reference, either circular (circle or point) or linear 
+						(line). For example, you can apply a thread 
+						to a hole with a line as reference.</span>
+
+						</p>
+
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-DressUp-ThreadNoReference.htm#gdr3dmaster-t-DressUp-ThreadNoReference" title="You can create a thread without a reference.">Creating Threads Without a Reference</a></td></tr></table></td></tr></table>
+
+<div><ol><li class="stepexpand"><p>From the <span class="wintitle">Annotation</span> section of the <span>action bar</span>, click <span class="uicontrol">Thread with Reference</span>
+			<img src="../Icons22/I_D3M_ThreadReference.png"/>.<p> 
+			
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>  An 
+					alternative method is to select several holes and then click
+					<span class="uicontrol">Thread</span>
+					<img src="../IconsNormal/I_ThreadSimple.png"/>.</td></tr></table>
+
+			<p>In the <span class="uicontrol">Tools Palette</span>, the following options are available:</p>
+		
+			<ul>
+				<li>
+				<span class="uicontrol">Reference Tap</span>
+				<img src="../IconsNormal/I_ThreadSimple.png"/>, 
+				which is activated by default.
+				</li>
+
+				<li>
+				<span class="uicontrol">Reference Thread </span>
+				<img src="../IconsNormal/I_DrwThreadSimpleIn.png"/>.
+				</li>
+
+			</ul>
+
+			</p></p></li>
+<li class="stepexpand"><p>Select <span class="uicontrol">Reference Thread</span>
+			<img src="../IconsNormal/I_DrwThreadSimpleIn.png"/>.
+			</p></li>
+<li class="stepexpand"><p>Select the hole (or circle) to which you want to apply 
+			the thread. 
+			</p></li>
+<li class="stepexpand"><p>Select a reference line. <p> 
+			<p>The thread is created according to this reference.
+			 
+			<br/><img src="../Gdr3DMasterImages/creatingthread03.gif"/><br/></p>
+			</p></p></li>
+<li class="stepexpand"><p>Select an axis line handle and drag it along a 
+			direction. <p> 
+			<p>Thread axis lines are modified symmetrically.</p>
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>To move only one axis line, press <span class="uicontrol">Ctrl +</span> drag the handle.</td></tr></table>
+
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> 
+					<ul>
+						<li>When creating a thread associated to interactive (2D) 
+						geometry, the 2D circle radius is computed according to 
+						the following formula:  
+						<p>Thread Radius = 2D Circle Radius * 1.125mm +0.25mm.</p>  
+						<p>The Metric Thin Pitch or Metric Thick Pitch defined by standards 
+						being different, these cannot be applied.</p> </li>
+
+						<li>When creating a thread associated to generative geometry, 
+						a message is displayed if the thread cannot be associative 
+						to the <span>3D area</span>. In this case, the thread is neither linked to 
+						the <span>3D area</span> nor to 2D geometry. For example, a non-associative 
+						thread with a reference line is not updated when the 
+						reference line is moved.</li>
+
+					</ul>
+
+					</td></tr></table>
+
+			</p></p></li>
+</ol>
+<p class="result">
+				
+			
+		
+		
+		
+	
+
+
+
+
+
+</p></div>
+<div/>
+</td></tr></table><div xmlns:mml="http://www.w3.org/1998/Math/MathML" class="relinfo"><strong>In the Knowledge Base</strong><br/><a href="../Headers/dsdocKBHeader.htm?id=QA00000045331" target="_blank"> Managing and Controlling the Manually Created 2D Representation of Threads</a><br/><br/></div><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,582 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Creating a Point on a Wire</title>
+<style type="text/css">
+.style2 {
+				border-width: 0;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1>Creating Points on a Wire</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>Given a vertex located on a wire (CATWire), you can create a topological point 
+		(CATBody) 
+		on the wire at a given curvilinear distance from the input vertex 
+		(CATVertex).</p>
+		<p>You can also create a serie of vertices &nbsp;with a given measure 
+		Length between two consecutive vertices or constrained by a given 
+		turning angle for each vertex.</p>
+		<ul>
+			<li><a href="#OpeToBeUsed">Operator to be Used</a></li>
+			<li><a href="#UseCaseDescription">Use Case Description</a><ul>
+				<li><a href="#Part_1_">Creation a vertex with a specified 
+				measure length</a></li>
+				<li><a href="#Part_2__">Create a serie of vertices with a given 
+				measure length between them</a></li>
+				<li><a href="#Part_3__">Create a serie of vertices satisfying a 
+				list of length measure</a></li>
+				<li><a href="#Part_4__">Create a serie of vertices satisfying a 
+				given Turning Angle </a></li>
+				<li><a href="#Part_5__">Create a serie of vertices satisfying a 
+				list of Turning Angles</a></li>
+			</ul>
+			</li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="OpeToBeUsed">Operator to be Used</a></h2>
+<p>The CATICGMBodyFromLengthOnWire operator is to be used. 
+This operator has to be created by the CATCGMCreateBodyFromLengthOnWire global function.
+<h2><a name="UseCaseDescription">Use Case Description</a></h2>
+<p>The CAAGMModelBodyfromLengthOnWire.m module in CAAGMModelInterfaces.edu 
+illustrates how to create a topological point (CATBody) on a wire. </p>
+<p>This use case 
+is to be run with the WireBody.ncgm file which is delivered in the FunctionTests/InputData 
+folder. If you are not already 
+familiar with geometric modeler use cases, go to
+<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Uses Cases</a>.</p>
+<p>With the input data below:</p>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.1">Fig.1</a> Create a topological point on a wire : Input Data 
+	(origin vertex in blue)</caption>
+  <tr>
+    <td>
+	<img alt="" src="images/CATCGMCreateBodyFromLengthOnWire_imgB.jpg"><br>
+	<img alt="" src="images/CATCGMCreateBodyFromLengthOnWireimg3.jpg"></td>
+   </tr>
+</table>
+<h3><a name="Part_1_">Part 1</a> : Creation a vertex with a specified measure 
+length.</h3>
+<p>Consider we would like to create a vertex which is with a measure length from 
+retrieved vertex (tag 234) equal to 300.0 mm.</p>
+<p>&nbsp;the code below illustrate how to create the operator intended to create 
+a point body :</p>
+<pre class="code"> ...
+
+CATICGMBodyFromLengthOnWire* pPointOnWire = ::<strong>CATCGMCreateBodyFromLengthOnWire</strong>(
+piGeomFactory,
+&amp;topdata,
+pWire,
+pVertex,
+300.0);
+
+...
+
+cout &lt;&lt; &quot;\nCreate the CATICGMBodyFromLengthOnWire operator : OK&quot; &lt;&lt; endl;
+
+//Run the Operator 
+//
+pPointOnWire-&gt;<strong>Run</strong>(); 
+cout &lt;&lt; &quot;\nRun the Operator : OK&quot; &lt;&lt; endl;
+
+// Get the point body computed by the run
+CATBody* pResultBody = pPointOnWire-&gt;GetResult();
+...
+cout &lt;&lt; &quot;\n === Get the point body computed by the run (iSamplingArcLength = 300.0) : ( Tag = &quot; &lt;&lt; pResultBody-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+CATLISTV(CATMathPoint) PointsLocations;
+pPointOnWire-&gt;GetResult(PointsLocations);
+int sizePoints = PointsLocations.Size();
+cout &lt;&lt; &quot;\nsizePoints = &quot; &lt;&lt; sizePoints &lt;&lt; endl;
+cout &lt;&lt; &quot;Vertex Result Coordinates : \t X = &quot; &lt;&lt; PointsLocations[1].GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; PointsLocations[1].GetY() &lt;&lt; &quot;\t Z = &quot; &lt;&lt; PointsLocations[1].GetZ() &lt;&lt; endl;
+...
+</pre>
+<p>&nbsp;</p>
+<p>You get this result:</p>
+<table cellspacing="6" class="style2">
+  <caption><a name="Fig.2">Fig.2</a> Point on a Wire: Result </caption>
+  <tr>
+    <td><img alt="" src="images/CATCGMCreateBodyFromLengthOnWire_imgC.jpg"></td>
+    <td><img alt="" src="images/CATCGMCreateBodyFromLengthOnWire_imgD.jpg"></td>
+     </tr>
+ </table>
+
+<p><img alt="" src="images/CATCGMCreateBodyFromLengthOnWireimg4.jpg"></p>
+<h3><a name="Part_2__">Part 2</a>&nbsp; : Create a serie of vertices with a 
+given measure length between them. </h3>
+<p>Consider we would like to create a serie of vertices where distance between 
+two consecutive vertices is equal to 125.0 mm.</p>
+<p>&nbsp;the code below illustrate how to create the operator intended to create 
+a point body :</p>
+<pre class="code"> ...
+CATICGMBodyFromLengthOnWire * pBodyFromLengthOnWire = <strong>CATCGMCreateBodyFromLengthOnWire</strong>(piGeomFactory,
+&amp;topdata,
+iSamplingArcLength,
+pWire,
+pStartVertex,
+iReverseSamplingDirection,
+iRelativeTolerance);
+
+cout &lt;&lt; &quot;Create the CATICGMBodyFromLengthOnWire operator : OK&quot; &lt;&lt; endl;
+
+//Activates the computation of tangents at the result vertices
+//
+pBodyFromLengthOnWire-&gt;<strong>SetTangentComputation</strong>(TRUE);
+cout &lt;&lt; &quot;Activate the computation of tangents at the result vertices : OK&quot; &lt;&lt; endl;
+
+//Run the Operator 
+//
+pBodyFromLengthOnWire-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the Operator : OK&quot; &lt;&lt; endl;
+
+//
+// the result body with tangents(else returns NULL) associated to its vertices, 
+// according to the wire orientation
+
+CATLISTP(CATVertex) ResultVertices;
+CATLISTV(CATMathVector) Tangents;
+
+CATBody * pResultBody1 = pBodyFromLengthOnWire-&gt;<strong>GetResultWithTangents</strong>(ResultVertices,Tangents, NULL);
+...
+
+cout &lt;&lt; &quot;\n === Get Body with Result Vertices and associated Tangents (iSamplingArcLength = 125.0) : ( Tag = &quot; &lt;&lt; pResultBody1-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+
+int sizeRVert = ResultVertices.Size();
+int sizeTangents = Tangents.Size();
+
+cout &lt;&lt; &quot;Number of Points : \t&quot; &lt;&lt; sizeRVert &lt;&lt; &quot;\t Number of Tangents = \t&quot; &lt;&lt; sizeTangents &lt;&lt; endl;
+
+CATMathPoint newBasePoint;
+CATMathVector newTangentVec;
+
+for (int i = 1; i &lt;= sizeRVert; i++)
+{
+  cout &lt;&lt; &quot;\ni = &quot; &lt;&lt; i &lt;&lt; endl;
+  cout &lt;&lt; &quot;----------------- &quot; &lt;&lt; endl;
+  newTangentVec = Tangents[i];
+  cout &lt;&lt; &quot;\nTangent Coordinates : \t X = &quot; &lt;&lt; <strong>newTangentVec.GetX()</strong> &lt;&lt; &quot;\t Y = &quot; &lt;&lt; <strong>newTangentVec.GetY()</strong> &lt;&lt; &quot;\t Z = &quot; &lt;&lt; <strong>newTangentVec.GetZ()</strong> &lt;&lt; endl;
+
+  CATVertex * pVertex = ResultVertices[i];
+  if (pVertex != NULL)
+  {
+    CATPoint * pPoint = pVertex-&gt;GetPoint();
+    pPoint-&gt;GetMathPoint(newBasePoint);
+    cout &lt;&lt; &quot;Point Coordinates : \t X = &quot; &lt;&lt; newBasePoint.GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; <strong>newBasePoint.GetY()</strong> &lt;&lt; &quot;\t Z = &quot; &lt;&lt; <strong>newBasePoint.GetZ()</strong> &lt;&lt; endl;
+  }
+}</pre>
+<p> &nbsp;</p>
+<p> You get this result:</p>
+<table cellspacing="6" class="style2">
+  <caption><a name="Fig.3">Fig</a>3. Set of Points on a Wire: Result </caption>
+  <tr>
+    <td><img alt="" src="images/CATCGMCreateBodyFromLengthOnWire_imgE.jpg"></td>
+    <td><img alt="" src="images/CATCGMCreateBodyFromLengthOnWire_imgF.jpg"></td>
+     </tr>
+ </table>
+
+<p><img alt="" src="images/CATCGMCreateBodyFromLengthOnWireimg6.jpg"></p>
+<h3><a name="Part_3__">Part 3</a>&nbsp; : Create a serie of vertices satisfying 
+a list of length measure.</h3>
+<p>&nbsp;Considers that we would like to create a serie of vertices on where we 
+define prealably the length we want to have between the point and a given start 
+vertex .</p>
+<p>&nbsp;In such case we have to provide the list of length values as argument 
+to the CATICGMBodyFromLengthOnWire&nbsp; operator.</p>
+<pre class="code"> // create a series of points at given measures  
+CATListOfDouble ListSamplingArcLength ; // The arc length between the sample points on the wire
+ListSamplingArcLength.Append(21.0);
+ListSamplingArcLength.Append(45.25);
+ListSamplingArcLength.Append(78.5);
+ListSamplingArcLength.Append(92.5);
+ListSamplingArcLength.Append(125.);
+
+iReverseSamplingDirection = FALSE; // TRUE if Reverse the sampling direction (with respect to the wire orientation)
+
+CATBodyFromLengthOnWireMeasureType iMeasureType = ArcLength;
+
+
+cout &lt;&lt; &quot;\n\n===============================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 3 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;create five vertices with a given length measure&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;===============================================================\n&quot; &lt;&lt; endl;
+
+CATICGMBodyFromLengthOnWire * pBodyFromLengthOnWireExt = <strong>CATCGMCreateBodyFromLengthOnWire</strong>(
+piGeomFactory ,
+&amp;topdata,
+ListSamplingArcLength ,
+iMeasureType,
+pWire,
+pStartVertex,
+iReverseSamplingDirection,
+iRelativeTolerance);
+
+cout &lt;&lt; &quot;Create the CATICGMBodyFromLengthOnWire operator : OK&quot; &lt;&lt; endl;
+
+//Activates the computation of tangents at the result vertices
+//
+pBodyFromLengthOnWireExt-&gt;<strong>SetTangentComputation</strong>(TRUE);
+cout &lt;&lt; &quot;Activate the computation of tangents at the result vertices : OK&quot; &lt;&lt; endl;
+
+//Run the Operator 
+//
+pBodyFromLengthOnWireExt-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the Operator : OK&quot; &lt;&lt; endl;
+
+//
+// the result body with tangents(else returns NULL) associated to its vertices, 
+// according to the wire orientation
+
+CATLISTP(CATVertex) ResultVertices;
+CATLISTV(CATMathVector) Tangents;
+
+CATBody * pResultBody1 = pBodyFromLengthOnWireExt-&gt;<strong>GetResultWithTangents</strong>(ResultVertices,Tangents, NULL);
+...
+cout &lt;&lt; &quot;\n === Get Body with Result Vertices and associated Tangents : ( Tag = &quot; &lt;&lt; pResultBody1-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+
+int sizeRVert = ResultVertices.Size();
+int sizeTangents = Tangents.Size();
+
+cout &lt;&lt; &quot;Number of Points : \t&quot; &lt;&lt; sizeRVert &lt;&lt; &quot;\t Number of Tangents = \t&quot; &lt;&lt; sizeTangents &lt;&lt; endl;
+
+CATMathPoint newBasePoint;
+CATMathVector newTangentVec;
+
+for (int i = 1; i &lt;= sizeRVert; i++)
+{
+  cout &lt;&lt; &quot;\ni = &quot; &lt;&lt; i &lt;&lt; endl;
+  cout &lt;&lt; &quot;----------------- &quot; &lt;&lt; endl;
+
+  cout &lt;&lt; &quot;\nArc Length value : &quot; &lt;&lt; ListSamplingArcLength[i] &lt;&lt; endl;
+
+  newTangentVec = Tangents[i];
+  cout &lt;&lt; &quot;\nTangent Coordinates : \t X = &quot; &lt;&lt; newTangentVec.GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; newTangentVec.GetY() &lt;&lt; &quot;\t Z = &quot; &lt;&lt; newTangentVec.GetZ() &lt;&lt; endl;
+
+  CATVertex * pVertex = ResultVertices[i];
+  if (pVertex != NULL)
+  {
+    CATPoint * pPoint = pVertex-&gt;GetPoint();
+    pPoint-&gt;GetMathPoint(newBasePoint);
+    cout &lt;&lt; &quot;Point Coordinates : \t X = &quot; &lt;&lt; newBasePoint.GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; newBasePoint.GetY() &lt;&lt; &quot;\t Z = &quot; &lt;&lt; newBasePoint.GetZ() &lt;&lt; endl;
+  }
+}</pre>
+<p>You get this result:</p>
+<table cellspacing="6" class="style2">
+  <caption style="width: 826px; height: 25px"><a name="Fig.4">Fig</a> 4. Serie 
+  of 5 Points on a Wire: Result </caption>
+  <tr>
+    <td><img alt="" src="images/CATCGMCreateBodyFromLengthOnWireimgA.jpg"></td>
+     </tr>
+ </table>
+
+<p>Below the console trace result:</p>
+<p><img alt="" src="images/CATCGMCreateBodyFromLengthOnWireimg8.jpg"></p>
+<h3><a name="Part_4__">Part 4</a>&nbsp; : Create a serie of vertices satisfying 
+a given Turning Angle. </h3>
+<p>Considers that we would like to create a serie of vertices on where each 
+created point satisfies a given turning angle (45 degrees).</p>
+<p>The turning angle is deducted from the integration of the curvature and 
+measures the total change in tangent vector of an interval on the curves.&nbsp; </p>
+<p>when the total change in tangent vector of an interval on the curves converge 
+to the given turning angle, this involve the build of the point.</p>
+<p>the code below illustrates how to create a set of vertices satisfying a 
+turning angle value equal to CATPI/4. (45 degrees) :</p>
+<pre class="code"> ...
+cout &lt;&lt; &quot;\n\n================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 4 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;create a serie of vertices where Turning Angle is equal to CATPI /4&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;================================================================================\n&quot; &lt;&lt; endl;
+
+// create a series of points at given measures from the vertex
+// 
+
+double <strong>TurningAngleVal = CATPI /4.;
+</strong>double TurningAngleValdegree=(TurningAngleVal*180.) / CATPI;
+
+cout &lt;&lt; &quot;\nTurning Angle Value in radian : \t&quot; &lt;&lt; TurningAngleVal &lt;&lt;&quot; \t in degree : \t &quot; &lt;&lt; TurningAngleValdegree &lt;&lt; endl;
+
+<strong>iMeasureType = TurningAngle</strong>;
+
+// Find Resolution value for angles
+//
+const CATResolutionType iResolutionType = CatC1;
+Resolution = piGeomFactory-&gt;GetResolution(iResolutionType);
+cout &lt;&lt; &quot;Resolution value for angles \t &quot; &lt;&lt; Resolution &lt;&lt; endl;
+
+<strong>iRelativeTolerance = 0.001;
+</strong>CATTry
+{
+
+CATICGMBodyFromLengthOnWire * pBodyFromLengthOnWireExt = <strong>CATCGMCreateBodyFromLengthOnWire</strong>(
+piGeomFactory ,
+&amp;topdata,
+TurningAngleVal ,
+iMeasureType,
+pWire,
+pStartVertex,
+iReverseSamplingDirection,
+iRelativeTolerance);
+
+cout &lt;&lt; &quot;\nCreate the CATICGMBodyFromLengthOnWire operator : OK&quot; &lt;&lt; endl;
+
+
+//Activates the computation of tangents at the result vertices
+//
+pBodyFromLengthOnWireExt-&gt;<strong>SetTangentComputation</strong>(TRUE);
+cout &lt;&lt; &quot;Activate the computation of tangents at the result vertices : OK&quot; &lt;&lt; endl;
+
+//Run the Operator 
+//
+pBodyFromLengthOnWireExt-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the Operator : OK&quot; &lt;&lt; endl;
+
+//
+// the result body with tangents(else returns NULL) associated to its vertices, 
+// according to the wire orientation
+
+CATLISTP(CATVertex) ResultVertices;
+CATLISTV(CATMathVector) Tangents;
+
+CATBody * pResultBody1 = pBodyFromLengthOnWireExt-&gt;<strong>GetResultWithTangents</strong>(ResultVertices,Tangents, NULL);
+...
+
+cout &lt;&lt; &quot;\n === Get Body with Result Vertices and associated Tangents : ( Tag = &quot; &lt;&lt; pResultBody1-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+
+int sizeRVert = ResultVertices.Size();
+int sizeTangents = Tangents.Size();
+
+cout &lt;&lt; &quot;Number of Points : \t&quot; &lt;&lt; sizeRVert &lt;&lt; &quot;\t Number of Tangents = \t&quot; &lt;&lt; sizeTangents &lt;&lt; endl;
+
+
+CATMathPoint newBasePoint;
+CATMathVector newTangentVec;
+
+for (int i = 1; i &lt;= sizeRVert; i++)
+{
+  cout &lt;&lt; &quot;\ni = &quot; &lt;&lt; i &lt;&lt; endl;
+  cout &lt;&lt; &quot;----------------- &quot; &lt;&lt; endl;
+  newTangentVec = Tangents[i];
+  cout &lt;&lt; &quot;\nTangent Coordinates : \t X = &quot; &lt;&lt; newTangentVec.GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; newTangentVec.GetY() &lt;&lt; &quot;\t Z = &quot; &lt;&lt; newTangentVec.GetZ() &lt;&lt; endl;
+
+  // Retrieve the result vertex 
+  CATVertex * pVertex = ResultVertices[i];
+  if (pVertex != NULL)
+  {
+    CATPoint * pPoint = pVertex-&gt;GetPoint();
+    pPoint-&gt;GetMathPoint(newBasePoint);
+    cout &lt;&lt; &quot;Vertex Coordinates : \t X = &quot; &lt;&lt; newBasePoint.GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; newBasePoint.GetY() &lt;&lt; &quot;\t Z = &quot; &lt;&lt; newBasePoint.GetZ() &lt;&lt; endl;
+  }
+
+}...</pre>
+<p>&nbsp;</p>
+<p>you get this result:</p>
+<table cellspacing="6" class="style2">
+  <caption style="width: 1017px; height: 25px"><a name="Fig.5">Fig</a> 5. Serie 
+  of Points where Turning Angle is equal 45 degrees: Result </caption>
+  <tr>
+    <td><img alt="" src="images/CATCGMCreateBodyFromLengthOnWireimg10.jpg"></td>
+     </tr>
+ </table>
+
+<p>&nbsp;Below the console trace result:</p>
+<p><img alt="" src="images/CATCGMCreateBodyFromLengthOnWireimgC.jpg"></p>
+<p>&nbsp;</p>
+<h3><a name="Part_5__">Part 5&nbsp; </a>: Create a serie of vertices satisfying 
+a list of Turning Angles. </h3>
+<p>Considers now that we would like to create a serie of points where we specify 
+for each point the expected turning angle.</p>
+<p>The code below illustrates how to create such set of vertices:</p>
+<pre class="code"> ...
+
+cout &lt;&lt; &quot;\n\n===========================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 5 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;create a serie of 11 vertices with a given Turning Angle &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;===========================================================================================\n&quot; &lt;&lt; endl;
+
+// create a series of points at given measures from the vertex
+// 
+CATListOfDouble ListSamplingTurningAngle; // The Turning Angle between the sample points on the wire
+ListSamplingTurningAngle.Append(CATPI / 11.);
+ListSamplingTurningAngle.Append(CATPI / 13.);
+ListSamplingTurningAngle.Append(CATPI / 17.);
+ListSamplingTurningAngle.Append(CATPI / 19.);
+ListSamplingTurningAngle.Append(CATPI / 23.);
+ListSamplingTurningAngle.Append(CATPI / 29.);
+ListSamplingTurningAngle.Append(CATPI / 31.);
+ListSamplingTurningAngle.Append(CATPI / 37.);
+ListSamplingTurningAngle.Append(CATPI / 41.);
+ListSamplingTurningAngle.Append(CATPI / 43.);
+ListSamplingTurningAngle.Append(CATPI / 47.);
+
+<strong>iMeasureType = TurningAngle</strong>;
+...
+
+CATICGMBodyFromLengthOnWire * pBodyFromLengthOnWireExt = <strong>CATCGMCreateBodyFromLengthOnWire</strong>(
+piGeomFactory ,
+&amp;topdata,
+ListSamplingTurningAngle ,
+iMeasureType,
+pWire,
+pStartVertex,
+iReverseSamplingDirection,
+iRelativeTolerance);
+
+cout &lt;&lt; &quot;Create the CATICGMBodyFromLengthOnWire operator : OK&quot; &lt;&lt; endl;
+
+
+//Activates the computation of tangents at the result vertices
+//
+pBodyFromLengthOnWireExt-&gt;<strong>SetTangentComputation</strong>(TRUE);
+cout &lt;&lt; &quot;Activate the computation of tangents at the result vertices : OK&quot; &lt;&lt; endl;
+
+//Run the Operator 
+//
+pBodyFromLengthOnWireExt-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the Operator : OK&quot; &lt;&lt; endl;
+
+
+//
+// the result body with tangents(else returns NULL) associated to its vertices, 
+// according to the wire orientation
+
+CATLISTP(CATVertex) ResultVertices;
+CATLISTV(CATMathVector) Tangents;
+
+CATBody * pResultBody1 = pBodyFromLengthOnWireExt-&gt;<strong>GetResultWithTangents</strong>(ResultVertices,Tangents, NULL);
+cout &lt;&lt; &quot;\n === GetResultWithTangents the point ( Tag = &quot; &lt;&lt; pResultBody1-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+int sizeRVert = ResultVertices.Size();
+int sizeTangents = Tangents.Size();
+
+
+CATMathPoint newBasePoint;
+CATMathVector newTangentVec;
+
+...
+for (int i = 1; i &lt;= sizeRVert; i++)
+{
+  cout &lt;&lt; &quot;\ni = &quot; &lt;&lt; i &lt;&lt; endl;
+  cout &lt;&lt; &quot;----------------- &quot; &lt;&lt; endl;
+  double TurningAngleInDegree = ((ListSamplingTurningAngle[i]) * 180.)/ CATPI;
+  cout &lt;&lt; &quot;\nTurning Angle value (degree) :&quot; &lt;&lt; TurningAngleInDegree &lt;&lt; endl;
+
+  newTangentVec = Tangents[i];
+  cout &lt;&lt; &quot;\nTangent Coordinates : \t X = &quot; &lt;&lt; newTangentVec.GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; newTangentVec.GetY() &lt;&lt; &quot;\t Z = &quot; &lt;&lt; newTangentVec.GetZ() &lt;&lt; endl;
+
+  CATVertex * pVertex = ResultVertices[i];
+  if (pVertex != NULL)
+  {
+    CATPoint * pPoint = pVertex-&gt;GetPoint();
+    pPoint-&gt;GetMathPoint(newBasePoint);
+    cout &lt;&lt; &quot;Point Coordinates : \t X = &quot; &lt;&lt; newBasePoint.GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; newBasePoint.GetY() &lt;&lt; &quot;\t Z = &quot; &lt;&lt; newBasePoint.GetZ() &lt;&lt; endl;
+  }
+}
+...
+</pre>
+	     <p>&nbsp;</p>
+<table cellspacing="6" class="style2" style="width: 840px; height: 684px">
+  <caption style="width: 837px; height: 25px"><a name="Fig.6">Fig</a> 6. Serie 
+  of Points satisfying a a given Turning Angles for each point: Result </caption>
+  <tr>
+    <td style="width: 774px">
+	<img alt="" src="images/CATCGMCreateBodyFromLengthOnWireimg16.jpg"></td>
+     </tr>
+ </table>
+
+<p>Below the console trace result:</p>
+<p><img alt="" src="images/CATCGMCreateBodyFromLengthOnWireimgE.jpg"></p>
+<h3>Writing the Model and 
+Closing the Factory</h3>
+<p>To save the model in a file, the <code>::CATSaveCGMContainer</code> global function 
+is used.</p>
+<p>Notice that in the use case, the save is conditioned by an input parameter 
+representing the file inside which the model must be saved.</p>
+<p>The use case ends with the closure of the geometry factory, done by the <code>
+::CATCloseCGMContainer</code> global function.</p>
+<pre class="code"> if (1 == toStore)
+{
+#ifdef _WINDOWS_SOURCE
+ofstream filetowrite(pFileName1, ios::binary);
+#else
+ofstream filetowrite(pFileName1, ios::out, filebuf::openprot);
+#endif
+
+::<strong>CATSaveCGMContainer</strong>(piGeomFactory, filetowrite);
+filetowrite.close();
+}
+<strong>CATCloseCGMContainer</strong>(piGeomFactory);
+cout &lt;&lt; &quot;\nWrite the model and close the container : OK &quot; &lt;&lt; endl;</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaUseTopoOperators.htm">How to Use Topological Operators</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMModelOpeOverw.htm">How to Use Geometric Operators</a></td>
+	</tr>
+
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Dec 2011]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

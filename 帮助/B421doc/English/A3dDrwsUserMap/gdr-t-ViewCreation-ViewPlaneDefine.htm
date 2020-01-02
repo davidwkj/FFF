@@ -1,0 +1,126 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Defining the View Plane"/>
+<meta name="abstract" content="You can define the view plane for various types of views including auxiliary and isometric."/>
+<meta name="description" content="You can define the view plane for various types of views including auxiliary and isometric."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewCreation-ViewPlaneDefine"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Defining the View Plane</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewCreation-ViewPlaneDefine">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-view plane::defining"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::defining view plane"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::View Plane Definition"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Defining the View Plane
+				 </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can define 
+						the view  plane for  various types of views including auxiliary and isometric. </span>
+
+						
+						</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-DefineTheFrontViewPlane" id="toc_rg" title="You can define the front view plane.">Define the 
+		Front View Plane</a></li><li><a href="#t-DefineTheAuxiliaryViewPlane" id="toc_rg" title="You can define the auxiliary view plane.">Define the 
+		Auxiliary View Plane</a></li><li><a href="#t-DefineTheIsometricViewPlane" id="toc_rg" title="You can define the isometric view plane.">Define the 
+		Isometric View Plane</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    <ul><li>Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> including front, right and top views.   </li>
+</ul>
+</td></tr></table></td></tr></table>
+<a name="CATDrw.DrwViewPosition"><!-- --></a>
+<div><div class="p"><!--xxx--></div>
+</div>
+<div class="nested1" id="t-DefineTheFrontViewPlane"><h2 class="topictitle2">Define the 
+		Front View Plane</h2>
+<div><p><span>You can define the front view plane.</span>
+<p>Double-click the frame to activate the <span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">front view</span> in which you want to change the plane definition.</p>
+		<p>
+		<br/><img src="../GdrUserImages/viewplane02.png"/><br/><p>Note:
+		The view name and the view scale are displayed in the view as per the options set by the administrator. For more information, see <a href="gdr3dmaster-t-ViewTextCustomize.htm#gdr3dmaster-t-ViewTextCustomize" title="You can create a view text while creating a view in Drafting, 2D Layout for 3D Design, Generative Functional Tolerancing, or 3D Tolerancing &amp; Annotation. You can also configure the view text representation in detail through .xml standard files. You can enforce the creation of view texts that comply with international standards, like ISO, JIS or ASME. In addition, you can quickly position the view text according to a view's overall dimensions, so as to ensure good readability.">Managing View Texts</a>.</p>
+</p>
+		</p>
+<ol><li class="stepexpand"><p>From the customized section of the <span>action bar</span>, click <span class="uicontrol">View Plane Definition</span> <img src="../Icons22/I_D3M_ViewPlane.png"/>.<p><span>This command is not available by default. To add it to the action bar, select <span class="menucascade"><span class="uicontrol">Me</span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Customize</span> &gt; <span class="uicontrol">Commands</span></span>, and drag and drop the command onto a section.</span> For more information, see <a href="gdr3dmaster-t-ToolbarCustomizeAddCommands.htm#gdr3dmaster-t-ToolbarCustomizeAddCommands" title="You can customize an action bar by adding or removing commands according to your needs. You can also add the commands which are not directly available in any of the action bar or menus.">Customizing an Action Bar by Adding Commands</a>.</p><p> The <span class="uicontrol">View Plane </span>dialog box appears with options of the view 
+			plane definitions for front views, <span class="glossterm" id="auxiliary-view" onmouseout="hideTerm()" onmouseover="showTerm('auxiliary-view.xml')">auxiliary views</span> and isometric views.<p><p>Note:
+		Any created view lies on a 3D plane. In other words, a view lies on some kind of a 3D plane whose definition can be accessed using the <span class="uicontrol">View Plane</span> dialog box. You can define and modify the view plane in this dialog box. The view plane is defined in accordance with two vectors and an origin point. This view plane definition is used for acknowledging the 3D relationship between views. This will be the case when <a href="gdr-t-ViewCreation-MultipleViewProjection.htm#gdr-t-ViewCreation-MultipleViewProjection" title="You can generate geometry in a view by projecting geometry from previously defined views.">creating a multiple view projection</a> or when <a href="gdr-t-ViewCreation-ViewUsingFoldingLines.htm#gdr-t-ViewCreation-ViewUsingFoldingLines" title="You can add geometry in views using folding lines as an assistant. This is true for any kind of view, as long as the planes they correspond to are not parallel. For example, you cannot have folding lines between a front view and a rear view.">creating views using folding lines</a>.</p>
+</p></p></p></li>
+<li class="stepexpand"><p>Select the desired options from the <span class="uicontrol">View Plane 
+			Definition </span>area and enter the following values: For <span class="uicontrol">Vector1</span>: enter<span class="uicontrol">1</span> as the <span class="uicontrol">
+			X</span> value and <span class="uicontrol">0</span> as the <span class="uicontrol">Y</span> and <span class="uicontrol">Z</span> 
+			values. For <span class="uicontrol">Vector2</span>: enter <span class="uicontrol">1</span> as the <span class="uicontrol">Y
+			</span>value and <span class="uicontrol">0</span> as the <span class="uicontrol">X</span> and <span class="uicontrol">Z</span> values.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>.<p> The front view plane definition 
+			is updated.</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-DefineTheAuxiliaryViewPlane"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Define the 
+		Auxiliary View Plane</h2>
+<div><p><span>You can define the auxiliary view plane.</span>
+<p>For creating an auxiliary view, you need to create any view first and 
+		then modify the view plane you want. In this case, create an auxiliary view.</p>
+		<p>Make sure the view in which you want to change the plane definition is 
+		active. For this, double-click the view.</p>
+		
+		</p>
+<ol><li class="stepexpand"><p> Click <span class="uicontrol">View Plane Definition</span> <img src="../Icons22/I_D3M_ViewPlane.png"/>.</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">View Plane </span> dialog box, in another orthogonal view, click the line that you 
+			want to use to define the auxiliary view plane.<p> 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="void" border="1" rules="all"><tbody>
+				<tr>
+					<td class="cellrowborder" valign="top">
+					<br/><img src="../GdrUserImages/viewplane04.png"/><br/></td>
+
+				</tr>
+
+			</tbody>
+</table>
+</div>
+<p>The <span class="uicontrol">View Plane </span>dialog box automatically displays the corresponding 
+		vectors and origin point. </p></p></p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Rotate Auxiliary View Axis</span> check box 
+			to rotate the auxiliary view axis.<p> </p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>.<p> <p>The axis automatically rotates in accordance with the dialog box values 
+		applied to the selected plane. </p><br/><img src="../GdrUserImages/viewplane05.png"/><br/></p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-DefineTheIsometricViewPlane"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Define the 
+		Isometric View Plane</h2>
+<div><p><span>You can define the isometric view plane.</span>
+
+		
+		
+		</p>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">View Layout</span> section of the action bar, click <span class="uicontrol">New View</span>
+		<img height="22" width="22" src="../Icons22/I_D3M_View.png"/> to create an empty view.<p> In this case, position the pointer so as 
+		to create an isometric view.</p><p> <p>Double-click the newly created view, in which you want to change the plane 
+		definition.</p></p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">View Plane Definition</span> <img src="../Icons22/I_D3M_ViewPlane.png"/> .</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">View Plane</span> dialog box, enter the required values (<span class="uicontrol">Isometric</span>).
+			 
+			 
+			<p> 
+			OR<p>Select the desired pre-defined isometric view vectors. 
+			For example, <span class="uicontrol">YZX</span> (center of the top row, in the <span class="uicontrol">View Plane</span> dialog box, under
+			<span class="uicontrol">Isometric Views</span>).</p>
+			
+				
+					
+					
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>. <p> The isometric view plane definition 
+			is updated.</p></p></li>
+</ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

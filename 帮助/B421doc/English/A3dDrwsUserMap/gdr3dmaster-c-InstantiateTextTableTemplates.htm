@@ -1,0 +1,59 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Routing Link Templates"/>
+<meta name="abstract" content="Once you instantiate a text or a table template, you need to resolve or route the link templates it contains (if any)."/>
+<meta name="description" content="Once you instantiate a text or a table template, you need to resolve or route the link templates it contains (if any)."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-TextTemplates-InstantiateTableTemplate.htm#gdr3dmaster-t-TextTemplates-InstantiateTableTemplate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-InstantiateTextTableTemplates"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Routing Link Templates</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-InstantiateTextTableTemplates">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-instantiate table template"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-instantiate text template"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-route link template"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>  About Routing Link Templates</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Once you instantiate a text or a table template, you need to resolve or route the link templates it contains (if any).</span>
+
+    
+  </p>
+<ul><li><a href="#gdr3dmaster-c-InstantiateTextTableTemplates__cs-RoutingTextTemplates" id="toc_rg" title="">Routing Text Templates</a></li><li><a href="#gdr3dmaster-c-InstantiateTextTableTemplates__cs-RoutingTableTemplates" id="toc_rg" title="">Routing Table Templates</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-TextTemplates-InstantiateTableTemplate.htm#gdr3dmaster-t-TextTemplates-InstantiateTableTemplate" title="You can instantiate the table template stored in a current or a catalog.">Instantiating Table Templates</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <p>Instantiating text and/or table <span class="glossterm" id="template-2" onmouseout="hideTerm()" onmouseover="showTerm('template-2.xml')">templates</span> means replicating the texts or the tables to predefine the <span class="glossterm" id="title-block" onmouseout="hideTerm()" onmouseover="showTerm('title-block.xml')">title blocks</span> (containing the link templates) or revision blocks (containing the link templates) of a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> for example. </p>   <div class="section" id="gdr3dmaster-c-InstantiateTextTableTemplates__cs-RoutingTextTemplates"><h2 class="sectiontitle">Routing Text Templates</h2><p>When you instantiate a <span class="glossterm" id="text-template" onmouseout="hideTerm()" onmouseover="showTerm('text-template.xml')">text template</span> containing link templates, the <span class="uicontrol">Instantiate Text</span> command  prompts you to select the <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">object</span> to which the link templates have to be routed. However, if any of the link templates inside the text template  is not routed, you need to resolve it using the contextual command <span class="uicontrol">Route Link Template</span>.</p><p> <span class="uicontrol">Route Link Template</span> is available in the <span>context menu</span> of tables and texts containing at least a link template, routed or not. Also, it is available in design <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>, <span class="glossterm" id="detail-sheet" onmouseout="hideTerm()" onmouseover="showTerm('detail-sheet.xml')">detail sheet</span> and background of , as well as in diagrams and in Symbol Editor <span>app</span> of Schematic  <span>apps</span>.</p></div>
+<div class="section" id="gdr3dmaster-c-InstantiateTextTableTemplates__cs-RoutingTableTemplates"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Routing Table Templates</h2> <p><ul><li> When you use <span class="uicontrol">Route Link Template</span> on a table template, all its cells containing some link templates are highlighted:<ul><li>	In green, for cells whose link templates are routed and are associative.</li>
+<li>In red, for cells whose link templates are not yet routed.</li>
+<li>In orange, if any of the link templates contained in a table  cell is resolved non associatively.</li>
+</ul>
+</li>
+</ul>
+</p>  <p>When resolving the table template, you can select an object compatible with the link templates of selected cells, i.e. their type(s) and <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span>(s). <ul><li>The compatible link templates are immediately routed to the selected object, and corresponding cells are unselected and highlighted in green.</li>
+<li>The cells corresponding to some link templates that are not routed are kept selected, to allow further reroute.</li>
+</ul>
+</p>
+<p><p>Note:
+		If no cell is selected and a routing is performed by selecting an element or clicking in the dialog box, all the cells which are not yet routed are taken into account.</p>
+ </p><p>In addition, the <span class="uicontrol">Route Link Template</span> dialog box appears providing the routing options:<ul><li><span class="uicontrol">Route to containing representation</span>: To route or reroute link templates of selected cells to the attributes of the <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> containing the current .</li>
+<li><span class="uicontrol">Route to presented product</span>: To route or reroute link templates of selected cells to the product presented, which is defined as follows: </li>
+</ul>
+ </p> <p>In case of a diagram, it is the system under which the current layout is located.</p>
+  </div>
+</div>
+
+
+  <div/>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

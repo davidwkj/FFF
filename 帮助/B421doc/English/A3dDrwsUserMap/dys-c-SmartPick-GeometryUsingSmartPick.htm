@@ -1,0 +1,501 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Geometry Using SmartPick"/>
+<meta name="abstract" content="Using SmartPick, you will adapt the way you use the Sketcher so as to position geometry to be created according to existing geometry, if needed, and to internal parameters."/>
+<meta name="description" content="Using SmartPick, you will adapt the way you use the Sketcher so as to position geometry to be created according to existing geometry, if needed, and to internal parameters."/>
+<meta name="DC.Relation" scheme="URI" content="dys-c-SmartPick-WhatSmartPick.htm#dys-c-SmartPick-WhatSmartPick"/>
+<meta name="DC.Relation" scheme="URI" content="dys-c-SmartPick-SmartPick.htm#dys-c-SmartPick-SmartPick"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dys-c-SmartPick-GeometryUsingSmartPick"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Geometry Using SmartPick</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dys-c-SmartPick-GeometryUsingSmartPick">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::geometry using SmartPick"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Geometry Using SmartPick
+</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Using SmartPick, you will adapt the way you use the Sketcher so as
+to position geometry to be created according to existing geometry,
+if needed, and to internal parameters.</span>
+ <p>As a result, you will use
+commands in accordance with the type of the element to be created:
+one command per element.</p>
+
+    
+    <p>
+      The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#c-FromScratch" id="toc_rg" title="You can create geometrical elements by progressively specifying a given number of characteristic points. These characteristic points can be specified whatever the active Sketcher command. Characteristic points are pre-determined fictitious points managed by SmartPick which lets creating and manipulating geometrical elements whatever the complexity of the latter.">From Scratch</a></li><li><a href="#c-AccordingtoExistingGeometry" id="toc_rg" title="There are a few things that you need to know when using SmartPick with existing geometry.">According to Existing Geometry
+</a></li><li><a href="#c-ManagingGeometryParameters" id="toc_rg" title="SmartPick also manages internal geometrical specifications such as a line length or a circle radius.">Managing Geometry Parameters</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="dys-c-SmartPick-WhatSmartPick.htm#dys-c-SmartPick-WhatSmartPick" title="SmartPick is a smart and easy-to-use positioning tool that assists you when using most of the commands for creating Sketcher geometrical elements.">What is SmartPick ?</a></td></tr><tr><td><a href="dys-c-SmartPick-SmartPick.htm#dys-c-SmartPick-SmartPick" title="You can specify the location of given geometry. The SmartPick returns the information via symbols. In other words, SmartPick returns feedback information (highlighted geometry or symbols) which you will or will not validate.">SmartPicking</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  
+
+  <div/>
+  
+  <div class="nested1" id="c-FromScratch"><h2 class="topictitle2">From Scratch</h2>
+
+<div><p>You can create geometrical elements by progressively specifying a
+given number of characteristic points. These characteristic points
+can be specified whatever the active Sketcher command.
+Characteristic points are pre-determined fictitious points managed
+by SmartPick which lets creating and manipulating geometrical
+elements whatever the complexity of the latter.</p>
+<p>You will create some of these characteristic points with total
+freedom (both horizontal and vertical degrees of freedom are
+available <img src="../DysUserImages/smartpk007.gif"/>), and others with partial freedom (only
+one degree of freedom is available <img src="../DysUserImages/smartpk008.gif"/>).</p><p>You will find here below a non-exhaustive list with Sketcher
+elementary geometrical elements and corresponding characteristic
+points. SmartPick lets you position these points using one of the following: the pointer,
+<span class="wintitle">Tools Palette</span>, the <span>context menu</span>,
+<span class="uicontrol">Shift</span> or <span class="uicontrol">Ctrl</span> key.
+</p><ul><li>A line
+<br/><img src="../DysUserImages/smartpk001.gif"/><br/></li>
+<li>An arc (center radius)
+<br/><img src="../DysUserImages/smartpk002.gif"/><br/></li>
+<li>An arc of a circle using three points
+<br/><img src="../DysUserImages/smartpk003.gif"/><br/></li>
+<li>An oriented rectangle
+<br/><img src="../DysUserImages/smartpk004.gif"/><br/></li>
+<li>A circle
+<br/><img src="../DysUserImages/smartpk005.gif"/><br/></li>
+<li>A parabola
+<br/><img src="../DysUserImages/smartpk006.gif"/><br/></li>
+</ul>
+<p>The order in which the above mentioned characteristic points (1, 2,
+3, 4) will be specified cannot be modified. Still, you can choose
+the means to be used for positioning these points, as long as you
+exclusively take into account:
+<ul><li>Positioning specifications (SmartPick pointer)
+</li>
+<li>External geometry (for example, two lines parallel to each others,
+or two coincident points)
+</li>
+<li>Internal geometry characteristics (horizontal/vertical lines,
+quarter of arc of circles)
+</li>
+<li>The externalized parameters of a geometrical element (length,
+angle, excentricity and so forth)
+</li>
+</ul>
+</p></div>
+</div>
+
+  
+  
+<div class="nested1" id="c-AccordingtoExistingGeometry"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">According to Existing Geometry
+</h2>
+
+<div><p>There are a few things that you need to know when using SmartPick with existing geometry.</p>
+<div class="section" id="c-AccordingtoExistingGeometry__cs-ReferenceGeometry"><h3 class="sectiontitle">Reference Geometry
+</h3><p>SmartPick finds out geometrical specifications according to
+geometrical elements that already exist in a <span class="glossterm" id="sketch" onmouseout="hideTerm()" onmouseover="showTerm('sketch.xml')">sketch</span>.
+</p><p>You will only detect geometrical specifications according to the
+current sketch elements that are visible in the 3D window in which
+the pointer is positioned. You will not need to perform any
+interaction and you will be returned a visual feedback as shown
+below in a non exhaustive way:
+<ul><li>Parallel (two lines)
+<br/><img src="../DysUserImages/smartpk36.gif"/><br/></li>
+<li>Tangent (a line and a circle)
+<br/><img src="../DysUserImages/smartpk37.gif"/><br/></li>
+<li>Perpendicular (two lines)
+
+<br/><img src="../DysUserImages/smartpk38.gif"/><br/></li>
+<li>Tangent (two circles)
+
+<br/><img src="../DysUserImages/smartpk39.gif"/><br/></li>
+<li>Concentric (a circle and an arc)
+
+<br/><img src="../DysUserImages/smartpk58.gif"/><br/></li>
+<li>Parallel (two lines)
+<br/><img src="../DysUserImages/smartpk40.gif"/><br/></li>
+</ul>
+</p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>Consequently, when detecting a constraint, detection can result
+ambiguous. To remove this ambiguity, you can try to move the
+viewpoint so that the elements that imply ambiguity would
+disappear.
+</td></tr></table>
+</p><p>As you will see when using SmartPick, snapping ambiguities
+currently occur. Besides, the dimensional specifications of a part
+often depend on technological specifications.
+</p><p>These dimensional specifications are defined as the part is being
+designed, they depend on the current application area and are, as a
+result, very hard to guess for the SmartPick tool.
+</p><p>In order to solve these ambiguities, SmartPick classifies possible
+snapping according to the geometric constraints that are associated
+to these snapping. As such, a given pointer positioning will be only
+assigned one snapping. Unfortunately, this classification cannot be
+modified. It is provided in the table below.
+</p><p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" colspan="2" valign="top" id="d27576e154">Constraints Decreasing Priority Order</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">1.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Point-to-point coincidence </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">2.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Point-to-extremity point coincidence </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">3.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Point-to-noticeable point coincidence (for example, the midpoint of a line) </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">4.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Curve-to-curve tangency </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">5.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Horizontal or vertical line, or else a quarter of an arc of a circle </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">6.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 ">Parallelism
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">7.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Perpendicular curves </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">8.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Point-to-curve coincidence </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">9.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Curve-to-curve coincidence or point to curve support coincidence </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">10.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Point on a perpendicular line through a line end point </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">11.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Point at a vertical position </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="10.91703056768559%" headers="d27576e154 ">12.</td>
+<td class="cellrowborder" valign="top" width="89.08296943231441%" headers="d27576e154 "> Point at a horizontal position </td>
+</tr>
+</tbody>
+</table>
+</div>
+</p><p>Moreover, to remove ambiguity during the creation of elements, the
+three options which are parallelism, perpendicular and tangency can
+be activated independently from each other. See SmartPick options
+in the Customizing section of this guide.
+</p><p>In addition to this classification, when several snappings are
+possible for a given type of geometric constraints, SmartPick takes
+into account the distance between the snapped pointer and the
+geometrical element according to which the snapping is possible. In
+this case, SmartPick snaps to the nearest element.
+</p><p>Nevertheless, there are some cases when SmartPick does not let
+dimensioning as desired without additional interactions. This is
+why SmartPick manages two means for applying a particular snapping
+relatively to the geometrical elements.
+</p></div>
+<div class="section" id="c-AccordingtoExistingGeometry__cs-ForcingSnapping"><h3 class="sectiontitle">Forcing the Snapping
+</h3><p>SmartPick lets forcing the snapping on a given geometrical
+element using one of the following:
+<ul><li>The <span>context menu</span></li>
+<li>The <span class="uicontrol">Ctrl</span> key
+</li>
+</ul>
+
+</p><cite><span>context menu</span>:</cite><p>SmartPick allows forcing the snapping on a given geometrical
+element using the <span>context menu</span>. You will avoid ambiguities
+linked to the automatic detection of elements in the current 3D
+viewpoint by forcing:
+<ul><li><p>Snapping detected at a distance: parallel, perpendicular,
+concentric, tangency and curve (line/circle) that goes through a
+point.
+</p><p>At a distance means that these constraints are detected even
+though the pointer is not positioned on the reference element.
+</p> </li>
+<li><p>Snapping at a given position that is relative to a geometrical element: line midpoint, circle center.</p><p>At a given position means that both degrees of freedom are locked.</p> </li>
+</ul>
+
+</p><p>The <span>context menu</span> is therefore available when right-clicking most
+Sketcher geometrical elements. Of course, the contents of the
+<span>context menu</span> depends of the element that is being currently
+created. This <span>context menu</span> can be made of the below four
+sub-parts:
+<ul><li>Option that belongs to the Base Infrastructure <span>app</span>.
+</li>
+<li>Snapping the characteristic point that is being manipulated (see From scratch paragraph and table below).  </li>
+<li>Snapping the geometrical element that is being created (see table below).  </li>
+<li>Managing the parameters that are associated to the geometrical
+element that is being sketched.
+</li>
+</ul>
+</p><cite>Deactivating Snapping
+ :</cite><p>Any snapping that is imposed via the <span>context menu</span> can be
+deactivated. To do this, right-click in the 3D window background
+and select <span class="uicontrol">Reset</span>.
+</p><p>The table below lists the constraints that can be detected when
+snapping characteristic points which are being manipulated,
+relatively to existing geometrical elements, and thanks to the
+<span>context menu</span>.
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d27576e307">Popped-up Geometry</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d27576e309">Available Snapping</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d27576e307 ">Line
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d27576e309 ">Line midpoint
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d27576e307 ">Circle
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d27576e309 ">Circle center
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d27576e307 ">Ellipse
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d27576e309 ">Ellipse center
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d27576e307 ">Curve
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d27576e309 ">Nearest end point
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p><p>The table below indicates the possible snapping for geometrical
+elements which are being created, relatively to existing geometry
+and thanks to the <span>context menu</span>.</p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><tbody><tr><td class="cellrowborder" align="center" valign="top" width="9.578544061302683%"> </td>
+<td class="cellrowborder" align="center" valign="top" width="20.402298850574713%">Element currently created</td>
+<td class="cellrowborder" align="center" valign="top" width="18.67816091954023%"> </td>
+<td class="cellrowborder" align="center" valign="top" width="26.53256704980843%">
+</td>
+<td class="cellrowborder" align="center" valign="top" width="24.808429118773947%">
+</td>
+</tr>
+<tr><td class="cellrowborder" align="center" valign="top" width="9.578544061302683%">External Geometry =&gt;</td>
+<td class="cellrowborder" align="center" valign="top" width="20.402298850574713%"> </td>
+<td class="cellrowborder" align="center" valign="top" width="18.67816091954023%">Point
+</td>
+<td class="cellrowborder" align="center" valign="top" width="26.53256704980843%">Line</td>
+<td class="cellrowborder" align="center" valign="top" width="24.808429118773947%">Ellipse</td>
+</tr>
+<tr><td class="cellrowborder" align="center" valign="top" width="9.578544061302683%"> </td>
+<td class="cellrowborder" align="center" valign="top" width="20.402298850574713%">Point
+</td>
+<td class="cellrowborder" align="center" valign="top" width="18.67816091954023%"><br/><img src="../DysUserImages/symbolcoincidence06.gif"/><br/></td>
+<td class="cellrowborder" align="center" valign="top" width="26.53256704980843%"><br/><img src="../DysUserImages/symbolcoincidence03.gif"/><br/></td>
+<td class="cellrowborder" align="center" valign="top" width="24.808429118773947%"><img src="../DysUserImages/symbolcoincidence06.gif"/>  <img src="../DysUserImages/symbolcoincidence03.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" align="center" valign="top" width="9.578544061302683%"> </td>
+<td class="cellrowborder" align="center" valign="top" width="20.402298850574713%">Line</td>
+<td class="cellrowborder" align="center" valign="top" width="18.67816091954023%">Midpoint
+Nearest end point
+</td>
+<td class="cellrowborder" align="center" valign="top" width="26.53256704980843%"><img src="../DysUserImages/symbperp02.gif"/>  <img src="../DysUserImages/symbparral02.gif"/>  <img src="../DysUserImages/symbolcoincidence03.gif"/></td>
+<td class="cellrowborder" align="center" valign="top" width="24.808429118773947%"><img src="../DysUserImages/symbtangency.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" align="center" valign="top" width="9.578544061302683%"> </td>
+<td class="cellrowborder" align="center" valign="top" width="20.402298850574713%">Circle
+</td>
+<td class="cellrowborder" align="center" valign="top" width="18.67816091954023%">Center
+Nearest end point
+</td>
+<td class="cellrowborder" align="center" valign="top" width="26.53256704980843%"><img src="../DysUserImages/symbolconcentricity.gif"/>  <img src="../DysUserImages/symbtangency.gif"/></td>
+<td class="cellrowborder" align="center" valign="top" width="24.808429118773947%"><img src="../DysUserImages/symbolconcentricity.gif"/>  <img src="../DysUserImages/symbtangency.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" align="center" valign="top" width="9.578544061302683%"> </td>
+<td class="cellrowborder" align="center" valign="top" width="20.402298850574713%">Ellipse</td>
+<td class="cellrowborder" align="center" valign="top" width="18.67816091954023%">Center
+Nearest end point
+</td>
+<td class="cellrowborder" align="center" valign="top" width="26.53256704980843%"><img src="../DysUserImages/symbperp02.gif"/>  <img src="../DysUserImages/symbtangency.gif"/></td>
+<td class="cellrowborder" align="center" valign="middle" width="24.808429118773947%">No</td>
+</tr>
+<tr><td class="cellrowborder" align="center" valign="top" width="9.578544061302683%"> </td>
+<td class="cellrowborder" align="center" valign="top" width="20.402298850574713%">Conic
+</td>
+<td class="cellrowborder" align="center" valign="top" width="18.67816091954023%">No
+</td>
+<td class="cellrowborder" align="center" valign="top" width="26.53256704980843%"><img src="../DysUserImages/symbperp02.gif"/>  <img src="../DysUserImages/symbtangency.gif"/></td>
+<td class="cellrowborder" align="center" valign="middle" width="24.808429118773947%">No</td>
+</tr>
+<tr><td class="cellrowborder" align="center" valign="top" width="9.578544061302683%"> </td>
+<td class="cellrowborder" align="center" valign="top" width="20.402298850574713%">Spline
+</td>
+<td class="cellrowborder" align="center" valign="top" width="18.67816091954023%">No
+</td>
+<td class="cellrowborder" align="center" valign="top" width="26.53256704980843%"><img src="../DysUserImages/symbperp02.gif"/>  <img src="../DysUserImages/symbtangency.gif"/></td>
+<td class="cellrowborder" align="center" valign="middle" width="24.808429118773947%">No</td>
+</tr>
+</tbody>
+</table>
+</div>
+<cite>Example of snapping possibilities :</cite><p>In the example below, you can see the various snapping
+possibilities for a line that is being created (dotted lines in the
+example) relatively to the existing spline: 3 tangency
+possibilities and 2 perpendicularity possibilities. The point you
+right-click to display the <span>context menu</span> is used to determine
+which option will be offered in the <span>context menu</span>. So depending
+on where you click, you will not be offered the same options.
+</p><p>Note that the software takes into account what has already been specified (in this example, the first point of the line) to offer the various snapping options. For this reason, depending on the first point of the geometrical element that is being created, there may be cases in which no solution can be found or in which the solution offered does not correspond to what you want. In such a case, try to right-click before and/or after the point you want the software to choose. If you try both ways, one solution at least should be found.<br/><img src="../DysUserImages/smartpick_snapping.gif"/><br/></p>Ctrl Key :<p>SmartPick also allows forcing the current snapping on an element
+using the <span class="uicontrol">Ctrl</span> key:
+<ul><li>You can force SmartPick to remain snapped on an element whatever
+the position of the pointer. In order to do this, press the
+Ctrl key while the geometrical snapping you want to
+force is active (the element may be highlighted and symbols may
+appear). Keep the <span class="uicontrol">Ctrl</span> key pressed.
+</li>
+<li>This functionality is efficient if once the <span class="uicontrol">Ctrl</span> key is
+pressed you can still move the pointer. In other words,
+<span class="uicontrol">Ctrl</span> has no effect if the current snapping inhibits both
+degrees of freedom. This is often the case when given snapping
+combinations are possible (for example at the intersection of two
+lines) or when the pointer is close to a given point (explicit or
+implicit as for example the midpoint of a segment).
+</li>
+<li>The <span class="uicontrol">Ctrl</span> key is very useful when the sketch includes
+many geometrical elements because SmartPick takes into account the
+distance between the pointer and the geometrical element.
+<br/><img src="../DysUserImages/gscomplexprofile08.gif"/><br/></li>
+<li>This is the zone in which the line-circle tangency snapping (due to
+the circle proximity) has the first priority.
+<br/><img src="../DysUserImages/gscomplexprofile19.gif"/><br/>Apart from this zone, either the tangency snapping is meaningless
+or it interferes with closest geometries or still with possible
+constraints that are assigned higher priorities (see table).
+</li>
+</ul>
+</p><cite>Deactivating SmartPick
+:</cite><p>If SmartPick cannot solve an ambiguity and returns a snapping that
+you are not satisfied with, you can de-activate SmartPick assistant
+by pressing the <span class="uicontrol">Shift</span> key.
+</p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>It can happen that either the <span class="uicontrol">Shift</span> or <span class="uicontrol">Ctrl</span>
+key do not behave as specified in the paragraphs above. In fact,
+sometimes the viewer loses the focus (selection priority). You can
+then perform a local transformation to recover the focus: use the
+mouse scroll button and manipulate the viewpoint. You will thus
+recover the focus.</td></tr></table>
+</p><cite>Detecting Internal Geometry Characteristics
+:</cite><p>Certain geometrical elements are assigned internal peculiar
+geometrical characteristics. For example and as shown below, this
+is the case for horizontal/vertical lines and for quarters of arcs
+of circles. When such an internal specification is found out by
+SmartPick, the color of the currently created geometrical element
+becomes blue.
+<br/><img src="../DysUserImages/smartpk34.gif"/><br/><br/><img src="../DysUserImages/smartpk35.gif"/><br/></p></div>
+</div>
+</div>
+<div class="nested1" id="c-ManagingGeometryParameters"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Managing Geometry Parameters</h2>
+
+<div><p>SmartPick also manages internal geometrical specifications such as
+a line length or a circle radius.</p>
+<p> Indeed, these specifications
+(further called parameters) decrease available degrees of freedom
+of a geometry characteristic point. All these parameters are accessed
+through the <span class="wintitle">Tools Palette</span>, which gathers all the
+available parameters that can be valuated for a given geometry
+creation command. Finally, while the SmartPick pointer moves, the
+<span class="wintitle">Tools Palette</span> displays the parameters value.
+</p><p>Listed below are examples of the possible fields of <span class="uicontrol">Sketch
+tools </span> parameter section:
+</p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="46.29629629629629%" id="d27576e532">Fields
+</th>
+<th class="cellrowborder" valign="top" width="53.703703703703695%" id="d27576e534">Explanation
+</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="46.29629629629629%" headers="d27576e532 "><br/><img border="1" src="../DysUserImages/tbparameters01.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="53.703703703703695%" headers="d27576e534 "><p>Length and Angle to H axis are available for Line creation command.
+</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="46.29629629629629%" headers="d27576e532 "><br/><img border="1" src="../DysUserImages/tbparameters03.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="53.703703703703695%" headers="d27576e534 "><p>Excentricity is available for Hyperbola creation command.
+</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Note that it is always possible to reset a parameter that has been
+valuated in  <span class="wintitle">Tools Palette</span>. To do this, use
+contextual sub-menu <span class="uicontrol">Reset</span> option that is available on 3D
+viewer background.
+</td></tr></table>
+</p><div class="section" id="c-ManagingGeometryParameters__cs-RelationBetweenParametersandCharacteristicPoints"><h3 class="sectiontitle">Relation Between Parameters and Characteristic Points</h3><p>There is a strong relation between the characteristic point of a
+geometrical element and some of the parameters it supports. In
+fact, if a parameter value is modified by moving the pointer, it
+means that the parameter is linked to the current characteristic
+point and consequently validating the point will modify the
+parameter status.
+</p><p>Indeed, as when valuated a characteristic point can no longer be
+modified, associated parameters get frozen which is echoed by a
+grayed entry in  <span class="wintitle">Tools Palette</span>.
+</p><p>As an example, in <span class="uicontrol">Arc Circle</span> creation command, when the
+arc start point is defined (at the sketch origin on this picture)
+both Radius and Start Angle to H Axis get frozen. Indeed, as the
+arc center is necessarily previously defined, to impose arc start
+point leaves no ambiguity on the radius and the start angle of the
+sector.
+<br/><img src="../DysUserImages/param01.gif"/><br/></p></div>
+<div class="section" id="c-ManagingGeometryParameters__cs-SpecificParameters"><h3 class="sectiontitle">Specific Parameters
+</h3><p>Some parameters have a specific behavior. This behavior is common
+to all geometry creation commands that use these parameters. This
+is the case for Angle and Sector parameters.
+</p><cite>Sector Parameter
+:</cite><p>This parameter is oriented so that no ambiguity is possible when
+defining an angular sector. In the standard units system, an angle
+range is from -360 to 360deg. Any other value is recomputed to this
+range. Positive values are for direct sectors (you go from the
+start direction to the end one the same way you go from H axis to V
+axis). Negative values are on the other end for reverse arcs (you
+go from the start direction to the end one the same way you go from
+V axis to H axis).
+<ul><li>A direct angular sector
+<br/><img src="../DysUserImages/param02.gif"/><br/></li>
+<li>A reverse angular sector
+<br/><img src="../DysUserImages/param03.gif"/><br/></li>
+</ul>
+</p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Note that an angular sector cannot be identically equal to zero.
+</td></tr></table>
+</p><cite>Angle Parameter
+:</cite><p>The angle parameter is also oriented, its range is from
+<span class="uicontrol">0</span> to <span class="uicontrol">360 deg</span>. As a consequence, a <span class="uicontrol">-10
+deg</span> value is identically equivalent to a <span class="uicontrol">350 deg</span>
+value and a 0 deg value is definitely not equal to a
+<span class="uicontrol">180 deg</span> value.
+</p><p><br/><img src="../DysUserImages/param05.gif"/><br/></p><p> A fixed 30 deg angle value imposed to a line</p><p><br/><img src="../DysUserImages/param06.gif"/><br/></p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Note that an angular sector cannot be identically equal to zero.
+Note that when this angle is fixed, the pointer position is
+restricted to the half of the sketch plane. Otherwise a 30 deg
+angle would be equal to a 210 deg one which is excluded.
+</td></tr></table>
+</p><p>By default, angle values are computed relatively to H Axis. This
+can be modified any time you want to define an angle value using
+the<span class="uicontrol"> Parameters &gt; Set as Angle Reference</span>.</p><p>When an angle value is available in <span class="wintitle">Tools Palette</span>, any line that is contained in the current sketch can be
+defined as the angle computation basis. To issue out orientation, a
+red arrow is displayed to show the reference line orientation. In
+this example, a 25 deg angle is set relatively to an existing line.
+<br/><img src="../DysUserImages/param04.gif"/><br/></p><cite>Copying Parameter Values :</cite>
+<p>It is possible to copy some of the parameters values from any
+existing geometrical element that can be defined with the same
+parameters. The <span class="uicontrol">Copy</span> functionality is available through
+the <span>context menu</span> <span class="uicontrol">Parameter</span> section for length and
+radius parameters.
+</p><p>Length can be copied from a line while radius from a circle or an
+arc.
+</p></div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

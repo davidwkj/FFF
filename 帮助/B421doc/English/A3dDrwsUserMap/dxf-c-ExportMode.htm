@@ -1,0 +1,278 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Export Mode"/>
+<meta name="abstract" content="Two export modes are available."/>
+<meta name="description" content="Two export modes are available."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dxf-c-ExportMode"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Export Mode</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dxf-c-ExportMode">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWF::export mode"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWF::semantic export "> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWF::graphic export "> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Export Mode</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Two export modes are available.</span>
+
+    <p>The Export mode  options are found in the <a href="../PreferencesMap/gdrpref-c-DXF2D.htm#gdrpref-c-DXF2D" title="The DXF 2D options let you customize the import and export of DXF 2D files for Converter for IGES.">DXF 2D</a> <span>tab</span> of the <span><span class="wintitle">Preferences</span></span>.</p><p>
+      The following topics are discussed:
+    </p>
+    
+  </p>
+<ul><li><a href="#c-ExportMode" id="toc_rg" title="Depending on your needs, you have the choice between a graphic or a semantic export.">Export Mode</a></li><li><a href="#c-SemanticOptions" id="toc_rg" title="">Semantic Options</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  
+
+  <div class="nested1" id="c-ExportMode">
+    <h2 class="topictitle2">Export Mode</h2>
+
+    
+    <div><p><span>Depending on your needs, you have the choice between a graphic or a semantic export.</span>
+
+    	
+    </p>
+
+      <p><span class="uicontrol">Graphic</span>: This mode is quick and reliable. It is
+useful if you want to export a drawing to AutoCAD and print it
+without modifying it.</p><p><span class="uicontrol">Semantic</span>: <ul><li>The exported file can be modified.</li>
+<li>Dimensions are exported as subfigures and are editable as such. Dimensions that cannot be exported semantically are exported as
+subfigures. </li>
+<li>Half-dimensions and  chamfer dimensions are exported as
+subfigures.</li>
+<li>Circular, linear and angular dimensions are exported as true
+dimensions and editable as such.</li>
+<li>The texts of those dimensions are exported with the STANDARD
+style and the isocp.shx font.</li>
+<li>The tolerances of dimensions are exported.</li>
+<li>The 2D labels are exported.</li>
+<li>The "upper" and "down" texts are not taken into account.</li>
+<li>Dual values are not exported.</li>
+<li>Circular extension lines are not exported.</li>
+<li>Show/No Show:
+The <span><span class="tm-3D">3D</span>EXPERIENCE</span> elements placed in the No Show are not exported. The visible
+elements are exported.</li>
+<li>
+Layers are automatically exported.</li>
+<li>To avoid missing geometries at export, we recommend that you
+activate either the filter All Visible or the filter None.</li>
+<li>Texts:
+<ul>
+<li>All texts are exported as texts (even dimension texts and
+annotations) with a fit justification.</li>
+
+<li>All texts are exported with the STANDARD style and the
+isocp.shx font with the exception of geometric tolerance symbols
+that are exported with the GDT specific style and gdt.shx font,
+with the corresponding mapping.</li>
+
+<li>The symbols for diameter, 
+degree and plus/minus 
+are inserted with the
+standard tags.</li>
+
+<li>Unicode characters are exported with the 
+\U+ 
+tag.
+You have to redefine the STANDARD style in AUTOCAD to reference an
+unicode font.</li>
+
+</ul>
+</li>
+</ul>
+</p><p>Note:
+		For both modes:<ul><li>If the sheet to export contains no geometry, or only non
+supported entities, no DXF/DWG file is generated.</li>
+<li>The visual clipping of views is not supported.</li>
+<li>The point of view (camera) of the model is not exported.
+</li>
+</ul>
+</p>
+
+      
+      
+      
+    </div>
+
+
+    
+
+    
+  </div>
+
+
+  
+<div class="nested1" id="c-SemanticOptions"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Semantic Options</h2>
+
+<div><p>If you have selected the semantic mode, specific options become available.</p>
+<div class="section" id="c-SemanticOptions__cs-ExportdimensionsasDimensions"><h3 class="sectiontitle">Export dimensions as Dimensions</h3><a name="ix-DXF/DWG::export dimensions as dimensions"> </a>If the <span class="uicontrol">Export dimensions as Dimensions</span> check box is not selected, all dimensions are
+exported as graphic blocks and are editable as such.<p>If the <span class="uicontrol">Export dimensions as Dimensions</span> check box is
+selected, dimensions are exported as follows:<ul>
+<li>The graphic representation is always created in addition to the
+semantic representation. Thus when opening the result with semantic
+dimensions with AutoCAD, the graphic representation is first kept
+but the dimension may be rebuilt at any edition, while taking into
+account the default dimension style.</li>
+
+<li>Default dimension style entails that most graphic attributes
+(such as color, display format of the dimension value, type of
+arrow, space...) of the dimensions are lost. The default dimension
+style depends on the current export unit (INCH, mm,...).</li>
+
+<li>Horizontal and Vertical projected linear dimensions are created
+as DXF "rotated dimensions".
+If the attach points of the dimension are distant compared to the
+projected distance, there may be a numerical error in the measured
+dimension.
+If this occurs, reduce the number of digits displayed in the
+opening system.</li>
+
+</ul>
+</p></div>
+<div class="section" id="c-SemanticOptions__cs-ExportBlocks"><h3 class="sectiontitle">Export Blocks</h3><p><a name="ix-DXF/DWG::export blocks"> </a>Those three options define how blocks are exported:<ul><li><span class="uicontrol">None</span>: The export does not create any block in the DXF/DWG file. </li>
+<li><span class="uicontrol">One level</span>: Details are retrieved through their Dittos. A Detail not referenced
+by a Ditto is thus lost, a Detail referenced by several Dittos is
+duplicated in BLOCKS. The entities included in a Detail are not
+structured into sub-blocks.
+The graphical representation of each Ditto is exported to an
+INSERT/BLOCK.</li>
+<li><span class="uicontrol">Full</span>: Each Detail instantiated by a Ditto
+inside a sheet is translated as such. If necessary, the name
+of the Detail changes according to the following rule:<ul><li>If the <span><span class="tm-3D">3D</span>EXPERIENCE</span> Detail name is an empty string, the name of the corresponding BLOCK is <span class="uicontrol">BLOCK_EMPTY_NAME_</span> followed by a number to guarantee the
+uniqueness of the name (whatever the <span class="uicontrol">Version</span> might be).</li>
+<li>If the <span><span class="tm-3D">3D</span>EXPERIENCE</span> Detail name is not en empty string, and if <span class="uicontrol">Version </span>is set to <span class="uicontrol">DXF/DWG R12/R13/R14</span>, only the first 20 characters are exported (f required, they are followed by an underscore '_' and a number to
+guarantee the uniqueness of the name). The only characters exported
+are letters (from 'a' to 'b' and from 'A' to 'Z') all converted in
+upper case, digits (from '0' to '9') and the following special
+characters: the hyphen '-' and the underscore '_'. All others
+characters are exported as underscore '_'.</li>
+<li>If the <span><span class="tm-3D">3D</span>EXPERIENCE</span> Detail name is not en empty string, and if <span class="uicontrol">Version </span>is set to <span class="uicontrol">DXF/DWG 2000</span> or higher, only the first 250 characters are exported (if required, they are
+followed by an underscore '_' and a number to guarantee the
+uniqueness of the name (with the same constraint about characters
+as above except that lower case letters are not modified in
+uppercase letters).</li>
+</ul>
+
+
+<p>Details which are not directly
+defined inside the Drawing representation (e.g. coming from a catalog) are exported as one
+INSERT/BLOCK per Ditto visually faithful.</p>
+
+<p> For each supported Detail:<ul><li>Ditto is
+positioned inside the Sheet coordinates system according its insertion
+point and its transformation.</li>
+<li>The graphical
+properties (color, line type, line thickness) of each Ditto are visually kept (no overload will be seen).</li>
+<li>The Detail entities
+keep their layer according to the DXF layer semantic export option
+(the name or the number is exported).</li>
+<li>Contained geometric entities like Nurbs, Spline or ellipse are exported semantically (not as polylines).</li>
+<li>Nested Detail are exported as such.</li>
+<li>Invisible entities are not exported.</li>
+<li>Only the Detail instantiated
+inside the sheet are exported.</li>
+<li>The number of exported entities is written in the report file. One export Detail corresponds to only one BLOCK with as many INSERTS as exported Dittos.</li>
+</ul>
+</p>
+
+
+
+
+
+
+
+</li>
+</ul>
+</p></div>
+<div class="section" id="c-SemanticOptions__cs-Layers"><h3 class="sectiontitle">Layers</h3><p><a name="ix-DXF/DWF::export of layers "> </a>You can choose to export <span class="uicontrol">Export layer number</span> and <span class="uicontrol">Export layer name</span>.</p><p>With the exception of the <span class="uicontrol">None</span> layer, each <span><span class="tm-3D">3D</span>EXPERIENCE</span> layer
+is defined by three data:<ul>
+<li>Its number</li>
+
+<li>An optional name</li>
+
+<li>An optional comment</li>
+
+</ul>
+</p>
+
+<p>In AutoCAD applications, layers are defined by:<ul>
+<li>A name</li>
+
+<li>A status</li>
+
+<li>Some graphical attributes.</li>
+
+</ul>
+</p>
+
+<p>You can choose how you want to export layer number:<ul>
+<li><span class="uicontrol">Export layer number</span>:
+Each <span><span class="tm-3D">3D</span>EXPERIENCE</span> layer is exported with an AutoCad layer name that is the
+number of the <span><span class="tm-3D">3D</span>EXPERIENCE</span> layer</li>
+
+<li><span class="uicontrol">Export layer name</span><ul>
+<li>If the <span><span class="tm-3D">3D</span>EXPERIENCE</span> layer name is an empty string, the <span><span class="tm-3D">3D</span>EXPERIENCE</span> number is
+exported (whenever the AutoCAD export version chosen).</li>
+
+<li>If AutoCAD R12, R13 or R14 is selected as the export version,
+then only the first 26 characters are exported.
+The only characters exported are: 
+
+<ul>
+<li>Letters (from 'a' to 'b' and from 'A' to 'Z') all converted in
+upper case</li>
+
+<li>Digits (from '0' to '9')</li>
+
+<li>And the following special characters: the hyphen '-' and the
+underscore '_'</li>
+
+<li>All others characters are exported as underscore '_'.</li>
+
+</ul>
+
+</li>
+
+<li>If AutoCAD 2000 or a version above is selected as the export
+version, then only the first 255 characters are exported, with the
+same constraint about characters as above, except that lower case
+letters are not changed to uppercase letters and space character is
+authorized.</li>
+
+<li>Some different layers could be translated into the same AutoCAD
+Layer. When this case happens a message is added inside the report
+file.</li>
+
+</ul>
+
+</li>
+
+</ul>
+</p>
+    </div>
+<div class="section" id="c-SemanticOptions__cs-ExportViewasViewport"><h3 class="sectiontitle">Export View as Viewport</h3><p>When selected, this option exports <span><span>Drawings</span></span> Views as AutoCad Viewports.  <span><span>Drawings</span></span> Views properties and structure, including visual clipping, are exported as follows:<ul><li>All the entities of the <span><span>Drawings</span></span> View are exported to the Space Model of the DXF file, at a 1:1 scale and 0° angle. A Viewport is created for each View in the Paper Space. The Viewport is positioned in the Paper Space as the View in the Sheet, with scale and orientation management.</li>
+<li>All the entities of the Background View are exported into the Paper Space representing the Sheet.</li>
+<li>Views are positioned along the X-axis of the Space Model, without intersection.</li>
+<li>The disposition of the Views in the Model Space is given for indication, but is subject to change.</li>
+<li>The exported visual clipping supports only geometrical entities, not texts or dimensions.</li>
+<li>Visual clippings found in <span><span>Drawings</span></span> Views with an angle are not exported.</li>
+<li>The position of geometries in the Model Space is not guaranteed.</li>
+<li>Blocks of details sheet are exploded in the Paper Space sheet.</li>
+</ul>
+</p></div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

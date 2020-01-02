@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>List Third Party Apps</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="table1">
+	<tr>
+		<td class="DocHeader3"><a name="Top"></a>
+		<table class="DocHeader">
+			<tr>
+				<td class="DocHeader1" colspan="2">
+				<h1>List Third Party Apps</h1>
+				</td>
+			</tr>
+			<tr>
+				<td class="DocHeader4" colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="DocHeader3">
+				<table class="DocHeaderIntro">
+					<tr>
+						<td class="Intro1">
+						
+						<div id="toc">
+						</div>
+						</td>
+					</tr>
+				</table>
+				</td>
+				<td class="DocHeader2">
+				<table class="DocTopics">
+					<tr>
+						<td class="TopicsTitle">Related Topics</td>
+					</tr>
+					 <tr>
+						<td><a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm">About 3DCompass Web Services</a></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Retrieves the third party apps available on the platform instances the connected person is declared as administrator. The result can be limited to a given platform instance.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr>
+		<th>&nbsp;Method&nbsp;</th>
+		<th>&nbsp;Path&nbsp;</th> 
+	</tr>
+	<tr>
+		<td>GET</td>
+		<td>/resources/AppsMngt/api/custom/applications</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<h3><a name="Query_Parameters"></a>Query Parameters</h3>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Cardinality&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	<tr>
+		<td><a name="pattern">filter</a></td>
+		<td>1|0</td>
+		<td>A string. </td>
+		<td>The identifier of a platform instance. Only the applications defined for this platform instance are returned. In case of invalid identifier, the request is successful with an empty list.	
+		 </td>
+	</tr>
+	
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Responses</h2>
+<h3><a name="Resp-200"></a>Success</h3>
+<p>The OK response (status code 200) is a JSON object with the <code>data</code> key whose the value is an array of JSON objects as described in the <a href="CAAi3DXCompassWSQrTPA.htm">Third Party App Definition</a>.</p>
+<pre class="code">
+{"data" : [ { apps1 } , {<a href="CAAi3DXCompassWSQrTPA.htm">appsI</a>}, {appsN} ] } 
+</pre>
+<p>If the connected person is granted as member (not admin) for all platform instances of the <b>3D</b>EXPERIENCE, the list is empty. Same result if the filter value is not a valid platform instance. </p>
+<pre class="code">
+{"data" : [] } 
+</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h3><a name="Resp-ERR"></a>Failure</h3>
+<p>There is no specific errors raised by this API. For the non specific click:  <a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm#response-KO">3DCompass Web Service Failures</a> </p>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="Example"></a>Example</h2>
+<p>An example with an invalid platform instance:</p>
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://.../resources/AppsMngt/api/custom/applications?filter=x
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Mon, 09 May 2016 13:50:05 GMT
+Server: Microsoft-IIS/7.0
+Content-Type: application/json
+Content-Length: 119
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext,x-utc-offset
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"data":[] }
+</pre>
+<p>An example with a valid platform instance:</p>
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://.../resources/AppsMngt/api/custom/applications?filter=DSDEV014
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 17 Aug 2016 07:40:57 GMT
+Server: Microsoft-IIS/7.0
+i3dx-requestid: 4e6aca97-89f9-4e53-87ad-40048017eb04
+Content-Type: application/json
+Content-Length: 1992
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,last-modified,x-utc-offset,SecurityContext,X-DS-CSRFTOKEN,keep-alive
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+
+{"data":[{
+    "type":"custom/applications",
+    "id":"MAP-AXZJAEYFB",
+    "attributes":{
+        "type":"web",
+        "name":"mynameapp",
+        "tooltip":"the tooltip of",
+        "description":"the description of the app",
+        "icon":"http://www.3ds.com/app.jpg",
+        "config":"",
+        "launchinfos":"http://www.3ds.com",
+        "quadrant":"south"},
+    "relationships":{"platform":{"data":{"type":"environments","id":"DSDEV014","attributes":{"public":true}}}}
+    },
+    {
+    "type":"custom/applications",
+    "id":"MAP-IUPOXGSWQ",
+    "attributes":{
+        "type":"widget",
+        "name":"CAA-Test",
+        "tooltip":"",
+        "description":"",
+        "icon":"http://www.3ds.com/itest.jpg",
+        "config":"http://config.json",
+        "launchinfos":"my_custom_app",
+        "quadrant":"east"},
+    "relationships":{"platform":{"data":{"type":"environments","id":"DSDEV014","attributes":{"public":false}}}}
+    }, ...
+]}
+</pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

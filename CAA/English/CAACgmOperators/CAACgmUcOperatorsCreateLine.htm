@@ -1,0 +1,748 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Create a Line</title>
+<style type="text/css">
+.auto-style2 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Create a Line body </h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td style="width: 1130px">
+		<h2>Abstract</h2>
+		<p>There are different way allowing to create a line depending 
+		to input parameters.&nbsp; The operator CATICGMTopLineOperator proposes 
+		different way for creation of a line body. A line could be effectively 
+		created between two points, from a point with a given direction, tangent 
+		to a wire at a given point on the wire, angled to a tangent of a wire at 
+		a given point, normal to a shell at a point or could be infinite passing 
+		through a point in a given direction. </p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#The_Line_data_model">The Line data model</a></li>
+			<li><a href="#How_to_create_a_line_body">How to create a Line body</a><ul>
+				<li><a href="#Method_1_">Method 1 : Create Geometry and 
+				associate it Topology </a></li>
+				<li><a href="#Method_2_">Method 2 : Create topological line with 
+				dedicated CGM operator (CATICGMTopLineOperator )</a></li>
+			</ul>
+			</li>
+			<li><a href="#UseCase">The CAAGMOperatorsLine Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMOperatorsLine</a></li>
+				<li><a href="#How">How to Launch CAAGMOperatorsLine</a></li>
+				<li><a href="#Where">Where to Find the CAAGMOperatorsLine 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this use case, you learn how is modeled a line from topological and 
+geometrical point of view and how to use the operators CATICGMTopLineOperator&nbsp; 
+in order to create a 
+line . This operators is to be used according to the general 
+scheme of topological operators. If need be, you can take a look at &quot;Overview of 
+the Topological Operators&quot; [<a href="#References">1</a>] for more information.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="The_Line_data_model">The Line data model</a></h2>
+<p>From geometric point of view a line could be modeled by a CATLine class when the 
+curve is defined directly from the mathematical equation or by a CATPline class 
+when the line is defined in the parameter space of a surface.</p>
+<p>Data model of a line</p>
+<p class="auto-style2"><img alt="" src="images/LineModelimg4.jpg"></p>
+<p>The CATLine (or CATPLine) contains geometrical description of the&nbsp; line 
+object, the macro points models the geometry of points serving as limit of the 
+line and these geometrical data are pointed by the edge curve serving to ensure 
+the link between geometrical and topological representation (CATEdgeCurve for 
+the CATLine and CATPointOnEdgeCurve for the macro point).</p>
+<p class="auto-style2"><img alt="" src="images/LinedatamodelimgB.jpg"></p>
+<p>&nbsp;</p>
+<p>From topological point of view a line is an edge cell delimited by two 
+vertices and aggregated in a wire domain which is embedded in a body.</p>
+<p class="auto-style2"><img alt="" src="images/LinedatamodeimgA.jpg"></p>
+<p>The Edge and vertices topological objects are underlyed&nbsp; on the 
+CATEdgeCurve and CATPointOnEdgeCurve geometrical data as illustrated in the 
+following picture : &nbsp;</p>
+<p class="auto-style2"><img alt="" src="images/LinedatamodeimgE.jpg"></p>
+<p>&nbsp;</p>
+<h2><a name="How_to_create_a_line_body">How to create a line body</a></h2>
+<p>There are two methods&nbsp; enabling to create a line body : </p>
+<ul>
+	<li>
+	<h4><a name="Method_1_">Method 1 : Create Geometry and associate it Topology
+	</a></h4>
+	</li>
+</ul>
+<p>The first method consists to begin by creation the geometrical representation 
+of the line and in next to associate it a topology&nbsp;(cell, domain wire, body).&nbsp;
+</p>
+<p>The creation of the geometrical data (macro points, CATLine), next to create 
+its associate CATEdgeCurve and to finish with topological definition</p>
+<p class="auto-style2"><img alt="" src="images/Linedatamodeimg10.jpg"></p>
+<p>the next step consist to create topological cells (vertices, edge) and 
+associate them to the previously&nbsp; created geometrical data.&nbsp; Then you 
+finish by append the edge into a wire and by embed the wire on a&nbsp; body as 
+illustrated in the next schema.</p>
+<p class="auto-style2"><img alt="" src="images/LineCreationMethod1img4.jpg"></p>
+<p>for more details about the methodology showing how to associate topology with 
+geometry and how to map topological entities to geometric entities in order to 
+limit the geometric space, please refer to [<a href="../CAACgmModel/CAACgmTaTobTopoCreate.htm">3</a>]</p>
+<p>Below an exemple of code illustrating how to create a line and associate it a 
+curve with limit and orientation : </p>
+<pre class="code">
+ // create the Geometry of two points and a line between these points
+CATMathPoint P1 (0.,0.,10.);
+CATMathPoint P2 (40.0, -18.,50.0);
+
+CATLine * piLine1 = piGeomFactory-&gt;<strong>CreateLine</strong> ( P1,P2);
+
+// define the geometrical curve and limit and orientation associated to the line
+CATLONG32 nbcurve1 = 1;
+CATCurve ** ListOfCurves1 = new CATCurve * [nbcurve1];
+CATCrvLimits * curLimits1 = new CATCrvLimits[nbcurve1];
+short * wireOrientations1 = new short[nbcurve1];
+
+ListOfCurves1[0] = (CATCurve *)piLine1;
+int i = 0;
+for (; i &lt; nbcurve1 ; i++)
+{
+CATCurve * pLocalCurve = ListOfCurves1[i];
+if (pLocalCurve != NULL)
+pLocalCurve-&gt;GetLimits(curLimits1[i]);
+wireOrientations1[i]=short(1);
+} 
+...
+</pre>
+<p><img alt="" src="images/createline1img9.jpg"></p>
+<p>the second step illustrate how to create to topology associate to the line 
+directly with an operator enabling to generate a wire from a list of curves : </p>
+<pre class="code">
+ 
+// create the topology associated to the line curve.
+CATICGMTopWire * pWire1 = ::<strong>CATCGMCreateTopWire</strong> ( piGeomFactory, 
+&amp;topdata,
+nbcurve1,
+ListOfCurves1,
+curLimits1,
+wireOrientations1);
+
+// execute the operator 
+pWire1-&gt;Run();
+
+// retrieve topological result
+CATBody * piInitialWire1 = pWire1-&gt;<strong>GetResult</strong> ();
+...
+</pre>
+<p>In this example, the use of operator <strong>CATCGMCreateTopWire</strong> 
+manage automatically the creation of the edge curves, edge cells and vertices 
+detailed previously.</p>
+<p><img alt="" src="images/createline1img7.jpg"></p>
+<p>&nbsp;</p>
+<ul>
+	<li>
+	<h4><a name="Method_2_">Method 2 : Create topological line with dedicated 
+	CGM operator (CATICGMTopLineOperator )</a></h4>
+	</li>
+</ul>
+<p>The second method consist to create directly the topological line with an 
+appropriate operator without need to manage geometrical data creation. </p>
+<p>The operator <strong>CATICGMTopLineOperator</strong> specially dedicated for 
+this and his use is illustrated in the CAA use case <strong>CAAGMOperatorsLine</strong> 
+detailed below.</p>
+<p class="auto-style2"><img alt="" src="images/CATICGMTopLineOperatorimgA.jpg"></p>
+<p>&nbsp;</p>
+<h2><a name="UseCase">The CAAGMOperatorsLine Use Case</a></h2>
+<p>CAAGMOperatorsLine is a use case of the CAAGMOperatorsInterfaces.edu framework 
+that illustrates the GMOperatorsInterfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMOperatorsLine Do</h3>
+<p>The use case:</p>
+<ul>
+	<li>Load the CGM container from the CAALineModel.NCGM input file 
+	.</li>
+	<li>Create the topdata, config and journal.</li>
+	<li>Retrieve the input data&nbsp; from CGM 
+	container.</li>
+	<li>Creates a set of lines between two consecutive points:
+	<ol>
+		<li>Creates a line between two consecutive points i and i+1 using 
+		CATCGMCreateTopLineOperatorFromPoints.</li>
+		<li>Creates a line body passing through two points i and i+2.</li>
+	</ol>
+	</li>
+	<li>Create the line passing through a point and with a given direction <ol>
+		<li>Creates a topological line operator that builds a line passing 
+		through a point and with a given direction using 
+		CATCGMCreateTopLineOperatorFromDirection.</li>
+		<li>Defines the first and second limitation of the Line Body and run the 
+		operator</li>
+	</ol>
+	</li>
+	<li>Create lines tangent to a wire at a given points on the wire using 
+	CATCGMCreateTopLineOperatorTangentToWire operator. </li>
+	<li>Create lines angled to a tangent to a wire at a given points on the wire 
+	using CATCGMCreateTopLineOperatorAngledTangentToWire. </li>
+	<li>Create lines and normal at a given point to a shell using 
+	CATCGMCreateTopLineOperatorNormalToShell. </li>
+	<li>Create infinite lines passing through a point in a given direction using 
+	CATCGMCreateTopLineInfiniteOperatorFromDirection.</li>
+</ul>
+<p><strong>Note</strong>: This article only focuses on the operations related to 
+the CATICGMTopLineOperator operators. Refer to &quot;Overview of the Topological Operators&quot; 
+[<a href="#References">3</a>] for more information on the operations which are 
+not detailed in the article.</p>
+<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMOperatorsLine </h3>
+<p>To launch CAAGMOperatorsLine , you will need to set up the build time environment, 
+then compile CAAGMOperatorsLine.m, set up the run time environment, and then 
+execute the use case [<a href="#References">2</a>].</p>
+<p>If you simply type CAAGMOperatorsLine with only one argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example: </p>
+<p>CAAGMOperatorsLine <code>
+InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\FunctionTests\InputData\CAALineModel.NCGM e:\CAALineModelResult.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsCleanCrv.m'>
+<h3><a name="Where">Where to Find the CAAGMOperatorsLine Code</a></h3>
+<p>The CAAGMOperatorsLine use case is made of a main named 
+CAATopGeoLine.cpp 
+located in the CAAGMOperatorsLine.m module of the CAAGMOperatorsInterfaces.edu 
+framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\CAAGMOperatorsLine.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">2</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The use case is divided into the following main steps:</p>
+<ul>
+	<li><a href="#Preleminary_Operations_">Preleminary Operations </a></li>
+	<li><a href="#LineBetweenPoint">Create a line between two points </a></li>
+	<li><a href="#line_passing_through_a_point_and_direction">Create a line 
+	passing through a point and with a given direction</a> </li>
+	<li><a href="#Line_TangentWire">Create lines tangent to a wire at a given 
+	points on the wire</a></li>
+	<li><a href="#Line_AngledToTangent">Create lines angled to a tangent to a 
+	wire at a given points on the wire</a></li>
+	<li><a href="#lines_normal_at_a_given_point_to_a_shell">Create lines and 
+	normal at a given point to a shell </a> </li>
+	<li><a href="#infinite_line">Create an infinite line passing through a point 
+	in a given direction</a></li>
+</ul>
+	<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Preleminary_Operations_">Preleminary Operations</a> </h3>
+<p>In this operation, the geometrical container is loaded from the input NCGM 
+file in order to get the body that will be treated by operators.</p>
+	<p>The topological journal and software configuration are also retrieved.</p>
+	<p>The following code illustrates how to&nbsp; retrieve these informations:</p>
+<pre class="code">
+ cout &lt;&lt; &quot;\n\n==============================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 0 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Preliminary operations : \n&quot; &lt;&lt; endl;
+
+CATGeoFactory* piGeomFactory = <strong>CATLoadCGMContainer</strong>(filetoread);
+if (NULL == piGeomFactory) return (1);
+cout &lt;&lt; &quot; - Get The Geo factory (CAAGeodesicModel.ncgm in InputData) : OK &quot; &lt;&lt; endl;
+
+// Get the Config
+//
+CATSoftwareConfiguration * pConfig = new CATSoftwareConfiguration();
+if (NULL == pConfig) return (1);
+cout &lt;&lt; &quot; - Get the software config : OK &quot; &lt;&lt; endl;
+
+// Get the Topological journal
+//
+CATCGMJournalList* pJournal = new <strong>CATCGMJournalList</strong>(pConfig, NULL);
+if (NULL == pJournal) return (1);
+cout &lt;&lt; &quot; - Get the Topological journal : OK &quot; &lt;&lt; endl;
+
+CATTopData <strong>topdata</strong>(pConfig, pJournal);
+cout &lt;&lt; &quot; - Create the software configuration and CATTopData : OK &quot; &lt;&lt; endl;
+
+// Tag of bodies used by operators
+//
+int tabTag[11];
+
+// Tag set of the points defined on the Spline
+//
+tabTag[0] = 102523; // Pt1
+tabTag[1] = 114431; // Pt2
+tabTag[2] = 23975; // Pt3
+tabTag[3] = 40467; // Pt4
+tabTag[4] = 55629; // Pt5
+tabTag[5] = 79051; // Pt6
+
+// Tag of the Spline
+//
+tabTag[6] = 115880; // Spline 
+
+//Body of the Spline
+//
+CATICGMObject * piCGMObjSpl = piGeomFactory-&gt;<strong>FindObjectFromTag</strong>(tabTag[6]); // First Point
+if (piCGMObjSpl == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+CATBody * pBodySpline1 = (CATBody *)piCGMObjSpl;
+cout &lt;&lt; &quot; - Retrieve the Body of the first Spline from its tag : OK&quot; &lt;&lt; endl;
+
+// Tag of points defined on second spline (closed spline)
+//
+tabTag[7] = 198926; // PClSpl1 
+tabTag[8] = 165928; // PClSpl1 
+tabTag[9] = 182475; // PClSpl1 
+
+// Tag of the surface filling the closed spline
+//
+tabTag[10] = 200289; // Body of shell of filled surface (built from Closed Spline)
+
+//Body of the Filled Surface
+//
+CATICGMObject * piCGMObjShell = piGeomFactory-&gt;FindObjectFromTag(tabTag[10]); // First Point
+if (piCGMObjShell == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+CATBody * pBodySurfaceFill = (CATBody *)piCGMObjShell;
+cout &lt;&lt; &quot; - Retrieve the Body of the Filled Surface (surface filling the closed spline) from its tag : OK&quot; &lt;&lt; endl; 
+cout &lt;&lt; &quot;==============================================================================================&quot; &lt;&lt; endl;
+...
+</pre>
+	<p>
+	Here are the messages on the standard output:</p>
+	<p>
+	<img alt="" src="images/CATICGMTopLineOperator_imgB.gif"><br></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="LineBetweenPoint">Create a line between two points </a></h3>
+	<p>In first time, the CATICGMTopLineOperator is used for creating a line on 
+	a surface between 2 given points..</p>
+	<p>For use of the operator CATICGMTopLineOperator , you must follow the general scheme of all the topological operators:</p>
+<ul>
+	<li>Create an operator instance.</li>
+	<li>Run it.</li>
+	<li>Retrieve the resulting body.</li>
+</ul>
+	<p>The following code illustrates how to create&nbsp; a line between two 
+	points : </p>
+<pre class="code">
+  for (i = 0; i &lt; 5; i++)
+{
+// Creates a line between two consecutive points i and i+1.
+//
+cout &lt;&lt; &quot;\n Creates a line between two consecutive points: Point&quot;&lt;&lt; i &lt;&lt; &quot; and Point&quot; &lt;&lt; i+1 &lt;&lt; endl;
+//First Point
+CATICGMObject * piCGMObj1 = piGeomFactory-&gt;FindObjectFromTag(tabTag[i]); // First Point
+...
+CATBody * pBodyFirstPoint = (CATBody *)piCGMObj1;
+cout &lt;&lt; &quot; - Retrieve the Body of the First Point from its tag : OK&quot; &lt;&lt; endl;
+
+//Second Point
+CATICGMObject * piCGMObj2 = piGeomFactory-&gt;FindObjectFromTag(tabTag[i + 1]); // Second Point
+...
+CATBody * pBodySecondPoint = (CATBody *)piCGMObj2;
+
+CATBody *pResultBody = NULL;
+CATICGMTopLineOperator * pLinePtPtOperator = NULL;
+pLinePtPtOperator = <strong>CATCGMCreateTopLineOperatorFromPoints</strong>(piGeomFactory,
+&amp;topdata,
+pBodyFirstPoint,
+pBodySecondPoint);
+
+cout &lt;&lt; &quot;CATCGMCreateTopLineOperatorFromPoints return a a valid pointer to CATICGMTopLineOperator &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pLinePtPtOperator-&gt;Run();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+pResultBody = pLinePtPtOperator-&gt;GetResult();
+
+cout &lt;&lt; &quot;Get The result body : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n\t\t\t Tag = &quot; &lt;&lt; pResultBody-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+...
+</pre>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img10.jpg"></p>
+	<p>The operator CATICGMTopLineOperator&nbsp; propose also the method 
+	CATCGMCreateTopLineFromPoints allowing to create directly a line body 
+	passing through two points whithout need to run the operator.</p>
+	<p>Here are the messages on the standard output:</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_imgD.gif"></p>
+	<h3><a name="line_passing_through_a_point_and_direction">Create a line 
+	passing through a point and with a given direction</a></h3>
+	<p>In next,&nbsp; let see how to create a line passing through a point and 
+	with a given direction thanks to the method 
+	CATCGMCreateTopLineOperatorFromDirection .</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img12.jpg"></p>
+	<p>The following code illustrates how to use 
+	CATCGMCreateTopLineOperatorFromDirection:</p>
+<pre class="code">
+ cout &lt;&lt; &quot;Create the line passing through a point and with a given direction &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==============================================================================================\n&quot; &lt;&lt; endl;
+
+//Find Body of Point of the Closed Spline
+//
+CATICGMObject * piCGMObjPtClSpl1 = piGeomFactory-&gt;<strong>FindObjectFromTag</strong>(tabTag[7]); // Second Point
+CATBody * pBodyPtClSpl1 = (CATBody *)piCGMObjPtClSpl1;
+cout &lt;&lt; &quot; - Retrieve the Body of the First Point on the Closed Spline from its tag : OK&quot; &lt;&lt; endl;
+
+// Creates a topological line operator that builds a line passing 
+// through a point and with a given direction.
+//
+const CATMathVector <strong>Direction</strong>(5., -7., 2.);
+double <strong>Length</strong> = 15.;
+CATICGMTopLineOperator * pLineOperatorFromDirection = <strong>CATCGMCreateTopLineOperatorFromDirection</strong>(
+piGeomFactory,
+&amp;topdata,
+pBodyPtClSpl1,
+Direction, 
+Length);
+
+cout &lt;&lt; &quot;CATCGMCreateTopLineOperatorFromDirection return a a valid pointer to CATICGMTopLineOperator &quot; &lt;&lt; endl;
+
+// Defines the first limitation of the Line Body
+//
+double FirstLength = 75.;
+pLineOperatorFromDirection-&gt;<strong>SetFirstLimit</strong>(FirstLength);
+cout &lt;&lt; &quot;SetFirstLimit : OK&quot; &lt;&lt; endl;
+
+// Defines the Second limitation of the Line Body
+//
+double SecondLength = -122.5;
+pLineOperatorFromDirection-&gt;<strong>SetSecondLimit</strong>(SecondLength);
+cout &lt;&lt; &quot;SetSecondLimit : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pLineOperatorFromDirection-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+CATBody * pResultBodyFromDir = pLineOperatorFromDirection-&gt;GetResult();;
+
+}</pre>
+	<p>
+	Here are the messages on the standard output:</p>
+	<p>
+	<img alt="" src="images/CATICGMTopLineOperator_img13.gif"></p>
+	<p>
+	Below a picture showing the line body result : </p>
+	<p>
+	<img alt="" src="images/CATICGMTopLineOperator_img16.jpg"></p>
+	<p>
+	&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Line_TangentWire">Create lines tangent to a wire at a given points 
+on the wire</a></h3>
+<p>Lets see how to use method CATCGMCreateTopLineOperatorTangentToWire in order 
+to create the operator CATICGMTopLineOperator&nbsp; that builds a line tangent 
+to a wire at a given point on the wire..</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img1B.jpg"></p>
+	<p>The following code illustrates how to use 
+	CATCGMCreateTopLineOperatorTangentToWire method and CATICGMTopLineOperator&nbsp; operator :</p>
+	<p>We begin by retrieving the data requested by the operator, below the code 
+	illustrating how to perform the operation:</p>
+<pre class="code">
+  
+for (i = 0; i &lt;= 5; i++)
+{
+cout &lt;&lt; &quot;\n Create Tangent line of the Point&quot; &lt;&lt; i &lt;&lt; endl;
+
+//First Point
+CATICGMObject * piCGMObj1 = piGeomFactory-&gt;FindObjectFromTag(tabTag[i]); // First Point
+if (piCGMObj1 == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+CATBody * pBodyFirstPoint = (CATBody *)piCGMObj1;
+
+// Create operator that builds a line tangent to a wire at a given point on the wire.
+//
+double Length = 120.;
+<strong>CATICGMTopLineOperator</strong> * <strong>pLinetangentWireOperator</strong> = <strong>CATCGMCreateTopLineOperatorTangentToWire</strong>(piGeomFactory,
+&amp;topdata,
+pBodyFirstPoint,
+pBodySpline1,
+Length);
+
+cout &lt;&lt; &quot;CATCGMCreateTopLineOperatorTangentToWire return a a valid pointer to CATICGMTopLineOperator &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pLinetangentWireOperator-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+CATBody *pResultBody = NULL;
+pResultBody = pLinetangentWireOperator-&gt;<strong>GetResult</strong>();
+
+
+cout &lt;&lt; &quot;Get The result body : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n\t\t\t Tag = &quot; &lt;&lt; pResultBody-&gt;GetPersistentTag() &lt;&lt; endl;
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img1D.jpg"></p>
+	<p>Below a picture showing the line body result : </p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img1A.jpg"></p>
+	<p>&nbsp;</p>
+	<h3><a name="Line_AngledToTangent">Create lines angled to a tangent to a 
+	wire at a given points on the wire</a></h3>
+	<p>Lets see how to use method CATCGMCreateTopLineOperatorAngledTangentToWire 
+	in order to create the operator CATICGMTopLineOperator that&nbsp; builds a 
+	line angled to the tangent to the wire at the origin point and lying in the 
+	plane tangent to the shell at the origin point.</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img1F.jpg"></p>
+	<p>Below the code illustrating how to perform the operation:</p>
+	<pre class="code">
+
+ 
+for (i = 0; i &lt;= 5; i++)
+{
+  ...
+  // Create operator that builds a line angled to the tangent to the wire at the origin point,
+  // and lying in the plane tangent to the shell at the origin point.
+  //
+  CATAngle Angle = CATPI / (i+1);
+  CATICGMTopLineOperator * pLineAngledToWireOperator = <strong>CATCGMCreateTopLineOperatorAngledTangentToWire</strong>(
+  piGeomFactory,
+  &amp;topdata,
+<strong>  pBodyFirstPoint</strong>,
+<strong>  pBodySpline1</strong>,
+<strong>  pBodyPlane</strong>,
+<strong>  Length</strong>,
+<strong>  Angle</strong>);
+
+  cout &lt;&lt; &quot;CATCGMCreateTopLineOperatorAngledTangentToWire return a a valid pointer to CATICGMTopLineOperator &quot; &lt;&lt; endl;
+
+  // Run the operator
+  //
+  pLineAngledToWireOperator-&gt;<strong>Run</strong>();
+  cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+  // Get The result
+  // 
+  pResultBody = pLineAngledToWireOperator-&gt;<strong>GetResult</strong>();
+
+  cout &lt;&lt; &quot;Get The result body : OK&quot; &lt;&lt; endl;
+  cout &lt;&lt; &quot;\n\t\t\t Tag = &quot; &lt;&lt; pResultBody-&gt;GetPersistentTag() &lt;&lt; endl;
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img20.jpg"></p>
+	<p>Below a picture showing the line body result :</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img24.jpg"></p>
+	<p><a></a></p>
+	<h3><a name="lines_normal_at_a_given_point_to_a_shell">Create lines and 
+	normal at a given point to a shell</a></h3>
+	<p>The build of a line normal to a shell at a point is done when you create 
+	the operator CATICGMTopLineOperator with method 
+	CATCGMCreateTopLineOperatorNormalToShell.</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img2B.jpg"></p>
+	<p>Below the code illustrating how to perform the operation:</p>
+	<pre class="code">
+ 
+for (i = 0; i &lt;= 5; i++)
+{
+  ...
+// Create operator that builds a line normal to a shell at a point.
+//
+<strong>CATICGMTopLineOperator</strong> * pLineNormaltoShellOperator = <strong>CATCGMCreateTopLineOperatorNormalToShell</strong>(
+piGeomFactory,
+&amp;topdata,
+<strong>pBodyFirstPoint</strong>,
+<strong>pBodyPlane</strong>,
+<strong>Length</strong>);
+
+cout &lt;&lt; &quot;CATCGMCreateTopLineOperatorNormalToShell return a a valid pointer to CATICGMTopLineOperator &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pLineNormaltoShellOperator-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+pResultBody = pLineNormaltoShellOperator-&gt;<strong>GetResult</strong>();
+
+cout &lt;&lt; &quot;Get The result body : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n\t\t\t Tag = &quot; &lt;&lt; pResultBody-&gt;GetPersistentTag() &lt;&lt; endl;
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img28.jpg"></p>
+	<p>&nbsp;</p>
+	<p>Below a picture showing the line body result :</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img2C.jpg"></p>
+	<p>The operator CATICGMTopLineOperator has a basic mode allowing then to 
+	create a&nbsp; line body normal to a shell of point as illustrated below:</p>
+	<pre class="code">
+ 
+cout &lt;&lt; &quot;\n\n\n==============================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 4 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Creates a line body normal to a shell of point &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==============================================================================================\n&quot; &lt;&lt; endl;
+
+
+// Creates a line body normal to a shell of Fill at a first point of closed spline.
+//
+<strong>CATBody</strong> * pBodyLineNormaltoShellOperator = <strong>CATCGMCreateTopLineNormalToShell</strong>(
+piGeomFactory,
+&amp;topdata,
+<strong>pBodyPtClSpl1</strong>,
+<strong>pBodySurfaceFill</strong>,
+<strong>Length</strong>);
+
+
+cout &lt;&lt; &quot;Get The result body CATCGMCreateTopLineNormalToShell : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n\t\t\t Tag = &quot; &lt;&lt; pBodyLineNormaltoShellOperator-&gt;GetPersistentTag() &lt;&lt; endl;
+
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img2E.jpg"></p>
+	<p>Below a picture showing the line body result :</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img30.jpg"></p>
+	<h3><a name="infinite_line">Create an infinite line passing through a point 
+	in a given direction </a> </h3>
+	<p>The CATICGMTopLineOperator operator enables to create an infinite line 
+	passing through a point in a given direction thanks to the method 
+	CATCGMCreateTopLineInfiniteOperatorFromDirection. The line can be infinite 
+	on the both side or only infinite in the given direction.</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img2D.jpg"></p>
+	<p>The following code illustrates how to use CATICGMTopLineOperator in order 
+	to create an infinite line passing through a point in a given direction:</p>
+	<pre class="code">
+
+cout &lt;&lt; &quot;Create an infinite line passing through a point in a given direction.&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==============================================================================================\n&quot; &lt;&lt; endl;
+
+//First Point
+CATICGMObject * piCGMObjPt1 = piGeomFactory-&gt;FindObjectFromTag(124813); // First Point
+
+CATBody * pBodyFirstPointFLine = (CATBody *)piCGMObjPt1;
+
+// Create an infinite line passing through a point in a given direction.
+//
+CATMathVector Direction_OI(1., 0., 0.);
+<strong>CATICGMTopLineOperator</strong> * pInfiniteLineOperator = <strong>CATCGMCreateTopLineInfiniteOperatorFromDirection</strong>(
+piGeomFactory,
+&amp;topdata,
+<strong>pBodyFirstPointFLine</strong>,
+<strong>Direction_OI</strong>,
+<strong>TRUE</strong>);
+
+cout &lt;&lt; &quot;CATCGMCreateTopLineInfiniteOperatorFromDirection return a a valid pointer to CATICGMTopLineOperator &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pInfiniteLineOperator-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+CATBody * pResultInfinitLineBody = pInfiniteLineOperator-&gt;<strong>GetResult</strong>();
+
+cout &lt;&lt; &quot;Get The result body : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n\t\t\t Tag = &quot; &lt;&lt; pResultInfinitLineBody-&gt;GetPersistentTag() &lt;&lt; endl;
+
+pInfiniteLineOperator-&gt;Release();
+pInfiniteLineOperator = NULL;
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img34.jpg"></p>
+	<p>Below a picture showing the line body result :</p>
+	<p><img alt="" src="images/CATICGMTopLineOperator_img32.jpg"></p>
+	<p>&nbsp;</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The CATICGMTopLineOperator operator proposes different manners to create a 
+line depending to use objectives and input parameters. It is a transient object and its execution does not 
+modify the input operands.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="CAACgmUcTopOverview.htm">Overview of Topological Operators</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaTobTopoCreate.htm">
+		How to Associate Topology with Geometry</a> </td>
+	</tr>
+</table>
+	<br>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Fev 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

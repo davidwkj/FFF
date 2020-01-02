@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Get Login Ticket</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="table1">
+	<tr>
+		<td class="DocHeader3"><a name="Top"></a>
+		<table class="DocHeader">
+			<tr>
+				<td class="DocHeader1" colspan="2">
+				<h1>Get Login Ticket</h1>
+				</td>
+			</tr>
+			<tr>
+				<td class="DocHeader4" colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="DocHeader3">
+				<table class="DocHeaderIntro">
+					<tr>
+						<td class="Intro1">
+						
+						<div id="toc">
+						</div>
+						</td>
+					</tr>
+				</table>
+				</td>
+				
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Generates a 3DSpace login ticket. </p>
+<p>This 3DSpace login ticket does not replace a <b>3D</b>EXPERIENCE login. First perform a 
+<a href="#" onclick="CAAlinkOutOfPreqs('CAAiamPassport/CAAiamPassportLoginHowTo.htm'); return false;">3DPassport login</a>, and then call this API to retrieve the 3DSpace login ticket. This ticket (a string) is one of the arguments 
+to perform in C++ a <a href="#" onclick="CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm'); return false;">3DSpace connection</a> (V6).</p>
+
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	<tr>
+		<td>GET</td>
+		<td>/ticket/get</td>
+	</tr>
+	
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h3><a name="Query_Parameters"></a>Query Parameters</h3>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Name&nbsp;</th>
+		<th>&nbsp;Cardinality&nbsp;</th>
+		<th>&nbsp;Value&nbsp;</th>
+		<th>&nbsp;Description&nbsp;</th>
+	</tr>
+	
+	<tr>
+		<td>runasctx</td>
+		<td>1</td>
+	<td><p>Two possible values:</p>
+	  <ul>
+	     <li>A string with this format: role.organization.collabspace</li>
+		 <li>The string "preferred"</li>
+		 </td>
+		<td>
+		 <p>Respectively it means:</p>
+		<ul> 
+		<li>An explicite security context assigned to the connected person.</li>
+		<li>The security context declared as preferred for the connected person.</li>
+		</ul></td>			 
+	</tr>
+	<tr>
+		<td>maxuse</td>
+		<td>0|1</td>
+		<td>A number. No value, or a negative one, the default value (0) is used.</td>
+		<td>Represent the number of times the login ticket can be used. For 0, the time is infinite. </td>		 
+	</tr>
+	<tr>
+		<td>expiration</td>
+		<td>0|1</td>
+		<td>Two formats to express the time:
+		<ul>
+		<li>A string with this format yyyy-MM-dd:HH:mm</li>
+		<li>A long whose the value represents the timestamp in ms since Jan 1, 1970, as given by JAVA System.currentTimeMillis() method.
+</li>
+		</ul></td>
+		<td>The expiration date.</td>		 
+	</tr>
+	<tr>
+		<td>start</td>
+		<td>0|1</td>
+		<td>Same format as expiration.</td>
+		<td>Start date.</td>		 
+	</tr>
+	<tr>
+		<td>accept</td>
+		<td>0|1</td>
+		<td>A string. It may be text/plain, text/xml, or application/json.</td>
+		<td>The expected format of the successful response. In case of wrong value, no value, or no accept parameter, the format is: 
+		
+		<ul>
+		<li>The value, if among the three possible values, of the Accept Header.</li>
+		<li>Otherwise text/xml .</li>
+		</ul></td>		 
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Responses</h2>
+<h3><a name="Resp-200"></a>Success</h3>
+<p>The OK response (status code 200) returns two information:</p>
+<table class="fill">
+	<tr>
+		<th>Key</th>
+		<th>Description</th>
+		<th>Value</th>		 
+	</tr>
+	<tr><td>ticket</td> <td>The login ticket.</td> <td>String</td> </tr>
+	<tr><td>status</td> <td>"success"</td> <td>String</td> </tr>
+</table>
+<p>The response body format depends on the <a href="#Query_Parameters">accept</a> query parameter. See some examples below.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h3><a name="Resp-Error"></a>Failure</h3>
+<p>In case of error the <code>X-3DSLogin-error</code> HTTP response header provides an explanation. When available, a cause 
+is provided as <code>X-3DSLogin-error-cause</code> response header.</p> 
+<table class="fill">
+	<tr>
+		<th>HTTP Status Code</th>
+		<th>Reason</th>		
+		<th>X-3DSLogin-error text</th>
+		<th>X-3DSLogin-error-cause text</th>
+	</tr>
+	<tr>
+		<td>403</td>
+		<td>No connection to the <b>3D</b>EXPERIENCE platform.</td>	
+		<td>"No login ticket was provided"</td>	
+		<td></td>
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>If maxuse (not numberOfUse) is not a number.</td>
+		<td></td>
+		<td>"Illegal value for 'numberOfUse' parameter"</td>			
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>runasctx has been omitted.</td>
+		<td></td>
+		<td>"Missing Security Context"</td>			
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>Wrong security context for the connect person.</td>
+		<td></td>
+		<td>"User xxx is not assigned to context yyy", where xxx is the login of the connected person, and yyy the input runasctx value. </td>			
+	</tr>
+<tr>
+		<td>400</td>
+		<td>Trying to get a ticket with runasctx=preferred parameter while user has no preferred context and is not connected (or is connected with no security context).</td>
+		<td></td>
+		<td>"User has no preferred Security Context." </td>			
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>Trying to get a ticket with runasctx=preferred parameter, but could not retrieve the preferred security context.</td>
+		<td></td>
+		<td>"Failed to retrieve preferred Security Context." </td>			
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>The expiration date is before the current time.</td>
+		<td></td>
+		<td>"'expiration' date has already expired" </td>			
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>The expiration date has a wrong format.</td>
+		<td></td>
+		<td>"Illegal value for 'expiration' parameter - Expecting either a long, or a yyyy-MM-dd:HH:mm date format" </td>			
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>The start date has a wrong format.</td>
+		<td></td>
+		<td>"Illegal value for 'start' parameter - Expecting either a long, or a yyyy-MM-dd:HH:mm date format" </td>			
+	</tr>
+</table>
+<p>In all failure cases, the response body is an xml text containing the error message. </p>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="Example"></a>Examples</h2>
+<p>A valid case with <b>json</b> as response format.</p> 
+<pre class="code">
+&lt;3DSPACE_URL&gt;/ticket/get?runasctx=VPLMAdmin.MyCompany.Default&accept=application/json&expiration=1500532185000&start=2017-07-19:12:00
+
+HTTP/1.1 200 OK
+
+{"ticket":"OUJCNzQwNDI4NDY3NDQ3QUEwMDVFMjVBRUFGQjcwODV8dXhvZHRpdHB8fHwxNTAwNTMyMTg1MDAwfDB8","status":"success"}
+</pre>
+<p>A valid case with <b>plain text</b>  as response format.</p> 
+<pre class="code">
+&lt;3DSPACE_URL&gt;/ticket/get?runasctx=VPLMAdmin.MyCompany.Default&accept=text/plain
+HTTP/1.1 200 OK
+
+ticket=NEJCMUNDOTRGMTlENDU2QTg4MTY0QTg0NTVGRjI0RTN8dXhvZHRpdHB8fHx8MHw=
+status=success
+</pre>
+<p>A valid case with <b>xml</b> as response format.</p> 
+<pre class="code">
+&lt;3DSPACE_URL&gt;/ticket/get?runasctx=VPLMAdmin.MyCompany.Default&accept=text/xml
+HTTP/1.1 200 OK
+
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;loginRequest&gt;
+&lt;ticket>RTk1NjI4QkM3NjE2NEU5MzhGQkQ4RkNFMkEyN0NDNjF8dXhvZHRpdHB8fHx8MHw=&lt;/ticket&gt;
+&lt;status>success&lt;/status&gt;
+&lt;/loginRequest&gt;
+</pre>
+<p>An <b>invalid</b> case (without runasctx).</p> 
+<pre class="code">
+&lt;3DSPACE_URL&gt;/ticket/get 
+HTTP/1.1 400 Bad Request
+...
+X-3DSLogin-error-cause: Missing Security Context
+X-3DSLogin-error: java.lang.IllegalArgumentException: Missing Security Context
+...
+</pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+		</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

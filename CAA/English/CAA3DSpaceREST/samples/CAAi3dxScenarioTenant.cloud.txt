@@ -1,0 +1,5 @@
+
+20=GET./resources/modeler/pno/person?current=true&select=preferredcredentials&select=collabspaces
+
+30=GET./resources/modeler/pno/person/uxodtitp
+

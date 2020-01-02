@@ -1,0 +1,235 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Prism Volume</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Prism Volume</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>A Prism volume is an extrusion of a skin profile along a direction 
+		(not necessarily orthogonal to the profile). Prism Volume can be 
+		created with different type of limitation of each extremity along the 
+		extrusion.</p>
+		<ul>
+			<li><a href="#OpeToBeUsed">Operator to be Used</a></li>
+			<li><a href="#UseCaseDescription">Use Case Description</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="OpeToBeUsed">Operator to be Used</a></h2>
+<p>To create a Prism volume, use the CATICGMTopPrism operator in GMOperatorsInterfaces. 
+This operator has to 
+be created by the CATCGMCreateTopPrism global function.</p>
+<h2><a name="UseCaseDescription">Use Case Description</a></h2>
+<p>The CAAGMOperatorsPrism.m module in CAAGMOperatorsInterfaces.edu 
+illustrate how to create a Prism. This use case uses 
+the input data PrismModel.NCGM which is delivered in the InputData file 
+directory and containing data to be passed to the operator. If you are not already 
+familiar with topological operator use cases, go to
+		<a href="../CAACgmModel/CAACgmTaUseTopoOperators.htm">How to Use Topological Operators</a>.</p>
+<h3>Case 1: Create a Prism volum extruded until a surface</h3>
+<p>With the input data below:</p>
+<table>
+  <caption><a name="Fig.1">Fig.1</a>&nbsp;&nbsp; Prism Operation: Input Data (Skin profile and 
+	two surface limitation)&nbsp; </caption>
+  <tr>
+    <td>
+    
+	<img src="images/Prismvolume_img14.jpg"></td>
+  </tr>
+</table>
+<p>and the code below:</p>
+<pre class="code">
+
+// create the CATICGMTopPrism operator 
+// 
+CATICGMTopPrism * pCGMPrismOperVol = <strong>CATCGMCreateTopPrism</strong>(piGeomFactory, 
+&amp;topdata,
+pBodySurfProfile, 	// Body of the skin profile 
+pMathDirection,		// The direction of the extrusion
+StartOffset, 		// The first limitation along the extrusion direction
+EndOffset);		// The second limitation along the extrusion direction
+
+...
+CATTopLimit iId = CatLimStart;		  // The first extremity.
+CATTopLimitType iType = CatLimUntil;	  // The type of limit on the extremity : The profile is extruded until the specified geometry or topology
+CATBoolean iIsAxisReverted = TRUE;	  // The orientation : TRUE for the same orientation as the direction defined at the operator creation (TRUE for the start)
+CATLength iOffset =0.;			  // The value of the offset if iType has the value CatLimOffsetFromProfile 
+CATTopPropagationType iPropagationFlag = CatPropagSingle;	// No propagation is performed
+CATLength iThickness = CATLength(0);	  // defines the value of any thickness which must be applied to the considering relimitation
+
+
+// Specify surface body limitation of start extremity along the extrusion
+// 
+pCGMPrismOperVol -&gt;<strong>SetExtrudeLimit</strong>(iId,
+iType,
+iIsAxisReverted,
+iOffset,
+iLimit,
+iPropagationBody,
+iPropagationFlag,
+iThickness);
+cout &lt;&lt; &quot;Specify surface body limitation of start extremity along the extrusion : OK&quot; &lt;&lt; endl;    
+
+iId = CatLimEnd;
+iIsAxisReverted = FALSE;
+
+// Specify surface body limitation of end extremity along the extrusion
+//
+pCGMPrismOperVol -&gt;<strong>SetExtrudeLimit</strong>(iId,
+iType,
+iIsAxisReverted,
+iOffset,
+iLimitVol,
+iPropagationVol,
+iPropagationFlag,
+iThickness);
+cout &lt;&lt; &quot;Specify surface body limitation of end extremity along the extrusion : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pCGMPrismOperVol -&gt;Run();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The extruded prism surface body result
+// 
+CATBody *pCGMPrismVolResBody = pCGMPrismOperVol -&gt;GetResult();   
+
+pCGMPrismOperVol ->Release();
+pCGMPrismOperVol =NULL;</pre>
+<p>you get this result:</p>
+<table>
+  <caption><a name="Fig.2">Fig.2</a>&nbsp; Result of Extruded Prism of skin profile 
+  until surface limitation</caption>
+  <tr>
+    <td>
+	<img src="images/Prismvolume_img15.jpg"></td>
+     </tr>
+</table>
+
+<h3><a></a>Case 2:&nbsp; Perform boolean operation between 
+Prism volume result and volume:</h3>
+<p>With the input data below:</p>
+<table>
+  <caption><a name="Fig.3">Fig.3</a> &nbsp; Prism Operation: Input Data for 
+  boolean union (Prism Volume 
+  and Volume for boolean operation) </caption>
+  <tr>
+    <td>
+    	<img src="images/Prismvolume_img16.jpg">&nbsp;<img src="images/Prismvolume_img17.jpg"></td>
+  </tr>
+</table>
+<p>and the code below:</p>
+<pre class="code">
+ 
+cout &lt;&lt; &quot;\n\n Perform Boolean Union between previous body volume and the created extrusion &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;-------------------------------------------------------------------------------------------------------&quot; &lt;&lt; endl;
+
+// Defines pCGMPrismResBodyTemp as triming body
+// 
+pCGMPrismOperVol-&gt;<strong>SetTrim</strong>(pCGMPrismResBodyTemp);
+cout &lt;&lt; &quot;\nSetTrim : Defines pCGMPrismResBodyTemp as triming body : OK&quot; &lt;&lt; endl;
+
+...
+// Asks for a Boolean Union between the extruded body and triming body
+// 
+CATTopBooleanType iBoolType = <strong>CatBoolUnion</strong> ;
+pCGMPrismOperVol-&gt;<strong>SetOperation</strong>(iBoolType);
+cout &lt;&lt; &quot;SetOperation : Boolean Union between the extruded body and triming body : OK&quot; &lt;&lt; endl;
+
+// Defines the type of result as CATBoolean(1)
+// Run will compute : body profile extruded until a specified surface + result of the Boolean operation
+//
+CATBoolean iBothResultRequired = CATBoolean(1);
+pCGMPrismOperVol-&gt;<strong>SetResultMode</strong>(iBothResultRequired);
+cout &lt;&lt; &quot;SetResultMode : Defines the type of result as CATBoolean(1) : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pCGMPrismOperVol-&gt;Run();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+...
+// Get the body resulting from the Boolean operation 
+// 
+CATBody * pCGMPrismResBooleanBodyVol = pCGMPrismOperVol-&gt;<strong>GetBooleanResult</strong>();
+
+cout &lt;&lt; &quot;GetBooleanResult : Get The extruded prism Volume Body resulting from the Boolean operation between the extrusion and a trimming body : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n\t\t\t Tag = &quot; &lt;&lt; pCGMPrismResBooleanBodyVol-&gt;GetPersistentTag() &lt;&lt; &quot; : OK&quot; &lt;&lt; endl;
+</pre>
+<p>you get this result:</p>
+<table>
+  <caption><a name="Fig.4">Fig.4</a>&nbsp;&nbsp; Result of Prism surface extruded until a 
+  specified surface</caption>
+  <tr>
+    <td>
+	<img src="images/Prismvolume_img18.jpg">&nbsp;</td>
+     </tr>
+ </table>
+<h2><a name="References">References</a></h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaUseTopoOperators.htm">How to Use Topological Operators</a></td>
+	</tr>
+
+<tr>
+		<td>[4]</td>
+		<td>
+		<a href="CAACgmUcTopOverview.htm">Overview of Topological Operators</a></td>
+	</tr>
+	</table>
+</div>
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [May 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

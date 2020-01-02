@@ -1,0 +1,565 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating and Editing Logic Entities at the Resource Level</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating and Editing Logic Entities at the Resource Level</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how to create and edit Behavior Modeler entities at the Resource Level. It includes Behavior creation, I/Os Mapping and Procedures creation.</p>
+		<ul>
+			<li><a href="#Behavior">What is a Behavior and how create one in a resource?</a></li>
+			<li><a href="#Procedure">What is a Procedure and how create one in a behavior?</a>
+			<li><a href="#Instance">What is a Behavior Instance and how handle it?</a></li>
+			<li><a href="#IO">How create I/Os and how map it?</a></li>
+            <li><a href="#Instructions">How to program a resource?</a></li>
+            <li><a href="#Errors">How to check model integrity?</a></li>
+            <li><a href="#Interfaces">Interfaces overview</a></li>
+			<li><a href="#InShort">In Short</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<h2><a name="Behavior"></a>What is a Behavior and how create one in a resource?</h2>
+<p>The Behavior holds the logic of a resource; it is the root object to access 
+the logic entities of a resource. It is contained in a PLM representation which 
+is aggregated by a resource. If the resource is a non-programmable resource, meaning 
+it has an intrinsic logic which does not depend on the context, then the PLM representation 
+containing the Behavior is aggregated directly by the resource itself. Otherwise, if 
+the resource is a programmable resource, meaning its logic depends in the context, then 
+the PLM representation containing the Behavior is aggregated by the father of the resource. 
+To see if a resource is programmable or not please refer to <strong>DELIBmBehavior</strong>.</p>
+<p>To create a Behavior on a resource, the interface is use is <strong>DELIBmBehaviorFactory</strong>.
+See the following example for details.</p>
+<pre class="code">
+     // Behavior access or creation on robot resource
+
+    CATIPLMNavOccurrence_var hRobotOcc = ...;
+    DELIBmBehaviorFactory_var hRobotBehaviorFactory (hRobotOcc);
+    DELIBmBehavior_var hRobotBehavior;
+    RC = hRobotBehaviorFactory->GetBehavior(hRobotBehavior);
+
+    CATBoolean bContextual = FALSE;
+    RC = hRobotBehavior->IsContextualBehavior(bContextual); // Result is TRUE</pre>
+    <pre class="code">     // Behavior access or creation on organizational resource
+
+    CATIPLMNavOccurrence_var hOrgaOcc = ...;
+    DELIBmBehaviorFactory_var hOrgaBehaviorFactory (hOrgaOcc);
+    DELIBmBehavior_var hOrgaBehavior;
+    RC = hOrgaBehaviorFactory-&gt;GetBehavior(hOrgaBehavior);
+
+    CATBoolean bContextual = FALSE;
+    RC = hOrgaBehavior-&gt;IsContextualBehavior(bContextual); // Result is FALSE
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h2><a name="Procedure"></a>What is a Procedure and how create one in a behavior?</h2>
+<p>A procedure is a set of instructions that will be played in sequence, 
+it models the program of the resource. It exists 3 types of procedure :</p>
+<ul>
+    <li><strong>Internal</strong> : available on every resources, can be run by other procedures of 
+        the same resource but cannot be seen by other resources</li>
+    <li><strong>Service</strong> : available only on leaf resource, can be run by other procedures 
+        and can be called by only one sibling resource or the father resource</li>
+    <li><strong>Nominal</strong> : available only on cell resource, cannot be run by other procedure 
+        because it is the main logic that will be run at the launch of the simulation</li>
+</ul>
+
+<p>To create a Procedure on a resource, interfaces to use are <strong>DELIBmBehavior</strong> and <strong>DELIBmMainProcedure</strong>.
+See the following example for details.</p>
+<img alt="Procedures" src="images/Procedures.png" style="height: 233px; width: 343px"/><pre class="code">
+     // Creates a Nominal main procedure in organizational program
+
+    DELIBmBehavior_var hOrgaBehavior = ...;
+    
+    DELIBmMainProcedure_var hOrgaNominalProc;
+    RC = hOrgaBehavior->CreateMainInternalProc("MyNominal", hOrgaNominalProc);
+    RC = hOrgaNominalProc->SetAsNominalProc();
+</pre>
+<pre class="code">
+     // Creates a main procedure as service in robot program
+
+    DELIBmBehavior_var hRobotBehavior = ...;
+
+    DELIBmMainProcedure_var hRobotServiceProc;
+    RC = hRobotBehavior->CreateMainInternalProc("MyService", hRobotServiceProc);
+ 
+    DELIBmService_var hRobotServiceRef;
+    RC = hRobotServiceProc->SetAsService(hRobotServiceRef);
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h2><a name="Instance"></a>What is a Behavior Instance and how handle it?</h2>
+<p>A resource can expose two logic entities, Inputs and Outputs or Services. 
+In order to be seen by the other resources, an Instance of the resource&#8217;s Behavior 
+is automatically created in the Behavior of the father resource. In this instance, 
+Inputs, Outputs and Services are re-exposed also as instances.</p>
+<p>To have the correspondense between references and instances, the interface to use 
+is <strong>DELIBmBehaviorInstance</strong>. See the following example for details.</p>
+    <pre class="code">
+     DELIBmBehavior_var hOrgaBehavior = ...;
+    DELIBmBehavior_var hRobotBehavior = ...;
+    DELIBmService_var hRobotServiceRef = ...;
+
+    // Find the behavior instance representing the robot as child resource
+
+    CATListValCATBaseUnknown_var LBehaviorInstances;
+    RC = hOrgaBehavior->GetSubInstances (LBehaviorInstances, hRobotBehavior);
+
+    // Result as to be refined if robot is multi-instanciated under organizational resource otherwise only one behavior instance will be found
+
+    DELIBmBehaviorInstance_var hRobotBehaviorInstance(LBehaviorInstances[i]);
+    CATBaseUnknown_var hRobotRelativeOccurrence;
+    RC = hRobotBehaviorInstance->GetResourceOwnerInContext(hRobotRelativeOccurrence); // Allows to check if behavior instance is associated to the appropriate robot's occurrence
+
+    // Find Robot's service instance accessible from Organizational program
+
+    DELIBmService_var hRobotServiceInst;
+    RC = hRobotBehaviorInstance->GetService (hRobotServiceRef, hRobotServiceInst); // The service instance will be used to create a service call instruction 
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h2><a name="IO"></a>How create I/Os and how map it?</h2>
+<p>On every resources it is possible to create Inputs and Outputs and to map them 
+to others resources&#8217; I/Os. The mapping can be done between two siblings resources or between 
+a father resource and a child resource. In case of a child or sibling resources, the 
+I/Os to use are instances. While in the case of a father resource the I/Os to use are
+references.</p>
+<p>To create and edit I/Os, interfaces to be used are <strong>DELIBmBehavior</strong> and <strong>DELIBmExternalIO</strong>. See the following example for details.</p>
+    <p>
+    <img alt="IO Mapping" src="images/IOMapping.png" style="height: 250px; width: 562px"/></p>
+    <pre class="code">
+     DELIBmBehavior_var hOrgaBehavior = ...;
+    DELIBmBehavior_var hRobotBehavior = ...;
+    DELIBmBehavior_var hControllerBehavior = ...;
+    
+    // Add IO4 (BOOL,OUT) on organizational program
+
+    DELIBmExternalIO_var hIO4Ref;
+    RC = hOrgaBehavior->CreateExternalIO("IO4", DELIBmExternalIO::Boolean, DELIBmExternalIO::Out, hIO4Ref);
+
+    // Add IO3 (BOOL,OUT) on robot program
+
+    DELIBmExternalIO_var hIO3Ref;
+    RC = hRobotBehavior->CreateExternalIO("IO3", DELIBmExternalIO::Boolean, DELIBmExternalIO::Out, hIO3Ref);
+
+    // Add IO2 (BOOL,IN) on robot program
+
+    DELIBmExternalIO_var hIO2Ref;
+    RC = hRobotBehavior->CreateExternalIO("IO2", DELIBmExternalIO::Boolean, DELIBmExternalIO::In, hIO2Ref);
+
+    // Add IO1 (BOOL,OUT) on controller program
+
+    DELIBmExternalIO_var hIO1Ref;
+    RC = hControllerBehavior->CreateExternalIO("IO1", DELIBmExternalIO::Boolean, DELIBmExternalIO::Out, hIO1Ref);
+
+    // Find instances for IO1, IO2 and IO3
+
+    CATListValCATBaseUnknown_var LControllerBehaviorInstances;
+    RC = hOrgaBehavior->GetSubInstances (LControllerBehaviorInstances, hControllerBehavior);
+
+    DELIBmBehaviorInstance_var hControllerBehaviorInstance(LBehaviorInstances[1]);
+
+    DELIBmExternalIO_var hIO1Inst;    
+    RC =hControllerBehaviorInstance->GetExternalIO(hIO1Ref, hIO1Inst);
+
+    CATListValCATBaseUnknown_var LRobotBehaviorInstances;
+    RC = hOrgaBehavior->GetSubInstances (LRobotBehaviorInstances, hRobotBehavior);
+
+    DELIBmBehaviorInstance_var hRobotBehaviorInstance(LRobotBehaviorInstances[1]);
+
+    DELIBmExternalIO_var hIO2Inst;    
+    RC =hRobotBehaviorInstance->GetExternalIO(hIO2Ref, hIO2Inst);
+
+    DELIBmExternalIO_var hIO3Inst;    
+    RC =hRobotBehaviorInstance->GetExternalIO(hIO3Ref, hIO3Inst);
+
+    RC = hIO1Inst->Map(hIO2Inst);
+
+    RC = hIO3Inst->Map(hIO4Ref);
+</pre>
+
+<h2><a name="Instructions"></a>How to program a resource ?</h2>
+    <p>On every procedures the program is defined by a list of sequential instructions edited in Sequencing Editor.</p>
+    <p>
+        To create and edit instructions, interfaces to be used are :</p>
+    <ul>
+       <LI><strong>DELIBmSequence</strong> : Main interface for creating and browsing instructions
+       <LI><strong>DELIBmInstruction</strong> : Generic interface common to all instructions
+       <LI><strong>DELIBmCondition</strong> : IF
+       <LI><strong>DELIBmLoop</strong> : WHILE DO, DO WHILE
+       <LI><strong>DELIBmFor</strong> : FOR LOOP
+       <LI><strong>DELIBmParallelism</strong> : PARALLEL EXECUTIONS
+       <LI><strong>DELIBmWait</strong> : WAIT<LI><strong>DELIBmAssignment</strong> : ASSIGNMENT
+       <LI><strong>DELIBmPulse</strong> : PULSE
+       <LI><strong>DELIBmReturn</strong> : RETURN
+       <LI><strong>DELIBmBreak</strong> : BREAK
+       <LI><strong>DELIBmGoto</strong> : GOTO
+       <LI><strong>DELIBmSequence</strong> : SUB SEQUENCE
+       <LI><strong>DELIBmActivityRun</strong> : PROCEDURE RUN
+       <LI><strong>DELIBmServiceCall</strong> : SERVICE CALL
+       <LI><strong>DELIBmCustom</strong> : CUSTOM
+    </ul>
+
+    <p>
+        See the following example for details.</p>
+
+    <strong>IF</strong>
+    <p>
+     <img alt="IF" src="images/IF.png" style="height: 244px; width: 416px"/></p>
+       <ul>
+       <LI> The condition of the If instruction is any expression that evaluates as a boolean
+       <LI> The condition is evaluated dynamically at execution
+       <LI> Here input is an input signal of the resource
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+ 
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmCondition_var hCondition;
+     RC = hMainInstruction->CreateCondition("input>5", hCondition);
+
+     DELIBmSequence_var hThenSequence;
+     RC = hCondition->GetThenSequence(hThenSequence);
+
+     DELIBmSequence_var hElseSequence;
+     RC = hCondition->GetElseSequence(hElseSequence);  </pre>
+    <strong>WHILE DO</strong>
+    <p>
+     <img alt="WHILE" src="images/WHILE.png" style="height: 300px; width: 443px"/></p>
+       <ul>
+       <LI> The condition of the xhile instruction is any expression that evaluates a boolean
+       <LI> The condition is evaluated dynamically at execution
+       <LI> Here input is an input signal of the resource
+       <LI> The loop has a do-while variant, with the loop executed once before the first evaluation
+       <LI> A break instruction allows to terminate the execution of the loop
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+ 
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmLoop_var hLoop;
+     RC = hMainInstruction->CreateLoop("input>5", DELIBmLoop::WhileDo, hLoop);
+
+     DELIBmSequence_var hLoopSequence (hLoop);
+  
+     DELIBmCustom_var hCustom;
+     RC = hLoopSequence->CreateCustom(hCustom);   </pre>
+    <strong>FOR LOOP</strong>
+    <p>
+     <img alt="FOR" src="images/FOR.png" style="height: 250px; width: 442px"/></p>
+       <ul>
+       <LI> The index is an integer whose scope is the inner loop of the for instruction. It can be used in the looped sequence
+       <LI> The name of the local index is a parameter of the for instruction, it can be chosen by the user
+       <LI> The lower and upper limits are also parameters
+       <LI> The counter can be either incremented or decremented
+       <LI> A break instruction allows to terminate the execution of the for loop
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+ 
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmFor_var hFor;
+     RC = hMainInstruction->CreateForLoop(DELIBmFor::Up, "i", "1", "10", hFor);
+
+     DELIBmSequence_var hForSequence (hFor);
+  
+     DELIBmCustom_var hCustom;
+     RC = hForSequence->CreateCustom(hCustom);  </pre>
+    <strong>PARALLEL</strong>
+    <p>
+     <img alt="PARALLEL" src="images/PARALLEL.png" style="height: 249px; width: 474px; margin-right: 0px;"/></p>
+       <ul>
+       <LI> The parallel instruction allows to execute several sequences concurrently
+       <LI> The number of parallel branches is not limited (minimum 2)
+       <LI> Parallel branches can be synchronized thanks to signal emission and wait instructions
+       <LI> The parallel instruction ends when all branches are ended 
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+ 
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmParallelism_var hParallelism;
+     RC = hMainInstruction->CreateSubParallelism(hParallelism);
+
+     DELIBmSequence_var hParallelSequence;
+     RC = hParallelism->AddSequenceInParallel (hParallelSequence);
+
+     DELIBmCustom_var hCustom;
+     RC = hParallelSequence->CreateCustom(hCustom);
+</pre>
+    <strong>SUB SEQUENCE</strong>
+    <p>
+     <img alt="SUB SEQUENCE" src="images/SUBSEQUENCE.png" style="height: 203px; width: 232px"/></p>
+       <ul>
+       <LI> A set of instructions can be grouped inside a sub-sequence
+       <LI> This can be helpful to structure the sequence and to copy or move the whole set of instructions
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+ 
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmSequence_var hSubSequence;
+     RC = hMainInstruction->CreateSubSequence(hSubSequence);
+
+     DELIBmCustom_var hCustom;
+     RC = hSubSequence->CreateCustom(hCustom);
+</pre>
+    <strong>WAIT</strong>
+    <p>
+     <img alt="WAIT" src="images/WAIT.png" style="height: 218px; width: 402px"/></p>
+       <ul>
+       <LI> The wait instruction allows to pause the sequence until a condition is fulfilled, or until a timeout is elapsed
+       <LI> The condition is any expression that evaluates as a boolean. It is evaluated dynamically at execution
+       <LI> If the condition does not become true when the timeout is elapsed, the wait instruction terminates and the next instruction is executed
+       <LI> The timeout is optional, if omitted the wait instruction will not lose focus until the condition is met
+       <LI> The condition is optional, if omitted the wait instruction becomes a plain timer
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+ 
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     double TimeOut = 10;
+
+     DELIBmWait_var hWait;
+     RC = hMainInstruction->Wait("input>5", hWait, -1, &TimeOut); </pre>
+    <strong>ASSIGNMENT</strong>
+    <p>
+     <img alt="ASSIGNMENT" src="images/ASSIGNMENT.png" style="height: 239px; width: 338px"/></p>
+       <ul>
+       <LI> The assignment instruction allows to give a value to an output signal or to a variable
+       <LI> The assigned  value can be the result of any expression (e.g.: output := input+3)
+       <LI> This instruction takes no time to complete
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+ 
+     DELIBmLocalVar_var hVariable;
+     RC = DELIBmProcedure_var(hMainProcedure)->CreateLocalVar ("variable", DELIBmLocalVar::String, hVariable);
+
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmAssignment_var hAssignment;
+     RC = hMainInstruction->Assign (hVariable, "3", hAssignment);
+</pre>
+    <strong>PULSE</strong>
+    <p>
+     <img alt="PULSE" src="images/PULSE.png" style="height: 122px; width: 279px"/></p>
+       <ul>
+       <LI> The pulse instruction allows asynchronously to assign a value to an output signal for a specific duration of time, and after a delay
+       <LI> This instruction takes no time to complete, and the next instruction is executed without any delay
+       <LI> The value, delay and duration are parameters of the pulse instruction
+       <LI> The duration can be infinite, in which case it behaves more like an assignment. It cannot be null
+       <LI> The delay is optional
+       <LI> Different pulses on same signal can cancel each other 
+    </ul>
+    <pre class="code">
+      DELIBmBehavior_var hBehavior = ...;
+     DELIBmMainProcedure_var hMainProcedure = ...;
+
+     DELIBmExternalIO_var hExternalIO;
+     RC = hBehavior->CreateExternalIO("output", DELIBmExternalIO::Integer, DELIBmExternalIO::Out, hExternalIO );
+
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmPulse_var hPulse;
+     RC = hMainInstruction->Pulse (hPulse);
+
+     RC = hPulse->setPulsedDataEntity (hExternalIO);
+
+     RC = hPulse->setValue ("5");
+
+     RC = hPulse->setDelay(3);
+
+     RC = hPulse->setDelay(10);  </pre>
+    <strong>RETURN</strong>
+    <p>
+     <img alt="RETURN" src="images/RETURN.png" style="height: 174px; width: 262px"/></p>
+     <ul>
+       <LI> The return instruction allows to terminate the execution of the current procedure
+       <LI> If the procedure was called from another procedure, the instruction executed next is the one directly following the run procedure instruction of the caller procedure, as if the called procedure ended normally
+       <LI> Here, the orange instruction is never executed
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmReturn_var hReturn;
+     RC = hMainInstruction->Return (hReturn);   </pre>
+    <strong>BREAK</strong>
+    <p>
+     <img alt="BREAK" src="images/BREAK.png" style="height: 311px; width: 353px"/></p>
+       <ul>
+       <LI> The break instruction allows to terminate the execution of a loop (for or while exclusively
+       <LI> The instruction executed next is the one directly following the loop, as if the loop ended normally
+       <LI> Here, the blue instruction is exectued just after the break instruction. The orange instruction is never executed
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmBreak_var hBreak;
+     RC = hMainInstruction->Break (hBreak);   </pre>
+    <strong>GOTO</strong>
+    <p>
+     <img alt="GOTO" src="images/GOTO.png" style="height: 250px; width: 295px"/></p>
+       <ul>
+       <LI> Each instruction can have a label (as string)
+       <LI> The goto instruction allows the execution to jump to the corresponding labelled instruction
+       <LI> Depending on the respective locations of the goto and the targeted instruction, the jump is possible or not 
+       <LI> When creating a goto instruction, the user must select the targeted label in a list of available labels. If label is labeled instruction is not visible, goto instruction will be in error.
+    </ul>
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure = ...;
+
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmCustom_var hCustom;
+     RC = hMainInstruction->CreateCustom(hCustom);
+
+     RC = DELIBmInstruction_var(hCustom)->SetLabel("begin");
+
+     RC = DELIBmInstruction_var(hCustom)->SetDisplayName("Is the first instruction");
+
+     DELIBmGoto_var hGoto;
+     RC = hMainInstruction->Goto ("begin", hGoto);
+</pre>
+    <strong>PROCEDURE RUN</strong>
+    <p>
+     <img alt="PROCEDURE RUN" src="images/PROCEDURERUN.png" style="height: 163px; width: 283px"/></p>
+       <ul>
+       <LI> This instruction allows to execute a procedure which is another logical sequence
+       <LI> The run procedure instruction waits for the procedure to terminate before allowing the sequence to continue
+       <LI> The called procedure must declare in the same resource and has to be visible (declared before)
+    </ul>
+
+    <pre class="code">
+      DELIBmMainProcedure_var hMainProcedure1 = ...;
+     DELIBmMainProcedure_var hMainProcedure2 = ...;
+
+     DELIBmActivity_var hUpperProcedureToRun (hMainProcedure1);
+
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure2)->GetMainInstruction(hMainInstruction);
+
+     DELIBmActivityRun_var hActivityRun;
+     RC = hMainInstruction->ActivityRun (hUpperProcedureToRun, hActivityRun);   </pre>
+    <strong>SERVICE CALL</strong>
+    <p>
+     <img alt="SERVICE CALL" src="images/SERVICECALL.png" style="height: 99px; width: 281px"/></p>
+       <ul>
+       <LI> This instruction allows to execute a service procedure which is another logical sequence
+       <LI> The service call instruction waits for the procedure to terminate before allowing the sequence to continue
+       <LI> The called service must belong to a child or sibling resource
+    </ul>
+    <pre class="code">
+      DELIBmBehavior_var hOrgaBehavior = ...;
+     DELIBmMainProcedure_var hOrgaMainProcedure = ...;
+
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hOrgaMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     CATListValCATBaseUnknown_var LSubBehaviorInstances;
+     RC = hOrgaBehavior->GetSubInstances (LSubBehaviorInstances);
+
+     DELIBmBehaviorInstance_var hBehaviorInstance (LSubBehaviorInstances[1]);
+
+     CATListValCATBaseUnknown_var LServiceInstances;
+     RC = hBehaviorInstance->ListOfServices (LServiceInstances);
+
+     DELIBmService_var hServiceInst (LServiceInstances[1]);
+
+     DELIBmServiceCall_var hServiceCall;
+     RC = hMainInstruction->ServiceCall(DELIBmService_var hServiceInst, hServiceCall);
+</pre>
+<h2><a name="Errors"></a>How to check model integrity?</h2>
+<p>Integrity check is made based on different rules : Type checking, scoping, expressions semantical analysis.</p>
+<p>To check if a data model entity is in error or not, the interface to use is <strong>DELIBmEntity</strong>. See the following example for details.</p>
+<pre class="code">
+     DELIBmMainProcedure_var hMainProcedure = ...;
+ 
+     DELIBmLocalVar_var hBoolean;
+     RC = DELIBmProcedure_var(hMainProcedure)->CreateLocalVar ("variable", DELIBmLocalVar::Boolean, hBoolean);
+
+     DELIBmSequence_var hMainInstruction;
+     RC = DELIBmProcedure_var(hMainProcedure)->GetMainInstruction(hMainInstruction);
+
+     DELIBmAssignment_var hAssignment;
+     RC = hMainInstruction->Assign (hBoolean, "Incompatible value", hAssignment);
+
+     CATUnicodeString Msg;
+     CATBOolean bIsInError = FALSE;
+     RC = DELIBmEntity_var(hAssignment)->IsInError (bIsInError, &Msg); 
+</pre>
+     <img alt="ERRORS" src="images/ERRORS.png" style="height: 126px; width: 533px"/><script type="text/javascript">insertLinkToTop();</script><h2><a name="Interfaces"></a>Interfaces overview</h2>
+     <img alt="Interfaces 1" src="images/INTERFACES1.png" style="height: 510px; width: 1036px"/></p>
+     <img alt="Interfaces 2" src="images/INTERFACES2.png" style="height: 502px; width: 955px"/></p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article has explained how to define resource behavior.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+
+
+
+
+
+
+
+
+
+

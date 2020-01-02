@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 2015-2018, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="Symbol Modeler Overview" href="CAATaDifSymbolModelerOverView.htm" topictype="Ta" icon="CAAIcons/images/I_Overview.gif"
+        text="describes the foundations of the Symbol Modeler" />
+	<ITEM name="Creating 2D Shapes in a View or a Sheet Reference" href="CAADifSymbolUcCreating2DShapes.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"
+        text="is an example of 2D shape creation" />
+	<ITEM name="Navigating on the 2D Components of a View or a Sheet Reference" href="CAADifSymbolUcNavigateOn2DComponents.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"
+        text="is an example of view or sheet reference navigation" />
+	<ITEM name="Creating and Managing a Symbol on Route" href="CAADifSymbolUcSymbolOnRoute.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"
+        text="is an example of symbol creatiion and management" />
+</Root>

@@ -1,0 +1,285 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Picture Properties"/>
+<meta name="abstract" content="Picture lets you modify picture properties."/>
+<meta name="description" content="Picture lets you modify picture properties."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="properties-c-ui-Picture"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Picture Properties</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="properties-c-ui-Picture">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::Picture"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Picture Properties</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span><span class="wintitle">Picture</span> lets you modify picture properties.</span>
+
+    <p>
+      Select the <span class="uicontrol">Picture</span> tab to access properties.
+    </p>
+    
+    
+  
+    
+  </p>
+<ul><li><a href="#properties-c-ui-Picture__cs-Position" title="">Position</a></li><li><a href="#properties-c-ui-Picture__cs-Stretchpicturetofitcellsize" title="">Stretch picture to fit cell size</a></li><li><a href="#properties-c-ui-Picture__cs-Size" title="">Size</a></li><li><a href="#properties-c-ui-Picture__cs-Scale" title="">Scale</a></li><li><a href="#properties-c-ui-Picture__cs-OroginalSize" title="">Original Size</a></li><li><a href="#properties-c-ui-Picture__cs-CropFrom" title="">Crop from</a></li><li><a href="#properties-c-ui-Picture__cs-Compression" title="">Compression</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+  
+
+  
+
+  <div><div class="section" id="properties-c-ui-Picture__cs-Position"><h2 class="sectiontitle">Position</h2>
+      <p>This property appears for a picture inserted in a view. It replaces the <span class="uicontrol">Stretch picture to fit cell size</span> area which is displayed for a picture inserted in a table cell.</p>
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Horizontal
+          </dt>
+
+          <dd>
+            Defines the horizontal positioning on the <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>, taking the lower left 
+		corner of the image into account.
+          </dd>
+
+        
+        
+          <dt class="dlterm">
+            Vertical
+          </dt>
+
+          <dd>Defines the vertical positioning on the sheet, taking the lower left 
+		corner of the image into account.
+            
+          </dd>
+
+        
+      
+        
+      </dl>
+
+    </div>
+<div class="section" id="properties-c-ui-Picture__cs-Stretchpicturetofitcellsize"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Stretch picture to fit cell size</h2><p>This property appears for a picture inserted in a table cell. It replaces the <span class="uicontrol">Position</span> area which is available for a picture inserted in a view.</p><p>Stretches the picture to fit the cell size, a stretched picture is scaled (stretched or shrunk) uniformly.  </p><p>Clear this property to display the picture in its original size.</p><p>When a non-stretched picture is smaller than its cell, then the picture is displayed at one of the nine possible positions.</p></div>
+<div class="section" id="properties-c-ui-Picture__cs-Size"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Size</h2>
+      
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Width
+          </dt>
+
+          <dd>
+            Defines the ratio between the original width and the represented width.
+          </dd>
+
+        
+        
+          <dt class="dlterm">Height
+            
+          </dt>
+
+          <dd>Defines the ratio between the original height and the represented height.
+            
+          <p>When you modify the size, the scale is automatically modified at the 
+		same time.</p></dd>
+
+        
+      
+        
+      <dt class="dlterm">Reference</dt>
+<dd>Defines the orientation reference in:<ul><li>The sheet</li>
+<li>The view for  design sheets</li>
+<li>The 2D component for  and  detail sheets</li>
+ </ul>
+</dd>
+<dt class="dlterm">Orientation</dt>
+<dd>Defines the picture orientation to choose between: </dd>
+<dd class="ddexpand"><ul><li><span class="uicontrol">Horizontal</span></li>
+<li><span class="uicontrol">Vertical</span></li>
+<li><span class="uicontrol">Fixed Angle</span>: Enables to specify an angle in the selected reference through <span class="uicontrol">Angle</span>. <p>When <span class="uicontrol">Fixed Angle</span> is selected, the <span class="uicontrol">Angle</span> is set to 45.000 deg by default.</p><p>	If a value corresponding to a common orientation is identified such as 0°, 90°, etc. it is presented as <span class="uicontrol">Horizontal</span>, <span class="uicontrol">Vertical</span> next time the <span class="uicontrol">Properties</span> dialog box is opened or when changes are applied.</p></li>
+</ul>
+</dd>
+<dt class="dlterm">Angle</dt>
+<dd>Defines the angle that is related to the sheet, view or 2D component depending on the <span class="uicontrol">Reference</span> property of the picture.</dd>
+<dd class="ddexpand">The angle that it displays is related either to the sheet or to the view/2D component/symbol, depending on the <span class="uicontrol">Reference</span> property of the picture, which cannot be modified by this field. Please note that a support of pictures is also provided for X and Y positions in this <span class="wintitle">Object Properties</span> panel.</dd>
+</dl>
+
+    </div>
+ <div class="section" id="properties-c-ui-Picture__cs-Scale"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Scale</h2>
+      
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Width
+          </dt>
+
+          <dd>Defines the width in percentage of the picture.
+            
+          </dd>
+
+        
+        
+          <dt class="dlterm">
+            Height
+          </dt>
+
+          <dd>
+            
+          Defines the height in percentage of the picture.</dd>
+
+        
+      <dt class="dlterm">Lock aspect ratio</dt>
+<dd>Preserves the ratio between width and height 
+		when using the corner handles.<p>However, when using the border manipulators, 
+		the picture can be distorted.</p></dd>
+
+        
+      </dl>
+
+    </div>
+<div class="section" id="properties-c-ui-Picture__cs-OroginalSize"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Original Size</h2>
+      
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Width
+          </dt>
+
+          <dd>
+            Defines the original width of the picture in millimeters.
+          </dd>
+
+        
+        
+          <dt class="dlterm">
+            Height
+          </dt>
+
+          <dd>Defines the original height of the picture in millimeters.
+            
+          </dd>
+
+        
+      <dt class="dlterm">Reset</dt>
+<dd>Resets the size of the represented picture to the 
+		size of the original picture.</dd>
+
+        
+      </dl>
+
+    </div>
+<div class="section" id="properties-c-ui-Picture__cs-CropFrom"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Crop from</h2>
+      
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Top
+          
+          </dt>
+
+          <dd>Defines the top part of the picture to be hidden.
+            </dd>
+
+        
+        
+          <dt class="dlterm">
+            Bottom
+          </dt>
+
+          <dd>
+            Defines the bottom part of the picture to be hidden.
+          </dd>
+
+        
+      <dt class="dlterm">Left</dt>
+<dd>Defines the left part of the picture to be hidden.</dd>
+<dt class="dlterm">Right</dt>
+<dd>Defines the right part of the picture to be hidden.</dd>
+</dl>
+
+      
+    </div>
+<div class="section" id="properties-c-ui-Picture__cs-Compression"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Compression</h2>
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            (Compression format)
+          </dt>
+
+          <dd>
+            
+              
+            Select the required option:
+      <dl class="uicontrol">
+              
+                <dt class="dlterm">
+                  None
+                </dt>
+
+                <dd>
+                  Does not compress the picture -  keeps its original size.
+                </dd>
+
+              
+              
+                <dt class="dlterm">
+                  PNG
+                </dt>
+
+                <dd>
+                  Compresses the picture without loss in quality.
+                <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> <p>The PNG 
+				format is used by default when inserting a picture whatever its 
+				original format.</p></td></tr></table>
+</dd>
+
+              
+                <dt class="dlterm">
+                  JPEG
+                </dt>
+
+                <dd>
+                  Compresses the picture with a loss in quality.
+                </dd>
+
+              
+            </dl>
+
+          </dd>
+
+        
+        
+          <dt class="dlterm">
+            (Compression rate)
+          </dt>
+
+          <dd>
+            Displays the compression rate in percentage and the size of the picture 
+		in bytes according to the chosen format once it is saved on your hard drive. 
+		The compression rate and picture size vary according to your picture.
+          </dd>
+
+        
+      </dl>
+
+    </div>
+</div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

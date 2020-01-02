@@ -1,0 +1,92 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating an Unfolded View"/>
+<meta name="abstract" content="You can create an unfolded view from a sheet metal part."/>
+<meta name="description" content="You can create an unfolded view from a sheet metal part."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewCreation.htm#gdr-c-ViewCreation"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewCreation-UnfoldedView"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating an Unfolded View</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewCreation-UnfoldedView">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::unfolded views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::unfolded views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-unfolded views, creating"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Unfolded View"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Creating an Unfolded View
+         </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can create an unfolded view 
+             from a sheet metal part. </span>
+
+             <p>An <span class="glossterm" id="unfolded-view" onmouseout="hideTerm()" onmouseover="showTerm('unfolded-view.xml')">unfolded view</span> is a projected view that 
+             is created from a <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> metal part to include in a section 
+             certain angled elements. As a result, the cutting plane may be bent 
+             so as to pass through those features.</p>
+             <p><span class="run-in">Important:
+		</span>The <span class="uicontrol">Unfolded View</span> command is active in the <span><span>Drawings</span></span> <span>app</span> 
+             provided you have a <span>Sheet Metal Design</span> or Aerospace SheetMetal 
+             Design license. For more information about these <span>apps</span>, see 
+             the appropriate user's guide.</p>
+
+             </p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>                    Open        a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.           </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewCreation.htm#gdr-c-ViewCreation" title="The Drawings app allows you to create views of varying levels of complexity. This topic provides more information about view creation.">About View Creation</a></td></tr></table></td></tr></table>
+<a name="CATDrw.DrwUnfoldedView"><!-- --></a>
+<div><div class="p"><!--xxx--></div>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">View Layout</span> section of the <span>action bar</span>, click <span class="uicontrol">Unfolded View</span>
+       <img src="../Icons22/I_D3M_UnfoldedView.png"/>. </p></li>
+<li class="stepexpand"><p>Select a surface on the part. <p> This will automatically use 
+       the sheet metal reference wall plane.
+       <p>
+       <br/><img src="../GdrUserImages/sheetmetalpart.gif"/><br/></p>
+       <p>Note:
+		If you prefer to specify which plane should be used, you can select 
+       the plane in the Sheet Metal <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>. </p>
+
+       </p></p></li>
+<li class="stepexpand"><p>Click the sheet.<p> 
+       <p>The unfolded view is displayed. It shows the axis lines resulting 
+       from bend axes, as well as bend limits. These axis lines and bend limits 
+       are represented as dashed lines.</p>
+       <p>Sheet metal parts containing holes, the hole axes (center 
+       line) are also represented on the view.</p>
+       <p>
+       <br/><img border="1" src="../GdrUserImages/unfoldedview.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>Optionally, if you want to modify an axis line, you can select 
+       it.<p> Handles appear, to let you modify this line.
+       <p> <br/><img border="1" src="../GdrUserImages/unfoldedview1.gif"/><br/></p>
+       </p></p></li>
+</ol>
+<p class="result">
+         
+       
+     
+     
+     <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> Isolated wireframes 
+         and 3D points are not recognized as <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">objects</span> that can be unfolded. As a 
+         consequence, they are not displayed in an unfolded view, even if you select 
+         the <span class="uicontrol">Project 3D wireframes</span> and <span class="uicontrol">Project 3D points</span> 
+         check boxes in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">View</span></span> section, under <span class="uicontrol">Dress-up</span>.</td></tr></table>
+
+     
+   
+ 
+
+ 
+
+
+</p></div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

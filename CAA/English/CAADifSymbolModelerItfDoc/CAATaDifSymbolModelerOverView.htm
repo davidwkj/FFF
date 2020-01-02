@@ -1,0 +1,264 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Symbol Modeler Overview</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Symbol Modeler Overview</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the Symbol Modeler foundations.</p>
+		<ul>
+			<li><a href="#Overview">Symbol Modeler Overview</a></li>
+			<li><a href="#Prerequisites">Symbol Modeler Prerequisites</a></li>
+			<li><a href="#Structure">Symbol Modeler Objects</a></li>
+			<li><a href="#CopyPaste">Life Cycle</a></li>
+			<li><a href="#Licensing">Licensing</a></li>
+			<li><a href="#References">References</a></li>
+            <li><a href="#InShort">In Short</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Overview"></a>Symbol Modeler Overview</h2>
+<p>This modeler is designed to provide basic 2D schematic features such as routes and symbols.
+The symbol modeler provides also a set of basic geometries.
+</p>
+<table>
+    <tr>
+        <td>
+            <ul>
+                <li><b>Symbol</b>: It is a simplified 2D representation of a component. 
+                This object contains one or several graphical representations. 
+                A symbol can be instantiated in a view at a specific position. 
+                Once instantiated, a symbol can be connected to other symbols through 
+				a route.</li>
+                <li><b>Route</b>: It is a connection between two symbols.</li>
+                <li><b>Symbol On Route</b>: It is a symbol positioned on a route.</li>
+                <li><b>Shape</b>: It is a basic geometry with no semantic meaning.</li>
+              </ul>
+        </td>
+    </tr>
+</table>
+<p>
+    This modeler is used within applications such as FL Editor, 
+	and Schematics (for Electrical diagram, P&ID).
+</p>
+<p>
+    Here is an example of the use of this modeler: </p>
+<img alt="Modeler representation" height="886" src="images/CAADifSymbolModeler01.jpg" width="1246"/></td>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Prerequisites"></a>Symbol Modeler Prerequisites</h2>
+<p>Three frameworks contain the PLM 2D Presentation Modeler and Symbol Modeler API:</p>
+<ol>
+    <li>CATDifModelerUseItf: This framework is dedicated to managing the PLM 2D 
+	Presentation Modeler objects.</li>
+	<li>CATDibModelerUseItf: This framework is dedicated to centralizing all the 
+		basic cross applications 2D services.</li>
+	<li>CATDifSymbolbModelerUseItf: This framework is dedicated to managing the 
+	symbol modeler objects.</li>
+
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Structure"></a>Symbol Modeler Structuring Objects </h2>
+<p>The application using the Symbol Modeler includes a set of API to manage and create a 2D components such as 
+symbols, routes and shapes.</p>
+<p>The Symbol Modeler objects can be accessed through the owning object. In the current application case, it is from the view and the sheet reference.</p>
+<ul>
+    <li>
+        <i>CATIDifSymbolMakeUp</i> is implemented on the symbols.
+        This API is used to manage the symbol positioning in the view.
+        <table class="fill">
+            <tr>
+                <td><code>GetPosition</code></td>
+                <td>
+                    retrieves the symbol position in view axis system.
+                </td>
+            </tr>
+            <tr>
+                <td><code>GetScale</code></td>
+                <td>
+                    retrieves the symbol scale in the view axis system.
+                </td>
+            </tr>
+            <tr>
+                <td><code>GetAngle</code></td>
+                <td>
+                    retrieves the symbol angle in the view axis system.
+                </td>
+            </tr>
+            </table>
+    </li>
+    <li>
+        <i>CATIDibSymbolSet</i> is dedicated to manage a set of symbols. It is implemented by the view object.
+        <table class="fill">
+            <tr>
+                <td><code>GetSymbols</code></td>
+                <td>
+                    retrieves all the symbols of the implementing object.
+                </td>
+            </tr>
+        </table>
+    </li>
+    <li>
+        <i>CATIDifUseRoute</i> is dedicated to manage the route object.
+        <table class="fill">
+            <tr>
+                <td><code>GetRouteDescription</code></td>
+                <td>retrieves the points describing the route in the view axis system.</td>
+            </tr>
+            <tr>
+                <td><code>GetSymbolsOnRoute</code></td>
+                <td>retrieves all the symbols on route aggregated under a view.</td>
+            </tr>
+            
+        </table>
+    </li>
+    <li>
+        <i>CATIDifUseRouteSet</i> is dedicated to manage a set of routes. This interface is implemented by the view.
+        <table class="fill">
+            <tr>
+                <td><code>GetRoutes</code></td>
+                <td>retrieves the aggregated routes under the implementing object.</td>
+            </tr>
+        </table>
+    </li>
+    <li>
+        <i>CATIDifUseSymbolOnRoute</i> is dedicated to manage a symbol on route.
+        <table class="fill">
+            <tr>
+                <td><code>GetRoutePositionMode</code></td>
+                <td>retrieves the route position mode on the symbol on route.</td>
+            </tr>
+            <tr>
+                <td><code>GetSegmentPositionMode</code></td>
+                <td>retrieves the segment position mode of the symbol on route.</td>
+            </tr>
+            <tr>
+                <td><code>GetSegmentID</code></td>
+                <td>retrieves the segment number of the route where the symbol is attached.</td>
+            </tr>
+            <tr>
+                <td><code>GetPosition</code></td>
+                <td>retrieves the position of the symbol on route in the view axis system.</td>
+            </tr>
+        </table>
+    </li>
+     <li>
+        <i>CATIDifUseSymbolOnRouteFactory</i> is dedicated to create symbols on route. 
+        This API is implemented on the route.
+        <table class="fill">
+            <tr>
+                <td><code>CreateSymbolOnRoute</code></td>
+                <td>creates a symbol on route on the route implementing this interface.</td>
+            </tr>
+        </table>
+    </li>
+     <li>
+        <i>CATIDifUseShapeSet</i> is dedicated to manage a set of shapes. This interface is implemented by the view and the sheet reference.
+        <table class="fill">
+            <tr>
+                <td><code>Get2DShapes/code></td>
+                <td>rretrieves the aggregated 2D shapes under the implementing object.</td>
+            </tr>
+        </table>
+    </li>
+ 	<li>
+        <i>CATIDifUseShapeFactory</i> is dedicated to create shapes in the 
+		implementing object. In the schematic application, sheets and views 
+		references are implementing this API.
+        <table class="fill">
+            <tr>
+                <td><code>CreatePolyline</code></td>
+                <td>creates a polyline.</td>
+            </tr>
+              <tr>
+                <td><code>CreateArcCircle</code></td>
+                <td>creates an arc circle.</td>
+            </tr>
+  			<tr>
+                <td><code>CreateLine</code></td>
+                <td>creates a line.</td>
+            </tr>
+        </table>
+    </li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="CopyPaste"></a>Life Cycle</h2>
+<p>The 2D components have the life cycle of their aggregator. In application reference, it might be a sheet or a view reference.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Licensing"></a>Licensing</h2>
+<p>Symbol Modeler API are available if license one of the following technical 
+product is granted: </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref"> </div>
+<table class="reference">
+    <tr>
+        <td>[1]</td>
+        <td>
+            <a href="CAADifSymbolUcNavigateOn2DComponents.htm">Navigating on the 2D 
+			Components of a View or a Sheet Reference</a></td>
+    </tr>
+    <tr>
+        <td>[2]</td>
+        <td>
+            <a href="CAADifSymbolUcCreating2DShapes.htm">Creating 2D Shapes in a 
+			View or a Sheet Reference</a></td>
+    </tr>  
+    <tr>
+        <td>[3]</td>
+        <td>
+            <a href="CAADifSymbolUcSymbolOnRoute.htm">Creating and Managing a Symbol on 
+			Route</a>
+        </td>
+    </tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article has explained the foundations of the Symbol Modeler.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="History"></a>History</h2>
+    <table class="history">
+        <tr>
+            <td>Version: <strong>1</strong> [Feb 2018]</td>
+            <td>Document created</td>
+        </tr>
+    </table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+
+</html>

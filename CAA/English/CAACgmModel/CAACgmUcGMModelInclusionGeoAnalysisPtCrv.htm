@@ -1,0 +1,421 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Checking the Confusion of Points on a Curve</title>
+<style type="text/css">
+.auto-style1 {
+	font-family: "Times New Roman", serif;
+	font-size: 16px;
+	letter-spacing: normal;
+	background-color: #FFFFFF;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Testing the Inclusion of a Point on a Curve with 
+		Local Analysis </h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>The CAAGMModelTestInclusion use case illustrates how to test if a 
+		point is included or not on a curve and how to analyse localy a point of 
+		a curve in order to get its curvature, torsion, main normal and binormal 
+		value .</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAGMModelTestInclusion&nbsp; Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMModelTestInclusion&nbsp; Do</a></li>
+				<li><a href="#How">How to Launch CAAGMModelTestInclusion </a></li>
+				<li><a href="#Where">Where to Find the CAAGMModelTestInclusion </a>&nbsp;</li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a><ul>
+				<li><a href="#Creates the Line and Cylinder to Intersect">Getting the Curve 
+and the Points to Be Analyzed</a></li>
+				<li><a href="#Basic Mode">Creating and Using the CATICGMInclusionPtCrv&nbsp; Operator</a></li>
+				<li>
+				<a href="#CATICGMLocalAnalysis1D" name="CATICGMLocalAnalysis1D0">Creating and Using the 
+	CATICGMLocalAnalysis1D Operator<script type="text/javascript">insertLinkToTop();</script><!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= --></a></li>
+			</ul>
+			</li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		&nbsp;</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case [<a href="#References">1</a>] is intended to help you to use the
+CATICGMInclusionPtCrv&nbsp; and CATICGMLocalAnalysis1D operators. See [<a href="#References">2</a>] 
+for an overview of this type of operators.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAGMModelTestInclusion Use Case</h2>
+<p>CAAGMModelTestInclusion is a use case of the CAAGMModelInterfaces.edu framework. 
+The first part of the use case illustrates how to use CATICGMInclusionPtCrv and 
+CATICGMLocalAnalysis1D .</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMModelTestInclusion Do</h3>
+<table>
+	<tr>
+		<td>
+		<img alt="" src="images/CAAGMModelTestInclusion_img3.jpg"></td>
+		<td>This use case retrieves the input data to be passed to the 
+		CATICGMInclusionPtCrv 
+		operator from the file TestInclusionPtSurf_PtCrv.NCGM :
+		<ul>
+			<li>An Isoparametric curve build from a point on a Nurbs surface</li>
+			<li>a Nurbs curve</li>
+			<li>The points to be tested.</li>
+		</ul>
+		<p>It creates the operator and performs the geometric tests. The result 
+		can be optionally saved into an NCGM container and displayed using the CAAGMModelGemBrowser 
+		use case [<a href="#References">3</a>].</p>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMModelTestInclusion </h3>
+<p>To launch CAAGMModelTestInclusion , you will need to set up the build time environment, 
+then compile CAAGMModelTestInclusion.m along with its prerequisites, set up the run 
+time environment, and then execute the use case [<a href="#References">4</a>].</p>
+<p>If you simply type CAAGMModelConfusionOpe with argument only the input file 
+TestInclusionPtSurf_PtCrv.NCGM, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example:</p>
+<p><code>CAAGMModelTestInclusion TestInclusionPtSurf_PtCrv.NCGM e:\InclusionGeoAnalysisOutput.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case [<a href="#References">3</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMModelInterfaces.edu' data-xplore-mod='CAAGMModelConfusionOpe.m'>
+<h3><a name="Where"></a>Where to Find the CAAGMModelTestInclusion Code</h3>
+<p>The CAAGMModelTestInclusion use case is made of a main named 
+CAAGMModelTestInclusion.cpp 
+located in the CAAGMModelTestInclusion .m module of the CAAGMModelInterfaces.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMModelInterfaces.edu\CAAGMModelTestInclusion.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">4</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The initial step which consists in creating the geometry factory as well as the 
+last step which consists in writing the model and closing the factory are described 
+in [<a href="#References">1</a>]. The coding steps dedicated to the 
+CATICGMInclusionPtCrv&nbsp; and CATICGMLocalAnalysis1D operators are explained below:</p>
+<ol>
+	<li>Creating the Geometry Factory [<a href="#References">1</a>].</li>
+	<li><a href="#Creates the Line and Cylinder to Intersect">Getting the Curve 
+	and the Points to be Analyzed</a></li>
+	<li><a href="#Basic Mode">Creating and Using the CATICGMInclusionPtCrv&nbsp;&nbsp; 
+	operator</a></li>
+	<li><a href="#CATICGMLocalAnalysis1D">Creating and Using the 
+	CATICGMLocalAnalysis1D&nbsp; 
+	operator</a></li>
+	<li>Writing the Model and Closing the Factory [<a href="#References">1</a>].</li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creates the Line and Cylinder to Intersect"></a>Getting the Curve 
+and the Points to Be Analyzed</h3>
+<pre class="code">
+...
+// 2 - Identify the input curve (IsoCurve of surface) for test
+// -----------------------------------------------------------
+CATCurve *piInputIsoCurve = (CATCurve *)piGeomFactory-&gt;FindObjectFromTag(20158);
+
+// 2 - Identify the CATPoint to test
+// 
+CATPoint * pPointToTest = (CATPoint *)piGeomFactory-&gt;FindObjectFromTag(23132);
+
+..
+</pre>
+<p>The geometry is retrieved from its associated tag in the <code>
+TestInclusionPtSurf_PtCrv.NCGM </code>by the <code>CATGeoFactory</code>&nbsp; 
+method FindObjectFromTag().</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Basic Mode"></a>Creating and Using the CATICGMInclusionPtCrv&nbsp; Operator</h3>
+<p>An example of function allowing&nbsp; to test in mode ADVANCED the inclusion 
+of a point on a curve and performing&nbsp; local analysis of this point (if it 
+is included in the curve)&nbsp; is provided in the use case. This method is
+<strong>TestInclusionAndLocalAnalysisPtCrv</strong>()</p>
+	<p>In this function, the CATCGMCreateInclusion global function is used to create the operator 
+	dedicated for test inclusion. </p>
+	<p>The following code illustrate how to test the inclusion between a point 
+	and a curve:</p>
+<pre class="code">// Create operator for testing the inclusion of a point in a curve
+//
+CATICGMInclusionPtCrv * pTestInclusionPtCrvOper = ::<strong>CATCGMCreateInclusion</strong>(piGeomFactory,
+piConfig,
+piPointToTest,
+piCurve,
+iTolerance,
+ADVANCED);
+
+if (pTestInclusionPtCrvOper)
+{
+cout &lt;&lt; &quot;Creates an operator for testing the inclusion of a Point in a Curve. : OK&quot; &lt;&lt; endl;
+
+// run the operator 
+// 
+pTestInclusionPtCrvOper-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;\nrun the operator : OK&quot; &lt;&lt; endl;
+
+// Get the number of resulting points
+//
+CATLONG32 NbInclusionPt = pTestInclusionPtCrvOper-&gt;<strong>GetNumberOfPoints</strong>();
+cout &lt;&lt; &quot;\nNumber of resulting points of CATICGMInclusionPtCrv operator: &quot; &lt;&lt; NbInclusionPt &lt;&lt; endl;
+
+// Retrieve the solution point if it exist
+//
+CATBoolean isNextPointFound = FALSE;
+isNextPointFound = pTestInclusionPtCrvOper-&gt;<strong>NextPoint</strong>();
+
+
+if (TRUE == isNextPointFound)
+{
+cout &lt;&lt; &quot;\nSkips to the next solution point of CATICGMInclusionPtCrv operator : TRUE&quot; &lt;&lt; endl;
+
+// Retrieves the parameter of the next solution point of CATICGMInclusionPtCrv operator.
+//
+CATCrvParam crvparam;
+pTestInclusionPtCrvOper-&gt;<strong>GetCurveParam</strong>(crvparam);
+cout &lt;&lt; &quot;Retrieves the parameter of the next solution point of CATICGMInclusionPtCrv operator : OK&quot; &lt;&lt; endl;
+
+//evaluate the tangent of the curve 
+//
+CATCrvEvalLocal evalResult;
+piCurve-&gt;Eval(crvparam, CATCrvEvalCommand::EvalFirstDerivative, evalResult);
+cout &lt;&lt; &quot;Evaluate the tangent of the curve on the point : OK&quot; &lt;&lt; endl;
+
+// Retrieves the evaluation of the first derivative at the point of a CATCurve.
+//
+CATMathVector mathTangent(0.0, 0.0, 0.0);
+evalResult.GetFirstDeriv(mathTangent);
+mathTangent.Normalize();
+
+double CoordTangDir_X, CoordTangDir_Y, CoordTangDir_Z;
+CoordTangDir_X = mathTangent.GetX();
+CoordTangDir_Y = mathTangent.GetY();
+CoordTangDir_Z = mathTangent.GetZ();
+cout &lt;&lt; &quot;Direction of Tangent : \n\n\t X = &quot; &lt;&lt; CoordTangDir_X &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; CoordTangDir_Y &lt;&lt; &quot;\n\t Z = &quot; &lt;&lt; CoordTangDir_Z &lt;&lt; endl;
+
+
+// Retrieves the distance of a solution point and the curve.
+//
+double DistancePtCurve = pTestInclusionPtCrvOper-&gt;<strong>GetDistance</strong>();
+cout &lt;&lt; &quot;\nDistance between the solution point and the curve = &quot; &lt;&lt; DistancePtCurve &lt;&lt; endl;
+</pre>
+<p>Here are the messages on the standard output:</p>
+<pre><img alt="" src="images/CAAGMModelTestInclusion_img4.gif"></pre>
+	<p>Below the model tested by the use case:</p>
+	<pre><img alt="" src="images/CAAGMModelTestInclusion_img6.jpg"></pre>
+	<p>The operator detects the point only if it is on the scope of the provided 
+	tolerance value. The operator gets all the points closed enough (at the 
+	tolerance) to the curve, spaced <br>each other by a curvilinear distance at 
+	least equal to 2*Tolerance.</p>
+	<p>For example, for the case of the point with tag 49868, the operator 
+	doesn't detect it as included with the Nurbs curve (Tag =137) when we set as 
+	tolerance a value equal to 0.5*resolution.</p>
+	<p>With correct tolerance value the point is well detected and then seen as 
+	included to the Nurbs curve.</p>
+	<p>Here are the messages on the standard output:</p>
+	<pre><img alt="" src="images/CAAGMModelTestInclusion_img7.jpg"></pre>
+	<p>Below the model tested by the use case:</p>
+	<pre><img alt="" src="images/CAAGMModelTestInclusion_img8.jpg"></pre>
+	<h3><a name="CATICGMLocalAnalysis1D">Creating and Using the 
+	CATICGMLocalAnalysis1D Operator<script type="text/javascript">insertLinkToTop();</script><!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= --></a></h3>
+<p>An example of function enabling the geometrical Analysis of the curve on a 
+given parameter point (crvparam) is provided in the use case. This method is
+<strong>LocalAnalysisCurveAtPt</strong>()</p>
+	<p>In this function, the CATCGMCreateLocalAnalysis global function is used to create the operator 
+	dedicated for local analysis on a point of a CATCurve. </p>
+	<p>The following code illustrate how toanalyse locally a curve on a given 
+	point:</p>
+<pre class="code">
+// Create Operator enabling the local analysis on a point of a CATCurve.
+// 
+<strong>CATICGMLocalAnalysis1D</strong> * pGeomOperLocalAnalysisCrv = ::<strong>CATCGMCreateLocalAnalysis</strong>(iConfig, piCurve, crvparam);
+
+if (pGeomOperLocalAnalysisCrv)
+{
+  cout &lt;&lt; &quot;\n\n Create Operator enabling the local analysis on a point of a CATCurve. : OK&quot; &lt;&lt; endl;
+
+  CATMathPoint MathPt = piCurve-&gt;EvalPoint(crvparam);
+  cout &lt;&lt; &quot;\nCoordinates of the point to analyse: \n\t X = &quot; &lt;&lt; MathPt.GetX() &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; MathPt.GetY() &lt;&lt; &quot;\n\t Z = &quot; &lt;&lt; MathPt.GetZ() &lt;&lt; endl;
+...
+</pre>
+	<p>The CATICGMLocalAnalysis1D operator enables to get the curvature, the 
+	torsion, the main normal vector, the binormal vector and regularity of a curve on a 
+	given point.</p>
+	<p>Suppose M a point of the curve C:</p>
+	<p>&nbsp;</p>
+	<p><img alt="" src="images/CATCGMCreateLocalAnalysisimg27.gif"></p>
+	<ul>
+		<li><strong>Curvature at the point M of the curve. </strong></li>
+	</ul>
+	<p>The curvature<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;, serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"> 
+	measures how fast a curve is changing direction at a given point. </span>
+	</p>
+	<p><span class="auto-style1">The curvature</span> value is the norm of the 
+	cross product of the first derivative and the second derivative divided by 
+	the cube of the norm of the first derivative:</p>
+	<p><img alt="" src="images/CATCGMCreateLocalAnalysisimg25.gif"></p>
+	<ul>
+		<li><strong>Torsion at the point M of the curve</strong></li>
+	</ul>
+	<p>The torsion measures how much the curve deviates from the osculating 
+	plane (plane generated by the tangent and normal vectors).</p>
+	<p>&nbsp;The forumula of the torsion is&nbsp; : </p>
+	<p>Let V is the cross product of the first derivative and the second 
+	derivative</p>
+	<p><img alt="" src="images/CATCGMCreateLocalAnalysisimg2B.gif"></p>
+	<p>Then Torsion is the&nbsp; quotient between the dot product of vector V 
+	with third derivative and the square of V.</p>
+	<p><img alt="" src="images/Torsionimg34.gif"></p>
+	<p>&nbsp;</p>
+	<ul>
+		<li><strong>Main Normal at the point M of the curve</strong></li>
+	</ul>
+	<p>The main normal vector
+	<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;, serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+	<span>&nbsp;</span>normal is orthogonal&nbsp; to the unit tangent vector and 
+	hence to the curve as wel</span> : </p>
+	<p><img alt="" src="images/MainNormal.gif"></p>
+	<p>Let V is the cross product of the first derivative and the second 
+	derivative</p>
+	<p><img alt="" src="images/CATCGMCreateLocalAnalysisimg2B.gif"></p>
+	<p>Then Main normal is </p>
+	<p><img alt="" src="images/CATCGMCreateLocalAnalysis.gif"></p>
+	<ul>
+		<li><strong>Binormal at the point M of the curve</strong></li>
+	</ul>
+	<p>
+	<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;, serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+	<span>&nbsp;The </span>binormal vector is orthogonal to both the tangent vector 
+	and the normal vector. This vector is perpendicular to the osculating plane.</span></p>
+	<p><img alt="" src="images/CATCGMCreateLocalAnalysisimg1B.gif"></p>
+	<p><img alt="" src="images/CATCGMCreateLocalAnalysisimg21.gif"></p>
+	<p>Let see how to retrieve these measures with CATICGMLocalAnalysis1D 
+	operator: </p>
+	<pre> // Get the curvature at the point of CATICGMLocalAnalysis1D.
+//
+//
+oCurvaturePt = pGeomOperLocalAnalysisCrv-&gt;<strong>GetCurvature</strong>();
+cout &lt;&lt; &quot;\nCurvature at the point : &quot; &lt;&lt; oCurvaturePt &lt;&lt; endl;
+
+
+// Get the torsion at the point of CATICGMLocalAnalysis1D.
+//
+oTorsionPt = pGeomOperLocalAnalysisCrv-&gt;<strong>GetTorsion</strong>();
+cout &lt;&lt; &quot;\nTorsion at the point : &quot; &lt;&lt; oTorsionPt &lt;&lt; endl;
+
+// Get the main normal at the point of CATICGMLocalAnalysis1D
+//
+oMainNormalPt = pGeomOperLocalAnalysisCrv-&gt;<strong>GetMainNormal</strong>();
+cout &lt;&lt; &quot;\nMain Normal at the point : \n\n\t X = &quot; &lt;&lt; oMainNormalPt.GetX() &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; oMainNormalPt.GetY() &lt;&lt; &quot;\n\t Z = &quot; &lt;&lt; oMainNormalPt.GetZ() &lt;&lt; endl;
+
+
+// Get the Bi normal at the point of CATICGMLocalAnalysis1D
+//
+oBiNormalVect = pGeomOperLocalAnalysisCrv-&gt;<strong>GetBiNormal</strong>();
+cout &lt;&lt; &quot;\nBi normal at the point : \n\n\t X = &quot; &lt;&lt; oBiNormalVect.GetX() &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; oBiNormalVect.GetY() &lt;&lt; &quot;\n\t Z = &quot; &lt;&lt; oBiNormalVect.GetZ() &lt;&lt; endl;
+
+if (oMainNormalPt.GetAngleTo(oBiNormalVect) - CATPIBY2 &gt; epsilon)
+{
+cout &lt;&lt; &quot; *************** ERROR ! : GetBiNormal KO&quot; &lt;&lt; endl;
+return (E_FAIL);
+}
+
+//
+// Tests whether the point of this CATICGMLocalAnalysis1D is regular.
+// A point is non regular when the partial derivative of one of its coordinate is null.
+//
+oIsARegularPt = pGeomOperLocalAnalysisCrv-&gt;IsARegularParam();
+
+if (oIsARegularPt == 1)
+cout &lt;&lt; &quot;\nThe point is regular: all the partial derivative of its coordinates are not null&quot; &lt;&lt; endl;
+else
+cout &lt;&lt; &quot;\nThe point is not regular: the partial derivative of one of its coordinate is null &quot; &lt;&lt; endl;
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img alt="" src="images/OutputConsoleAnalaysisimg2F.gif"></p>
+	<h2><a name="InShort"></a>In Short</h2>
+<p>CATICGMInclusionPtCrv&nbsp; is a geometric operator which follows the same 
+scheme as all geometric operators: it is a transient object and its execution does 
+not modify the input operands. It must be operated within a single container. Its 
+purpose is to detect if a given point is included or not on a curve.</p>
+	<p>&nbsp;CATICGMLocalAnalysis1D 
+	operator allow to get measure of the curvature, torsion, main normal vector 
+	and binormal vector value of a curve.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAACgmUcGMModelUseCaseOverw.htm">An Introduction to Geometric Modeler 
+		Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAACgmUcGMModelOpeOverw.htm">How to Use Geometric Operators</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAACgmUcGemBrowser.htm">Browsing the 
+		Geometric Container</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Jan 2007]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

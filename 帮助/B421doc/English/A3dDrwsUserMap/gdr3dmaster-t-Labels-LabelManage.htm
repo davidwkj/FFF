@@ -1,0 +1,136 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Managing Labels"/>
+<meta name="abstract" content="You can edit a label, replace a label content and manipulate a label."/>
+<meta name="description" content="You can edit a label, replace a label content and manipulate a label."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-c-Labels-Label.htm#gdr3dmaster-c-Labels-Label"/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Labels-LabelCreate.htm#gdr3dmaster-t-Labels-LabelCreate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-Labels-LabelManage"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Managing Labels</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-Labels-LabelManage">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Replace Content"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Managing Labels</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can edit a label, replace a label content and manipulate a label. </span>
+
+    
+  </p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-EditaLabel" id="toc_rg" title="You can edit a label by modifying its content (a text or a table) if it is defined as modifiable in instance in the reference. You can also manipulate a label using its handles.">Edit a Label</a></li><li><a href="#t-ReplaceaLabel" id="toc_rg" title="You can replace a label content with a 2D component reference or the content of another label.">Replace a Label Content</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>Create a label.
+    </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-c-Labels-Label.htm#gdr3dmaster-c-Labels-Label" title="Labels are custom annotations, which can be instantiated, stored in catalogs, and can contain link templates.">About Labels</a></td></tr><tr><td><a href="gdr3dmaster-t-Labels-LabelCreate.htm#gdr3dmaster-t-Labels-LabelCreate" title="You can create a label from a 2D component reference or the content of another label.">Creating a Label</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+  </div>
+
+
+  <div/>
+
+  <div class="nested1" id="t-EditaLabel"><h2 class="topictitle2">Edit a Label</h2>
+
+<div><p><span>You can edit a label by modifying its content (a text or a table) if it is defined as modifiable in instance in the reference. You can also manipulate a label using its handles.</span>
+</p>
+<ol><li class="stepexpand"><p>Double-click the label or right-click the label and select <span class="uicontrol">Label.x Definition</span>. <p> The label is in edition mode.   <br/><img border="1" src="../Gdr3DMasterImages/labeledition02NLS.png"/><br/></p></p></li>
+<li class="stepexpand"><p>Right-click the text in the label and select <span class="uicontrol">Modifiable in Instance</span>.<p> The text becomes modifiable in instance, i.e. it can be edited after it is instantiated.<br/><img border="1" src="../Gdr3DMasterImages/labeledition03NLS.png"/><br/></p></p></li>
+<li class="stepexpand"><p>Right-click the text again and select <span class="uicontrol">Set Master Annotation</span>.<p> The annotation is set as the master annotation and all the font and text properties are now handled by this master annotation and no more by the label itself. The leader is now attached to the master annotation.  <br/><img border="1" src="../Gdr3DMasterImages/labeledition04NLS.png"/><br/><p>Note:
+		The <span class="uicontrol">Set Master Annotation</span> contextual command of a text or a table contained in a label is: <ul><li>  Available for labels located in the main view of a detail sheet, when they are in edition.</li>
+<li>Available only when a single annotation is selected.</li>
+<li>Not available in the <span>context menu</span> of a text or a table which is already the master annotation of the label.</li>
+</ul>
+   </p>
+</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Right-click the text and select <span class="uicontrol">Clear Master Annotation</span>. <p> The annotation is no more master annotation. The leader is attached back to the label. <p>Note:
+		The <span class="uicontrol">Clear Master Annotation</span> contextual command of a text or a table contained in a label is: <ul><li>Available for labels located in the main view of a detail sheet, when they are in edition.</li>
+<li>Available if at least one annotation is selected.</li>
+<li>Available only when a master annotation has already been defined for the label.</li>
+</ul>
+</p>
+</p></p></li>
+<li class="stepexpand"><p>Double-click the text.
+          <p> The <span class="uicontrol">Text Editor</span> and the <span class="wintitle">Insert Link Template </span>dialog box appear.<p>Note:
+		The <span class="uicontrol">Text Editor</span> dialog box lets you edit the annotation only when the annotation in the label is declared as <span class="uicontrol">Modifiable in instance</span>. You can modify the properties of all such  annotations of the label using <span class="wintitle">Object Properties</span>. However, you cannot edit label properties using  <span class="wintitle">Object Properties</span>, once the label is in edition mode.</p>
+</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Edit the text or insert the link <span class="glossterm" id="template-2" onmouseout="hideTerm()" onmouseover="showTerm('template-2.xml')">template</span> and click <span class="uicontrol">Ok</span> in the <span class="wintitle">Text Editor</span> dialog box.</p></li>
+<li class="stepexpand"><p><a href="gdr3dmaster-t-Labels-LabelInstantiate.htm#gdr3dmaster-t-Labels-LabelInstantiate" title="You can instantiate a label from a label template.">Instantiate the label</a>. <p> The label instance is created in the design <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> of a .</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Select the label using any of its sub parts including annotations declared as modifiable in instance.  <p> Handles are displayed, using which you can move or drag the label as per your requirement.<br/><img border="1" src="../Gdr3DMasterImages/labeledition01NLS.png"/><br/></p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Rotate or drag the label to the required position.</p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Change the symbol shape of the yellow anchor point or add a breakpoint to the leader.<p> The label is modified as per your requirement. For more information about adding a breakpoint to the leader, see <a href="gdr3dmaster-t-Annotations-LeaderBreakpointMoveAndPosition.htm#gdr3dmaster-t-Annotations-LeaderBreakpointMoveAndPosition" title="You can move and position leaders breakpoints easily, for all types of annotations using snapping (the leader is oriented perpendicular to the reference element).">Moving and Positioning Leader Breakpoints</a>.</p></p></li>
+</ol>
+<p class="result"/></div>
+</div>
+<div class="nested1" id="t-ReplaceaLabel">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Replace a Label Content</h2>
+
+    
+    <div><p><span>You can replace a label content with a 2D component reference or the content of another label.</span>
+
+    	
+    </p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          
+            Right-click a label and select <span class="uicontrol">Label.x object &gt; Replace Content</span>.
+          
+          <p> 
+            <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tips:
+				</span><ul><li>You can replace the content of several labels at once by multi-selecting the labels before executing <span class="uicontrol">Replace Content</span>.</li>
+<li>You can also add content to an empty label by double-clicking the label and selecting <span class="uicontrol">Replace Content</span>.</li>
+</ul>
+
+</td></tr></table>
+
+          </p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Select a <span class="glossterm" id="component-2D-reference" onmouseout="hideTerm()" onmouseover="showTerm('component-2D-reference.xml')">2D component reference</span> or another label to replace the content.
+          
+          <p>
+            If you select a 2D component reference, a message box appears
+          prompting you whether you want to delete the 2D component reference used to define the label content.</p>
+          
+        <p> The label content is replaced.
+          </p></p></li>
+
+        <li class="stepexpand"><p>
+          <span class="run-in">Optional: </span>
+                      Click <span class="uicontrol">Yes</span> to delete the 2D component reference or click <span class="uicontrol">No</span> to keep the reference as it is. 
+        
+          
+          
+          
+        </p></li>
+
+        
+        
+        
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+
+   
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

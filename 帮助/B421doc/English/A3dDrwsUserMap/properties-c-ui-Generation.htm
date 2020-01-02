@@ -1,0 +1,334 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Generation Properties"/>
+<meta name="abstract" content="Generation lets you modify dress-up features, type of view generation mode, type of generative view style and so on."/>
+<meta name="description" content="Generation lets you modify dress-up features, type of view generation mode, type of generative view style and so on."/>
+<meta name="DC.Relation" scheme="URI" content="../Headers/dsdocKBHeader.htm?id=QA00000005018"/>
+<meta name="DC.Relation" scheme="URI" content="../Headers/dsdocKBHeader.htm?id=QA00000007533"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="properties-c-ui-Generation"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Generation Properties</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="properties-c-ui-Generation">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::Generation"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::Generative view"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Generation Properties</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span><span class="wintitle">Generation</span> lets you modify dress-up features, type of view generation mode,  type of generative view style and so on.</span>
+<p>
+      Select the <span class="uicontrol">Generation</span> tab to access properties.
+    </p>
+    
+    
+  </p>
+<ul><li><a href="#properties-c-ui-Generation__c-General" title="">Dress-up</a></li><li><a href="#properties-c-ui-Generation__c-HatchingXX" title="">3D extracted representations</a></li><li><a href="#properties-c-ui-Generation__c-Preview" title="">Generation Mode</a></li><li><a href="#properties-c-ui-Generation__c-ManagementOf3DPartMaterialPattern" title="">Generative view style</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+  
+
+  
+
+  <div>
+    
+
+    <div class="section" id="properties-c-ui-Generation__c-General"><h2 class="sectiontitle">Dress-up</h2>
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Hidden Lines</dt>
+
+          <dd>Generates hidden lines.</dd>
+<dd class="ddexpand">This enables the <span class="uicontrol">Auto-hide </span> option. </dd>
+
+        
+          <dt class="dlterm">
+            Center Line</dt>
+
+          <dd>Generates the center line.</dd>
+
+        <dd class="ddexpand"><p>Note:
+		The view plane must be perpendicular to the rotation face axis.</p>
+</dd>
+
+          <dt class="dlterm">
+            3D Colors</dt>
+
+          <dd>Generates the colors of a part. Clear the <span class="uicontrol">Disable generative view style usage</span> check box
+in <span><a href="../PreferencesMap/gdrpref-c-Administration.htm#gdrpref-c-Administration__cs-GenerativeViewStyle">Generative view style</a></span> clears this check box.</dd>
+
+        <dt class="dlterm">            Pattern</dt>
+<dd>Generates patterns.</dd>
+
+                <dt class="dlterm">Axis</dt>
+
+                <dd>
+                  Generates axis lines.</dd>
+
+              <dd class="ddexpand"><p>Note:
+		 The view plane must be parallel to the rotation face axis.</p>
+</dd>
+
+                <dt class="dlterm">Thread</dt>
+
+                <dd>Generates threads.<p>The technological results enable you to generate the same threads from an original part and its copy (created using <span class="uicontrol">Paste Special as Result with Link</span>). Some salient features are as follows:<ul><li>CPU and memory consumption are decreased while creating or updating
+a view containing such threads.
+</li>
+<li>This functionality is not available for views generated using the
+<span class="uicontrol">CGR</span>, <span class="uicontrol">Approximate</span>, and <span class="uicontrol">Raster</span> generation modes.
+</li>
+<li>After creating technological results for a given part, it is
+recommended not to deactivate them. <p>When you do so anyway, some
+thread dimensions may become not-up-to-date (and are displayed
+using the color defined by <span class="uicontrol">Activate Elements' Analysis</span> is selected, see <span><a href="../PreferencesMap/gdrpref-c-Display.htm#gdrpref-c-Display__c-Display-ElementsAnalysis">Elements Analysis</a></span>).</p></li>
+<li>Thread dimensions created with the <span class="uicontrol">Thread Dimension</span>
+command are not generated from 3D constraints (and they are
+displayed in the black color). <p>Therefore, it is not possible to drive 3D constraints from such dimensions.</p></li>
+<li>In <span>Part Design</span>, you can delete one or more elements contained in the
+<span class="uicontrol">Technological Results</span> node (to restrict the information
+you provide). <p>When the <span class="uicontrol">Technological Results</span> node is available in a
+3D shape representation, the drafting view is computed with it,
+disregarding the geometry dimensions.</p><p>Then, elements missing in the
+node are not projected in the Drafting view.</p><p>For more information, see
+<cite><span>Part Design</span> User's Guide: Handling 3D Shapes</cite>. For more on the pasting as a result with links, see <cite><span>Part Design</span> User's Guide: Handling 3D Shapes in a Multi-Representation  Environment</cite>. For more on technological results, see <cite><span>Part Design</span> User's Guide: Creating Technological
+Results</cite>.
+</p></li>
+</ul>
+</p>
+                </dd>
+
+              <dt class="dlterm">Smooth Edges</dt>
+<dd>Generates the smooth edges corresponding to either tangent continuity or curvature continuity. <p>Notes:
+		<ul><li><span class="uicontrol">Smooth Edges</span> is available only for the views generated using the <span class="uicontrol">Exact mode</span> of view projection.</li>
+<li>When you select <span class="uicontrol">Fillets</span> along with <span class="uicontrol">Smooth Edges</span>, the following behaviors are observed, depending upon the choice of the fillet edge projection:<ul><li>When you select <span class="uicontrol">Boundaries</span>, only one edge corresponding to the actual fillet edge in 3D is projected.</li>
+<li>When you select any of the other three options, such as <span class="uicontrol">Symbolic</span>, <span class="uicontrol">Approximated Original Edges</span>, or <span class="uicontrol">Projected Original Edges</span>, two edges are projected — one edge reflects the fillet, and the other reflects the smooth edges. These two edges are either projected as separate edges, or overlapping; depending upon the scenario.</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="dlterm">Auto-hide</dt>
+<dd> Simplifies the representation of the hidden lines in views by only keeping the hidden lines not hidden by the part itself. Only available only when the <span class="uicontrol">Hidden Lines</span> is selected.<p>When there is a clash between the various geometries to be projected, some of the resulting 2D edges may not be displayed properly. </p>  <p>In this case, the missing edges are normally seen as the hidden edges. These edges can be visualized by activating <span class="uicontrol">Hidden Lines</span> for the view. However, <span class="uicontrol">Hidden Lines</span> displays all the hidden lines. Therefore, you can select <span class="uicontrol">Auto-hide</span> (available only in the <span class="uicontrol">Exact</span> view mode) to simplify the representation of the hidden lines which only keeps the hidden lines not hidden by the part itself.</p><p>With <span class="uicontrol">Auto-hide</span>:  <ul><li>A segment hidden by its own part is not displayed.</li>
+<li>A segment hidden by another part is displayed as hidden (using dashed lines).</li>
+</ul>
+</p><p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="void" border="0" rules="none">
+        
+        
+        <tbody>
+          <tr>
+            <td class="row-nocellborder" valign="top" width="298.50pt"><span class="uicontrol">Hidden Lines</span> is selected:<br/><img src="../GdrUserImages/hiddenlines.png"/><br/>
+            </td>
+
+            <td class="cellrowborder" valign="top" width="0.333889816360601%"><span class="uicontrol">Auto-hide</span> is selected:<br/><img src="../GdrUserImages/exactauto-hide.png"/><br/>
+              
+            </td>
+
+          </tr>
+
+          
+          
+        </tbody>
+
+      </table>
+</div>
+</p></dd>
+
+          <dt class="dlterm">Fillets</dt>
+
+          <dd><dl class="uicontrol">
+              
+                <dt class="dlterm">Boundaries</dt>
+
+                <dd>
+                  Generates fillets as thin lines, representing the mathematical limits of the fillets.
+<p>Boundaries are not projected if they correspond to two faces
+which are continuous in curvature. They are projected only if
+they correspond to a smooth edge which is situated between two
+faces whose curvature radii vary. This mode are used automatically to represent a connection
+between two faces which are not joined by a fillet, no matter what
+option you select.
+</p></dd>
+
+              
+              
+                <dt class="dlterm">Symbolic</dt>
+
+                <dd>Generates fillets as original edges, projected in a direction that is normal to each corresponding surface.</dd>
+
+              <dt class="dlterm">Approximated Original Edges</dt>
+<dd>Generates fillets as original edges, at the intersection of the two surfaces joined by the fillet.</dd>
+<dt class="dlterm"><a name="properties-c-ui-Generation__ProjectedOriginalEdges"><!-- --></a>Projected Original Edges</dt>
+<dd>Generates fillets as original edges, projected on fillet surfaces in the direction of the view
+projection. <p>This option also avoids projecting fillets which overlap with the actual geometry edges, thus enabling you to create the associative dimensions on views. </p><p>However, this is applicable only for those fillets which have two supporting faces, out of which at least one of the faces is planar. </p><p>Notes:
+		<ul><li>This projection mode is equivalent to the CATIA V4 fillet
+projection mode.</li>
+<li>The following information applies to <span class="uicontrol">Symbolic</span>,
+<span class="uicontrol">Approximated Original Edges</span>, and <span class="uicontrol">Projected Original
+Edges</span>:
+<ul><li>Only those fillets for which the fillet faces exist in the corresponding 3D are shown. </li>
+<li>Dimensions on fillets are not associative for <span class="uicontrol">Symbolic</span> and <span class="uicontrol">Approximated Original Edges</span>.</li>
+<li>Dimensions on fillets with two supporting faces including at least one planar  face are associative for <span class="uicontrol">Projected Original Edges</span>. 
+</li>
+<li>Such fillets cannot inherit 3D colors. Likewise, when
+using generative view styles, such fillets cannot inherit the
+<span class="uicontrol">3DInheritance</span> view dress-up parameters (defined in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span><span class="menucascade"><span class="uicontrol"> &gt; generativeparameters</span> &gt; <span class="uicontrol">*.XML</span></span> file,<span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">ViewDressup</span> &gt; <span class="uicontrol">3DInheritance</span></span>).</li>
+<li>Always bear in mind that those fillets representations are only a symbolical preview of the 3D.</li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+
+            </dl>
+
+          </dd>
+
+        
+        
+          <dt class="dlterm">3D points</dt>
+
+          <dd>Projects points from 3D (no construction elements), then select the type of 3D points to generate.<dl class="uicontrol"><dt class="dlterm">3D symbol inheritance</dt>
+<dd>Keeps the symbols that are used in
+the 3D representation to project 3D points.
+</dd>
+<dt class="dlterm">Symbol</dt>
+<dd>Allows you to use a new symbol to project 3D
+points, and select the symbol of your choice from the drop-down
+list.</dd>
+</dl>
+</dd>
+
+        
+      <dt class="dlterm">3D wireframe</dt>
+<dd>Visualizes both the wireframe and the
+geometry on generated views.
+You can choose whether projected 3D wireframe can be hidden or is
+always visible:
+<dl class="uicontrol"><dt class="dlterm">Can be hidden</dt>
+<dd>Hides 3D wireframe geometry to follow the
+standard removal of the hidden lines.
+</dd>
+<dt class="dlterm">Is always visible</dt>
+<dd>Always shows 3D wireframe geometry.<p> In this case, it follows the standard removal of
+the hidden lines.
+</p></dd>
+</dl>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><p>In case of wireframes being coincident behind a part
+boundary, they may be seen as relimited lines when  
+
+<span class="uicontrol">3D
+Wireframe</span> and <span class="uicontrol">Can be hidden</span> are
+selected.</p></td></tr></table>
+</dd>
+</dl>
+
+    </div>
+
+    <div class="section" id="properties-c-ui-Generation__c-HatchingXX"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">3D extracted representations</h2><p>Indicates 3D representations that are projected in the view. You
+cannot modify this property.</p><p>Note:
+		To modify the setting that defines which 3D representations are
+projected in views, go to
+<span><a href="../PreferencesMap/gdrpref-c-View.htm#gdrpref-c-View" title="You can customize view options for Drafting using this section. You can customize the geometry generation and dress-up options while generating views. You can also specify the type of view generation mode, display of dimensions in the clipping view, 2D geometry generation while creating a view from 3D and so on.">View</a></span>.</p>
+
+
+
+<dl class="uicontrol"><dt class="dlterm"> All design representations</dt>
+<dd>Projects all design representations in the view.</dd>
+<dt class="dlterm"> First design representations</dt>
+<dd>Projects only the first level of
+design representations in the view.</dd>
+<dt class="dlterm"> As session</dt>
+<dd>Projects all 3D representations in
+session.</dd>
+</dl>
+</div>
+<div class="section" id="properties-c-ui-Generation__c-Preview"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Generation Mode</h2><dl class="uicontrol"><dt class="dlterm">Only generate 3D shapes larger than</dt>
+<dd>Generates 3D shapes larger than the specified size.</dd>
+<dt class="dlterm">Enable occlusion culling
+</dt>
+<dd>Saves memory when generating exact views from an assembly (or a
+part or product) which is loaded in the <span class="uicontrol">Visualization</span> mode (i.e. when
+the <span class="uicontrol">Work with cache</span> check box is selected in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3DEXPERIENCE Platform Common Preferences</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; General</span> &gt; <span class="uicontrol">Cache</span></span> section, under <span class="uicontrol">Cache activation</span>). <p>This loads only the parts which are seen in the resulting view
+(instead of loading all of them, which is the case by default),
+which optimizes memory consumption and CPU usage.</p></dd>
+<dt class="dlterm">Clash detection</dt>
+<dd>Identifies clash and  projects the clashing bodies in the <span class="uicontrol">Exact view</span> generation mode.</dd>
+<dt class="dlterm">View generation mode</dt>
+<dd>Changes how the view is generated.<p> A short description of
+the various view generation modes is provided below. For a detailed
+description (including the advantages and restrictions pertaining
+to each mode), see <cite>About the View Generation Modes</cite>.</p><p>To a lesser extent, you may also see
+<span><a href="../PreferencesMap/gdrpref-c-View.htm#gdrpref-c-View" title="You can customize view options for Drafting using this section. You can customize the geometry generation and dress-up options while generating views. You can also specify the type of view generation mode, display of dimensions in the clipping view, 2D geometry generation while creating a view from 3D and so on.">View</a></span>.</p><dl class="uicontrol"><dt class="dlterm">Exact view</dt>
+<dd>Turns the view into an exact view (the geometry becomes available). <p>If you select the <span class="uicontrol">Exact view</span> mode, you can click <span class="uicontrol">Options</span> to customize the preference for the integration of 3D polyhedral data.</p></dd>
+<dt class="dlterm">CGR</dt>
+<dd>Turns the view into a CGR view (only the external appearance of the
+component is used and displayed; the geometry is not available).</dd>
+<dt class="dlterm">Approximate</dt>
+<dd>Turns the view into an approximate view. <p>Although approximate views
+are not as high in precision and quality as exact views, this
+generation mode reduces the memory consumption significantly.</p><p>Performance may also be improved, depending on how you fine-tune
+the precision (see <span class="uicontrol">Options</span>).</p><p>Therefore, the
+approximate mode is particularly well-adapted to sophisticated
+products or assemblies involving large amounts of data.</p></dd>
+<dt class="dlterm">Raster</dt>
+<dd>Turns the view into an image view. <p>You can configure a number of
+options such as the level of detail or the type of image to
+generate (shading, shading with edges, etc). You can also select the <span class="uicontrol">With texture </span>check box  (available only with the shading modes) to visualize the realistic rendering of the threads.</p> <p>For more information about this option, see <span><a href="../PreferencesMap/gdrpref-c-View.htm#gdrpref-c-View" title="You can customize view options for Drafting using this section. You can customize the geometry generation and dress-up options while generating views. You can also specify the type of view generation mode, display of dimensions in the clipping view, 2D geometry generation while creating a view from 3D and so on.">View</a></span>.</p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><p>To use the raster generation mode, the <span class="uicontrol">Angle</span> value must
+be set to 0 in <a href="properties-c-ui-View.htm#properties-c-ui-View__cs-OrientationAndScale">Orientation and Scale</a>.</p></td></tr></table>
+</dd>
+</dl>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li>When you select a mix of exact, CGR, approximate and/or raster views before launching the <span class="wintitle">Properties</span> dialog box,
+the options are disabled. To activate these options, make sure
+you select views which use the same generation mode.
+</li>
+<li> Dress-up properties are specific to each view generation mode. These properties are thus not taken into account when you change the view generation mode. Reverting to the first view generation mode lets you recover the dress-up properties.</li>
+</ul>
+</td></tr></table>
+</dd>
+</dl>
+</div>
+<div class="section" id="properties-c-ui-Generation__c-ManagementOf3DPartMaterialPattern"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Generative view style</h2>
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Generative view style</dt>
+
+          <dd>The <span class="uicontrol">Generative view style</span> shows the generative view style which is applied to a single view or multiple selected views. </dd>
+
+        
+        
+          <dt class="dlterm">
+            Reset to style values</dt>
+
+          <dd>
+            Resets the values of the properties defined in the
+selected generative view style to the original style values. (To let
+you know when properties have been changed compared to the original
+generative style, an asterisk is displayed in front of them).</dd>
+
+        
+      </dl>
+
+    </div>
+
+  </div>
+
+<div/>
+</td></tr></table><div xmlns:mml="http://www.w3.org/1998/Math/MathML" class="relinfo"><strong>In the Knowledge Base</strong><br/><a href="../Headers/dsdocKBHeader.htm?id=QA00000005018" target="_blank">Why are fillets not represented using Symbolic, Approximated, Original Edges or Project Original Edges representation types in views obtained by copying-pasting As Result the CATIA V4 solid?</a><br/><a href="../Headers/dsdocKBHeader.htm?id=QA00000007533" target="_blank">In which cases can you avoid projection of extraneous fillet symbolic representation?</a><br/><br/></div><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

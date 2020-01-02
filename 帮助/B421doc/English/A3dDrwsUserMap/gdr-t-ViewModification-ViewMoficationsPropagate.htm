@@ -1,0 +1,106 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Propagating View Modifications"/>
+<meta name="abstract" content="You can propagate view modifications to other views."/>
+<meta name="description" content="You can propagate view modifications to other views."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewModification-ViewMoficationsPropagate.htm#gdr-c-ViewModification-ViewMoficationsPropagate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewModification-ViewMoficationsPropagate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Propagating View Modifications</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewModification-ViewMoficationsPropagate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::propagating view modifications"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-modifying views::propagating view modifications"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Propagating View Modifications
+				</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can propagate view 
+						modifications to other views.</span>
+
+						
+						<p>While doing this, the <span class="uicontrol">Synchronize 
+						View Definition</span> command helps remove inconsistencies 
+						that can occur in a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> between two views, when one 
+						view is inherited from the other, due to the non-propagation 
+						of view/section plane modifications.</p>
+						<p>This task shows you how to:</p>
+						
+						</p>
+<ul><li><a href="#t-PropagateASectionProfileModification" id="toc_rg" title="You can propagate a section profile modification.">Propagate a Section Profile Modification</a></li><li><a href="#t-PropagateAViewDefinitionPlaneModification" id="toc_rg" title="You can propagate a view definition plane modification.">Propagate a View Definition Plane 
+		Modification</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    Open a generative drawing <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>. Tile your windows vertically to see both your part and the related drawing.  </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewModification-ViewMoficationsPropagate.htm#gdr-c-ViewModification-ViewMoficationsPropagate" title="You can propagate view modifications to other views.">About Propagating View Modifications</a></td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+</div>
+<div/><div class="nested1" id="t-PropagateASectionProfileModification"><h2 class="topictitle2">Propagate a Section Profile Modification</h2>
+<div><p>You can propagate a section profile modification. </p>
+<ol><li class="stepexpand"><p>Create a <a href="gdr-t-ViewCreation-FrontView.htm#gdr-t-ViewCreation-FrontView" title="You can create a front view of the 3D part using a reference plane.">front view</a> of the part.<p> 
+			</p></p></li>
+<li class="stepexpand"><p>Create a
+			<a href="gdr-t-ViewCreation-OffsetSectionViewCut.htm#gdr-t-ViewCreation-OffsetSectionViewCut" title="You can create an offset section view or an offset section cut using a cutting profile. Additionally, you can create an offset section view or an offset section cut in a view which already contains a broken profile.">section view</a> 
+			of the <span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">front view</span>.<p> 
+			</p></p></li>
+<li class="stepexpand"><p>Then create a
+			<a href="gdr-t-ViewCreation-DetailViewDetailViewProfile.htm#gdr-t-ViewCreation-DetailViewDetailViewProfile" title="You can create a detail view from the 3D using either a circle or a sketched profile as callout.">detail view</a> of the section view.
+			<p> 
+			<br/><img height="396" width="361" src="../GdrUserImages/propagationviews01.gif"/><br/></p></p></li>
+<li class="stepexpand"><p>Modify the <span class="glossterm" id="section-profile" onmouseout="hideTerm()" onmouseover="showTerm('section-profile.xml')">section profile</span> in the front view.<p> 
+			<p>The <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section view</span> is updated, but the detail <span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">callout</span> 
+			is displayed in red, highlighting the existence of an inconsistency 
+			between the <span class="glossterm" id="detail-view" onmouseout="hideTerm()" onmouseover="showTerm('detail-view.xml')">detail view</span> and the front view (which is its <span class="glossterm" id="parent-view" onmouseout="hideTerm()" onmouseover="showTerm('parent-view.xml')">parent view</span>).
+			<br/><img height="398" width="369" src="../GdrUserImages/propagationviews02.gif"/><br/></p>
+			</p></p></li>
+<li class="stepexpand"><p>Right-click the detail view and select <span class="uicontrol">Detail X 
+			object &gt; Synchronize View Definition</span> to synchronize the detail 
+			view with respect to the front view.<p> 
+			<p>The detail view is synchronized, and the callout is 
+			no longer displayed in red. The inconsistency has been removed.</p>
+			<p>
+			<br/><img height="400" width="367" src="../GdrUserImages/propagationviews03.gif"/><br/></p>
+			</p></p></li>
+</ol>
+<p class="result">
+		
+		</p></div>
+</div>
+<div class="nested1" id="t-PropagateAViewDefinitionPlaneModification"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Propagate a View Definition Plane 
+		Modification</h2>
+<div><p>You can propagate a view definition plane modification.</p>
+<ol><li class="stepexpand"><p>Create a new drawing using the ISO standard. </p></li>
+<li class="stepexpand"><p>Create a view from 3D on the Front view.<p> 
+			<p>
+			<br/><img height="297" width="189" src="../GdrUserImages/propagationviews04NLS.gif"/><br/></p>
+			</p></p></li>
+<li class="stepexpand"><p>Change the definition plane of the FrontView.1 in the 
+			3D window.</p></li>
+<li class="stepexpand"><p>In the drawing <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>, select <span class="uicontrol">Front 
+			View.1 object &gt; Synchronize View Definition</span>.<p> 
+			<p>A message asking you if you want to synchronize the 
+			view projection plane is displayed.
+			</p>
+			</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>.<p> 
+			<p>The view has been synchronized.</p>
+			<p>
+			<br/><img height="286" width="436" src="../GdrUserImages/propagationviews05NLS.gif"/><br/></p>
+			</p></p></li>
+</ol>
+<p class="result">
+		
+
+
+
+
+
+</p></div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

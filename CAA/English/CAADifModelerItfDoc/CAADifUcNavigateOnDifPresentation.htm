@@ -1,0 +1,398 @@
+<!DOCTYPE html
+          PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Uc" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Navigating a 2D Presentation Structure</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Navigating a 2D Presentation Structure</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAADifNavigateOnDifPresentation use case. 
+		This use case explains how to open a 2D presentation and how to navigate 
+		throught its structure.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAADifNavigateOnDifPresentation Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAADifNavigateOnDifPresentation Do</a></li>
+				<li><a href="#How">How to Launch CAADifNavigateOnDifPresentation</a></li>
+				<li><a href="#Where">Where to Find the CAADifNavigateOnDifPresentation 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to retrieve a 2D presentation and navigate on its structure. 
+This use case navigate on the following objects:</p>
+<ul>
+	<li>Layout</li>
+	<li>Sheet instance</li>
+	<li>Sheet reference</li>
+	<li>View instance</li>
+	<li>View reference.</li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAADifNavigateOnDifPresentation Use Case</h2>
+<p>CAADifNavigateOnDifPresentation is a use case of the CAADifModeler.edu framework 
+that illustrates CATDibModelerUseItf and CATDifModelerUseItf frameworks capabilities.
+</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAADifNavigateOnDifPresentation Do</h3>
+<p>The use case will navigate throught the structure and dump the navigation result 
+in the standard output stream.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAADifNavigateOnDifPresentation</h3>
+<p>To launch CAADifNavigateOnDifPresentation, you will need to set up the build 
+time environment, then compile CAADifNavigateOnDifPresentation along with its prerequisites, 
+set up the run time environment, and then execute the use case [<a href="#References">1</a>].
+</p>
+<pre>mkrun -c &quot;CAADifNavigateOnDifPresentation Repository Server LoginTicket PLMExternalIDValue Version&quot;</pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+	<colgroup align="center" span="1">
+	</colgroup>
+	<tr>
+		<th>Position</th>
+		<th>Description</th>
+		<th>Example</th>
+		<th>Category</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>PLM repository</td>
+		<td>PLM1</td>
+		<td rowspan="3">Connection</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>PLM server</td>
+		<td>The name and port of the server as <em>name</em>:<em>port_number</em></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>LoginTicket</td>
+		<td>The login ticket</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>PLMExternalIDValue</td>
+		<td>lay-37946443-00000042</td>
+		<td rowspan="2">Component Attribute</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>Version</td>
+		<td>A</td>
+	</tr>
+</table>
+<p><strong>Import PLM Data:</strong> The use case may require input PLM Data: PLM 
+Reference or PLM Representation Reference. This data is stored in 3D XML files, 
+whose extension is &quot;3dxml&quot;. You must import these PLM Data in the database 
+using the Add / Import / 3D XML command prior to launching the use case.<br />
+The &quot;3dxml&quot; file is supplied in the the CAADifModeler.edu framework:
+</p>
+<p><code>InstallRootFolder\CAADoc\CAADifModeler.edu\InputData\CAADifNavigateOnDifPresentation.3dxml</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed. </p>
+<p>This &quot;3dxml&quot; contains an applicative reference and some 2D representation 
+datas:</p>
+<ul>
+	<li><strong>PLMExternalIDValue</strong> :lay-37946443-00000042</li>
+	<li><strong>Version</strong> : A </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- article data-xplore-fw="CAADifModeler.edu" data-xplore-mod="CAADifNavigateOnDifPresentation.m" -->
+<h3><a name="Where"></a>Where to Find the CAADifNavigateOnDifPresentation Code</h3>
+<p>The CAADifNavigateOnDifPresentation use case is made of a single source file 
+named CAADifNavigateOnDifPresentation.cpp located in the CAADifNavigateOnDifPresentation.m 
+module of the CAADifModeler.edu framework: </p>
+<p><code>InstallRootFolder\CAADoc\CAADifModeler.edu\CAADifNavigateOnDifPresentation.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are seven steps in CAADifNavigateOnDifPresentation:</p>
+<ol>
+	<li><a href="#Step1">Creating and Initializing the PLM Environment</a></li>
+	<li><a href="#Step2">Querying the Layout Object in Database and Loading It</a></li>
+	<li><a href="#Step3">Navigating on Shees Instances</a></li>
+	<li><a href="#Step4">Navigating on Sheet References</a></li>
+	<li><a href="#Step5">Navigating on View Instances</a></li>
+	<li><a href="#Step6">Navigating on View References</a></li>
+	<li><a href="#Step7">Closing the PLM Session</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Creating and Initializing the PLM Environment</h3>
+<pre class="code" style="padding: 0">int main(int iargc, char *iargv[])
+{
+  HRESULT hr = E_FAIL;
+
+  cout &lt;&lt; &quot;CAADifNavigateOnDifPresentation started&quot; &lt;&lt; endl;
+
+  // 1. Creates a PLM session and connect to the input repository
+  // ====================================================
+
+  // Checks the input arguments
+  // =========================
+  if (6 != iargc) {
+    cout &lt;&lt; &quot;Usage: &quot; &lt;&lt; iargv[0] &lt;&lt; &quot; &lt;repository&gt; &lt;server&gt; &lt;login_ticket&gt; &lt;PLM External Id Product&gt; &lt;version&gt; &quot;&lt;&lt; endl;
+    return hr;
+  }
+  const char* repository = iargv[1];
+  const char* server = iargv[2];
+  const char* login_ticket = iargv[3];
+  const char* comp_externalId = iargv[4];
+  const char* comp_version = iargv[5];
+
+  CATBoolean traceok = TRUE;
+  hr = ::CAAAdpCreateSession(repository,server,login_ticket,traceok);
+
+  if (SUCCEEDED(hr))
+  {
+    cout &lt;&lt; &quot;The Session has been opened&quot; &lt;&lt; endl;
+  } 
+  else
+  {
+    cout &lt;&lt; &quot;Failed to create session &amp; connect to input repository&quot; &lt;&lt; endl;
+    return hr;
+  }
+...</pre>
+<p>This section represents the usual sequence for initializing a PLM environment.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Querying the Layout Object in Database and Loading It
+</h3>
+<pre class="code">...
+  // 2. Querying the Layout object in Database and Loading It
+
+  // Entire model is loaded
+  CATBoolean ExpandAllMode = TRUE;
+  CATOmbLifeCycleRootsBag Bag;
+
+  cout &lt;&lt; &quot;PLM external ID &quot; &lt;&lt; comp_externalId &lt;&lt; endl;
+  cout &lt;&lt; &quot;comp_version &quot; &lt;&lt; comp_version &lt;&lt; endl;
+
+  CATIDibSheetSet_var spLayout;
+  {
+    CATIDibSheetSet *piLayout = NULL;
+    hr = ::CAAOpenPLMComponent(&quot;DIFLayout&quot;, comp_externalId, comp_version,
+    IID_CATIDibSheetSet, (void **)&amp;piLayout, Bag, ExpandAllMode);
+
+    // Manage life cycle by using smart pointer
+    if (NULL != piLayout) 
+    {
+      spLayout = piLayout;
+      piLayout-&gt;Release(); piLayout = NULL;
+    }
+    if (FAILED(hr) || NULL_var == spLayout)
+    {
+      cout &lt;&lt; &quot;Failure to open the layout &quot; &lt;&lt; endl;
+    }
+  }
+
+  if (NULL_var != spLayout)
+  { 
+...</pre>
+<p>This section represents the usual sequence to query a PLM Layout reference in 
+the database and open it. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Navigating on Sheet Instances</h3>
+<pre class="code">...
+    // 3. Navigate on sheets instances
+    CATListValCATBaseUnknown_var SheetInstancesList;
+    hr = spLayout-&gt;GetSheetInstances(SheetInstancesList);
+    if (SUCCEEDED(hr)) 
+    {
+      for (int indice = 1; indice &lt;= SheetInstancesList.Size(); indice++)
+        cout &lt;&lt; &quot;lstSheetLayout (&quot; &lt;&lt; indice &lt;&lt; &quot;) = &quot; &lt;&lt; SheetInstancesList[indice] &lt;&lt; endl;
+    }
+    else
+      cout &lt;&lt; &quot;Cannot retrieve sheet instances from layout&quot; &lt;&lt; endl;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Navigating on Sheet References</h3>
+<pre class="code">...
+    // 4. Navigate on sheet reference
+    CATIDibViewSet_var spViewSet;
+    if (SheetInstancesList.Size() &gt; 0)
+    {
+      CATIDibSheetInstance_var spSheetInstance = SheetInstancesList[1];
+      if (NULL_var != spSheetInstance)
+      {
+        cout &lt;&lt; &quot;Sheet instance is consistent&quot; &lt;&lt; endl;
+        CATBaseUnknown_var spDifSheet;
+        hr = spSheetInstance-&gt;GetSheetReference(spDifSheet);
+        if (FAILED(hr))
+        {
+          cout &lt;&lt; &quot;Cannot get the sheet reference&quot; &lt;&lt; endl;
+        }
+        else
+        {
+          spViewSet = spDifSheet;
+        }
+      }
+      else
+      {
+        cout &lt;&lt; &quot;Unable to get the sheet instance&quot; &lt;&lt; endl;
+        hr = E_FAIL;
+      }
+    }
+
+    if (NULL_var != spViewSet)
+    {
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Navigating on View Instances</h3>
+<pre class="code">...
+      // 5. Navigate on views instances
+      CATListValCATBaseUnknown_var ListViewsInstances;
+      hr = spViewSet-&gt;GetViewInstances(ListViewsInstances);
+      if (SUCCEEDED(hr))
+      {
+        for (int indice = 1; indice &lt;= ListViewsInstances.Size(); indice++)
+          cout &lt;&lt; &quot;lstViewInstancesSheet1 (&quot; &lt;&lt; indice &lt;&lt; &quot;) = &quot; &lt;&lt; ListViewsInstances[indice]-&gt;GetImpl() &lt;&lt; endl;
+      }
+      else
+      {
+        cout &lt;&lt; &quot;Cannot retrieve sheet instances from layout&quot; &lt;&lt; endl;
+        hr = E_FAIL;
+      }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Navigating on View References</h3>
+<pre class="code">...
+
+      // 6. Navigate on views references
+      if (ListViewsInstances.Size() &gt; 0)
+      {
+        CATIDibViewInstance_var spViewInstance = ListViewsInstances[1];
+        if (NULL_var != spViewInstance)
+        {
+          CATBaseUnknown_var hViewReference;
+          hr = spViewInstance-&gt;GetViewReference(hViewReference);
+          if (SUCCEEDED(hr) &amp;&amp; NULL_var != hViewReference)
+          {
+            cout &lt;&lt; &quot;Retrieved view reference&quot; &lt;&lt; endl;
+          }
+          else
+            cout &lt;&lt; &quot;Unable to get the view reference&quot; &lt;&lt; endl;
+        }
+        else
+        {
+          cout &lt;&lt; &quot;Cannot get the view instance&quot; &lt;&lt; endl;
+          hr = E_FAIL;
+        }
+      }
+      else
+        cout &lt;&lt; &quot;Cannot retrieve views instances&quot; &lt;&lt; endl;
+    }
+    else
+      cout &lt;&lt; &quot;Cannot Get the view set&quot; &lt;&lt; endl;
+  }
+  else
+    cout &lt;&lt; &quot;Cannot get the layout&quot; &lt;&lt; endl; 
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Closing the PLM Session</h3>
+<pre class="code">...
+  // 7. Close the PLM session
+
+  //Bag Emptying Operation 
+  //==========================
+  if (SUCCEEDED(Bag.RemoveAll()))
+    cout &lt;&lt; &quot;Empties the Bag&quot; &lt;&lt; endl;
+  else
+  {
+    hr = E_FAIL;
+    cout &lt;&lt; &quot;Error During Empties the Bag&quot; &lt;&lt; endl;
+  }
+  // Close the PLM session
+  //=========================
+  hr = ::CAAAdpCloseSession();
+  if (FAILED(hr)) 
+  {
+    cout &lt;&lt; &quot;ERROR closing PLM session&quot; &lt;&lt; endl;
+  }
+  else
+    cout &lt;&lt; &quot;PLM session closed&quot; &lt;&lt; endl;
+ 
+  cout &lt;&lt; &quot;CAADifNavigateOnDifPresentation ended&quot; &lt;&lt; endl;
+
+  return hr;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case allows you to open and navigate through a 2D presentation based 
+on a Layout.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+	<table class="reference">
+		<tr>
+			<td>[1]</td>
+			<td>
+			<a href="../CAADocUseCases/CAADocRunSample.htm">
+			Building and Launching a Use Case </a></td>
+		</tr>
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Feb 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+<!-- /article -->
+
+</body>
+
+</html>

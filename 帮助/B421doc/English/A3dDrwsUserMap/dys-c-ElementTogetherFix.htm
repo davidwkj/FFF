@@ -1,0 +1,294 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Grouping Elements Together"/>
+<meta name="abstract" content="Grouping elements together lets you constrain a set of geometric elements even if constraints or dimensions are already defined for some of them."/>
+<meta name="description" content="Grouping elements together lets you constrain a set of geometric elements even if constraints or dimensions are already defined for some of them."/>
+<meta name="DC.Relation" scheme="URI" content="dys-t-ConstraintSet-ElementTogetherFix.htm#dys-t-ConstraintSet-ElementTogetherFix"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dys-c-ElementTogetherFix"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Grouping Elements Together</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dys-c-ElementTogetherFix">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Grouping Elements Together</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Grouping elements together lets you constrain a set of geometric elements even if constraints or dimensions are already defined for some of them. </span>
+
+    
+    <p>
+      The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#geometricalElements" id="toc_rg" title="To assume that the rigid body behavior can be managed, by default the app includes element dependencies. When adding a spline, for example, all its control points and control point tangencies are automatically added even if they are not selected.">Select Geometrical Elements</a></li><li><a href="#DegreesFreedom" id="toc_rg" title="The set of geometric elements constrained by Group has three degrees of freedom whatever the number of elements.">Degrees of Freedom</a></li><li><a href="#EditConstraint" id="toc_rg" title="You can add a geometric element to a group constraint provided it belongs to the current sketch and is not already included in another group constraint.">Edit a Group Constraint</a></li><li><a href="#AdditionalConstraint" id="toc_rg" title="No constraints are solved between geometric elements linked by the same group constraint, except for Fix constraints.">Additional Constraints</a></li><li><a href="#RemoveElement" id="toc_rg" title="You can remove geometrical elements from a group by deleting the geometrical elements: dependencies are deleted too.">Remove Geometrical Elements</a></li><li><a href="#ApplyOperationConstraint" id="toc_rg" title="You can copy and paste a group set (not the constraint alone) by right-clicking the paper clip, selecting Group object &gt; Select Geometrical Elements, Ctrl + select the paper clip.">Apply Operations onto Group Constraint</a></li><li><a href="#Methodology" id="toc_rg" title="Group is a way of getting better solving performance and solving more complex systems including rigid sub-parts.">Methodology</a></li><li><a href="#VisualizingInteractiveDrafting" id="toc_rg" title="In the context of Drafting or 2D Layout for 3D Design, all constraints created in a view, using the Group command are added in the Groups node, under the appropriate view in the tree. (Constraints created directly in the sheet or the sheet background are not displayed in the tree.)">Visualizing Grouped Constraints in the <span>Drafting</span> or <span>2D Layout for 3D Design</span> Tree</a></li><li><a href="#c-InternalandExternalConstraintsofFixTogether" id="toc_rg" title="When a constraint is created pointing geometries belonging to the same Group, an internal constraint is created. Whereas when a constraint is created pointing a geometry of Group and an external geometry, an external constraint is created.">Internal and External Constraints of a Group</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="dys-t-ConstraintSet-ElementTogetherFix.htm#dys-t-ConstraintSet-ElementTogetherFix" title="You can group various sketcher elements together using the Group command. You can make this group rigid, if required. The grouped elements can be translated, rotated, or scaled.">Grouping Sketch Elements Together</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  
+
+  <div/>
+  
+  <div class="nested1" id="geometricalElements">
+    <h2 class="topictitle2">Select Geometrical Elements</h2>
+
+    
+    <p>You can select as many geometrical elements as required. You can select the origin, the H or V Direction of the sketch
+absolute axis. </p>
+<div class="nested2" id="Dependencies"><h3 class="topictitle3">Dependencies</h3>
+
+<div><p>To assume that the rigid body behavior can be managed, by default
+the <span>app</span> includes element dependencies. When adding a spline,
+for example, all its control points and control point tangencies
+are automatically added even if they are not selected.
+</p>
+<p>The following table lists geometric elements and their
+corresponding dependencies:
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d23175e58">Geometrical Element</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d23175e60">Dependency</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d23175e58 ">Line</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d23175e60 ">Start point + End point</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d23175e58 ">Circle/Ellipse</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d23175e60 ">Center point</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d23175e58 ">Arc of Circle/Ellipse</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d23175e60 ">Enter point + Start point + End point</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d23175e58 ">Parabola/Hyperbola</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d23175e60 ">Start point + End point</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d23175e58 ">Conic by two points</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d23175e60 ">Start point + End point + (Start Tangent curve + End Tangent curve) or Tangent Intersection point + (Passing point or Not)</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d23175e58 ">Conic by four points</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d23175e60 ">Four points + One Tangent curve</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d23175e58 ">Conic by five points</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d23175e60 "> Five points</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d23175e58 ">Connect Curve</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d23175e60 ">First point + Second point + First curve + Second curve</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d23175e58 ">Spline</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d23175e60 ">Control points + Tangent directions</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>From R14 to R17 the <span class="uicontrol">Add/Remove Dependencies</span> option was
+available to allow the creation of complex grouped <span class="glossterm" id="sketch" onmouseout="hideTerm()" onmouseover="showTerm('sketch.xml')">sketch</span>
+scenarios. You can still revert to a group with all its
+dependencies. To do so, see <cite><span>Sketcher</span> User's Guide: Analyzing the Sketch: About Analyzing Sketched Geometries</cite>.
+</td></tr></table>
+</div>
+</div>
+
+      
+    
+    
+    
+  <div class="nested2" id="number"><h3 class="topictitle3">Number of Elements</h3>
+
+<div><p>You can select as many geometrical elements as required but
+a single geometric element can be used by only one
+<span class="uicontrol">Group</span> constraint.</p>
+
+<p>Whenever you want to remove elements from the group, right-click the element in the <span class="wintitle">Group Definition</span> dialog box and select <span class="uicontrol">Delete</span>.
+Alternatively, select the element in the <span>work area</span>
+again.</p>
+</div>
+</div>
+<div class="nested2" id="AbsoluteAxis"><h3 class="topictitle3">Absolute Axis</h3>
+
+<div><p>You can select the origin, the H or V Direction of the sketch
+absolute axis.</p>
+<p> These three elements cannot be selected at the same
+time by a selection trap. You need to explicitly select them one by
+one.
+</p></div>
+</div>
+<div class="nested2" id="edges"><h3 class="topictitle3">Edges Obtained Using Offset, Projection or Intersection</h3>
+
+<div><p>A rigid set including edges obtained via <span class="uicontrol">Offset</span>,
+<span class="uicontrol">Projection</span> and<span class="uicontrol"> Intersection</span> operations and
+sketched geometry remains rigid as long as you do not move the
+initial 3D geometry.</p>
+<p> To ensure permanent rigidity, apply
+<span class="uicontrol">Isolate</span> to the edges obtained by <span class="uicontrol">Offset</span>,
+<span class="uicontrol">Projection</span>, and <span class="uicontrol">Intersection</span> operations. This
+breaks the links between the original 3D geometry and the
+edges.
+</p></div>
+</div>
+</div>
+
+  
+  <div class="nested1" id="DegreesFreedom">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Degrees of Freedom</h2>
+
+    
+    <div><p>The set of geometric elements constrained by <span class="uicontrol">Group</span> has three degrees of freedom whatever the number of
+elements.</p>
+
+      <p> To be fully defined, the set needs to be
+dimensioned to fix geometry taking up at least the three degrees of
+freedom (one rotation and two translations).</p>
+<p>A geometric element included in a set of elements constrained
+via <span class="uicontrol">Group</span> <img src="../Icons22/I_SktFixTogether.png"/> can also be constrained using
+<span class="uicontrol">Constraints Defined in Dialog Box</span> <img src="../Icons22/I_ConstraintPanel.png"/>. If, for example, a group constraint contains a fixed line, the set of
+geometric elements has one single degree of freedom which is along
+the direction of the line.</p>
+
+    </div>
+
+  </div>
+
+<div class="nested1" id="EditConstraint"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Edit a Group Constraint</h2>
+
+<div><p>You can add a geometric element to a group
+constraint provided it belongs to the current sketch and is not
+already included in another group
+constraint.</p>
+<p>The selection or the pre-selection of the elements to
+add depends on this verification during the group creation and editing.</p>
+<p>You can add several elements at the same time either using
+the <span class="uicontrol">Ctrl</span> key or the selection trap. After a selection:</p>
+<p>
+<ul>
+<li>Geometric elements not used for the definition are added</li>
+
+<li>Geometric elements that are already part of the definition are
+removed.</li>
+
+</ul>
+
+</p>
+</div>
+</div>
+<div class="nested1" id="AdditionalConstraint"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Additional Constraints</h2>
+
+<div><p>No constraints are solved between
+geometric elements linked by the same group constraint, except for Fix constraints.</p>
+<p>
+<ul>
+<li>Adding constraints between elements involved in a
+group and other elements
+involved too in a distinct group
+constraint or free elements allows you to position the group.</li>
+
+<li>Adding a constraint to a element in a group brings about an
+over-constrained system. But unlike other types of constraints,
+when you exit <span>Sketcher</span>, no inconsistencies are detected.</li>
+
+<li>All existing or added constraints on geometric elements of a
+group are seen as
+over-defined (in purple when solving status is displayed).</li>
+
+</ul>
+
+</p>
+<p>Except for fix constraints, no constraints are solved between
+geometric elements linked by the same group constraint.
+However, no update error appears on such over-defined constraints
+(between geometric elements of the same group) and the part is
+successfully updated.</p>
+
+</div>
+</div>
+<div class="nested1" id="RemoveElement"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Remove Geometrical Elements</h2>
+
+<div><p>You can remove geometrical elements from a group by deleting the geometrical elements:
+dependencies are deleted too.</p>
+
+<p>When the number of geometric elements in the set is less than
+two, the group constraint is not automatically deleted.</p>
+</div>
+</div>
+<div class="nested1" id="ApplyOperationConstraint"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Apply Operations onto Group Constraint</h2>
+
+<div class="nested2" id="CopyPaste"><h3 class="topictitle3">Copy/Paste</h3>
+
+<div><p>You can copy and paste a group set (not the constraint
+alone)
+by right-clicking the paper clip, selecting <span class="uicontrol">Group object &gt; Select Geometrical Elements</span>, <span class="uicontrol">Ctrl</span> + select the paper clip.</p>
+<p> You can also select using the selection trap to ensure that the paper clip and the associated constrained geometry are selected and applying the <span class="uicontrol">Copy/Paste</span> capability.</p></div>
+</div>
+<div class="nested2" id="Mirror"><h3 class="topictitle3">Mirror</h3>
+
+<div><p>By switching off the <span class="uicontrol">Geometrical Constraints</span> mode, the <span class="uicontrol">Group</span> constraint is taken into account like the
+other constraints when mirroring geometric elements and keeping the
+initial constraints.</p>
+<p><br/><img src="../DysUserImages/bt_sk115.gif"/><br/></p><p>If the <span class="uicontrol">Geometrical Constraints</span> is selected, the <span>app</span> creates <span class="glossterm" id="symmetry" onmouseout="hideTerm()" onmouseover="showTerm('symmetry.xml')">symmetry</span> constraints as
+requested.
+<br/><img src="../DysUserImages/bt_sk117.gif"/><br/></p></div>
+</div>
+<div class="nested2" id="BreakTrimCornerChamfer"><h3 class="topictitle3">Break/Trim/Corner/Chamfer</h3>
+
+<div><p>You can apply the <span class="uicontrol">Break</span>, <span class="uicontrol">Trim</span>, <span class="uicontrol">Corner</span>, and <span class="uicontrol">Chamfer</span> commands onto elements attached by a group constraint.</p>
+
+<p>When all the geometrical elements belong to the same
+group, the constraint is
+updated accordingly. For example, when breaking a curve, the new
+half curve is automatically added to the definition.</p>
+</div>
+</div>
+</div>
+<div class="nested1" id="Methodology"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Methodology</h2>
+
+<div><p><span class="uicontrol">Group</span> <img src="../Icons22/I_SktFixTogether.png"/> is a way of getting better solving
+performance and solving more complex systems including
+rigid sub-parts.</p>
+<p>Depending on your geometry and your needs, you can use <span class="uicontrol">Group</span> <img src="../Icons22/I_SktFixTogether.png"/> or <span class="uicontrol">Auto Constraint</span> <img height="22" width="22" src="../Icons22/I_AutoConstraint.png"/>:
+ <ul> <li>The<span class="uicontrol"> Group</span> <img src="../Icons22/I_SktFixTogether.png"/> command creates only one constraint for a group or elements.</li>
+ <li>The <span class="uicontrol">Auto Constraint</span> <img height="22" width="22" src="../Icons22/I_AutoConstraint.png"/> command detects all possible constraints between the selected elements then creates these constraints. This means that sometimes you may create a lot of unnecessary constraints just for imposing a rigid behavior. For more information, see .</li>
+ </ul>
+ </p></div>
+</div>
+<div class="nested1" id="VisualizingInteractiveDrafting"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Visualizing Grouped Constraints in the <span>Drafting</span> or <span>2D Layout for 3D Design</span> Tree</h2>
+
+<div><p>In the context of <span>Drafting</span> or <span>2D Layout for 3D Design</span>, all constraints created in a view, using the <span class="uicontrol">Group</span> <img src="../Icons22/I_SktFixTogether.png"/> command are added in the <span class="uicontrol">Groups</span> node, under the appropriate view in the
+<span>tree</span>. (Constraints created directly in the sheet or
+the sheet background are not displayed in the tree.)</p>
+
+<p>The <span class="uicontrol">Groups</span> node is created by
+default when one or more elements are grouped  using the
+<span class="uicontrol">Group</span> command, but it is not displayed by
+default. At any time, you can specify whether or not you want to
+view this node in <span>
+				<span class="menucascade"><span class="uicontrol">Me </span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span> <span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Display</span></span> tab, under <span class="uicontrol">Tree</span>, by
+selecting <span class="uicontrol">Group</span> check box.
+
+</p>
+</div>
+</div>
+<div class="nested1" id="c-InternalandExternalConstraintsofFixTogether"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Internal and External Constraints of a Group</h2>
+
+<div><p><span>When a constraint is created pointing geometries belonging to the same <span class="uicontrol">Group</span>, an internal constraint is created. Whereas when a constraint is created pointing a geometry of <span class="uicontrol">Group</span> and an external geometry, an external constraint is created.  </span>
+</p>
+<p>In a sketch, internal constraints of <span class="uicontrol">Group</span> are always seen as over-constrained when the <span class="uicontrol">Group</span> constraint is active.</p><p><span class="glossterm" id="external-constraints" onmouseout="hideTerm()" onmouseover="showTerm('external-constraints.xml')">External constraints</span> are transferred during instantiation of <span class="uicontrol">Group</span>, only when the external constraints are created between the geometry of <span class="uicontrol">Group</span> and an element of sketch absolute axis (i.e. the origin, H direction or V direction).<div class="fignone"><span class="figcap">Constraints of Group before Instantiation</span><br/><div class="imagecenter"><img class="imagecenter" src="../DysUserImages/externalconstraints01.png"/></div><br/></div>
+<div class="fignone"><span class="figcap">Constraints of Group after Instantiation</span><br/><div class="imagecenter"><img class="imagecenter" src="../DysUserImages/externalconstraints02.png"/></div><br/></div>
+</p><p>The external constraint values pointing an element of the sketch absolute axis, are updated automatically according to the position of the origin instance defined by the Smartpick.</p> <p>However, note that, </p>  <p> <p>Notes:
+		<ul><li>The external constraints of <span class="uicontrol">Group</span> pointing to an external geometry are removed at the instantiation.</li>
+<li>The external constraints type is changed or they are removed if the external constraints are incompatible with the  requested transformation.<p>For example, when imposing an angle value, the external driving distance constraints are changed into driven angle constraint to respect the rotation transformation.</p> </li>
+</ul>
+</p>
+</p></div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

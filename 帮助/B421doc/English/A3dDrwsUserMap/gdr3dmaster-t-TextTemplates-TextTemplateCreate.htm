@@ -1,0 +1,150 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Working with Text and Table Templates"/>
+<meta name="abstract" content="You can define and store text templates to be instantiated (that is reused). Once instantiated, the texts are associated with features or PLM attributes. Text templates rely on feature attributes and PLM attributes. Similarly, you can create and store table templates containing a link template on a PLM attribute and instantiate them when required. Once instantiated, the text is associated to the PLM attribute."/>
+<meta name="description" content="You can define and store text templates to be instantiated (that is reused). Once instantiated, the texts are associated with features or PLM attributes. Text templates rely on feature attributes and PLM attributes. Similarly, you can create and store table templates containing a link template on a PLM attribute and instantiate them when required. Once instantiated, the text is associated to the PLM attribute."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-c-TextTemplates.htm#gdr3dmaster-c-TextTemplates"/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-TextTemplates-UsingTextTemplatesAnnotate.htm#gdr3dmaster-t-TextTemplates-UsingTextTemplatesAnnotate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-TextTemplates-TextTemplateCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Working with Text and Table Templates</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-TextTemplates-TextTemplateCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Working with  Text  and Table Templates</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>  You can define and store text templates to be instantiated (that is reused). Once instantiated, the texts are associated with features or PLM attributes. Text templates rely on feature attributes and PLM attributes. Similarly, you can create and store table templates containing a link template on a PLM attribute and instantiate them when required. Once instantiated, the text is associated to the PLM attribute.</span>
+ <p><span class="run-in">Important:
+		</span>You can create <span class="glossterm" id="text-template" onmouseout="hideTerm()" onmouseover="showTerm('text-template.xml')">text templates</span> and/or table templates only in the <span class="glossterm" id="detail-sheet" onmouseout="hideTerm()" onmouseover="showTerm('detail-sheet.xml')">detail sheets</span> of a  or from Symbols of Schematic <span>apps</span>.</p>
+<p>This task shows you how to:
+    
+  
+  </p></p>
+<ul><li><a href="#t-DetailSheetCreate" id="toc_rg" title="You can create a text template by creating a text and then inserting a link template or by directly using Text Template which automatically proposes to insert the link template.">Create a Text Template</a></li><li><a href="#t-CreateaTableTemplate" id="toc_rg" title="You can create a table template in the main view of a detail sheet of a by creating a table and then editing it or by directly using the Table Template command.">Create a Table Template</a></li><li><a href="#t-LinkTemplateInsert" id="toc_rg" title="You can insert a link template in a text or in a table cell.">Insert a Link Template</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span><p><ul><li>Create new <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>. </li>
+<li>Create a detail <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>. </li>
+</ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-c-TextTemplates.htm#gdr3dmaster-c-TextTemplates" title="Text templates are generic types of texts which are intended to be instantiated (i.e. reused) in various . Similarly, table templates are generic types of tables which are created to be reused in various .">About Text and Table Templates</a></td></tr><tr><td><a href="gdr3dmaster-t-TextTemplates-UsingTextTemplatesAnnotate.htm#gdr3dmaster-t-TextTemplates-UsingTextTemplatesAnnotate" title="You can instantiate the text template stored in a current or a catalog and then resolve the link template it contains (if any).">Instantiating Text Templates</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+  </div>
+
+
+  <div/>
+
+  <div class="nested1" id="t-DetailSheetCreate">
+    <h2 class="topictitle2">Create a Text Template</h2>
+
+    <div><p><span>You can create a text template by creating a text and then inserting a link template or by directly using <span class="uicontrol"> Text Template</span> which automatically proposes to insert the link template.</span>
+</p>
+
+      <ol>
+        <li class="stepexpand"><p>Create a text template using either of the following ways:<ol type="a"><li class="substepexpand">From the <span class="wintitle">Annotation</span> section of the <span>action bar</span>, click <span class="uicontrol">Text</span> <img src="../Icons22/I_D3M_Text.png"/> or <span class="uicontrol">Text with Leader</span> <img src="../IconsNormal/I_LeaderText2D.png"/>.</li>
+<li class="substepexpand">Click anywhere in the drawing. If you are creating a text with leader, click once again in the free space to position the text.</li>
+<li class="substepexpand">In the <span class="wintitle">Text Editor</span> dialog box, add text.</li>
+<li class="substepexpand"><span class="run-in">Optional: </span>Change the text properties or add a leader to the created text.  <p> <p>Or</p></p></li>
+</ol>
+ <ol type="a"><li class="substepexpand">From the <span class="wintitle">Template</span> section of the <span>action bar</span>, click <span class="uicontrol">Text Template</span> <img src="../Icons22/I_D3M_TemplateText.png"/>.  </li>
+<li class="substepexpand">Indicate the text anchor point.<p> The <span class="glossterm" id="main-view" onmouseout="hideTerm()" onmouseover="showTerm('main-view.xml')">main view</span> of the detail sheet is activated and the sheet is now in the edition mode. However, it only allows selection of elements located in the main view of the sheet to define text's position. The <span class="uicontrol">Text Editor</span> and the <span class="wintitle">Insert Link Template</span> dialog box appear simultaneously. </p></li>
+</ol>
+<p> <p>You can now insert a link template in the text.</p></p></p></li>
+
+      
+      
+        
+        
+        
+        
+        
+      <li class="stepexpand"><p><a href="gdr3dmaster-t-TextTemplates-TextTemplateCreate.htm#gdr3dmaster-t-TextTemplates-TextTemplateCreate" title="You can define and store text templates to be instantiated (that is reused). Once instantiated, the texts are associated with features or PLM attributes. Text templates rely on feature attributes and PLM attributes. Similarly, you can create and store table templates containing a link template on a PLM attribute and instantiate them when required. Once instantiated, the text is associated to the PLM attribute.">Insert the link template</a>.</p></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+
+  
+
+  <div class="nested1" id="t-CreateaTableTemplate"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Create a Table Template</h2>
+
+<div><p><span>You can create a table template in the main view of a detail sheet of a  by creating a table and then editing it or by directly using the <span class="uicontrol">Table Template</span> command.</span>
+</p>
+<ol><li class="stepexpand"><p>Create a table template using either of the following ways:<ol type="a"><li class="substepexpand">Create a table. </li>
+<li class="substepexpand">Double-click it to edit. <p> The<span class="uicontrol"> Insert Link Template</span> dialog box appears. You can now insert a link template in each of the table cells.</p></li>
+</ol>
+<p>Or</p><ol type="a"><li class="substepexpand">From the <span class="wintitle">Template</span> section of the <span>action bar</span>, click <span class="uicontrol">Table Template</span> <img src="../Icons22/I_D3M_TemplateTable.png"/>.</li>
+<li class="substepexpand">Create the table with or without using a reference.</li>
+<li class="substepexpand">Click to validate the table creation.<p> The table is created and placed in the editing mode and simultaneously the<span class="uicontrol"> Insert Link Template</span> dialog box appears.</p></li>
+</ol>
+ </p></li>
+<li class="stepexpand"><p><a href="gdr3dmaster-t-TextTemplates-TextTemplateCreate.htm#gdr3dmaster-t-TextTemplates-TextTemplateCreate" title="You can define and store text templates to be instantiated (that is reused). Once instantiated, the texts are associated with features or PLM attributes. Text templates rely on feature attributes and PLM attributes. Similarly, you can create and store table templates containing a link template on a PLM attribute and instantiate them when required. Once instantiated, the text is associated to the PLM attribute.">Insert the link template</a>.</p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-LinkTemplateInsert">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Insert a Link Template</h2>
+
+    <div><p><span>You can insert a link template in a text or in a table cell. </span>
+ The difference between the dialog box of inserting a link template in a text and that of  a table cell is that, it displays the <span class="uicontrol">Cell</span> box specifying the name of table cell which is being used for inserting the link template.</p>
+
+      <ol>
+        
+      <li class="stepexpand"><p>
+        
+          In the <span class="uicontrol">Link Template</span> dialog box, enter the name of the template. 
+        
+        <p> 
+          This name is used to identify the table/text template in the catalog.
+        </p>
+      </p></li>
+<li class="stepexpand"><p>For a table template, enter a name for the cell, in the <span class="uicontrol">Cell</span> box. <p>You can also right-click the table cell and select <span class="uicontrol">Edit cell name</span>. </p><p> This name is used in the catalog browser to know which link templates are in the table. You can change the table cell name, if required. </p></p></li>
+<li class="stepexpand"><p>Under <span class="uicontrol">Type</span>, expand the <span class="uicontrol">Package</span> box to view the list of all the packages. <ol type="a"><li>Select the required package from <span class="uicontrol">All Packages</span>.</li>
+<li>Favorite a package by clicking <img src="../Icons22/I_FavoriteAddTo.png"/> in the list.</li>
+</ol>
+<p> <ul><li>The selected package is activated.</li>
+<li>The package marked as favorite is moved to <span class="uicontrol">Favorite Packages</span>.</li>
+</ul>
+</p></p></li>
+ <li class="stepexpand"><p>Filter the package list using the following steps: <ol type="a"><li class="substepexpand">Click <span class="uicontrol">Retrieve package(s) from element</span>.</li>
+<li class="substepexpand">Select an element to retrieve the related packages. Select the <span class="uicontrol">DrawingXXXX</span> node in the <span>tree</span>, for example.<p> The package list is now filtered and shows the relevant packages. It also displays the <span class="uicontrol">Remove filter</span> to help you remove the filter if required. </p></li>
+<li class="substepexpand"><span class="run-in">Optional: </span>Click <span class="uicontrol">Remove filter</span> to remove the applied filter and restore the entire list of packages.<p>You can reapply another filter by clicking <span class="uicontrol">Retrieve package(s) from element</span>.</p></li>
+<li class="substepexpand">Select the required package from the <span class="uicontrol">Package</span> list. <p> Accordingly, all the types included in the selected package are displayed in the <span class="uicontrol">Type</span> list.</p></li>
+</ol>
+</p></li>
+<li class="stepexpand"><p>Select  a type from the <span class="uicontrol">Type</span> list.<p> The corresponding <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attributes</span> along with their icons are  displayed in several collapsible lists, each one corresponding to an inherited type, in an order which displays the selected type's attributes on top. </p></p></li>
+
+    <li class="stepexpand"><p>Select  an attribute from the list.</p></li>
+<li class="stepexpand"><p>Select the desired display from the <span class="uicontrol">Display</span> list.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Insert</span>.<p> The link template is inserted in the upper-left table cell. <p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>You can select additional attributes and insert them in the same table cell or you can select attributes of different types and insert them in the same table cell. Similarly, you can select attributes of different types and insert them in the text template. </td></tr></table>
+ </p>
+</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Double-click the table cell and follow the steps from 2 through 7 to insert the link template.<p> Attributes of different types are inserted in the same table cell.  </p></p></li>
+<li class="stepexpand"><p>Select another table cell and follow the steps from 2 through 7 to insert the link template.<p> Additional attributes of the same type are inserted in the same table cell.</p></p></li>
+<li class="stepexpand"><p>Click to validate.<p> The table template is created. You can now <a href="gdr3dmaster-t-TextTemplates-TextTemplateStore.htm#gdr3dmaster-t-TextTemplates-TextTemplateStore" title="You can store a text template and/or a table template in a catalog.">store text the template in a catalog</a>.</p></p></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

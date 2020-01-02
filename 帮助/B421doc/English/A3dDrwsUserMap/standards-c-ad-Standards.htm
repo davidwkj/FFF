@@ -1,0 +1,238 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Standards"/>
+<meta name="abstract" content="In Drafting, 2D Layout for 3D Design, 3D Tolerancing &amp; Annotation, and Generative Functional Tolerancing, administrators can manage and configure standards such as ANSI_ASME, ISO, JIS or company standards. Standards are used to define such elements as annotations, dimensions, dress-up, etc. Standards also set the styles that will be used as defaults for element properties. Keep in mind that standard parameters or styles may not all be applicable to a given app."/>
+<meta name="description" content="In Drafting, 2D Layout for 3D Design, 3D Tolerancing &amp; Annotation, and Generative Functional Tolerancing, administrators can manage and configure standards such as ANSI_ASME, ISO, JIS or company standards. Standards are used to define such elements as annotations, dimensions, dress-up, etc. Standards also set the styles that will be used as defaults for element properties. Keep in mind that standard parameters or styles may not all be applicable to a given app."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="standards-c-ad-Standards"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Standards</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="standards-c-ad-Standards">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::concepts"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-managing standards"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::syntax for standard editor values"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::DBCS restriction"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DBCS restriction"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Standards
+				 
+				
+				</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>In Drafting, <span>2D Layout for 3D Design</span>, <span>3D Tolerancing &amp; Annotation</span>, and <span>Generative Functional Tolerancing</span>, administrators can manage and configure standards such as ANSI_ASME, ISO, JIS or company standards. Standards are used to define such elements as annotations, dimensions, dress-up, etc. Standards also set the styles that will be used as defaults for element properties. Keep in mind that standard parameters or styles may not all be applicable to a given <span>app</span>.</span>
+
+						
+						<p>The following topics are discussed:</p>
+						
+						
+					
+				</p>
+<ul><li><a href="#c-GeneralInformation" id="toc_rg" title="This sub-topic provides general information about standards.">General information</a></li><li><a href="#c-ManagementOfDraftingStandards" id="toc_rg" title="This sub-topic provides information about the management of standards.">Management of Standards</a></li><li><a href="#c-StandardManagmentInDrafting" id="toc_rg" title="This sub-topic provides specific information about standard management in Drafting.">Standard Switch and Update in Drafting</a></li><li><a href="#c-MiscInfo" id="toc_rg" title="This sub-topic provides miscellaneous information about standards.">Miscellaneous Information</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+<div/>
+<div class="nested1" id="c-GeneralInformation"><h2 class="topictitle2">General information</h2>
+<div><p><span>This sub-topic provides general information about standards.</span>
+</p>
+
+		<p>When users modify the properties of an element in Drafting, <span>2D Layout for 3D Design</span>, <span>3D Tolerancing &amp; Annotation</span>, and <span>Generative Functional Tolerancing</span>, the modifications are only applied to the selected element, 
+		in the current <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>. Standard files let administrators set the properties 
+		of an element so that they will be applied to all elements of the same type 
+		in a representation, as well as in all representations which use a given standard.</p>
+		<p>A standard file is an XML file which makes it possible to configure globally, 
+		for a representation, the appearance and behavior of various types of elements, using standard parameters and styles.</p>
+		
+		
+		<p>See
+		<a href="standards-m-ad-StandardParameters-sb.htm#standards-m-ad-StandardParameters-sb" title="This section describes how administrators can define standard parameters for Drawings, 2D Layout for 3D Design, 3D Tolerancing &amp; Annotation, and Generative Functional Tolerancing, and provides reference information about standard formats.">Setting Standard Parameters</a> for more information about how to configure standard 
+		parameters and define new formats. Once defined, a format is applied to elements as a property. </p>
+		<p>Furthermore, with standard files, administrators can set standard styles 
+		that will be used as default values when creating new elements, such as 
+		<span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheets</span>, geometry, annotations, dimensions, dress-up and dress-up symbols 
+		and <span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">callouts</span>. For more information about how to configure standard styles,  see 
+		   <cite>Setting Styles</cite>. </p>
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> The format 
+				of the standard file has been changed from V5 R9 onwards. If you 
+				were using a configured CATDrwStandard file on a previous release 
+				(up to V5 R8), you need to
+				 to the new XML format.</td></tr></table>
+
+		
+		</div>
+</div>
+<div class="nested1" id="c-ManagementOfDraftingStandards"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Management of Standards</h2>
+<div><p><span>This sub-topic provides information about the management of standards.</span>
+</p>
+<div class="section" id="c-ManagementOfDraftingStandards__cs-StandaloneDrawings"><h3 class="sectiontitle">Standalone Representation</h3>
+		<p>When users create a representation, 
+		they specify the standard that will be associated with it. The 
+		values of the parameters in the specified standard file are then copied 
+		into the representation. Each <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> or layout representation contains a copy of the standard 
+		and is therefore standalone. This makes it possible for users, projects, 
+		or companies to exchange representations without needing to send 
+		the standard file along.</p>
+		</div>
+<div class="section" id="c-ManagementOfDraftingStandards__cs-AdministratorControlledAccessAndModification"><h3 class="sectiontitle">Administrator-Controlled Access and Modification</h3>
+		<p>The <a href="standards-t-ad-StandardsAdminister.htm#standards-t-ad-StandardsAdminister" title="You can customize standards and generative view styles and set their locations. The procedure is the same for standards or Generative View Styles (GVS). When applicable, differences are notified.">Working with Standards and Generative View Styles</a> the location of the standard files as well as the 
+		ability to define new standards, or to modify existing standards. For example, 
+		the administrator can define a single standard, and prevent users from modifying 
+		it. </p>
+		</div>
+<div class="section" id="c-ManagementOfDraftingStandards__cs-SeveralStandardFilesAvailableByDefault"><h3 class="sectiontitle">Several Standard Files Available by Default</h3>
+		<p>By default, several standard files are provided. Some 
+				are specifically intended for Drafting, and some for  the <span>2D Layout for 3D Design</span>, <span>3D Tolerancing &amp; Annotation</span>, and <span>Generative Functional Tolerancing</span><span>apps</span>. These files are located 
+		in <span class="uicontrol">install_root/resources/standard/drafting</span>.</p><p>The table below lists the standard files available by default, along with the <span>app</span> they are intended for.</p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d299442e173">Standards</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d299442e175">Intended <span>app</span></th>
+<th class="cellrowborder" valign="top" width="NaN" id="d299442e179">Remark</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d299442e173 "><p>ISO.xml
+					</p><p>ANSI_ASME.xml</p><p>JIS.xml</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d299442e175 "><p>Drafting</p> <span>2D Layout for 3D Design</span><p><span>3D Tolerancing &amp; Annotation</span> and <span>Generative Functional Tolerancing</span></p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d299442e179 ">Standards based on the Drafting 
+				standards in which 
+				the colors, for example, have been configured for optimized display in 3D.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>The standards are specifically intended to define DS ISO 1 as the default font 
+				for all annotations styles and engineering symbols. DS ISO 1 is an Open Type font based on the ISO 3098 
+				standard defining text representation, that has been 
+				specifically configured to represent annotations.</td></tr></table>
+</p> 
+		
+			
+		
+		
+			
+		
+		
+			
+		
+		<p>Administrators can add as many standard files as needed. See
+		<a href="standards-t-ad-StandardsAdminister.htm#standards-t-ad-StandardsAdminister" title="You can customize standards and generative view styles and set their locations. The procedure is the same for standards or Generative View Styles (GVS). When applicable, differences are notified.">Working with Standards and Generative View Styles</a> for more information. </p>
+		</div>
+<div class="section" id="c-ManagementOfDraftingStandards__cs-EditionOfTheStandardFile"><h3 class="sectiontitle">Edition of the Standard File</h3>
+		<p>The standard files can be edited using an interactive editor. This editor 
+		provides an easy-to-use graphic interface to let administrators configure 
+		the parameters included in the standard files. For information on how to 
+		configure these parameters, see
+		<a href="standards-m-ad-StandardParameters-sb.htm#standards-m-ad-StandardParameters-sb" title="This section describes how administrators can define standard parameters for Drawings, 2D Layout for 3D Design, 3D Tolerancing &amp; Annotation, and Generative Functional Tolerancing, and provides reference information about standard formats.">Setting Standard Parameters</a> and
+		<a href="standards-m-ad-StandardStyles-sb.htm#standards-m-ad-StandardStyles-sb" title="This section provides background information about styles, which are used as default values when creating new elements in Drawings, 2D Layout for 3D Design, 3D Tolerancing &amp; Annotation, and Generative Functional Tolerancing. This section also describes how administrators can customize styles, and provides reference information about styles.">Setting Styles</a>.</p>
+		<p>The interactive editor is available in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>. 
+		(It is the same editor with which you can configure <span class="glossterm" id="generative-view-style" onmouseout="hideTerm()" onmouseover="showTerm('generative-view-style.xml')">generative view styles</span>). 
+		For more information about how to use this editor, see <a href="standards-t-ad-StandardsAdminister.htm#standards-t-ad-StandardsAdminister" title="You can customize standards and generative view styles and set their locations. The procedure is the same for standards or Generative View Styles (GVS). When applicable, differences are notified.">Working with Standards and Generative View Styles</a>.</p>
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> When creating, 
+				modifying or configuring the XML standard files, make sure you use 
+				a CNEXT tool, for example the <span class="wintitle">Standards Editor</span> available in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>. Using other editors (such as text editors) 
+				may alter the consistency of the standard file, and may make the 
+				standards XML files unusable.</td></tr></table>
+
+		</div>
+</div>
+</div>
+<div class="nested1" id="c-StandardManagmentInDrafting"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Standard Switch and Update in Drafting</h2>
+
+<div><p><span>This sub-topic provides specific information about standard management in Drafting.</span>
+</p>
+<div class="section" id="c-StandardManagmentInDrafting__cs-SwitchToAnotherStandard"><h3 class="sectiontitle">Switch to Another Standard</h3>
+		<p>When several standards are defined, users can switch a drawing to another 
+		standard. See <cite>Switching to Another Standard</cite>.</p>
+		</div>
+<div class="section" id="c-StandardManagmentInDrafting__cs-UpdateOfADrawing39sStandard"><h3 class="sectiontitle">Update of a Drawing's Standard</h3>
+		<p>When a standard file is modified, users need to explicitly update the 
+		drawings which use this standard. Note that only standard parameters are 
+		affected by this update, not styles. See <cite>Updating the Standard 
+		of a Drawing</cite>.</p>
+		</div>
+<div class="section" id="c-StandardManagmentInDrafting__cs-AvailabilityOfStandardSwitchAndUpdate"><h3 class="sectiontitle">Availability of Standard Switch and Update </h3>
+		<p>Using the options available in  <span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Mechanical</span> &gt; <span class="uicontrol">Drafting</span> &gt; <span class="uicontrol">Administration</span></span>, administrators can forbid or allow 
+		users to: </p>
+		<ul>
+			<li>Switch a drawing to another standard (from the <span class="wintitle">Tools</span> section of the <span>action bar</span>, click  <span class="uicontrol">Page 
+			Layout</span>),</li>
+
+			<li>Update the standard used by a drawing (from the <span class="wintitle">Tools</span> section of the <span>action bar</span>, click <span class="uicontrol">Page 
+			Layout</span>). </li>
+
+		</ul>
+
+		<p>Moreover, administrators can lock these options so that other users 
+		running a session with the same environment inherit those options
+		and cannot change them. For more information, see <cite>Installation and Configuration User's Guide: Configuring Settings: Locking Settings</cite>.</p>
+		
+		</div>
+</div>
+</div>
+<div class="nested1" id="c-MiscInfo"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Miscellaneous Information</h2>
+
+<p><span>This sub-topic provides miscellaneous information about standards.</span>
+</p>
+<div class="nested2" id="c-GeneralSyntaxForTheStandardEditorValues"><h3 class="topictitle3">General Syntax 
+		for the Standard Editor Values</h3>
+<div><p><span>This sub-topic provides information about general syntax for the standard editor values. </span>
+</p>
+<div class="section" id="c-GeneralSyntaxForTheStandardEditorValues__cs-FractionsAndOperations"><h4 class="sectiontitle">Fractions and operations</h4>
+		<p>The standards editor can handle basic numerical operations to help you 
+		enter the values for the parameters. You can enter your value as a set of 
+		operations, and let the program compute the result when you validate the 
+		field.</p>
+		<p>For example, for each parameter of the "real" type, you can specify the 
+		value using a fraction: 
+		NDFact_1 = 1/60.</p>
+		<p>You can also use units or trigonometric functions in your operations: 
+		NDSepPos_1 = 1 in + 1 mm + cos(0.12)</p>
+		</div>
+<div class="section" id="c-GeneralSyntaxForTheStandardEditorValues__cs-SpecialCharacters"><h4 class="sectiontitle">Special characters</h4>
+		<p>For each parameter of the "string" type, you can enter special characters 
+		using the following keywords: </p>
+		<ul>
+			<li>[DEGREE] will be displayed as deg</li>
+
+			<li>[MINUTE] will be displayed as '</li>
+
+			<li>[SECOND] will be displayed as "</li>
+
+		</ul>
+
+		<p>A special character can be used alone or combined with other characters 
+		(the special character only counts as 1 character):</p>
+		<p>NDSepar_1 , [DEGREE]</p>
+		<p><span class="uicontrol">OR</span></p>
+		<p>NDSepar_1 , " in [DEGREE]"</p>
+		
+		</div>
+</div>
+</div>
+<div class="nested2" id="c-DBCSRestriction"><h3 class="topictitle3">DBCS Restriction</h3>
+<div><p><span>This sub-topic provides information about double-byte character sets restriction. </span>
+</p>
+
+		<p>Double-byte character sets are not supported when creating new standard 
+		parameters and styles (i.e. corresponding to new nodes in the standards 
+		editor <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>. </p>
+		<p>However, double-byte character sets are supported when setting values 
+		for standard parameter and styles.</p>
+		
+		
+		
+	
+
+
+
+
+
+</div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

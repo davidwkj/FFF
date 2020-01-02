@@ -1,0 +1,622 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>6WTagger Integration - Principles</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>6WTagger Integration - Principles</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article presents the 6WTagger, the  <b>3D</b>EXPERIENCE platform component dealing with the filtering by tags. Global
+		concepts are explained as well the principles when the filtering is about widget content's.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Objective"></a>Objective</h2>
+<p>Before starting the technical explanations, let's see the matter of this article.</p>
+<p>Imagine you have a widget displaying a list of communities. Since the count can far exceed the quantity of information 
+that an end user can handle, trying to display all of them can be at least painful, 
+but worse, useless, because the end user will not know how to retrieve the right community among 
+all of them. </p> 
+<p>The common answer is the <b>filtering</b> based on the <b>tag</b> concept.  The elements to filter 
+own tags. A tag is a data associated with the element to represent as its type, its shape, 
+its owner, or whichever data which can 'classify' the element. When those tags are presented 
+to the end-user, he/she can do a <b>refinement</b> by selecting some of them.  </p>
+<p>In our example, when the end-user clicks tags, the widget only displays the communities
+ matching the end-user's criteria.  </p>
+<p>In the <b>3D</b>EXPERIENCE platform, the filtering management is attributed to the <b>6WTagger</b>. 
+ It presents the tags to the end-users, gives them the possibility to make a refinement, 
+ and finally informs the widgets to adapt their contents accordingly to the end-user 
+ choice. </p>
+<p>This article explains <b>how your own widget</b> can take benefit of the <b>6WTagger</b>  
+integration.  </p>
+<p>It first explains in details what a <b>6WTag</b>  - a tag in the <b>3D</b>EXPERIENCE platform 
+context- is. Then it describes the UI of the <b>6WTagger</b>, and its role for widgets. Finally, it presents 
+the <b>refinement</b> principles, and the exchanged data between the 6WTagger and widgets.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="6WTag"></a>6WTag</h2>
+<p>A tag is a key element to a large proportion of web sites. It is the means for end-users to easily 
+search for objects behind all web's links. On another hand, it is the means for object 
+owners to perform a sort of classification. </p> 
+<p>In the <b>3D</b>EXPERIENCE platform context, a tag is named a <b>6WTag</b> where 6W stands for 
+"What, Who, How, Why, When, Where" as explained in this section. But first let's 
+ explain what a 6WTag as a tag is.</p>
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Sub-pre-obj"></a>Subject/predicate/object Statement</h3>
+<p>A 6WTag expresses the relationship between two entities: a subject and an object.  
+So such a tag is a statement composed of three elements:</p>
+
+<ul>
+<li>A <b><a href="#SubjectTag">subject</a></b> , something representing a data  </li>
+<li>An <b><a href="#ObjectTag">object</a></b>, something representing another data.</li>  
+<li>A <b><a href="#PredicateTag">predicate</a></b> representing the kind of relationship between them  </li>
+</ul>
+<p>A 6WTag is also known as a <i>triple</i>.</p>
+<p>So instead of a simple string associated with a subject, we have a richer 
+statement: </p>
+<ul>
+<li>The object can be more sophisticated than a  literal,</li>
+<li>Thanks to the semantic associated with the predicate.</li>
+</ul>
+<p>Such a way is more robust and aligns with  concepts 
+of  Resource Data Framework (RDF) [<a href="#References">1</a>].<p>
+<p>Let's take a basic example:</p>
+<table>
+<tr>
+		<td>
+		<img alt="Mult-proxy" src="images/CAA6WTagDefinition.png"/></td>
+	</tr>
+</table>
+<p>It states:  the Wheel X (subject) is part of (predicate) the Car Y (object).  </p>
+<p>Below some 6WTags using this (extended) mechanical example:</p>   
+<ul>
+<li>{Wheel1, isPartOf, Car1}</li>
+<li>{Wheel1, isPartOf, Axle2}</li>
+<li>{Wheel1, isLocated, left}</li>
+<li>{Wheel2, isLocated, right}</li>
+<li>{Windshield1, isLocated, front}</li>
+<li>{Windshield1, isPartOf, Car1}</li>
+<li>{Windshield2, isPartOf, Truck3}</li>
+</ul>
+<p>The same subject can be part of several 6WTags, and the same predicate as the same object can be associated with different subjects. <p>
+<p>Now, let's see in details what these elements are, and their format. <p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<h4><a name="SubjectTag"></a>About the Subject</h4>
+<p>The subject represents a data usually hosted on a server. So, in this case the subject is represented by its 
+ <b>U</b>niform <b>R</b>esource <b>I</b>dentifier [<a href="#References">2</a>] to identify precisely the data on the server.  </p>
+<p><b>3D</b>EXPERIENCE platform examples (*):</p>
+<ul>
+<li>For 3DSpace :   "pid:B8485.2939.1992.393" or "pid:R8485.2939.1992.393"</li>
+<li>For 3DSwym :   "swym:4f5a7b73-dad2-4cf1-b0c3-355277a04136:OnPremise:post:Xl00f2Z4RNSvX523YTBqJA"</li>
+</ul>
+<p>For non DS subjects, there is no constraint about the identifier format as long as it is compliant with API managing the subjects.
+Nevertheless, when 6WTags will be stored in one of our database rules of unicity should be applied. This point will be addressed in the 6WTag Edition article [<a href="#References">3</a>].</p>
+<p>(*) The <b>3D</b>EXPERIENCE platform examples are not contractuel, they can change.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h4><a name="ObjectTag"></a>About the Object</h4>
+<p>The object is an element represented by an URI, or a literal.  For the latter, in DS context, it can only be a literal which is a string or a date. 
+For dates, the format is usually YYYY/MM/DD, but month and/or day can be omitted.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h4><a name="PredicateTag"></a>About the Predicate</h4>
+<p><b>For DS subjects</b> a predicate is always an element from a <b>vocabulary</b> known to the <b>3D</b>EXPERIENCE platform.   </p>
+<p>Some examples:</p>
+<ul>
+<li>ds6w:owner</li>
+<li>ds6w:answer</li>
+<li>ds6w:skill</li>
+<li>ds6w:length</li>
+</ul>
+<p>Among the predicates, some are called the 'roots'. There are  six root predicates:</p>
+<ul>
+<li>ds6w:who</li>
+<li>ds6w:when</li>
+<li>ds6w:what</li>
+<li>ds6w:where</li>
+<li>ds6w:how</li>
+<li>ds6w:why</li>
+</ul>
+<p>From this classification comes the 6WTag name. </p>
+<p>New 6W predicates can be defined by extending the <b>3D</b>EXPERIENCE platform vocabulary. This capability - only valid for customized 3DSpace data
+model - is explained
+in  the User Assistance documentation. Look for "Managing Vocabulary Files" to find articles about the topic.</p>
+
+<p><b>For non DS subjects</b>, you can use predicates defined by vocabulary (yours or DS native) or not. For the
+latter a simple string is enough. In our use cases (see [<a href="#References">7</a>] for example), the predicate is "architect".</p>
+<p>Pay attention about those string predicates:</p>
+<ul>
+<li>They are case sensitive. For the 6WTagger <code>responsible</code> is not <code>Responsible</code> (all predicates are case sensitive, 
+defined in vocabulary or not).</li>
+<li>They cannot be translated. The 6WTagger translates a given predicate, if the latter is defined by vocabulary,
+ and if translations exist.  </li>
+</ul>
+<p><b>6WTag and predicates</b></p>
+<p>A 6WTag does not have only one predicate, it is a path of predicates 
+where the first is necessary one among the <b>six</b> roots, and where each elementary predicate
+ is separated by a slash:</p>
+<p>Some examples:</p>
+<ul>
+<li>ds6w:what/ds6w:language</li>
+<li>ds6w:what/ds6w:social/ds6w:comments</li>
+<li>ds6w:what/ds6w:type</li>
+<li>ds6w:what/ds6w:category</li>
+<li>ds6w:where/ds6w:context/ds6w:community </li>
+<li>ds6w:where/architect</li>
+<li>ds6w:where/architect/french</li>
+</ul>
+<p>The hierarchy defines a root-leaf classification:</p>
+<ul>
+<li>ds6w:what </li>
+<ul>
+<li>ds6w:language</li>
+<li>ds6w:social</li>
+<ul>
+<li>ds6w:comments</li>
+</ul>
+<li>ds6w:type</li>
+<li>ds6w:category</li>
+</ul>
+<li>ds6w:where</li>
+<ul>
+<li>ds6w:context</li>
+<ul>
+<li>ds6w:community </li>
+</ul>
+</ul>
+</ul>
+<p>The predicates of first level (roots) are also named <b>"categories"</b>, 
+while the others are named <b>"groups"</b>.  </p>
+<p>Specify a valid root predicat is mandatory for the 6WTagger. It means the following 6WTags are not valid:</p>
+<ul>
+<li>architect</li>
+<li>architect/french </li>
+<li>ds6w:which/material</li>
+</ul>
+<p>For the first two cases <code>ds6w:xxx/</code> is missing, and for the last case <code>ds6w:which</code> is not one among the 6 possible categories. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="implicit"></a>Implicit versus Explicit</h3>
+<p>Now we have seen what a 6WTag is, let's see where it comes from. </p> 
+<p>A 6WTag can come from the subject (stored in database or not), or it can have been created by the end-user.</p> 
+<p><b>From subjects</b></p>
+<p>There 
+are deduced from the attributes and the relationships associated with the subjects (stored in database or not).  
+Such a tag is not physically stored somewhere, since it is deduced from existing subjects. Automatically extracted, they are also
+ called <b>implicit</b> 6WTags. </p>  
+<p><b>From end-users</b></p> 
+<p>They are created 
+interactively by the end-user. In this case,
+ the created 6WTags are kept by a database known to the 6WTagger:</p>
+<ul>
+<li>An internal database for  <b>3D</b>EXPERIENCE subjects,</li>
+<li>The 6WTags server database for customer subjects.</li>
+</ul> 
+<p>By opposition to implicit, they are usually named <b>explicit</b> 6WTags. You will find more technical explanations about those tags in the referenced technical article [<a href="#References">3</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="6WTagger"></a>6WTagger Component</h2>
+<p>The 6WTagger is the component managing 6WTags during a <b>3D</b>EXPERIENCE platform session. From end-users point 
+of view its role consists in displaying tags, letting them makes a refinement,
+and proposing them to create their own tags. </p>
+<p>This chapter presents the two facets of the 6WTagger: its "front end" view (the UI part), and its 
+"model view" (the background part interacting with widgets). </p>
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="UI"></a>6WTags Selector</h3>
+<p>Interactively the 6WTagger shows up by clicking the 6WTag icon in the <b>3D</b>EXPERIENCE top bar: </p>
+<table>
+<tr>
+		<td>
+		<img alt="CAA6WTagTopBar" src="images/CAA6WTagTopBar.png"/></td>
+	</tr>
+</table>
+<p>The following component appears:</p>
+ <table>
+<tr>
+		<td>
+		<img alt="CAA6WTag6WTagger" src="images/CAA6WTag6WTagger.png"/></td>
+	</tr>
+</table>
+<p>You recognize the six root predicates (categories) displayed with their display name:
+ Who, When, What, Where, Why and How. Click one of them (<i>Where</i>), its group predicates appear beneath:</p>
+ <table>
+<tr>
+		<td>
+		<img alt="CAA6WTagGroup" src="images/CAA6WTagGroup.png"/></td>
+	</tr>
+</table>
+<p> "Collaborative Space" is the display name of the group predicate "ds6w:collabspace". So the complete predicate is 'ds6w:where/ds6w:collabspace'. </p>
+<p><b>Note:</b> For a predicate with more than two levels deep, the 6WTagger only uses the leaf group predicate. For this predicate: 'ds6w:where/ds6w:context/ds6w:community',
+ only the group predicate "ds6w:community" in the "ds6w:where" category is presented by the 6WTagger. As of today other 
+ intermediate predicates are not  used. </p>
+<p>Finally by clicking on a group predicate you got its objects:</p>
+<table>
+<tr>
+		<td>
+		<img alt="CAA6WTagObject" src="images/CAA6WTagObject.png"/></td>
+	</tr>
+</table>
+<p>There is one object (DemoPrivateDesign) associated with the "Collaborative Space" predicate.</p>
+<p>For a predicate or an object you can observe on the right <b>a count</b> always computed by the 6WTagger based on its 6WTags.</p>
+<ul>
+<li>For a <i>root predicate</i>, the number is the count of its sub predicates ( including those of tags explicites). For example, for "Where" the count is "2" because
+below there are two predicates:  
+"Collaborative Space" and "Data Source".</li>
+<li>For a <i>leaf predicate</i>, the number is the count of objects associated with the predicate. 
+For example, there is one object (DemoPrivateDesign) associated with the "Collaborative Space" predicate.  </li>
+<li>For an <i>object</i>, the number is the subject count. For example, it means the 6WTagger counts
+ 62 subjects associated with the 'Collaborative Space' predicate and the "DemoPrivateDesign" object.</li>
+</ul>
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Date"></a>Date Filtering</h3>
+<p>When the <a href="#ObjectTag">object</a> is a date each time part shows up progressively. Let's suppose the date: 2000/02/</p>
+<p>First the year is displayed:</p>
+<table>
+<tr>
+		<td>
+		<img alt="CAA6WTagObject" src="images/CAA6WTagObjectDateYear.png"/></td>
+	</tr>
+</table>
+<p>When the year is selected, the month  <b>as text</b> (deduced from the number) appears:</p>
+<table>
+<tr>
+		<td>
+		<img alt="CAA6WTagObject" src="images/CAA6WTagObjectDateMonth.png"/></td>
+	</tr>
+</table>
+<p>And finally the day shows up after the month selection.</p>
+<table>
+<tr>
+		<td>
+		<img alt="CAA6WTagObject" src="images/CAA6WTagObjectDateDay.png"/></td>
+	</tr>
+</table>
+<p>We said again month and day can be optional, the object can be a year only, or a year and a month only.</p>
+<p><b>Note</b>: if the month value is not between 1 and 12 the displayed value is  the "undefined" string.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="EnduserTags"></a>User-Defined Tags Creation</h3>
+<p>Through the UI of the 6WTagger (see picture just below) end users can create their own tags for given subjects. </p>
+<table>
+<tr>
+		<td>
+		<img alt="CAA6WTagObject" src="images/CAA6WTagATEdition.png"/></td>
+	</tr>
+</table>
+<p>This capability
+is only possible if the widget enables it. The principles, and how to proceed for your widget, are described in the referenced article [<a href="#References">3</a>].</p>
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="ModelView"></a>Widget 6WTags</h3>
+<p>The 6WTagger  <b>keeps in memory</b> the 6WTags given by widgets. These widgets can be instantiated within different tab pages 
+from different dashboards. For information if you are not comfortable with dashboard organization, 
+read the "Dashboard App" section of the referenced article [<a href="#References">4</a>]. </p>
+<p>The 6WTagger is deleted when the <b>3D</b>EXPERIENCE session is closed, 
+and recreated empty (without previous 6WTags and previous potential selected tags) when the 3DDashboard
+application is reloaded (automatically or by the end-user). The widget reloading operation re-fills the 6WTagger.<p>
+<p>The 6WTagger <b>displays</b> only the  6WTags
+coming from widgets of the current tab page of the current dashboard. To be more precise:</p>
+<ul>
+<li>If one particular widget is maximized (or fullscreen) [<a href="#References">5</a>], the tags displayed are those coming from that particular widget, and those only,</li>
+<li>Otherwise, if widgets are windowed or minimized, necessarily [<a href="#References">5</a>], the tags displayed are those of all widgets (of current tag page and current dashboard). Note that even tags for a  minimized widget are displayed. </li>
+</ul>
+<p>The 6WTagger component keeps all 6WTags, whether  displayed or not. Therefore, when a widget is no more maximized, 
+6WTags for all widgets of the current tab page of the current dashboard are automatically displayed again.</p>
+<p>Another example, if the end-user changes the current tab page or the current dashboard, then automatically the UI contents of the 6WTagger is refreshed based on
+ the same above logic, but this time for widgets of the  new tab page or the new dashboard, respectively.</p>
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="WidgetFiltering"></a>Widget Filtering</h3>
+<p>When the end-user makes a tag selection <b>all</b> widgets (involved with the 6WTagger) of the current tab page of the current dashboard are 
+informed, and thus wherever the selected tags come from. By consequence widgets can update their contents according to an
+<a href="#algorithm">refinement algorithm</a>  given at the end of the next chapter. </p>
+<p>Nevertheless the impact (in  term of widget scope) of the selection is different according to the dashboard configuration at the time of the selection. 
+Let's explain the two possible configurations.</p>
+ 
+<p><b>The dashboard contains at least one maximised (of fullscreen) widget</b></p>
+<p>Tags selected in this configuraton are defined "local" to the widget. But the local filtering goes beyond the maximized/fullscreen mode. 
+It means that whatever the rendering mode of this widget, the local 6WTags 
+are part of its  refinement filter.
+ Nevertheless, 
+once the widget is no more maximized/fullscreen, the 6WTagger removes those local selected tags from the UI since this filtering is not applicable 
+for other widgets. The end-user
+is informed a widget can be filtered by more tags than those currently selected in the 6WTagger by a special icon in the widget top banner as shown by this picture:</p>
+<table>
+<tr>
+		<td>
+		<img alt="CAA6WTagObject" src="images/CAA6WTagOwnTag.png"/></td>
+	</tr>
+</table>
+<p>The other widgets (those not currently maximized/fullscreen) are informed when a "local" selection is performed. But their refinement filter
+does not contain the local selected tags.</p>
+<p><b>Otherwise, all widgets are windowed or minimized </b></p>
+<p>Tags selected in this configuration are applicable  for all widgets, and even when they are maximised (of fullscreen). Their expected behavior is to
+ filter their subjects accordingly to the selected tags. It can lead to display nothing if the refinement excludes all their own subjects.</p>
+ <p><b>To conclude,</b> whatever the rendering mode of a widget, in case of tag selection, this widget is informed with a refinement filtering containing together:</p>
+ <ul>
+ <li>Its own local selected tags (if they exist), </li>
+ <li>The global selected tags.</li>
+ </ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Refinement"></a>Refinement</h2>
+<p>When the end user selects tags among those displayed by the 6WTagger, he/she defines a <b>filter</b>
+ to be applied to the subjects to refine the widget's contents. </p>
+<table>
+<tr>
+		<td>
+		<img alt="CAA6WTagSelected" src="images/CAA6WTagTagSelected.png"/></td>
+	</tr>
+</table>
+<p>The selected tags are displayed at the top of the 6WTagger. In the picture just above
+the object "Frank Gehry" associated with the group predicate "Architect" has been selected, and thus
+the couple object &amp; predicate is presented in the "Selected Tags" part of the UI component.</p>
+<p>About the subject filtering (also named refinement) there are two cases to consider: when the filtering is performed by the <b>6WTagger</b> 
+itself, or when it is performed on <b>server side</b>. The choice, defined at the development stage, is made according to
+the data to filter. </p>
+<p>This chapter details for each filtering type:</p>
+<ul>
+<li>The reason to use it,</li> 
+<li>The data given by the widget to the 6WTagger,</li>
+<li>The data (*) provided by the 6WTagger to the widget after a tag selection. </li>
+</ul>
+<p>But it does not explain how those data are exchanged between the 6WTagger and the widgets. This part is 
+fully detailed in the "Filtering Protocol" section of the
+ article dealing with the 6WTagger API [<a href="#References">6</a>]. </p> 
+<p><b>(*) Note</b>: The data  provided by the 6WTagger can contain more elements than the ones presented in this article, or the others 
+from the 6WTagger section of the Developper Assistance. The "extra" elements must be ignored.</p>
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3> <a name="6WTagger-Filtering"></a>6WTagger Filtering</h3>
+<p>When the set of subjects is small enough to upload them <b>all</b> 
+efficiently from the database (or from file) to the client side, the subject filtering can be operated by the 6WTagger itself. </p>
+<p>The <b>data given by the widget to the 6WTagger</b> is a <b>complete 6WTags</b> set: a set of {subject, predicate, object} 
+statements. The JSON structure is as follows (in bold the static arguments):</p>
+<pre class="code">
+{ 
+ 'subject-1-uri':[{'<b>object</b>'    : 'objValue', 
+                   '<b>sixw</b>'      : 'predicateValue',  // Hierarchical path of the predicates URIs, from root 6W to used predicate
+                   '<b>dispValue</b>' : 'objValueName',    // Display name of the object, can be empty (objValue as default). 
+                   '<b>type</b>'      : 'objValueType',    // date,string  can be empty (string as default)
+                  }, ... ],                
+ 'subject-2-uri':[{...},{...}],  				 
+}
+</pre>
+
+<p>With this complete structure, the 6WTagger can display the tags, display the subject counts in
+ the pictogram boxes, and  perform the filtering after the end-user refinement. It means it can
+ define the list of subjects matching the chosen tags.   </p>
+ 
+<p><b>Example</b> partially constructed from pictures illutrating the <a href="#UI">6WTags Selector</a> section. </p>
+<pre class="code">
+{ 
+ 'ENOVIA:8485.2939.1992.393':[{'object'    : 'demoprivatedesign', 
+                   'sixw'      : 'ds6w:where/ds6w:collabspace',   
+                   'dispValue' : 'DemoPrivateDesign',    
+                   'type'      : 'string',     
+                  }, {'object'    : 'pdd', 
+                   'sixw'      : 'ds6w:who/ds6w:responsible',   
+                   'dispValue' : 'Pierre Dupond',    
+                   'type'      : 'string',     
+                  } ,... ],                
+ 'ENOVIA:8485.2939.1992.39A':[{...},{...}],  				 
+}
+</pre>
+<p>The first subject (one among the 62) is stored in the "demoprivatedesign" ("DemoPrivateDesign" in UI) collaborative space, and let's say its current
+ responsible is "pdd" ("Pierre Dupond" in UI). The predicates ("sixw" key values) are issued from the DS vocabulary, so they are automatically translated by the 6WTagger.</p> 
+<p><b>After the end-user selection</b>, the 6WTagger broadcasts an event with the result of the filtering (at least the list of subjects). The JSON structure  of this data
+ is as follows (in bold the static arguments):</p>
+<pre class="code">
+{ 
+   "<b>allfilters</b>": {
+          "predicateValue1": [ {"<b>object</b>"  : "objValueA", "<b>type</b>"  : "objValueType" } , {...},{...} ],
+          "predicateValue2": [ {"<b>object</b>"  : "objValueB", "<b>type</b>"  : "objValueType" } , {...},{...} ]
+        },
+   "<b>filteredSubjectList</b>": [ 'subject-1-uri', 'subject-2-uri', 'subject-3-uri',...]                
+}
+</pre>
+<p>The "filteredSubjectList" key value is an array containing the filtered subjets. In case of no subject matching the filtering criteria 
+the array is empty (length is equal to zero). With this data widgets (those involved with the 6WTagger of the current tab page of the current dashboard) can refresh their UI accordingly.</p>
+<p>Additionnaly, the selected predicates and their objects are provided. If there is no more selected tags (after a de-selection), the key
+"allfilters" exists but it is an empty JSON object. Here we do not insist on the predicate value, since for such kind of filtering, "allfilters"
+should be useless. Nevertheless, if you want some details about the contents of the predicate value, see <a href="#FilteringSSResult">the next</a> section. </p>
+<p><b>Example</b> when <a href="#UI">DemoPrivateDesign</a> is selected.</p>
+<pre class="code">
+{ 
+    "allfilters": {
+          "ds6w:where/ds6w:collabspace": [ {"object"  : "demoprivatedesign", "type"  : "string" }  ],
+        },
+    "filteredSubjectList": [ 'ENOVIA:8485.2939.1992.393', ...]   			 
+}
+</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3> <a name="filteringserver"></a>Server Side Filtering</h3>
+<p>When the set of subjects is huge the filtering by the 6WTagger becomes impossible. 
+The subject filtering must be performed on the server side (or where your complete set of subjects is). </p> 
+<p>The <b>data given by the widget to the 6WTagger</b>  is an array of elements formed for each of them by a group containing a predicate, an object, and the count of subjects having them. 
+Logically a list of elements 
+with such a structure {predicate, object, #subjects}. Implementatively a JSON array where each element of the array is a JSON object as follows: </p>
+<pre class="code">
+{'<b>object</b>'    : 'objValue', 
+ '<b>sixw</b>'      : 'predicateValue',  // Hierarchical path of the predicates URIs, from root 6W to used predicate
+ '<b>dispValue</b>' : 'objValueName',    // Display name of the object, can be empty (objValue as default). 
+ '<b>type</b>'      : 'objValueType',    // date,string can be empty (string as default) 
+ '<b>count</b>'     : #subjects 
+ }
+</pre> 
+<p>With this structure, named a summary, the 6WTagger can display predicates and objects, with the count of involved subjects for each of them,
+ awhile the latters are not necessary uploaded to the client side. </p>
+ <p><b>Example</b> partially constructed from pictures illutrating the <a href="#UI">6WTags Selector</a> section. </p>
+<pre class="code">
+[{'object': 'demoprivatedesign','sixw': 'ds6w:where/ds6w:collabspace','dispValue' : 'DemoPrivateDesign', 'type' : 'string', 'count':62} ,     
+ {'object': 'pdd','sixw': 'ds6w:who/ds6w:responsible','dispValue' : 'Pierre Dupond', 'type' : 'string', 'count':100}, 
+ {'object': '2017/03/30','sixw': 'ds6w:who/ds6w:created','dispValue' : '', 'type' : 'date', 'count':4},  
+  ...				 
+}
+</pre>
+<p><a name="FilteringSSResult"></a><b>After the end-user selection</b>, the 6WTagger broadcasts an event with the filter to apply server side: It is the set of the selected 6WTags, in other words a set of {predicate, object} elements. The JSON structure is as follows (in bold the static arguments):</p>
+ <pre class="code">
+{ 
+   "<b>allfilters</b>": {
+          "predicateValue1": [ {<b>object</b>"  : "objValueA", "<b>type</b>"    : "objValueType" } , {...},{...} ],
+          "predicateValue2": [ {"<b>object</b>" : "objValueB", "<b>type</b>"    : "objValueType" } , {...},{...} ]
+        },       
+}
+</pre>
+<p>With this information widgets (those involved with the 6WTagger of the current tab page of the current dashboard) can make a search (server side) to look for 
+subjects matching this filter, and then update their UI accordingly. As for the other type of filtering, if there is no more selected tags (after a de-selection),
+the key "allfilters" exists but it is an empty JSON object.</p>
+<p>When the 6WTag object is a data, the "object" value is the selected part: </p>
+<ul>
+<li>If the year is selected, the value contains the year only, </li>
+<li>if the month is selected, the value contains the year and the month only,  </li>
+<li>if the day is selected, the value is the complete date.  </li>
+ </ul>
+ <p><b>Note</b>: The JSON data  can contain the  key "filteredSubjectList", but it is in case of explicit tag edition. See the Data Format/For Server Side Filtering section 
+ of the referenced article [<a href="#References">3</a>].</p>
+ <p><b>Example</b> when <a href="#UI">DemoPrivateDesign</a> is selected.</p>
+<pre class="code">
+{ 
+    "allfilters": {
+          "ds6w:where/ds6w:collabspace": [ {"object"  : "demoprivatedesign", "type"  : "string" }  ],
+          "ds6w:where/ds6w:created": [ {"object"  : "2017/03", "type"  : "date" }  ],
+        }  			 
+}
+</pre>
+<p>Note for the date, the object value (2017/03) is not the value set as input (2017/03/30), but the part of the object really selected. </p> 
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="algorithm"></a>Refinement Algorithm</h3>
+<p>The logic is as follows:</p>
+<ul>
+<li>OR between objects of the same predicate.</li> 
+<li>AND between objects of different predicates.</li> 
+</ul>
+<p>Let's see an example with 4 subjects (first column) and 4 predicates (other columns):</p>
+<table class="fill">
+<tr><th>Subject</th><th>Who:Architect</th><th>Who:Owner</th><th>When: Creation Date</th><th>When:Last Renovation Date</th></tr>
+<tr><td>House1</td><td>Jean Nouvel</td><td>Bank A</td> <td>2000/03/30</td><td>2010/05/14</td></tr>
+<tr><td>House2</td><td>Jean Nouvel</td><td>Bank A</td> <td>1980/03</td><td>2000/05</td></tr>
+<tr><td>House3</td><td>Franck Gehry</td><td>Bank A</td><td>2000/03</td><td>2005/12</td></tr>
+<tr><td>House4</td><td>Franck Gehry</td><td>Bank B</td><td>2000/05</td><td>2005/09</td></tr>
+</table>
+<p>Let's see the expected filtering according to different selected tags:</p>
+<ul>
+<li>Who:Architect/Jean Nouvel
+<pre class="code"> House1,House2</pre>
+</li>
+<li>Who:Architect/Jean Nouvel + Who:Architect/Franck Gehry
+<pre class="code"> House1,House2,House3, House4</pre>
+</li>
+<li>Who:Architect/Franck Gehry + Who:owner/Bank A
+<pre class="code"> House3</pre>
+</li>
+<li>Who:Architect/Jean Nouvel + Who:Architect/Franck Gehry + When:Last Renovation Date/2005
+<pre class="code">House3, House4</pre>
+</li>
+<li>Who:Architect/Jean Nouvel + Who:owner/Bank A + When: Creation Date/2000
+<pre class="code"> House1</pre>
+</li>
+<li>When: Creation Date/2000
+<pre class="code"> House1, House3, House4</pre>
+</li>
+<li>When: Creation Date/2000/03
+<pre class="code"> House1, House3</pre>
+</li>
+<li>When: Creation Date/2000/03/30
+<pre class="code"> House1</pre>
+</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Short"></a>In Short</h2>
+<p></p>
+<p>The reader can continue with the article dealing with the APIs. You will learn what a widget must do to implement the 6WTagger protocol.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td> <a href="#" onclick="javascript:CAAlinkUrl('http://en.wikipedia.org/wiki/Resource_Description_Framework');return false;">Resource description framework</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td> <a href="#" onclick="javascript:CAAlinkUrl('http://en.wikipedia.org/wiki/Uniform_resource_identifier');return false;">Uniform resource identifier</a></td>
+	</tr>
+	<tr>
+        <td>[3]</td>
+		<td><a href="CAA6WTaggerEdition.htm">6WTag Edition</a></td>
+    </tr>
+		<tr>
+		<td>[4]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSRoot/CAAWebAppsJSTaOverview.htm');return false;">3DEXPERIENCE Applications</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsTaWidgetClass.htm');return false;">Widget Object</a></td>
+	</tr>
+	<tr>
+        <td>[6]</td>
+		<td><a href="CAA6WTaggerAPI.htm">6WTagger Integration - APIs</a></td>
+    </tr>
+	<tr>
+        <td>[7]</td>
+		<td><a href="CAA6WTaggerUcFiltering.htm">Implementing 6WTagger Filtering</a></td>
+    </tr>
+</table>
+ <script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [August 2014]</td>
+		<td>Document created</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>2</strong> [March 2017]</td>
+		<td>Document update</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

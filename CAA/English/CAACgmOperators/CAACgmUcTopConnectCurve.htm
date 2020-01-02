@@ -1,0 +1,385 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Connecting Wires</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Connecting Wires with Reference Curve&nbsp; </h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how to connect wires between them by specifying 
+		a base curve. If we specify a base curve, the shape of the connecting piece can be 
+		computed from this reference curve. The reference curve as well as the 
+		created connecting curve have similar mathematical descriptions. The 
+		CATICGMTopSimilarCurve is the operator to use for such case. <ul>
+			<li><a href="#What_You_Will_Learn_With_This_Article">What You Will 
+			Learn With This Article</a></li>
+			<li><a href="#The_CAAGMOperatorsConnectCurve_Use_Case">The 
+			CAAGMOperatorsConnectCurve Use Case</a><ul>
+				<li><a href="#What_Does_CAAGMOperatorsConnectCurve_Do">What Does 
+				CAAGMOperatorsConnectCurve Do</a></li>
+				<li><a href="#How_to_Launch_CAAGMOperatorsConnectCurve_">How to 
+				Launch CAAGMOperatorsConnectCurve </a></li>
+				<li>
+				<a href="#Where_to_Find_the_CAAGMOperatorsConnectCurve__Code_">Where to Find the 
+				CAAGMOperatorsConnectCurve&nbsp; Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a><ul>
+				<li><a href="#Creating the curves making up the wire">Preleminary Operations</a>
+				</li>
+				<li><a href="#Creating the curves making up the wire0">Create 
+				the bodies to be specified as start and end points</a> </li>
+				<li>
+				<a href="#Connect_start_and_end_points_with_curve_similar_to_base_curve">
+				Connect start and end points with curve similar to base curve</a></li>
+			</ul>
+			</li>
+			<li>
+			<a href="#Connect_start_and_end_points_with_curve_similar_to_base_curve">References</a></li>
+		</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		&nbsp;</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="What_You_Will_Learn_With_This_Article">What You Will Learn With 
+This Article</a></h2>
+<p>In this article, you learn how to use the operator <strong>
+CATICGMTopSimilarCurve</strong> to connect two wires. These operators are to be used according to the general 
+scheme of topological operators. If need be, you can take a look at &quot;Overview of 
+the Topological Operators&quot; [<a href="#References">1</a>] for more information.</p>
+<h2><a name="The_CAAGMOperatorsConnectCurve_Use_Case">The 
+CAAGMOperatorsConnectCurve Use Case</a></h2>
+<p>The CAAGMOperatorsConnectCurve.m module in CAAGMOperatorsInterfaces.edu 
+illustrates how to connect two wires by specifying a base curve. This use case 
+requires the Connect-Curve-Sample.NCGM file as input data. This file is delivered in the FunctionTests/InputData 
+folder of CAAGMOperatorsInterfaces.edu framework.
+</font>
+If you are not already 
+familiar with geometric modeler use cases, go to
+<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Uses Cases</a>.<p>With the input data below 
+(wires to be connected in pink, base curve in yellow):</p>
+<table>
+  <caption><a name="Fig.1">Fig.1</a> Connect Curve : Input Data</caption>
+  <tr>
+    <td>
+	<img src="images/CATICGMTopSimilarCurve_img5.jpg"></td>
+   </tr>
+</table>
+<h3><a name="What_Does_CAAGMOperatorsConnectCurve_Do">What Does 
+CAAGMOperatorsConnectCurve Do</a></h3>
+<p>The use case:</p>
+<ul>
+	<li>Load the CGM container from the Connect-Curve-Sample.NCGM input file 
+	.</li>
+	<li>Create the config &amp; topdata.</li>
+	<li>Retrieve the input data&nbsp; from CGM 
+	container.<ul>
+		<li>the Base Curve</li>
+		<li>First &amp; Seconde curve</li>
+		<li>Vertex on 1st curve</li>
+		<li>Vertex on 2nd curve</li>
+	</ul>
+	</li>
+	<li>Create the bodies to be specified as start and end points:
+	<ol>
+		<li>Create Topological point P1 from Vertex on 1st curve.</li>
+		<li>Create Topological point P2&nbsp; from Vertex on 2nd curve</li>
+	</ol>
+	</li>
+	<li>Project points onto wires by using CATICGMHybProject<ol>
+		<li>Project points&nbsp; P1 on 1st curve</li>
+		<li>Project points&nbsp; P2 on 2nd curve</li>
+	</ol>
+	</li>
+	<li>Connect start and end points with a curve similar to base curve</li>
+	<ol>
+		<li>Create the topological operator CATICGMTopSimilarCurve</li>
+		<li>specifies the start and end points</li>
+		<li>&nbsp;Trimm the first wire with the result curve.</li>
+		<li>Run the operator &amp; Get the body result</li>
+	</ol>
+</ul>
+<p><strong>Note</strong>: This article only focuses on the operations related to 
+the CATICGMTopSimilarCurve CATICGMHybProject operators. Refer to &quot;Overview of the Topological Operators&quot; 
+[<a href="#References">3</a>] for more information on the operations which are 
+not detailed in the article.</p>
+<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How_to_Launch_CAAGMOperatorsConnectCurve_">How to Launch 
+CAAGMOperatorsConnectCurve </a></h3>
+<p>To launch <a>CAAGMOperatorsConnectCurve </a>, you will need to set up the build time environment, 
+then compile <a>CAAGMOperatorsConnectCurve </a>.m, set up the run time environment, and then 
+execute the use case [<a href="#References">2</a>].</p>
+<p>If you simply type <a>CAAGMOperatorsConnectCurve </a>with only one argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example: </p>
+<p><a>CAAGMOperatorsConnectCurve </a>&nbsp;<code>InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\FunctionTests\InputData\Connect-Curve-Sample.NCGM e:\connectCurve_Result.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsCleanCrv.m'>
+<h3>&nbsp;</h3>
+	<h3><a name="Where_to_Find_the_CAAGMOperatorsConnectCurve__Code_">Where to Find the 
+	CAAGMOperatorsConnectCurve&nbsp; Code </a></h3>
+<p>The CAAGMOperatorsConnectCurve use case is made of a main named 
+CAATopConnectCurve.cpp 
+located in the CAAGMOperatorsConnectCurve.m module of the CAAGMOperatorsInterfaces.edu 
+framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\CAAGMOperatorsConnectCurve.m\</code></p>
+	<p>where <code>InstallRootFolder</code> [<a href="#References">2</a>] is the folder 
+where the API CD-ROM is installed.</p>
+	<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step">Step-by-Step</a></h2>
+<p>The use case is divided into the following main steps:</p>
+<ul>
+	<li><a href="#Creating the curves making up the wire">Preleminary Operations </a></li>
+	<li><a href="#Creating the curves making up the wire0">Create the bodies to 
+	be specified as start and end points </a></li>
+	<li>
+	<a href="#Connect_start_and_end_points_with_curve_similar_to_base_curve">
+	Connect start and end points with curve similar to base curve</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3 accesskey="Creating the curves making up the wire"><a name="Creating the curves making up the wire"></a>Preleminary Operations </h3>
+<p>In this operation, the geometrical container is loaded from the input NCGM 
+file in order to get the body that will be treated by operators.</p>
+	<p>The TopData&nbsp; is also created.</p>
+	<p>The following code illustrates how to&nbsp; retrieve these informations:</p>
+</article>
+<pre class="code">
+ // -----------------------------------------------------------
+// 1 - Preliminary declarations
+// -----------------------------------------------------------
+//
+// (a) Loads the container 
+//
+cout &lt;&lt; &quot; 1 - Preliminary declarations&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;----------------------------------------&quot; &lt;&lt; endl;
+CATGeoFactory* piGeomFactory = <strong>CATLoadCGMContainer</strong>(filetoread);
+if (NULL == piGeomFactory) return (1);
+cout &lt;&lt; &quot;\nLoads the CGM container : OK &quot; &lt;&lt; endl;
+
+//
+// (b) Configuration management
+//
+CATSoftwareConfiguration * pConfig = new <strong>CATSoftwareConfiguration</strong>();
+if (NULL == pConfig) return (1);
+cout &lt;&lt; &quot;Configuration management : OK &quot; &lt;&lt; endl;
+
+//
+// (c) - Create the CATTopData
+//
+CATTopData <strong>topdata</strong>(pConfig, NULL);
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creating the curves making up the wire0">Create the bodies to be 
+specified as start and end points </a> </h3>
+<p>This part of the use case shows how to create a topological points from 
+vertices of curves that we want to connect. The topological point is created 
+from a CATPoint associated to each vertex : </p>
+<pre class="code">
+CATPoint * p1 = piVertex1-&gt;<strong>GetPoint</strong>();
+CATPoint * p2 = piVertex2-&gt;<strong>GetPoint</strong>();
+
+// Create Topological point from p1
+//
+CATBody * BodyPoint1 = <strong>CATCGMCreateTopPointXYZ</strong>(piGeomFactory, 
+&amp;topdata, p1-&gt;GetX(), p1-&gt;GetY(), p1-&gt;GetZ());
+...
+cout &lt;&lt; &quot;\nBody of the Start Point : Tag BodyPoint1 = &quot; &lt;&lt; BodyPoint1-&gt;GetPersistentTag() &lt;&lt; endl;
+
+// Create Topological point from p2
+//
+CATBody * BodyPoint2 = <strong>CATCGMCreateTopPointXYZ</strong>(piGeomFactory, 
+&amp;topdata, p2-&gt;GetX(), p2-&gt;GetY(), p2-&gt;GetZ());
+...</pre>
+<p>In next each topological point is projected to its associated input curve : </p>
+<pre class="code">
+cout &lt;&lt; &quot;\n 4 - Project points onto wires&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;----------------------------------------------------------&quot; &lt;&lt; endl;
+
+// Create the projection operator CATICGMHybProject
+//
+CATICGMHybProject * topLayDownOpe1 = NULL;
+topLayDownOpe1 =::<strong>CATCGMCreateTopProject</strong>(piGeomFactory,
+&amp;topdata, BodyPoint1, piBodyCurve1);
+
+cout &lt;&lt; &quot;\n Create the projection operator CATICGMHybProject between Point P1 and the First body curve : OK &quot; &lt;&lt; endl;
+
+// Sepecify Distance Max
+//
+topLayDownOpe1-&gt;<strong>SetMaxDistanceValue</strong>(0);
+
+// Run the operator
+//
+topLayDownOpe1-&gt;<strong>Run</strong>();
+
+// Get the result body
+//
+CATBody * <strong>piBodyV1</strong> = topLayDownOpe1-&gt;<strong>GetResult</strong>();;
+...</pre>
+<p>&nbsp;</p>
+	<h3><a name="Connect_start_and_end_points_with_curve_similar_to_base_curve">
+	Connect start and end points with curve similar to base curve</a></h3>
+	<p>This operation is done thanks to topological operator <strong>
+	CATICGMTopSimilarCurve</strong> that connects to curves according to the 
+	specification of a base curve. </p>
+<p>&nbsp;</p>
+<table>
+  <caption><a name="Fig.4">Fig.</a>2 How to create CATICGMTopSimilarCurve 
+  operator</caption>
+  <tr>
+    <td>
+	<img src="images/CATICGMTopSimilarCurve_img6.jpg"></td>
+	 <td>
+	&nbsp;</td>
+     </tr>
+</table>
+<p>&nbsp;</p>
+<p>and the code below:</p>
+<pre class="code">
+CATICGMTopSimilarCurve * pSimilarCurve = <strong>CATCGMCreateTopSimilarCurve</strong>(piGeomFactory, 
+		&topdata, 
+		piBodyBaseCurve, // the base curve
+		piBodyCurve1,    // the first wire
+		piBodyCurve2);   // the second wire
+...
+</pre>
+<p>&nbsp;</p>
+<p>Before Run of operator, define the start point, the end point and if needed 
+whether the input bodies must be trimmed : </p>
+<table>
+  <caption><a name="Fig.3">Fig.</a>3 CATICGMTopSimilarCurve use</caption>
+  <tr>
+    <td>
+	<img src="images/CATICGMTopSimilarCurve_img7.jpg"></td>
+	 <td>
+	&nbsp;</td>
+     </tr>
+</table>
+<p>and the code below:</p>
+<pre class="code">
+// specifies the start point
+//
+pSimilarCurve-&gt;<strong>SetStartPoint</strong>(piBodyV1,piBodyCurve1); 
+cout &lt;&lt; &quot;Specifies the start point : OK &quot; &lt;&lt; endl;
+
+// specidies the end point
+//
+pSimilarCurve-&gt;<strong>SetEndPoint</strong>(piBodyV2,piBodyCurve2); 
+cout &lt;&lt; &quot;Specifies the end point : OK &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pSimilarCurve-&gt;<strong>Run</strong>();
+
+// Get the body result
+CATBody * pSimilCurvBody = pSimilarCurve-&gt;<strong>GetResult</strong>();
+...
+</pre>
+<p>you get this result (connect curve in green):</p>
+<table>
+  <caption><a name="Fig.2">Fig.4</a> Connect Curve :&nbsp; Result</caption>
+  <tr>
+    <td>
+	<img src="images/CATICGMTopSimilarCurve_imgA.gif"></td>
+	 <td>
+	 &nbsp;</td>
+     </tr>
+</table>
+<p><a name="References"></a></p>
+<table>
+  <caption><a name="Fig.5">Fig.</a>5 Case of Result curve trimmed with first 
+  input curve </caption>
+  <tr>
+    <td>
+	<img src="images/CATICGMTopSimilarCurve_imgE.jpg"></td>
+	 <td>
+	 &nbsp;</td>
+     </tr>
+</table>
+<p>&nbsp;</p>
+<h2>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaUseTopoOperators.htm">How to Use Topological Operators</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="CAACgmTaTopBoolean.htm">Understanding Boolean Operators</a></td>
+	</tr>
+
+<tr>
+		<td>[5]</td>
+		<td>
+		<a href="CAACgmUcTopOverview.htm">Overview of Topological Operators</a></td>
+	</tr>
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Oct 2011]</td>
+		<td>Document created</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>2</strong> [Apr 20118</td>
+		<td>Document Enriched</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

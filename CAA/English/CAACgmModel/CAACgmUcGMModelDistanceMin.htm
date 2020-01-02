@@ -1,0 +1,851 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Computing the Minimum Distance between Geometries</title>
+<style type="text/css">
+.style3 {
+				color: #FB7203;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1>Computing the Minimum Distance between Geometries</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>The minimum distance between a point and a surface, a point and a 
+		curve or between curves as well as the 
+		point matching this minimum distance can be computed.</p>
+		<ul>
+			<li><a href="#OpeToBeUsed">Operator to be Used</a></li>
+			<li><a href="#UseCaseDescription">Use Case Description</a></li>
+			<li><a href="#Case_1">Case 1: Minimum Distance between a Cartesian Point and a Surface</a></li>
+			<li><a href="#Case_2">Case 2 : Minimum Distance between a Point and a Curve</a></li>
+			<li><a href="#Case_3">Case 3 : Minimum Distance between Two Curves</a></li>
+			<li><a href="#Case_4">Case 4:&nbsp; How to define new limits on the 
+			Nurbs Surface</a></li>
+			<li><a href="#Case_5">Case 5 : Minimum Distance between Point and 
+			relimited Nurbs Surface</a><ul>
+				<li><a href="#Case5_a_">a - Minimum distance between a CATMath 
+				Point and the relimited Nurbs surface </a></li>
+				<li><a href="#Case5_b_">b - Minimum distance between extremities 
+				of a Nurbs curve and relimited Nurbs surface</a></li>
+				<li><a href="#Case5_c_">c - Minimum distance between extremities 
+				of Nurbs curve and max limit of Nurbs surface</a></li>
+			</ul>
+			</li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		&nbsp;</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="OpeToBeUsed">Operator to be Used</a></h2>
+
+<p>To compute the minimum distance between:
+
+<ul>
+				<li>a cartesian point and a surface, use the CATICGMDistanceMinPtSur operator. This operator is created by the CATCGMCreateDistanceMin global 
+function which is defined in the CATCGMCreateDistanceMinPtSur.h header of the GMModelInterfaces framework.
+				</li>
+				<li>a cartesian point and a curve, use the CATICGMDistanceMinPtCrv operator. This operator is created by the CATCGMCreateDistanceMin global 
+function which is defined in the CATCGMCreateDistanceMinPtCrv.h header of the GMModelInterfaces framework.
+				</li>
+				<li>two curves, use the CATICGMDistanceMinCrvCrv operator. This operator is created by the CATCGMCreateDistanceMin global 
+function which is defined in the CATCGMCreateDistanceMinCrvCrv.h header of the GMModelInterfaces framework.
+				</li>
+				<li>a Math point and a relimited surface, use the 
+				CATICGMDistanceMinPtSuroperator. This operator is created by the 
+				CATCGMCreateDistanceMinLim global function which is defined in 
+				the CATCGMCreateDistanceMinPtSur.h header of the 
+				GMModelInterfaces framework.
+				</li>
+</ul>
+
+<p>To project :</p>
+<ul>
+	<li>a point on a surface along a given direction use the 
+	CATICGMProjectionPtSur operator. This operator is created by the 
+	CATCGMCreateProjection global function which is defined in the 
+	CATCGMCreateProjection.h&nbsp; header of the GMModelInterfaces framework.</li>
+</ul>
+<p>&nbsp;</p>
+
+<h2><a name="UseCaseDescription">Use Case Description</a></h2>
+<p>The CAAGMModelDistanceMinOpe.m module in CAAGMModelInterfaces.edu illustrates 
+how to compute the minimum distance between two geometries. This use case 
+creates its own input data. If you are not already 
+familiar with geometric modeler use cases, go to
+<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Uses Cases</a>.</p>
+<h2><a name="Case_1">Case 1: Minimum Distance between a Cartesian Point and a Surface</a></h2>
+<p>With the input data below:</p>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.1">Fig.1</a> Minimum Distance between a&nbsp; Point and 
+	a Surface : Input Data</caption>
+  <tr>
+    <td><img alt="" src="images/CATCGMCreateDistanceMin_img12.jpg"></td>
+   </tr>
+</table>
+<p>and the code below:</p>
+<TABLE class="code">
+    <TR>
+        <TD>
+       <pre>
+
+...
+
+// Create the CATICGMDistanceMinPtSur operator
+// and run it
+CATICGMDistanceMinPtSur * pDistMinPtSurOpe =::<strong>CATCGMCreateDistanceMin</strong>(piGeomFactory,
+pConfig,
+piCartP1, 
+piNurbsSurface, TRUE); 
+
+...
+cout &lt;&lt; &quot;Create the CATICGMDistanceMinPtSur operator : OK&quot; &lt;&lt; endl;
+
+// run the operator 
+pDistMinPtSurOpe-&gt;Run();
+cout &lt;&lt; &quot;Run the operator.&quot; &lt;&lt; endl;
+
+
+// d - retrieves the distance, resulting point and CATSurParam
+// 
+cout &lt;&lt; &quot;Retrieves the distance, resulting point and CATSurParam.&quot; &lt;&lt; endl;
+double dist1 = pDistMinPtSurOpe-&gt;GetDistance();
+cout &lt;&lt; &quot;distance point - surface : &quot; &lt;&lt; dist1 &lt;&lt; endl;
+
+// Creates a CATPointOnSurface realizing the minimum distance
+// between the Nurbs surface and the point.
+//
+CATPointOnSurface * pPtOnSur = pDistMinPtSurOpe-&gt;GetPointOnSurface() ;
+...
+cout &lt;&lt; &quot;Creates a CATPointOnSurface realizing the minimum distance : OK.&quot; &lt;&lt; endl;
+
+// Returns the parameter of a point realizing the minimum distance
+// between the Nurbs surface and the point.
+// 
+CATSurParam pSurParam = pDistMinPtSurOpe-&gt;GetSurParam() ;
+
+CATMathPoint MPtOnSur = piNurbsSurface-&gt;EvalPoint(pSurParam);
+cout &lt;&lt; &quot;Coordinates of the point realizing the minimum distance : &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;X = &quot; &lt;&lt; MPtOnSur.GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; MPtOnSur.GetY() &lt;&lt; &quot;\t Z = &quot;&lt;&lt; MPtOnSur.GetZ() &lt;&lt; endl;
+...
+</pre>
+	</TD>
+    </TR>
+</TABLE>
+generates this message on the standard output:
+<pre>
+distance point - surface 21.5346</pre>
+<pre>
+<img alt="" src="images/CATCGMCreateDistanceMin_img13.gif">
+</pre>
+<p>A projection point is created on the surface. The minimum distance is 21.535mm</p>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.2">Fig.2</a> Minimum Distance between Point and Surface : 
+	Projection Point</caption>
+  <tr>
+    <td><img alt="" src="images/CATCGMCreateDistanceMin_img11.jpg"></td>
+   </tr>
+</table>
+
+<h2><a name="Case_2">Case 2 : Minimum Distance between a Point and a Curve</a></h2>
+<p>With the input data below:</p>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.1">Fig.</a>3 Distance Minimum between a Point and a 
+	Curve : Input Data</caption>
+  <tr>
+    <td>
+	<img alt="" src="images/CATCGMCreateDistanceMin_img15.jpg"></td>
+   </tr>
+</table>
+<p>and the code below:</p>
+<TABLE class="code">
+    <TR>
+        <TD>
+       <pre>
+...
+ 
+// a - Create the curve
+CATNurbsCurve * pNurbsCurve =:: CAACreateNurbsCurveDeg3With5Arcs(piGeomFactory);
+..
+
+cout &lt;&lt; &quot;\nCreate a Nurbs curve. \nTag of the Projection curve : \t&quot; &lt;&lt; pNurbsCurve-&gt;GetPersistentTag() &lt;&lt; endl;
+cout &lt;&lt; &quot;The coordinate of point to compute the distance min X = 25.\t Y = 25. \t Z = 30. \n Tag of the Point : \t&quot; &lt;&lt; piCartP1-&gt;GetPersistentTag() &lt;&lt; endl;
+
+// c - Create the CATICGMDistanceMinPtCrv operator
+// and run it
+CATICGMDistanceMinPtCrv * pDistMinPtCrvOpe =::<strong>CATCGMCreateDistanceMin</strong>(piGeomFactory,
+pConfig,
+piCartP1, 
+pNurbsCurve, ADVANCED); 
+
+...
+cout &lt;&lt; &quot;Create the CATICGMDistanceMinPtCrv operator : OK&quot; &lt;&lt; endl;
+
+// Run the operator.
+//
+pDistMinPtCrvOpe-&gt;Run();
+cout &lt;&lt; &quot;Run the operator.&quot; &lt;&lt; endl;
+
+// retrieves the distance, resulting point and CATSurParam
+// 
+cout &lt;&lt; &quot;Retrieves the distance, resulting point and CATSurParam.&quot; &lt;&lt; endl;
+double dist2= pDistMinPtCrvOpe-&gt;GetDistance();
+cout &lt;&lt; &quot;distance point - curve &quot; &lt;&lt; dist2 &lt;&lt; endl;
+
+// Creates a CATPointOnCurve realizing the minimum distance.
+//
+CATPointOnCurve * pPtOnCrv = pDistMinPtCrvOpe-&gt;GetPointOnCurve() ;
+...
+cout &lt;&lt; &quot;Creates a CATPointOnCurve realizing the minimum distance : OK&quot; &lt;&lt; endl;
+
+// Returns the global parameter of the point realizing the minimum distance
+//
+CATCrvParam pCrvParam = pDistMinPtCrvOpe-&gt;GetCrvParam() ;
+
+// Coordinates of the point realizing the minimum distance
+// 
+CATMathPoint MPtOnCur = pNurbsCurve-&gt;EvalPoint(pCrvParam);
+cout &lt;&lt; &quot;Coordinates of the point realizing the minimum distance : &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;X = &quot; &lt;&lt; MPtOnCur.GetX() &lt;&lt; &quot;\t Y = &quot; &lt;&lt; MPtOnCur.GetY() &lt;&lt; &quot;\t Z = &quot; &lt;&lt; MPtOnCur.GetZ() &lt;&lt; endl;	</pre>
+	</TD>
+    </TR>
+</TABLE>
+generates this distance on the standard output:
+<pre>
+distance point - curve 32.0743</pre>
+<pre>
+<img alt="" src="images/CATCGMCreateDistanceMin_img17.gif">
+</pre>
+<p>A projection point is created on the curve. The minimum distance is 32.0743mm</p>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.2">Fig.</a>4 Distance Minimum between a&nbsp; Point and Curve : Output Data</caption>
+  <tr>
+    <td><img alt="" src="images/CATCGMCreateDistanceMin_img16.jpg"></td>
+   </tr>
+</table>
+
+<h2><a name="Case_3">Case 3 : Minimum Distance between Two Curves</a></h2>
+<p>With the input data below:</p>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.3">Fig.5</a> Distance Minimum between Two Curves : Input Data</caption>
+  <tr>
+    <td>
+	<img alt="" src="images/CATCGMCreateDistanceMin_img1B.jpg"></td>
+   </tr>
+</table>
+<p>and the code below:</p>
+<TABLE class="code">
+    <TR>
+        <TD>
+       <pre>
+// Create a line between the point on curve and point on surface 
+// generated above
+//
+CATLine * pLine = piGeomFactory-&gt;CreateLine(pPtOnCrv, pPtOnSur);
+...
+cout &lt;&lt; &quot;Create a line between the point on curve and point on surface generated above : OK&quot; &lt;&lt; endl;
+
+// Create the CATICGMDistanceMinPtCrv operator
+// and run it
+//
+CATICGMDistanceMinCrvCrv * pDistMinCrvCrvOpe =::<strong>CATCGMCreateDistanceMin</strong>(piGeomFactory,
+pConfig,
+pLine, 
+pNurbsCurve); 
+
+cout &lt;&lt; &quot;Create the CATICGMDistanceMinPtCrv operator : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pDistMinCrvCrvOpe-&gt;Run();
+cout &lt;&lt; &quot;Run the operator.&quot; &lt;&lt; endl;
+
+// Retrieves the distance min between both curves
+// zero is expected as one end of the line is located on the curve
+//
+double dist3= pDistMinCrvCrvOpe-&gt;<strong>GetDistance</strong>();
+cout &lt;&lt; &quot;distance curve - curve &quot; &lt;&lt; dist3 &lt;&lt; endl;</pre>
+	</TD>
+    </TR>
+</TABLE>
+generates this message on the standard output:
+<pre>
+distance curve - curve 0</pre>
+<pre>
+<img alt="" src="images/CATCGMCreateDistanceMin_img19.gif"></pre>
+
+<h2><a name="Case_4">Case 4 : How to define new limits on the Nurbs Surface</a></h2>
+<p>This part show how to project points on a Nurbs surface along Oz direction, 
+how to create for each solution point two isoparametric curves (along direction 
+U and V) and how to redefine the limit of the surface.</p>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.9">Fig.6</a> Projected points with their associated 
+  isoparametric curves</caption>
+  <tr>
+    <td>
+	<img alt="" src="images/NewNurbsSurfaceLimits_img1E.jpg"></td>
+   </tr>
+</table>
+<p>&nbsp;</p>
+<p>The code below illustrates how to project a point and how to find the result 
+solution :</p>
+<TABLE class="code">
+    <TR>
+        <TD>
+       <pre>
+ // Create the first point
+CATCartesianPoint* piCartPtToproj1 = piGeomFactory-&gt;<strong>CreateCartesianPoint</strong>(40., 48., -9.);
+...
+cout &lt;&lt; &quot;Create the first point P1 (40., 48., -9.) : OK &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Tag of the Point to be projected : &quot; &lt;&lt; piCartPtToproj1-&gt;GetPersistentTag() &lt;&lt; endl;
+
+// Direction of projection Oz
+//
+CATMathDirection Dir(0, 0, 1);
+
+// Create the CATICGMProjectionPtSur operator
+// and run it
+// 
+
+CATICGMProjectionPtSur * pPtSurOpe = ::<strong>CATCGMCreateProjection</strong>( piGeomFactory,
+pConfig,
+piCartPtToproj1,		// Point to be projected 
+piNurbsSurface, 		// The nurbs surface of projection 
+&amp;Dir, 				// Direction of projection
+ADVANCED); 			// Mode of use of the operator
+..
+cout &lt;&lt; &quot;Create the CATICGMProjectionPtSur operator in mode advance along direction Z: OK &quot; &lt;&lt; endl;
+
+// Retrieves the Max limits of the surface of projection.
+// 
+CATSurLimits SurLimits;
+piNurbsSurface-&gt;GetMaxLimits(SurLimits);
+
+// limitations of the surface as Max limit
+//
+pPtSurOpe-&gt;<strong>UseLimits</strong>(&amp;SurLimits);
+
+// Run the operator
+pPtSurOpe-&gt;Run();
+cout &lt;&lt; &quot;Run the operator.&quot; &lt;&lt; endl;
+
+
+// <strong>Retrieve the resulting points</strong>
+// one resulting points is expected
+cout &lt;&lt; &quot;Number of resulting points &quot; &lt;&lt; pPtSurOpe-&gt;GetNumberOfPoints() &lt;&lt; endl;
+
+double distancePtSur = 0.;
+CATCartesianPoint * pProjectedCartPoint = NULL;
+CATSurParam pProjectedSurParam;
+CATPointOnSurface * pProjectedPtOnSur = NULL;
+if (pPtSurOpe-&gt;GetNumberOfPoints() &gt; 0)
+{
+//Initializes the iterator of the resulting points.
+//
+pPtSurOpe-&gt;<strong>BeginningPoint</strong>();
+
+while (pPtSurOpe-&gt;<strong>NextPoint</strong>()) // while existence of the next solution is TRUE
+{
+
+
+  // distance between the CATPoint and its Projection on the Nurbs Surface
+  //
+  distancePtSur = pPtSurOpe-&gt;<strong>GetDistance</strong>();
+  cout &lt;&lt; &quot;distance Point surface : &quot; &lt;&lt; distancePtSur &lt;&lt; endl;
+
+  // Creates the solution as a point on surface.
+  //
+  pProjectedPtOnSur = pPtSurOpe-&gt;<strong>GetPointOnSurface</strong>();
+  ...
+  cout &lt;&lt; &quot;Creates the solution as a point on surface : OK &quot; &lt;&lt; endl;
+
+  // Creates the solution point
+  //
+  pProjectedCartPoint = pPtSurOpe-&gt;<strong>GetCartesianPoint</strong>();
+  
+  cout &lt;&lt; &quot;Creates the solution as a cartesian point : OK &quot; &lt;&lt; endl;
+  cout &lt;&lt; &quot;Coordinates of the Solution Point : X= &quot; &lt;&lt; pProjectedCartPoint-&gt;GetX() &lt;&lt;&quot; \t Y= &quot; &lt;&lt; pProjectedCartPoint-&gt;GetY() &lt;&lt; &quot; \t Z= &quot; &lt;&lt; pProjectedCartPoint-&gt;GetZ() &lt;&lt; endl; ;
+
+  // Get the solution parameter
+  // 
+  pProjectedSurParam = pPtSurOpe-&gt;GetParam();
+}
+
+</pre>
+	</TD>
+    </TR>
+</TABLE>
+This sample of code generates the following message on the standard output:
+<pre>
+<img alt="" src="images/NewNurbsSurfaceLimits_img1C.gif"></pre>
+The following code show how to create isoparametric curves of projection of P1 
+along direction U and V:<pre>
+
+CATIsoParameter IsoParIdU, IsoParIdV;
+
+IsoParIdU = CATIsoParamU;
+IsoParIdV = CATIsoParamV;
+
+// Creates the isoparameter curve C1u from projection of P1 on direction U 
+// 
+CATCurve * pIsuCurvesU = piNurbsSurface-&gt;<strong>ExtractIsoParametricCurve</strong>(IsoParIdU,
+pProjectedSurParam,
+piGeomFactory);
+...
+cout &lt;&lt; &quot;\nCreates the isoparameter curve C1u from P1 on direction U : OK &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Tag of the isoparameter curve C1u: &quot; &lt;&lt; pIsuCurvesU-&gt;GetPersistentTag() &lt;&lt; endl;
+
+// Creates the isoparameter curve C1v from P1 on direction V
+//
+CATCurve * pIsuCurvesV = piNurbsSurface-&gt;ExtractIsoParametricCurve(IsoParIdV,
+pProjectedSurParam,
+piGeomFactory);
+...
+cout &lt;&lt; &quot;Creates the isoparameter curve C1v from P1 on direction V : OK &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Tag of the isoparameter curve C1v: &quot; &lt;&lt; pIsuCurvesV-&gt;GetPersistentTag() &lt;&lt; endl;</pre>
+generates this message on the standard output:<p>
+<img alt="" src="images/NewNurbsSurfaceLimits_img1F.gif"></p>
+&nbsp;Now define new limit for the Nurbs surface defined between the surface 
+paramter associated to projection solution of P1 and P2 with the code below:<pre>
+
+CATSurface * pNSurface = piNurbsSurface; 
+
+// Construct a CATSurLimits with pProjectedSurParam &amp; pProjectedSurParam2 
+//
+CATSurLimits NewNurbsSurfaceLimits = CATSurLimits(<strong>pProjectedSurParam</strong>, <strong>pProjectedSurParam2</strong>);
+
+// Modifie the current limits of the Nurbs Surface
+// 
+pNSurface-&gt;<strong>SetLimits</strong>(NewNurbsSurfaceLimits);
+
+cout &lt;&lt; &quot;\n \t c - Modifie the current limits of the Nurbs Surface with new limit between Projection solution P1 &amp; P2 surface parameters : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\t -----------------------------------------------------------------------------------------------------------------------------&quot; &lt;&lt; endl;</pre>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.6">Fig.7</a> New limit between Projection solution P1 &amp; 
+  P2 surface parameter</caption>
+  <tr>
+    <td style="width: 551px; height: 500px">
+	<img alt="" src="images/NewNurbsSurfaceLimits_img21.jpg"></td>
+    <td style="width: 845px; height: 500px">
+	<img alt="" src="images/NewNurbsSurfaceLimits_img24.jpg"></td>
+   </tr>
+</table>
+<pre>
+&nbsp;</pre>
+
+<h2><a name="Case_5">Case 5 : Minimum Distance between Point and relimited Nurbs 
+Surface</a></h2>
+<p>We will cover different cases of computation of minimum distance between a 
+CATMathPoint and the relimited nurbs surface seen previously. </p>
+<h3><a name="Case5_a_">a - Minimum distance between a CATMath Point and the 
+relimited Nurbs surface</a></h3>
+<p>Consider a point MP1 (25.,36.,11.) used to compute the distance min with the 
+relimited nurbs surface with following code :</p>
+<pre> cout &lt;&lt; &quot;\n \t a- Eval distance min between a point and the relimited nurbs surface &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\t----------------------------------------------------------------------------- &quot; &lt;&lt; endl;
+
+// Point MP1 used to compute the distance min
+//
+CATMathPoint MathPoint1 = CATMathPoint(25., 36., 11.);
+cout &lt;&lt; &quot;\nCoordinates of the Point MP1 used to compute the distance min : \n\t\t\t X= &quot; &lt;&lt; MathPoint1.GetX() &lt;&lt; &quot; \t Y= &quot; &lt;&lt; MathPoint1.GetY() &lt;&lt; &quot; \t Z= &quot; &lt;&lt; MathPoint1.GetZ() &lt;&lt; endl; ;
+
+// Create the CATICGMDistanceMinPtSur operator
+// and run it
+//
+CATICGMDistanceMinPtSur * pDistMinPtSurOpeBis = ::<strong>CATCGMCreateDistanceMinLim</strong> (piGeomFactory,
+pConfig,
+MathPoint1,
+pNSurface, &amp;NewNurbsSurfaceLimits, TRUE);
+
+...
+cout &lt;&lt; &quot;Create the CATICGMDistanceMinPtSur operator with CATCGMCreateDistanceMinLim : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+pDistMinPtSurOpeBis-&gt;Run();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+
+// retrieves the distance, resulting point and CATSurParam
+// 
+cout &lt;&lt; &quot;Retrieves the distance, resulting point and CATSurParam.&quot; &lt;&lt; endl;
+
+dist1 = pDistMinPtSurOpeBis-&gt;<strong>GetDistance</strong>();
+cout &lt;&lt; &quot;distance point  - surface &quot; &lt;&lt; dist1 &lt;&lt; endl;
+
+// Creates a CATPointOnSurface realizing the minimum distance.
+//
+CATPointOnSurface * pPtOnNSur = pDistMinPtSurOpeBis-&gt;<strong>GetPointOnSurface</strong>();
+...
+cout &lt;&lt; &quot;Creates a CATPointOnSurface realizing the minimum distance : OK&quot; &lt;&lt; endl;
+
+
+// Returns the global parameter of the point realizing the minimum distance
+//
+CATSurParam pNSurParam = pDistMinPtSurOpeBis-&gt;GetSurParam();</pre>
+<p>It
+generates this message on the standard output:</p>
+<p><img alt="" src="images/MathPointNurbscurve_img27.gif"></p>
+<h3><a name="Case5_b_">b - Minimum distance between a CATMathPoint from Nurbs 
+curve and the relimited Nurbs surface</a></h3>
+<p>Consider the point solution of case 2 (result of distance min between a point 
+and a nurbs curve). Let compute his distance min with relimited nurbs surface, 
+and create two isoparameter curve on the surface from the parameters associated 
+to the distance min solution point.&nbsp; </p>
+<p>The following code details how to do such operation with the 
+CATICGMDistanceMinPtSur operator created previously :</p>
+<pre>
+cout &lt;&lt; &quot;\n \t b- Eval distance min between a point from Nurbs curve (seen in Part2) and the relimited nurbs surface &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\t----------------------------------------------------------------------------------------------------------- &quot; &lt;&lt; endl;
+
+// Retrieve the MathPoint associated to the solution point of the Part2
+//
+CATMathPoint MathPtOnCurve = <strong>pNurbsCurve-&gt;EvalPoint</strong>(pCrvParam);
+cout &lt;&lt; &quot;\nRetrieve the MathPoint associated to the solution point of the Part2&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Coordinates of the point : \n\t\t\t X= &quot; &lt;&lt; MathPtOnCurve.GetX() &lt;&lt; &quot; \t Y= &quot; &lt;&lt; MathPtOnCurve.GetY() &lt;&lt; &quot; \t Z= &quot; &lt;&lt; MathPtOnCurve.GetZ() &lt;&lt; endl; ;
+
+// Sets a new point from which the distance to the Nurbs surface is evaluated
+//
+pDistMinPtSurOpeBis-&gt;<strong>SetPoint</strong>(MathPtOnCurve);
+cout &lt;&lt; &quot;Sets a new point from which the distance to the Nurbs surface is evaluated&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pDistMinPtSurOpeBis-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// retrieves the distance, resulting point and CATSurParam
+// 
+dist1 = pDistMinPtSurOpeBis-&gt;<strong>GetDistance</strong>();
+cout &lt;&lt; &quot;distance point - surface &quot; &lt;&lt; dist1 &lt;&lt; endl;
+
+// Creates a CATPointOnSurface realizing the minimum distance.
+//
+CATPointOnSurface * pPtOnNSurFCrv = pDistMinPtSurOpeBis-&gt;<strong>GetPointOnSurface</strong>();
+...
+cout &lt;&lt; &quot;Creates a CATPointOnSurface realizing the minimum distance : OK&quot; &lt;&lt; endl;
+
+// Returns the global parameter of the point realizing the minimum distance
+//
+CATSurParam pNSurParam2 = pDistMinPtSurOpeBis-&gt;GetSurParam();
+
+// Create two isoparameter curves for surface parameter of the CATPointOnSurface previous along the nurbs surface...
+//
+cout &lt;&lt; &quot;\n Create two isoparameter curves for surface parameter of the CATPointOnSurface previous along the nurbs surface...&quot; &lt;&lt; endl;
+// Curve C3u along u direction
+//
+CATCurve * pIsoCurveU3 = pNSurface-&gt;<strong>ExtractIsoParametricCurve</strong>(IsoParIdU,
+pNSurParam2,
+piGeomFactory);
+...
+cout &lt;&lt; &quot;\n\t Creates the isoparameter curve C3u from PtOnsurface on direction U : OK &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\t Tag of the isoparameter curve C3u: &quot; &lt;&lt; pIsoCurveU3-&gt;GetPersistentTag() &lt;&lt; endl;
+
+// Curve C3v along V direction
+//
+CATCurve * pIsoCurveV3 = pNSurface-&gt;ExtractIsoParametricCurve(IsoParIdV,
+pNSurParam2,
+piGeomFactory);
+...
+cout &lt;&lt; &quot;\n\t Creates the isoparameter curve C3v from PtOnsurface on direction V : OK &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\t Tag of the isoparameter curve C3v: &quot; &lt;&lt; pIsoCurveV3-&gt;GetPersistentTag() &lt;&lt; endl;
+
+// Create a Line between the point on curve and the solution point on surface
+//
+CATLine * pLine2 = piGeomFactory-&gt;<strong>CreateLine</strong>(pPtOnCrv, pPtOnNSurFCrv);
+...
+cout &lt;&lt; &quot;\nCreate a Line between the point on curve and the solution point on surface : OK &quot; &lt;&lt; endl;
+</pre>
+<p><img alt="" src="images/MathPointNurbscurve_img29.gif"></p>
+<p>&nbsp;</p>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.5">Fig.8</a> Distance Minimum between a point from Nurbs 
+  curve and the relimited Nurbs surface</caption>
+  <tr>
+    <td>
+	<img alt="" src="images/MathPointNurbscurve_img2B.jpg"></td>
+   </tr>
+</table>
+<p>and the code below:</p>
+<TABLE class="code">
+    <TR>
+        <TD>
+       <pre>
+// Create a line between the point on curve and point on surface 
+// generated above
+//
+CATLine * pLine = piGeomFactory-&gt;CreateLine(pPtOnCrv, pPtOnSur);
+...
+cout &lt;&lt; &quot;Create a line between the point on curve and point on surface generated above : OK&quot; &lt;&lt; endl;
+
+// Create the CATICGMDistanceMinPtCrv operator
+// and run it
+//
+CATICGMDistanceMinCrvCrv * pDistMinCrvCrvOpe =::<strong>CATCGMCreateDistanceMin</strong>(piGeomFactory,
+pConfig,
+pLine, 
+pNurbsCurve); 
+
+cout &lt;&lt; &quot;Create the CATICGMDistanceMinPtCrv operator : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pDistMinCrvCrvOpe-&gt;Run();
+cout &lt;&lt; &quot;Run the operator.&quot; &lt;&lt; endl;
+
+// Retrieves the distance min between both curves
+// zero is expected as one end of the line is located on the curve
+//
+double dist3= pDistMinCrvCrvOpe-&gt;<strong>GetDistance</strong>();
+cout &lt;&lt; &quot;distance curve - curve &quot; &lt;&lt; dist3 &lt;&lt; endl;</pre>
+	</TD>
+    </TR>
+</TABLE>
+generates this message on the standard output:
+<pre>
+distance curve - curve 0</pre>
+<pre>
+<img alt="" src="images/CATCGMCreateDistanceMin_img19.gif"></pre>
+<pre>
+&nbsp;</pre>
+<h3><a name="Case5_c_">b - Minimum distance between extremities of a Nurbs curve 
+and relimited Nurbs surface</a></h3>
+<p>Consider two points wich are located on the extremities of the nurbs curve. 
+Let compute their distance min with the relimited nurbs surface, and create a 
+line between curve each point and his distance min point solution on the 
+surface.&nbsp; </p>
+<p>The following code details how to do such operation with 
+CATICGMDistanceMinPtSur operator created previously :</p>
+<pre>
+// Eval distance min between each extremity of the curve and the nurb surface
+//
+cout &lt;&lt; &quot;\n \t c - Eval distance min between each extremity of the curve and the relimited nurbs surface &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\t----------------------------------------------------------------------------------------------- &quot; &lt;&lt; endl;
+
+// retrieve the max limits of the nurbs curve
+CATCurve *pNcurve = pNurbsCurve;
+CATCrvParam pstartParam = pNurbsCurve-&gt;<strong>GetStartLimit</strong>();
+CATCrvParam pendParam = pNurbsCurve-&gt;<strong>GetEndLimit</strong>();
+
+// Retrieve the MathPoint associated to start limit of the Nurbs curve
+//
+CATMathPoint pStartMPtOnCrv = pNurbsCurve-&gt;<strong>EvalPoint</strong>(pstartParam);
+cout &lt;&lt; &quot;Retrieve the MathPoint associated to start limit of the Nurbs curve&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Coordinates of the start limit point : \n\t\t\t X= &quot; &lt;&lt; pStartMPtOnCrv.GetX() &lt;&lt; &quot; \t Y= &quot; &lt;&lt; pStartMPtOnCrv.GetY() &lt;&lt; &quot; \t Z= &quot; &lt;&lt; pStartMPtOnCrv.GetZ() &lt;&lt; endl; ;
+
+// Retrieve the MathPoint associated to end limit of the Nurbs curve
+//
+CATMathPoint pEndMPtOnCrv = pNurbsCurve-&gt;<strong>EvalPoint</strong>(pendParam);
+cout &lt;&lt; &quot;\nRetrieve the MathPoint associated to end limit of the Nurbs curve&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Coordinates of the end limit point : \n\t\t\t X= &quot; &lt;&lt; pEndMPtOnCrv.GetX() &lt;&lt; &quot; \t Y= &quot; &lt;&lt; pEndMPtOnCrv.GetY() &lt;&lt; &quot; \t Z= &quot; &lt;&lt; pEndMPtOnCrv.GetZ() &lt;&lt; endl; ;
+
+// Create a CATPointOnCurve associated to the start extremity of the nurbs curve
+//
+CATPointOnCurve * pstartPtOnCrv = piGeomFactory-&gt;<strong>CreatePointOnCurve</strong>(pstartParam, pNcurve);
+...
+cout &lt;&lt; &quot;\nCreate a CATPointOnCurve associated to the start extremity of the nurbs curve : OK &quot; &lt;&lt; endl;
+
+// Create a CATPointOnCurve associated to the end extremity of the nurbs curve
+//
+CATPointOnCurve * pEndPtOnCrv = piGeomFactory-&gt;<strong>CreatePointOnCurve</strong>(pendParam, pNcurve);
+...
+cout &lt;&lt; &quot;\nCreate a CATPointOnCurve associated to the end extremity of the nurbs curve : OK &quot; &lt;&lt; endl;
+
+<img alt="" src="images/MathPointNurbscurve_img2D.jpg">
+
+cout &lt;&lt; &quot;\n\n Extremity 1 : &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;=====================&quot; &lt;&lt; endl;
+// Sets a new point from which the distance to the Nurbs surface is evaluated
+//
+pDistMinPtSurOpeBis-&gt;SetPoint(pStartMPtOnCrv);
+cout &lt;&lt; &quot;Sets a new point (start point) to the operator from which the distance min to the Nurbs surface is evaluated &quot; &lt;&lt; endl;
+
+//Run the operator 
+//
+pDistMinPtSurOpeBis-&gt;Run();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// retrieves the distance, resulting point and CATSurParam
+// 
+dist1 = pDistMinPtSurOpeBis-&gt;GetDistance();
+cout &lt;&lt; &quot;distance start nurb curve point - surface &quot; &lt;&lt; dist1 &lt;&lt; endl;
+
+// Creates a CATPointOnSurface realizing the minimum distance.
+//
+CATPointOnSurface * pStrtPtCrvOnSur = pDistMinPtSurOpeBis-&gt;GetPointOnSurface();
+if (NULL == pStrtPtCrvOnSur)
+{
+::CATCloseCGMContainer(piGeomFactory);
+return (1);
+}
+cout &lt;&lt; &quot;Creates a CATPointOnSurface realizing the minimum distance : OK&quot; &lt;&lt; endl;
+
+// Returns the global parameter of the point realizing the minimum distance
+//
+CATSurParam pNStrtPtSurParam = pDistMinPtSurOpeBis-&gt;GetSurParam();
+
+// Create a line between the start extremity point of the nurbs curve and the solution point
+//
+CATLine * pLine3 = piGeomFactory-&gt;CreateLine(pstartPtOnCrv, pStrtPtCrvOnSur);
+if (NULL == pLine3)
+{
+::CATCloseCGMContainer(piGeomFactory);
+return (1);
+}
+cout &lt;&lt; &quot;Create a line between the start extremity point of the nurbs curve and the solution point : OK&quot; &lt;&lt; endl;
+
+<img alt="" src="images/MathPointNurbscurve_img2E.jpg"></pre>
+<pre>
+cout &lt;&lt; &quot;\n\n Extremity 2 : &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;=====================&quot; &lt;&lt; endl;
+// Sets a new point from which the distance to the Nurbs surface is evaluated
+//
+pDistMinPtSurOpeBis-&gt;<strong>SetPoint</strong>(pEndMPtOnCrv);
+cout &lt;&lt; &quot;Sets a new point (End point) to the operator from which the distance min to the Nurbs surface is evaluated &quot; &lt;&lt; endl;
+
+//Run the operator 
+//
+pDistMinPtSurOpeBis-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+
+// retrieves the distance, resulting point and CATSurParam
+// 
+dist1 = pDistMinPtSurOpeBis-&gt;GetDistance();
+cout &lt;&lt; &quot;distance end extremity nurb curve point - surface &quot; &lt;&lt; dist1 &lt;&lt; endl;
+
+// Creates a CATPointOnSurface realizing the minimum distance.
+//
+CATPointOnSurface * pEndPtCrvOnSur = pDistMinPtSurOpeBis-&gt;GetPointOnSurface();
+...
+cout &lt;&lt; &quot;Creates a CATPointOnSurface realizing the minimum distance : OK&quot; &lt;&lt; endl;
+
+// Returns the global parameter of the point realizing the minimum distance
+//
+CATSurParam pNEndPtSurParam = pDistMinPtSurOpeBis-&gt;GetSurParam();
+
+
+// Create a line between the start extremity point of the nurbs curve and the solution point
+//
+CATLine * pLine4 = piGeomFactory-&gt;CreateLine(pEndPtOnCrv, pEndPtCrvOnSur);
+if (NULL == pLine4)
+
+cout &lt;&lt; &quot;Create a line between the end extremity point of the nurbs curve and the solution point : OK&quot; &lt;&lt; endl;</pre>
+<pre><img alt="" src="images/MathPointNurbscurve_img32.jpg">
+</pre>
+The code generates this message on the standard output:<p>
+<img alt="" src="images/MathPointNurbscurve_img2F.gif"></p>
+<p>&nbsp;</p>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.7">Fig.</a>9 Distance Minimum between a extremity points 
+  of the Nurbs curve and the relimited Nurbs surface</caption>
+  <tr>
+    <td>
+	<img alt="" src="images/MathPointNurbscurve_img31.jpg"></td>
+   </tr>
+</table>
+<h3>c - Minimum distance between extremities of Nurbs curve and max limit of 
+Nurbs surface</h3>
+<p>When we modify the limits of surface provided to operator by its initial max 
+limit we obtain the following result</p>
+<p>&nbsp;</p>
+<TABLE class="code">
+    <TR>
+        <TD>
+       <pre>
+ // Defines the Max Limits of nurbs surface as new domain to take into account
+pDistMinPtSurOpeBis-&gt;SetLimits(SurLimits);
+cout &lt;&lt; &quot;\nDefines the Max Limits of nurbs surface as new domain to take into account for operator CATICGMDistanceMinPtSur : OK&quot; &lt;&lt; endl;
+</pre>
+	</TD>
+    </TR>
+</TABLE>
+generates this message on the standard output:
+<pre>
+<img alt="" src="images/MathPointNurbscurve_img33.gif"></pre>
+<pre>
+&nbsp;</pre>
+<table border="0" cellspacing="6">
+  <caption><a name="Fig.8">Fig.10</a> Distance Minimum between a extremity 
+  points of the Nurbs curve and the Nurbs surface with max limits</caption>
+  <tr>
+    <td>
+	<img alt="" src="images/MathPointNurbscurve_img35.jpg"></td>
+   </tr>
+</table>
+<pre>
+&nbsp;</pre>
+<pre>
+
+</pre>
+
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaUseTopoOperators.htm">How to Use Topological Operators</a></td>
+	</tr>
+
+<tr>
+		<td>[4]</td>
+		<td class="style3">
+		<a href="CAACgmUcGMModelOpeOverw.htm">How to Use Geometric Operators</a></td>
+	</tr>
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Dec 2011]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

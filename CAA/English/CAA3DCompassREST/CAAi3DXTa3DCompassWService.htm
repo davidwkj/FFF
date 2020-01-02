@@ -1,0 +1,265 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>About 3DCompass Web Services</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>About 3DCompass Web Services</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		
+		<p>3DCompass web services are RESTFUL defined with JAX-RS and JSON infrastructures [<a href="#References">1</a>]. This article recalls the common REST Web services principles and points to 3DCompass specificities.</p>    
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="HTTPS"></a>Protocol HTTPs</h2>
+<p>3DCompass web services enable you access to confidential data of both the company and the employees. Therefore 3DCompass web services use high security tools to prevent themselves from attacks [<a href="#References">2</a>]. HTTPS protocol is one of them. Consequently requests must be made using HTTPS protocol instead of HTTP to ensure security of data transfer.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="URL"></a>URL</h2>
+<h3><a name="URL-root"></a>Root</h3>
+<p>The format of the <b>root</b> URL is expressed as follows:</p>
+<pre class="code">
+https://&lt;authority_server&gt;
+</pre>
+<p>Which can be decomposed as follows:</p>
+<pre class="code">
+https://&lt;server_host&gt;:&lt;server_port&gt;
+</pre>
+<p>Interactively, inside a widget application, the JavaScript API 
+<a href="#" onclick="CAAlinkJS('i3DXCompassUI', 'i3DXCompassServices', 'DS/i3DXCompassServices/i3DXCompassServices'); return false;">DS/i3DXCompassServices/i3DXCompassServices</a> 
+ returns the 3DCompass root URL. This URL is unique - and always exists- whathever the 
+platform instance of the <b>3D</b>EXPERIENCE platform.</p>
+<p>Just below an extract of javascript code using the API to retrieve the
+ 3DCompass URL: </p>
+<pre class="code">
+...
+i3DXCompassServices.getServiceUrl( { 
+	serviceName: <b>'3DCompass'</b>, 
+	platformId : instance_name ,
+	onComplete : function (URL_Root_3DCompass) {...}  ,
+	onFailure  : ...
+} ) ;  
+...
+</pre>
+<p>In this example the platform instance is passed to retrieve the 3DCompass URL as the callback argument.
+Without the 'platformid' key the callback argument is an array of JSON objects. For each object the <i>url</i> key  is the same 3DCompass URL. The referenced technical article [<a href="#References">3</a>] goes further with this API and the 
+notion of platform instance. You will also learn  how to know the current platform instance from 3DDashboard widget Apps.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="URL-path"></a>paths</h3>
+<p>The <b>root path</b> is the URL section between the URL root, and the <b>application path</b>. The latter represents
+the relative path of the resource.</p>
+<pre class="code">
+https://&lt;3DCompass_authority_server&gt;&lt;root_path&gt;&lt;application_path&gt;
+</pre>
+<p>For all 3DCompass web services the root path is <i>/resources/AppsMngt</i>. Let's take an example: if the application path is /api/custom/applications, the final URL is:</p>
+<pre class="code">
+https://&lt;3DCompass_authority_server&gt;/resources/AppsMngt/api/custom/applications
+</pre>
+<p>The combination of the root and the application path, is named the <b>path</b>. </p>
+<pre class="code">
+https://&lt;3DCompass_authority_server&gt;&lt;path&gt;
+</pre>
+<p>The 3DCompass web service API reference pages mention the URL path.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="loginAPI"></a>Login API</h3>
+<p>For a batch, before using a 3DCompass web service, a 3DEXPERIENCE platform and 3DCompass login must be performed. The 
+technical article "Performing Service Login and Logout" [<a href="#References">5</a>] gives all the details. </p>
+<p>The string to pass as value of the <code>service</code> query parameter for the <a href="../CAAiamPassportRef/CAAiamPassportAPILogin.htm">3DPassport login</a> API 
+is the 3DCompass URL. </p> 
+<pre class="code">
+String <b>CompassLoginURL</b>=URLEncoder.encode(&lt;3DCompass&gt; ,"UTF8");
+String PassportloginURL= &lt;3DPassport&gt + "/login?service=" + CompassLoginURL ;
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Methods"></a>Methods</h2>
+<p>The  HTTP methods (also named verbs) and their meaning:</p>
+<table class="fill">
+ <tr><th>Verb</th><th>Usual Meaning</th></tr>
+ <tr><td>GET</td><td>for fetching of one or several resources</td></tr>
+ <tr><td>DELETE</td><td>for deleting a resource</td></tr>
+ <tr><td>POST</td><td>for creating a resource</td></tr>
+ <tr><td>PATCH</td><td>for updating a resource</td></tr>
+</table>
+<p>In each web service documentation, beside the resource path, the method is mentioned. Just below
+extract of <a href="../CAA3DCompassRESTRef/CAAi3DXCompassWSQrGetTPA.htm">Get third party app</a>:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Method&nbsp;</th>
+		<th>&nbsp;Path&nbsp;</th> 
+	</tr>
+	<tr>
+		<td>GET</td>
+		<td>/resources/AppsMngt/api/custom/applications</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Methods"></a>Request</h2>
+<p>This section deals with the information to be proceeded by the server: the input parameters, the  format for the inputs and the response.</p>
+<p>The input parameters can be passed in the URL (as <a href="#Request-Query">query parameters</a>), and/or into a <a href="#Request-Body">body</a>. The other additionnal information are passed by 
+<a href="#Request-Hdrs">header fields.</a> </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Request-Query"></a>Query Parameters</h3>
+<p>A query parameter is part of the URL. The format is as follows: </p>
+<pre class="code">
+&lt;path&gt;<b>?</b>&lt;param_name_1&gt;=&lt;param_val_1&gt;<b>&amp;</b>&lt;param_name_2&gt;=&lt;param_val_2&gt;...
+</pre>
+<p>Append ? after the URL path to start the first parameter, and add & between each others. </p>
+<p>The unique case having a query parameter is <a href="../CAA3DCompassRESTRef/CAAi3DXCompassWSQrTPAs.htm">List third party apps</a> API. The parameter is <code>filter</code>:</p>
+<pre class="code">
+/resources/AppsMngt/api/custom/applications<b>?filter=</b>&lt;idplatform&gt; 
+</pre>
+<p>As usual for a query parameter, the parameter name is <b>case sensitive</b>. If 'Filter' is passed instead 'filter', the parameter is ignored. It is considered as missing by the API. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Request-Body"></a>Body</h3>
+<p>For POST (<a href="../CAA3DCompassRESTRef/CAAi3DXCompassWSQrAddTPA.htm">Create TPA</a>) and PATCH (<a href="../CAA3DCompassRESTRef/CAAi3DXCompassWSQrEditTPA.htm">Edit TPA</a>) verbs the input data is passed into a JSON body. Some keys can be mandatory or optional. It is mentioned in the API documentation. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Request-Hdrs"></a>Header Fields</h3>
+<p>There are two header fields to take into account for a 3DCompass HTTP request.</p>
+<table class="fill">
+  <tr><th>Field Name</th><th>Field value</th><th>Why</th><th>Validity</th></tr>
+  <tr><td>Accept</td><td>"application/json;charset=UTF-8"</td><td>The response format.</td><td>Mandatory in all context</td></tr>
+  <tr><td>Content-Type</td><td>"application/json;charset=UTF-8"</td><td>The input body format</td><td>For POST and PATCH  verbs only</td></tr>
+  
+  <tr></tr>
+  <tr></tr>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Methods"></a>Response</h2>
+<p>The HTTP response is formed with four elements: a status code, a message, a body, and headers. Let's see for the success cases and the failure cases.</p>
+<h3><a name="response-OK"></a>Success Cases</h3>
+<p>The status code is 200, with 'OK' as message except:</p>
+<ul>
+<li>201, with 'Created' as message for the Creation.</li>
+<li>204, with 'No Content' as message for the Deletion.</li>
+</ul>
+<p>Except the deletion without response body, the API returns a JSON body. Each API page describes them. </p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="response-KO"></a>Failure Cases</h3>
+<p>First as explained for 3DSpace [<a href="#References">4</a>], take care a proxy can change the failure response. </p>
+<p>As usual there are three levels of code which can raise an error:</p>
+<ul>
+<li><a href="#response-Gen">Generic HTTP Failure Cases</a></li>	
+<li><a href="#response-3DEXP">Generic 3DCompass Failure Cases</a></li>
+<li><a href="#response-3DComp">Specific 3DCompass Failure Cases</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="response-Gen"></a>Generic HTTP Failure Cases</h4>
+<p>The following table lists the most frequent errors. </p> 
+<table class="fill">
+  <tr><th>Status Code</th><th>Message</th><th>Body Content</th><th>Reason</th></tr>
+   <tr><td>404</td><td>Not Found</td><td><ul><li>a <a href="#response-3DComp">3DCompass JSON</a> for a bad identifier (get/delete/edit) </li><li>an HTML page, otherwise</li></ul> </td><td>The URL path is  wrong. </tr>
+    <tr><td>406</td><td>Not Acceptable</td><td>No</td><td>The request "Accept" header field is incompatible with the API response format(s).</td></tr>
+   <tr><td>415</td><td>Unsupported Media Type</td><td>No</td><td>The request "Content-Type" header  field is not the one expected by the API.</td></tr>
+   <tr><td>500</td><td>Internal Server Error</td><td>Usually there is no body.</td><td>There is a server side error.</td></tr>
+</table>
+<p><b>Note:</b> About the response body, pay attention, its format can be different from the expected one. Let's suppose the "Accept" header field is "application/json" to be compliant with the successful response format. Even with this
+"expected" response format the failure response (404 is an example) can be from another format. Therefore if you process
+the response body check previously the response "Content-Type" header field. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="response-3DEXP"></a>Generic 3DCompass Failure Cases</h4>
+<p>The following table lists the error each 3DCompass web service can return. </p>
+<table class="fill">
+  <tr><th>Status Code</th><th>Message</th><th>Body Content</th><th>Reason</th></tr>
+   <tr><td>401</td><td>Unauthorized</td><td>{"error": {"code": "INF10X", "message": "..."}}</td><td>3DPassport authentication is missing.</td></tr>
+</table>
+<p>The <code>code</code> property value always starts with INF. The number is depending on the failure raison. Pay attention, even 
+if the  3DCompass web services do not require a security context, if such a value is passed in the HTTP request as header field, and the value is empty or invalid, the web service fails.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h4><a name="response-3DComp"></a>Specific 3DCompass Failure Cases</h4>
+<p>In each API documentation you find the errors which can be raised by the service. All these 
+errors return a JSON body with this format: </p>
+<pre class="code">
+{"error":{
+    "code":"MYAXXX",
+    "message":"..."
+    }
+}
+</pre>
+<p>Where the <code>code</code> property value always starts with MYA. The 
+number (XXX) is depending on the failure raison.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ==========  ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>3DCompass exposes web services which are  RESTful compliant. This article explains how to build up such a HTTP request, and how to understand the response.</p>    
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+    <tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="javascript:CAAlinkUrl('https://docs.oracle.com/javaee/6/tutorial/doc/gijqy.html/');return false;">REST Web Services</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAi3DXTa3DCompassIntro.htm">3DCompass Role and Openness</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm')">About Service 
+		URL and Platform Instance</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="../CAA3DSpaceREST/CAAi3DXTa3DSpaceWSFailure.htm">3DSpace Web Service HTTP Failures</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="../CAAiamPassport/CAAiamPassportLoginHowTo.htm">Performing Service Login and Logout</a></td>
+	</tr>
+	
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [April 2016]</td>
+		<td>Document re-created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

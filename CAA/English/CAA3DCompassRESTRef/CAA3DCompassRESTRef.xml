@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM name="3DCompass"
+		   product="@name" appname="@name"	  
+           icon="CAAIcons/images/I_Reference.gif"		   
+		   href="CAA3DCompassRESTRef/CAATc3DCompassRESTRefToc.htm" 
+		   childtoc="CAA3DCompassRESTRef/CAA3DCompassRESTRefToc.xml"
+		   dir="CAA3DCompassRESTRef"
+		   topictype="all">	
+	</DITEM>
+</Root>

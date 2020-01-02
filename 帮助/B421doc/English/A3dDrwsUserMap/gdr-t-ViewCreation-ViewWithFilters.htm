@@ -1,0 +1,187 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Working with Views with Object Filters"/>
+<meta name="abstract" content="You can create a view using object filters previously propagated (saved) with Product Finder and edit the filters in the current view."/>
+<meta name="description" content="You can create a view using object filters previously propagated (saved) with Product Finder and edit the filters in the current view."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewCreation-ViewWithFilters.htm#gdr-c-ViewCreation-ViewWithFilters"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewCreation-ViewWithFilters"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Working with Views with Object Filters</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewCreation-ViewWithFilters">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Filters::object filters"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::views with object filters"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Working with Views with Object Filters</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can create a 
+						view using object filters previously propagated (saved) with <span>Product Finder</span> and edit the filters in the current view. </span>
+<p>For more about object <span class="glossterm" id="filter" onmouseout="hideTerm()" onmouseover="showTerm('filter.xml')">filters</span>, see the
+						<cite><span>Product Finder</span> User's Guide</cite>.</p>
+    
+  </p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-Create" id="toc_rg" title="">Create Views with Object Filters</a></li><li><a href="#task_B83CE7CAC4B44A0CAE317F51F041BD9B" id="toc_rg" title="">Edit the Object Filters of the View</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> and a product containing an assembly. Create an object filter (previously PLM filter). See <cite><span><span class="uicontrol">Social and Collaborative Apps</span> <img src="../IconsNormal/I_north.png"/></span>: Global Design Management: <span>Product Finder</span> User's Guide: Filtering data</cite>.
+      
+    </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewCreation-ViewWithFilters.htm#gdr-c-ViewCreation-ViewWithFilters" title="You can create views with filters using a filter previously propagated (that is saved) via the Product Finder app.">About Views with Filters</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+  </div>
+
+
+  <div/>
+
+  <div class="nested1" id="t-Create">
+    <h2 class="topictitle2">Create Views with Object Filters</h2>
+
+    
+    <div>
+      <ol><li class="stepexpand"><p>From the <span class="wintitle">View Layout</span> section of the <span>action bar</span>, select the <span class="uicontrol"><span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">Front View</span></span>
+       <img src="../Icons22/I_D3M_DrwFrontView.png"/>.<p>You can use filters when creating any view type. 
+       </p></p></li>
+<li class="stepexpand"><p>Open the <span>work area</span> in the 3D tab. </p></li>
+<li class="stepexpand"><p>In the <span class="wintitle">Apply a Filter</span> 
+		panel, hover over the filter icon, and click the edit icon <img src="../Icons22/I_EditSensorParameters.png"/>. <p>If this panel does is not displayed by default, click the filter icon at the right hand side of  <span>work area</span>.</p><p> The <span class="wintitle">Search - Filters related to: XXX</span> panel appears. Where XXX is the name of the current product. The dialog box displays the list of <span class="uicontrol">Embedded filters</span> and <span class="uicontrol">All filters</span> (if any) associated with the product.<ul>
+          <li>
+          <p> <span class="uicontrol">Embedded  filters</span>: lets you select a 
+          filter that is already embedded in the product. </p></li>
+
+          <li>
+          <p><span class="uicontrol">All filters</span>: lets you select a filter 
+          that has been propagated in the database, but not embedded in the product. 
+          Once you select a filter in the <span class="uicontrol">All filters</span> list, it gets embedded in the product with the suffix <span class="uicontrol">_3dm</span>, and can be reused by selecting <span class="uicontrol">Embedded 
+          filters</span>. </p></li>
+
+        </ul>
+</p></p></li>
+<li class="stepexpand"><p>Click to select a filter in the <span class="uicontrol">All filters</span> list.<p>  The filter is displayed in the <span class="wintitle">Apply a Filter</span> dialog box, with the suffix <span class="uicontrol">_3dm</span>, indicating that the filter is now embedded in the current product. <p>Note:
+		If you select a filter which is already embedded in the product, a confirmation message appears asking you whether to create a copy of the embedded filter (with suffix ".n", where "n" is an integer which is incremented each time a new copy with the same name is made). Clicking <span class="uicontrol">OK</span> creates a new indexed copy of the filter embedded in the product.</p>
+
+</p></p></li>
+ <li class="stepexpand"><p><span class="run-in">Optional: </span>Click <img src="../Icons22/delete.png"/> to remove the filter. <p> The filter is removed from the dialog box. You can search for another  the filter and select it by following the  steps three and four above.</p></p></li>
+<li class="stepexpand"><p>Now that you have applied the filter, create the view.</p></li>
+<li class="stepexpand"><p>From the product structure or in the <span>tree</span>, select a plane or a surface plane. <p> 
+       The 2D window is automatically displayed.</p></p></li>
+<li class="stepexpand"><p>Click in the <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> to select a location for your view.<p> The view is created 
+		displaying the 3D elements filtered by the selected filter. <p>The created view has a link with the embedded filter. </p></p></p></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="task_B83CE7CAC4B44A0CAE317F51F041BD9B"> 
+  <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Edit the Object Filters of the View</h2>
+ 
+  <div> 
+	 <ol> 
+		<li class="stepexpand"><p> 
+		   Select 
+			 <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span>
+			 
+			 <span class="uicontrol"> &gt; Object Filters</span>. 
+		   
+		  <p>In the 
+			 <span class="wintitle">Object Filters</span> dialog box, you can see the
+			 following: 
+			 <ul> 
+				<li>The name of the relevant product. You can select the product to
+				  view the filters aggregated under it. 
+				</li>
+ 
+				<li>The filters aggregated under the selected product with their
+				  status. A filter can have the following statuses: 
+				  <ul> 
+					 <li> 
+						<img src="../IconsNormal/I_FilterStandard.png"/>: The filter is referenced in the current
+						representation. 
+					 </li>
+ 
+					  
+					 <li> 
+						<img src="../IconsNormal/I_FilterNotUpgragable.png"/>: The filter is referenced, but it is not modifiable.
+						The filter object may be reserved by another user or the current user has no
+						suitable authoring or editing permission. 
+					 </li>
+ 
+					 <li> 
+						<img src="../IconsNormal/I_FilterLocked.png"/>: One or more locked views use this filter. 
+					 </li>
+ 
+					 <li> 
+						<img src="../Gdr3DMasterImages/ObjectFilter05.png"/>: The filter is unsynchronized because of no or
+						multiple filters that match. 
+					 </li>
+ 
+				  </ul>
+ 
+				</li>
+ 
+			 </ul>
+ 
+		  </p> 
+		</p></li>
+ 
+		<li class="stepexpand"><p> 
+		  Select a filter in the list and click one of the following: 
+		   
+		  <ol type="a"> 
+			 <li class="substepexpand"> 
+				<span class="uicontrol">Upgrade selected filters</span> to upgrade the
+				  filters to the new specifications of the original filter (the one which is
+				  listed in 
+				  <span class="uicontrol">All filters</span> section of the 
+				  <span class="wintitle">Apply a Filter</span> dialog box and has no 
+				  <span class="uicontrol">_3dm</span> suffix after its name.) 
+				 
+				<p> The new specifications are copied from the original
+				  filter. 
+				</p> 
+			 </li>
+ 
+			 <li class="substepexpand"> 
+				<span class="uicontrol">Replace selected filters</span> to replace
+				  with a different filter. 
+				 
+				<p> You can now select the 
+				  <span class="uicontrol">Click here to retrieve filters related to your
+					 context</span> to display the 
+				  <span class="wintitle">Search - Filters related to: XXX</span> panel
+				  again. From this panel, select the filter to replace the existing filter. 
+				</p> 
+			 </li>
+ 
+		  </ol>
+ 
+		  <p>Both upgrading and replacing are manual operations. The standard
+			 synchronization mechanisms such as 
+			 <span class="uicontrol">Update</span>, 
+			 <span class="uicontrol">Links &amp; Relations</span> do not synchronize the
+			 filters. 
+		  </p> 
+		</p></li>
+ 
+	 </ol>
+ 
+  </div>
+ 
+</div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,107 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="View Update Report Dialog Box"/>
+<meta name="abstract" content="The View Update Report dialog box appears after you click Update, if a problem is encountered."/>
+<meta name="description" content="The View Update Report dialog box appears after you click Update, if a problem is encountered."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-ui-DialogBoxes-ViewUpdateReport"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">View Update Report Dialog Box</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-ui-DialogBoxes-ViewUpdateReport">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>View Update Report Dialog Box</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>The <span class="wintitle">View Update Report</span> dialog box appears after you click <span class="uicontrol">Update</span>, if a problem is encountered.
+    </span>
+
+    <p>
+      This dialog box provides information about the problems encountered during update.
+    </p>
+    
+  </p>
+<ul><li><a href="#gdr-c-ui-DialogBoxes-ViewUpdateReport__cs-General" title="">General</a></li><li><a href="#gdr-c-ui-DialogBoxes-ViewUpdateReport__cs-BooleanError" title="">View Update Boolean Error</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <p>Notes:
+		<ul><li>The
+					<span class="wintitle">View Update Report</span> is displayed, among other things, 
+					when a Boolean operation fails.</li>
+<li>You can re-open the <span class="wintitle">View Update Report</span> dialog 
+			box by right-clicking the view where a red cross is displayed and selecting
+			<span class="uicontrol">X View Object &gt; Update Report</span>.</li>
+</ul>
+</p>
+
+    <div class="section" id="gdr-c-ui-DialogBoxes-ViewUpdateReport__cs-General"><h2 class="sectiontitle">General</h2>
+      <p>For each error encountered during the update process, the following information is displayed:</p>
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Severity</dt>
+
+          <dd>
+            Indicates the severity of the problem (error, etc.)
+          </dd>
+
+        
+        
+          <dt class="dlterm">
+            View
+          </dt>
+
+          <dd>
+            Indicates the name of the impacted views.</dd>
+
+        
+          <dt class="dlterm">
+            <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">Sheet</span></dt>
+
+          <dd>
+            Indicates the name of the impacted sheets.</dd>
+
+        
+      <dt class="dlterm">Description</dt>
+<dd>Describes the problem encountered, and provides a solution to solve it. </dd>
+</dl>
+
+    </div>
+
+    
+    
+    
+  <div class="section" id="gdr-c-ui-DialogBoxes-ViewUpdateReport__cs-BooleanError"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">View Update Boolean Error</h2><p>The <span class="wintitle">View Update Boolean Error</span> dialog box appears when a Boolean error occurs while updating the drawing. This dialog box helps you find out the cause of the error. A separate error dialog box appears for each Boolean error, if multiple errors are detected.  </p><dl class="uicontrol"><dt class="dlterm">3D Viewer</dt>
+<dd>Shows the geometry involved in the error. The three elements displayed in the viewer and their color coding is as follows:<ul><li>White: The body involved in the error and to be operated</li>
+<li>Yellow: The generative tool used for the Boolean operation</li>
+<li>Blue: The temporary diagnosis geometries</li>
+</ul>
+<div class="fignone"><span class="figcap">Inaccurate face contact after sectioning a body: Color coded error display</span><br/><div class="imagecenter"><img class="imagecenter" src="../GdrUserImages/BooleanUpdateErrorColor.png"/></div><br/></div>
+</dd>
+<dt class="dlterm">Error Description</dt>
+<dd>Displays the details of the error. This includes:<ul><li>The details of the geometry like the part, the body, and the view</li>
+<li>The generative operation performed like section view or cut, detail, clipping, breakout, or 3D clipping</li>
+<li>The full Boolean error message</li>
+</ul>
+</dd>
+<dt class="dlterm">3D Viewer Tools</dt>
+<dd>Lets you show or hide and reframe the three elements of the viewer. Select the check boxes to show or hide the <span class="uicontrol">Initial 3D Body (white)</span>, the <span class="uicontrol">Generative tool (yellow)</span>, and the <span class="uicontrol">Diagnosis Geometries (blue)</span>. Click <span class="uicontrol">Reframe</span> to reframe the corresponding element.  </dd>
+<dd class="ddexpand">If there are multiple objects, you can browse between them.</dd>
+</dl>
+</div>
+</div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Creating a Geometrical Tolerance"/>
+<meta name="abstract" content="This section explains the concepts pertaining to the creation of geometrical tolerance."/>
+<meta name="description" content="This section explains the concepts pertaining to the creation of geometrical tolerance."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Dimensions-GeometricalToleranceCreate.htm#gdr3dmaster-t-Dimensions-GeometricalToleranceCreate"/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Dimensions-GeometricalToleranceCopy.htm#gdr3dmaster-t-Dimensions-GeometricalToleranceCopy"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Dimensions-GeometricalToleranceCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Creating a Geometrical Tolerance</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Dimensions-GeometricalToleranceCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1> About Creating a Geometrical Tolerance</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This section explains the concepts pertaining to the creation of geometrical tolerance.</span>
+<p>The standards are defined through the drafting standard .xml file which respects the ISO 1101:2012, ISO 5459:2011, and  ASME Y14.5-2009 standards.</p>
+						
+					
+				</p>
+<ul><li><a href="#gdr3dmaster-c-Dimensions-GeometricalToleranceCreate__cs-GeometricalToleranceDialogBox" id="toc_rg" title="">Geometrical Tolerance Dialog Box</a></li><li><a href="#gdr3dmaster-c-Dimensions-GeometricalToleranceCreate__cs-Specifyleaderorientation" id="toc_rg" title="">Specify Leader Orientation</a></li><li><a href="#gdr3dmaster-c-Dimensions-GeometricalToleranceCreate__cs-Specifygeometricaltoleranceorientation" id="toc_rg" title="">Specify Geometrical Tolerance Orientation</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Dimensions-GeometricalToleranceCreate.htm#gdr3dmaster-t-Dimensions-GeometricalToleranceCreate" title="You can create and edit a geometrical tolerance.">Creating a Geometrical Tolerance</a></td></tr><tr><td><a href="gdr3dmaster-t-Dimensions-GeometricalToleranceCopy.htm#gdr3dmaster-t-Dimensions-GeometricalToleranceCopy" title="You can copy an existing geometrical tolerance and edit the content to create a new one.">Copying Geometrical Tolerances</a></td></tr></table></td></tr></table>
+
+<div><div class="section" id="gdr3dmaster-c-Dimensions-GeometricalToleranceCreate__cs-GeometricalToleranceDialogBox"><h2 class="sectiontitle">Geometrical Tolerance Dialog Box</h2>  <p>Availability of each engineering symbol in the various boxes of <span class="wintitle">Geometrical Tolerance</span> dialog box is defined and stored in the Drafting standard xml file, which is embedded in all . However, it is possible to optionally insert any available engineering symbol in any box of a <span class="wintitle">Geometrical Tolerance</span>.</p><p>Switching the standard of an existing  does not change the content of existing geometrical tolerances. However, if the definition of an engineering symbol contained in a geometrical tolerance has been removed, it is displayed using the substitution symbol defined in the standard.</p><p><p>Note:
+		The engineering symbol selected is used as a user preference for each box.</p>
+</p><p>The following <span class="uicontrol">Auxiliary Feature Indicators</span> are available:<ul><li><span class="uicontrol">Intersection Plane</span>: Identifies a  line on an extracted surface or a point on an extracted line. It is placed to the right of the tolerance indicator as its extension.</li>
+<li><span class="uicontrol">Orientation Plane</span>: Identifies the orientation of the tolerance zone. It is placed to the right of the tolerance indicator as its extension.</li>
+<li><span class="uicontrol">Collection Plane</span>: Identifies a  closed compound contiguous feature. It is placed to the right of the tolerance indicator after the tolerance frame. It can be parallel to the projection plane in which specification is indicated.</li>
+<li><span class="uicontrol">Direction Feature</span>: Identifies the direction of the width of the tolerance zone.  The direction feature is a cone, a cylinder, or a plane constructed from the datum or datum system indicated in the second compartment of the direction feature indicator. The geometry of the direction feature depends on the geometry of the tolerance feature. It is placed to the right of the tolerance indicator as its extension.</li>
+</ul>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d188439e58">Auxiliary Feature Indicator</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d188439e60">Available Engineering Symbols</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d188439e58 "><span class="uicontrol">Intersection Plane</span></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d188439e60 "> Parallelism, perpendicularity, angularity, and symmetry</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d188439e58 "><span class="uicontrol">Orientation Plane</span></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d188439e60 "> Parallelism, perpendicularity, and angularity</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d188439e58 "><span class="uicontrol">Collection Plane</span></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d188439e60 "> Parallelism and perpendicularity</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d188439e58 "><span class="uicontrol">Direction Feature</span></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d188439e60 "> Parallelism, perpendicularity, angularity, and circular runout</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p><p>Notes:
+		<ul><li>You can add three indicators for a geometrical tolerance.</li>
+<li>You cannot add two indicators of the same type.</li>
+</ul>
+</p>
+</div>
+<div class="section" id="gdr3dmaster-c-Dimensions-GeometricalToleranceCreate__cs-Specifyleaderorientation"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Specify Leader Orientation</h2><p>You can orient the geometrical tolerance leader perpendicularly to the 
+		element to which it is associated (for example, if the leader is associated 
+		to a dimension, you can position the leader parallel to the dimension line 
+		and orthogonal to the extension line).</p>
+		<p>For this, you have two different possibilities:</p>
+		<ul>
+			<li>Select <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> 
+			&gt; Drafting</span> &gt; <span class="uicontrol">Handles</span></span>  tab and clear <span class="uicontrol">Snap by default (SHIFT 
+			toggles)</span> check box. To orient 
+			directly the geometrical tolerance leader perpendicularly to the associated 
+			element, press <span class="uicontrol">Shift</span> before clicking in the <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> 
+			to position the tolerance .</li>
+
+			<li>Go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Annotation 
+			and Dress-up</span></span>  tab, under
+			<span class="uicontrol">Annotation Creation</span>, and select <span class="uicontrol">Geometrical tolerance</span> check box . The leader is oriented perpendicularly 
+			to the geometry by default. In this case, pressing  <span class="uicontrol">Shift</span> 
+			will let you orient it differently.</li>
+
+		</ul>
+</div>
+<div class="section" id="gdr3dmaster-c-Dimensions-GeometricalToleranceCreate__cs-Specifygeometricaltoleranceorientation"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Specify Geometrical Tolerance Orientation</h2><p>To make the tolerance vertical, hold <span class="uicontrol">Alt</span> before clicking 
+		in the drawing to position the tolerance.</p>
+		<p>
+		<br/><img border="1" src="../Gdr3DMasterImages/manipulatinggeometricaltolerance10.png"/><br/></p></div>
+</div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

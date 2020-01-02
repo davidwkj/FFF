@@ -1,0 +1,122 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Updating the Standard of a Drawing"/>
+<meta name="abstract" content="This topic explains the concepts that you need to understand before you begin updating the standard of a drawing."/>
+<meta name="description" content="This topic explains the concepts that you need to understand before you begin updating the standard of a drawing."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-Sheets-DrawingToAnotherStandardSwitch.htm#gdr-t-Sheets-DrawingToAnotherStandardSwitch"/>
+<meta name="DC.Relation" scheme="URI" content="standards-m-ad-StandardParameters-sb.htm#standards-m-ad-StandardParameters-sb"/>
+<meta name="DC.Relation" scheme="URI" content="standards-m-ad-StandardStyles-sb.htm#standards-m-ad-StandardStyles-sb"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-Sheets-DrawingStandardUpdate.htm#gdr-t-Sheets-DrawingStandardUpdate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-Sheets-DrawingStandardUpdate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Updating the Standard of a Drawing</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-Sheets-DrawingStandardUpdate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-updating standards"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::updating in drawings"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Update"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Updating the Standard of a Drawing
+				
+				 </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic explains the concepts that you need to understand before you begin  updating the standard of a drawing. </span>
+
+
+						
+
+						<p>The following topics are discussed:</p>
+						</p>
+<ul><li><a href="#gdr-c-Sheets-DrawingStandardUpdate__cs-Abouttheupdateofastandardfile" id="toc_rg" title="">About the Update of 
+		a Standard File</a></li><li><a href="#gdr-c-Sheets-DrawingStandardUpdate__cs-AnnotationsAndDimensions" id="toc_rg" title="">Annotations and Dimensions</a></li><li><a href="#gdr-c-Sheets-DrawingStandardUpdate__cs-InternationalStandards" id="toc_rg" title="">International Standards</a></li><li><a href="#gdr-c-Sheets-DrawingStandardUpdate__cs-StylesOrganization" id="toc_rg" title="">Styles Organization</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-t-Sheets-DrawingToAnotherStandardSwitch.htm#gdr-t-Sheets-DrawingToAnotherStandardSwitch" title="You can switch a drawing to another standard when you have several standards defined by your administrator.">Switching a Drawing to Another Standard</a></td></tr><tr><td><a href="standards-m-ad-StandardParameters-sb.htm#standards-m-ad-StandardParameters-sb" title="This section describes how administrators can define standard parameters for Drawings, 2D Layout for 3D Design, 3D Tolerancing &amp; Annotation, and Generative Functional Tolerancing, and provides reference information about standard formats.">Setting Standard Parameters</a></td></tr><tr><td><a href="standards-m-ad-StandardStyles-sb.htm#standards-m-ad-StandardStyles-sb" title="This section provides background information about styles, which are used as default values when creating new elements in Drawings, 2D Layout for 3D Design, 3D Tolerancing &amp; Annotation, and Generative Functional Tolerancing. This section also describes how administrators can customize styles, and provides reference information about styles.">Setting Styles</a></td></tr><tr><td><a href="gdr-t-Sheets-DrawingStandardUpdate.htm#gdr-t-Sheets-DrawingStandardUpdate" title="You can update the standard used by a drawing, when it has been modified by your administrator.">Updating the Standard of a Drawing</a></td></tr></table></td></tr></table>
+
+<div><div class="section" id="gdr-c-Sheets-DrawingStandardUpdate__cs-Abouttheupdateofastandardfile"><h2 class="sectiontitle">About the Update of 
+		a Standard File</h2><p>When a standard file is modified, there is no automatic update of the drawings which use this standard. Each <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> contains a copy of the standard it uses, and retains this version until you explicitly update this copy or switch the drawing to another standard.</p><p>
+		
+		<ul>
+			<li>The most recent version of the updated standard is copied into the 
+			drawing and the previous standard parameter values are replaced by the 
+			latest ones, reflecting the most recent changes an administrator or you 
+			may have performed in the standard file. This may have an immediate 
+			impact on the appearance of the elements inside the drawing.  
+ </li>
+
+			<li>Styles are not
+  affected by this change, that is styles modified in the updated standard file
+  is not re-applied to existing elements. Indeed, styles are applied when
+  creating elements (as they define the default values to be used for creation).
+  If needed, new style parameters can be re-applied to an element using the 
+  <span class="uicontrol">Style</span>. For this,
+  select the element whose style you want to update and select the updated style
+  in the 
+  <span><span class="wintitle">Object Properties</span></span>
+  panel, under 
+  <span class="uicontrol">Style</span>.
+</li>
+
+		</ul>
+
+		</p></div>
+<div class="section" id="gdr-c-Sheets-DrawingStandardUpdate__cs-AnnotationsAndDimensions"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Annotations and Dimensions</h2>
+   
+  <p>During a standard switch or update, annotations and
+	 dimensions are automatically updated (to apply the new standard), but not the
+	 geometry. To avoid differences between updated annotations and not-updated
+	 geometry, it is recommended to update the drawing before any standard
+	 switch/update. 
+	 <p>Note:
+		The modification of a tolerance format is only applied to documents
+		created after the tolerance format modification. 
+	 </p>
+
+  </p> 
+</div>
+<div class="section" id="gdr-c-Sheets-DrawingStandardUpdate__cs-InternationalStandards"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">International Standards</h2>
+		<p>When using international standards, the following dimension values are automatically 
+		updated with the new international standards:</p>
+		<ul>
+			<li>Dimension's vertical position:  
+			When it follows the international standard, that is 0 for ANSI-ASME, 2 for 
+			ISO and 0.5 for JIS.  
+ </li>
+
+			<li>Dimension's orientation reference and orientation:  
+			When it follows its previous international standard, that is horizontal 
+			with screen reference for ANSI-ASME, parallel with dimension line 
+			reference for ISO and JIS.  
+ </li>
+
+			<li>Dimension symbols:  
+			When the chosen symbols are the international ones, that is Open Arrow 
+			for ISO and JIS, Filled Arrow for ANSI-ASME.</li>
+
+		</ul>
+
+		<p>Furthermore, if the target international standard is ANSI-ASME, the radius 
+		type dimension has its dimension line <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> set to two parts.</p>
+		</div>
+<div class="section" id="gdr-c-Sheets-DrawingStandardUpdate__cs-StylesOrganization"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Styles Organization</h2>
+		<p>Note that after updating the standards, when opening a drawing, the styles 
+		are not organized in the <span class="uicontrol">Style</span> exactly as they are organized 
+		in the Standards editor. However, the order of the styles' types (<span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">Sheet</span>, 
+		Construction point...) is kept. This minor modification improves the 
+		global performance.</p>
+		
+		
+	
+
+
+
+
+
+</div>
+</div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

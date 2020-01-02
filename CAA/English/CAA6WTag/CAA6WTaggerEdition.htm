@@ -1,0 +1,289 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="js" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>6WTag  Edition</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>6WTag  Edition</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>With the previous articles, 6WTagger Integration - Principles [<a href="#References">1</a>] and
+		6WTagger Integration - API [<a href="#References">2</a>] you have learnt the basics about 6WTagger integration. This article
+		described another feature. The capability for the end-user to create his/her own tags for given subjects. They are named either <b>user-defined</b> tags, or explicite tags. The latter term
+		is oppposite to implicite tags where they are deduced from the subject properties.</p>		 
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="User-Defined-Tags"></a>User Defined Tags</h2>
+<p>User defined (also named explicit) tags are created by the end-user when the widget has provided the capability. Those tags are <b>applied to subjects given by the widget</b> itself.</p>
+<p>The <b>format of an explicit tag</b> is the same as for an implicit one: a subject - identified by its URI , a predicate, and an object. 
+Nevertheless, for the explicit tags some restrictions can exist about the predicate and the object's type: see the User Assistance documentation. </p>
+<p>Once created by the end-user, their <b>storage</b> is managed by the 6WTagger:</p>
+<ul>
+<li>An internal database for <b>3D</b>EXPERIENCE subjects, </li>
+<li>The 6WTags service database for customer subjects.</li>
+</ul>
+<p>About the <b>non DS subjects</b> take care of their URI. Indeed, since their tags are stored in the 6WTags service database, a service shared by all <b>3D</b>EXPERIENCE platform components, 
+they must be unique to avoid collision with other applicative subjects.</p>
+<p>For a <b>DS URI</b>, before logging an explicite 6WTags, the <b>3D</b>EXPERIENCE platform performs a check to know if  the current person is allowed (granted)
+ to do the tag creation. Each service 
+gives its checking rules. For example, Swym checks the end-user can tag a post.</p>
+<p>If your widget can <b>provide</b> to the 6WTagger end-user tags for any DS service subjects, take care for your own data. Indeed, as of today there is still a 
+limitation about the explicit tags retrieval. This array sums up the configuration cases:</p>
+<table class="fill">
+<tr><th>Service</th><th>6WTagger Filtering</th><th>Server Side Filtering</th></tr>
+<tr><td>DS subjects</td><td>REST Web Service dedicated to the subjects  provide API retrieving implicit and explicit tags as complete form.</td><td>REST Web Service 
+dedicated to the subjects provide implicit and explicit tags as summary form as well.</td></tr>
+<tr><td>Non DS subjects</td><td>You provide implicit tags (containing subjects URI), the 6WTagger manages the explicit tags retrieval itself.</td><td>The 6WTagger cannot retrieve from
+the 6WTags service database the explicit tags since subjects are not provided. But you cannot provide them to the 6WTagger since there is no  API to retrieve explicit tags from 6WTags service.</td></tr>
+</table>
+<table class="Remark">
+	<tbody>
+	<tr>
+		<td class="Remark"><span class="run-in">Therefore:</span> For non DS subjects, only the 6WTagger Filtering solution can be used 
+		for <b>presenting</b> to the end-user ALL tags, the implicit as the explicit ones.</td>
+	</tr>
+</tbody>
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Principles"></a>Principles</h2>
+<p>The protocol between a widget and the 6WTagger is as follows:</p>
+<ul>
+  <li>The widget provides a list of <b>visible subjects</b> with their tags. The visible subjects are usually those the end-user can see - and select - in the widget.</li>
+  <li>The widget provides a set of <b>subjects</b> (among the previous ones) for which the explicit tags  will be associated with. Usually, the list comes from a end-user selection in the widget. The list
+can change according the current end-user selection in the widget.  </li>
+  <li>When the 6WTagger is in <b>"edit mode"</b> (the widget is maximized/fullscreen) the end-user can manage (create/modify/delete) explicit  tags.</li>
+ 
+</ul>
+<p>Once in edit mode, the 6WTagger manages alone the explicit tags: it provides the UI and interacts directly with the service storing them. The widget does not
+ intervene in this management, as it does not need feedbacks after a creation/modication/deletion. Just below, the Tag editor:</p>
+ <table>
+<tr>
+		<td>
+		<img alt="Mult-proxy" src="images/CAA6WTagEdition.png"/></td>
+	</tr>
+</table>
+ <p>While the 6WTagger is in edit mode, the end-user cannot select tags. </p>
+<p> The widget must manage the  edit mode state. Usually, a basic behavior is to focus the widget contents
+with  the subjects for which the end-user tags will  be created for while the tag editor is opened, and when the end user comes back to the complete list of subjects, the
+tag editor is closed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Implementation"></a>Implementation</h2>
+<p>Between the widget and the 6WTagger there is the proxy. The widget creates, and interacts with the proxy, this latter known from the 6WTagger. The creation and use of the proxy is fully explained
+ in the referenced article  [<a href="#References">2</a>].</p>
+<p>The steps are as follows: </p>  
+<ol>
+<li><b>Create the proxy</b>
+<p>The proxy is created with options defining  the filtering type (6WTagger or server side) and the platform instance. The latter information,
+which can only be ignored for a on-premise solution, is mandatory for cloud solution [<a href="#References">3</a>]. From this information the 6WTagger can retrieve the URL 
+of the service to store the explicit tags. </p>
+<pre class="code">
+var options= {
+    widgetId      : widget.id,
+    filteringMode : "WithFilteringServices" or "FilteringOnServer",
+    tenant        : <b>widget.getValue('x3dPlatformId') </b>
+};
+taggerProxy = TagNavigatorProxy.<b>createProxy</b>(options);
+</pre>	 
+<p>Then you set the callback function
+to be informed when the end-user will do a tag selection. </p>
+<pre class="code">
+taggerProxy.addEvent('xxx', myCallFunction );
+</pre>
+<p>Where xxx is either 'onFilterSubjectsChange' or 'onFilterChange' according to the filtering mode value. </p>
+</li>
+<li><b>Provide Subjects and 6WTags</b>
+<p>You provide the 6WTags (as summary or complete) for the subjects the end-user
+could perform a selection, and you provide all the 6WTags (as a complete form) for which the edit mode could be used. These two operations are performed in one call for both proxy type: </p>
+<ul>
+  <li><i>6WTagger Filtering</i>
+  <p>Without more information than the 6WTags  for the subjects the end-user could perform a selection. They already contains the 
+  subjects for which explicit tags could be created.</p>
+     <pre class="code">MyProxy.setSubjectsTags(<a href="#subjectsTags">completeTags</a>)</pre>	 
+   </li>
+   <li><i>Server Side Filtering</i>
+   <p>By providing the 6WTags for the subjects (as complete form ) for which the edit mode could be used in addition with the 
+   6WTags  for the subjects (as summary form) the end-user could perform a selection. </p>
+     <pre class="code">MyProxy.setTags(<a href="#visibleTags">visibleDataTags</a>,<a href="#Summary">summary</a>)</pre>	 
+   </li>
+</ul>
+</li>
+<li><b>Provide subjects for explicit tags edition</b>
+    <p>Use the <i>focusOnSubjects</i> method. </p>
+	 <pre class="code">MyProxy.focusOnSubjects(<a href="#subjectURI">subjectURIList</a>)</pre>	 
+	<p>The sujects must be
+	part of the "visible" subject tags provided at the previous step. The new tags will be associated with those subjects.
+	Calling this method opens the tag editor as soon as the widget is maximized (or fullscreen).  </p> 
+  </li>
+<li><b>Deactivate the edit mode</b>
+    <p>Use <i>unfocus()</i> method.</p> 
+	 <pre class="code">MyProxy.unfocus()</pre>	 
+	<p>Calling this method closes the tag editor if the widget is maximized (or fullscreen), and do not open it otherwise.</li>
+</ol> 
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Annexe"></a>Data Format</h2>
+<p>This section sums up the format of the different data used in the 6WTagger protocol. You have: </p>
+<ul>
+<li>The subjects for which the end-user creates tags, </li>
+<li>The 6WTags provided by widget proxy, </li>
+<li>The data (*) input of the widget callback functions, the latter triggered when the end user has selected a tag. </li>
+</ul>
+<p>(*) Note: The data provided by the 6WTagger can contain more elements than the ones presented in this article, or 
+the others from the 6WTagger section of the Developper Assistance. The "extra" elements must be ignored.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="subjectURI"></a>subjectURI</h3>
+<p>The subjects, as URI, given to the 6WTagger using the <i>focusOnSubjects</i> method. All tags created by the end user will be applied to these subjects. </p>
+<pre class="code">
+[ 'subject-1-uri', 'subject-2-uri', 'subject-3-uri',...]
+</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Data-6WTaggerFiltering"></a>For 6WTagger Filtering</h3>
+<h4><a name="subjectsTags"></a>6WTags Provided by Proxy  as subjectsTags</h4>
+<p>The 6WTags, as a complete form with subjects, provided by the proxy to the 6WTagger using <i>setSubjectsTags</i> method.</p>
+<pre class="code">
+{ 
+ 'subject-1-uri':[{'<b>object</b>'    : 'objValue', 
+                   '<b>sixw</b>'      : 'predicateValue',   
+                   '<b>dispValue</b>' : 'objValueName',     
+                   '<b>type</b>'      : 'objValueType',     
+                  }, ... ],                
+ 'subject-2-uri':[{...},{...}],  				 
+}
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h4><a name="onFilterSubjectsChange"></a>Callback Argument - onFilterSubjectsChange - result data </h4>
+<p>The unique argument of the callback method for the onFilterSubjectsChange event, contains the filtering result. </p>
+<pre class="code">
+{ 
+   "<b>allfilters</b>": {
+          "predicateValue1": [ {"<b>object</b>"  : "objValueA", "<b>type</b>"  : "objValueType" } , {...},{...} ],
+          "predicateValue2": [ {"<b>object</b>"  : "objValueB", "<b>type</b>"  : "objValueType" } , {...},{...} ]
+        },
+   "<b>filteredSubjectList</b>": [ 'subject-1-uri', 'subject-2-uri', 'subject-3-uri',...]                
+}
+</pre>
+<p><i>allfilters</i> are the selected tags, and <i>filteredSubjectList</i> the filtered subjects. Subjects are among those provided by the proxy of the widget.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Data-ServerSideFiltering"></a>For Server Side Filtering</h3>
+<h4><a name="visibleTags"></a>6WTags Provided by Proxy  as visibleDataTags</h4>
+<p>The 6WTags, as a complete form with subjects, provided by the proxy to the 6WTagger using <i>setTags</i> method. It is the first argument of the method. </p>
+<pre class="code">
+{ 
+ 'subject-1-uri':[{'<b>object</b>'    : 'objValue', 
+                   '<b>sixw</b>'      : 'predicateValue',   
+                   '<b>dispValue</b>' : 'objValueName',     
+                   '<b>type</b>'      : 'objValueType',     
+                  }, ... ] ,               
+ 'subject-2-uri':[{...},{...}],  				 
+}
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h4><a name="Summary"></a>6WTags Provided by Proxy as Summary</h4>
+<p>The 6WTags, as a summary, provided by the proxy   to the 6WTagger using <i>setTags</i> method. It is the second argument of the method. </p>
+<pre class="code">
+[
+{'<b>object</b>'    : 'objValue', 
+ '<b>sixw</b>'      : 'predicateValue',   
+ '<b>dispValue</b>' : 'objValueName',     
+ '<b>type</b>'      : 'objValueType',     
+ '<b>count</b>'     : #subjects 
+ }, {}, {} , ...
+] 
+</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= --> 
+<h4><a name="onFilterChange"></a>Callback Argument - onFilterChange - result data</h4>
+<p>The unique argument of the callback method for the onFilterChange event contains the filter result. </p>
+ <pre class="code">
+{ 
+   "<b>allfilters</b>": {
+          "predicateValue1": [ {<b>object</b>"  : "objValueA", "<b>type</b>"    : "objValueType" } , {...},{...} ],
+          "predicateValue2": [ {"<b>object</b>" : "objValueB", "<b>type</b>"    : "objValueType" } , {...},{...} ]
+        },  
+    "<b>filteredSubjectList</b>": [ 'subject-1-uri', 'subject-2-uri', 'subject-3-uri',...]   		
+}
+</pre>
+<p><i>allfilters</i> are the selected tags. Other keys than <i>object</i> and <i>type</i> may exist  but they would be irrelevant for the filtering.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Short"></a>In Short</h2>
+<p>This article has explained how the widget can propose to the end user to create his/her own tags. </p>
+<p>The reader can continue with the use case implementing the scenario [<a href="#References">4</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+       <td>[1]</td>
+       <td><a href="CAA6WTaggerIntegration.htm">6WTagger Integration - Principles</a></td>
+    </tr>
+	<tr>
+       <td>[2]</td>
+       <td><a href="CAA6WTaggerAPI.htm">6WTagger Integration - API</a></td>
+    </tr>
+	<tr>
+       <td>[3]</td>
+       <td><a href="../CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm">About Service URL and Platform Instance</a></td>
+    </tr>
+	<tr>
+       <td>[4]</td>
+       <td><a href="CAA6WTaggerUcEdition.htm">Editing 6WTags</a></td>
+    </tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [March 2015]</td>
+		<td>Document created</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>2</strong> [March 2017]</td>
+		<td>Document updated</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html
+          PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="Content-Language" content="en-us" />
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="topictype" content="Uc" />
+  <meta name="devlang" content="cpp" />
+  <link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+  <script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">    /* */</script>
+  <script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">    /* */</script>
+  <script type="text/javascript" src="../CAADocJavaScript/submit.js">    /* */</script>
+  <title>Deleting Assembly Feature</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+  <table class="DocHeader">
+    <tr>
+      <td class="DocHeader1">
+        <h1><a name="Top"></a>Deleting Assembly Feature</h1>
+      </td>
+    </tr>
+    <tr>
+      <td class="use">Use Case</td>
+    </tr>
+  </table>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <table class="abstract">
+    <tr>
+      <td>
+        <h2>Abstract</h2>
+        <p>
+          This article discusses the CAAAssemblyFeatureDeletion use case. This use case explains how to delete 
+          an assembly feature existing in given product data.
+        </p>
+
+        <ul>
+          <li><a href="#Learn">What You Will Learn With This Use Case</a> </li>
+          <li>
+            <a href="#UseCase">
+              The CAAAssemblyFeatureDeletion
+              Use Case
+            </a>
+            <ul>
+              <li>
+                <a href="#What">
+                  What Does CAAAssemblyFeatureDeletion
+                  Do
+                </a>
+              </li>
+              <li><a href="#How">How to Launch CAAAssemblyFeatureDeletion</a></li>
+              <li>
+                <a href="#Where">
+                  Where to Find the CAAAssemblyFeatureDeletion
+                  Code
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#Step">Step-by-Step</a> </li>
+          <li><a href="#InShort">In Short</a> </li>
+          <li><a href="#References">References</a></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+  <p>This use case is to show you how to delete assembly feature. You will learn: </p>
+  <ul>
+    <li>How to find assembly feature in product data</li>
+    <li>How to delete assembly feature from the product data</li>
+  </ul>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h2><a name="UseCase"></a>The CAAAssemblyFeatureDeletion Use Case</h2>
+  <p>
+    CAAAssemblyFeatureDeletion is a use case of the CAAAssemblyFeature.edu framework that
+    illustrates CATAsmFunctionalUseItf frameworks capabilities, regarding assembly feature delete operations.
+  </p>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h3><a name="What"></a>What Does CAAAssemblyFeatureDeletion Do</h3>
+  <p>
+    The goal of CAAAssemblyFeatureDeletion use case is to
+    delete an assembly feature:
+  </p>
+  <ul>
+    <li>Opening the PLM Product (Root).</li>
+    <li>Searching assembly feature under publisher product.</li>
+    <li>Deleting assembly feature.</li>
+    <li>Updating the assembly.</li>
+    <li>Saving the assembly and exiting.</li>
+  </ul>
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  <h3><a name="How"></a>How to Launch CAAAssemblyFeatureDeletion</h3>
+  <p>
+    To launch CAAAssemblyFeatureDeletion, you will need to set up the build time environment,
+    then compile CAAAssemblyFeatureDeletion.m along with its prerequisites, set up the run time
+    environment, and then execute the use case [<a href="#References">2</a>].
+  </p>
+<p>Launch the use case as follows: </p>
+<pre class="code">mkrun -c <em>&quot;CAAAssemblyFeatureDeletion Repository ServerName LoginTicket PLMType V_Name&quot;</em></pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+    <colgroup align="center" span="1"></colgroup>
+    <tr>
+      <th>Position</th>
+      <th>Description</th>
+      <th>Example</th>
+      <th>Category</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>repository</td>
+      <td>
+        <script type="text/javascript">insertRepository();</script>
+      </td>
+      <td rowspan="3">Connection</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>server</td>
+      <td>Server name in format protocol://serverName:portNumber/rootURI <br />e.g. http://ve4al14plp:10490/ematrix </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>loginTicket</td>
+      <td>String representing a valid Login Ticket</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>PLMType</td>
+      <td>VPMReference</td>
+      <td>Component Type</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>V_Name</td>
+      <td>Title of the Root Product To Open e.g AsmRoot</td>
+      <td>Component Attribute</td>
+    </tr>
+  </table>
+  <ul>
+    <li>
+      The <strong>first three </strong>are related to the connection and described in the
+      <cite>Connecting to V6 Server</cite> use case [<a href="#References">2</a>].
+    </li>
+    <li>PLMType defines the PLMType of Component to be opened.</li>
+    <li>The last argument defines the <strong>value</strong> of the <strong>attribute name</strong>.</li>
+  </ul>
+
+  <p>
+    <strong>Import PLM Data:</strong><br />
+    The use case requires input PLM Data: PLM Reference.
+    This data is stored in 3D XML files, whose extension is &quot;3dxml&quot;. You must import
+    these PLM Data in the database using the Add / Import / 3D XML command prior
+    to launching the use case.<br />
+    The &quot;3dxml&quot; file is supplied at location:
+  </p>
+  <p><code>InstallRootFolder\CAADoc\CAAAssemblyFeature.edu\InputData\TSTDataCAAAsmFeatureDeletionUseCase.3dxml.</code></p>
+  <p>
+    where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder where the API CD-ROM is installed.
+    This 3D XML file contains the root Product Reference with the following attributes:
+  </p>
+  <ul>
+    <li><code><strong>V_Name</strong></code>: AsmRoot</li>
+  </ul>
+
+  <script type="text/javascript">insertLinkToTop();</script>
+  <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+  
+  <article data-xplore-fw='CAAAssemblyFeature.edu' data-xplore-mod='CAAAssemblyFeatureDeletion.m'>
+    <h3>
+      <a name="Where"></a>Where to Find the CAAAssemblyFeatureDeletion Code
+    </h3>
+    <p>
+      The CAAAssemblyFeatureDeletion use case is made of a single file named CAAAssemblyFeatureDeletion
+      located in the CAAAssemblyFeatureDeletion.m module of the CAAAssemblyFeature.edu framework:
+    </p>
+    <p><code>InstallRootFolder\CAADoc\CAAAssemblyFeature.edu\CAAAssemblyFeatureDeletion.m\</code></p>
+    <p>
+      where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the
+      folder where the API CD-ROM is installed.
+    </p>
+
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="Step"></a>Step-by-Step</h2>
+    <p>There are eight main steps in CAAAssemblyFeatureDeletion:</p>
+    <ol>
+      <li><a href="#Step1">Parsing Input Arguments</a></li>
+      <li><a href="#Step2">Opening the PLM Root Product</a></li>
+      <li><a href="#Step3">Searching assembly feature under publisher product</a></li>
+      <li><a href="#Step4">Deleting assembly feature</a></li>
+      <li><a href="#Step5">Updating the Assembly</a></li>
+      <li><a href="#Step6">Saving the Assembly and Exiting</a></li>
+    </ol>
+    <p>
+      <img alt="Input Product" src="images/CAAPictureAsmFeatureBeforeDeletion.jpg" width="585" height="460"/>
+    </p>
+    <p>
+      This picture shows the initial Product Structure used in the
+      use case.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step1"></a>Parsing Input Arguments</h3>
+    <p>
+      <em>CAAAssemblyFeatureDeletion</em> begins by checking that the command lines contains six
+      arguments. It then retrieves the environment, creates a session [<a href="#References">1</a>].
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step2"></a>Opening the PLM Product (Root)</h3>
+    <p>Retrieve the PLM component which identifies the correct reference product.</p>
+<pre class="code">...
+  plmType         = argv[4];
+  rootProductName = argv[5];
+  //-----------------------------------------------------------------------
+  // - Query/Open/Expand of the reference product with its associated representation
+  // Retrieving the customized Reference of the Product modeler
+  //-----------------------------------------------------------------------
+  hr = CATCkePLMNavPublicServices::RetrieveKnowledgeType(plmType, hTypeModeler);
+  //---------------------------------------------------
+  // - Opens the reference product
+  //--------------------------------------------------- 
+  attributeSet.AddAttribute("V_Name", rootProductName.ConvertToChar());
+  hr = CATAdpPLMQueryServices::GetElementsFromAttributes(hTypeModeler, attributeSet, ListP_QueryResults);
+  if(ListP_QueryResults.Size())
+  {
+    pQueryResult = ListP_QueryResults[1];
+    if(NULL != pQueryResult)
+      hr = pQueryResult->GetIdentifier(pIPLMIdent);
+  }
+...</pre>
+    <p>Open your PLM Component </p>
+<pre class="code">...
+  //-----------------------------------------------------------------------
+  // - Expand and Expand of the product
+  //-----------------------------------------------------------------------
+  hr = adpOpener.CompleteAndOpen(pIPLMIdent, IID_CATIPLMProducts, (void**)&pIPLMProduct3DH);                           
+ ...</pre>
+    <p><em>CATAdpOpener::CompleteAndOpen</em> is a service used to open PLM component in PLM session.</p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step3"></a>Searching assembly feature under publisher product</h3>
+    <p>
+      Functional Plastic Parts feature  used iis used as input specification for assembly feature.
+    </p>
+<pre class="code">...
+ // AsmRoot
+ //    Specification      
+ //    Plate1
+ //    Assembly Feature.1 &lt;-------+|
+  // ========================================================================================
+  // Assembly feature manager for the Publisher product
+  // ========================================================================================  
+     hr = CATCreateAssemblyFeatureManager::CreateAssemblyFeatureManager(ipPublisherProduct, opiAssyFeatureManager);
+  // ========================================================================================
+  // To List Assemby Features under publisher product 
+  // ========================================================================================
+         hr = opiAssyFeatureManager->ListAssemblyFeature(oAsmFeaturelist);
+...</pre>
+    <p>
+      The ListAssemblyFeature
+      method of CATIAssemblyFeatureManager lists assembly features under publisher product.
+      Required Assembly Feature can accesed from list by using corresponding index.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step4"></a>Deleting Assembly Feature Under Publisher product</h3>
+    <p>To Delete an assembly feature under Publisher product:</p>
+<pre class="code">...
+  // ========================================================================================
+  // Delete assembly feature under the Publisher product
+  // ========================================================================================
+    hr = opiAssyFeatureManager->DeleteAssemblyFeature(opAssemblyFeature1);
+...</pre>
+    <p>Assembly Feature under the publisher product will be deleted.</p>
+    <script type="text/javascript">insertLinkToTop();</script>
+
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step5"></a>Updating the Assembly</h3>
+<pre class="code">...
+  // ===========================================================================
+  // PLM Update : After assembly feature creation PLM update is recommended
+  // ===========================================================================  
+  spRootActor = pIPLMNavRefOnRoot;
+  hr = CATPLMUpdateFactory::InstantiateUpdateEngine(piUpdateEngine);
+  if (FAILED(hr) || NULL == piUpdateEngine) {
+    retCode = 32;
+    goto EscapeWay;
+  }
+  hr = piUpdateEngine->Init(spRootActor);
+  hr = piUpdateEngine->GetGlobalPLMStatus(updateStatus);
+  switch (updateStatus)
+  {
+  case CATIPLMUpdateEngine::Status_UpToDate:
+  case CATIPLMUpdateEngine::Status_UpToDateWithWarnings:
+    break; // Already up to date.
+  case CATIPLMUpdateEngine::Status_OutOfDate:
+  case CATIPLMUpdateEngine::Status_OutOfDateDateWithWarnings:
+  {
+    HRESULT updateRC = piUpdateEngine->GlobalPLMUpdate();
+    if (S_OK == updateRC) {
+      hr = S_OK;    // update successful.
+    }
+    else if (S_FALSE == updateRC) {
+      hr = S_OK;    // update successful with warnings.
+    }
+    else if (E_FAIL == updateRC) {
+      hr = E_FAIL;  // update unsuccessful (errors).
+    }
+    else
+      hr = E_FAIL;  // Unexpected error management.      
+  }
+  case CATIPLMUpdateEngine::Status_Error:
+    break;
+  case CATIPLMUpdateEngine::Status_UndefinedStatus:
+    break;
+  }  
+...</pre>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h3><a name="Step6"></a>Saving the Assembly and Exiting</h3>
+<pre class="code">...
+    // Saving All Products
+    // ===================
+    CATAdpSaver saver;
+    rc = saver.Save();
+    Bag.RemoveAll();
+  }
+  
+  // ===========================================================================================================
+  // Close the PLM session
+  // ===========================================================================================================
+  hr = ::CAAAdpCloseSession();
+</pre>
+    <p>
+      Before closing the session and after saving PLM component, the PLM Root component must be removed of the Bag, by using
+      <code>RemoveRoot</code> method defined in <em>CATOmbLifeCycleRootsBag</em>.
+    </p>
+
+    <p>
+      <img alt="Modified Product" src="images/CAAPictureAsmFeatureAfterDeletion.jpg"/>
+    </p>
+    <p>
+      Desired assembly feature is created under root product.
+      Impacts of Assembly feature are created for specified representations.
+    </p>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="InShort"></a>In Short</h2>
+    <p>This use case has demonstrated the way to delete assembly feature and its impacts from all impacted representations.</p>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="References"></a>References</h2>
+    <div id="ref">
+      <table class="reference">
+        <tr>
+          <td>[1]</td>
+          <td>
+            <a href="../CAADocUseCases/CAADocRunSample.htm">
+              Building and Launching a Use Case
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>[2]</td>
+          <td>
+            <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm'); return false;">
+              Connecting to V6 Server
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <h2><a name="History"></a>History</h2>
+    <table class="history">
+      <tr>
+        <td>Version: <strong>1</strong> [Mar 2018]</td>
+        <td>Document created</td>
+      </tr>
+    </table>
+    <script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+    <script type="text/javascript">insertCopyright();</script>
+
+  </article>
+
+  </article>
+
+</body>
+
+</html>

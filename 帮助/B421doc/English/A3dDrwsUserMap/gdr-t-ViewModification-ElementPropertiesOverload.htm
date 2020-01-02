@@ -1,0 +1,141 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Overloading Element Properties"/>
+<meta name="abstract" content="You can overload the properties of 3D components in a view generated from a 3D product."/>
+<meta name="description" content="You can overload the properties of 3D components in a view generated from a 3D product."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewContentCustomization.htm#gdr-c-ViewContentCustomization"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewModification-ElementPropertiesOverload"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Overloading Element Properties</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewModification-ElementPropertiesOverload">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::overloading element properties"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-overloading element properties"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Overloading Element Properties
+         </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can overload the properties 
+             of 3D components in a view generated from a 3D product.</span>
+
+             
+             </p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>                    Open        a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> generated from a product.           </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewContentCustomization.htm#gdr-c-ViewContentCustomization" title="You can configure the graphical properties of generative views to configure the view.">About View Content Configuration</a></td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+<ol><li class="stepexpand"><p>Right-click a <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section view</span>, for example.<p> 
+       </p></p></li>
+<li class="stepexpand"><p>Select <span class="uicontrol">Section view object &gt; Overload properties</span>.<p> 
+       <p>The <span class="uicontrol">Characteristics</span> dialog box appears.</p>
+       
+       </p></p></li>
+<li class="stepexpand"><p>In the view, select the element that you want to edit.
+       <p> 
+       <p>This element is highlighted in the drawing and listed in 
+       the <span class="uicontrol">Characteristics</span> dialog box.</p>
+       <p>
+       <br/><img src="../GdrUserImages/modifycut.gif"/><br/></p>
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  You can 
+           also select several elements, if you want to overload their properties 
+           in the same way. 
+           In the case of several elements generated from a single part instance, 
+           all these elements are highlighted when you select one. 
+           You can select the elements in the 3D document, either by selecting a 
+           node in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span> or by multi-selecting the elements in 
+           the tree.</td></tr></table>
+
+       </p></p></li>
+<li class="stepexpand"><p>Select the element you want to edit in the dialog box and 
+       click <span class="uicontrol">Edit</span>.<p> 
+       
+       
+       <p>In the <span class="uicontrol">Editor</span> dialog box, you can modify the following parameters:</p>
+       <ul>
+         <li>
+         <p><span class="uicontrol">Cut in section views</span>: Specifies that the 3D 
+         element will be cut in the section view, <span class="glossterm" id="section-cut" onmouseout="hideTerm()" onmouseover="showTerm('section-cut.xml')">section cut</span> or <span class="glossterm" id="breakout" onmouseout="hideTerm()" onmouseover="showTerm('breakout.xml')">breakout</span> view. 
+         Uncheck this option if you do not want an element to be cut in the view.</p>
+         </li>
+
+         <li>
+         <p><span class="uicontrol">Use when projecting</span>: Specifies that the 3D element 
+         will be projected in the view.  
+         Uncheck this option if you do not want an element to be represented in 
+         the view (other 3D elements possibly hidden by this element in the view 
+         will then be visible in the view).</p>
+         </li>
+
+         <li>
+         <p><span class="uicontrol">Represented with hidden lines</span>: Specifies that 
+         3D hidden lines will be represented.</p>
+         </li>
+
+         <li>
+         <p><span class="uicontrol">Shown</span>: Specifies that the dress-up (color, line 
+         type, etc.) associated to the 2D generated element will be shown. The view 
+         is not re-computed.</p>
+         </li>
+
+         <li><span class="uicontrol">Projected as background</span>: Sets the selected part as background. This helps in visualizing the other parts which are behind the selected part in the view.  <p>Note:
+		If you have selected 	the  shaded background mode for a view in which one of the parts is projected as background, then the shaded background mode becomes ineffective only for this part.</p>
+ </li>
+<li>
+         <p><span class="uicontrol">Graphic Properties</span> area: Lets you modify graphic 
+         properties such as element color, line type and line thickness.</p>
+         </li>
+
+       </ul>
+
+       </p></p></li>
+<li class="stepexpand"><p>Clear the <span class="uicontrol">Shown</span> check-box and click <span class="uicontrol">OK</span>.<p> 
+       <p>In the view, the  generated 2D element and the dress-up associated to it is no longer shown.<p>Note:
+		If you select 	the  <span class="uicontrol">Shaded Background Mode</span> check box in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">View</span></span> section, under <span class="uicontrol">View generation</span>, the generated 2D element is no longer shown. The shaded background remains unaffected.</p>
+</p>
+       </p></p></li>
+<li class="stepexpand"><p>In the <span>tree</span>, 
+       select  the <span class="uicontrol">PartBody.x</span> node.<p> 
+       <p>The elements of the part body are 
+       added to the <span class="uicontrol">Characteristics</span> dialog box.</p>
+       </p></p></li>
+<li class="stepexpand"><p>Select the required elements in the list and click <span class="uicontrol">Edit</span>.</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Editor</span> dialog box, select the red color 
+       in the <span class="uicontrol">Graphic properties</span> list and click <span class="uicontrol">OK</span>.<p><p>Note:
+		The graphic properties cannot be applied to the  hatching patterns.</p>
+</p></p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Characteristics</span> dialog box, click
+       <span class="uicontrol">Apply</span>. <p> 
+       <p>The view is re-computed.</p>
+       <p>
+       <br/><img src="../GdrUserImages/overload01.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>In the <span>tree</span>, <span class="uicontrol">Ctrl +</span> multi-select the 3D elements.<p> 
+       <p>Back to the drawing, the elements have been added to the
+       <span class="uicontrol">Characteristics</span> dialog box.</p>
+       </p></p></li>
+<li class="stepexpand"><p>Select the required elements in the list and click <span class="uicontrol">Edit</span>.<p> 
+       </p></p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Editor</span> dialog box, clear the <span class="uicontrol">Shown</span> 
+       check-box and click <span class="uicontrol">OK</span>.<p> 
+       </p></p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Characteristics</span> dialog box, click
+       <span class="uicontrol">OK</span>.<p> 
+       <p>The selected element is hidden.</p>
+       <p>
+       <br/><img src="../GdrUserImages/overload02.gif"/><br/></p>
+       </p></p></li>
+</ol>
+</div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

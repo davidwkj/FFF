@@ -1,0 +1,123 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Working with Standards and Generative View Styles"/>
+<meta name="abstract" content="You can customize standards and generative view styles and set their locations. The procedure is the same for standards or Generative View Styles (GVS). When applicable, differences are notified."/>
+<meta name="description" content="You can customize standards and generative view styles and set their locations. The procedure is the same for standards or Generative View Styles (GVS). When applicable, differences are notified."/>
+<meta name="DC.Relation" scheme="URI" content="standards-r-ad-Location.htm#standards-r-ad-Location"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="standards-t-ad-StandardsAdminister"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Working with Standards and Generative View Styles</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="standards-t-ad-StandardsAdminister">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-administration::standards and generative view styles"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-generative view styles administration"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards administration"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Working with 
+				Standards and Generative View Styles </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span> You can customize standards and generative view styles and set their locations. The procedure is the same for standards or Generative View Styles (GVS). When applicable, differences are notified. </span>
+
+						
+						
+						
+					
+				</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-SetTheLocationOfStandardGVSFilesInACustomDirectory" id="toc_rg" title="You can set the location of standard or generative view style files in a custom directory.">
+		
+		Set the Location of Standard/GVS Files in a Custom Directory</a></li><li><a href="#t-SetTheLocationOfStandardGVSFilesUsingVariables" id="toc_rg" title="You can set the location of standard or generative view style files using variables.">
+		Set the Location of Standard/GVS Files Using Variables</a></li><li><a href="#t-CustomizeAndDefineStandardsOrGVS" id="toc_rg" title="You can configure and define standards or generative view styles.">Configure and Define 
+		Standards or GVS</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="standards-r-ad-Location.htm#standards-r-ad-Location" title="Owners can set the location of standard or Generative View Styles (GVS) files.">About the Location of Standard or Generative View Styles Files</a></td></tr></table></td></tr></table>
+
+<div/><div class="nested1" id="t-SetTheLocationOfStandardGVSFilesInACustomDirectory"><h2 class="topictitle2">
+		
+		Set the Location of Standard/GVS Files in a Custom Directory</h2>
+<div><p><span>You can set the location of standard or generative view style files in a custom directory. </span>
+
+		<p>If you want to place all configured drafting standards or GVS in a custom 
+		directory (<span class="uicontrol">mydirectory</span> for example), proceed as follows:</p>
+		
+			</p>
+<ol><li class="stepexpand"><p>Create a directory named as you like (<span class="uicontrol">mydirectory</span>, 
+				for example).</p></li>
+<li class="stepexpand"><p>Create a sub-directory under this directory, called 
+				either <span class="uicontrol">drafting</span> or <span class="uicontrol">generativeparameters</span>, depending 
+				on the context.</p></li>
+<li class="stepexpand"><p>Place the XML files containing your configured drafting 
+				standards or GVS in <span class="uicontrol">mydirectory\drafting</span> or 
+				<span class="uicontrol">mydirectory\generativeparameters.</span></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-SetTheLocationOfStandardGVSFilesUsingVariables"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+		Set the Location of Standard/GVS Files Using Variables</h2>
+<div><p><span>You can set the location of standard or generative view style files using variables. </span>
+<p>If you have not yet configured your XML standard files, you can set the 
+		location of your files using a variable. In this case, proceed as follows:</p>
+		
+			</p>
+<ol><li class="stepexpand"><p>Create a directory named as you like (<span class="uicontrol">mydirectory</span>, 
+				for example).</p></li>
+<li class="stepexpand"><p>Create a sub-directory under this directory, called 
+				either <span class="uicontrol">drafting</span> or <span class="uicontrol">generativeparameters</span>, depending 
+				on the context.</p></li>
+<li class="stepexpand"><p>Set the <samp class="codeph">CATCollectionStandard</samp> variable 
+				to <span class="uicontrol">mydirectory. </span>After you have configured the XML standard 
+				files, the standard editor will then save them in <span class="uicontrol">mydirectory\drafting</span> 
+				or  <span class="uicontrol">mydirectory\generativeparameters.</span><p> 
+				<p>Notes:
+		<ul>
+					<li>
+					<p>If the <samp class="codeph">CATDefaultCollectionStandard</samp> 
+					and the <samp class="codeph">CATCollectionStandard</samp> variables both contain 
+					an identically-named standard, it is always the standard found 
+					in  <samp class="codeph">CATCollectionStandard</samp>  which will 
+					be used. </p>
+					</li>
+
+					<li>
+					<p>If two directories referenced by the <samp class="codeph">CATCollectionStandard</samp> and <samp class="codeph">CATDefaultCollectionStandard</samp> variables contain 
+					identically-named standard files, it is always the standard 
+					in the directory listed first which will be used.</p>
+					</li>
+
+				</ul>
+</p>
+
+				</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-CustomizeAndDefineStandardsOrGVS"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Configure and Define 
+		Standards or GVS</h2>
+<div><p><span>You can configure and define standards or generative view styles.</span>
+
+		</p>
+<ol><li class="stepexpand"><p>To edit and save standard files or generative view 
+			style files in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>, set up the <samp class="codeph">CATReferenceSettingPath</samp> variable.<p> <p>For more information, see  <cite>Installation and Configuration User's Guide: Configuring the Software: Configuring Environments</cite>. </p><p>Note:
+		You can customize standards provided that the business role used when logging on allows you to do so.<p>A role is one of the components of the security context used to log on. For content security purpose, each user is assigned to one or several secured collaborative spaces with a specific role, to manage the different categories of end user content.</p>
+
+<p>If you are logged as an  owner (internal name is <samp class="codeph">VPLMProjectAdministrator</samp>), you are allowed to customize the standards. In that case, the <span class="uicontrol">Save As New</span> is available to let you save your modifications in a new .xml file.</p> </p>
+</p></p></li>
+<li class="stepexpand"><p>Set up the <samp class="codeph">CATCollectionStandard</samp> environment 
+			variable as explained above. If none of the conditions are respected, 
+			a warning message will appear to let you know that you will neither 
+			be able to modify nor save the XML files. Modify the Drafting standards 
+			or the <span class="glossterm" id="generative-view-style" onmouseout="hideTerm()" onmouseover="showTerm('generative-view-style.xml')">generative view styles</span> as appropriate.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Save As</span> or <span class="uicontrol">OK</span> 
+			to store your modifications.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Cancel</span> to exit.<p> Once the standard files or the generative view style files have been 
+		configured and saved, they can be used in a session in normal mode.</p></p></li>
+</ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Qr" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Changed C++ APIs in 3DEXPERIENCE R2018x GA</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Changed C++ APIs in <strong>3D</strong>EXPERIENCE R2018x GA</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article presents by frameworks the detail of CAA C++ resources modified 
+		in <strong>3D</strong>EXPERIENCE R2018x and how to modify your code accordingly.</p>
+		<p>Each modification is listed for a resource (file, class, method) with 
+		a classification. They will generally be detected by a recompilation of 
+		the code. Most of the time, signature modifications are obvious. Check in 
+		the framework detail how to replace deleted entities. Possibly impacting 
+		modifications are highlighted in red.</p>
+		<table class="fill" style="margin-left: 40px">
+			<tr>
+				<th>Classification</th>
+				<th>Meaning</th>
+			</tr>
+			<tr>
+				<td><a name="LHC"></a>LHC</td>
+				<td>@CAA2Level Has Changed: a L1 file is no more L1.</td>
+			</tr>
+			<tr>
+				<td><a name="UHC"></a>UHC</td>
+				<td>@CAA2Usage Has Changed: usage has changed for a more restricted 
+				usage. For example a class tagged as derivable is not derivable 
+				anymore.</td>
+			</tr>
+			<tr>
+				<td><a name="CHBD"></a>CHBD</td>
+				<td>Class Has Been Deleted</td>
+			</tr>
+			<tr>
+				<td><a name="FHBD"></a>FHBD</td>
+				<td>File Has Been Deleted</td>
+			</tr>
+			<tr>
+				<td><a name="ADVHC"></a>ADVHC</td>
+				<td>Argument Default Value Has Changed</td>
+			</tr>
+			<tr>
+				<td><a name="MHBDM"></a>MHBDM</td>
+				<td>Method Has Been Deleted or Modified</td>
+			</tr>
+			<tr>
+				<td><a name="MRTHC"></a>MRTHC</td>
+				<td>Method Returned Type Has Changed</td>
+			</tr>
+			<tr>
+				<td><a name="NPVM"></a>NPVM</td>
+				<td>New Pure Virtual Method. A new pure virtual method has been 
+				added in a derivable class or in an interface to be implemented 
+				without an adapter.</td>
+			</tr>
+			<tr>
+				<td><a name="INDM"></a>INDM</td>
+				<td>Method is no more documented. It does not break your code in 
+				any way but means that you are not supposed to use it anymore. Check 
+				that you do not use it or look for replacement information.</td>
+			</tr>
+			<tr>
+				<td><a name="MINMV"></a>MINMV</td>
+				<td>Method is no more virtual. If occurs on a U1 class, may require 
+				modifications in Imakefile.mk of client code. If occurs on a U2 
+				class, see details on the documentation of the concerned resource 
+				modification.</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>Moved Files</h2>
+<p>The following files have been moved into a different framework, requesting only 
+modification of client application <code>IdentityCard.h</code> and <code>Imakefile.mk</code> 
+files.</p>
+<table class="fill">
+	<thead>
+	<tr>
+		<th rowspan="2">Frameworks</th>
+		<th rowspan="2">Headers</th>
+		<th rowspan="2">Modules</th>
+		<th colspan="2">New Locations</th>
+	</tr>
+		<th>Frameworks</th>
+		<th>Modules</th>
+	</thead>
+	</tbody>
+	<tr>
+		<td>VisualizationFoundation</td>
+		<td>CAT2DAnnotationTextGP.h<br />
+		CAT2DAnnotationTextRep.h<br />
+		CAT2DArcCircleGP.h<br />
+		CAT2DArcCircleRep.h<br />
+		CAT2DArcEllipseGP.h<br />
+		CAT2DArcEllipseRep.h<br />
+		CAT2DArrowSymbolGP.h<br />
+		CAT2DArrowSymbolRep.h<br />
+		CAT2DBagRep.h<br />
+		CAT2DBoundingBox.h<br />
+		CAT2DBoundingSphere.h<br />
+		CAT2DCustomRep.h<br />
+		CAT2DFixedArrowGP.h<br />
+		CAT2DGeomTextStructures.h<br />
+		CAT2DGeometricTextGP.h<br />
+		CAT2DImagePixelGP.h<br />
+		CAT2DImagePixelRep.h<br />
+		CAT2DLineGP.h<br />
+		CAT2DLineRep.h<br />
+		CAT2DMarkerGP.h<br />
+		CAT2DPointRep.h<br />
+		CAT2DPolygonGP.h<br />
+		CAT2DPolygonRep.h<br />
+		CAT2DPolylineGP.h<br />
+		CAT2DQuadStripGP.h<br />
+		CAT2DRectangleGP.h<br />
+		CAT2DRep.h<br />
+		CAT2DSymbolGP.h<br />
+		CAT2DSymbolRep.h<br />
+		CAT2DTextGP.h<br />
+		CAT2DTo3DRep.h<br />
+		CAT2DViewpoint.h<br />
+		CAT2DViewport.h<br />
+		CAT3DAnnotationTextGP.h<br />
+		CAT3DArcCircleGP.h<br />
+		CAT3DArcCircleRep.h<br />
+		CAT3DArcEllipseGP.h<br />
+		CAT3DArcEllipseRep.h<br />
+		CAT3DArrowGP.h<br />
+		CAT3DAxisRep.h<br />
+		CAT3DBagRep.h<br />
+		CAT3DBoundingGP.h<br />
+		CAT3DBoundingSphere.h<br />
+		CAT3DCuboidRep.h<br />
+		CAT3DCurveRep.h<br />
+		CAT3DCurvedPipeGP.h<br />
+		CAT3DCurvedPipeGPEditHelper.h<br />
+		CAT3DCustomRep.h<br />
+		CAT3DCylinderGP.h<br />
+		CAT3DCylinderGPEditHelper.h<br />
+		CAT3DEdgeGP.h<br />
+		CAT3DEdgeGPEditHelper.h<br />
+		CAT3DFaceGP.h<br />
+		CAT3DFaceGPEditHelper.h<br />
+		CAT3DFixedArrowGP.h<br />
+		CAT3DFixedPlanGP.h<br />
+		CAT3DGeomRep.h<br />
+		CAT3DLightSourceGP.h<br />
+		CAT3DLightSourceRep.h<br />
+		CAT3DLineGP.h<br />
+		CAT3DLineGPEditHelper.h<br />
+		CAT3DLineRep.h<br />
+		CAT3DLodRep.h<br />
+		CAT3DMarkerGP.h<br />
+		CAT3DMarkerGPEditHelper.h<br />
+		CAT3DPlanRep.h<br />
+		CAT3DPlanarFaceGP.h<br />
+		CAT3DPointRep.h<br />
+		CAT3DPolylineGP.h<br />
+		CAT3DRep.h<br />
+		CAT3DViewpoint.h<br />
+		CAT3DViewport.h<br />
+		CAT3x3Matrix.h<br />
+		CAT4x4Matrix.h<br />
+		CATAnchorPoint.h<br />
+		CATBoundingElement.h<br />
+		CATBoundingNormal.h<br />
+		CATCGRSetting.h<br />
+		CATColorMap.h<br />
+		CATDynamicGP.h<br />
+		CATFont.h<br />
+		CATFontMetricsStructures.h<br />
+		CATGPIterator.h<br />
+		CATGraphicElementGlobalNormale.h<br />
+		CATGraphicElementNormale.h<br />
+		CATGraphicMaterial.h<br />
+		CATGraphicPrimitive.h<br />
+		CATGraphicPrimitiveEditHelper.h<br />
+		CATGroupOfFacesWithMaterials.h<br />
+		CATMappingOperator.h<br />
+		CATMaterialApplication.h<br />
+		CATMaterialNotification.h<br />
+		CATModelForRep.h<br />
+		CATModelForRep3D.h<br />
+		CATModelIdentificator.h<br />
+		CATMultiThreadCullingAlgorithm.h<br />
+		CATPickOptions.h<br />
+		CATPickPath.h<br />
+		CATPickPathList.h<br />
+		CATProjectionType.h<br />
+		CATReadWriteCgr.h<br />
+		CATRender.h<br />
+		CATRep.h<br />
+		CATRepPath.h<br />
+		CATRepWeakRef.h<br />
+		CATSceneGraphStatHelper.h<br />
+		CATSetOfObject.h<br />
+		CATShadowEnum.h<br />
+		CATSorted3DBagRep.h<br />
+		CATSortedSetOfObject.h<br />
+		CATSupport.h<br />
+		CATSurfacicRep.h<br />
+		CATTexturePixelImage.h<br />
+		CATTimeStampedEvent.h<br />
+		CATViewpoint.h<br />
+		CATViewport.h<br />
+		CATVis2DModeType.h<br />
+		CATVisMacroForInterfaces.h<br />
+		CATVisMeasurableGP.h<br />
+		CATViz.h<br />
+		CATVizBaseIUnknown.h<br />
+		CATVizBasePathElementRep.h<br />
+		CATVizGlobals.h<br />
+		CATVizMacForMetaClass.h<br />
+		CATVizMetaClass.h<br />
+		CATVizMetaClassList.h<br />
+		RepWeakRefR10.h<br />
+		SGInfra.h<br />
+		VisBasicGeometryCreationServices.h</td>
+		<td>SGInfra</td>
+		<td>SGInfra</td>
+		<td>SGInfra</td>
+	</tr>
+	<tr>
+		<td>CATSketcherUseItf</td>
+		<td>IDMCircle2D.h<br />
+		IDMCurve2D.h<br />
+		IDMEllipse2D.h<br />
+		IDMLine2D.h<br />
+		IDMPlane.h<br />
+		IDMPoint2D.h<br />
+		IDMPolyline2D.h</td>
+		<td>CATSketcherUseItf</td>
+		<td>CATSkt2DGeomIntegUseItf</td>
+		<td>CATSkt2DGeomIntegUseItf</td>
+	</tr>
+	
+	</tbody>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>Modified Classes and Methods</h2>
+<table class="fill">
+	<tr>
+		<th>Frameworks</th>
+		<th>Headers</th>
+		<th>Classes</th>
+		<th style="width: 165px">Methods</th>
+		<th>Signatures</th>
+		<th>Modifications</th>
+		<th>Details and How To</th>
+	</tr>
+	<tr>
+		<td>CATStrUseItf</td>
+		<td>CATIStrUseAdvPanel.h</td>
+		<td>CATIStrUseAdvPanel</td>
+		<td style="width: 165px">&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>FHBD</td>
+		<td>Class was not usable and has been removed.</td>
+	</tr>
+	<tr>
+		<td>SMAMaterialItf</td>
+		<td>SMAIMatLatentHeat.h</td>
+		<td>SMAIMatLatentHeat</td>
+		<td style="width: 165px">GetMaterialTable</td>
+		<td>virtual HRESULT GetMaterialTable(SMAIMatMaterialTable_var amp; 
+		oMaterialtable)const = 0</td>
+		<td>INDM</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>SMAMaterialItf</td>
+		<td>SMAIMatLatentHeat.h</td>
+		<td>SMAIMatLatentHeat</td>
+		<td style="width: 165px">GetMaterialTableColumn</td>
+		<td>virtual HRESULT GetMaterialTableColumn(MaterialTableColumn 
+		iMaterialTableColumn,CATISimTableColumn_var amp; 
+		ospMaterialTableColumn)const = 0</td>
+		<td>INDM</td>
+		<td>C</td>
+	</tr>
+	
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Aug 2017]</td>
+		<td>Document created for <strong>3D</strong>EXPERIENCE R2018x</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

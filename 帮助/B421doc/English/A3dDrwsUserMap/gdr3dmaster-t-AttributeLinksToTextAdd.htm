@@ -1,0 +1,209 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Adding Attribute Links"/>
+<meta name="abstract" content="You can add one or more links to text and also in a table. These text attribute links let you annotate drawing representations with texts that reflect important information extracted from the 3D shape or product (such as a part number, the owner of a representation, etc.)."/>
+<meta name="description" content="You can add one or more links to text and also in a table. These text attribute links let you annotate drawing representations with texts that reflect important information extracted from the 3D shape or product (such as a part number, the owner of a representation, etc.)."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-c-AttributeLinkstoTextAdd.htm#gdr3dmaster-c-AttributeLinkstoTextAdd"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-AttributeLinksToTextAdd"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Adding Attribute Links</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-AttributeLinksToTextAdd">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-attributes::adding links to text"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-text::adding attribute links to"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Attribute link"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Adding Attribute Links</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can add one or 
+						more links to text and also in a table. These text attribute links let you annotate 
+						drawing representations with texts that reflect important 
+						information extracted from the 3D shape or product (such 
+						as a part number, the owner of a representation, etc.).</span>
+
+						
+						<p><p><span class="run-in">Important:
+		</span>Text <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span> links are associative 
+						to PLM entities. This means that you can reference the 
+						attributes of <span class="glossterm" id="shape-3D" onmouseout="hideTerm()" onmouseover="showTerm('shape-3D.xml')">3D shapes</span> or <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representations</span> with <span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">associativity</span> and display attribute values in a text rapidly. 
+						This lets you fill a <span class="glossterm" id="title-block" onmouseout="hideTerm()" onmouseover="showTerm('title-block.xml')">title block</span> in a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>, for example.</p>
+</p>
+						
+						</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-CreatingAnAttributeLinkBetweenAnElementOnThe3DPartAndTheCorrespondingTextInADrawingView" id="toc_rg" title="You can create an attribute link between an element on the 3D shape and the corresponding text in a drawing view.">Create an Attribute Link</a></li><li><a href="#t-AssigningAnAttributeLinkToAView" id="toc_rg" title="You can assign an attribute link to a view.">Assign  an attribute link to a view</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    Open a 3D part containing a hole and, in a drawing representation, generate a view of this 3D part.   </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-c-AttributeLinkstoTextAdd.htm#gdr3dmaster-c-AttributeLinkstoTextAdd" title="Attribute link text is a text which associatively reflects a value. Texts can have attribute links with PLM attributes as well as with other attributes that are not exposed as PLM entities (for example dimension from 3D data).">About Adding Attribute Links and Text Templates</a></td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+</div>
+<div/><div class="nested1" id="t-CreatingAnAttributeLinkBetweenAnElementOnThe3DPartAndTheCorrespondingTextInADrawingView"><h2 class="topictitle2">Create an Attribute Link</h2>
+<div><p><span>You can create an attribute link between an element on the 3D shape and the corresponding text in a drawing view.</span>
+</p>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">Annotation</span> section of the <span>action bar</span>,  click <span class="uicontrol">Text</span>
+			<img height="22" width="22" src="../Icons22/I_D3M_Text.png"/> 
+			or <span class="uicontrol">Text With Leader</span>
+			<img height="22" width="22" src="../IconsNormal/I_LeaderText2D.png"/> and 
+			click in the <span class="glossterm" id="active-view" onmouseout="hideTerm()" onmouseover="showTerm('active-view.xml')">active view</span>, where you want to create the annotation.
+			 
+			</p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Add text before the attribute 
+			link, enter the required text.</p></li>
+<li class="stepexpand"><p>Right-click anywhere in the drawing (whether or not 
+			the text is empty), and select <span class="uicontrol">Insert Attribute Link</span>.</p></li>
+<li class="stepexpand"><p>Select the <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">object</span> to which you want to link the text 
+			(in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>, from the <span>work area</span> or from the drawing 
+			representation). <p>For this scenario, click the hole in 
+			the  <span>3D area</span>. The dialog box is updated with the list of attributes 
+			related to the selected element. 
+ In general, whenever you select an object (or a PLM object), the content of the <span class="wintitle">Insert Attribute Link</span>  dialog box is refined to show only the relevant  object attributes with respect to the selected object.</p><p> 
+			
+				
+					
+					
+					
+				
+			
+			<p>In the <span class="wintitle">Insert Attribute Link</span> dialog box, each line represents 
+			an attribute of the selected object or of an associated object.</p>
+			
+			</p></p></li>
+<li class="stepexpand"><p>In the list, once you have chosen the attribute(s) to insert, you can do either of the following: <ul><li>To insert a single attribute and close the dialog 
+				box, you can either: <ul><li>Double-click the related line. </li>
+<li>Click the related line and then click <span class="uicontrol">OK</span>.</li>
+</ul>
+</li>
+<li>To insert several attributes: click the related line and then click <span class="uicontrol">Apply</span> for each attribute you want to insert. When you are done, click <span class="uicontrol">OK</span>.</li>
+</ul>
+<p> 
+			
+			<p>The attributes are inserted both in the <span class="uicontrol">Text Editor</span> 
+			dialog box and on the drawing and a link is created. However, if the link creation is not possible, a message is displayed in a tooltip informing that the value of the attribute has been inserted in the text without link.</p>
+			<p>The example below shows the diameter value of the hole; 
+			this attribute contains an associative link.</p>
+			
+				
+					
+					<br/><img src="../Gdr3DMasterImages/attributelink02.png"/><br/>
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Repeat steps 3 through 5 to insert attributes 
+			for additional objects.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span> to validate.<p> If you now modify the diameter value of the hole on 
+			the 3D part, the drawing view needs an update. Once you 
+			update it, the text attribute value is updated to reflect this modification.</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Modify the diameter value of the hole on 
+			the 3D part. <p> 
+			
+				
+					
+					The drawing view needs an update. Once you 
+			update it, the text attribute value is updated to reflect this modification.<br/><img src="../Gdr3DMasterImages/attributelink03.png"/><br/>
+				
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>
+					<ul>
+						<li>At this step, you can perform a query on the link(s) 
+						you just created. To do so, right-click the text and select
+						<a name="ix-commands::Query Object Links"> </a><span class="uicontrol">Query Objects Links</span>. 
+						The <span class="uicontrol">Query Link </span>dialog box appears, displaying 
+						a list of the existing links.</li>
+
+						<li>You can only modify the part of the text that is not 
+						of the text attribute type.  
+						Modifying the text attribute requires isolating it first. 
+						To do so, right-click the text attribute and select <a name="ix-commands::Isolate Text"> </a><span class="uicontrol">
+						Isolate Text</span>.</li>
+
+						<li>You cannot replace text in the attribute links (even though 
+						the attribute links are displayed and the <span class="uicontrol">Replace</span> is available in the <span class="uicontrol">Links</span> dialog box, which is available 
+						by clicking <span class="uicontrol">Links &amp; Relations</span> from the <span class="wintitle">Tools</span> section of the <span>action bar</span>).</li>
+
+						<li>To define the display of the attribute link to text, 
+						go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3DEXPERIENCE Platform Common Preferences</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Modeling</span> &gt; <span class="uicontrol">Links &amp; Relations</span></span> section.</li>
+
+					</ul>
+
+					</td></tr></table>
+
+			 
+			</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-AssigningAnAttributeLinkToAView"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Assign  an attribute link to a view</h2>
+<p><span>You can assign an attribute link to a view.</span>
+
+		<p>The document is still open from the previous task.</p>
+		
+		</p>
+<div class="nested2" id="Creatingaparameter"><h3 class="topictitle3">Creating a parameter</h3>
+
+<div><p>You can create a parameter.</p>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">Tools</span> section of the <span>action bar</span>, click <span class="uicontrol">Formula</span><img height="22" width="22" src="../IconsNormal/I_Formula.png"/>. 
+			</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Formulas: Drawing</span> dialog box, in the list next to the <span class="uicontrol">New Parameter 
+			of type</span>, select <span class="uicontrol">String</span> with <span class="uicontrol">Single 
+			Value</span> type.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">New Parameter of type</span>.</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Edit name or value of the current parameter</span>, replace String.1 by UserName in the first box, and enter the 
+			value, i.e. NameOfUser in the second box.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Apply</span> and then click <span class="uicontrol">OK</span>. 
+			<p> The parameter is created, and it is displayed in the Drafting tree, under the <span class="uicontrol">Parameters</span> node.
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> If 
+					the Parameters node is not displayed in the Drafting tree, go to <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="menucascade"><span class="uicontrol"> &gt; Main Preferences</span> &gt; <span class="uicontrol">Modeling</span> &gt; <span class="uicontrol">Knowledge Basics</span></span> section, and select the <span class="uicontrol">Display values in the specification tree</span> and <span class="uicontrol">Display formulas in the specification tree</span> check boxes.</td></tr></table>
+
+			
+			</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested2" id="DefiningTextAttribute"><h3 class="topictitle3">Defining the Text Attribute</h3>
+
+<div><p>You can define the text attribute. </p>
+<ol><li class="stepexpand"><p>Click <span class="uicontrol">Text</span> <img height="22" width="22" src="../Icons22/I_D3M_Text.png"/> and click in the drawing.
+			 
+			<p> An empty text is created in the drawing (in the active view). Also, 
+			the <span class="uicontrol">Text Editor</span> dialog box is displayed. Do not pay attention 
+			to this dialog box yet.</p></p></li>
+<li class="stepexpand"><p>Right-click anywhere in the drawing (whether or not 
+			the text is empty), and select <span class="uicontrol">Insert Attribute Link</span>.</p></li>
+<li class="stepexpand"><p>Select the object to which you want to link the text. 
+			For this scenario, select the drawing representation 
+			in the <span>tree</span>.<p> The dialog box is updated with the list 
+			of attributes related to the selected element.</p></p></li>
+<li class="stepexpand"><p>Scroll down the list and select <span class="uicontrol">UserName</span> 
+			in the <span class="uicontrol">Attribute List</span>.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>. <p> The value assigned to UserName, 
+			i.e. NameOfUser, is displayed in the <span class="uicontrol">Text Editor</span> dialog box 
+			as well as on the drawing view.</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span> to close the <span class="uicontrol">Text Editor</span> 
+			dialog box.<p> <br/><img border="1" height="164" width="216" src="../Gdr3DMasterImages/attributelink06.gif"/><br/></p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested2" id="ModifyingTextAttribute"><h3 class="topictitle3">Modifying the Text Attribute</h3>
+
+<div><p>You can modify the text attribute.</p>
+<ol><li class="stepexpand"><p>Double-click the <span class="uicontrol">UserName</span> parameter in the 
+			<span>tree</span>.</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Edit Parameter</span> dialog box, change the parameter name (NameOfUser) to NewNameOfUser.<p> </p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK.  </span><p> The parameter name is automatically 
+			updated on the view. <br/><img border="1" height="167" width="219" src="../Gdr3DMasterImages/attributelink07.gif"/><br/></p></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

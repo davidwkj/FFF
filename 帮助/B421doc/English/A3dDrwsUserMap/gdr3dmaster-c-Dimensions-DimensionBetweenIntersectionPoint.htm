@@ -1,0 +1,118 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Creating Dimensions between Intersection Points"/>
+<meta name="abstract" content="An intersection point is the meeting point of 2 curves, 2 fictive curve extensions, or a curve and a fictive curve extension. You can create dimensions between an intersection point and another element, or between two intersection points."/>
+<meta name="description" content="An intersection point is the meeting point of 2 curves, 2 fictive curve extensions, or a curve and a fictive curve extension. You can create dimensions between an intersection point and another element, or between two intersection points."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Dimensions-DimensionBetweenIntersectionPoint.htm#gdr3dmaster-t-Dimensions-DimensionBetweenIntersectionPoint"/>
+<meta name="DC.Relation" scheme="URI" content="../Headers/dsdocKBHeader.htm?id=QA00000005050"/>
+<meta name="DC.Relation" scheme="URI" content="../Headers/dsdocKBHeader.htm?id=QA00000005155"/>
+<meta name="DC.Relation" scheme="URI" content="../Headers/dsdocKBHeader.htm?id=QA00000005157"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Dimensions-DimensionBetweenIntersectionPoint"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Creating Dimensions between Intersection Points</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Dimensions-DimensionBetweenIntersectionPoint">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-dimensions::about dimensions between intersection points"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::about dimensions between intersection points"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1> About Creating Dimensions between Intersection Points
+         
+         </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>An intersection point is the meeting point of 2 curves, 2 fictive curve extensions, or a curve and a fictive curve extension. You can create dimensions between an intersection point and another element, or between two intersection points. </span>
+
+			<p>This topic provides more 
+				information about creating dimensions 
+         between intersection points.</p>
+				<p>The following topics are discussed:</p>
+             
+           
+           </p>
+<ul><li><a href="#c-DetectionofIntersectionPoints" id="toc_rg" title="This sub-topic provides background information to help you understand dimensions between intersection points.">Understanding Dimensions between Intersection Points</a></li><li><a href="#c-SupportedCommands" id="toc_rg" title="This sub-topic lists the dimensioning commands which support intersection point detection.">Dimensioning Commands Supporting Intersection Point Detection</a></li><li><a href="#c-DefinitionOfIntersectionPointsInTheStandards" id="toc_rg" title="This sub-topic provides information about the definition of intersection points in the standards.">Definition of Intersection Points in the Standards</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Dimensions-DimensionBetweenIntersectionPoint.htm#gdr3dmaster-t-Dimensions-DimensionBetweenIntersectionPoint" title="An intersection point is the meeting point of 2 curves, 2 fictive curve extensions, or a curve and a fictive curve extension. You can create dimensions between an intersection point and an element, or between two intersection points.">Creating Dimensions between Intersection Points</a></td></tr></table></td></tr></table>
+
+<div/>
+<div/><div class="nested1" id="c-DetectionofIntersectionPoints"><h2 class="topictitle2">Understanding Dimensions between Intersection Points</h2>
+
+<div><p><span>This sub-topic provides background information to help you understand dimensions between intersection points.</span>
+</p>
+<p>There are two types of intersection points: definite intersection points or fictive intersection points. </p><p>A definite intersection point is the meeting point of 2 curves which physically intersect each other.</p><p><div class="fignone"><span class="figcap">Definite intersection:</span><br/><div class="imagecenter"><img class="imagecenter" src="../Gdr3DMasterImages/definiteintersection.gif"/></div><br/></div>
+</p><p>A fictive intersection point is the meeting point of 2 fictive curve extensions, or a curve and a fictive curve extension.</p><p><div class="fignone"><span class="figcap">Fictive intersection:</span><br/><div class="imagecenter"><img class="imagecenter" src="../Gdr3DMasterImages/fictiveintersection.gif"/></div><br/></div>
+</p><p>Creating a dimension between intersection points is a sort of 
+		"shortcut" that combines the creation of 2D intersection points, 
+		construction lines, coincidence constraints (on 2D elements only), a 2D line and a dimension all at once. There is no 
+		actual link between the dimension and the geometry on which it is based.
+		</p><p>The table below summarizes the kind of intersection detected in <span><span>Drawings</span></span> and <span>2D Layout for 3D Design</span>, depending on the type of element pointed by the pointer. 
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d186140e91">The following kind of intersection...</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d186140e93">is detected between...</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d186140e91 "><p>definite intersection</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d186140e93 "><p>straight 2D lines</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d186140e91 "><p>fictive intersection</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d186140e93 "><p>a straight 2D line and the extension of a straight line</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d186140e91 "><p>fictive intersection</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d186140e93 "><p>2 extensions of straight lines</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+ </p><p>The table below summarizes the kind of intersection detected in <span>2D Layout for 3D Design</span> only, depending on the type of element pointed by the mouse. </p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d186140e129">The following kinds of intersection...</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d186140e131">are detected between...</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d186140e129 "><p>definite intersection</p><p>fictive intersection</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d186140e131 "><p>3D curves (edges or wireframe) which are projected as lines in the background of layout views</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d186140e129 "><p>definite intersection</p><p>fictive intersection</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d186140e131 "><p>a straight 2D line and a 3D curve projected as  a line in the background of layout views</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="nested1" id="c-SupportedCommands"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Dimensioning Commands Supporting Intersection Point Detection</h2>
+
+<div><p><span>This sub-topic lists the dimensioning commands which support intersection point detection.</span>
+</p>
+<p>The detection of intersection point when dimensioning is supported by the following commands:</p><ul><li>Dimensions</li>
+<li>Chained/Cumulated/Stacked Dimensions</li>
+<li>Length/Distance Dimensions</li>
+<li>Radius Dimensions</li>
+<li>Diameter Dimensions</li>
+</ul>
+</div>
+</div>
+<div class="nested1" id="c-DefinitionOfIntersectionPointsInTheStandards"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Definition of Intersection Points in the Standards</h2>
+<div><p><span>This sub-topic provides information about the definition of intersection points in the standards.</span>
+</p>
+<p>
+		The display and behavior of
+             intersection points 
+           is defined by the administrator in the standards. Indeed, the 
+           administrator can specify the style that should be applied to the 
+           intersection point and construction line, whether the intersection 
+           point can be printed or not, and whether construction lines should be 
+           displayed and/or printable.
+   
+ 
+
+ 
+
+
+For more information, see <a href="standards-r-ad-DimensionParams.htm#standards-r-ad-DimensionParams" title="The dimension parameters let you customize the appearance of annotation and dimension elements. These parameters are located in the Dimension node of the standard file.">Dimension Parameters</a>.</p></div>
+</div>
+
+</td></tr></table><div xmlns:mml="http://www.w3.org/1998/Math/MathML" class="relinfo"><strong>In the Knowledge Base</strong><br/><a href="../Headers/dsdocKBHeader.htm?id=QA00000005050" target="_blank">About coincident constraints between intersection points</a><br/><a href="../Headers/dsdocKBHeader.htm?id=QA00000005155" target="_blank">About creating dimensions between intersection points in a generative view </a><br/><a href="../Headers/dsdocKBHeader.htm?id=QA00000005157" target="_blank">About deleting a dimension between intersection points</a><br/><br/></div><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

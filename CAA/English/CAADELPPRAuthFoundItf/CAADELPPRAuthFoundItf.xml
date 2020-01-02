@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2008, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+  <DITEM  name="Authoring Foundations"
+product="@name" appname="@name"
+        dir="CAADELPPRAuthFoundItf"
+		href="CAADELPPRAuthFoundItf/CAADELPPRAuthFoundItfTcToc.htm"
+		childtoc="CAADELPPRAuthFoundItf/CAADELPPRAuthFoundItfContents.xml"
+		icon="CAAIcons/images/homelogobkt.png">
+    <PITEM name="DELPPRAuthFoundationInterfaces" type ="framework" /> 
+  </DITEM>		
+</Root>

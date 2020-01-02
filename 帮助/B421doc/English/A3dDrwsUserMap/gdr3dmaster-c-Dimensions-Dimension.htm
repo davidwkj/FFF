@@ -1,0 +1,221 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Creating Dimensions"/>
+<meta name="abstract" content="You can create various dimensions. However, you should be familiar with some concepts that are described in this section before you begin creating dimensions."/>
+<meta name="description" content="You can create various dimensions. However, you should be familiar with some concepts that are described in this section before you begin creating dimensions."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Dimensions-Dimension.htm#gdr3dmaster-t-Dimensions-Dimension"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Dimensions-Dimension"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Creating Dimensions</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Dimensions-Dimension">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1> About Creating Dimensions </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>You can create various dimensions. However, you should be familiar with some concepts that are described in this section before you begin creating dimensions. </span>
+
+						
+						
+					
+				
+</p>
+<ul><li><a href="#c-Dimensions" id="toc_rg" title="You can create a dimension and then change its properties.">Dimensions</a></li><li><a href="#c-DrivingDimensions" id="toc_rg" title="You can create dimensions that can, by default, drive the geometry.">Driving Dimensions</a></li><li><a href="#c-TrueLengthDimensions" id="toc_rg" title="True Length dimensions can be created using True Length Dimensions in the Tools Palette, or using the context menu.">True Length Dimensions</a></li><li><a href="#c-HalfDimensions" id="toc_rg" title="You can create half dimensions.">Half Dimensions</a></li><li><a href="#c-ExtensionLineAnchor" id="toc_rg" title="As you create a dimension between two elements, one of these elements being a circle, you can select the extension line anchor.">Extension Line Anchor</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Dimensions-Dimension.htm#gdr3dmaster-t-Dimensions-Dimension" title="You can create dimensions. You can also preview the dimensions to be created, when creating dimensions on elements.">Creating Dimensions</a></td></tr></table></td></tr></table>
+
+<div/><div class="nested1" id="c-Dimensions"><h2 class="topictitle2">Dimensions</h2>
+<div><p><span>You can create a dimension and then change its properties.</span>
+</p>
+<p>
+		<ul>
+			<li>You can use this functionality through the <span class="uicontrol">Properties</span>. Right-click the dimension and select <span class="uicontrol">Properties</span>. In 
+			the <span class="uicontrol">Dimension Line</span> tab, select the type of extension you 
+			want from the <span class="uicontrol">Extension</span> list: <span class="uicontrol">From standard, Till center</span> 
+			or <span class="uicontrol">Not till center</span>.
+			</li>
+
+			<li>This functionality works with radius dimension and one-symbol diameter 
+			dimension.</li>
+
+			
+			<li>When you create a dimension between an axis and another element, 
+			the dimension created by the software is automatically an half dimension.
+			 
+			<p>To bypass this problem, clear  the <span class="uicontrol">Half Dimension</span> contextual command during the creation.</p></li>
+
+			<li>The break value is taken into account whenever any  distance dimension crosses over a break.<p><br/><img src="../Gdr3DMasterImages/constraintcreation01.png"/><br/></p><p><br/><img src="../Gdr3DMasterImages/constraintcreation02.png"/><br/></p><p>The break value is considered to show the resulting dimension.</p><p><br/><img src="../Gdr3DMasterImages/constraintcreation03.png"/><br/></p><p><p>Notes:
+		<ul><li>To change this option, follow the below steps:<ol><li>Right-click the dimension and select <span class="uicontrol">Properties</span>.</li>
+<li>Click the <span class="uicontrol">Value</span> tab.</li>
+<li>Under <span class="uicontrol">Dimension Type</span>, clear the <span class="uicontrol">Take break into account</span> check box.</li>
+</ol>
+</li>
+<li>The break value is taken into account only in the following cases:<ul><li>For distance dimensions</li>
+<li>For dimensions perpendicular to the break value</li>
+</ul>
+</li>
+<li>If you are an administrator, you can change the standards from the <span class="uicontrol">Standard Definition</span> dialog box. For more information, see <a href="standards-r-ad-DimensionStyles.htm#standards-r-ad-DimensionStyles__rs-LengthDistanceDimensionStyles">Length/Distance Dimension Styles</a>.</li>
+</ul>
+</p>
+</p></li>
+<li>If the two geometrical elements separated by a dimension value are moved and aligned, the dimension value  
+				is changed to 0 mm.<p>You can also create a 0 mm dimension (null) value.</p> <img src="../Gdr3DMasterImages/creatingdimensions15.gif"/><img src="../Gdr3DMasterImages/creatingdimensions16.gif"/></li>
+
+		<li>You can generate errors when refreshing the dimensions in the following 
+			case:<p>In this <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>, the dimension "80.14" is measured from the line 
+				B to the line C.</p><br/><img src="../Gdr3DMasterImages/creatingdimensions13NLS.gif"/><br/> 
+				 
+				If the corresponding part is modified and the <span class="glossterm" id="chamfer" onmouseout="hideTerm()" onmouseover="showTerm('chamfer.xml')">chamfer</span> is removed, then when 
+				the drawing is updated, the dimension is colored in fuchsia because 
+				the line B was removed with the chamfer. 
+				 
+				<br/><img src="../Gdr3DMasterImages/creatingdimensions14NLS.gif"/><br/>
+			
+			</li>
+</ul>
+
+		</p><div class="section" id="c-Dimensions__cs-DimensionsProperties"><h3 class="sectiontitle">Dimensions Properties</h3>
+		<p>If you right-click the dimension before creation, a <span>context menu</span> lets 
+		you modify the dimension type and value orientation as well as add <span class="glossterm" id="funnel" onmouseout="hideTerm()" onmouseover="showTerm('funnel.xml')">funnels</span>. Using this <span>context menu</span>, you can also access the  <a href="properties-c-ui-Value.htm#properties-c-ui-Value" title="The Value lets you modify dimension properties.">Value Properties</a> once the dimension is created. </p>
+		
+		</div>
+<div class="section" id="c-Dimensions__cs-DimensionSymbolManipulators"><h3 class="sectiontitle">Dimension Symbol Handles</h3><p>You can change a dimension symbol handle directly from the symbol itself without using the <span class="uicontrol">Properties</span> dialog box. </p><p>For this: <ol><li>Go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Handles</span></span> section and select the <span class="uicontrol">Modify symbol</span> check box for the <span class="uicontrol">Creation</span> and <span class="uicontrol">Modification</span> options. </li>
+<li>Create a dimension. Handles are displayed during dimension creation. </li>
+<li>Right-click a handle and select the required symbol from <span class="uicontrol">Symbol Shape</span>. For more information, see <a href="../PreferencesMap/gdrpref-c-Handles.htm#gdrpref-c-Handles" title="You can customize handles for Drafting using this section and customize their size, focus and the rotation snap angle. You can also customize the dimension handles by defining their moving options, modification options and so on.">Handles</a>. </li>
+<li>Optionally, right-click the handle and select <span class="uicontrol">Reverse Symbol</span> to reverse the direction of the handle symbol.</li>
+</ol>
+ <br/><img border="1" src="../Gdr3DMasterImages/creatingdimensions17.png"/><br/></p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>The handle is displayed only for <span class="uicontrol">Symbol 1</span> and <span class="uicontrol">Symbol 2</span> of a dimension. It is not displayed for the <span class="uicontrol">Leader Symbol</span>.</td></tr></table>
+</p></div>
+<div class="section" id="c-Dimensions__cs-Associativity"><h3 class="sectiontitle">Associativity</h3>
+		<p>If one parent element of the dimension is deleted or deactivated, as 
+		soon as you update the drawing, the dimension turns to the color defined 
+		for <span class="uicontrol"> Dimensions for which last update failed</span> in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Display</span></span> section (provided the <span class="uicontrol">Activate elements' analysis</span>
+		check box 
+		is selected).</p>
+		
+		</div>
+</div>
+</div>
+<div class="nested1" id="c-DrivingDimensions"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Driving Dimensions</h2>
+<div><p><span>You can create dimensions that can, by default, drive the geometry.</span>
+</p>
+
+		<p> 
+		For this:</p>
+		<ul>
+			<li> Go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Dimension</span></span> section, and select the <span class="uicontrol">Create 
+			driving dimension </span> check box.</li>
+
+			<li>Create or modify the required dimension on the geometry. If needed, 
+			you can use the <span class="uicontrol">Tools Palette</span> and define the <span class="uicontrol">Value</span> of the 
+			dimension. 
+			<br/><img border="1" src="../Gdr3DMasterImages/drivingdim02.gif"/><br/></li>
+
+		</ul>
+
+		<p>For more information, see
+		<a href="gdr3dmaster-t-Dimensions-DrivingDimensions.htm#gdr3dmaster-t-Dimensions-DrivingDimensions" title="Driving dimensions are dimensions that drive associated geometry.">Creating Driving Dimensions</a>.</p>
+		
+		</div>
+</div>
+<div class="nested1" id="c-TrueLengthDimensions"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">True Length Dimensions</h2>
+<div><p><span>True Length dimensions can be created using <span class="uicontrol">True Length Dimensions</span>
+		<img src="../Icons22/I_D3M_TrueDimension.png"/> 
+		in the <span class="uicontrol">Tools Palette</span>, or using the <span>context menu</span>.</span>
+</p>
+
+		
+		<p>Before creating true dimensions, make sure that you have not selected the
+		<span class="uicontrol">Only create non-associative dimensions</span> check box in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Dimension</span></span> section,<span class="uicontrol"> 
+		Associativity on 3D</span>, <span class="uicontrol">Dimensions associativity on 3D</span>  dialog box.  To work, this functionality must 
+		be applied to an associative dimension.</p>
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> When dimensioning 
+				in an isometric view, the dimensioning mode is automatically switched 
+				to True length. If you are not satisfied with this dimensioning 
+				mode, you can select another one.</td></tr></table>
+
+		
+		</div>
+</div>
+<div class="nested1" id="c-HalfDimensions"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Half Dimensions</h2>
+<div><p><span>You can create half dimensions. </span>
+</p>
+
+		<p> For this, right-click the created dimension and select  <span class="uicontrol">
+		Half Dimension</span>.</p>
+		<p>
+		For more information, see  <a href="gdr3dmaster-t-Dimensions-HalfDimension.htm#gdr3dmaster-t-Dimensions-HalfDimension" title="You can create half dimensions on distances, angles, diameter cylinders, radius cylinders that are created using two selections, diameter edges and diameter tangents. However, you cannot create half dimensions on cumulated dimensions.">Creating Half Dimensions</a>.</p>
+		</div>
+</div>
+<div class="nested1" id="c-ExtensionLineAnchor"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Extension Line Anchor</h2>
+<div><p><span>As you create a dimension between two elements, one of these elements 
+		being a circle, you can select the extension line anchor. </span>
+</p>
+
+		<p>To do this, you 
+		can:</p>
+		<ul>
+			<li>Right-click the dimension and select 
+			one of the available <span class="uicontrol">Extension Line anchor</span> options (<span class="uicontrol">First 
+			Anchor, Second Anchor, Third Anchor</span>).</li>
+
+		</ul>
+
+		<p>You will thus position the extension line:</p>
+		<ul>
+			<li>At one extremity of the circle (First Anchor)</li>
+
+			<li>At the center of the circle (Second Anchor)</li>
+
+			<li>At one extremity of the circle (Third Anchor)</li>
+
+		</ul>
+
+		<ul>
+			<li>Drag the yellow symbol to the one of the anchors (anchors appear 
+			when the pointer is over the yellow symbol): 
+			<br/><img src="../Gdr3DMasterImages/extlineanchor01.gif"/><br/></li>
+
+		</ul>
+
+		<p><p>Note:
+		If you selected the <span class="uicontrol">Dimension following the cursor (CTRL toggles)</span> 
+		check box in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Dimension</span></span> section, then, to move the extension line anchor, you must press <span class="uicontrol">Ctrl</span> 
+		before selecting the yellow symbol (to switch the option temporarily).</p>
+ </p>
+		
+		
+	
+
+
+
+
+
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

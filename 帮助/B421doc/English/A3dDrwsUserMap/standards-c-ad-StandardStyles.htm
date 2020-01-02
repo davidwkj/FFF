@@ -1,0 +1,100 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Styles"/>
+<meta name="abstract" content="Styles are used as default values when creating new elements."/>
+<meta name="description" content="Styles are used as default values when creating new elements."/>
+<meta name="DC.Relation" scheme="URI" content="standards-t-ad-StandardStylesCustomize.htm#standards-t-ad-StandardStylesCustomize"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="standards-c-ad-StandardStyles"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Styles</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="standards-c-ad-StandardStyles">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Styles</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Styles are used as default values when creating new elements.</span>
+
+    <p>
+      
+    The following topics are discussed:</p>
+    
+  </p>
+<ul><li><a href="#c-Defaultvalue" id="toc_rg" title="Styles enable administrators to set the default values that will be applied to all properties of such elements as sheets, geometry, annotations, dimensions, dress-up and dress-up symbols, callouts, etc.">Styles Determine the Default Values of Elements</a></li><li><a href="#c-Definition" id="toc_rg" title="The default values for all element properties are stored in a specific Styles section of the standard XML file, and are defined by the administrator.">Definition of Default Values
+    </a></li><li><a href="#c-UseofValue" id="toc_rg" title="When creating a Drafting element, default values are automatically used. So, when you select a command that creates a specific type of element, the Style displays the current style for this type:">Use of Default Values</a></li><li><a href="#c-PossibilityToReapply" id="toc_rg" title="When a Drafting element is selected, the Style in the Object Properties panel displays the list of the styles that can be applied to it. If the user selects one of these, this style is re-applied to the element. This enables users to reset to its default values an element whose properties have been modified.">Possibility to Re-apply a Style to an Element</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="standards-t-ad-StandardStylesCustomize.htm#standards-t-ad-StandardStylesCustomize" title="Administrators can configure styles.">Customizing Styles</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+  <div/><div class="nested1" id="c-Defaultvalue">
+    <h2 class="topictitle2">Styles Determine the Default Values of Elements</h2>
+
+    
+    <div><p>Styles enable administrators to set the default values that will be applied to all properties of such elements as sheets, geometry, annotations, dimensions, dress-up and dress-up symbols, callouts, etc. 
+      </p>
+
+      <p>The default values are defined and stored in the standard XML file, where a set of new parameters are defined, one parameter for each element property whose default value can be set.
+        
+      </p><p>Default values are applied to elements as they are created. After creation, the user can modify element values as required.</p><p>If you modify styles in the standard itself and then update the standard file used by the <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>, the elements which have already been created will NOT be modified (i.e. their default values will remain as previously). Updating the standard will only have an impact on the next elements to be created.
+        
+      </p>
+    </div>
+
+      
+    
+    
+    
+  </div>
+
+  
+  <div class="nested1" id="c-Definition">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Definition of Default Values
+    </h2>
+
+    <div><p>The default values for all element properties are stored in a specific Styles section of the standard XML file, and are defined by the administrator. </p>
+
+      <p>Styles are defined for all Drafting element types. By default, one style named Default is predefined in the standard files for each type of element. In this Default style, all element properties are pre-defined, enabling the administrator to set the value for this property. This Default style cannot be renamed.</p>
+
+
+    <p>You can create your own styles (based on existing styles), as well as delete styles (providing there remains at least one style for each type of element).</p>
+</div>
+
+  </div>
+
+<div class="nested1" id="c-UseofValue"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Use of Default Values</h2>
+
+<div><p>When creating a Drafting element, default values are automatically used. So, when you select a command that creates a specific type of element, the <span class="uicontrol">Style</span> displays the current style for this type:</p>
+<p><ul><li>If only one style is defined for this type of element, then this style is displayed. </li>
+<li>If several styles are defined for this type of element, then a style is defined as the current style and is displayed in the <span class="uicontrol">Style</span>. Users can use the <span class="uicontrol">Style</span> in the <span><span class="wintitle">Object Properties</span></span> panel to select another style of the same type before creating the element. </li>
+</ul>
+</p><p>The <span class="uicontrol">Style</span> reflects the value of the style, but users can always modify the value of specific elements.</p>
+
+</div>
+</div>
+<div class="nested1" id="c-PossibilityToReapply"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Possibility to Re-apply a Style to an Element</h2>
+
+<div><p>When a Drafting element is selected, the <span class="uicontrol">Style</span> in the <span><span class="wintitle">Object Properties</span></span> panel displays the list of the styles that can be applied to it. If the user selects one of these, this style is re-applied to the element. This enables users to reset to its default values an element whose properties have been modified.</p>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>When you create a drawing a <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> style is applied to the first sheet. If you create a new sheet, the properties of the first sheet are copied and applied to it. No sheet style is applied. By default, the <span class="uicontrol">Sheet Style</span> list available through <span class="uicontrol">Page Layout</span> is empty so updating the standard will not apply any sheet style. </td></tr></table>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

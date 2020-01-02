@@ -1,0 +1,114 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Copy/Paste"/>
+<meta name="abstract" content="This topic explains the concepts that you need to understand before you begin copying/pasting drawing elements."/>
+<meta name="description" content="This topic explains the concepts that you need to understand before you begin copying/pasting drawing elements."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ElementsCopyPaste.htm#gdr-t-ElementsCopyPaste"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-CopyPaste"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Copy/Paste</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-CopyPaste">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+    About Copy/Paste</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic explains the concepts that you need to understand before you begin copying/pasting drawing elements.</span>
+
+    
+    <p>
+      
+      The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#c-CopyPasteinaDrawing" id="toc_rg" title="This sub topic provides more information about copy and paste operations within a drawing.">Copy/Paste in a Drawing</a></li><li><a href="#c-CopyPasteaViewto3DShape" id="toc_rg" title="This section provides more information about copying and pasting a view to a 3D shape.">Copy/Paste a View to a 3D Shape</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-t-ElementsCopyPaste.htm#gdr-t-ElementsCopyPaste" title="You can copy and paste drawing elements.">Copying and Pasting Elements</a></td></tr></table></td></tr></table>
+
+  
+
+  
+  <div/>
+    
+  <div class="nested1" id="c-CopyPasteinaDrawing"><h2 class="topictitle2">Copy/Paste in a Drawing</h2>
+
+<div><p><span>This sub topic provides more information about copy
+    and paste operations within a drawing.</span>
+</p>
+<div class="section" id="c-CopyPasteinaDrawing__cs-CopyPasteGeometricalElements"><h3 class="sectiontitle">Copy/Paste Geometrical Elements</h3><ul><li>Geometrical elements in a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> cannot be pasted to a <span class="glossterm" id="shape-3D" onmouseout="hideTerm()" onmouseover="showTerm('shape-3D.xml')">3D shape</span> or to
+a sketch. They can only be pasted within a drawing.
+</li>
+<li>If you copy an element and then immediately delete it, you are not be able to
+paste it anymore.
+</li>
+</ul>
+</div>
+<div class="section" id="c-CopyPasteinaDrawing__cs-CopyPasteViews"><h3 class="sectiontitle">Copy/Paste Views</h3><ul><li> When copying and pasting views, positional links between the views (that is links which exist between a <span class="glossterm" id="parent-view" onmouseout="hideTerm()" onmouseover="showTerm('parent-view.xml')">parent view</span> and its child view, for example) are not kept. The only way you can keep positional links between views is by copying and pasting the <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>.</li>
+<li>Unlike usual views, <span class="glossterm" id="detail-view" onmouseout="hideTerm()" onmouseover="showTerm('detail-view.xml')">detail views</span> cannot be copied to a 3D shape.</li>
+<li>Views containing <a href="gdr3dmaster-m-2DComponents-sb.htm#gdr3dmaster-m-2DComponents-sb" title="This section provides background information about 2D components, and describes how to work with them.">2D components</a> can be copied to a 3D shape, but the resulting view  does not contain these 2D components (which are specific to the Drafting context). If you want to copy the equivalent 2D component to the 3D shape, you need to <a href="gdr3dmaster-t-2DComponents-2DComponentInstanceFromDetailSheetInstantiate.htm#gdr3dmaster-t-2DComponents-2DComponentInstanceFromDetailSheetInstantiate" title="You can individually explode a 2D component that was instantiated from a detail sheet and then modify it as per your requirement.">explode</a> it first.</li>
+</ul>
+</div>
+<div class="section" id="c-CopyPasteinaDrawing__cs-CopyPasteTexts"><h3 class="sectiontitle">Copy/Paste Texts
+        </h3><p>
+        When copying and pasting a text, two cases are possible depending on
+whether you change the feature name of the text (by right-clicking the text and selecting <span class="uicontrol">Properties &gt; Feature Properties</span>):
+      </p><ul><li>If you change the feature name, and copy a text whose
+customized feature name is Custom Text, for example, then the
+feature name of the copy (or copies)  remains Custom Text.</li>
+
+<li>If you do not change the feature name, and copy a text whose
+feature name is Text.1, for example, then the feature name of the
+copy will be Text.2 (then Text.3, etc. if you make several copies).
+</li>
+</ul>
+</div>
+<div class="section" id="c-CopyPasteinaDrawing__cs-CopyPasteOtherTypesofElements"><h3 class="sectiontitle">Copy/Paste Other Types of Elements</h3><ul><li>            If you copy and paste a view axis, infinite lines are
+displayed in your view. Those lines are designed to keep
+constraints on the axis that were created in the first view.</li>
+<li>You cannot copy and paste not-up-to-date dimensions (displayed in
+fuchsia by default or according to the color defined for
+<span class="uicontrol">Dimensions for which last update failed</span> in the <span class="uicontrol">Elements' Analysis</span> dialog box available via <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Display</span></span> section, 
+under <span class="uicontrol">Elements Analysis </span>, selecting <span class="uicontrol">Activate elements' analysis</span> check box, and clicking <span class="uicontrol">Configure</span>).
+</li>
+<li>When pasting elements from one drawing to another which uses
+a different standard, wherein	 some elements (such as dimensions) are not supported by this standard, then, in this case, such non-supported
+elements are not created.
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nested1" id="c-CopyPasteaViewto3DShape"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Copy/Paste a View to a 3D Shape</h2>
+
+<div><p><span>This section provides more information about copying and pasting a view to a 3D shape.
+      
+      
+    </span>
+</p>
+<p>
+          A view copied from a drawing and then pasted to a 3D shape becomes a
+sketch.
+
+        </p>
+      <ul><li>If a 3D plane is selected before pasting the view, the sketch
+follows the 3D plane.
+</li>
+<li>If no 3D plane is selected before pasting the view, the sketch
+follows the plane of the copied view.
+</li>
+</ul>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

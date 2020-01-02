@@ -1,0 +1,255 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Export of a Drawing Representation"/>
+<meta name="abstract" content="This topic explains the concepts that you need to understand before you begin running the downward compatibility batch."/>
+<meta name="description" content="This topic explains the concepts that you need to understand before you begin running the downward compatibility batch."/>
+<meta name="DC.Relation" scheme="URI" content="DWC-t-gdr.htm#DWC-t-gdr"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="DWC-c-gdr"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Export of a Drawing Representation</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="DWC-c-gdr">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-batch:: about downward compatibility for&#xA;&#x9;&#x9;  drawings"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-downward compatibility&#xA;&#x9;&#x9;batch"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Export of a Drawing Representation</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p> 
+	 <span>This topic explains the concepts that you need to understand
+		before you begin running the downward compatibility batch. 
+	 </span>
+ 
+	 <p>The following topics are discussed: 
+	 </p> 
+	 </p>
+<ul><li><a href="#cs-GenInfo" id="toc_rg" title="Two cases are possible depending on whether the target V5 CATdrawing file exists or not.">Conversion of a Drawing Representation</a></li><li><a href="#c-ViewContent" id="toc_rg" title="Result objects are used to convert a V6 representation to a V5 document. Every V6 view, sheet background and main view is converted into one result object. This object displays geometries, annotations and dress-up in a CATDrawing view. As a consequence, this CATDrawing document displays elements as in a print preview. It means that the following elements are not displayed:"> View Content</a></li><li><a href="#c-Copycutpaste" id="toc_rg" title="It is impossible to copy/cut/paste the content of a view.">Copy/Cut/Paste</a></li><li><a href="#c-GraphicalProperties" id="toc_rg" title="Graphical properties are not converted from the V6 drawing representation to the V5 CATDrawing document.">Graphical Properties</a></li><li><a href="#c-Standards" id="toc_rg" title="If a drawing representation uses a standard that does not exist in the target V5 release, the batch replaces the V6 standard with a V5 standard of the same type (ISO, JIS...).">Standards</a></li><li><a href="#c-ObjectLinkingAndEmbeddedOLE" id="toc_rg" title="When an object is inserted in a drawing representation and displayed as an icon, this icon is converted from V6 to V5 as an image. After conversion, this OLE displayed as an icon has no more link with the Windows document.">Object Linking and Embedded (OLE)</a></li><li><a href="#c-ExportToLayoutView" id="toc_rg" title="A drafting view created with the Downward Compatibility batch cannot be exported to a 2D layout.">Transfer Views in a Layout</a></li><li><a href="#c-ExportToExternalFormats" id="toc_rg" title="A view converted with the Downward Compatibility batch:">Export to External Formats</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="DWC-t-gdr.htm#DWC-t-gdr" title="You can convert a 3DEXPERIENCE platform drawing representation into a V5 CATDrawing document, using the Downward Compatibility batch.">Export of a Drawing Representation</a></td></tr></table></td></tr></table>
+ 
+  
+ 
+  <div> 
+  </div>
+ 
+  <div/> 
+  <div class="nested1" id="cs-GenInfo"> 
+	 <h2 class="topictitle2">Conversion of a Drawing Representation</h2>
+ 
+	 <p> 
+		<span>Two cases are possible depending on whether the target V5
+		  CATdrawing file exists or not. 
+		</span>
+</p>
+ 
+	 <div class="nested2" id="cs-CreationInNewCATPart"> 
+		<h3 class="topictitle3">Case of the Creation of a New CATDrawing</h3>
+ 
+		<p> 
+		  <span>When running the 
+			 <span class="uicontrol">Downward Compatibility</span> batch to convert a V6
+			 drawing representation, in the case when the target file does not exist yet,
+			 then a new V5 CATDrawing file is created. 
+		  </span>
+</p>
+ 
+	 </div>
+ 
+	 <div class="nested2" id="cs-SynchExistingCATPart"> 
+		<h3 class="topictitle3">Case of the Synchronization of an Existing CATDrawing</h3>
+ 
+		 
+		<div><p> 
+		  <span>When running the 
+			 <span class="uicontrol">Downward Compatibility</span> batch to convert a V6
+			 drawing representation, in the case when the target V5 CATDrawing file already
+			 exists, then the existing file is replaced with a newly created CATDrawing. Any
+			 existing V5 element in the previous CATDrawing document is lost. 
+		  </span>
+</p>
+ 
+		  <p>Note:
+		Elements in other V5 documents pointing to the old CATDrawing
+			 document might be broken. 
+		  </p>
+ 
+		</div>
+ 
+	 </div>
+ 
+	 <div class="nested2" id="c-CATDrawingStructure"> 
+		<h3 class="topictitle3">CATDrawing Structure</h3>
+ 
+		<div><p> 
+		  <span>The resulting CATDrawing has no link with an external 3D
+			 part representation or a 2D Component catalog. As a consequence: 
+		  </span>
+</p>
+ 
+		  <ul> 
+			 <li>Generated views are converted into the interactive 
+				<img src="../Icons22/I_D3M_View.png"/> views. 
+			 </li>
+ 
+			 <li><span class="glossterm" id="detail-sheet" onmouseout="hideTerm()" onmouseover="showTerm('detail-sheet.xml')">Detail sheets</span> are converted into the design 
+				<img src="../Icons22/I_D3M_Sheet.png"/> 
+				<span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheets</span>. 
+			 </li>
+ 
+		  </ul>
+ 
+		  <p>Symbols displayed in the 
+			 <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span> are modified accordingly. 
+		  </p> 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+ 
+  <div class="nested1" id="c-ViewContent"> 
+	 <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2"> View Content</h2>
+ 
+	 <div><p> 
+		<span>Result objects are used to convert a V6 representation to a V5
+		  document. Every V6 view, sheet background and main view is converted into one
+		  result object. This object displays geometries, annotations and dress-up in a
+		  CATDrawing view. As a consequence, this CATDrawing document displays elements
+		  as in a print preview. It means that the following elements are not displayed: 
+		</span>
+</p>
+ 
+		<ul> 
+		  <li>Constraints 
+		  </li>
+ 
+		  <li>Construction elements 
+		  </li>
+ 
+		</ul>
+ 
+		<p>Notes:
+		 
+		  <ul> 
+			 <li>You can add non-associative annotations to a converted view. You
+				can also add new sheets and new views to this CATDrawing. 
+			 </li>
+ 
+			 <li>The drawing content is exported only as graphic objects. As a
+				consequence, the individual objects like annotations, dimensions, dress-up
+				objects, or 2D geometry exported from V6 are not editable in V5 as individual
+				objects. 
+			 </li>
+ 
+		  </ul>
+ 
+		</p>
+ 
+	 </div>
+ 
+  </div>
+ 
+  <div class="nested1" id="c-Copycutpaste"> 
+	 <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Copy/Cut/Paste</h2>
+<p> 
+		<span>It is impossible to copy/cut/paste the content of a view. 
+		</span>
+</p>
+ 
+  </div>
+ 
+  <div class="nested1" id="c-GraphicalProperties"> 
+	 <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Graphical Properties</h2>
+<p> 
+		<span> Graphical properties are not converted from the V6 drawing
+		  representation to the V5 CATDrawing document. 
+		</span>
+</p>
+ 
+  </div>
+ 
+  <div class="nested1" id="c-Standards"> 
+	 <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Standards</h2>
+<p> 
+		<span>If a drawing representation uses a standard that does not
+		  exist in the target V5 release, the batch replaces the V6 standard with a V5
+		  standard of the same type (ISO, JIS...). 
+		</span>
+</p>
+ 
+  </div>
+ 
+  <div class="nested1" id="c-ObjectLinkingAndEmbeddedOLE"> 
+	 <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Object Linking and Embedded (OLE)</h2>
+<p> 
+		<span> When an object is inserted in a drawing representation and
+		  displayed as an icon, this icon is converted from V6 to V5 as an image. After
+		  conversion, this OLE displayed as an icon has no more link with the Windows
+		  document. 
+		</span>
+</p>
+ 
+  </div>
+ 
+  <div class="nested1" id="c-ExportToLayoutView"> 
+	 <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Transfer Views in a Layout</h2>
+<p> 
+		<span>A drafting view created with the 
+		  <span class="uicontrol">Downward Compatibility</span> batch cannot be exported
+		  to a 2D layout. 
+		</span>
+</p>
+ 
+  </div>
+ 
+  <div class="nested1" id="c-ExportToExternalFormats"> 
+	 <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Export to External Formats</h2>
+ 
+	 <div><p> 
+		<span> A view converted with the 
+		  <span class="uicontrol"> Downward Compatibility</span> batch: 
+		</span>
+</p>
+ 
+		<p> 
+		<ul> 
+		  <li>Can be exported into CGM, HPGL2, JPEG, PDF, PS, SVG, TIFF
+			 (print-like formats) 
+		  </li>
+ 
+		  <li>Cannot be exported into DXF, DWG, CDD, IG2 (CAD formats) 
+		  </li>
+ 
+		</ul>
+ 
+		</p> 
+		<div class="section" id="c-ExportToExternalFormats__s-Knowledgeware"><h3 class="sectiontitle">Knowledgeware</h3> 
+		   
+		  <p> 
+		  <ul> 
+			 <li>Formulas used to position views are deleted. 
+			 </li>
+ 
+			 <li>Formulas used to name a view are deleted. In the 
+				<span class="uicontrol">Properties</span> dialog box, under 
+				<span class="uicontrol">View Name</span>, the 
+				<span class="uicontrol">Name Editor with Formula</span> option cannot be
+				modified. 
+			 </li>
+ 
+		  </ul>
+ 
+		  </p> 
+		</div>
+ 
+	 </div>
+ 
+  </div>
+ 
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

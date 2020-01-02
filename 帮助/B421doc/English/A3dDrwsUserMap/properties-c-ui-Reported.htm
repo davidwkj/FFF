@@ -1,0 +1,110 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Reported Properties"/>
+<meta name="abstract" content="Reported lets you modify the bill of material properties."/>
+<meta name="description" content="Reported lets you modify the bill of material properties."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="properties-c-ui-Reported"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Reported Properties</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="properties-c-ui-Reported">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::BOM"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::Bill of Material"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Reported Properties</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span><span class="wintitle">Reported</span> lets you modify the bill of material properties.</span>
+
+    <p>
+      Select this tab to access <span class="uicontrol">Reported</span> properties.
+    </p>
+    
+  </p>
+<ul/>
+</p></td></tr></table></td></tr></table>
+
+  
+  
+
+  
+
+  <div>
+    <div class="section" id="properties-c-ui-Reported__cs-ListofProperties"><h2 class="sectiontitle">List of properties</h2>
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">Property</dt>
+
+          <dd>Specifies the properties that are displayed as columns in the bill of material. <p>For each property, a column is created in the bill of material.</p><p>The  <span class="uicontrol">Property</span> column displays the list of <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attributes</span> available on a product.</p><p>By default, the bill of material is created using the default bill of material style which displays, among other properties, the product name, the item number and the quantity. </p><p>However, you can enrich the bill of material with as many properties as you want and/or you can change the existing ones.</p>
+
+            <p> Note that properties need to be valued/computed first before you can visualize them in the bill of material. For more information, see the relevant documentation on these properties.</p><p>You can select and modify an existing property. To do so, select the appropriate filter under  <span class="uicontrol">Product Type Filter</span> and the property associated with this filter under <span class="uicontrol">Property</span>. Enter a title for this property in the <span class="uicontrol">Property Title</span> box and specify a <span class="uicontrol">Column Width</span>.<p>Notes:
+		<ul><li> The <span class="uicontrol">Product Type Filter</span> lists all the defined PLM extensions.
+</li>
+<li>If you select <span class="uicontrol">All Types</span> under the <span class="uicontrol">Product Type Filter</span>, all the properties across all PLM extensions  are listed alphabetically.</li>
+<li>Reported properties are not supported for heterogeneous selection of <span class="glossterm" id="bill-of-materials-3" onmouseout="hideTerm()" onmouseover="showTerm('bill-of-materials-3.xml')">bill of materials</span> whose list of  reported properties are different, either in term of content or in term of order. </li>
+<li>Reported properties are supported if the selected bill of material has the same list of reported properties and same order even if their titles and column widths are different. </li>
+</ul>
+</p>
+ </p>
+          </dd>
+
+        
+        
+          <dt class="dlterm">Title
+          </dt>
+
+          <dd><ul><li>You can modify the title of the selected property.</li>
+<li>For each property, a default name is set. However, you can change the default name using this field.</li>
+</ul>
+
+
+          </dd>
+
+        <dt class="dlterm">Column width</dt>
+<dd><ul><li>You can modify the column width of the selected property.</li>
+<li>This column displays 3 decimal digits. </li>
+<li>The width value is set using the drafting standard unit (mm/m/inch as specified in the <span class="uicontrol">Length</span> list<span>, see <a href="../PreferencesMap/gdrpref-c-General.htm#gdrpref-c-General__c-General-PaperUnit">Paper Unit</a></span>).</li>
+<li>The minimum value is equal to twice the horizontal column margin (included).</li>
+<li>The maximum value is equal to 1 meter (included).</li>
+<li>You can type the value or use arrows to change the width value by 1mm.</li>
+</ul>
+</dd>
+<dt class="dlterm">New  <img src="../IconsNormal/I_DrwNewRow.png"/></dt>
+<dd>Allows you to add a new reported property. <p>The new reported property is inserted at the end of the list and is initialized from the previously selected property.<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><p><span>This command is available  only if a single line is selected.</span></p></td></tr></table>
+</p></dd>
+<dt class="dlterm">Delete <img src="../IconsNormal/I_Erase.png"/></dt>
+<dd>Deletes one or more selected properties. <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><p><span>This command is available  only if a single line is selected.</span></p></td></tr></table>
+</dd>
+<dt class="dlterm">Move up <img src="../IconsNormal/I_MoveUp.png"/></dt>
+<dd>Moves the selected property up.</dd>
+<dd class="ddexpand">You  can modify the order of properties. The first line matches with the first column of the bill of material  (the first column of the bill of material  displays the values of the property displayed here in the first line of the bill of material customization).<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li><span>This command is available  only if a single line is selected.</span></li>
+<li>However, this command is unavailable if the selected line is the first one.</li>
+</ul>
+</td></tr></table>
+</dd>
+<dt class="dlterm">Move down <img src="../IconsNormal/I_MoveDown.png"/></dt>
+<dd>Moves the selected property down.<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li><span>This command is available  only if a single line is selected.</span></li>
+<li>However, this command is unavailable if the selected line is the first one.</li>
+</ul>
+</td></tr></table>
+</dd>
+
+      </dl>
+
+    </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

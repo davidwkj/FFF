@@ -1,0 +1,362 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>About 3DSpace Web Services</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>About 3DSpace Web Services</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		
+		<p>3DSpace web services are RESTFUL defined with JAX-RS/JSON infrastructures [<a href="#References">1</a>]. This article recalls the common REST Web services principles and points to the 3DSpace specificities.</p>    
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="HTTPS"></a>Protocol HTTPs</h2>
+<p>3DSpace web services enable you access to confidential data of both the company and the employees. Therefore 3DSpace web services use high security tools to prevent themselves from attacks [<a href="#References">2</a>]. HTTPS protocol is one of them. Consequently requests must be made using HTTPS protocol instead of HTTP to ensure security of data transfer.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="URL"></a>URL</h2>
+<h3><a name="URL-tenant"></a>URL and Tenant</h3>
+<p>The format of the URL is expressed as follows:</p>
+<pre class="code">
+https://&lt;authority_server&gt;
+</pre>
+<p>The contents of <code>authority_server</code> is slightly different between on-premises and cloud environments.</p>
+<p>On-premises, there is only one platform instance [<a href="#References">3</a>], in other words one tenant. Let's say the URL is as follows:</p>
+<pre class="code">
+https://&lt;server_dependant&gt;
+</pre>
+<p>On cloud, there are several platform instances [<a href="#References">3</a>], in other words several tenants. The URL is as follows:</p>
+<pre class="code">
+https://&lt;tenant_id&gt;&lt;server_dependant&gt;
+</pre>
+<p><b>About tenant identifier and case sensitivity</b></p>
+<p>An URL is usually case insensitive [<a href="#References">5</a>]. It means whatever the case of <code>authority_server</code>  it should work to reach the server. But with 3DSpace the case is important. Indeed 3DSpace authentication checks
+the tenant in the URL, and this check is case sensitive. Since the tenant identifier is an identifier of platform instance which can contain upper-case as lower-case letters,  the HTTP 
+request URL MUST exactly matches the expected URL. </p>
+<p>Let's suppose the platform instance is <code>DSQAL005</code>
+<pre class="code">
+https://<b>dsqal005</b>-....3dx-staging.3ds.com/enovia/resources/...  is wrong
+https://<b>DSQAL005</b>-...3dx-staging.3ds.com/enovia/resources/...  is correct
+</pre>
+<p>If you are not sure of the tenant identifier case in  the  URL, the solution is to use the <code>tenant</code> <a href="#Request-Query">query parameter</a> with the tenant identifier (I.e. platform instance) as value: </p>
+<pre class="code">
+https://<b>dsqal005</b>-...3dx-staging.3ds.com/enovia/resources/...?<b>tenant=</b>DSQAL005  is now correct
+https://<b>DSQAL005</b>-...3dx-staging.3ds.com/enovia/resources/...?<b>tenant=</b>DSQAL005  is still correct
+</pre>
+<table class="Remark">
+	<tbody>
+	<tr>
+		<td class="Remark"><span class="run-in">Note:</span> You do not have to test the current running 
+		environment (on-premises or on cloud), in all cases append the  <code>tenant</code> query parameter. 
+		For on-premises solution (the value is "onPremise" ) the parameter is just ignored by 3DSpace server APIs.  		
+		</td>
+	</tr>
+</tbody>
+</table>
+<p><b>Retrieving 3DSpace URL from a widget app</b></p>
+<p>Interactively, inside a widget application, the JavaScript API 
+<a href="#" onclick="CAAlinkJS('i3DXCompassUI', 'i3DXCompassServices', 'DS/i3DXCompassServices/i3DXCompassServices'); return false;">DS/i3DXCompassServices/i3DXCompassServices</a>  returns the 3DSpace URL(s). </p>
+<p>Just below an extract of javascript code using the API to retrieve the
+ 3DSpace URL for a given platform instance (tenant): </p>
+<pre class="code">
+...
+i3DXCompassServices.getServiceUrl( { 
+	serviceName: <b>'3DSpace'</b>, 
+	platformId : widget.getValue("x3dPlatformId") ,
+	onComplete : function (URL_3DSpace) {...}  ,
+	onFailure  : ...
+} ) ;  
+...
+</pre>
+<p>The referenced technical article [<a href="#References">3</a>] goes further with this API and the 
+notion of platform instance.</p>
+<table class="Remark">
+	<tbody>
+	<tr>
+		<td class="Remark"><span class="run-in">Note:</span> The 3DSpace URLs returned by this AMD module are always lower-case letters.
+		Therefore if your code is multi-environment (cloud and onpremises), or cloud only, do not forget
+		to append to the URL the <i>tenant</i> query parameter (<i>widget.getValue("x3dPlatformId")</i>) for reason mentioned above.
+		</td>
+	</tr>
+</tbody>
+</table>
+<p>Below an example if the resource path does not contain a query parameter:</p>
+<pre class="code">
+var myPATH=URL_3DSpace + resource_path + ?<b>tenant=tenantID</b>
+</pre>
+<p>And then  if the resource path already contains a query parameter:</p>
+<pre class="code">
+var myPATH=URL_3DSpace + resource_path + &amp;<b>tenant=tenantID</b>
+</pre>
+<p>The referenced use case [<a href="#References">7</a>] may help you to be familiar with those API. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="URL-path"></a>paths</h3>
+<p>The <b>root path</b> is the URL section between the 3DSpace URL, and the <b>application path</b>. The latter represents
+the relative path of the resource.</p>
+<pre class="code">
+https://&lt;3DSpace_authority_server&gt;&lt;root_path&gt;&lt;application_path&gt;
+</pre>
+<p>For all 3DSpace web services, the root path is <i>/resources</i>. Let's take an example: if the application path is /person, the final URL to reach a person resource is:</p>
+<pre class="code">
+https://&lt;3DSpace_authority_server&gt;/resources/person
+</pre>
+<p>The combination of the root and the application path, is named the <b>path</b>. </p>
+<pre class="code">
+https://&lt;3DSpace_authority_server&gt;&lt;path&gt;
+</pre>
+<p>The 3DSpace web service API reference pages mention the URL path which always starts as follows: <code>/resources/...</code> </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="loginAPI"></a>Login API</h3>
+<p>For a batch, before using a 3DSpace web service, a 3DEXPERIENCE platform and 3DSpace login must be performed. The 
+technical article "Performing Service Login and Logout" [<a href="#References">8</a>] gives all the details. </p>
+<p>The string to pass as value of the <code>service</code> query parameter for the <a href="../CAAiamPassportRef/CAAiamPassportAPILogin.htm">3DPassport login</a> API 
+is the 3DSpace URL which the tenant (<i>XXX</i>) is appended for cloud solution.</p> 
+<pre class="code">
+String <b>SpaceLoginURL</b>=URLEncoder.encode(&lt;3DSPACE&gt; + "?tenant=" + XXX, "UTF8");
+String PassportloginURL= &lt;3DPassport&gt + "/login?service=" + SpaceLoginURL ;
+</pre>
+<p>For on premises, there are two solutions. Either with the OnPremise tenant value:</p>
+<pre class="code">
+String <b>SpaceLoginURL</b>=URLEncoder.encode(&lt;3DSPACE&gt; + "?tenant=OnPremise" , "UTF8");
+String PassportloginURL= &lt;3DPassport&gt + "/login?service=" + SpaceLoginURL ;
+</pre>
+<p>Or without the tenant query parameter:</p>
+<pre class="code">
+String <b>SpaceLoginURL</b>=URLEncoder.encode(&lt;3DSPACE&gt; , "UTF8");
+String PassportloginURL= &lt;3DPassport&gt + "/login?service=" + SpaceLoginURL ;
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Methods"></a>Methods</h2>
+<p>The usual HTTP methods (also named verbs) and their meaning:</p>
+<table class="fill">
+ <tr><th>Verb</th><th>Usual Meaning</th></tr>
+ <tr><td>GET</td><td>for fetching of one or several resources</td></tr>
+ <tr><td>PUT</td><td>for updating a resource with full data</td></tr>
+ <tr><td>DELETE</td><td>for deleting a resource</td></tr>
+ <tr><td>POST</td><td>for creating a resource</td></tr>
+ <tr><td>PATCH</td><td>for updating a resource with partial data</td></tr>
+</table>
+<p>In each web service documentation, beside the resource path, the method is mentioned. Just below
+extract of <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DXPnOWSRef/CAAi3DXPnOWSQrPersons.htm');return false;">List Persons</a>:</p>
+<table class="fill">
+	<tr>
+		<th>&nbsp;Method&nbsp;</th>
+		<th>&nbsp;Path&nbsp;</th> 
+	</tr>
+	<tr>
+		<td>GET</td>
+		<td>/resources/modeler/pno/person</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Request"></a>Request</h2>
+<p>This section deals with the information to be proceeded by the server: the input parameters, the  format for the inputs and the response, and the security context value.</p>
+<p>The input parameters can be passed in the URL (as <a href="#Request-Query">query parameters</a>), and/or into a <a href="#Request-Body">body</a>. The other additionnal information are passed by 
+<a href="#Request-Hdrs">header fields.</a> </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Request-Query"></a>Query Parameters</h3>
+<p>A query parameter is part of the URL. The format is as follows: </p>
+<pre class="code">
+&lt;path&gt;<b>?</b>&lt;param_name_1&gt;=&lt;param_val_1&gt;<b>&amp;</b>&lt;param_name_2&gt;=&lt;param_val_2&gt;...
+</pre>
+<p>Append ? after the URL path to start the first parameter, and add & between each others. Below an example with the
+ <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DXPnOWSRef/CAAi3DXPnOWSQrPersons.htm');return false;">List Persons</a> API</p>
+<pre class="code">
+/resources/modeler/pno/person<b>?pattern=</b>*Admin*<b>&amp;select=</b>firstname<b>&amp;select=</b>email
+</pre>
+<p><b>About the parameter names</b></p>
+<p>The parameter name is <b>case sensitive</b>. If the expected parameter is "select", but  "Select" is passed, the parameter is not taken into account. It is considered as missing by the API. But the HTTP request only fails if the parameter is mandatory, otherwise the default behavior for the <i>missing</i> parameter is applied.</p>
+<p>In the previous example, if 'pattern' is written 'Pattern', the HTTP request fails since 'pattern' is mandatory. But if   'select' is written 'Select', the response does not take into account the select clause parameters. </p>
+<p><a name="UTF8"></a><b>About the parameter values</b></p>
+<p>Parameters are part of the URL, so their values must be <b>UTF8 URL Encoded</b>. </p>
+<p>So for example (<a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DXPnOWSRef/CAAi3DXPnOWSQrCollabSpaces.htm');return false;">Get Collaborative Space</a>) such URL is invalid:</p>
+<pre class="code">
+/resources/modeler/pno/collabspace/3DS Collab Space
+</pre>
+<p>While this one is valid:</p>
+<pre class="code">
+/resources/modeler/pno/collabspace/3DS<b>%20</b>Collab<b>%20</b>Space
+</pre>
+<p>Each space is replaced with "%20" . </p> 
+<p>There are functions to ensure the right format for the parameter values. Let's see two kinds of such functions:</p>
+<ul>
+<li>In java, with URLEncoder (java.net.URLEncoder), param_value=URLEncoder.encode(param,"UTF-8") </li>
+<li>In JavaScript, with encodeURIComponent , param_value=encodeURIComponent(param)</li>
+</ul>
+<p><b>About the parameter cardinality</b></p>
+<p>A parameter can be optional or mandatory and it can occur once, or several times. In the web service documentation the convention is as follows:</p>
+<table class="fill">
+<tr><th>Cardinality</th><th>Meaning</th><tr>
+<tr><td>1</td><td>Mandatory. Only one occurence.</td><tr>
+<tr><td>0|1</td><td>Optional. If exists, only one occurence.</td><tr>
+<tr><td>1|N</td><td>Mandatory. Multiple occurences are possible.</td><tr>
+<tr><td>0|N</td><td>Optional. Multiple occurences are possible.</td><tr>
+</table>  
+<p>When a parameter is expected once, and several are passed, only the first is used. The others are ignored. </p>
+<pre class="code">
+/resources/modeler/pno/collabspace?pattern=*3DS*&amp;pattern=*admin*
+</pre>
+<p>In the example just above, the second pattern parameter is ignored. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Request-Body"></a>Body</h3>
+<p>Usually POST , PUT and PATCH verbs request to pass the input data into a body. The format of the body is usually a <b>JSON</b> object. </p>
+<pre class="code">
+{	
+    "param_name_1": "param_val_1",
+    "param_name_2": { 
+        "param_name_21" : "param_val_21" , . 
+	}, 
+}
+</pre> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Request-Hdrs"></a>Header Fields</h3>
+<p>There are three header fields to take into account for a 3DSpace HTTP request. Only the first 
+is not conditional.</p>
+<table class="fill">
+  <tr><th>Field Name</th><th>Field value</th><th>Why</th></tr>
+  <tr><td>Accept</td><td>"application/json;charset=UTF-8"</td><td>The response format. Mandatory in all context</td></tr>
+  <tr><td>Content-Type</td><td>"application/json;charset=UTF-8"</td><td>The input body format. If the HTTP request 
+  contains a JSON body.</td></tr>
+  <tr><td>SecurityContext</td><td>"RoleValue.OrganizationValue.CollaborativeSpaceValue"</td><td>The information
+  to control the data storage, and access. Some 3DSpace web services may not require it, but usually it is 
+   mandatory. Without special mention in the API documentation, the security context is expected. </p>
+   <p>For a safe use, the value must be <a href="#UTF8">UTF8 URL encoded</a>. Indeed, a collaborative space name can contain chars with an ascii code  above 255. Without an UTF8 encoding 
+   the REST Web service call will fail. Moreover, from a browser the failure can occur before sending the HTTP request since some browsers prevent such call. </p>
+   </td></tr>
+  <tr><td>DS-Request-ID</td><td>Usually an UUID</td><td>A client side value to identify the request. If this field 
+  is not set, the server returns its own value.</td></tr>
+</table>
+<p>Example of headers writen in JavaScript: </p>
+<pre class="code">
+headers: {
+    "Accept"         : "application/json;charset=UTF-8",
+    "SecurityContext":  encodeURIComponent("Owner.My org2.My Collab Space") ,
+    "Content-Type"   : "application/json;charset=UTF-8",
+}  
+</pre>
+<p><b>About response format</b></p>
+<p>By default all 3DSpace web services support the JSON as response format. If the API can support an additional format, usually "application/xml", it is mentioned in the API reference page. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Response"></a>Response</h2>
+<p>The HTTP response is formed with three elements: a status code,  a body, and header fields. </p>
+<h3><a name="response-Code"></a>Status Code</h3>
+<p>3DSpace web services follow the <a href="#" onclick="javascript:CAAlinkUrl('http://tools.ietf.org/html/rfc7231#section-6');return false;">RFC 7231</a> specifications:</p>  
+<ul>
+<li>2xx  for a successful request,</li>
+<li>3xx  for a redirection,</li>
+<li>4xx  for a  client side error,</li>
+<li>5xx  for a  server  side error,</li>
+</ul>
+<p>Each API page documentation mentions the successful response status code, and the specific failure response status codes. The
+generic error cases are listed in the"3DSpace Web Service HTTP Failures" [<a href="#References">4</a>] article. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="response-Body"></a>Body</h3>
+<p>The response body may or not exist, it depends on the API specifications. Its format is defined 
+by the <a href="#Request-Hdrs">Accept</a> header field. If this format is not compatible with the API specifications, the HTTP request 
+fails with  406 (Not Acceptable) as status code.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="response-Hdrs"></a>Header Fields</h3>
+<p>Let's see those response header fields:</p>
+<ul>
+<li>Before processing a backend response, check the response body MIME type. In case of error, it may be different from the request <code>Accept</code> header field. It is mentioned with the <code>Content-Type</code> header field</li>
+<li>Each should web service should specify its cache control policy [<a href="#References">5</a>]. The <code>Cache-Control</code> header field conveys the information.</li>  
+<li><code>DS-Request-ID</code> is returned with the client side value, or if any, the backend one. The backend value is an UUID.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ==========  ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>3DSpace exposes web services which are  RESTful compliant. This article explains how to build up such a HTTP request, and how to understand the response. In case of divergence with DS rules, it is mentioned in the API documentation.</p>    
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+    <tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="javascript:CAAlinkUrl('https://docs.oracle.com/javaee/6/tutorial/doc/gijqy.html');return false;">RESTful Web Services &amp; JAX-RS</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAi3DXTa3DSpaceIntro.htm">3DSpace Role and Openness</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm');return false;">About Service 
+		URL and Platform Instance</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="CAAi3DXTa3DSpaceWSFailure.htm">3DSpace Web Service HTTP Failures</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td>
+		<a href="#" onclick="javascript:CAAlinkUrl('http://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching');return false;">HTTP Caching</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td>
+		<a href="#" onclick="javascript:CAAlinkUrl('http://www.infocellar.com/networks/internet/URL-case-sensitive.htm');return false;">Case-Sensitive URL's</a></td>
+	</tr>
+	<tr>
+		<td>[7]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DX3DSpaceUI/CAAi3DX3DSpaceUConnectedUser.htm');return false;">
+		Consuming 3DSpace Web Service</a></td>
+	</tr>
+	<tr>
+		<td>[8]</td>
+		<td><a href="../CAAiamPassport/CAAiamPassportLoginHowTo.htm">Performing Service Login and Logout</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [April 2016]</td>
+		<td>Document re-created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

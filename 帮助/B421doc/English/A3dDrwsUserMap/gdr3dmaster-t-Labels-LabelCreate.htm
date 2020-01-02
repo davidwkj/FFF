@@ -1,0 +1,105 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating a Label"/>
+<meta name="abstract" content="You can create a label from a 2D component reference or the content of another label."/>
+<meta name="description" content="You can create a label from a 2D component reference or the content of another label."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-c-Labels-Label.htm#gdr3dmaster-c-Labels-Label"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-Labels-LabelCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating a Label</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-Labels-LabelCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Label Template"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Creating a Label</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span><span>You can</span> create a label from a 2D component reference or the content of another label.</span>
+
+    
+  </p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span><span>   and create a text in it</span>.</td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-c-Labels-Label.htm#gdr3dmaster-c-Labels-Label" title="Labels are custom annotations, which can be instantiated, stored in catalogs, and can contain link templates.">About Labels</a></td></tr></table></td></tr></table>
+
+  
+
+  
+  
+  <div>
+    <div class="p"><!--xxx--></div>
+
+    <ol>
+      
+      <li class="stepexpand"><p>
+        
+          From the <span class="wintitle">Template</span> section of the <span>action bar</span>, click <span class="uicontrol">Label Template</span><img src="../Icons22/I_D3M_TemplateLabel.png"/>. 
+        
+         
+         
+      </p></li>
+<li class="stepexpand"><p>Click<span> anywhere</span> in the <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> to define the label anchor point.<p> An empty label with a default image is created without a leader.<br/><img border="1" src="../Gdr3DMasterImages/emptylabel.png"/><br/><p>Note:
+		If the command is ended without selecting a <span class="glossterm" id="component-2D-reference" onmouseout="hideTerm()" onmouseover="showTerm('component-2D-reference.xml')">2D component reference</span>, an empty label with the default image is created.</p>
+</p></p></li>
+
+      <li class="stepexpand"><p><span class="run-in">Optional: </span>Drag the label at the required position.<p> An empty label with a leader and with a default image is created.
+        The leader extremity is placed at the point indicated by the click and the label anchor point is placed where the label is dropped.<br/><img border="1" src="../Gdr3DMasterImages/emptylabelwithleader.png"/><br/></p></p></li>
+<li class="stepexpand"><p>
+        
+          Select the 2D component reference. 
+        
+        <p>
+          <p><p>Note:
+		You can select the 2D component: <ul><li>In the current <span class="glossterm" id="detail-sheet" onmouseout="hideTerm()" onmouseover="showTerm('detail-sheet.xml')">detail sheet</span></li>
+<li>	In another detail sheet of the same </li>
+<li>In another </li>
+</ul>
+<p>If you do not select the content and the command is ended, an empty label with the default image is created. In this case, you can define the content using   the <span class="uicontrol">Replace Content</span> command in the <span>context menu</span>.</p> 
+</p>
+</p> 
+        <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>
+            You can also select an existing label to define the content of the label.</td></tr></table>
+</p>
+         
+      <p>  
+          The label is created with the selected content.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><tbody><tr><td class="cellrowborder" valign="top" width="NaN"><div class="fignone"><span class="figcap">Label without a leader</span><br/><div class="imagecenter"><img class="imagecenter" src="../Gdr3DMasterImages/labelwithoutleaderNLS.png"/></div><br/></div>
+</td>
+<td class="cellrowborder" valign="top" width="NaN"><div class="fignone"><span class="figcap">Label with a leader</span><br/><div class="imagecenter"><img class="imagecenter" src="../Gdr3DMasterImages/labelwithleaderNLS.png"/></div><br/></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+ <p>Simultaneously, a message box appears 
+        prompting you to check whether you want to delete the 2D component reference used to define the label content.</p></p></p></li>
+
+      
+      <li class="stepexpand"><p>
+        
+          Click <span class="uicontrol">Yes</span> to delete the 2D component reference or click <span class="uicontrol">No</span> to keep the reference as it is.
+        
+        <p> Choosing deletion of the 2D component reference avoids generating a catalog two times with  the same content definition (one for the 2D component reference and the other for the label).
+        </p>
+      </p></li>
+
+      
+    <li class="stepexpand"><p><span class="run-in">Optional: </span>Double-click the text inside the label.</p></li>
+<li class="stepexpand"><p>Choose the required <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attributes</span>  and click <span class="uicontrol">Insert</span> in the <span class="wintitle">Insert Link Template</span> dialog box and click <span class="uicontrol">OK</span> in the <span class="wintitle">Text Editor </span>dialog box.<p> The link <span class="glossterm" id="template-2" onmouseout="hideTerm()" onmouseover="showTerm('template-2.xml')">template</span> is created. For more information about inserting link templates, see <a href="gdr3dmaster-t-TextTemplates-TextTemplateCreate.htm#gdr3dmaster-t-TextTemplates-TextTemplateCreate" title="You can define and store text templates to be instantiated (that is reused). Once instantiated, the texts are associated with features or PLM attributes. Text templates rely on feature attributes and PLM attributes. Similarly, you can create and store table templates containing a link template on a PLM attribute and instantiate them when required. Once instantiated, the text is associated to the PLM attribute.">Working with Text and Table Templates</a>.</p></p></li>
+<li class="stepexpand"><p>Right-click the text and select <span class="uicontrol">Modifiable in Instance</span>.<p> This allows editing of the text in a label instance. </p></p></li>
+</ol>
+
+    
+  <p class="result">The label is created and placed in the selection mode so that it can be moved or modified.</p></div>
+
+
+   
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,663 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Create Geodesic Line</title>
+<style type="text/css">
+.auto-style1 {
+	font-weight: normal;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Create a Geodesic Line on Surface </h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>There are different way allowing to create a geodesic line depending 
+		to input parameters.&nbsp; Indeed, the operator CATICGMTopGeodesicPtPt 
+		enables to create a geodesic between two points, the operator 
+		CATICGMSketchGeodesic for the case where you want create a geodesic from 
+		point and a given direction, and the operator 
+		CATICGMTopGeodesicLineOperator for the case of a geodesic passing 
+		through a point in a given direction or a geodesic angled to the tangent 
+		of a wire at the origin point.&nbsp; These three operators 
+		CATICGMTopGeodesicPtPt, CATICGMSketchGeodesic and&nbsp; 
+		CATICGMTopGeodesicLineOperator are a multi-run 
+		operators.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAGMOperatorsGeodesic Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMOperatorsGeodesic</a></li>
+				<li><a href="#How">How to Launch CAAGMOperatorsGeodesic</a></li>
+				<li><a href="#Where">Where to Find the CAAGMOperatorsGeodesic 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this use case, you learn how to use the operators CATICGMTopGeodesicPtPt, 
+CATICGMSketchGeodesic and&nbsp; CATICGMTopGeodesicLineOperator to create a 
+geodesic line on a surface. These operators are to be used according to the general 
+scheme of topological operators. If need be, you can take a look at &quot;Overview of 
+the Topological Operators&quot; [<a href="#References">1</a>] for more information.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase">The CAAGMOperatorsGeodesic Use Case</a></h2>
+<p>CAAGMOperatorsGeodesic is a use case of the CAAGMOperatorsInterfaces.edu framework 
+that illustrates the GMOperatorsInterfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMOperatorsGeodesic Do</h3>
+<p>The use case:</p>
+<ul>
+	<li>Load the CGM container from the CAAGeodesicModel.NCGM input file 
+	.</li>
+	<li>Create the topdata, config and journal.</li>
+	<li>Retrieve the input data&nbsp; from CGM 
+	container.</li>
+	<li>Create a geodesic line between two points:
+	<ol>
+		<li>Create a geodesic body between two points defined on Nurbs surface 
+		support with CATICGMTopGeodesicPtPt operator.</li>
+		<li>Re-specifies new direction, Length and tolerance parameters 
+		(SetParam) and Re-Run a new geodesic body.</li>
+		<li>Re-specifies new Lengths and tolerance parameters (SetLength &amp;&amp; 
+		SetTolerance) and Re-Run a new geodesic body</li>
+	</ol>
+	</li>
+	<li>Create a geodesic line on a support from a start point, a direction and 
+	a length<ol>
+		<li>Retrieve necessary data from it's tag and create a geodesic body 
+		with CATICGMSketchGeodesic operator</li>
+		<li>Re-specifies new parameters : ChangeTangent &amp; ChangeLength and 
+		Re-Run a new geodesic body</li>
+		<li>Re-specifies new parameters : ChangePoint and Re-Run a new geodesic 
+		body</li>
+		<li>Create a new geodesic body with CATICGMSketchGeodesic operator with 
+		new parameters</li>
+	</ol>
+	</li>
+	<li>Create a geodesic line body passing through a point in a given direction 
+	with CATICGMTopGeodesicLineOperator. </li>
+	<li>Create a geodesic line body angled to the tangent to the wire at the 
+	origin point with CATICGMTopGeodesicLineOperator. </li>
+</ul>
+<p><strong>Note</strong>: This article only focuses on the operations related to 
+the CATICGMTopGeodesicPtPt&nbsp; CATICGMSketchGeodesic and 
+CATICGMTopGeodesicLineOperator operators. Refer to &quot;Overview of the Topological Operators&quot; 
+[<a href="#References">3</a>] for more information on the operations which are 
+not detailed in the article.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMOperatorsGeodesic </h3>
+<p>To launch CAAGMOperatorsGeodesic , you will need to set up the build time environment, 
+then compile CAAGMOperatorsGeodesic.m, set up the run time environment, and then 
+execute the use case [<a href="#References">2</a>].</p>
+<p>If you simply type CAAGMOperatorsGeodesic with only one argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example: </p>
+<p>CAAGMOperatorsGeodesic <code>
+InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\FunctionTests\InputData\CAAGeodesicModel.NCGM e:\CAAGeodesicModelResult.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<p><img alt="" src="images/CATICGMTopGeodesicPtPt_img3.jpg"></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsCleanCrv.m'>
+<h3><a name="Where">Where to Find the 
+CAAGMOperatorsGeodesic Code</a></h3>
+<p>The CAAGMOperatorsGeodesic use case is made of a main named 
+CAATopGeodesic.cpp 
+located in the CAAGMOperatorsGeodesic.m module of the CAAGMOperatorsInterfaces.edu 
+framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\CAAGMOperatorsGeodesic.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">2</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The use case is divided into the following main steps:</p>
+<ul>
+	<li><a href="#Creating the curves making up the wire">Preleminary Operations </a></li>
+	<li><a href="#GeodesicLine">What is a Geodesic line</a></li>
+	<li><a href="#GeodesicLine">Create a geodesic line between two points </a></li>
+	<li><a href="#GeodesicLine">Create a geodesic line on a support from a start 
+	point, a direction and a length</a></li>
+	<li><a href="#Geodesic_passing_through_a_point">Create a geodesic line body 
+	passing through a point in a given direction</a></li>
+	<li><a href="#Create_a_geodesic_angled_to_the_tangent">Create a geodesic 
+	line body angled to the tangent to the wire at the origin point</a> </li>
+</ul>
+	<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creating the curves making up the wire"></a>Preleminary Operations </h3>
+<p>In this operation, the geometrical container is loaded from the input NCGM 
+file in order to get the body that will be treated by operators.</p>
+	<p>The topological journal and software configuration are also retrieved.</p>
+	<p>The following code illustrates how to&nbsp; retrieve these informations:</p>
+<pre class="code">
+ cout &lt;&lt; &quot;\n\n==============================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 0 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Preliminary operations : \n&quot; &lt;&lt; endl;
+
+CATGeoFactory* piGeomFactory = <strong>CATLoadCGMContainer</strong>(filetoread);
+if (NULL == piGeomFactory) return (1);
+cout &lt;&lt; &quot; - Get The Geo factory (CAAGeodesicModel.ncgm in InputData) : OK &quot; &lt;&lt; endl;
+
+// Get the Config
+//
+CATSoftwareConfiguration * pConfig = new <strong>CATSoftwareConfiguration</strong>();
+if (NULL == pConfig) return (1);
+cout &lt;&lt; &quot; - Get the software config : OK &quot; &lt;&lt; endl;
+
+// Get the Topological journal
+//
+CATCGMJournalList* pJournal = new <strong>CATCGMJournalList</strong>(pConfig, NULL);
+if (NULL == pJournal) return (1);
+cout &lt;&lt; &quot; - Get the Topological journal : OK &quot; &lt;&lt; endl;
+
+
+CATTopData topdata(pConfig, pJournal);
+cout &lt;&lt; &quot; - Create the software configuration and CATTopData : OK &quot; &lt;&lt; endl;
+
+//Body of the nurbs surface support
+CATICGMObject * piCGMObj1 = piGeomFactory-&gt;FindObjectFromTag(100); //surface support
+if (piCGMObj1 == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+CATBody * pBodySurfaceSupport = (CATBody *)piCGMObj1;
+cout &lt;&lt; &quot; - Retrieve the Body of the surface support from its tag : OK&quot; &lt;&lt; endl;
+
+
+//First Point
+CATICGMObject * piCGMObj2 = piGeomFactory-&gt;FindObjectFromTag(8235); // 146246First Point
+if (piCGMObj2 == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+CATBody * pBodyFirstPoint = (CATBody *)piCGMObj2;
+cout &lt;&lt; &quot; - Retrieve the Body of the First Point from its tag : OK&quot; &lt;&lt; endl;
+
+//Second Point
+CATICGMObject * piCGMObj3 = piGeomFactory-&gt;FindObjectFromTag(4723); // Second Point
+if (piCGMObj3 == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+CATBody * pBodySecondPoint = (CATBody *)piCGMObj3;
+cout &lt;&lt; &quot; - Retrieve the Body of the Second Point from its tag : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==============================================================================================\n&quot; &lt;&lt; endl;
+...
+</pre>
+	<p>
+	Here are the messages on the standard output:</p>
+	<p>
+	<img alt="" src="images/CATICGMTopGeodesicPtPt_img4.jpg"><br></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creating the wire to be corrected"></a><a name="GeodesicLine">What 
+is a Geodesic line</a></h3>
+	<p>A Geodesic line is a generalization of notion of straight line on the 
+	surface. </p>
+	<p>The geodesic line is then the shortest path between two points in a 
+	surface. </p>
+	<p>A curve C include in a surface S is called a geodesic line if and only if 
+	its principal normal at each point P belonging to C is parallel to the 
+	normal to S at P.</p>
+	<p><img alt="" src="images/Geodesicimg15.jpg"></p>
+	<p>&nbsp;</p>
+	<h3>Create a geodesic line between <span class="auto-style1"><strong>two</strong></span> 
+	points</h3>
+	<p>In first time, the CATICGMTopGeodesicPtPt&nbsp; is used for creating a 
+	geodesic line on a surface between 2 given points..</p>
+<p><img alt="" src="images/CATICGMTopGeodesicPtPt_img8.jpg"></p>
+	<p><img alt="" src="images/CATICGMTopGeodesicPtPt_img7.jpg"></p>
+	<p>For use of the operator CATICGMTopGeodesicPtPt , you must follow the general scheme of all the topological operators:</p>
+<ul>
+	<li>Create an operator instance.</li>
+	<li>Run it.</li>
+	<li>Retrieve the resulting body.</li>
+</ul>
+	<p>The following code illustrates how to use CATICGMTopGeodesicPtPt operator :</p>
+<pre class="code">
+ CATBody *pResultBody = NULL;
+<strong>CATICGMTopGeodesicPtPt</strong> * pGeodesicPtPt = NULL;
+pGeodesicPtPt = <strong>CATCGMCreateGeodesicLinePtPt</strong>(piGeomFactory,
+&amp;topdata,
+pBodyFirstPoint,
+pBodySecondPoint,
+pBodySurfaceSupport);
+
+if (pGeodesicPtPt)
+{
+cout &lt;&lt; &quot;Creates the geodesic operator CATICGMTopGeodesicPtPt : OK &quot; &lt;&lt; endl;
+
+//Adds a given length at the extremities of the line.
+//
+double length1 = 10.;
+double length2 = 5.;
+int ext = pGeodesicPtPt-&gt;<strong>SetLength</strong>(length1, length2);
+cout &lt;&lt; &quot;Adds a length length1 = &quot; &lt;&lt; length1 &lt;&lt; &quot; &amp; length2 = &quot; &lt;&lt; length2 &lt;&lt; &quot; at the extremities of the line : OK &quot; &lt;&lt; endl;
+
+// Defines the tolerance of the geometrically coincident elements to be taken
+// into account by operator on start and end points.
+//
+double tolerance = piGeomFactory-&gt;<strong>GetResolution</strong>();
+pGeodesicPtPt-&gt;<strong>SetTolerance</strong>(tolerance);
+cout &lt;&lt; &quot;Set Tolerance = &quot;&lt;&lt; tolerance &lt;&lt; endl;
+
+// Run the operator
+//
+pGeodesicPtPt-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+pResultBody = pGeodesicPtPt-&gt;<strong>GetResult</strong>();
+
+
+// cout &lt;&lt; &quot;Get The result body : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n === Get the body geodesic result computed by the run : ( Tag = &quot; &lt;&lt; pResultBody-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+
+}</pre>
+	<p>
+	<img alt="" src="images/CATICGMTopGeodesicPtPt_imgC.jpg"></p>
+	<p>
+	Here are the messages on the standard output:</p>
+	<p>
+	<img alt="" src="images/CATICGMTopGeodesicPtPt_img9.jpg"></p>
+	<p>
+	Below a picture showing the geodesic body result : </p>
+	<p>
+	<img alt="" src="images/CATICGMTopGeodesicPtPt_imgB.jpg"></p>
+	<p>
+	&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creating a CATTopCleanCrvOperator operator instance"></a>Create a 
+geodesic line on a support from a start point, a direction and a length</h3>
+<p>In second time, the CATICGMSketchGeodesic is used for creating a geodesic 
+line on a surface support from a origin point and a given direction.</p>
+	<p><img alt="" src="images/CATICGMSketchGeodesic_img10.jpg"></p>
+	<p>The operator CATICGMSketchGeodesic derives from parent class 
+	CATICGMSketchOperators, you must follow the general scheme of all the topological operators:</p>
+<ul>
+	<li>Create an operator instance.</li>
+	<li>Run it.</li>
+	<li>Retrieve the resulting body. The CATICGMSketchOperators provides also a 
+	method Getwire allowing to handle directly the created CATWire.</li>
+</ul>
+	<p>The operator CATICGMSketchGeodesic allows to create a geodesic line from 
+	a point defined on a surface support and respecting a given direction. </p>
+	<p><img alt="" src="images/CATICGMSketchGeodesic_img13.gif"></p>
+	<p>User can re parametrize the operator by replacing :</p>
+	<ul>
+		<li>Point origin of the line </li>
+		<li>Surface Support </li>
+		<li>Length </li>
+		<li>Tangent direction </li>
+	</ul>
+	<p>The following code illustrates how to use CATICGMSketchGeodesic operator :</p>
+	<p>We begin by retrieving the data requested by the operator : </p>
+	<ul>
+		<li>Retrieve the Face on which the start point is located from it's tag</li>
+	</ul>
+<pre class="code">
+ cout &lt;&lt; &quot;\nRetrieve data from it's tag&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;-----------------------------&quot; &lt;&lt; endl;
+//Retrieve the Face on which the start point is located from it's tag
+//
+CATICGMObject * piCGMObjF = piGeomFactory-&gt;FindObjectFromTag(102); //surface support
+if (piCGMObjF == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+<strong>CATFace</strong> * pFaceSupport = (CATFace *)piCGMObjF;
+cout &lt;&lt; &quot; - Retrieve the Face on which the start point is located from its tag : OK&quot; &lt;&lt; endl;
+</pre>
+	<ul>
+		<li>Retrieve global parameter of&nbsp; the origin&nbsp; point on the 
+		surface support</li>
+	</ul>
+	<pre class="code">
+
+// Retrieve the Surface associated to the Face on which the start point is located
+//
+<strong>CATSurface</strong> * pFaceSurface = pFaceSupport-&gt;<strong>GetSurface</strong>();
+if (pFaceSurface == NULL)
+{
+cout &lt;&lt; &quot;Retrieve the Surface associated to the Face on which the start point is located NULL&quot; &lt;&lt; endl;
+return 1;
+}
+cout &lt;&lt; &quot; - Retrieve the Surface associated to the Face on which the start point is located : OK&quot; &lt;&lt; endl;
+
+
+//Retrieve CATPointOnSurface of the Point origin of the geodesic curve from it's tag
+// 
+CATICGMObject * piCGMObjP = piGeomFactory-&gt;FindObjectFromTag(1895);
+if (piCGMObjP == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+
+<strong>CATPointOnSurface</strong> * pPtOnSurface = (CATPointOnSurface *)piCGMObjP;
+if (pPtOnSurface == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+cout &lt;&lt; &quot; - Retrieve CATPointOnSurface of the Point origin of the geodesic curve from it's tag : OK&quot; &lt;&lt; endl;
+
+// display the coordinates of the origin point
+// 
+<strong>CATSurParam</strong> ParamPoint;
+pPtOnSurface-&gt;<strong>GetParam</strong>(ParamPoint);
+CATMathPoint MathPt = pFaceSurface-&gt;EvalPoint(ParamPoint);
+
+double Pt1_X = MathPt.GetX(), Pt1_Y = MathPt.GetY(), Pt1_Z = MathPt.GetZ();
+cout &lt;&lt; &quot;\n \t\tP1 - Point origin Coordinates : \n\n\t\t\t\t\t\t\t\t\t\tX = &quot; &lt;&lt; Pt1_X &lt;&lt; &quot;\n\t\t\t\t\t\t\t\t\t\tY = &quot; &lt;&lt; Pt1_Y &lt;&lt; &quot;\n\t\t\t\t\t\t\t\t\t\tZ = &quot; &lt;&lt; Pt1_Z &lt;&lt; endl;
+</pre>
+	<p><img alt="" src="images/CATICGMSketchGeodesic_img1B.jpg"></p>
+	<ul>
+		<li>Compute a direction between the origin point and a second point 
+		defined outside the surface support<br></li>
+	</ul>
+	<pre class="code">
+//Body of an another Point (outside the surface support)
+//
+CATICGMObject * piCGMObjP2 = piGeomFactory-&gt;FindObjectFromTag(4877);
+if (piCGMObjP2 == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+CATVertex * pVertexP2 = (CATVertex *)piCGMObjP2;
+if (pVertexP2 == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+cout &lt;&lt; &quot;\n - Retrieve the CATVertex of an another Point (outside the surface support) from its tag : OK&quot; &lt;&lt; endl;
+
+// Retrieve &amp; display the coordinates of this point
+// 
+CATPoint * pPointP2 = pVertexP2-&gt;GetPoint();
+
+double Pt2_X = 0., Pt2_Y = 0., Pt2_Z = 0.;
+pPointP2-&gt;GetCoord(Pt2_X, Pt2_Y, Pt2_Z);
+cout &lt;&lt; &quot;\n \t\tP2 : Point (outside the surface support) Coordinates : \n\n\t\t\t\t\t\t\t\t\t\tX = &quot; &lt;&lt; Pt2_X &lt;&lt; &quot;\n\t\t\t\t\t\t\t\t\t\tY = &quot; &lt;&lt; Pt2_Y &lt;&lt; &quot;\n\t\t\t\t\t\t\t\t\t\tZ = &quot; &lt;&lt; Pt2_Z &lt;&lt; endl;
+
+// Build a vector direction from coordinates of two points
+//
+CATMathVector VectorDirTang = CATMathVector(Pt2_X - Pt1_X, Pt2_Y - Pt1_Y, Pt2_Z - Pt1_Z);
+VectorDirTang.Normalize();
+cout &lt;&lt; &quot;\n \t\tDirection of The Geodesic : Vector (P1 P2) =&gt; Coordinates of Vector P1P2 (Normalized) : \n\n\t\t\t\t\t\t\t\t\t\tX = &quot; &lt;&lt; VectorDirTang.GetX() &lt;&lt; &quot;\n\t\t\t\t\t\t\t\t\t\tY = &quot; &lt;&lt; VectorDirTang.GetY() &lt;&lt; &quot;\n\t\t\t\t\t\t\t\t\t\tZ = &quot; &lt;&lt; VectorDirTang.GetZ() &lt;&lt; endl;
+</pre>
+	<p><img alt="" src="images/CATICGMSketchGeodesic_img19.jpg"></p>
+	<p><img alt="" src="images/CATICGMSketchGeodesic_img1F.jpg"></p>
+	<ul>
+		<li>The following code illustrates how to use CATICGMSketchGeodesic operator :</li>
+	</ul>
+	<pre class="code">
+
+// Specify a length for the geodesic curve
+// 
+CATPositiveLength pLength = 20.;
+
+// Creates a CATICGMSketchGeodesic operator that computes the geodesic on a support
+// from a start point, a direction and a length.
+//
+<strong>CATICGMSketchGeodesic</strong> * pSketchGeodesic = <strong>CATCGMCreateGeodesicPointDir</strong>(piGeomFactory,
+&amp;topdata,
+pBodySurfaceSupport, // CATBody The pointer to the body defining the support of the geodesic.
+pFaceSupport, // CATFace The pointer to the face on which the start point is located
+&amp;ParamPoint, // The pointer to the SurParam
+&amp;VectorDirTang, // Direction of the geodesic curve
+pLength, // Length
+ADVANCED); // Mode
+
+if (pSketchGeodesic)
+{
+cout &lt;&lt; &quot;\nCreates the geodesic operator CATICGMSketchGeodesic : OK &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pSketchGeodesic-&gt;Run();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+CATBody * pResultBodySketchGeo = NULL;
+pSketchGeodesic-&gt;GetResult(pResultBodySketchGeo);</pre>
+	<p>
+	Here are the messages on the standard output:</p>
+	<p>
+	<img alt="" src="images/CATICGMSketchGeodesic_img1D.jpg"></p>
+	Below a picture showing the geodesic body result :<br><br>
+	<img alt="" src="images/CATICGMSketchGeodesic_img20.jpg">
+	<p>&nbsp;</p>
+	<h3><a name="Geodesic_passing_through_a_point">Create a geodesic line body 
+	passing through a point in a given direction</a></h3>
+	<p>The operator CATICGMTopGeodesicLineOperator &nbsp;allows to create geodesic 
+	line body passing through a point in a given direction. </p>
+	<p><img alt="" src="images/CATICGMTopGeodesicLineOperator_img24.jpg"></p>
+	<p>the operator is created with method 
+	CATCGMCreateTopGeodesicLineOperatorFromDirection&nbsp; requesting as 
+	parameters : </p>
+	<ul>
+		<li>&nbsp;The pointer to the point body, origin of the geodesic line we 
+		want to create</li>
+		<li>The vector defining the geodesic line direction</li>
+		<li>The first length of the geodesic line from the origin point</li>
+		<li>The second length of the line from the origin point.</li>
+	</ul>
+	<p><img alt="" src="images/CATICGMTopGeodesicLineOperator_img26.jpg"></p>
+	<p>The following code illustrates how to use CATICGMTopGeodesicLineOperator 
+	:</p>
+	<pre class="code">
+
+//
+// Creates the CATICGMTopGeodesicLineOperator that will create geodesic line body passing through a point in a given direction
+//
+// iOriginPoint Tag = 4723 : pBodySecondPoint
+// iSupport (Nurbs Surface) : pBodySurfaceSupport
+// iDirection : VectorDirTang
+//
+
+double FirstLength = 25.;
+double SecondLength = -45.;
+CATBody * pResultBodyGeodesic = NULL;
+
+CATICGMTopGeodesicLineOperator * pTopGeodesicLineOp = <strong>CATCGMCreateTopGeodesicLineOperatorFromDirection</strong> (piGeomFactory,
+&amp;topdata, 
+pBodySurfaceSupport, 
+pBodySecondPoint, 
+VectorDirTang, 
+FirstLength, 
+SecondLength);
+
+
+if (pTopGeodesicLineOp)
+{
+cout &lt;&lt; &quot;\nCreates the geodesic operator CATICGMTopGeodesicLineOperator : OK &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pTopGeodesicLineOp-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+pResultBodyGeodesic = pTopGeodesicLineOp-&gt;<strong>GetResult</strong>();
+if (pResultBodyGeodesic == NULL)
+{
+cout &lt;&lt; &quot;Invalid Result : Get The result NULL&quot; &lt;&lt; endl;
+return 1;
+}
+
+// cout &lt;&lt; &quot;Get The result body : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n === Get the body geodesic result computed by the run : ( Tag = &quot; &lt;&lt; pResultBodyGeodesic-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+
+pTopGeodesicLineOp-&gt;Release();
+pTopGeodesicLineOp = NULL;
+}</pre>
+	<p>Below a picture showing the geodesic body result :</p>
+	<p><img alt="" src="images/CATICGMTopGeodesicLineOperator_img27.jpg"></p>
+	<h3><a name="Create_a_geodesic_angled_to_the_tangent">Create a geodesic line 
+	body angled to the tangent to the wire at the origin point</a> </h3>
+	<p>The CATICGMTopGeodesicLineOperator operator enables also to create a 
+	geodesic line angled to the tangent to the wire at the origin point, and 
+	lying in the plane tangent to the shell at the origin point. </p>
+	<p><img alt="" src="images/CATICGMTopGeodesicLineOperator_img28.jpg"></p>
+	<p>For such type of geodesic, the operator CATICGMTopGeodesicLineOperator&nbsp; 
+	must be created with method CATCGMCreateTopGeodesicLineOperatorFromDirection 
+	that requests as parameters : </p>
+	<ul>
+		<li>The pointer to the point body, origin of the geodesic line we want 
+		to create.</li>
+		<li>The pointer to the wire which contains the origin point of the new 
+		geodesic line.</li>
+		<li>&nbsp;The pointer to the body of the surface which contains the 
+		origin point and the wire.</li>
+		<li>The angle in radian of the rotation around the normal of the shell 
+		at the origin point</li>
+		<li>The first length of the line from the origin point.</li>
+		<li>The second length of the line from the origin point.</li>
+	</ul>
+	<p><img alt="" src="images/CATICGMTopGeodesicLineOperator_img2B.jpg"></p>
+	<p>The following code illustrates how to use CATICGMTopGeodesicLineOperator 
+	in order to create a geodesic line angled to a wire on surface:</p>
+	<pre class="code">
+
+//
+cout &lt;&lt; &quot;\n\n\n==============================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 4 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Create a geodesic line body angled to the tangent to the wire at the origin point&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==============================================================================================\n&quot; &lt;&lt; endl;
+
+// Creates the CATICGMTopGeodesicLineOperator which builds a line angled to the tangent to the wire at the origin point,
+// and lying in the plane tangent to the shell at the origin point.
+// 
+// iCurve = pResultBodyGeodesic
+// iOriginPoint = pBodySecondPoint
+// iShellOfCurve = pBodySurfaceSupport
+//
+
+CATAngle iAngle = CATPI / 7.;
+double FirstLength_Op = 65.;
+double SecondLength_Op = -35.0;
+CATICGMTopGeodesicLineOperator * pTopGeodesicLineOpAngledTangToWire = <strong>CATCGMCreateTopGeodesicLineOperatorAngledTangentToWire</strong>( piGeomFactory,
+&amp;topdata,
+pBodySecondPoint,
+pResultBodyGeodesic,
+pBodySurfaceSupport,
+iAngle,
+FirstLength_Op,
+SecondLength_Op);
+
+CATBody * pResultBodyGeodesicAngled = NULL;
+
+if (pTopGeodesicLineOpAngledTangToWire)
+{
+cout &lt;&lt; &quot;\nCreates the geodesic operator CATICGMTopGeodesicLineOperator : OK &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pTopGeodesicLineOpAngledTangToWire-&gt;Run();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+pResultBodyGeodesicAngled = pTopGeodesicLineOpAngledTangToWire-&gt;GetResult();
+if (pResultBodyGeodesicAngled == NULL)
+{
+cout &lt;&lt; &quot;Invalid Result : Get The result NULL&quot; &lt;&lt; endl;
+return 1;
+}
+
+// cout &lt;&lt; &quot;Get The result body : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n === Get the body geodesic result computed by the run : ( Tag = &quot; &lt;&lt; pResultBodyGeodesicAngled-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+
+pTopGeodesicLineOpAngledTangToWire-&gt;Release();
+pTopGeodesicLineOpAngledTangToWire = NULL;
+}</pre>
+	<p>Below a picture showing the geodesic body result :</p>
+	<p><img alt="" src="images/CATICGMTopGeodesicLineOperator_img2D.jpg"></p>
+	<p>&nbsp;</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The CATICGMTopGeodesicPtPt, CATICGMSketchGeodesic and 
+CATICGMTopGeodesicLineOperator operators propose different manners to create a 
+geodesic line on a surface depending to use objectives and input parameters. It is a transient object and its execution does not 
+modify the input operands.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="CAACgmUcTopOverview.htm">Overview of Topological Operators</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Dec 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

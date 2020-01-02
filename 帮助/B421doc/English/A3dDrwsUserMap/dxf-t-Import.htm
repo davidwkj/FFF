@@ -1,0 +1,459 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Importing a DXF/DWG File"/>
+<meta name="abstract" content="You can import 2D geometric data (X,Y) contained in a disk-based DXF/DWG file to a drawing representation using several methods."/>
+<meta name="description" content="You can import 2D geometric data (X,Y) contained in a disk-based DXF/DWG file to a drawing representation using several methods."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dxf-t-Import"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Importing a DXF/DWG File</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dxf-t-Import">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWG::import"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Importing a DXF/DWG File</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>You can import 2D geometric data (X,Y) contained in a 
+        disk-based DXF/DWG file to a drawing representation using several methods.
+        
+        
+            </span>
+
+    
+  </p>
+
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+  
+  <div>
+    
+    <ol><li class="stepexpand"><p>In the <a href="../PreferencesMap/gdrpref-c-DXF2D.htm#gdrpref-c-DXF2D" title="The DXF 2D options let you customize the import and export of DXF 2D files for Converter for IGES.">DXF 2D</a> <span>tab</span> of the <span><span class="wintitle">Preferences</span></span><ol type="a"><li class="substepexpand">Select the default standard file, or customized ones. See <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a>.
+    </li>
+<li class="substepexpand"> Select a version:<p><ul><li>
+              DXF files correspond to ASCII format. The import supports also binary DXF files.</li>
+
+              <li>
+              DWG files correspond to binary 
+      format.</li>
+<li>DXF/DWG 
+    formats version 12, 13, 14, Autocad2000, Autocad2004, Autocad2007 to Autocad2013 are supported.</li>
+</ul>
+</p></li>
+<li class="substepexpand">Select other required options. Their behavior is described in the next chapters.</li>
+</ol>
+</p></li>
+<li class="stepexpand"><p>Import the DXF2D (*.dxf) or DWG2D (*.dwg)  file as explained in <a href="../ExchUserMap/exch-m-Import-sb.htm#exch-m-Import-sb" title="This section explains how to import 3D XML files.">Import</a>.<p> <ul><li>A progress bar is displayed while the content is converted and saved in the data base. If the save operation fails, a failure message is displayed and the import is aborted. See <a href="dxf-c-Report.htm#dxf-c-Report" title="DXF/DWG generates report files to follow the conversions.">About the Report File</a> for more information.</li>
+<li> The import takes all DXF/DWG options into account with the exception of  the <span><span>Drawings</span></span> Standard. When inserting data in a 2D Layout, its standard is not changed.<ul><li>When a view is inserted in the current sheet, the
+format of the current sheet is not modified.</li>
+<li>When a new sheet is created, the best format is
+applied for this new sheet.</li>
+</ul>
+</li>
+<li>A new representation is created, see
+      <a href="dxf-c-UserExit.htm#dxf-c-UserExit" title="This section explains how to use knowledge rules to customize the valuation of the public and writable PLM Components attributes when creating them at import, and how to customize the file reference attributes while exporting them.">About User Exit</a> for more information about identification.</li>
+<li> The structure of the result is as follows:<ul><li>If the DXF/DWG file contains only one sheet, this
+sheet is created in the current sheet. An auxiliary view is created
+in the current sheet for each view found in the DXF/DWG
+file.</li>
+<li>If the DXF/DWG file contains more than one sheet,
+the first sheet is created in the current sheet, then a new sheet
+is created for each additional DXF/DWG sheet. The views in each
+sheet are created in the plane xy like auxiliary views. The name of
+sheets and views are kept.</li>
+<li>The created views are visible in the work area and put in the
+plane xOy. But you can change the view support for these auxiliary
+views after the import.</li>
+<li>The background of the views is displayed. As a
+consequence, any 3D geometry is seen in all the views. If it
+is not whished, you can choose to make the background invisible for
+the views.</li>
+<li>The default filter which is applied to the created
+views entails that the other views of the 2D Layout are not
+visible.</li>
+</ul>
+</li>
+<li>Entities are imported as follows:<p>Note:
+		 The following DXF entity types introduced since AutoCAD2004 are not supported, nor  mentioned in the report file: Helix, Image, Light, Mesh, Mleader, Section, Sun, Surface, Table, Underlay, Wipeout.</p>
+</li>
+</ul>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d14988e132">DXF/DWG element
+</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d14988e134">DXF/DWG sub-type
+</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d14988e136"><span><span class="tm-3D">3D</span>EXPERIENCE</span></th>
+<th class="cellrowborder" valign="top" width="NaN" id="d14988e141">Notes
+</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" colspan="4" valign="top" headers="d14988e132 d14988e134 d14988e136 d14988e141 "><span class="uicontrol">Geometry</span></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">point<a name="ix-DXF/DWG::point"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">point<a name="ix-point"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">line<a name="ix-DXF/DWG::line"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">line<a name="ix-line"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">ray<a name="ix-DXF/DWG::ray"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">xline<a name="ix-DXF/DWG::xline"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">circle<a name="ix-DXF/DWG::circle"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">circle<a name="ix-circle"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">arc<a name="ix-DXF/DWG::arc"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">arc<a name="ix-arc"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">ellipse<a name="ix-DXF/DWG::ellipse"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">ellipse<a name="ix-ellipse"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">polyline/
+2D polyline/ lightweight polyline<a name="ix-DXF/DWG::polyline"> </a>
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 ">Non adjustable width, 
+made of line segments.</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">polyline<a name="ix-polyline"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Not editable.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 ">Non adjustable width, 
+made of line and 
+arc segments.
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">segments and arc 
+with no structure
+<a name="ix-segments and arc"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Structure is lost.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 ">Adjustable width.</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">filled area (pattern)
+<a name="ix-filled area"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Structure is lost.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 ">Fit curve.</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">polyline</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">mline<a name="ix-DXF/DWG::mline"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">lines
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Structure and closing attributes are lost.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">spline<a name="ix-DXF/DWG::spline"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">NURBS<a name="ix-NURBS"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Not editable.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">3D face<a name="ix-DXF/DWG::3D face"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">3D solid<a name="ix-DXF/DWG::3D solid"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">UCS</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">USER CO-ORDINATE SYSTEM is not taken into account.</td>
+</tr>
+<tr><td class="cellrowborder" colspan="4" valign="top" headers="d14988e132 d14988e134 d14988e136 d14988e141 "><span class="uicontrol">Annotations</span></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">text<a name="ix-DXF/DWG::text"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">text<a name="ix-text"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Mirrored text is not taken into account.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">mtext<a name="ix-DXF/DWG::mtext"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">text
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Changing fonts, changing attributes and 
+line break are not taken into account.
+Text alignment is not taken into account.
+Mirrored text is  not taken into account.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">arc aligned text<a name="ix-DXF/DWG::arc aligned text"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">rtext<a name="ix-DXF/DWG::rtext"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">dimensions<a name="ix-DXF/DWG::dimensions"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 ">Aligned, linear and rotated, 
+radius and diameter, angular, ordinate 
+(x or y).</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">Dimension or details or geometry+texts
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> <a href="dxf-c-DimensionConversion.htm#dxf-c-DimensionConversion" title="Dimensions can be imported in several different ways.">About Dimension Conversion</a>.<p>In a few "dimensions" cases, the text of the dimension can be a
+text with an associative link.
+In all "dimensions" cases, the geometry support is in No Show.
+
+<p>Note:
+    	associative dimensions are not supported.</p>
+
+</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">leader<a name="ix-DXF/DWG::leader"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">semantic arrow
+<a name="ix-semantic arrow"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Editable in <span><span>Drawings</span></span>.
+<p>The dimension style data will then apply to the arrow (color, line
+thickness, line type, ...).
+<span><span>Drawings</span></span> Standards impact the default arrow head. Since
+the arrowhead is automatically mapped to default Arrowhead defined
+in the <span><span>Drawings</span></span> Standard, any specific arrowhead defined in DXF is
+lost.
+</p><p>DXF standards may impact the line type mapping. <p>Note:
+    	Automatic
+mappings apply to line thickness and color.</p>
+
+The leader complies with the unit of the file.
+Spline leaders are automatically converted to polylines leaders
+(with precision defined by the fitting points included in the DXF
+file).
+</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">tolerance<a name="ix-DXF/DWG::tolerance"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">semantic geometrical tolerance
+<a name="ix-semantic geometrical tolerance"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Editable with the Geometrical Tolerance in
+<span><span>Drawings</span></span>.
+<p>DXF tolerances connected to a leader are imported as Tolerances
+with leader. </p><p>The dimension style data will then apply to the
+connected leader (color, line thickness, line type, text dimension,
+precision, tolerance,...).
+<span><span>Drawings</span></span> Standards may impact the default arrow head used by the standard
+tolerance.
+</p><p>DXF standards may impact the font and line type mappings. <p>Note:
+    	Automatic mappings apply to line thickness and color.</p>
+
+The tolerance complies with the unit of the file.
+The first symbol of the DXF tolerance must be a tolerance symbol.
+If this is not the case, no tolerance will be created and an
+error message will be issued.
+</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">hatch<a name="ix-DXF/DWG::hatch"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 ">Non-associative.</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">filled area
+(pattern)
+<a name="ix-filled area (pattern)"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 ">Associative.</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">filled area
+(pattern)</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">The contour of the hatch is created in the No Show and the
+associativity is created with this hidden contour.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">solid<a name="ix-DXF/DWG::solid"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">filled area
+(colored)<a name="ix-filled area (colored)"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">block attribute<a name="ix-DXF/DWG::block attribute"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">text</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" colspan="4" valign="top" headers="d14988e132 d14988e134 d14988e136 d14988e141 "><span class="uicontrol">Structures</span></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">block<a name="ix-DXF/DWG::block"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">detail
+<a name="ix-detail"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">The details are created in a new Detail Sheet named "Imported
+Details".
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">insert (block reference)<a name="ix-DXF/DWG::insert (block reference)"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">ditto
+<a name="ix-ditto"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">If the insert is defined with different scales, on x-axis and
+y-axis, no detail instance is created but only the geometry is
+transferred.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">group<a name="ix-DXF/DWG::group"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">The structure of the group is lost whereas its contents is
+transferred.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">viewport<a name="ix-DXF/DWG::viewport"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">view or details<a name="ix-view"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">See <a href="dxf-c-SpacesSheet.htm#dxf-c-SpacesSheet" title="Below are some information about how paper spaces, model spaces and sheets are managed.">About Sheets</a> and <a href="dxf-c-ViewportConversion.htm#dxf-c-ViewportConversion" title="Viewports content can be imported in several different ways.">About Viewports Content Conversion</a> .</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">layout (paper space)<a name="ix-DXF/DWG::layout (paper space)"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">sheet<a name="ix-sheet"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">See <a href="dxf-c-SpacesSheet.htm#dxf-c-SpacesSheet" title="Below are some information about how paper spaces, model spaces and sheets are managed.">About Sheets</a>.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">OLE frame<a name="ix-DXF/DWG::OLE frame"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">proxy<a name="ix-DXF/DWG::proxy"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">detail</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">The proxy is converted into standard elements (lines, arcs, texts) that are imported at the place of the proxy. 
+<p>The proxy must contain its graphic representation.
+</p><p>The graphic representation must be consistent with the proxy.
+</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">region<a name="ix-DXF/DWG::region"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">none</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" colspan="4" valign="top" headers="d14988e132 d14988e134 d14988e136 d14988e141 "><span class="uicontrol">Attributes</span></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">color<a name="ix-DXF/DWG::color"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">color<a name="ix-color"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">See <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a>.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">line weight<a name="ix-DXF/DWG::line weight"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">line weight<a name="ix-line weight"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">See <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a>.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">line type<a name="ix-DXF/DWG::line type"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">line type<a name="ix-line type"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">See <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a>.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">point markers<a name="ix-DXF/DWG::point markers"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">point type<a name="ix-point type"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Markers may be different.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">layer<a name="ix-DXF/DWG::layer"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">layer<a name="ix-layer"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Invisible layers are gathered in a filter named Invisible Imported
+Layers. <p>Visible layers are gathered in a filter named Visible
+Imported Layers.
+</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">layer name<a name="ix-DXF/DWG::layer name"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">If <span class="uicontrol">Map DXF Layers with mapping table</span> is not selected:<p>
+When an AutoCAD layer has a name that corresponds to a number
+between 0 and 999, this layer is imported as a layer with
+the number associated: 
+
+<ul>
+<li>If a layer with the same number already exists, the AutoCAD
+layer is imported in this layer, without changing its name.</li>
+
+<li>If there is no layer with the same number, the AutoCAD layer
+is imported in a new  layer, with the same name as in
+AutoCAD.</li>
+
+<li>If the AutoCAD layer has a name that does not match any number
+in the available range, the layer is mapped on the first existing
+ layer that has the same name, or a new one is created on the
+first available layer number.</li>
+
+</ul>
+
+</p><p>If <span class="uicontrol">Map DXF Layers with mapping table</span> is selected, see <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a>.</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">font<a name="ix-DXF/DWG::font"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">font<a name="ix-font"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">pattern<a name="ix-DXF/DWG::pattern"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">pattern<a name="ix-pattern"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">Automatic mapping
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">BYBlock attribute<a name="ix-DXF/DWG::byblock attribute"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">attribute<a name="ix-attribute"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">The value of the attribute of the block is set to a default value.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d14988e132 ">BYLayer attribute<a name="ix-DXF/DWG::bylayerattribute"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e134 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e136 ">attribute</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d14988e141 ">The value of the attribute of the layer is applied to each element
+imported.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p></p></li>
+<li class="stepexpand"><p>Alternatively, in <span><span>Drawings</span></span> and <span>2D Layout for 3D Design</span>, from an existing drawing:<ol type="a"><li> From the <span class="wintitle">Annotation</span> section of the <span>action bar</span>, select <span class="uicontrol">Insert 
+                                From 
+								File</span> <img src="../Icons22/I_D3M_Import2D.png"/>.</li>
+<li>Or drag and drop the file to import into the drawing.</li>
+</ol>
+<p>With these methods, the data are inserted in an existing drawing representation. <p>Note:
+		 When new views are inserted in the current sheet, this sheet takes the name of the corresponding DXF/DWG layout and the format of the sheet is modified. To avoid this, insert DXF/DWG files in a new sheet.</p>
+</p></p></li>
+</ol>
+
+    
+  </div>
+
+
+  
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

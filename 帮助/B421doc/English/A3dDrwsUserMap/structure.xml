@@ -1,0 +1,652 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<Root>
+ <ITEM href = "gdr-m-ba-sb.htm" title = "Drawings Basics" reference = "yes">
+  <ITEM href = "gdr-r-rg.htm" title = "Related Guides" reference = "yes"/>
+  <ITEM href = "gdr-c-AccessToContent.htm" title = "Drawings Access to Content" reference = "yes"/>
+  <ITEM href = "gdr-m-ui-sb.htm" title = "User Interface" reference = "yes">
+   <ITEM href = "gdr-m-ui-ActBar-sb.htm" title = "Action Bar" reference = "yes">
+    <ITEM href = "gdr-m-ui-ActBar-ViewLayout-sb.htm" title = "View Layout Section" reference = "yes">
+     <ITEM href = "gdr-r-ui-ActBar-ViewLayout-Primary.htm" title = "Primary Area" reference = "yes"/>
+     <ITEM href = "gdr-r-ui-ActBar-ViewLayout-Secondary.htm" title = "Secondary Area" reference = "yes"/>
+    </ITEM>
+    <ITEM href = "gdr-r-ui-ActBar-Template.htm" title = "Template Section" reference = "yes"/>
+    <ITEM href = "gdr-m-ui-ActBar-Annotation-sb.htm" title = "Annotation Section" reference = "yes">
+     <ITEM href = "gdr-r-ui-ActBar-Annotation-Primary.htm" title = "Primary Area" reference = "yes"/>
+     <ITEM href = "gdr-r-ui-ActBar-Annotation-Secondary.htm" title = "Secondary Area" reference = "yes"/>
+    </ITEM>
+    <ITEM href = "gdr-m-ui-ActBar-Sketch-sb.htm" title = "Sketch Section" reference = "yes">
+     <ITEM href = "gdr-r-ui-ActBar-Sketch-Primary.htm" title = "Primary Area" reference = "yes"/>
+     <ITEM href = "gdr-r-ui-ActBar-Sketch-Secondary.htm" title = "Secondary Area" reference = "yes"/>
+    </ITEM>
+    <ITEM href = "gdr3dmaster-r-ui-ActBar-View-Primary.htm" title = "View Section" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-r-ui-ActBar-Tools-Primary.htm" title = "Tools Section" reference = "yes"/>
+    <ITEM href = "gdr-r-ui-ActBar-Fixed.htm" title = "Fixed Area" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "dys-r-ui-ContextToolbars.htm" title = "Context Toolbars" reference = "yes"/>
+   <ITEM href = "gdr-r-ui-Tree.htm" title = "The Tree" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-r-ui-ObjectProperties.htm" title = "Object Properties Panel" reference = "yes"/>
+   <ITEM href = "gdr-r-ui-TB-ToolsPalette.htm" title = "Tools Palette" reference = "yes"/>
+   <ITEM href = "gdr-r-ui-TB-GenerativeViewStyle.htm" title = "Generative View Style Panel" reference = "yes"/>
+   <ITEM href = "properties-m-ui-sb.htm" title = "Feature Properties" reference = "yes">
+    <ITEM href = "properties-c-ui-Generation.htm" title = "Generation Properties" reference = "yes"/>
+    <ITEM href = "properties-c-ui-Reported.htm" title = "Reported Properties" reference = "yes"/>
+    <ITEM href = "properties-c-ui-Text.htm" title = "Text Properties" reference = "yes"/>
+   </ITEM>
+  </ITEM>
+  <ITEM href = "gdr-m-BasicConcepts-sb.htm" title = "Basic Concepts" reference = "yes">
+   <ITEM href = "gdr-c-BeforeYouBegin.htm" title = "Before You Begin With Drawings" reference = "yes"/>
+   <ITEM href = "gdr-c-ui-TB-DrawingTools.htm" title = "About Using Drawing Tools" reference = "yes"/>
+   <ITEM href = "gdr-c-CopyPaste.htm" title = "About Copy/Paste" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-ObjectInsert.htm" title = "About Inserting an Object" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-c-PredefinedQueries.htm" title = "About Search" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-DrawingRepresentationManagement-sb.htm" title = "Managing Drawing Representation" reference = "yes">
+  <ITEM href = "gdr-c-DrawingGenerationUsingLargeRange.htm" title = "Using Drawings with the Design Range Management" reference = "yes"/>
+  <ITEM href = "gdr-t-DrawingRepresentationManagement-NewDrawingGenerate.htm" title = "Generating a New Drawing" reference = "yes"/>
+  <ITEM href = "gdr-t-CreateNewDrawing.htm" title = "Creating a Drawing Interactively" reference = "yes"/>
+  <ITEM href = "gdr-t-DrawingRepresentationExport.htm" title = "Exporting a Drawing Representation (Save As)" reference = "yes"/>
+  <ITEM href = "gdr-m-WorkwithDrawingRepresentation-sb.htm" title = "Working with Drawing Representation" reference = "yes">
+   <ITEM href = "gdr-m-WorkwithDrawingRepresentation-Concepts-sb.htm" title = "Drawing Representation Concepts" reference = "yes">
+    <ITEM href = "gdr3dmaster-c-FromFileImport.htm" title = "About Importing From Files" reference = "yes"/>
+    <ITEM href = "DWC-c-gdr.htm" title = "About Export of a Drawing Representation" reference = "yes"/>
+    <ITEM href = "gdr-c-DrawingRepresentationManagement-3DDataLoadOpen.htm" title = "About Loading/Opening 3D Data" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "gdr3dmaster-t-FromFileImport.htm" title = "Inserting From Files" reference = "yes"/>
+   <ITEM href = "DWC-t-gdr.htm" title = "Export of a Drawing Representation" reference = "yes"/>
+   <ITEM href = "gdr-t-DrawingRepresentationManagement-3DDataLoadOpen.htm" title = "Loading/Opening 3D Data" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-ExportDatato3dxml.htm" title = "Exporting Data to 3D XML" reference = "yes"/>
+  </ITEM>
+ </ITEM>
+ <ITEM href = "gdr-t-ElementsCopyPaste.htm" title = "Copying and Pasting Elements" reference = "yes"/>
+ <ITEM href = "gdr3dmaster-t-ObjectInsert.htm" title = "Inserting an Object" reference = "yes"/>
+ <ITEM href = "gdr-m-Sheets-sb.htm" title = "Working with Sheets" reference = "yes">
+  <ITEM href = "gdr3dmaster-c-SheetDefine.htm" title = "About Defining a Sheet" reference = "yes"/>
+  <ITEM href = "gdr-t-SheetDefine.htm" title = "Defining a Sheet" reference = "yes"/>
+  <ITEM href = "gdr-t-SheetModify.htm" title = "Modifying a Sheet" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-Sheets-AddDeleteEdit.htm" title = "Managing a Sheet" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-SheetsOrViewsReorder.htm" title = "Reordering a Sheet or a View" reference = "yes"/>
+  <ITEM href = "gdr-t-Sheets-BackgroundViewFromFirstSheetCopy.htm" title = "Copying Background View from First Sheet" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-m-FrameTitleblock-sb.htm" title = "Working with Frame and Title Block" reference = "yes">
+   <ITEM href = "gdr3dmaster-m-FrameTitleblock-Concepts-sb.htm" title = "Frame and Title Block Concepts" reference = "yes">
+    <ITEM href = "gdr3dmaster-c-FrameAndTitleBlockCreate.htm" title = "About Frames and Title Blocks" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-FrameAndTitleBlockCustomize.htm" title = "About Creating a Customized Frame and Title Block" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "gdr3dmaster-t-CreateFrameAndTitleBlockTemplate.htm" title = "Creating a Frame and Title Block Template" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-FrameAndTitleBlockCreate.htm" title = "Creating a Default Frame and Title Block" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-FrameAndTitleBlockCustomize.htm" title = "Creating a Customized Frame and Title Block" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-FrameTitleblock-PerformAction.htm" title = "Performing Actions on the Frame and Title Block" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-m-Sheets-DrawingStandardManage-sb.htm" title = "Managing Drawing Standards" reference = "yes">
+   <ITEM href = "gdr-m-Sheets-DrawingStandardConcepts-sb.htm" title = "Drawing Standards" reference = "yes">
+    <ITEM href = "gdr-c-Sheets-DrawingStandardUpdate.htm" title = "About Updating the Standard of a Drawing" reference = "yes"/>
+    <ITEM href = "gdr-c-Sheets-DrawingToAnotherStandardSwitch.htm" title = "About Switching a Drawing to Another Standard" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Sheets-StandardDefinedStylesUse.htm" title = "About Using Standard-Defined Styles" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "gdr-t-Sheets-DrawingStandardUpdate.htm" title = "Updating the Standard of a Drawing" reference = "yes"/>
+   <ITEM href = "gdr-t-Sheets-DrawingToAnotherStandardSwitch.htm" title = "Switching a Drawing to Another Standard" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Sheets-StandardDefinedStylesUse.htm" title = "Using Standard-Defined Styles" reference = "yes"/>
+  </ITEM>
+ </ITEM>
+ <ITEM href = "gdr-m-ViewCreation-sb.htm" title = "Creating Views" reference = "yes">
+  <ITEM href = "gdr-m-ViewCreation-Concepts-sb.htm" title = "View Creation Concepts" reference = "yes">
+   <ITEM href = "gdr-c-ViewCreation.htm" title = "About View Creation" reference = "yes"/>
+   <ITEM href = "gdr-c-ViewCreation-ViewGenerationModes.htm" title = "About the View Generation Modes" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-AngleProjectionMethods.htm" title = "About the Projection Methods" reference = "yes"/>
+   <ITEM href = "gdr-c-ViewCreation-ViewWithFilters.htm" title = "About Views with Filters" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-ViewFrom3DCreate.htm" title = "About Views from 3D" reference = "yes"/>
+   <ITEM href = "gdr-c-ViewCreation-DelayedUpdate.htm" title = "About Creating Quick Generative Views" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-t-ViewCreation-Views.htm" title = "Creating Views" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-ViewPlaneDefine.htm" title = "Defining the View Plane" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-ViewUsingFoldingLines.htm" title = "Creating Views Using Folding Lines" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-MultipleViewProjection.htm" title = "Creating a Multiple View Projection" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewModification-ViewReframe.htm" title = "Reframing a View" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-FrontView.htm" title = "Creating a Front View" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-ViewWithFilters.htm" title = "Working with Views with Object Filters" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-DelayedUpdate.htm" title = "Creating Quick Generative Views" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-UnfoldedView.htm" title = "Creating an Unfolded View" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-ViewFrom3DCreate.htm" title = "Creating a View from 3D" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-ProjectionView.htm" title = "Creating a Projection View" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-AuxiliaryView.htm" title = "Creating an Auxiliary View" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-IsometricView.htm" title = "Creating an Isometric View" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewCreation-ExplodedView.htm" title = "Creating an Exploded View From Design Review" reference = "yes"/>
+  <ITEM href = "gdr-m-Sections-sb.htm" title = "Creating Sections" reference = "yes">
+   <ITEM href = "gdr-c-ViewCreation-Sections.htm" title = "About Sections" reference = "yes"/>
+   <ITEM href = "gdr-c-ViewCreation-Constraints.htm" title = "About Constraints Available in Tools Palette" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-AlignedSectionViewCut.htm" title = "Creating an Aligned Section View/Cut" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-OffsetSectionViewCut.htm" title = "Creating an Offset Section View/Cut" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-CurveSectionViewCut.htm" title = "Creating a Curve Section View/Cut" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-SectionsUsingOffsetConstraints.htm" title = "Creating Sections Using Offset Constraints" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-SectionsUsingAlternativeMethods.htm" title = "Creating Sections Using Alternative Methods" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-SectionsInAssemblyContext.htm" title = "Creating Sections in Assembly Context" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-m-DetailViews-sb.htm" title = "Creating Detail Views" reference = "yes">
+   <ITEM href = "gdr-c-ViewCreation-DetailViews.htm" title = "About Detail Views" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-DetailViewDetailViewProfile.htm" title = "Creating a Detail View or a Detail View Profile" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-QuickDetailViewQuickDetailViewProfile.htm" title = "Creating a Quick Detail View or a Quick Detail View Profile" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-m-Clipping-sb.htm" title = "Creating and Modifying Clippings" reference = "yes">
+   <ITEM href = "gdr-c-ViewCreation-Clipping.htm" title = "About Clippings" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-ClippingViewClippingViewProfile.htm" title = "Creating a Clipping View/Clipping View Profile" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-QuickClippingViewQuickClippingViewProfile.htm" title = "Creating a Quick Clipping View/Quick Clipping View Profile" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-ClippingModify.htm" title = "Modifying a Clipping" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-m-3DClipping-sb.htm" title = "Adding and Modifying 3D Clippings" reference = "yes">
+   <ITEM href = "gdr-c-ViewCreation-3DClipping.htm" title = "About 3D Clippings" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-3DClippingToExactView.htm" title = "Adding a 3D Clipping to an Exact View" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-3DSpaceClippingToExactView.htm" title = "Adding a Volume 3D Clipping to an Exact View" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-m-BreakViews-sb.htm" title = "Creating and Modifying Breaks" reference = "yes">
+   <ITEM href = "gdr-c-ViewCreation-BrokenView.htm" title = "About Broken Views" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-BrokenView.htm" title = "Creating a Broken View" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-BrokenViewModify.htm" title = "Modifying a Broken View" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-m-BreakoutViews-sb.htm" title = "Creating and Modifying Breakout Views" reference = "yes">
+   <ITEM href = "gdr-c-ViewCreation-BreakoutView.htm" title = "About Breakout Views" reference = "yes"/>
+   <ITEM href = "gdr-c-ViewCreation-BreakoutViewModify.htm" title = "About Modifying Breakout Views" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-BreakoutView.htm" title = "Creating a Breakout View" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewCreation-BreakoutViewModify.htm" title = "Modifying a Breakout View" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-t-ViewCreation-ViewsViaTheWizard.htm" title = "Creating Views via the Wizard" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-ViewContentCustomization-sb.htm" title = "Customizing View Content" reference = "yes">
+  <ITEM href = "gdr-m-ViewContentCustomization-Concepts-sb.htm" title = "View Content Customizing Concepts" reference = "yes">
+   <ITEM href = "gdr-c-ViewContentCustomization.htm" title = "About View Content Configuration" reference = "yes"/>
+   <ITEM href = "gdr-c-ViewModification-CalloutGeometry.htm" title = "About Callout Geometry Modification" reference = "yes"/>
+   <ITEM href = "gdr-c-ViewModification-GenerateHatchedAreas.htm" title = "About Generating Hatched Areas from 3D Specifications" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-t-ViewModification-ElementPropertiesOverload.htm" title = "Overloading Element Properties" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewModification-CalloutGeometry.htm" title = "Modifying a Callout Geometry" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewModification-GenerativeGeometryDuplicate.htm" title = "Duplicating Generative Geometry" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewModification-GenerateHatchedAreas.htm" title = "Generating Hatched Areas from 3D Specifications" reference = "yes"/>
+  <ITEM href = "gdr-t-CopyViewFormat.htm" title = "Copying View Format" reference = "yes"/>
+  <ITEM href = "gdr-m-GraphPropsOfGenGeomAndDressUp-sb.htm" title = "Managing the Graphical Properties of Generated Geometry and Dress-Up" reference = "yes">
+   <ITEM href = "gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp.htm" title = "About the Graphical Properties of Generated Geometry" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewModification-GraphPropsOfGenElemtsChange.htm" title = "Changing the Graphical Properties of Generated Geometry" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewModification-ManagePersProdGraphProps.htm" title = "Managing Persistent Product Graphic Properties" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewModification-DeletedGeneratedElementsRestore.htm" title = "Restoring Original Properties/Deleted Elements" reference = "yes"/>
+  </ITEM>
+ </ITEM>
+ <ITEM href = "gdr-m-ViewManagement-sb.htm" title = "Managing Views" reference = "yes">
+  <ITEM href = "gdr-c-ViewModification-ViewMove.htm" title = "About Moving Views" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-ViewBrowser.htm" title = "Browsing, Organizing, and Editing : View Browser" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewModification-ViewMove.htm" title = "Moving Views" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewPosition.htm" title = "Positioning a View" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-ViewPositionIndependentlyOfReference.htm" title = "Positioning a View Independently of its Reference View" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewModification-ReferenceResultingViewLocate.htm" title = "Locating Reference/Resulting Views" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewModification-GeneratedViewIsolate.htm" title = "Isolating Generated Views" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewModification-ViewLock.htm" title = "Locking a View" reference = "yes"/>
+  <ITEM href = "gdr-m-ViewModification-sb.htm" title = "Modifying Views" reference = "yes">
+   <ITEM href = "gdr-m-ViewModification-Concepts-sb.htm" title = "View Modification Concepts" reference = "yes">
+    <ITEM href = "gdr-c-ViewModification-LinksOfViewModify.htm" title = "About Modifying a View's Links" reference = "yes"/>
+    <ITEM href = "gdr-c-ViewModification-ViewProjectionPlaneModify.htm" title = "About Modifying a View Projection Plane" reference = "yes"/>
+    <ITEM href = "gdr-c-ViewModification-ViewMoficationsPropagate.htm" title = "About Propagating View Modifications" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "gdr-t-ViewModification-LinksOfViewModify.htm" title = "Modifying Links of a View" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewModification-LinksOfView2AnotherViewApply.htm" title = "Modifying the Link of View to Another View" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewModification-ViewProjectionPlaneModify.htm" title = "Modifying a View Projection Plane" reference = "yes"/>
+   <ITEM href = "gdr-t-ViewModification-ViewMoficationsPropagate.htm" title = "Propagating View Modifications" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-t-ViewModification-GeometryInViewShow.htm" title = "Showing Geometry in Views" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-GeometryInViewsAnalyze.htm" title = "Analyzing View Geometries" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-GeometryInViewsUpgrade.htm" title = "Upgrading Views" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-ViewTextCustomize.htm" title = "Managing View Texts" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-ViewUpdate-sb.htm" title = "Managing View Update" reference = "yes">
+  <ITEM href = "gdr-c-ViewUpdate.htm" title = "About Update and PLM Update" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewUpdate-ViewsUpdate.htm" title = "Updating Views" reference = "yes"/>
+  <ITEM href = "gdr-t-DrawingsUsingBatchMonitorUpdate.htm" title = "Updating Drawings Including the Bills of Materials Using the Batch Monitor" reference = "yes"/>
+  <ITEM href = "gdr-t-ViewUpdate-DrawingPLMUpdateStatusCompute.htm" title = "Computing the Drawing PLM Update Status" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-2DGeometry-sb.htm" title = "Creating 2D Geometry" reference = "yes">
+  <ITEM href = "gdr-m-2DGeometryConcepts-sb.htm" title = "2D Geometry Concepts" reference = "yes">
+   <ITEM href = "gdr-c-2DGeometryCreation.htm" title = "About 2D Geometry Creation" reference = "yes"/>
+   <ITEM href = "dys-c-Profile-Profile.htm" title = "About Creating Profiles" reference = "yes"/>
+   <ITEM href = "dys-c-Circle-Circle.htm" title = "About Creating Circles" reference = "yes"/>
+   <ITEM href = "dys-c-Arc-Arc.htm" title = "About Arcs" reference = "yes"/>
+   <ITEM href = "dys-c-Spline-Spline.htm" title = "About Splines" reference = "yes"/>
+   <ITEM href = "dys-c-CurveSplineConnect.htm" title = "About Connecting Curves with a Spline" reference = "yes"/>
+   <ITEM href = "dys-c-ConicCurve.htm" title = "About Creating Conic Curves" reference = "yes"/>
+   <ITEM href = "dys-c-Point-Point.htm" title = "About Points" reference = "yes"/>
+   <ITEM href = "dys-c-EquidistantPoint.htm" title = "About Creating Equidistant Points" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "dys-t-SimpleProfileSketch-Profile.htm" title = "Creating Profiles" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-Rectangle.htm" title = "Creating Rectangles" reference = "yes"/>
+  <ITEM href = "dys-t-PreDefinedProfileSketch-OrientedRectangle.htm" title = "Creating Oriented Rectangles" reference = "yes"/>
+  <ITEM href = "dys-t-PreDefinedProfileSketch-Parallelogram.htm" title = "Creating Parallelograms" reference = "yes"/>
+  <ITEM href = "dys-t-PreDefinedProfileSketch-ElongatedHole.htm" title = "Creating Elongated Holes" reference = "yes"/>
+  <ITEM href = "dys-t-PreDefinedProfileSketch-CylindricalElongatedHole.htm" title = "Creating Cylindrical Elongated Holes" reference = "yes"/>
+  <ITEM href = "dys-t-PreDefinedProfileSketch-KeyholeProfile.htm" title = "Creating Keyhole Profiles" reference = "yes"/>
+  <ITEM href = "dys-t-PreDefinedProfileSketch-Polygon.htm" title = "Creating Polygons" reference = "yes"/>
+  <ITEM href = "dys-t-PreDefinedProfileSketch-CenteredRectangle.htm" title = "Creating Centered Rectangles" reference = "yes"/>
+  <ITEM href = "dys-t-PreDefinedProfileSketch-CenteredParallelogram.htm" title = "Creating Centered Parallelograms" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-Circle.htm" title = "Creating Circles" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-ThreePointCircle.htm" title = "Creating Three Point Circles" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-CircleCoordinateUse.htm" title = "Creating Circles Using Coordinates" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-TriTangentCircle.htm" title = "Creating Tri-Tangent Circles" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-Arc.htm" title = "Creating Arcs" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-ThreePointArc.htm" title = "Creating Three Point Arcs" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-ThreePointArcLimit.htm" title = "Creating Three Point Arcs Starting with Limits" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-TangentArc.htm" title = "Creating a Tangent Arc" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-Spline.htm" title = "Creating Splines" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-CurveConnect.htm" title = "Connecting Curves" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-Ellipse.htm" title = "Creating Ellipses" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-ParabolaFocus.htm" title = "Creating Parabolas by Focus" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-HyperbolaFocus.htm" title = "Creating Hyperbolas by Focus" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-ConicCurve.htm" title = "Creating Conic Curves" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-Line.htm" title = "Creating Lines" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-InfiniteLine.htm" title = "Creating Infinite Lines" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-BisectingLine.htm" title = "Creating Bisecting Lines" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-BiTangentLine.htm" title = "Creating Bi-Tangent Lines" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-LineNormalCurve.htm" title = "Creating Lines Normal to a Curve" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-Point.htm" title = "Creating a Point" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-PointUsingCoordinate.htm" title = "Creating Points Using Coordinates" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-EquidistantPoint.htm" title = "Creating Equidistant Points" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-PointUsingIntersection.htm" title = "Creating Points Using Intersection" reference = "yes"/>
+  <ITEM href = "dys-t-SimpleProfileSketch-PointUsingProjection.htm" title = "Creating Points Using Projection" reference = "yes"/>
+  <ITEM href = "dys-t-BeforeYouBegin-AutoSearchProfilePerform.htm" title = "Performing Auto-Search on Profiles" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-2DGeometryModification-sb.htm" title = "Modifying 2D Geometry" reference = "yes">
+  <ITEM href = "gdr-m-2DGeometryModificationConcepts-sb.htm" title = "Modifying 2D Geometry Concepts" reference = "yes">
+   <ITEM href = "dys-c-OperationProfilePerform-ConcatenateCurve.htm" title = "About Concatenating Curves" reference = "yes"/>
+   <ITEM href = "dys-c-Corner-Corner.htm" title = "About Creating Corners" reference = "yes"/>
+   <ITEM href = "dys-c-Chamfer-Chamfer.htm" title = "About Chamfers" reference = "yes"/>
+   <ITEM href = "dys-c-ElementBreak.htm" title = "About Breaking Elements" reference = "yes"/>
+   <ITEM href = "dys-c-OffsetDuplicate.htm" title = "About Duplicating 2D Elements Using Offset" reference = "yes"/>
+   <ITEM href = "dys-c-OperationProfilePerform-AlignPoints.htm" title = "About Aligning Points" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "dys-t-SketchEdit-ElementCoordinatesModify.htm" title = "Modifying Element Coordinates" reference = "yes"/>
+  <ITEM href = "dys-t-BeforeYoubegin-StandardConstructionElementConvert.htm" title = "Converting Standard into Construction Elements" reference = "yes"/>
+  <ITEM href = "dys-t-SketchEdit-SplineEdit.htm" title = "Editing a Spline" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-Corner.htm" title = "Creating Corners" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-Chamfer.htm" title = "Creating Chamfers" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-ElementTrim.htm" title = "Trimming Elements" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-ElementBreak.htm" title = "Breaking Elements" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-ElementBreakTrim.htm" title = "Breaking and Trimming Elements" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-BooleanTrim.htm" title = "Trimming Elements using Boolean Trim Operations" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-ElementClose.htm" title = "Closing Elements" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-ArcComplement.htm" title = "Complementing an Arc (Circle or Ellipse)" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-MirroredElement.htm" title = "Creating Mirrored Elements" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-ElementSymmetryMove.htm" title = "Moving Elements by Symmetry" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-ElementTranslate.htm" title = "Translating Elements" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-ElementRotate.htm" title = "Rotating Elements" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-ElementScale.htm" title = "Scaling Elements" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-2DElementOffsetDuplicate.htm" title = "Duplicating 2D Elements Using Offset" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-Multiple2DElementOffsetDuplicate.htm" title = "Duplicating Multiple 2D Elements Using Offset" reference = "yes"/>
+  <ITEM href = "dys-t-OperationProfilePerform-AlignPoints.htm" title = "Aligning Points" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-ItemsOrBetweenItemsMeasure.htm" title = "Measuring" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "dys-m-SmartPick-sb.htm" title = "Using SmartPick" reference = "yes">
+  <ITEM href = "dys-c-SmartPick-WhatSmartPick.htm" title = "What is SmartPick ?" reference = "yes"/>
+  <ITEM href = "dys-c-SmartPick-SmartPick.htm" title = "SmartPicking" reference = "yes"/>
+  <ITEM href = "dys-c-SmartPick-GeometryUsingSmartPick.htm" title = "About Geometry Using SmartPick" reference = "yes"/>
+  <ITEM href = "dys-c-SmartPick-DraggingUsingSmartPick.htm" title = "About Dragging Using SmartPick" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-Constraints-sb.htm" title = "Applying Constraints" reference = "yes">
+  <ITEM href = "gdr-m-ConstraintsConcepts-sb.htm" title = "About Constraints" reference = "yes">
+   <ITEM href = "gdr-c-Constraints.htm" title = "About Constraints" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-ConstraintsViaSmartPick.htm" title = "About SmartPick" reference = "yes"/>
+   <ITEM href = "dys-c-ContactConstraint-ContactConstraint.htm" title = "About Contact Constraints" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr3dmaster-t-ConstraintsQuick.htm" title = "Creating Constraints" reference = "yes"/>
+  <ITEM href = "dys-t-ConstraintSet-ApplySameConstraint.htm" title = "Applying Same Constraints to a Set of Elements" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-ConstraintsViaSmartPick.htm" title = "Creating Constraints via SmartPick" reference = "yes"/>
+  <ITEM href = "dys-t-ConstraitSet-ContactConstraint.htm" title = "Creating Contact Constraints" reference = "yes"/>
+  <ITEM href = "gdr-t-Constraints-CnstsBtwn2DAndGeneratedElmnts.htm" title = "Creating Constraints Between 2D and Generated Elements" reference = "yes"/>
+  <ITEM href = "gdr-t-Constraints-BrokenCnstsBtwn2DAndGeneratedElmntsVisualize.htm" title = "Visualizing Broken Constraints between 2D and Generated Elements" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr3dmaster-m-FixTogether-sb.htm" title = "Working with Fix Together Items" reference = "yes">
+  <ITEM href = "dys-c-ElementTogetherFix.htm" title = "About Grouping Elements Together" reference = "yes"/>
+  <ITEM href = "dys-c-ConstraintSet-CatalogCreation.htm" title = "About the Catalog Structure" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-FixTogether-FixTogetherReference.htm" title = "Creating a Group Reference" reference = "yes"/>
+  <ITEM href = "dys-t-ConstraintSet-CatalogCreation.htm" title = "Creating a Catalog" reference = "yes"/>
+  <ITEM href = "dys-t-ConstraintSet-ElementTogetherFix.htm" title = "Grouping Sketch Elements Together" reference = "yes"/>
+  <ITEM href = "dys-t-ConstraintSet-InsertingFixTogetherCatalog.htm" title = "Inserting Groups in an Existing Catalog" reference = "yes"/>
+  <ITEM href = "dys-t-ConstraintSet-InstantiatingFixTogetherCatalog.htm" title = "Instantiating Group Items" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr3dmaster-m-2DComponents-sb.htm" title = "Working with 2D Components" reference = "yes">
+  <ITEM href = "gdr3dmaster-m-2DComponents-Concepts-sb.htm" title = "2D Components Concepts" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-2DComponents.htm" title = "About 2D Components" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-2DComponents-2DComponentInstantiate.htm" title = "About 2D Component Modification Options" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-2DComponents-2DComponentInCatalog.htm" title = "About the Catalog Structure" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-2DComponents-2DComponentInstanceFromCatalogExpose.htm" title = "About Exposing a 2D Component" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-2DComponents-2DComponentInstanceFromDetailSheetInstantiate.htm" title = "About Exploding a 2D Component Instance" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-2DComponents-AnnotationTextAndOrientationIn2DComponentInstanceModify.htm" title = "About Modifying Annotation Text and Orientation" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr3dmaster-t-2DComponents-2DComponentReference.htm" title = "Creating a 2D Component Reference" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-2DComponents-2DComponentInstantiate.htm" title = "Instantiating a 2D Component" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-2DComponents-Multiple2DComponentsFromListOfPointsInstantiate.htm" title = "Multiple Instantiation From a List of Points" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-2DComponents-2DComponentInCatalog.htm" title = "Creating a Catalog" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-2DComponents-2DComponentFromCatalogInstantiate.htm" title = "Instantiating a 2D Component from a Catalog" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-2DComponents-2DComponentInstanceFromDetailSheetInstantiate.htm" title = "Exploding a 2D Component from a Detail Sheet" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-2DComponents-2DComponentInstanceFromCatalogExpose.htm" title = "Exposing a 2D Component from a Catalog" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-2DComponents-AnnotationTextAndOrientationIn2DComponentInstanceModify.htm" title = "Modifying Annotation Text and Orientation in a 2D Component" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-GVS-sb.htm" title = "Working with Generative View Style" reference = "yes">
+  <ITEM href = "gdr-c-GVS.htm" title = "About Generative View Styles" reference = "yes"/>
+  <ITEM href = "gdr-t-GVS-ViewUsingGVSCreate.htm" title = "Creating a View using Generative View Styles" reference = "yes"/>
+  <ITEM href = "gdr-t-GVS-ViewToAnotherGVSSwitch.htm" title = "Switching a View to Another Generative View Style" reference = "yes"/>
+  <ITEM href = "gdr-t-GVS-GVSToAnotherViewApply.htm" title = "Applying the Generative Style of a View to Another View" reference = "yes"/>
+  <ITEM href = "gdr-t-GVS-GVSToAViewApply.htm" title = "Managing Generative View Styles" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-DimensionGeneration-sb.htm" title = "Generating and Analyzing Dimensions" reference = "yes">
+  <ITEM href = "gdr-c-DimensionGeneration.htm" title = "About Dimension Generation" reference = "yes"/>
+  <ITEM href = "gdr-t-DimensionGeneration-DimensionsInOneShot.htm" title = "Generating Dimensions in One Shot" reference = "yes"/>
+  <ITEM href = "gdr-t-DimensionGeneration-DimensionsSemiAutomatically.htm" title = "Generating Dimensions Semi-Automatically" reference = "yes"/>
+  <ITEM href = "gdr-t-DimensionGeneration-DimensionsViewPerViewPosition.htm" title = "Positioning Dimensions (View per View)" reference = "yes"/>
+  <ITEM href = "gdr-t-DimensionGeneration-GeneratedDimensionsFilter.htm" title = "Filtering Dimension Generation" reference = "yes"/>
+  <ITEM href = "gdr-t-DimensionGeneration-GeneratedDimensionsAnalyze.htm" title = "Analyzing Generated Dimensions" reference = "yes"/>
+  <ITEM href = "gdr-t-DimensionGeneration-InterferingDimensionsAnalyze.htm" title = "Analyzing Interfering Dimensions" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-Annotations-sb.htm" title = "Working with Annotations" reference = "yes">
+  <ITEM href = "gdr-m-Annotations-Concepts-sb.htm" title = "Annotations Concepts" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-Annotations.htm" title = "About Annotations" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-Annotations-LeaderAdd.htm" title = "About Leaders" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-Annotations-PositionModify.htm" title = "About Annotation Positioning" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-Annotations-AdvancedSearch.htm" title = "Element Type Attributes" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-Annotations-LinksQuery.htm" title = "About Querying Annotation Links" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr3dmaster-t-Annotations-PositionModify.htm" title = "Modifying Annotation Positioning" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-Annotations-AdvancedSearch.htm" title = "Performing an Advanced Search" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-Annotations-LinksQuery.htm" title = "Querying Annotation Links" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-m-Texts-sb.htm" title = "Working with Texts" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-Annotations-AssociativeMake.htm" title = "About Making an Existing Annotation Associative" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-GraphicPropertiesCopy.htm" title = "Copying Graphic Properties" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-TextFree.htm" title = "Creating Texts" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-TextAssociated.htm" title = "Creating an Associated Text" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-AssociativeMake.htm" title = "Making an Existing Annotation Associative" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-m-TextswithLeaders-sb.htm" title = "Working with Texts with Leaders" reference = "yes">
+    <ITEM href = "gdr3dmaster-c-Annotations-TextWithLeader.htm" title = "About Creating a Text With a Leader" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-TextWithLeader.htm" title = "Creating a Text With a Leader" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-LeaderAdd.htm" title = "Adding a Leader to an Existing Annotation" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-LeaderHandle.htm" title = "Handling Annotation Leaders" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-LeaderBreakpointMoveAndPosition.htm" title = "Moving and Positioning Leader Breakpoints" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "gdr3dmaster-m-FramesOrSubFrames-sb.htm" title = "Working with Frames or Sub-frames" reference = "yes">
+    <ITEM href = "gdr3dmaster-c-Annotations-FramesOrSubFrames.htm" title = "About Frames or Sub-frames" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-r-Annotations-FramesAnchorsTable.htm" title = "Frames Anchors Table" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-FramesOrSubFrames.htm" title = "Adding Frames or Sub-frames" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-ChangeFrameSize.htm" title = "Changing Frame Sizes for Fixed Frames" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "gdr3dmaster-t-Annotations-TextFindReplace.htm" title = "Finding and Replacing Text" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr3dmaster-m-Labels-sb.htm" title = "Working with Labels" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-Labels-Label.htm" title = "About Labels" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Labels-LabelCreate.htm" title = "Creating a Label" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Labels-LabelInstantiate.htm" title = "Instantiating a Label" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Labels-LabelManage.htm" title = "Managing Labels" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr3dmaster-m-Tables-sb.htm" title = "Working with Tables, Balloons, and Bill of Materials" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-Annotations-TableCreate.htm" title = "About Creating a Table" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-Annotations-TableModify.htm" title = "About Modifying a Table" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-TableCreate.htm" title = "Creating a Table" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-TableModify.htm" title = "Modifying a Table" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-TableSort.htm" title = "Sorting a Table" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-TableSplit.htm" title = "Splitting a Table" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-LegendCreate.htm" title = "Working with Legends" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-LegendTableCreate.htm" title = "Creating a Legend Table" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-KnowledgeReportCreate.htm" title = "Inserting a Knowledge Report in a Representation" reference = "yes"/>
+   <ITEM href = "gdr-t-Dimensions-HoleDimensionTable.htm" title = "Creating a Hole Dimension Table" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-PointsCoordinatesTable.htm" title = "Creating a Coordinates Table for Points" reference = "yes"/>
+   <ITEM href = "gdr-t-DrillingHoleTable.htm" title = "Creating a Drilling Hole Table" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-m-Balloons-sb.htm" title = "Working with Balloons" reference = "yes">
+    <ITEM href = "gdr3dmaster-c-Annotations-GenerateBalloons.htm" title = "About Generating Balloons" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-BalloonCreate.htm" title = "Creating Balloons" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-BalloonModify.htm" title = "Modifying a Balloon" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-GenerateBalloons.htm" title = "Generating Balloons" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "gdr3dmaster-m-BillofMaterials-sb.htm" title = "Managing Bill of Materials" reference = "yes">
+    <ITEM href = "gdr3dmaster-c-Annotations-MultipleBillofMaterialCreate.htm" title = "About Creating Multiple Bills of Material Tables" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-BillofMaterialCreate.htm" title = "Working with a Bill of Materials" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-BillofMaterialModify.htm" title = "Modifying a Bill of Materials" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Annotations-MultipleBillofMaterialCreate.htm" title = "Working with Multiple Bills of Materials" reference = "yes"/>
+   </ITEM>
+  </ITEM>
+  <ITEM href = "gdr3dmaster-m-Dimensions-sb.htm" title = "Working with Dimensions" reference = "yes">
+   <ITEM href = "gdr3dmaster-m-Dimensions-Concepts-sb.htm" title = "Dimensions Concepts" reference = "yes">
+    <ITEM href = "gdr3dmaster-c-Dimensions.htm" title = "About Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-DimensioningTools.htm" title = "About Dimensioning Tools" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-Dimension.htm" title = "About Creating Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-HalfDimension.htm" title = "About Creating Half Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-ExplicitDimension.htm" title = "About Positioning a Foreshortened Extremity Manually" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-ChamferDimension.htm" title = "About Chamfer Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-ThreadDimension.htm" title = "About Thread Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-CurvilinearLengthDimension.htm" title = "About Creating Curvilinear Length Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-PartialCurvilinearLengthDimension.htm" title = "About Creating Partial Curvilinear Length Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-DimensionAlongAReferenceDirection.htm" title = "About Creating Dimensions along a Reference Direction" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-DimensionBetweenIntersectionPoint.htm" title = "About Creating Dimensions between Intersection Points" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-MinimuDistanceDimension.htm" title = "About Minimum Distance Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-DimensionsClip.htm" title = "About Clipping Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-DimensionReroute.htm" title = "About Re-routing Dimensions" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-ExtensionLinesInterrupt.htm" title = "About Interrupting Extension Lines" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-c-Dimensions-DimensionOverrunBlankingModify.htm" title = "About Dimension Overrun/Blanking" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "gdr3dmaster-t-Dimensions-Dimension.htm" title = "Creating Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-HalfDimension.htm" title = "Creating Half Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-ExplicitDimension.htm" title = "Creating Explicit Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-ForshortenDimension.htm" title = "Positioning a Foreshortened Extremity Manually" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-AngleDimension.htm" title = "Creating/Modifying Angle Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-FilletRadiusDimension.htm" title = "Creating Fillet Radius Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-ChamferDimension.htm" title = "Creating Chamfer Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-ThreadDimension.htm" title = "Creating Thread Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-CoordinateDimension.htm" title = "Creating/Modifying Coordinate Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-RadiusCurvatureDimension.htm" title = "Creating/Modifying Curvature Radius Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-OverallCurveDimension.htm" title = "Creating Overall Curve Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-CurvilinearLengthDimension.htm" title = "Creating Curvilinear Length Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-PartialCurvilinearLengthDimension.htm" title = "Creating Partial Curvilinear Length Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionAlongAReferenceDirection.htm" title = "Creating Dimensions along a Reference Direction" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionBetweenIntersectionPoint.htm" title = "Creating Dimensions between Intersection Points" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionBetweenElementAndViewAxis.htm" title = "Creating Dimensions between an Element and a View Axis" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-MinimuDistanceDimension.htm" title = "Creating a Minimum Distance Dimension" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionsClip.htm" title = "Clipping Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionTypeModify.htm" title = "Modifying the Dimension Type" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionReroute.htm" title = "Re-routing Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-ExtensionLinesInterrupt.htm" title = "Interrupting Extension Lines" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionLineLocationModify.htm" title = "Modifying the Dimension Line Location" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionValueTextPositionModify.htm" title = "Modifying the Dimension Value Text Position" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionValuePositionSpecify.htm" title = "Specifying the Dimension Value Position" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-TextBeforeAfterDimensionValueAdd.htm" title = "Adding Text Before/After the Dimension Value" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionOverrunBlankingModify.htm" title = "Modifying the Dimension Overrun/Blanking" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionLineUpFreeSpace.htm" title = "Lining up Dimensions (Free Space)" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionLineUpReference.htm" title = "Lining up Dimensions (Reference)" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DrivingDimensions.htm" title = "Creating Driving Dimensions" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DimensionScale.htm" title = "Scaling a Dimension" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-m-DimensionSystems-sb.htm" title = "Working with Dimension Systems" reference = "yes">
+    <ITEM href = "gdr3dmaster-c-DimensionSystems.htm" title = "About Dimension Systems" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Dimensionsystems-Chained.htm" title = "Creating Chained Dimension Systems" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Dimensionsystems-Cumulated.htm" title = "Creating Cumulated Dimension Systems" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Dimensionsystems-Stacked.htm" title = "Creating Stacked Dimension Systems" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Dimensionsystems-Modify.htm" title = "Modifying a Dimension System" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Dimensionsystems-Manage.htm" title = "Working with Dimension Systems" reference = "yes"/>
+    <ITEM href = "gdr3dmaster-t-Dimensionsystems-LineUp.htm" title = "Lining Up Dimension Systems" reference = "yes"/>
+   </ITEM>
+  </ITEM>
+  <ITEM href = "gdr3dmaster-m-Tolerances-sb.htm" title = "Working with Tolerances" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-Annotations-DatumTargetCreate.htm" title = "About Working with Datum Targets" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-Dimensions-GeometricalToleranceCreate.htm" title = "About Creating a Geometrical Tolerance" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DatumFeatureCreate.htm" title = "Creating a Datum Feature" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-DatumFeatureModify.htm" title = "Modifying a Datum Feature" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-DatumTargetCreate.htm" title = "Working with Datum Targets" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-DatumTargetModify.htm" title = "Modifying a Datum Target" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-GeometricalToleranceCreate.htm" title = "Creating a Geometrical Tolerance" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-GeometricalToleranceModify.htm" title = "Modifying Geometrical Tolerances" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Dimensions-GeometricalToleranceCopy.htm" title = "Copying Geometrical Tolerances" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-m-Symbols-sb.htm" title = "Working with Symbols" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-Annotations-RoughnessSymbol.htm" title = "About Roughness Symbol" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-Annotations-WeldingSymbol.htm" title = "About Welding Symbols" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-RoughnessSymbol.htm" title = "Creating a Roughness Symbol" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-Annotations-WeldingSymbol.htm" title = "Creating a Welding Symbol" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-t-Annotations-GeometryWeld.htm" title = "Creating a Weld" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr3dmaster-m-TextTemplates-sb.htm" title = "Managing Text and Table Templates" reference = "yes">
+  <ITEM href = "gdr3dmaster-c-TextTemplates.htm" title = "About Text and Table Templates" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-TemplateBrowser.htm" title = "Browsing and Editing Templates: Template Browser" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-TextTemplates-TextTemplateCreate.htm" title = "Working with Text and Table Templates" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-TextTemplates-TextTemplateStore.htm" title = "Storing Text and Table Templates in a Catalog" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-m-TemplatesInstantiate-sb.htm" title = "Instantiating Templates" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-InstantiateTextTableTemplates.htm" title = "About Routing Link Templates" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-TextTemplates-UsingTextTemplatesAnnotate.htm" title = "Instantiating Text Templates" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-TextTemplates-InstantiateTableTemplate.htm" title = "Instantiating Table Templates" reference = "yes"/>
+  </ITEM>
+ </ITEM>
+ <ITEM href = "gdr-m-DressUpElements-sb.htm" title = "Dressing Up Elements" reference = "yes">
+  <ITEM href = "gdr-c-DressUpElements.htm" title = "About Dress-Up Elements" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-c-DressUp-Arrow.htm" title = "About Creating Arrows" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-DressUp-CenterLineNoReference.htm" title = "Creating Center Lines Without a Reference" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-DressUp-CenterLineWithReference.htm" title = "Creating Center Lines With a Reference" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-DressUp-AxisLineOrCenterLineModify.htm" title = "Modifying Center Lines or Axis Lines" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-DressUp-Arrow.htm" title = "Creating Arrows" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-DressUp-ThreadNoReference.htm" title = "Creating Threads Without a Reference" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-DressUp-ThreadWithReference.htm" title = "Creating Threads With a Reference" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-DressUp-AxisLine.htm" title = "Creating Axis Lines" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-DressUp-AxisLineAndCenterLine.htm" title = "Creating Axis Lines and Center Lines" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-m-AreaFill-sb.htm" title = "Working with Area Fill" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-DressUp-AreaFillCreate.htm" title = "About Area Fill Creation" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-DressUp-AreaFillCreate.htm" title = "Creating an Area Fill" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-DressUp-AreaFillModify.htm" title = "Modifying an Area Fill" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-t-DressUp-AreaFillBoolean.htm" title = "Working with Area Fill Boolean Operations" reference = "yes"/>
+  </ITEM>
+ </ITEM>
+ <ITEM href = "gdr-m-KnowledgewareTools-sb.htm" title = "Using Knowledgeware Tools" reference = "yes">
+  <ITEM href = "gdr3dmaster-c-AttributeLinkstoTextAdd.htm" title = "About Adding Attribute Links and Text Templates" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-AttributeLinksToTextAdd.htm" title = "Adding Attribute Links" reference = "yes"/>
+  <ITEM href = "gdr-t-KnowledgewareTools-AnnotationsDeactivate.htm" title = "Deactivating Annotations" reference = "yes"/>
+  <ITEM href = "gdr-t-KnowledgewareTools-TableRowsDeactivate.htm" title = "Deactivating Table Rows" reference = "yes"/>
+  <ITEM href = "gdr-t-KnowledgewareTools-RelationsBtwnDimensionalCnstsSet.htm" title = "Setting Relations Between Dimensional Constraints" reference = "yes"/>
+  <ITEM href = "gdr-t-KnowledgewareTools-ExternalParametersSynchronize.htm" title = "Synchronizing External Parameters" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr3dmaster-m-Images-sb.htm" title = "Working with Images" reference = "yes">
+  <ITEM href = "gdr3dmaster-c-Annotations-TableInsertPicture.htm" title = "About Inserting a Picture in a Table Cell" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-c-Images-RasterOrVectorInsert.htm" title = "About Inserting Images" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-Annotations-TableInsertPicture.htm" title = "Inserting a Picture in a Table Cell" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-Images-RasterOrVectorInsert.htm" title = "Inserting Images (Raster or Vector)" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-Annotations-TableInsertPictureModify.htm" title = "Modifying a Picture" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-Images-RasterEdit.htm" title = "Editing Raster Images" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr3dmaster-m-Print-sb.htm" title = "Printing" reference = "yes">
+  <ITEM href = "gdr3dmaster-t-Print-Sheet.htm" title = "Printing a Sheet" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-Print-VisualizePrintArea.htm" title = "Visualizing the Print Area" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "dxf-m-DXF-sb.htm" title = "Dealing with DXF/DWG Data" reference = "yes">
+  <ITEM href = "dxf-m-c-DXF-sb.htm" title = "DXF/DWG Concepts" reference = "yes">
+   <ITEM href = "dxf-c-UserExit.htm" title = "About User Exit" reference = "yes"/>
+   <ITEM href = "dxf-c-Report.htm" title = "About the Report File" reference = "yes"/>
+   <ITEM href = "dxf-c-Standards.htm" title = "About Standards" reference = "yes"/>
+   <ITEM href = "dxf-c-Unit.htm" title = "About Units" reference = "yes"/>
+   <ITEM href = "dxf-c-SpacesSheet.htm" title = "About Sheets" reference = "yes"/>
+   <ITEM href = "dxf-c-Endpoints.htm" title = "About End Points" reference = "yes"/>
+   <ITEM href = "dxf-c-DimensionConversion.htm" title = "About Dimension Conversion" reference = "yes"/>
+   <ITEM href = "dxf-c-ViewportConversion.htm" title = "About Viewports Content Conversion" reference = "yes"/>
+   <ITEM href = "dxf-c-Layers.htm" title = "About Layers" reference = "yes"/>
+   <ITEM href = "dxf-c-ExportMode.htm" title = "About Export Mode" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "dxf-t-Import.htm" title = "Importing a DXF/DWG File" reference = "yes"/>
+  <ITEM href = "dxf-t-Export.htm" title = "Exporting Data to a DXF/DWG File" reference = "yes"/>
+  <ITEM href = "FormatExchange-t-PLMBatch.htm" title = "Using DataExchangePLMBatch" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr3dmaster-t-AccessCustomizeSettings.htm" title = "Accessing and Customizing Preferences" reference = "yes"/>
+ <ITEM href = "gdr3dmaster-m-ToolbarsCustomize-sb.htm" title = "Customizing" reference = "yes">
+  <ITEM href = "gdr3dmaster-c-ToolbarsCustomize.htm" title = "About Customizing Properties" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-ToolbarsCustomize.htm" title = "Customizing Properties Boxes" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-t-ToolbarCustomizeAddCommands.htm" title = "Customizing an Action Bar by Adding Commands" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "standards-m-ad-sb.htm" title = "Administration" reference = "yes">
+  <ITEM href = "standards-m-ad-Concepts-sb.htm" title = "Administration Concepts" reference = "yes">
+   <ITEM href = "standards-r-ad-Location.htm" title = "About the Location of Standard or Generative View Styles Files" reference = "yes"/>
+   <ITEM href = "standards-c-ad-Standards.htm" title = "About Standards" reference = "yes"/>
+   <ITEM href = "standards-c-ad-StandardsUpgrade.htm" title = "About Upgrading Standard Files from Previous Releases" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "standards-t-ad-StandardsAdminister.htm" title = "Working with Standards and Generative View Styles" reference = "yes"/>
+  <ITEM href = "standards-t-ad-StandardsUpgrade.htm" title = "Upgrading Standard Files from Previous Releases" reference = "yes"/>
+  <ITEM href = "standards-m-ad-StandardParameters-sb.htm" title = "Setting Standard Parameters" reference = "yes">
+   <ITEM href = "standards-t-ad-StandardParametersCustomize.htm" title = "Defining Standard Parameters" reference = "yes"/>
+   <ITEM href = "standards-r-ad-GeneralParams.htm" title = "General Parameters" reference = "yes"/>
+   <ITEM href = "standards-r-ad-DressUpParams.htm" title = "Dress-Up parameters" reference = "yes"/>
+   <ITEM href = "standards-r-ad-DimensionParams.htm" title = "Dimension Parameters" reference = "yes"/>
+   <ITEM href = "standards-r-ad-ToleranceFormatParams.htm" title = "Dimension Tolerance Formats" reference = "yes"/>
+   <ITEM href = "standards-r-ad-ValueFormatParams.htm" title = "Dimension Value Formats" reference = "yes"/>
+   <ITEM href = "standards-r-ad-PreDefinedFormatsForTolAndDimValues.htm" title = "Pre-defined Formats for Tolerance and Dimension Values" reference = "yes"/>
+   <ITEM href = "standards-r-ad-AnnotationParams.htm" title = "Annotation Parameters" reference = "yes"/>
+   <ITEM href = "standards-r-ad-FrameParams.htm" title = "Frame Definition" reference = "yes"/>
+   <ITEM href = "standards-m-ad-Views-sb.htm" title = "Views" reference = "yes">
+    <ITEM href = "standards-r-ad-ViewNameParameters.htm" title = "View Name Definition" reference = "yes"/>
+    <ITEM href = "standards-r-ad-ViewTextParameters.htm" title = "View Text Definition" reference = "yes"/>
+    <ITEM href = "standards-r-ad-ViewGenerationParameters.htm" title = "View Generation Definition" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "standards-r-ad-LineThicknessParameters.htm" title = "Line Thicknesses Definition" reference = "yes">
+    <ITEM href = "standards-c-ad-LineThicknessParameters.htm" title = "About Line Thicknesses Definition" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "standards-r-ad-PreDefinedStyles.htm" title = "Pre-defined Styles Definition" reference = "yes"/>
+   <ITEM href = "standards-r-ad-PatternParams.htm" title = "Pattern Definition" reference = "yes">
+    <ITEM href = "standards-c-ad-PatternParams.htm" title = "About Pattern Definition" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "standards-r-ad-LineTypes.htm" title = "Line Type Definition" reference = "yes"/>
+   <ITEM href = "standards-r-ad-SheetFormats.htm" title = "Sheet Format Definition" reference = "yes"/>
+   <ITEM href = "standards-t-ad-LayoutViewsCustomize.htm" title = "Layout Views Customization" reference = "yes">
+    <ITEM href = "standards-c-ad-LayoutViewsCustomize.htm" title = "About Layout Views Customization" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "standards-t-ad-EngineeringSymbolsCustomize.htm" title = "Creating an Engineering Symbol" reference = "yes">
+    <ITEM href = "standards-c-ad-EngineeringSymbolsCustomize.htm" title = "About Engineering Symbols" reference = "yes"/>
+   </ITEM>
+  </ITEM>
+  <ITEM href = "standards-m-ad-StandardStyles-sb.htm" title = "Setting Styles" reference = "yes">
+   <ITEM href = "standards-c-ad-StandardStyles.htm" title = "About Styles" reference = "yes"/>
+   <ITEM href = "standards-t-ad-StandardStylesCustomize.htm" title = "Customizing Styles" reference = "yes"/>
+   <ITEM href = "standards-c-ad-AnnotationStyles.htm" title = "Annotation Styles" reference = "yes"/>
+   <ITEM href = "standards-r-ad-DimensionStyles.htm" title = "Dimension Styles" reference = "yes"/>
+   <ITEM href = "standards-r-ad-GeometryStyles.htm" title = "Geometry Styles" reference = "yes"/>
+   <ITEM href = "standards-r-ad-ViewCalloutStyles.htm" title = "View Callout Styles" reference = "yes"/>
+  </ITEM>
+ </ITEM>
+ <ITEM href = "generativeviewstyles-c-ad-ViewDressUpParams.htm" title = "About View Dress-up Parameters" reference = "yes"/>
+ <ITEM href = "generativeviewstyles-r-ad-ViewDressUpParams.htm" title = "View Dress-up Parameters" reference = "yes"/>
+ <ITEM href = "a3ddrws-m-PropertyParameter-sb.htm" title = "Property and Parameter Information" reference = "yes">
+  <ITEM href = "properties-c-ui-Border.htm" title = "Border Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-Chamfer.htm" title = "Chamfer Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-Font.htm" title = "Font Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-DimensionTexts.htm" title = "Dimension Texts Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-DimensionLine.htm" title = "Dimension Line Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-ExtensionLine.htm" title = "Extension Line Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-Label.htm" title = "Label Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-Picture.htm" title = "Picture Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-Sheet.htm" title = "Sheet Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-System.htm" title = "System Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-Tolerance.htm" title = "Tolerance Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-Value.htm" title = "Value Properties" reference = "yes"/>
+  <ITEM href = "properties-c-ui-View.htm" title = "View Properties" reference = "yes"/>
+  <ITEM href = "standards-r-ad-DimensionSystemStyles.htm" title = "Dimension System Styles" reference = "yes"/>
+  <ITEM href = "standards-r-ad-SheetStyles.htm" title = "Sheet Styles" reference = "yes"/>
+  <ITEM href = "generativeviewstyles-r-ad-2DLayoutFor3DDesign.htm" title = "2D Layout For 3D Design Parameters" reference = "yes"/>
+  <ITEM href = "generativeviewstyles-r-ad-FunctionalTolerancingAnnotationParams.htm" title = "3D Tolerance &amp;amp; Annotation Parameters" reference = "yes"/>
+  <ITEM href = "generativeviewstyles-r-ad-Common3DModeling.htm" title = "Common 3D Modeling Parameters" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "pjrid1-m-PRM-sb.htm" title = "Data Setup" reference = "yes">
+  <ITEM href = "pjrid1-r-AvailableResources.htm" title = "2D Layout for 3D Design Resources" reference = "yes"/>
+  <ITEM href = "pjr-t-PRM-SetupDataTableCreate.htm" title = "Creating a Resource Table" reference = "yes"/>
+  <ITEM href = "pjr-t-PRM-SetupDataTablePOProjectAssociate.htm" title = "Associating a Resource Table with a Collaborative Space" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "gdr-m-rf-sb.htm" title = "Reference Information" reference = "yes">
+  <ITEM href = "gdr-r-ui-OfflineMode.htm" title = "Offline Mode" reference = "yes"/>
+  <ITEM href = "fbdi-r-mechanical-gdr.htm" title = "Drawings File-based Design Import" reference = "yes"/>
+  <ITEM href = "dbdi-r-mechanical-gdr.htm" title = "Drawings Database Design Import" reference = "yes"/>
+  <ITEM href = "gdr-m-DialogBoxes-sb.htm" title = "Dialog Boxes" reference = "yes">
+   <ITEM href = "gdr3dmaster-c-ui-DialogBoxes-GenerativeViewStyles.htm" title = "Generative View Styles Dialog Box" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-ui-DialogBoxes-SketchAnalysis.htm" title = "Sketch Analysis" reference = "yes"/>
+   <ITEM href = "gdr3dmaster-c-ui-DialogBoxes-ValueOrientation.htm" title = "Value Orientation" reference = "yes"/>
+   <ITEM href = "gdr-c-ui-DialogBoxes-ViewUpdateReport.htm" title = "View Update Report Dialog Box" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "gdr-r-ui-EditabilityMode.htm" title = "Drafting Interface in Editability Mode" reference = "yes"/>
+  <ITEM href = "gdr3dmaster-m-KnowledgeTemplates-sb.htm" title = "Knowledge Packages" reference = "yes">
+   <ITEM href = "eklid1-r-DrwMasterPackageTypes.htm" title = "DrwMasterPackage Type: DrwObject" reference = "yes"/>
+   <ITEM href = "eklid1-r-DrwPackageTypes.htm" title = "Drawing &amp;amp; Layout Types" reference = "yes"/>
+   <ITEM href = "eklid1-r-DrwAnnotPackageTypes.htm" title = "DrwAnnotPackage Types" reference = "yes"/>
+   <ITEM href = "eklgdr-r-DrwDressUpPackageTypes.htm" title = "Dress Up Types" reference = "yes"/>
+   <ITEM href = "eklgdr-r-DrwGenPackageTypes.htm" title = "DrwGenPackage Types" reference = "yes"/>
+   <ITEM href = "eklkwa-r-StandardTypes.htm" title = "Standard Types" reference = "yes"/>
+  </ITEM>
+ </ITEM>
+ <ITEM href = "Sitemap.htm" title = "Sitemap" reference = "no"/>
+</Root>

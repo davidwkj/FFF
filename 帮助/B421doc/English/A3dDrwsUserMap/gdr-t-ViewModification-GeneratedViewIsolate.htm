@@ -1,0 +1,87 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Isolating Generated Views"/>
+<meta name="abstract" content="You can isolate a generated view. Isolating a view amounts to suppressing associativity between an existing 3D representation and the corresponding generated view. This results in transforming a generated view into an interactive view."/>
+<meta name="description" content="You can isolate a generated view. Isolating a view amounts to suppressing associativity between an existing 3D representation and the corresponding generated view. This results in transforming a generated view into an interactive view."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewCreation.htm#gdr-c-ViewCreation"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewModification-GeneratedViewIsolate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Isolating Generated Views</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewModification-GeneratedViewIsolate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::isolating"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-isolating views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Isolate"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Isolating Generated Views
+          </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can isolate a generated view. Isolating a view amounts to suppressing associativity 
+             between an existing 3D representation and the corresponding generated 
+             view. This results in transforming a generated view into an interactive 
+             view.</span>
+
+             <p><span class="run-in">Important:
+		</span> <ul> <li>A view that has been isolated cannot be de-isolated.</li>
+ <li>Center lines, threads and axis lines in isolated views are no longer associated to geometry.</li>
+ <li>Dimensions in isolated views are no longer associated to geometry.</li>
+ </ul>
+ </p>
+
+             <p>This task shows you how to: </p>
+             
+             </p>
+<ul><li><a href="#t-IsolateASelectionOfViews" id="toc_rg" title="You can isolate selected views.">Isolate a Selection of Views </a></li><li><a href="#t-IsolatingAllViewsInTheDrawing" id="toc_rg" title="You can isolate all views in the drawing.">Isolate All Views in the Drawing </a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>                    Open        a generated <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.            </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewCreation.htm#gdr-c-ViewCreation" title="The Drawings app allows you to create views of varying levels of complexity. This topic provides more information about view creation.">About View Creation</a></td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+</div>
+<div/><div class="nested1" id="t-IsolateASelectionOfViews"><h2 class="topictitle2">Isolate a Selection of Views </h2>
+<div><p>You can isolate selected views. </p>
+<ol><li class="stepexpand"><p>Select the views you want to isolate, for example the Top, 
+       Bottom, Left and Right views, and right-click them.</p></li>
+<li class="stepexpand"><p>Select <span class="uicontrol">Selected objects &gt; Isolate</span>. <p> 
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  For the 
+           purpose of this scenario, several views are selected, but if you select 
+           only one view, the left view for example, then you need to select
+           <span class="uicontrol">Left view object &gt; Isolate</span> from the <span>context menu</span>.</td></tr></table>
+
+       <p>The selected views are now isolated. </p>
+       
+       </p></p></li>
+</ol>
+<p class="result">
+     If you perform one or 
+       more modifications on the 3D representation, you will not be able to update the isolated 
+       views. </p></div>
+</div>
+<div class="nested1" id="t-IsolatingAllViewsInTheDrawing"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Isolate All Views in the Drawing </h2>
+<div><p>You can isolate all views in the drawing. </p>
+<ol><li class="stepexpand"><p>In the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>, right-click the drawing <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">object</span> 
+       to display the <span>context menu</span>.</p></li>
+<li class="stepexpand"><p>Select <span class="uicontrol">Drawing object &gt; Isolate</span>.<p> 
+       <p>All views in the drawing are now isolated.</p>
+       </p></p></li>
+</ol>
+<p class="result">
+     
+   
+
+ 
+
+ 
+
+
+ If you perform 
+       one or more modifications on the 3D representation, you will not be able to update 
+       the drawing.</p></div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

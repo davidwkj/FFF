@@ -1,0 +1,108 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Creating Half Dimensions"/>
+<meta name="abstract" content="Half dimensions are useful in the case of revolved features or elements using a plane symmetry, as they let you create the dimensions only on half the geometry."/>
+<meta name="description" content="Half dimensions are useful in the case of revolved features or elements using a plane symmetry, as they let you create the dimensions only on half the geometry."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Dimensions-HalfDimension.htm#gdr3dmaster-t-Dimensions-HalfDimension"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Dimensions-HalfDimension"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Creating Half Dimensions</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Dimensions-HalfDimension">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1> About Creating Half Dimensions</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Half dimensions are useful in the case 
+						of revolved features or elements using a plane symmetry, 
+						as they let you create the dimensions only on half the geometry.</span>
+
+						<p>This topic provides more information about 
+						half dimensions. </p>
+						
+						
+					
+				</p>
+<ul><li><a href="#gdr3dmaster-c-Dimensions-HalfDimension__cs-HalfDimension" id="toc_rg" title="">Half Dimension</a></li><li><a href="#gdr3dmaster-c-Dimensions-HalfDimension__cs-AboutDimensionValueandAssociativity" id="toc_rg" title="">About Dimension Value and Associativity</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Dimensions-HalfDimension.htm#gdr3dmaster-t-Dimensions-HalfDimension" title="You can create half dimensions on distances, angles, diameter cylinders, radius cylinders that are created using two selections, diameter edges and diameter tangents. However, you cannot create half dimensions on cumulated dimensions.">Creating Half Dimensions</a></td></tr></table></td></tr></table>
+
+<div><div class="section" id="gdr3dmaster-c-Dimensions-HalfDimension__cs-HalfDimension"><h2 class="sectiontitle">Half Dimension</h2><p>
+		<ul>
+			<li>You can create a half dimension directly by selecting first an axis 
+			line and then another element (which is not an axis). The half dimension 
+			value is the double of the measured value between the elements.</li>
+<li>Once you select the half dimension option from the <span>context menu</span>, 
+			it is stored as a preference and all the subsequent dimensions you create will be assigned the half dimension 
+			mode. This behavior is applicable for both dimensioning cases (from an axis to a geometry and from a geometry to an axis). </li>
+<li> 
+			If you do not want a half dimension to be created or if you want to create dimensions in the standard mode, clear the <span class="uicontrol">Half Dimension</span> option from the <span>context menu</span> when creating the dimension.</li>
+<li>When using   <span class="uicontrol">Stacked Dimensions</span>, the first dimension created (half or standard) decides the type of the dimension of the system. Dimensions created subsequently in the system have the same type as the first one.</li>
+
+			
+		</ul>
+
+		
+		
+		</p></div>
+<div class="section" id="gdr3dmaster-c-Dimensions-HalfDimension__cs-AboutDimensionValueandAssociativity"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">About Dimension Value and Associativity</h2><p>
+		<ul>
+			<li>The dimension value is doubled when they are made out of two selections 
+			(distance, angle, 2D diameter cylinder, radius cylinder) but not for 
+			dimensions made out of one selection (angle on cone, 3D diameter cylinder, 
+			diameter edge, diameter tangent).</li>
+
+			<li><span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">Associativity</span> in the case of half dimensions is different from associativity 
+			in the case of standard dimensions. For example, the half distance dimension 
+			below is associated with the axis and the element, whereas a standard 
+			dimension is associated with both symmetrical elements.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="void" border="0" rules="none"><tbody><tr><td class="cellrowborder" valign="top" width="NaN"><cite>Standard distance dimension:</cite></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN"><img src="../Gdr3DMasterImages/halfdim01.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN"><cite>Half distance dimension:</cite></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN"><img src="../Gdr3DMasterImages/halfdim05.gif"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+			Diameter and radius dimensions are usually created with one selection 
+			in 3D. If the dimension is created with two selections, for example 
+			an edge coming from a 3D revolution and another element, the dimension 
+			is not associative. To create the dimension below, you must select 
+			only the left or the right side of the cylinder and then right-click 
+			the dimension and select <span class="uicontrol">Half Dimension</span>.
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="void" border="0" rules="none"><tbody><tr><td class="cellrowborder" valign="top" width="NaN"><cite>Half diameter dimension:</cite></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN"><img src="../Gdr3DMasterImages/halfdim02.gif"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+			</li>
+
+		</ul>
+
+		 
+		
+	
+
+
+
+
+
+</p></div>
+</div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

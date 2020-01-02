@@ -1,0 +1,382 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Ta" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>What's New in 3DEXPERIENCE R2019x</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>What's New in <strong>3D</strong>EXPERIENCE R2019x</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>New modelers, or enhancements to existing modelers are listed here, compared 
+		with the previous release. Some enhancements or maintenance reasons may 
+		also require changes regarding tools or methodologies. This article lists 
+		them, and points to the corresponding documentation.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="ModelersR421"></a>New Modelers</h2>
+<p>The following modelers are new with <strong>3D</strong>EXPERIENCE R2019x:</p>
+<ul>
+	<!--  3D Modeling -->
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcCompassWestToc.htm'); return false;">3D Modeling Apps</a>
+		<ul>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcSysArchiToc.htm'); return false;">Systems Architecture</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADifSymbolModelerItfDoc/CAADifSymbTcToc.htm'); return false;">Symbol Modeler</a></li>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADifModelerItfDoc/CAADifTcToc.htm'); return false;">2D Presentation PLM Modeler</a></li>
+				</ul>
+				
+			</li>
+		</ul>
+	</li>
+	<!--  Simulation -->
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcCompassSouthToc.htm'); return false;">Simulation</a>
+		<ul>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcMEngToc.htm'); return false;">Manufacturing Process Documentation</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFitPathPlanningUse/CAAFitPathPlanningUseToc.htm'); return false;">Assembly Path Optimization</a></li>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELWkiExposeUseDoc/CAAWKIToc.htm'); return false;">Work Instructions</a></li>
+				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcPModToc.htm'); return false;">Physics Simulation</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASMASimDoc/CAASMASimToc.htm'); return false;">Simulation Interchange Model</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="CPPR421"></a>C++ APIs</h2>
+<p><a href="CAACenR421GANewCPPAPI.htm">New C++ APIs in <strong>3D</strong>EXPERIENCE 
+R2019x GA</a></p>
+<p><a href="CAACenR421APIChangeDetail.htm">Changed C++ APIs in <strong>3D</strong>EXPERIENCE 
+R2019x GA</a></p>
+<p><a href="#" onclick="CAAlink('CPP', 'Deprecated'); return false;">Deprecated 
+C++ APIs in <strong>3D</strong>EXPERIENCE R2019x GA</a></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="SettingChangeR421"></a>Modifications in Setting Files Impacting Usage 
+of C++ Settings APIs</h2>
+<p>New setting repositories:</p>
+<ul>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/AssemblyDesignImport.htm'); return false;">AssemblyDesignImport</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/CATCompositesForming.htm'); return false;">CATCompositesForming</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/CATPpxSettings.htm'); return false;">CATPpxSettings</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/ClippingToolSettings.htm'); return false;">ClippingToolSettings</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELAdditiveMfgPreferencesRepository.htm'); return false;">DELAdditiveMfgPreferencesRepository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELFITProdSysGanttSettings.htm'); return false;">DELFITProdSysGanttSettings</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELFITSequencerGanttSettings.htm'); return false;">DELFITSequencerGanttSettings</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELManufacturingPlanningCommon.htm'); return false;">DELManufacturingPlanningCommon</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELMfgFastenerSettings.htm'); return false;">DELMfgFastenerSettings</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELMrlRscVisuSetting.htm'); return false;">DELMrlRscVisuSetting</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELSLABehaviorDefaultValues.htm'); return false;">DELSLABehaviorDefaultValues</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELSLABehaviorPathwayValues.htm'); return false;">DELSLABehaviorPathwayValues</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELSLABehaviorPlanningIntegration.htm'); return false;">DELSLABehaviorPlanningIntegration</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELSLABehaviorReportFormatting.htm'); return false;">DELSLABehaviorReportFormatting</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELTimeAnalysisMODAPTSOptions.htm'); return false;">DELTimeAnalysisMODAPTSOptions</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DNBIgpTemplateLibSettings.htm'); return false;">DNBIgpTemplateLibSettings</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DeliveryCobot.htm'); return false;">DeliveryCobot</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DieFaceDesignGeneral.htm'); return false;">DieFaceDesignGeneral</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/EMPGeneral.htm'); return false;">EMPGeneral</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/GEOVIA.htm'); return false;">GEOVIA</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/IASClassAAppOptionsDefaults.htm'); return false;">IASClassAAppOptionsDefaults</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/IASCommonShapeTolerancesDefaults.htm'); return false;">IASCommonShapeTolerancesDefaults</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/IASHighlightSlotColorsDefaults.htm'); return false;">xIASHighlightSlotColorsDefaultsxxx</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/LargePointCloudSettings.htm'); return false;">LargePointCloudSettings</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/LayerNameDisplay.htm'); return false;">LayerNameDisplay</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SMAMatCalPlotSettings.htm'); return false;">SMAMatCalPlotSettings</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SMAMatCalPreferences.htm'); return false;">SMAMatCalPreferences</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SWXBuExportCityGMLSettings.htm'); return false;">SWXBuExportCityGMLSettings</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SearchOrder.htm'); return false;">SearchOrder</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SheetMetalDesign.htm'); return false;">SheetMetalDesign</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/StellarPreciseRepository.htm'); return false;">StellarPreciseRepository</a></li>
+<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/VPMEditor.htm'); return false;">VPMEditor</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="RADER421"></a>Development Toolset News</h2>
+<p>None.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="DocR421"></a>Encyclopedia News</h2>
+<p>The following articles are new with <strong>3D</strong>EXPERIENCE R2019x:</p>
+<ul>
+	<!--  Common Services -->
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcFoundationToc.htm'); return false;">Common Services</a>
+		<ul>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrTcPLMSOAUEToc.htm'); return false;">3DEXPERIENCE Platform</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAAAfrTcWintopFrameToc.htm'); return false;">Frame</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAACafTcSettingControllersToc.htm'); return false;">Apps Preference</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAACafTaMePreferenceGettingStartedWithMePref.htm'); return false;">Getting Started with New Preferences</a></li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAACafTaMePreferenceCustoPrefPages.htm'); return false;">How to Add App Preference Pages</a></li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAfrApplicationFrame/CAACafTaMePreferenceCustoCateg.htm'); return false;">How to Add App Preference Category</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcIntSessionToc.htm'); return false;">Interactive Session</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcIntCommandsToc.htm'); return false;">Interactive Commands</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAIpmPLMMngt/CAAIpmTcPLMMngtToc.htm'); return false;">PLM Management</a>
+										<ul>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAIpmPLMMngt/CAAIpmUcObjectSelectorImm.htm'); return false;">Querying and Loading a PLM Component Using Immersive Object Selection</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAIpmPLMMngt/CAAIpmUcObjectSelectorImmWithFile.htm'); return false;">Loading an object from a file using immersive Object Selection</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcRepModelersToc.htm'); return false;">Representation Modelers</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmFoundation/CAACgmTcGMToc.htm'); return false;">Geometry</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmModel/CAACgmTcGMModelToc.htm'); return false;">GM Model</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmModel/CAACgmTcGeometryAnalysisToc.htm'); return false;">Geometry Analysis</a>
+										<ul>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmModel/CAACgmUcGMModelInclusionGeoAnalysisPtCrv.htm'); return false;">Testing the Inclusion of a Point on a Curve with Local Analysis</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmModel/CAACgmUcGMModelInclusionGeoAnalysisPtSur.htm'); return false;">Testing the Inclusion of a Point on a Surface with Local Analysis</a></li>									
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmTcGMOperatorsToc.htm'); return false;">GM Operators</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmTcGMOperatorsToc.htm'); return false;">Topological Operators: General Articles</a>
+										<ul>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmTaHowToUseTopOperators.htm'); return false;">How to Use Topological Operators</a></li>
+										</ul>
+									</li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmTcTop1DOpeToc.htm'); return false;">1D Operations</a>
+										<ul>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcOperatorsCreateLine.htm'); return false;">Create a Line Body</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopSpine.htm'); return false;">Create a Spine</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcOperatorsCreateConics.htm'); return false;">Create Conic Curves</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcOperatorsCreateGeodesicLine.htm'); return false;">Create a Geodesic Line on Surface </a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopCreateSmoothedCurve.htm'); return false;">Creating a Smoothed Curve Lissing a Set of Points</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopDeformCurves.htm'); return false;">Deform Curves on a Set of Points</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopConnectCurveWithSpline.htm'); return false;">Connecting Wires with Spline Curve  </a></li>
+										</ul>
+									</li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmTcTop2DOpeToc.htm'); return false;">2D Operations</a>
+										<ul>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmTcTopExtrusionToc.htm'); return false;">Extrusion</a>
+												<ul>
+													<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopExtrudePrism.htm'); return false;">Prism</a></li>
+													<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopExtrudeRevolution.htm'); return false;">Revolution</a></li>
+													<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopExtrudeSweep.htm'); return false;">Profile Sweep</a></li>
+													<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcOperatorsRelimitByVolume.htm'); return false;">Trimming a Shell or a Wire by a Volume</a></li>
+												
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmTcTop3DOpeToc.htm'); return false;">3D Operations</a>
+										<ul>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopElementarySolid.htm'); return false;">Creating the Body of an Elementary Solid</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopExtrudePrismVolume.htm'); return false;">Prism</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopExtrudeRevolutionVolume.htm'); return false;">Revolution</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopExtrudeSweepVolume.htm'); return false;">Sweep</a></li>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACgmOperators/CAACgmUcTopSimplifyBody.htm'); return false;">Simplifying the Topology of a Body</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<!--  3D Modeling -->
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcCompassWestToc.htm'); return false;">3D Modeling </a>
+		<ul>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcMSToc.htm'); return false;">Mechanical Systems</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAuiAssembly/CAAAuiTcToc.htm'); return false;">Assembly Design</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/CAAAsfTcPatternToc.htm'); return false;">Assembly Pattern</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/CAAAsfUcPatternCreation.htm'); return false;">Creating Assembly Pattern of a Component</a></li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/CAAAsfUcPatternEdit.htm'); return false;">Editing Assembly Pattern</a></li>
+								</ul>
+							</li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/CAAAsfTcAssemblyFeatureToc.htm'); return false;">Assembly Feature</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/CAAAsfUcAssemblyFeatureCreation.htm'); return false;">Creating Assembly Feature</a></li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/CAAAsfUcAssemblyFeatureEdit.htm'); return false;">Editing Assembly Feature</a></li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/CAAAsfUcAssemblyFeatureDeletion.htm'); return false;">Deleting Assembly Feature</a></li>
+								</ul>
+							</li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/https://dsxdev-online.dsone.3ds.com/doconline/DSInternalExaDoc.htm?show=CAAAssemblyFeature/CAAAsfTcDerivedRepToc.htm'); return false;">Derived Representation</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/CAAAsfUcDerivedRepCreation.htm'); return false;">Creating Derived Representation</a></li>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAAssemblyFeature/CAAAsfUcDerivedRepEdit.htm'); return false;">Editing Derived Representation</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcEESToc.htm'); return false;">Electrical &amp; Electronic Systems</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcEMPToc.htm'); return false;">Electrical Manufacturing Preparation</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAEhfElecFlattening/CAAEhfTcFlatteningToc.htm'); return false;">Assembly Pattern</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAEhfElecFlattening/CAAEhfElecDimFactory.htm'); return false;">Creating Electrical Dim Path</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcMDEToc.htm'); return false;">Multi Discipline Engineering</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdTcFuncDesignToc.htm'); return false;">Structure Functional Design</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdUcEditPanel.htm'); return false;">Editing SFD Panel</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdUcEditSketchBasedPanel.htm'); return false;">Editing SFD Parametric Panel</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdUcEditStiffener.htm'); return false;">Editing an SDD Stiffener</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdUcCreateSFEOnOpening.htm'); return false;">Creating SFD SFE On Opening</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASfdFuncDesign/CAASfdUcCreateSFEOnPanel.htm'); return false;">Creating SFD SFE on Panel</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcEditBracket.htm'); return false;">Editing an SDD Bracket</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASfdUcEditSFEOnPanel.htm'); return false;">Editing SFD SFE on Panel</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASfdUcSeamPanel.htm'); return false;">Seam SFD Panel</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASfdUcPlanningBreak.htm'); return false;">Planning Breaks</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddTcDetDesignToc.htm'); return false;">Structure Design</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcEditPanel.htm'); return false;">Editing an SDD Panel</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcCreatePlate.htm'); return false;">Creating an SDD Plate</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcEditPlate.htm'); return false;">Editing an SDD Plate</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcEditBracket.htm'); return false;">Editing an SDD Bracket</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcCreateStiffenerOnCrv.htm'); return false;">Creating an SDD Stiffener On Curve</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcEditStiffener.htm'); return false;">Editing an SDD Stiffener</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcCreateStiffenerOnCrv.htm'); return false;">Editing an SDD Stiffener</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcCreateSFE.htm'); return false;">Creating an SDD SFE</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcCreateSFEOnOpening.htm'); return false;">Creating an SDD SFE On Opening</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcEditSFE.htm'); return false;">Editing an SDD SFE</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcCreateMember.htm'); return false;">Creating an SDD Member</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcEditMember.htm'); return false;">Editing an SDD Member</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcBreakStiffener.htm'); return false;">Breaking an SDD Stiffener</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcCreateOpeningOnPanel.htm'); return false;">Creating an SDD Opening on an Panel</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcCreateOpeningOnPlate.htm'); return false;">Creating an SDD Opening on an Plate</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcBreakStiffener.htm'); return false;">Creating an SDD Opening on an Profile</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASddDetDesign/CAASddUcCreateOpeningOnProfile.htm'); return false;">Editing an SDD Sync ID</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+	</li>
+	<!--  Simulation -->
+	<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcCompassSouthToc.htm'); return false;">Simulation</a>
+		<ul>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASimCommonDoc/CAASimCommonToc.htm'); return false;">Common Services for Simulation Apps</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASimUIWkbCommonDoc/CAASimulationUIWkb.htm'); return false;">Choosing UI for Your Own Simulation Application</a></li>				
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAASimCommonDoc/CAASimCreateSetAndEntity.htm'); return false;">Create Analysis Set and Entity in the Scenario or Result Container</a></li>				
+				</ul>
+			</li>		
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcMEngToc.htm'); return false;">Manufacturing Planning</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELPPRAuthFoundItf/CAADELPPRAuthFoundItfTcToc.htm'); return false;">Authoring Foundations</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELPPRAuthFoundItf/CAADELMPPartPosition.htm'); return false;">Customizing the Part Position</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELPPRAuthFoundItf/CAADELMPPosition.htm'); return false;">Checking the Existence of Operation Positions</a></li>
+						</ul>
+					</li>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELStrMfg/CAAStrMfgTcToc.htm'); return false;">Heavy Industry Structure Fabrication</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELStrMfg/CAAStrUcPlateFormingForPanel.htm'); return false;">Testing Creation of Forming Features on Split Plate</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELStrMfg/CAAStrUcShrinkageRatioForAttachmentLine.htm'); return false;">Testing Shrinkage Ratio of Attachment Line</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELStrMfg/CAAStrUcPanelFeatureAuth.htm'); return false;">Testing Creation of Features on Split Plate</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELStrMfg/CAAStrUcShrinkageRatioForSplitPlate.htm'); return false;">Testing Shrinkage Ratio of Split Plate</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELStrMfg/CAAStrUcBuildDocAsPlateFormat.htm'); return false;">Testing Profile XML as Plate Format</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELStrMfg/CAAStrUcOriginPositionOfShrinkageOpening.htm'); return false;">Testing Origin Position of Shrinkage Opening</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELStrMfg/CAAStrUcFormingProcessForPanel.htm'); return false;">Testing Forming Process for Panel</a></li>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAADELStrMfg/CAAStrUcAttachmentLineMarkingMarkedObject.htm'); return false;">Testing Marking and Marked Object of Attachment Line</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#" onclick="CAAlinkOutOfPreqs('CAACppToc/CAACppTcPModToc.htm'); return false;">Physics Simulation</a>
+				<ul>
+					<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/CAAFEMOverviewToc.htm'); return false;">Mesh Creation</a>
+						<ul>
+							<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/MeshingGeometryToc.htm'); return false;">Meshing Geometries</a>
+								<ul>
+									<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/CAAFmtTcMeshPartsToc.htm'); return false;">Mesh Part Attributes</a>
+										<ul>
+											<li><a href="#" onclick="CAAlinkOutOfPreqs('CAAFmtDoc/CAAFmtPartitionHexMeshPartAttributes.htm'); return false;">Partition Hex Mesh Part Attributes</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+<!--
+<li><a href="#" onclick="CAAlinkOutOfPreqs('xxxxxxxxxxx/yyyyyyyyyyyyyyyyyy.htm'); return false;">XXXXXXXXXXXXXXXXX</a></li>
+--><script type="text/javascript">insertLinkToTop();</script><!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= --><h2>
+<a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2018]</td>
+		<td>Document created for <strong>3D</strong>EXPERIENCE R2019x GA</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

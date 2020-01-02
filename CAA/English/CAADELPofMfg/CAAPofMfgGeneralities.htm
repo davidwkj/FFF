@@ -1,0 +1,301 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Heavy Industry Fluidic Fabrication Use Cases Overview</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Heavy Industry Fluidic Fabrication Use Cases Overview</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article details operations that are common to all Manufacturing use cases. It describes step by step the code to use
+		in order to retrieve the desired data from the database, and at the end to close the session</p>
+		<ul>
+			<li><a href="#General">Regarding Manufacturing Use Cases</a>
+  			<ul>
+  			  <li><a href="#How">How to Launch a Use Case?</a></li>
+  			  <li><a href="#Where">Where to Find Code?</a></li>
+  			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a>
+  			<ul>
+  				<li><a href="#Step1">Checking the Input Data</a></li>
+  				<li><a href="#Step2">Setting the Connection Parameters</a></li>
+  				<li><a href="#Step3">Creating a Session</a></li>
+  				<li><a href="#Step4">Setting the Current Environment</a></li>
+  				<li><a href="#Step5">Retrieving the Environment</a></li>
+  				<li><a href="#Step6">Opening the &quot;Product Reference&quot; Model (arg[7])</a></li>
+  				<li><a href="#Step7">Disconnecting and Deleting the Session</a></li>
+  			</ul>
+			</li>
+			<li><a href="#history">History</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="General"></a>Regarding Manufacturing Use Cases</h2>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch a Use Case?</h3>
+<p>You will need to set up the build time environment, then compile the use case along with its prerequisites, 
+set up the run time environment, and then execute the sample.</p>
+<p>To launch the use case, execute the following command unless stated otherwise in the use case page:</p>
+<pre class="code"><em>mkrun -c &quot;[executable_name] Repository Server User Password SecutityCtx Environment Product_PLM_ExternalID&quot;</em></pre>
+<p>where:</p>
+<table class="border1">
+	<tr>
+		<th>Repository</th>
+		<td>PLM1<script type="text/javascript">insertRepository();</script>
+		</td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The server as <em>Host::port_number/RootURI</em></td>
+	</tr>
+	<tr>
+		<th>User</th>
+		<td>The user name.</td>
+	</tr>
+	<tr>
+		<th>Password</th>
+		<td>The user password to authenticate the user.</td>
+	</tr>
+	<tr>
+		<th>SecurityCtx</th>
+		<td>A string representing the security context (Role.Organization.Project). 
+		Choose Role as Designer.</td>
+	</tr>
+	<tr>
+		<th>Environment</th>
+		<td>A PLM environment.</td>
+	</tr>
+	<tr>
+		<th>Product_PLM_ExternalID</th>
+		<td>The value of the <code>PLM_ExternalID</code> attribute of the physical product reference containing the data to create the manufactured items.</td>
+	</tr>
+    <tr>
+		<th>version</th>
+        <td>--- (the <code>V_version</code> attribute of the physical product reference)</td>
+	</tr>
+</table>
+
+<p>Additional arguments may exist for some use cases, in which case, their use will be explained in the corresponding documentation page.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find Code</h3>
+<p>Use case samples are usually made of a single source code file located in modules of the CAADELStrMfgUseItf.edu
+framework: <code>InstallRootFolder\CAADoc\CAADELStrMfgUseItf.edu\ExecutableName.m\</code> where
+<code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed and <code>ExecutableName</code> the name of the executable (exe) file.</p>
+<p>Samples usually deal with the following classes:</p>
+<table>
+	<tr>
+		<td><em>CATPLMSessionServices</em></td>
+		<td>Class to create and delete a batch session.</td>
+	</tr>
+	<tr>
+		<td><em>PLMPSISessionHelpers</em></td>
+		<td>Class managing session data for the creation of PLM entities.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpDictionaryServices</em></td>
+		<td>Class to provide all basic functions to browse and navigate on PLM dictionaries.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpQueryServices</em></td>
+		<td>Class to manage queries on PLM component in database.</td>
+	</tr>
+	<tr>
+		<td><em>CATAdpOpenSaveServices</em></td>
+		<td>Class to manage Open and Save in session.</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>We will now first comment the environment and its components creation 
+by looking at the code of the Main. There are seven logical steps at start and 1 logical step at end:</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking the Input Data</h3>
+<pre class="code">...
+ if (8 != argc)
+ {
+  cout &lt;&lt; endl;
+  cout &lt;&lt;&quot;&lt;ExecutableName&gt; &lt;Repository&gt; &lt;Server&gt; &lt;User&gt; &lt;Password&gt; &lt;SecurityCtx&gt; &lt;Environment&gt; &lt;PLM_ExternalID&gt;&quot;&lt;&lt; endl;
+  cout &lt;&lt;&quot;Repository: The repository name (like PLM1) which is mandatory.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;Server: The URL string used for connection, expected format is 'protocol://ServerName:PortNumber/RootURI.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;User: The user name for connection.&quot; &lt;&lt;endl ;
+  cout &lt;&lt;&quot;Password: The user password for connection.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;SecurityCtx: A string representing the security context ( Role. Organization. Project ). Choose Role as Reviewer ( as the use case does not modify the PLM Data).&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;Environment: A PLM environment containing PLMProductDS (a PRODUCT's custo).&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;Product_PLM_ExternalID: The PLM_ExternalID of a Physical Product Reference to be browsed.&quot; &lt;&lt;endl;
+  cout &lt;&lt;&quot;version: The V_version of a product Reference to be browsed.&quot; &lt;&lt;endl;
+  cout &lt;&lt; endl;
+  retCode = 1;
+  goto EscapeWay;
+ }
+ ...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Setting Input parameters</h3>
+<p>Setting Environment </p>
+<pre class="code">...
+	repository   = argv[1];
+	server       = argv[2]; 
+	user         = argv[3];	
+	password     = argv[4];	
+	securityCtx  = argv[5];
+	environment  = argv[6];	
+	productName  = argv[7];	
+	version      = argv[8];
+...</pre>
+<p>Connection Parameters initialization.</p>
+<pre class="code" >...
+  rc = CATPLMSessionServices::SetPLMSessionParameter ("Repository",  repository);
+  if(SUCCEEDED(rc))  rc = CATPLMSessionServices::SetPLMSessionParameter ("Server",	   server);
+  if(SUCCEEDED(rc))  rc = CATPLMSessionServices::SetPLMSessionParameter ("UserID",		user);
+  if(SUCCEEDED(rc))  rc = CATPLMSessionServices::SetPLMSessionParameter ("UserPasswd",  password); 
+  if(SUCCEEDED(rc))  rc = CATPLMSessionServices::SetPLMSessionParameter ("SecurityCtx", securityCtx);
+  if(FAILED(rc))  cout &lt;&lt; "ERROR setting PLM Session parameters" &lt;&lt; endl &lt;&lt; endl;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating a Session</h3>
+<p>A session must always be created in a batch environment.</p>
+<pre class="code">...
+ hr = CATPLMSessionServices::InitPLMSession();
+ if (FAILED(hr))
+ {
+    if (SUCCEEDED(rc))
+      cout &lt;&lt; "1- PLM Session initialized" &lt;&lt; endl &lt;&lt; endl;
+    else
+      cout &lt;&lt; "1- ERROR initializing PLM Session" &lt;&lt; endl &lt;&lt; endl;
+ }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Retrieving the Environment</h3>
+<pre class="code">...
+  CATIAdpEnvironment * piAdpEnvironment = NULL;
+  rc = CATAdpDictionaryServices::GetEnvironment(repository, environment, &piAdpEnvironment);
+  if(SUCCEEDED(rc) && piAdpEnvironment) 
+  {
+    cout &lt;&lt;"The environment " &lt;&lt; environment &lt;&lt; " has been found"&lt;&lt; endl &lt;&lt; endl;
+    piAdpEnvironment->Release();
+    piAdpEnvironment = NULL;
+  }
+  else  
+  {
+    cout &lt;&lt; "ERROR retrieving environment" &lt;&lt; endl &lt;&lt; endl;
+    return rc;
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Retrieving the Physical Product Reference</h3>
+<pre class="code">...
+  CATAdpAttributeSet IdentificatorSet;
+  IdentificatorSet.AddAttribute("PLM_ExternalID", ProductName); 
+
+  CATIType_var spProductType;
+  rc = CATCkePLMNavPublicServices::RetrieveKnowledgeType("VPMReference", spProductType);
+  if(FAILED(rc) || NULL_var == spProductType) return 1;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Opening the &quot;Product Reference&quot; Model (arg[7])</h3>
+<pre class="code">...
+  CATLISTP(CATAdpQueryResult) QueryResults;
+  rc = CATAdpPLMQueryServices::GetElementsFromAttributes(spProductType, IdentificatorSet, QueryResults);
+
+  int nbOfResult = QueryResults.Size();
+  if(FAILED(rc) || !nbOfResult) return 1;
+
+  // If several object match with this query we open only the first one.
+  CATAdpQueryResult *pQueryResult = QueryResults[1];
+  if(pQueryResult)
+  {
+    CATIAdpPLMIdentificator *piPLMId = NULL;
+    rc = pQueryResult->GetIdentifier(piPLMId);
+    if(SUCCEEDED(rc) && piPLMId)
+    {
+      cout &lt;&lt; "Get Root Process identificator OK" &lt;&lt;endl;
+      CATAdpOpener opener(iLifeCycleBag);
+      rc = opener.CompleteAndOpen(piPLMId, iIID, oppReference);
+      piPLMId->Release();
+      piPLMId = NULL;
+    }
+  }
+  for(int ii(1); ii &lt;= nbOfResult; ++ii)
+  {
+    CATAdpQueryResult *pQueryResult = QueryResults[ii];
+    if(!pQueryResult) continue;
+
+    delete pQueryResult;
+    pQueryResult = NULL;
+  }
+  QueryResults.RemoveAll();
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Disconnecting and Deleting the Session</h3>
+<pre class="code" >...
+  HRESULT hr  = E_FAIL;
+  hr = CATPLMSessionServices::ClosePLMSession();
+  if (FAILED(hr)) 
+  {
+    cout&lt;&lt; "The SESSION is not Closed" &lt;&lt; endl;
+    ret = 17;
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="history"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2013]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Applying Same Constraints to a Set of Elements"/>
+<meta name="abstract" content="You can create same constraints between each element from a defined set of elements and a target element."/>
+<meta name="description" content="You can create same constraints between each element from a defined set of elements and a target element."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dys-t-ConstraintSet-ApplySameConstraint"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Applying Same Constraints to a Set of Elements</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dys-t-ConstraintSet-ApplySameConstraint">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-target element"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Applying Same Constraints to a Set of Elements</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can create same constraints between each element from  a defined set of elements and a target element.
+    </span>
+
+    
+  </p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-CreateConstraintUsingSingleTypeofGeometryElements" id="toc_rg" title="You can create same constraints between each element from a single type of geometry elements and a target element.">Create Constraints Using Single Type of Geometry Elements</a></li><li><a href="#t-CreateConstraintsUsingMixedTypeofGeometryElements" id="toc_rg" title="You can create same constraints between mixed type of geometry elements and a target element.">Create Constraints Using Mixed Type of Geometry Elements</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span> 
+      <a href="dys-t-SimpleProfileSketch-Line.htm#dys-t-SimpleProfileSketch-Line" title="You can create a line. Once you have created one line, you can create any other and use the length from the line first created or set this first line as an angle reference.">Create a line</a> and <a href="dys-t-SimpleProfileSketch-Point.htm#dys-t-SimpleProfileSketch-Point" title="You can create a point.">several points</a>.
+    </td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+  </div>
+
+
+  <div/>
+
+  <div class="nested1" id="t-CreateConstraintUsingSingleTypeofGeometryElements">
+    <h2 class="topictitle2">Create Constraints Using Single Type of Geometry Elements</h2>
+
+    
+    <div><p><span>You can create same constraints between each element from a single type of geometry elements and a target element. 
+      </span>
+
+    	<a name="ix-"> </a>
+    </p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          
+            Select the points using trap selection or by pressing  <span class="uicontrol">Ctrl</span>.
+          
+          <p> 
+            A <span>context toolbar</span>
+          appears.</p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            From the <span class="wintitle">Sketch</span> section of the <span>action bar</span>, click <span class="uicontrol">Constraints Defined in Dialog Box</span><img src="../Icons22/I_ConstraintPanel.png"/>.
+           
+          <p> 
+            The <span class="wintitle">Constraint Definition</span> dialog box appears. 
+          It shows available constraints considering the selected entities. These constraints are re-computed when you select the target geometry. </p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Select the <span class="uicontrol">Target Element</span> check box and select an element to create a constraint. 
+          
+          <p>
+            <p>Notes:
+		<ul><li>Select the line in this case.
+            </li>
+<li>When you select the <span class="uicontrol">Target Geometry</span> check box, you can select the reference element. However, after selection if you clear the <span class="uicontrol">Target Geometry</span> check box, the target element is removed from the selection and the constraints are shown as per current selected set of entities.</li>
+</ul>
+
+              </p>
+
+          </p>
+          <p> 
+            The <span class="wintitle">Constraint Definition</span> dialog box now shows selected element in the <span class="uicontrol">Target Element</span> box and available constraints.<br/><img src="../DysUserImages/Sameconstraints01.png"/><br/></p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Select the required constraint, for example, select <span class="uicontrol">Coincidence</span> and click <span class="uicontrol">OK</span>.
+          
+           
+          <p> 
+            Coincidence constraint is created between the selected points and the line (target element).
+          <br/><img src="../DysUserImages/Sameconstraints02.png"/><br/><p>Similarly, you can create constraints between circles and the target line, or lines and the target lines, etc.</p></p>
+        </p></li>
+
+         
+         
+      </ol>
+
+       
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="t-CreateConstraintsUsingMixedTypeofGeometryElements">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Create Constraints Using Mixed Type of Geometry Elements</h2>
+
+    
+    <div><p><span>You can create same  constraints between mixed type of geometry elements and a target element. </span>
+
+      <a name="ix-"> </a>
+    </p>
+
+      <div class="p"><!--xxx--><span class="run-in">Before you begin: </span>Create a line, <a href="dys-t-SimpleProfileSketch-Circle.htm#dys-t-SimpleProfileSketch-Circle" title="You can create a circle. Once you have created one circle, you can create any other and in the meantime use the radius parameter from the circle first created.">a circle</a> and a point.</div>
+<ol>
+        <li class="stepexpand"><p>
+          
+            Select the created geometry elements: the point, the circle and the line.
+          <p> 
+            A <span>context toolbar</span> appears.
+          </p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+             Click <span class="uicontrol">Constraints Defined in Dialog Box</span><img src="../Icons22/I_ConstraintPanel.png"/>.
+          
+          
+          <p> 
+                        The <span class="wintitle">Constraint Definition</span> dialog box appears. 
+          
+          It shows available constraints considering the selected entities. These constraints are re-computed when you select the target geometry. </p>
+        </p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Target Element</span> check box and select an element to create a constraint. 
+           <p> <p>Note:
+		
+              Select the line in this case.
+            </p>
+<p> The <span class="wintitle">Constraint Definition</span> dialog box shows  all the possible constraints that can be applied between each of the entity from the selected set and the selected element in the <span class="uicontrol">Target Element</span> box.</p><p>In our example, the selected set contains a line, a circle and a point. The target geometry selected is a line. In this case, the following constraints are displayed: <ul><li>Constraints which are possible between a point and line</li>
+<li>Constraints which are possible between a circle and line</li>
+<li>Constraints which are possible between  a line and line.</li>
+</ul>
+</p>            </p></p></li>
+
+      <li class="stepexpand"><p>Select <span class="uicontrol">Midpoint</span> and click <span class="uicontrol">OK</span>.<p> The point is placed at the midpoint of the line and the midpoint constraint is created. <br/><img src="../DysUserImages/midpointconstraint.png"/><br/><p>Note:
+		Midpoint constraint is only applied between the point and the target line. In this case, the circle and the line from the set are ignored.</p>
+<p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li>The selected constraint type is applied to all possible pairs of the selected set entity and the target geometry. The entities where the selected constraint type cannot be applied are left unconstrained.</li>
+<li>When you select the <span class="uicontrol">Target Geometry</span> check box, you can select the reference element. However, after selection if you clear the <span class="uicontrol">Target Geometry</span> check box, the target element is removed from the selection and the constraints are shown as per current selected set of entities.</li>
+</ul>
+</td></tr></table>
+</p> </p></p></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

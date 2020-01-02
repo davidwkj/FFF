@@ -1,0 +1,138 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Frames and Title Blocks"/>
+<meta name="abstract" content="Frame and title block contains information about the representation such as sheet scale, projection angle used, drawing name etc. You can create a frame, title block and a revision table and configure them as per your requirement."/>
+<meta name="description" content="Frame and title block contains information about the representation such as sheet scale, projection angle used, drawing name etc. You can create a frame, title block and a revision table and configure them as per your requirement."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-FrameAndTitleBlockCreate.htm#gdr3dmaster-t-FrameAndTitleBlockCreate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-FrameAndTitleBlockCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Frames and Title Blocks</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-FrameAndTitleBlockCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-configure::frames and title blocks"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>	About 
+				Frames and Title Blocks
+				 </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span> Frame and title block contains information about the representation such as sheet scale, projection angle used, drawing name etc. You can create a frame, title block and a revision table and configure them as per your requirement.</span>
+<p>This topic provides the background information about creating a frame and a <span class="glossterm" id="title-block" onmouseout="hideTerm()" onmouseover="showTerm('title-block.xml')">title block</span>.</p> 
+						
+						
+					
+				</p>
+<ul><li><a href="#gdr3dmaster-c-FrameAndTitleBlockCreate__cs-Aboutcustomizingframesandtitleblocksusingmacros" id="toc_rg" title="">Configuring Frames and Title Blocks</a></li><li><a href="#gdr3dmaster-c-FrameAndTitleBlockCreate__cs-SpecifyingTheLocationOfFrameAndTitleBlockMacros" id="toc_rg" title="">Specifying the Location of Frame and Title Block Macros</a></li><li><a href="#gdr3dmaster-c-FrameAndTitleBlockCreate__cs-CreatingPreviewImages" id="toc_rg" title="">Creating Preview Images</a></li><li><a href="#gdr3dmaster-c-FrameAndTitleBlockCreate__cs-ModifyingExistingActionsOrAddingNewActions" id="toc_rg" title="">Modifying Existing Actions or Adding New Actions</a></li><li><a href="#gdr3dmaster-c-FrameAndTitleBlockCreate__cs-ModifyingTheNameOfAStyleaction" id="toc_rg" title="">Modifying the Name of a Style/Action </a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-FrameAndTitleBlockCreate.htm#gdr3dmaster-t-FrameAndTitleBlockCreate" title="You can insert a default frame and title block template in the background of a sheet.">Creating a Default Frame and Title Block</a></td></tr></table></td></tr></table>
+
+<div><div class="section" id="gdr3dmaster-c-FrameAndTitleBlockCreate__cs-Aboutcustomizingframesandtitleblocksusingmacros"><h2 class="sectiontitle">Configuring Frames and Title Blocks</h2><p> To configure the default frames and title blocks scripts, you must be familiar 
+		with Visual Basic. Then you can edit the default macros and also get the messages in your native language.</p><p>For 
+		more information, see the <cite> <span><span class="tm-3D">3D</span>EXPERIENCE</span> Developer Assistance Portal: CAA Encyclopedia</cite> .</p><p>The default <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> dress-up styles for the  frame, title block and revision table are available and can be selected in the <span class="uicontrol">Page Layout </span>dialog box.</p><p>You can also create new script (sheet dress-up style), provided you use the following naming convention: <samp class="codeph"><cite>MyCategory</cite>_CATAction_<cite>MyAction</cite></samp></p><p>Where:<ul><li><samp class="codeph">MyCategory</samp>: defines the category in which the action performed by the function is presented. For example, <span class="uicontrol">Frame</span>, <span class="uicontrol">Title Block</span> and <span class="uicontrol">Revision Table</span> represent a category.</li>
+<li><samp class="codeph">CATAction</samp>:  is the keyword that differentiates between script functions and the default functions.</li>
+<li><samp class="codeph">MyAction</samp>: defines the action to be performed by the function.</li>
+</ul>
+</p><p>For each category, you can request a selection of a <span class="glossterm" id="template-2" onmouseout="hideTerm()" onmouseover="showTerm('template-2.xml')">template</span> using  the <span class="uicontrol">Page Layout</span>  command by defining a function with the following naming convention:</p><p><samp class="codeph">MyCategory_CATRequestTemplate</samp></p><p><p>Note:
+		If such a function is not declared for a category, no selection of a template is requested.</p>
+ </p><p>Additionally, for each category, you can provide a function initializing a template in the current <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> by defining a function with the following naming convention:</p><p><samp class="codeph">MyCategory_CATInitializeTemplate</samp></p></div>
+<div class="section" id="gdr3dmaster-c-FrameAndTitleBlockCreate__cs-SpecifyingTheLocationOfFrameAndTitleBlockMacros"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Specifying the Location of Frame and Title Block Macros</h2>
+		<p>To know where the frame and title block macros are located, go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"/><span class="uicontrol"> &gt; Administration </span>tab. The  <span class="uicontrol">Page Setup Directory</span> box indicates the path to the directory 
+		containing these macros. You can add new macros in the specified directory, 
+		and/or you can change this location by editing the path. </p>
+		</div>
+<div class="section" id="gdr3dmaster-c-FrameAndTitleBlockCreate__cs-CreatingPreviewImages"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Creating Preview Images</h2>
+		<p>You can create a preview image of the frame and the title block that is displayed in the <span class="uicontrol">Page Layout</span> dialog box. 
+		When saving this preview image, make sure you do the following:</p>
+		<ul>
+			<li>
+			<p>Save the preview image as a bitmap file (.bmp extension) bearing 
+			the same name as the script and the category. For example, if your script is called My Script, 
+			then the preview image should be named <samp class="codeph">MyScript.MyCategory.bmp</samp>.</p>
+			</li>
+
+			<li>
+			<p>Save the image in the directory that contains the macros. For example, 
+			if your macro CustomMacro.CATScript is located in the CustomMacros directory, 
+			then the preview image CustomMacro.bmp must also be located in the CustomMacros 
+			directory. </p>
+			</li>
+
+		</ul>
+
+		</div>
+<div class="section" id="gdr3dmaster-c-FrameAndTitleBlockCreate__cs-ModifyingExistingActionsOrAddingNewActions"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Modifying Existing Actions or Adding New Actions</h2>
+		<p>Available actions for a given script are listed below each category's action 
+		list in the <span class="uicontrol">Page Layout</span> dialog box. You can 
+		modify existing actions by modifying the existing sub-procedures.</p>
+		<p>You can also add new actions by defining new sub-procedures. There are 
+		a couple of things you need to remember when doing this:</p>
+		<ul>
+			<li>
+			<p>All sub-procedures must be prefixed using CATDrw_:  
+			for example, Sub CATDrw_CustomProcedure().</p><p>Or</p><p>Create new action using prefix <samp class="codeph"><cite>MyCategory</cite>_CATAction</samp></p>
+			</li>
+
+			<li>
+			<p><samp class="codeph"><cite>MyCategory</cite>_CATAction_<cite>MyAction</cite></samp> can accept two arguments, one for the target sheet and the other for the template <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> (if necessary).</p><p>If no argument is associated to the procedure, 
+			for example: Sub <samp class="codeph"><cite>MyCategory</cite>_CATAction_CustomProcedure ()</samp>: 
+			the sub-procedure is called when you select the corresponding 
+			action.</p> 
+			</li>
+
+			<li>
+			<p>If one argument of type CATIABase is associated to the procedure, 
+			for example: Sub <samp class="codeph"><cite>MyCategory</cite>_CATAction</samp><samp class="codeph">_CustomProcedure(CATIABase sheet)</samp>:  
+			the argument is set to the current sheet.</p>
+			</li>
+
+		</ul>
+
+		</div>
+<div class="section" id="gdr3dmaster-c-FrameAndTitleBlockCreate__cs-ModifyingTheNameOfAStyleaction"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Modifying the Name of a Style/Action </h2>
+		<p>In the <span class="uicontrol">Page Layout</span> dialog box, the names 
+		displayed in the<span class="uicontrol"> Sheet Dress-up</span>   list 
+		can be modified.</p><p>  
+		By default, the name of a sheet dress-up style is the name of the corresponding CATScript 
+		file (without extension). And by default, the names of the related actions 
+		are written in the CATScript file (without the CATAction prefix).  
+		</p><p>Example: in a CATScript file, a function called CATAction_XXXX creates an action 
+		called XXXX in the action list.</p>
+		<p>To configure a name for a style or action, proceed as follows:</p>
+		
+			<ol>
+				<li>Edit the FrameAndTitleBlock.CATNls file located in the resources/msgcatalog 
+				folder</li>
+
+				<li>Add one of these command lines:
+				<p><span class="uicontrol">For a style:</span> 
+				<pre class="codeblock">Drawing_Titleblock_StyleOfTitleBlock="Customized name"</pre> 
+				</p>
+				<p><span class="uicontrol">For an action:</span> 
+				<pre class="codeblock">Drawing_Titleblock_StyleOfTitleBlock.CATAction_NameOfAction="Customized 
+name"</pre></p>
+				</li>
+
+			</ol>
+
+			
+		
+		
+	
+
+
+
+
+
+</div>
+</div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

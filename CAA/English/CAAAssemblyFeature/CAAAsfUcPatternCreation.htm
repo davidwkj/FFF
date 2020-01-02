@@ -1,0 +1,563 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating Assembly Pattern of a Component</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating Assembly Pattern of a Component</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAAAsmPatternCreation use case. This use case explains how to create assembly pattern  
+		of a component under root product or a target product. Multi-instantiation is also explained.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a> </li>
+			<li><a href="#UseCase">The CAAAsmPatternCreation
+			Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAAsmPatternCreation
+				Do</a> </li>
+				<li><a href="#How">How to Launch CAAAsmPatternCreation</a></li>
+				<li><a href="#Where">Where to Find the CAAAsmPatternCreation
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a> </li>
+			<li><a href="#InShort">In Short</a> </li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p> This use case is intended to show you how to create assembly pattern and multi-instantiation. 
+You will learn:</p>
+<ul>
+    <li>How to create an assembly pattern of a component, under the root product</li>
+    <li>How to create an multi-instantiation of a component, under the root product</li>    
+    <li>How to create an assembly pattern of a component, under a target product</li>
+    <li>How to create an multi-instantiation of a component, under a target product</li>    
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAAsmPatternCreation Use Case</h2>
+<p>CAAAsmPatternCreation is a use case of the CAAAssemblyFeature.edu framework that 
+illustrates CATAsmPatternUseItf framework capabilities regarding assembly pattern creation and management.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAAsmPatternCreation Do</h3>
+<p>The goal of CAAAsmPatternCreation use case is to create assembly pattern and 
+multi-instantiation of given component in different ways.</p>
+<ul>
+    <li>Opening the PLM Product (Root).</li>
+    <li>Loading representation containing the specification.</li>
+    <li>Preparing inputs like component, specification, and target product.</li>
+    <li>Creating an assembly pattern and multi-instantiation.</li>
+    <li>Creating an assembly pattern with gathering option.</li>
+    <li>Creating an assembly pattern and multi-instantiation, under a target product.</li>
+    <li>Updating the assembly.</li>
+    <li>Saving the assembly and exiting.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAAsmPatternCreation</h3>
+<p>To launch CAAAsmPatternCreation, you will need to set up the build time environment, 
+then compile CAAAsmPatternCreation.m along with its prerequisites, set up the run time 
+environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>Launch the use case as follows: </p>
+<pre class="code">mkrun -c <em>&quot;CAAAsmPatternCreation Repository ServerName LoginTicket PLMType V_Name&quot;</em></pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+	<colgroup align="center" span="1">
+	</colgroup>
+	<tr>
+		<th>Position</th>
+		<th>Description</th>
+		<th>Example</th>
+		<th>Category</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>repository</td>
+		<td><script type="text/javascript">insertRepository();</script></td>
+		<td rowspan="3">Connection</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>server</td>
+		<td>Server name in format protocol://serverName:portNumber/rootURI <br />e.g. http://ve4al14plp:10490/ematrix </td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>loginTicket</td>
+		<td>String representing a valid Login Ticket</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>PLMType</td>
+		<td>VPMReference</td>
+		<td>Component Type</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>V_Name</td>
+		<td>Title of the Root Product To Open e.g PatternRoot</td>
+		<td>Component Attribute</td>
+	</tr>
+</table>
+<ul>
+	<li>The <strong>first three </strong>are related to the connection and described in the 
+	<cite>Connecting to V6 Server</cite> use case [<a href="#References">2</a>].
+	</li>
+	<li>PLMType defines the PLMType of Component to be opened.</li>
+	<li>V_name defines the <strong>value</strong> of the <strong>attribute 
+	name</strong>.</li>
+</ul>
+<p><strong>Import PLM Data:</strong><br />
+The use case requires input PLM Data: PLM Reference. 
+This data is stored in 3D XML files, whose extension is &quot;3dxml&quot;. You must import 
+these PLM Data in the database using the Add / Import / 3D XML command prior 
+to launching the use case.<br />
+The &quot;3dxml&quot; file is supplied at location:</p>
+<p><code>InstallRootFolder\CAADoc\CAAAssemblyFeature.edu\InputData\TSTDataCAAAsmPatternCreateUseCase.3dxml</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder where the API CD-ROM is installed. 
+This 3D XML file contains the root Product Reference with the following attributes:
+</p>
+<ul>
+    <li><code><strong>V_Name</strong></code>: PatternRoot</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAAssemblyFeature.edu' data-xplore-mod='CAAAsmPatternCreation.m'>
+<h3><a name="Where"></a>Where to Find the CAAAsmPatternCreation Code</h3>
+<p>The CAAAsmPatternCreation use case is made of a single code file named CAAAsmPatternCreation.cpp
+located in the CAAAsmPatternCreation.m module of the CAAAssemblyFeature.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAAssemblyFeature.edu\CAAAsmPatternCreation.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the 
+folder where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are eleven main steps in CAAAsmPatternCreation:</p>
+<ol>
+	<li><a href="#Step1">Parsing Input Arguments</a></li>
+	<li><a href="#Step2">Opening the PLM Root Product</a></li>
+	<li><a href="#Step3">Prepare Input Component</a></li>
+	<li><a href="#Step4">Load Specification Component</a></li>
+    <li><a href="#Step5">Prepare Input Specification</a></li>
+	<li><a href="#Step6">Creating Assembly Pattern Under the Root Product</a></li>
+	<li><a href="#Step7">Creating Multi-instantiation Under the Root Product</a></li>
+	<li><a href="#Step8">Create Assembly pattern Under a Target Product</a></li>
+	<li><a href="#Step9">Updating the Assembly</a></li>
+	<li><a href="#Step10">Saving the Assembly and Exiting</a></li>
+</ol>
+<p>
+<img alt="Input Product" src="images/CAAPictureAsmPatternBefore.jpg" width="585" height="460"/></p>
+<p>This picture shows the Product Structure used in the 
+use case.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Parsing Input Arguments</h3>
+<p><em>CAAAsmPatternCreation</em> begins by checking that the command lines contains five 
+arguments. It then retrieves the environment, creates a session [<a href="#References">2</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Opening the PLM Product (Root)</h3>
+<p>Retrieve the PLM component based on specified attribute value.</p>
+<pre class="code">...
+  plmType         = argv[4];
+  rootProductName = argv[5];
+  // Retrieve the CATIType related with VPMReference
+  hr = CATCkePLMNavPublicServices::RetrieveKnowledgeType(plmType, hTypeModeler);
+  if((FAILED(hr) || (NULL_var == hTypeModeler))) {
+    retCode = 10;
+    goto EscapeWay;
+  }
+  
+  // Add an attribute field with the product's title
+  iAttributeSet.AddAttribute("V_Name", rootProductName.ConvertToChar());
+  // Query by attribute
+  hr = CATAdpPLMQueryServices::GetElementsFromAttributes(hTypeModeler, iAttributeSet, oQueryResults);
+  if(SUCCEEDED(hr) && oQueryResults.Size())
+  {
+    pQueryResult = oQueryResults[1];
+    if(NULL != pQueryResult)
+      hr = pQueryResult->GetIdentifier(piPLMIdent);
+  }
+...</pre>
+<p>Open your PLM Component in the session using service <em>CATAdpOpener::CompleteAndOpen</em>.</p>
+<pre class="code">...
+  // Open of the product
+  hr = adpOpener.CompleteAndOpen(piPLMIdent, IID_CATIPLMProducts, (void**)&piPLMProduct);
+  if((FAILED(hr)) || (NULL == piPLMProduct)) {
+    retCode = 12;
+    goto EscapeWay;
+  }                           
+ ...</pre>
+<p>Create occurrence for the root product.</p>
+<pre class="code">...
+  // Get root occurrence from the root product  
+  hr = piPLMProduct->QueryInterface(IID_CATIPLMNavReference, (void**)&pIPLMNavRefOnRoot);
+  if(SUCCEEDED(hr))
+  {
+    CATIPrdOccurrenceMngt * pIPrdOccurrenceMngt = NULL;
+    hr = CATPrdGetOccurrenceMngt(pIPrdOccurrenceMngt);
+    if(SUCCEEDED(hr) && (NULL != pIPrdOccurrenceMngt))
+    {
+      hr = pIPrdOccurrenceMngt->GetOrCreateRootOccurrence(pIPLMNavRefOnRoot, hRootNavOccurrence);      
+    }
+    if(pIPrdOccurrenceMngt) { pIPrdOccurrenceMngt->Release(); pIPrdOccurrenceMngt = NULL; }
+  }                           
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Prepare Input Component</h3>
+<p>Create instance of the component to be used as input for assembly pattern.</p>
+<pre class="code">...
+  hr = GetComponentInstance(hRootNavOccurrence, "Comp", piCompInstance);
+...</pre>
+<p>In above case, component 'Comp' is directly under the root product.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Load Specification Component</h3>
+<p>Assembly pattern needs a specification as input. Valid specifications are:</p>
+<ul>
+    <li>a Part design pattern OR</li>
+    <li>a GSD pattern OR</li>
+    <li>a Geometrical set of axes systems OR</li>
+    <li>an Ordered geometrical set of axes systems</li>
+</ul>
+<p>Before using any specification, the part containing the specification to be used must be loaded into <em>Edit</em> mode,. 
+Part design pattern specifications that we want to use are inside part 'SpecPart'.</p>
+<pre class="code">...
+  hr = LoadComponent(hRootNavOccurrence, "SpecPart");
+...</pre>
+<p><em>LoadComponent</em> internal method finds the part 'SpecPart' and then loads it into <em>Edit</em> mode.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Prepare input specification</h3>
+<p>After part is loaded into Edit mode, we need to access part design pattern specification.
+One way to do it is by navigating part representation. However we take advantage of the fact that 
+they are published under root. It is easy to search publication by its name.</p>
+<pre class="code">...
+ // PatternRoot
+ //    SpecShape      
+ //    SpecPart  (Edit Mode) &lt;-----+
+ //    Comp                        |
+ //    SubAssembly                 |
+ //    Pub: RectPattern.1   -------|
+ //    Pub: CircPattern.1   -------|
+
+  // Part design pattern 'RectPattern.1' will be used as specification for assembly pattern under root
+  iStrRectPattern = "RectPattern.1";
+  hr = SearchPublicationByName(pIPLMNavRefOnRoot, iStrRectPattern, piRectPattSpecOIC);
+  if(FAILED(hr) || (NULL == piRectPattSpecOIC)) {
+    retCode = 23;
+    goto EscapeWay;
+  }
+  // Part design pattern 'CircPattern.1' will be used as specification for assembly pattern under the target product
+  iStrCircPattern = "CircPattern.1";
+  hr = SearchPublicationByName(pIPLMNavRefOnRoot, iStrCircPattern, piCircPattSpecOIC);
+  if(FAILED(hr) || (NULL == piCircPattSpecOIC)) {
+    retCode = 23;
+    goto EscapeWay;
+  }
+...</pre>
+<p><em>SearchPublicationByName</em> internal
+method retrieves a publication for given name and returns an object of <em>CATOmbObjectInContext</em> class 
+which is ready to use.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Creating Assembly Pattern Under the Root Product</h3>
+<p>To create an assembly pattern under the root prouct:</p>
+<pre class="code">...
+  // PatternRoot
+  //    SpecShape      
+  //    SpecPart
+  //    Comp                 &lt;------+
+  //    SubAssembly                 |
+  //    Pub: RectPattern.1   &lt;------+
+  //    Pub: CircPattern.1          |
+  //    Assembly Pattern.1 ---------+
+
+  // ========================================================================================
+  // First create pattern manager for the root product
+  // ========================================================================================  
+  CATIAssemblyUsePatternManager * piPattManager = NULL;
+  hr = CATCreateAssemblyUsePatternManager::CreatePatternManager(pIPLMNavRefOnRoot, piPattManager);
+  if(FAILED(hr) || NULL == piPattManager) {
+    retCode = 31;
+    goto EscapeWay;
+  }
+  if(piPattManager)
+  {
+    // Task 1:     
+    CATIAssemblyUsePattern * opiAsmPattern = NULL;
+    CATAssemblyUsePatternOptions iCmdOptions; // Client Options  
+    iCmdOptions.createGatheringComp = FALSE;
+    // Component & specification are under the same product hence specification context is NULL.  
+    piSpecContextOIC = NULL;
+    // ==========================================================================
+    // Create assembly pattern of given component, under the root product
+    // ==========================================================================
+    hr = piPattManager->CreatePattern(piCompInstance, piRectPattSpecOIC, piSpecContextOIC, iCmdOptions, opiAsmPattern);
+    if(FAILED(hr) || NULL == opiAsmPattern) {
+      retCode = 32;
+      goto EscapeWay;
+    }
+...</pre>
+<p>Since component to instantiate and specification are under same product, specification context is NULL.
+Assembly pattern and related instances will be successfully created. Please note that assembly pattern 
+is sometimes also referred as "assembly pattern connection" or just "pattern connection". 
+Assembly pattern will always be associative with the specification.</p>
+
+<p>To create another assembly pattern, this time under new gathering component, set the option 'createGatheringComp' to TRUE.</p>
+<pre class="code">...
+  // PatternRoot
+  //    SpecShape      
+  //    SpecPart
+  //    Comp           
+  //    SubAssembly    
+  //    Pub: RectPattern.1
+  //    Pub: CircPattern.1
+  //    Product1.1 (Gathering product) &lt;-----
+  //      Assembly Pattern.1
+
+    // Task 2: Create pattern under a new gathering product, under root.
+    CATIAssemblyUsePattern * piAsmPattUnderGather = NULL;
+    iCmdOptions.createGatheringComp = TRUE;
+    piSpecContextOIC = NULL;
+    hr = piPattManager->CreatePattern(piCompInstance, piRectPattSpecOIC, piSpecContextOIC, iCmdOptions, piAsmPattUnderGather);
+    if(FAILED(hr) || NULL == piAsmPattUnderGather) {
+      retCode = 32;
+      goto EscapeWay;
+    }
+...</pre>
+<p>New gathering component will created under the root and it will be a phanthom product. 
+With gathering product it is easier to manage pattern instances.</p>
+    
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Creating Multi-instantiation Under the Root Product</h3>
+<p>To create multi-instantiation under the root prouct:</p>
+<pre class="code">...
+    // ========================================================================
+    // Task 3: Create multi-instantiation under the root product  
+    // ========================================================================
+    iCmdOptions.createGatheringComp = FALSE;
+    piSpecContextOIC = NULL;
+    CATListPtrCATIPLMNavInstance oInstancesList;
+    hr = piPattManager->CreateMultiInstantiation(piCompInstance, piRectPattSpecOIC, piSpecContextOIC, iCmdOptions, oInstancesList);
+    if(FAILED(hr) || 0 == oInstancesList.Size()) {
+      retCode = 33;
+      goto EscapeWay;
+    }
+...</pre>
+<p>List of created instances is returned. In the case of multi-instantiation, 
+instances are not associative with the specification.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step8"></a>Create Assembly pattern Under a Target Product</h3>
+<p>We need to prepare target product 'SubAsm'.</p>   
+    <pre class="code">...
+  // Get target product occurrence
+  hr = GetTargetProductOccurrence(hRootNavOccurrence, "SubAsm", piTargetSubAsmOcc);
+  if(FAILED(hr) || NULL == piTargetSubAsmOcc) {
+    retCode = 24;
+    goto EscapeWay;
+  }
+  // ==========================================================================
+  // Prepare target reference 
+  // ==========================================================================
+  hr = piTargetSubAsmOcc->GetRelatedReference(piTargetSubAsmRef);
+...</pre>
+
+<p>Now we are ready to create assembly pattern manager, but since in this case 
+assembly pattern will be created under the target product while input
+specification is not under the target product, we need to create a specification context.
+</p>
+<pre class="code">...
+  // ==========================================================================
+  // NOTE: Since input specification is NOT under the target product,
+  // we should compute related specification context.
+  // ==========================================================================
+  hr = GetSpecContextOmbObject(piTargetSubAsmOcc, piSpecContextOIC);
+...</pre>
+
+<p>Now we are ready with all inputs required to create pattern under the target product.
+</p>
+<pre class="code">...
+  // ==========================================================================
+  // Create pattern manager for the target product
+  // ==========================================================================
+  CATIAssemblyUsePatternManager * piPattMngrTarget = NULL;
+  hr = CATCreateAssemblyUsePatternManager::CreatePatternManager(piTargetSubAsmRef, piPattMngrTarget);
+  if(FAILED(hr) || NULL == piPattMngrTarget) {
+    retCode = 31;
+    goto EscapeWay;
+  }
+  if(piPattMngrTarget)
+  {
+    CATAssemblyUsePatternOptions iCmdOptions; // Client Options  
+    iCmdOptions.createGatheringComp = FALSE;
+    CATIAssemblyUsePattern * piAsmPattTarget = NULL;
+    // ==========================================================================
+    // Create assembly pattern of given component, under the target product
+    // ==========================================================================
+    hr = piPattMngrTarget->CreatePattern(piCompInstance, piCircPattSpecOIC, piSpecContextOIC, iCmdOptions, piAsmPattTarget);
+    if(FAILED(hr) || NULL == piAsmPattTarget) {
+      retCode = 32;
+      goto EscapeWay;
+    }
+...</pre>
+
+<p>As explained before, to create an assembly pattern under new gathering component, set the option 'createGatheringComp' to TRUE.</p>
+<pre class="code">...    
+    CATIAssemblyUsePattern * piAsmPatternUnderGathering = NULL;
+    iCmdOptions.createGatheringComp = TRUE;
+    hr = piPattMngrTarget->CreatePattern(piCompInstance, piCircPattSpecOIC, piSpecContextOIC, iCmdOptions, piAsmPatternUnderGathering);
+    if(FAILED(hr) || NULL == piAsmPatternUnderGathering) {
+      retCode = 32;
+      goto EscapeWay;
+    }
+...</pre>
+<p>New gathering component will created under the target product as a phanthom product and 
+pattern instances will be aggregated under it.</p>
+
+<p>Similarly multi-instantiation can be created under the target product using <em>CreateMultiInstantiation</em> method.
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Updating the Assembly</h3>
+<p>Although pattern instances are already created and positioned correctly, 
+it is recommended to perform PLM Update on the product containing assembly pattern.</p>
+<pre class="code">...
+  // ==========================================================================
+  // PLM Update : After assembly pattern creation PLM update is recommended
+  // ==========================================================================  
+  spRootActor = pIPLMNavRefOnRoot;  
+  hr = CATPLMUpdateFactory::InstantiateUpdateEngine(piUpdateEngine);
+  if(FAILED(hr) || NULL == piUpdateEngine) {
+    retCode = 41;
+    goto EscapeWay;
+  }  
+  hr = piUpdateEngine->Init(spRootActor);
+  hr = piUpdateEngine->GetGlobalPLMStatus(updateStatus);
+  switch(updateStatus)
+  {
+  case CATIPLMUpdateEngine::Status_UpToDate:
+  case CATIPLMUpdateEngine::Status_UpToDateWithWarnings:
+    break; // Already up to date.
+  case CATIPLMUpdateEngine::Status_OutOfDate:
+  case CATIPLMUpdateEngine::Status_OutOfDateDateWithWarnings:
+  {
+    HRESULT updateRC = piUpdateEngine->GlobalPLMUpdate();
+    if(S_OK == updateRC || S_FALSE == updateRC) {
+      hr = S_OK;    // update successful (warnings).
+    }
+    else
+      hr = E_FAIL;  // update unsuccessful (errors).
+  }
+  case CATIPLMUpdateEngine::Status_Error:    
+    break;
+  case CATIPLMUpdateEngine::Status_UndefinedStatus:    
+    break;
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step10"></a>Saving the Assembly and Exiting</h3>
+<pre class="code">...
+  // ==========================================================================
+  // Saving the Root Product
+  // ==========================================================================
+  CATAdpSaver saver;
+  hr = saver.Save();
+  if(FAILED(hr)) return 1;
+  
+  // ==========================================================================
+  // Close the PLM session (Disconnect and Delete session)
+  // ==========================================================================
+  hr = CATPLMSessionServices::ClosePLMSession();
+</pre>
+<p>Before closing the session and after saving PLM component, the PLM Root component must be removed of the Bag, by using
+<code>RemoveRoot</code> method defined in <em>CATOmbLifeCycleRootsBag</em>.</p>
+
+<p>
+<img alt="Modified Product" src="images/CAAPictureAsmPatternAfter.jpg"/></p>
+<p>Desired assembly patterns are created under root product and specified target product. 
+Pattern engineering connections are created for pattern instance to maintain the relative positining as per spefication. 
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to create assembly pattern and multi-instantiation for given component and part design pattern specification.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+    <tr>
+        <td>[1]</td>
+        <td>
+            <a href="../CAADocUseCases/CAADocRunSample.htm">
+                Building and Launching a Use Case
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>[2]</td>
+        <td>
+            <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm'); return false;">
+                Connecting to V6 Server
+            </a>
+        </td>
+    </tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Mar 2018]</td>
+		<td>Document created</td>
+	</tr>
+	</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

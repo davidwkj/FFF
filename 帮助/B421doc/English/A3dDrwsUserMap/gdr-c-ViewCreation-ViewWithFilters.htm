@@ -1,0 +1,116 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Views with Filters"/>
+<meta name="abstract" content="You can create views with filters using a filter previously propagated (that is saved) via the Product Finder app."/>
+<meta name="description" content="You can create views with filters using a filter previously propagated (that is saved) via the Product Finder app."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewCreation-ViewWithFilters.htm#gdr-t-ViewCreation-ViewWithFilters"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-ViewCreation-ViewWithFilters"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Views with Filters</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-ViewCreation-ViewWithFilters">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Views with Filters</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>You can create views with filters using a filter previously propagated (that is saved) via
+the  <span>Product Finder</span> <span>app</span>.
+
+    
+    
+     </span>
+<p>
+      For more specific information regarding <span class="glossterm" id="filter" onmouseout="hideTerm()" onmouseover="showTerm('filter.xml')">filters</span>, see 
+    <cite><span>Product Finder</span> User's Guide</cite>.</p><p>
+      The following topics are discussed:</p></p>
+<ul><li><a href="#c-BasicPrinciples" id="toc_rg" title="This sub-topic explains the basic principles that determine the creation of views with filters.">
+      Basic Principles
+    </a></li><li><a href="#c-ViewUpdateStatusAfterModificationOf3DStructure" id="toc_rg" title="This table shows how the update status of views will be affected by a modification of the structure of the 3D representation.">        View update 
+      status after modification of the 3D structure</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-t-ViewCreation-ViewWithFilters.htm#gdr-t-ViewCreation-ViewWithFilters" title="You can create a view using object filters previously propagated (saved) with Product Finder and edit the filters in the current view.">Working with Views with Object Filters</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div/>
+  <div class="nested1" id="c-BasicPrinciples">
+    <h2 class="topictitle2">
+      Basic Principles
+    </h2>
+
+    
+    <div><p><span>This sub-topic explains the basic principles that determine the creation of views with filters.</span>
+</p>
+
+      <p>
+        A filter applies to a whole product. But a view is created from 3D elements loaded in session. So when loading 3D data (when re-opening the <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> for example), all 3D <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representations</span> of the product that are impacted by the filter are loaded in the view.
+      </p><p>When defining a filter on a product, you can see only a subset of the products and representations that make up this product. When creating a <span><span>Drawings</span></span> view, you can select such a filter to represent in the view only the subset of the product that results from the filtering.</p>
+      <p>In this case, the view is associated to the filter itself, and takes into account any modification that impacts the result of filtering on the product:</p><ul>
+        <li>
+          Modification of the filter query itself
+        </li>
+
+        <li>
+          Modification of the product that changes the result of the filtering (for example modifying the value of a product <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span> when the filter query is on this attribute)</li>
+<li>Modification of one of the representations that are part of the result</li>
+
+      </ul>
+
+      <p>
+        Any modification performed in any product or representation that is part of the result is detected, and will result in the view being out-of-date (even if the views represent the <span class="glossterm" id="shape-3D" onmouseout="hideTerm()" onmouseover="showTerm('shape-3D.xml')">3D shape</span> representations only). Therefore, you should make sure that the filter query excludes any unwanted representation or product.
+      </p><p>For example, a filter on a product attribute criterion will also show all 3D &amp; drafting representations which are attached to intermediate nodes of the product, unless additional filtering criterion are included in the filter.</p>
+      
+      <p>
+        <p>Note:
+		
+          Make sure that the drawing itself is not part of the filter result, as this will prevent the drawing from being up-to-date. Indeed, updating the drawing will modify it, which means that the filter result will be detected as modified due to the modification of the drawing itself.
+        </p>
+
+      </p>
+    </div>
+
+    
+    
+  </div>
+
+  <div class="nested1" id="c-ViewUpdateStatusAfterModificationOf3DStructure">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">        View update 
+      status after modification of the 3D structure</h2>
+
+    
+    <div><p><span>This table shows how the update status of views will be affected by a modification of the structure of the 3D representation.</span>
+</p>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><tbody><tr><td class="cellrowborder" valign="top" width="NaN">In the 3D structure, if an instance is...</td>
+<td class="cellrowborder" valign="top" width="NaN">then the view update status is...</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN">...added after the drawing representation edition or view creation,</td>
+<td class="cellrowborder" valign="top" width="NaN">...updated, but new instances are not displayed. Load 3D data to display the instances.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN">...added before the drawing representation edition or view creation,</td>
+<td class="cellrowborder" valign="top" width="NaN">...not updated. Once you update it, new instances are displayed.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN">...modified (deleted or moved)</td>
+<td class="cellrowborder" valign="top" width="NaN">...not updated.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+
+    
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,10 @@
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAA6WTaggerAPI.htm
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAA6WTaggerEdition.htm
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAA6WTaggerIntegration.htm
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAA6WTaggerUcAppliBuilding.htm
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAA6WTaggerUcAppliBuildingServer.htm
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAA6WTaggerUcEdition.htm
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAA6WTaggerUcFiltering.htm
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAA6WTaggerUcMultiProxy.htm
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAA6WTaggerUcServerSideFiltering.htm
+G:\R421\BSF\.\CAATagNavigatorDoc.edu\CAA6WTag.doc\src\CAATc6WTagToc.htm

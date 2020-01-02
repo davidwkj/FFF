@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    <ITEM name="3DSpace" href="CAA3DSpaceREST/CAAi3DX3DSpaceToc.htm" >
+		<ITEM name="Common Principles" href="CAA3DSpaceREST/CAAi3DX3DSpaceCommonPrinciplesToc.htm" >
+			<ITEM name="3DSpace Role and Openness" href="CAA3DSpaceREST/CAAi3DXTa3DSpaceIntro.htm" icon="CAAIcons/images/I_Overview.gif"  topictype="Ta"/>
+			<ITEM name="About 3DSpace Web Services" href="CAA3DSpaceREST/CAAi3DXTa3DSpaceWService.htm" icon="CAAIcons/images/I_Understanding.gif"  topictype="Ta"/>
+			<ITEM name="3DSpace Web Service HTTP Failures" href="CAA3DSpaceREST/CAAi3DXTa3DSpaceWSFailure.htm" icon="CAAIcons/images/I_Reference.gif"	topictype="Ta" />
+			<ITEM name="Experiencing 3DSpace Web Services" href="CAA3DSpaceREST/CAAi3DXTaScenarioJavaClientApp.htm"	
+			icon="CAAIcons/images/I_HowTo.gif"	topictype="Uc" />
+			<ITEM name="Consuming 3DSpace Web Services" href="CAA3DSpaceREST/CAAi3DXTaConsumingWS.htm"	icon="CAAIcons/images/I_Overview.gif"	topictype="Ta" />	
+			<ITEM name="Batch Client Application" href="CAA3DSpaceREST/CAAi3DX3DSpaceConsumeWSToc.htm" >
+				<ITEM name="Presenting Batch Client Application Example" href="CAA3DSpaceREST/CAAi3DXTaJavaClientApp.htm"	icon="CAAIcons/images/I_Understanding.gif"	topictype="Ta" />
+				<ITEM name="Creating Java Based Specific Client Class" href="CAA3DSpaceREST/CAAi3DXUcJavaClientClass.htm" icon="CAAIcons/images/I_UseCase.gif"	topictype="Uc" />
+				<ITEM name="Creating Java Based Application Class" href="CAA3DSpaceREST/CAAi3DXUcGettingStarted.htm" icon="CAAIcons/images/I_UseCase.gif"	topictype="Uc" />			
+			</ITEM>
+            <IMPORT href="CAA3DSpaceRESTPro/Proi3DX3DSpaceProToc.xml"/>			
+        </ITEM>	
+		<!-- IMPORT href="CAAi3DXDocumentWS/CAAi3DXDocumentWS.xml" -->		
+		<!-- IMPORT href="CAAi3DXLibraryWS/CAAi3DXLibraryWS.xml" -->		
+		<IMPORT href="CAAi3DXPnOWS/CAAi3DXPnOWS.xml"/>
+
+		<!-- IMPORT href="CAAXApplicationsWS/ProXApplicationsWS.xml" / -->	
+		<IMPORT href="CAADocumentWSTechArticles/CAADocumentWSTechArticles.xml" />	
+		<IMPORT href="CAAOSLC/CAAOslcToc.xml"/>
+
+	</ITEM>
+</Root>

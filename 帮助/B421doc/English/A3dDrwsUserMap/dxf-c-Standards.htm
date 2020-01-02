@@ -1,0 +1,444 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Standards"/>
+<meta name="abstract" content="Standards are used to define how DXF/DWG data are imported or exported."/>
+<meta name="description" content="Standards are used to define how DXF/DWG data are imported or exported."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dxf-c-Standards"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Standards</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dxf-c-Standards">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-::DXF/DWG"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWG::standard"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Standards</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Standards are used to define how DXF/DWG data are imported or exported.</span>
+
+    <p>Options for standards are found in the <a href="../PreferencesMap/gdrpref-c-DXF2D.htm#gdrpref-c-DXF2D" title="The DXF 2D options let you customize the import and export of DXF 2D files for Converter for IGES.">DXF 2D</a> <span>tab</span> (Import and Export) of the <span><span class="wintitle">Preferences</span></span>.</p><p>
+      The following topics are discussed:
+    </p>
+    
+  </p>
+<ul><li><a href="#c-AtImport" id="toc_rg" title="Standards are used to define the drawing representation to which DXF/DWG data are imported, as well as mapping DXF/DWG attributes.">At Import</a></li><li><a href="#c-AtExport" id="toc_rg" title="The export section of the standard file defines the mapping of patterns between 3DEXPERIENCE and DXF.">At Export</a></li><li><a href="#AboutAdminStandards" id="toc_rg" title="Standards are defined by your administrator in XML (Extensible Markup Language) files to set default values for element properties.">About DXF Standards</a></li><li><a href="#cs-structure" id="toc_rg" title="The structure of the standard is defined by the administrator.">Structure of the Standard
+</a></li><li><a href="#cs-DXFIGES2DStandards" id="toc_rg" title="All the parameters are in DXF Import, under dxf Category.">Description of the Standard Parameters</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  
+
+  <div class="nested1" id="c-AtImport">
+    <h2 class="topictitle2">At Import</h2>
+
+    
+    <div><p><span>Standards are used to define the drawing representation to which DXF/DWG data are imported, as well as mapping DXF/DWG attributes.
+    </span>
+
+    	
+    <a name="ix-DXF/DWG::Drafting"> </a><a name="ix-DXF/DWG::Drawing"> </a></p>
+
+    <dl> 
+  <dt class="dlterm"> Drafting 
+  </dt>
+ 
+  <dd>The imported data are put in a
+	 drawing representation. This drawing representation uses styles defined in a
+	 pre-defined or a customized standard such as ISO, JIS, ANSI, ASME. The 
+	 <span class="uicontrol">Drafting</span> list
+	 lets you select this standard. 
+	 <ul> 
+		<li>The content of this list depends on which
+		  standards have been created and/or customized by your administrator. 
+		</li>
+ 
+		<li>The most suitable format (A0 ISO, A1 ISO, etc.)
+		  for each sheet (layout) is automatically determined, i.e. the smallest format
+		  in which the drawing can be totally included is selected. 
+		  <ul> 
+			 <li>If the standard is ISO, the format is chosen
+				among A0, A1, A2, etc. 
+			 </li>
+ 
+			 <li>If the standard is ANSI, the format is chosen
+				among A, B, C, etc. 
+			 </li>
+ 
+			 <li>If no standard format fits the sheet, the
+				format is set to the largest one i.e. A0 ISO and made invisible with a message
+				"No standard format can be applied to this sheet" in the report file. 
+			 </li>
+ 
+			 <li>In export/import loops, the automatic
+				determination of the standard may lead to format changes. 
+			 </li>
+ 
+			 <li>If you are not satisfied with this automatic
+				result, use the Page Setup command to modify the format. 
+			 </li>
+ 
+		  </ul>
+ 
+		</li>
+ 
+	 </ul>
+ 
+	 <p>Information on what has been determined automatically
+		is written in the report file. 
+	 </p> 
+	 <p>For more details about standards, see 
+		<cite>Administration</cite> in the 
+		<cite><span>Drafting</span>
+		  User's Guide</cite>. 
+	 </p> 
+  </dd>
+ 
+
+          <dt class="dlterm">
+            DXF
+          </dt>
+
+          <dd><a name="ix-DXF/DWG::DXF"> </a>
+            <p>Some AutoCAD attributes do not exist in <span><span class="tm-3D">3D</span>EXPERIENCE</span> as such and require a
+mapping:</p>
+<p>
+<ul>
+<li>AutoCAD color can be mapped to <span><span class="tm-3D">3D</span>EXPERIENCE</span> line thickness.</li>
+
+<li>AutoCAD line type is mapped to <span><span class="tm-3D">3D</span>EXPERIENCE</span> line type.</li>
+
+<li>AutoCAD text font is mapped to <span><span class="tm-3D">3D</span>EXPERIENCE</span> text font.</li>
+
+<li>AutoCAD layers can be mapped to specific <span><span class="tm-3D">3D</span>EXPERIENCE</span> layers.</li>
+</ul>
+
+</p>
+<p>These mappings are defined in a DXF standard file, which you can
+select from the <span class="uicontrol">DXF</span> list. The content of this list depends on which standards have been
+created and/or customized by your administrator.
+
+            </p>
+          </dd>
+
+        </dl>
+
+  </div>
+
+
+    
+
+    
+  </div>
+
+
+  <div class="nested1" id="c-AtExport">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">At Export</h2>
+
+    
+    <div><p><span>The export section of the standard file defines the mapping of patterns between <span><span class="tm-3D">3D</span>EXPERIENCE</span> and DXF.</span>
+
+      
+    </p>
+
+      <p>Information about the export of patterns is given in the report file.</p>
+    </div>
+
+  </div>
+
+<div class="nested1" xml:lang="en" lang="en" id="AboutAdminStandards">
+  <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">About DXF Standards</h2>
+
+  <div><p><span>Standards are defined by your administrator in XML (Extensible
+Markup Language) files to set default values for element
+properties.
+
+    
+    </span>
+<p>
+      The following topics are discussed:
+    </p>
+  </p>
+<ul>
+<li>The elements used in the mappings customized in the DXF
+standard are those defined in the <span><span>Drawings</span></span> standard. This ensures
+the consistency between the DXF/DWG interface and the
+drawings.</li>
+<li>Standard files apply to all the sessions using them,
+thus controlling the company standard at the import process.</li>
+
+
+<li>The DXF.xml file is a standard that sets the default mapping
+between DXF/DWG and <span><span>Drawings</span></span> elements, for the color to thickness, line
+types and text fonts.</li>
+<li>The DXF.xml file is stored under<span class="filepath"> installation_folder\resources\standard\dxf</span>.<p>For multi-sites installations, we recommend that the administrator loads  the DXF.xml file in <span>Data Setup</span>, thus making sure one single standard file is available for all users in on-line mode. See <a href="pjrid1-m-PRM-sb.htm#pjrid1-m-PRM-sb" title="Data Setup is an app that you can use to associate resources to apps in projects. This section shows you how to create resource tables, to associate them to a collaborative space in the Data Setup app, and provides background information about the available resources.">Data Setup</a> for more information.</p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>When switching to off-line mode, only the standard file in the local installation folder is available.    </td></tr></table>
+</li>
+
+
+
+<li>The <span class="uicontrol">USED MAPPINGS</span> section of the report file lists
+the associations used during import.</li>
+</ul>
+<p>You
+can use the default mapping found in the standard file provided in your installation,  customize it, or create new standard files to meet your
+needs. When several standard files exist, you can select one.</p></div>
+
+
+  
+
+  
+  
+  
+  
+  
+</div>
+<div class="nested1" id="cs-structure"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Structure of the Standard
+</h2>
+
+<div><p>The structure of the standard is defined by the administrator.</p>
+<p><a name="ix-DXF/DWG::structure of the standard"> </a> 
+A standard file is structured as a <span>tree</span>, as it appears in the
+Standards Editor
+(available via <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>). 
+It contains several main sections, each dealing with a specific
+aspect of the customization.</p></div>
+</div>
+<div class="nested1" id="cs-DXFIGES2DStandards">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Description of the Standard Parameters</h2>
+
+    
+    <div><p>All the parameters are in <span class="uicontrol">DXF Import</span>, under <span class="uicontrol">dxf Category</span>.
+</p>
+
+      
+    <dl><dt class="dlterm">Line Type Mapping</dt>
+<dd><a name="ix-DXF/DWG::description of the standard"> </a>Associates a <span><span>Drawings</span></span> line type for any given DXF line
+type:<ul><li>Select the DXF line type by its name.</li>
+<li>Select the <span><span>Drawings</span></span> line type by its number.</li>
+</ul>
+<p>If a name of line type found in the DXF file is not present in
+the list, the default <span><span>Drawings</span></span> line type will be applied to the imported
+entity.</p>
+</dd>
+<dt class="dlterm">Color To Thickness Mapping</dt>
+<dd><a name="ix-DXF/DWG::color to thickness mapping"> </a>Associates a <span><span>Drawings</span></span> line thickness for any given DXF
+color. This capability is useful for DXF files up to the version
+AutoCAD-R14 in which the line thickness was not defined, and for
+which the color may be used to define a line thickness.<ul><li>Select the DXF color by its number.</li>
+<li>Select the <span><span>Drawings</span></span> line thickness by its number.</li>
+</ul>
+</dd>
+<dt class="dlterm">Text Font Mapping</dt>
+<dd><a name="ix-DXF/DWG::font mapping"> </a>Associates a <span><span>Drawings</span></span> text font for any given DXF text
+font:<ul><li>Select the DXF text font by its name.</li>
+<li>Select the <span><span>Drawings</span></span> text font by its number.</li>
+<li>Associate a X scale factor to reframe a font with a different
+geometry (characters too wide or too narrow) to achieve the best
+possible alignment.</li>
+<li>Define a default font to be used when there is no mapping for a
+DXF font.</li>
+<li>Define a default KANJI font, other than SSS4, to be used when
+the BigFont DXF font is not mapped.</li>
+</ul>
+<p>If a name of text font found in the DXF file is not present in
+the list, the given default <span><span>Drawings</span></span> text font will be applied to the
+imported text.</p>
+</dd>
+<dt class="dlterm">Thick Polyline Mapping</dt>
+<dd><a name="ix-DXF/DWG::polyline mapping"> </a>Controls the way polylines with adjustable width are
+imported. Those polylines do not use the standard lineweight attribute,
+but use either <span class="uicontrol">Constant width</span> attribute, or<span class="uicontrol"> Start
+segment width</span> and <span class="uicontrol">End segment Width</span> for each
+vertex of the polyline. They can be imported as lines and arcs or
+as area fills depending on the value of <span class="uicontrol">CreateAreaFill
+and MinThicknessForAreaFill</span> in the
+<span class="uicontrol">ThickPolylineMapping</span> standard.<p>When the width of the polyline is not null:<ul>
+<li><span class="uicontrol">CreateAreaFill=yes</span> authorizes the area fill
+creation.
+In this case, if width is greater than the value of
+<span class="uicontrol">MinThicknessForAreaFill</span>, an area fill that represents
+the exact geometry of the thick polyline is created.</li>
+
+<li><span class="uicontrol">CreateAreaFill=No</span>, or if width is lower than the
+value of <span class="uicontrol">MinThicknessForAreaFill</span>, the lines and arcs are
+created with a line thickness mapped from the polyline width.</li>
+
+</ul>
+</p><p>The value taken for the width is the greater one of
+startWidth or endWidth for each segment of
+the polyline.</p>
+<p>The report file indicates: <ul><li>Whether a thick polyline mapping has been
+applied during the import of the DXF file.</li>
+<li>How the thick polylines are
+mapped.</li>
+</ul>
+</p>
+<p>Limitations:<ul>
+<li>When an area fill is created, the line type of the polyline is
+not taken into account. This applies only when the width is greater
+than the value of <span class="uicontrol">MinThicknessForAreaFill</span> given in the
+DXF standard.</li>
+
+<li>When no area fill is created, in the case of polyline with
+constant width, arcs or lines will be created for each segment, but
+no <span><span>Drawings</span></span> polyline.</li>
+
+</ul>
+</p></dd>
+<dt class="dlterm">Color Mapping</dt>
+<dd><a name="ix-DXF/DWG::color mapping"> </a>Controls the adaptation of <span class="uicontrol">Black</span> and
+<span class="uicontrol">White</span> colors to the background color:<ul><li>By default, the sheet background is dark blue in <span>2D Layout for 3D Design</span>, since it is white in <span><span>Drawings</span></span>. The consequence is that black lines that are the most frequent in
+DXF files are not, or only hardly visible.
+</li>
+<li>To improve the visibility of the result of the import in
+<span>2D Layout for 3D Design</span>, a new section<span class="uicontrol"> Color
+mapping</span> is added in the DXF standard file with three
+parameters:<dl><dt class="dlterm">Adapt to Background</dt>
+<dd><ul>
+<li><span class="uicontrol">Yes</span> (default value): the <span class="uicontrol">Black</span> and
+<span class="uicontrol">White</span> colors will be changed, either to black or to
+white depending on the background color and the second
+parameter.</li>
+
+<li><span class="uicontrol">No</span>: the White and Black colors
+from DXF will not be changed: they may be not or almost not
+visible.</li>
+
+</ul>
+</dd>
+<dt class="dlterm">Dark background luminosity (0..255)</dt>
+<dd><ul>
+<li>If <span class="uicontrol">Adapt to Background=No</span>: this parameter has no
+effect.</li>
+
+<li>If <span class="uicontrol">Adapt to Background=Yes</span>: this parameters defines
+at which luminosity value of the background the <span class="uicontrol">Black</span>
+color is switched to white: 
+
+<ul>
+<li>If the background luminosity is lower than the given value, that
+means the background is dark and the <span class="uicontrol">Black</span> color from
+DXF will be changed to white.</li>
+
+<li>If the background luminosity is greater than the given value, the
+<span class="uicontrol">Black</span> color from DXF remains black.</li>
+
+
+</ul>
+
+</li>
+
+</ul>
+<p>The proposed <span class="uicontrol">Dark background luminosity (0..255)</span> is 100.</p></dd>
+<dt class="dlterm">Light background luminosity (0..255)</dt>
+<dd><ul>
+<li>If <span class="uicontrol">Adapt to Background=No</span>, this parameter has no
+effect.</li>
+
+<li>If <span class="uicontrol">Adapt to Background=Yes</span>, this parameters defines
+at which luminosity value of the background the <span class="uicontrol">White</span>
+color is switched to black: 
+
+<p>
+<ul>
+<li>If Background luminosity is higher than the given value, that
+means the background is light and the <span class="uicontrol">White</span> color from
+DXF will be changed to black.</li>
+
+<li>If Background luminosity is lower than the given value, the
+<span class="uicontrol">White</span> color from DXF remains white.</li>
+
+
+</ul>
+
+</p>
+<p>The proposed <span class="uicontrol">Light background luminosity (0..255)</span> is 200.</p></li>
+
+<li>In other words, when the parameter <span class="uicontrol">Adapt to
+Background=Yes</span>:<ul>
+<li>If the background luminosity is lower than the value given by
+<span class="uicontrol">Dark background luminosity</span>, the <span class="uicontrol">Black</span> color
+from DXF is changed to white (so, both <span class="uicontrol">Black</span> and
+<span class="uicontrol">White</span> are white).</li>
+
+<li>If the background luminosity is between the values given by
+<span class="uicontrol">Low Luminosity</span> threshold and <span class="uicontrol">High Luminosity</span>
+threshold, no color is changed.</li>
+
+<li>If the background luminosity is higher than the value given by
+Light background luminosity, the <span class="uicontrol">White</span> color
+from DXF is changed to black (so, both <span class="uicontrol">Black</span> and
+<span class="uicontrol">White</span> are black).</li>
+
+</ul>
+
+</li>
+
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Notes:
+		<ul><li><span class="uicontrol">Dark background luminosity</span> and <span class="uicontrol">Light background
+luminosity</span> should be between 0 and 255.</li>
+<li><span class="uicontrol">Dark background luminosity</span> must be lower than or
+equal to <span class="uicontrol">Light background luminosity</span>. If it is not the
+case the <span class="uicontrol">Light background luminosity</span> is set to <span class="uicontrol">Dark
+background luminosity</span>.</li>
+<li>When a change of <span class="uicontrol">Black</span> or <span class="uicontrol">White</span> color is
+done during the conversion because of the <span class="uicontrol">Adapt to
+Background </span>mapping, the information is given in the report
+file of the DXF conversion.</li>
+<li>When the DXF standard does not contain these parameters, the
+default values are taken. The report file indicates if the
+adaptation to background color has been applied during the import
+of the DXF file.</li>
+</ul>
+</p>
+</dd>
+<dt class="dlterm">Pattern Mapping</dt>
+<dd>Defines a mapping between a <span><span>Drawings</span></span> image representing a pattern and a DXF pattern, when exporting data from <span><span>Drawings</span></span> to DXF.<p>This mapping is required because the representation of a pattern is different in DXF and <span><span>Drawings</span></span>:<ul><li> An area fill is defined by one external contour
+and several internal contours in both DXF and <span><span>Drawings</span></span>. The graphic
+representation in these contours allows to schematize
+materials.</li>
+<li>For DXF, this graphic representation is defined by:<ul><li>A pattern made of lines</li>
+<li>Or a pattern coloring gradient.</li>
+</ul>
+</li>
+<li>In <span><span>Drawings</span></span>, this graphic representation is defined either by:<ul><li>A pattern hatching (several lines with type, color and maximum number)</li>
+<li>A pattern dotting (point with pitch and color)</li>
+<li>A pattern coloring (color)</li>
+<li>Or a pattern image (image with scale and angle).</li>
+</ul>
+</li>
+</ul>
+</p><p>For example, in <span><span>Drawings</span></span> concrete is represented by an image, whereas it is represented by a pattern made of lines in DXF. In such cases, you can map the image with a DXF pattern in the standard file.<br/><img src="../DxfUserImages/DXFPatternMap.png"/><br/></p><p>Once you have selected a <span><span>Drawings</span></span> pattern motif, you can define its DXF properties on the right side of the dialog box.</p>
+
+
+</dd>
+<dt class="dlterm">Layer Mapping</dt>
+<dd>Defines a mapping between imported layers and <span><span class="tm-3D">3D</span>EXPERIENCE</span> layers.<ul><li>The name of the imported layer is mapped with a <span><span class="tm-3D">3D</span>EXPERIENCE</span> number and a <span><span class="tm-3D">3D</span>EXPERIENCE</span> layer name.</li>
+<li>If the name of an imported layer has no mapping, the layer is created as new.</li>
+<li>You can use the character * to replace any character in the imported layer name. This way, you can assign several imported layers with different names to one <span><span class="tm-3D">3D</span>EXPERIENCE</span> layer.</li>
+</ul>
+</dd>
+</dl>
+</div>
+
+      
+    
+    
+    
+  </div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Using Multi Proxies</title>
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+</style>
+</head>
+<body onload="createToc();highlightSearchTerms();">
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Using Multi Proxies</h1>
+		</td>
+	</tr>
+	<tr> 
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<table class="abstract">
+	<tr>
+		<td>
+			<h2>Abstract</h2>
+			<p>This article describes a widget having two 6WTagger proxies both can be independently activated or deactivated all along the widget life.  </p>   
+			</p>	
+             <p>The reading of 6WTagger Integration - Principles [<a href="#References">1</a>] and API [<a href="#References">2</a>] is a pre-requisit, 
+			 as well the article about widget object [<a href="#References">3</a>]. </p>     	
+			<ul>
+				<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+				<li><a href="#UseCase">The CAA6WTagMultiProxies Use Case</a>
+				<ul>
+    <li><a href="#What">What Does CAA6WTagMultiProxies Do</a></li>
+    <li><a href="#How">How to Launch CAA6WTagMultiProxies</a></li>
+    <li><a href="#Where">Where to Find the CAA6WTagMultiProxies Code</a></li>
+				</ul>
+				</li>
+				<li><a href="#Step">Step-by-Step</a></li>
+				<li><a href="#InShort">In Short</a></li>
+				<li><a href="#References">References</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you how to activate and deactivate a 6WTagger proxy, and update the widget UI accordindly their activation state, and the current selected tag set.</p>
+<p>These proxies are  instances of the
+<a href="#" onclick="CAAlinkJS('TagNavigator', 'TagNavigatorProxy', 'DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices'); return false;">Tagger6WProxyWithFilteringServices</a> class, but they
+could have been    <a href="#" onclick="CAAlinkJS('TagNavigator', 'TagNavigatorProxy', 'DS/TagNavigatorProxy/Tagger6WProxy'); return false;">Tagger6WProxy</a> class instances. It does not change the 
+explanations.
+ </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="UseCase"></a>The CAA6WTagMultiProxies Use Case</h2>
+<p>CAA6WTagMultiProxies is a use case of the CAATagNavigator.edu framework. 
+It illustrates 6WTagger integration inside widgets capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="What"></a>What Does CAA6WTagMultiProxies Do</h3>
+<p>Before showing the widget UI, let's describe the data. </p>
+<h4>About Data</h4>
+<p>CAA6WTagMultiProxies  is a widget managing data which are buildings (generic name for houses and buildings). They share the fact to have been conceived by an architect. From that 
+we deduce the following subject/predicate/object links:</p>
+ <table>
+	<tr>
+		<td><img alt="onLoad" src="images/CAA6WTagUcFilteringSchema.png"/></td>
+	</tr>
+</table>
+<p>The data are all listed by this array. The first column is the building name (suject), and the second column is the architect name (object).</p>
+<table class="fill">
+<tr><th>Building Name</th><th>Architect Name</th></tr>
+<tr><td>house1</td><td>Le Corbusier</td></tr>
+<tr><td>house2</td><td>Le Corbusier</td></tr>
+<tr><td>house3</td><td>Zaha Hadid</td></tr>
+<tr><td>house4</td><td>Frank Gehry</td></tr>
+<tr><td>house5</td><td>Frank Gehry</td></tr>
+<tr><td>house6</td><td>Frank Gehry</td></tr>
+<tr><td>house7</td><td>Frank Gehry</td></tr>
+<tr><td>building1</td><td>Le Corbusier</td></tr>
+<tr><td>building2</td><td>Le Corbusier</td></tr>
+<tr><td>building3</td><td>Frank Gehry</td></tr>
+<tr><td>building4</td><td>Jean Nouvel</td></tr>
+</table>
+<p>The predicate "hasForArchitect" is classified within the "who" category, one of the six root categories. The display name for the predicat is "Architect".</p> 
+<p>Conversely to the referenced use cases [<a href="#References">4</a>] [<a href="#References">5</a>] where there is one proxy for all the subjects (all kinds of buildings combined),
+ in this use case
+we have <b>two proxies</b>: one for the "houses", and one for the "buildings".</p>
+ <table class="fill">
+<tr><th class="auto-style1" colspan="2">Data for House Proxy</th>
+	<th class="auto-style1" colspan="2">Data for Building Proxy</th></tr>
+<tr><th>Building Name</th><th>Architect Name</th><th>Building Name</th><th>Architect Name</th></tr>
+<tr><td>house1</td><td>Le Corbusier</td><td>building1</td><td>Le Corbusier</td>
+<tr><td>house2</td><td>Le Corbusier</td></td><td>building2</td><td>Le Corbusier</td></tr>
+<tr><td>house3</td><td>Zaha Hadid</td></td><td>building3</td><td>Frank Gehry</td></tr>
+<tr><td>house4</td><td>Frank Gehry</td></td><td>building4</td><td>Jean Nouvel</td></tr>
+<tr><td>house5</td><td>Frank Gehry</td></tr>
+<tr><td>house6</td><td>Frank Gehry</td></tr>
+<tr><td>house7</td><td>Frank Gehry</td></tr>
+</table>
+
+<h4>About UI</h4>
+<p>Once the widget is launched in a dashboard, <b>open the Preferences menu</b> and check/change the proxy activation. Let's start with the default values; 
+both proxies are activated.</p> 
+ <table>
+	<tr>
+		<td><img alt="Preferences" src="images/CAA6WTagUcMultiProxyUP.png"/></td>
+	</tr>
+</table>
+<p><a name="WidgetDeb"></a><b>The widget body shows </b>per proxy : all its subjects (constant), its state, and its refined subjects. At first no filtering, 
+therefore all the subjects are listed in the third line.</p>
+ <table>
+	<tr>
+		<td><img alt="WidgetBody" src="images/CAA6WTagUcMultiProxyWdgWoFiltering.png"/></td>
+	</tr>
+</table>
+<p><b>Open the 6WTagger</b>, the predicate with the 4 objects are visible (*):</p>
+ <table>
+	<tr>
+		<td><img alt="Openthe6WTagger" src="images/CAA6WTagUcMultiProxyTaggerWoFiltering.png"/></td>
+	</tr>
+</table>
+<p>(*)Pay attention, you may have less predicates and objects if your widget is maximised or in full screen. As mentioned in the "Multi-Proxy" section of the technical article [<a href="#References">8</a>], in those widget display modes only 6WTags of the first active proxy are visible.</p>
+<p><a name="WidgetSelect"></a><b>Select a tag</b>, the list of refined sujects (computed by the 6WTagger) for each proxy is displayed.</p>
+ <table>
+	<tr>
+		<td><img alt="SelectTag" src="images/CAA6WTagUcMultiProxyTaggerWithFiltering.png"/></td>
+	</tr>
+</table>
+<p>Let's open the 6WTagger, but <b>reopen the Preferences menu</b>, and uncheck the "building" proxy. </p>
+ <table>
+	<tr>
+		<td><img alt="SelectTag" src="images/CAA6WTagUcMultiProxyWoBuildingWithFiltering.png"/></td>
+	</tr>
+</table>
+<p>The tags only valid for the "house" proxy are displayed: the "Jean Nouvel" object has disappeared, and the count of subjects for the three other objects have changed too.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="How"></a>How to Launch CAA6WTagMultiProxies</h3>
+<p>To launch CAA6WTagMultiProxies please follow the instructions described here  [<a href="#References">6</a>].
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Where"></a>Where to Find the CAA6WTagMultiProxies Code</h3>
+<p>The CAA6WTagMultiProxies use case is made of one main file  located in: </p>
+<p><code>InstallRootFolder\CAADoc\CAATagNavigator.edu\CAA6WTagMultiProxies.mweb\src\CAA6WTagMultiProxies.html</code>.</p>
+	
+<p>Where <code>InstallRootFolder</code> is the folder where the API CD-ROM is installed [<a href="#References">6</a>].
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are several logical steps in CAA6WTagMultiProxies use case: </p>
+<ul>
+    <li><a href="#Create6WTags">6WTags Creation</li>
+	<li><a href="#CreateProxy">Proxy Creation</li>
+	<li><a href="#ActivationProxy">Proxy Activation/Deactivation</li>
+	<li><a href="#WidgetUI">End-User Tag Selection</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Create6WTags"></a>6WTags Creation</h3>
+<p><code>subjectDB</code> is a JSON array containing the 6WTags as a complete form (subject/predicate/object) as follows.</p>
+<pre class="code">
+var <b>subjectDB</b>= [ {  
+        'house1' : [{'object'   : 'lcr', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Le Corbusier',  'type'      : 'string' } ] , 
+        'house2': [{'object'    : 'lcr', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Le Corbusier',  'type'      : 'string' } ] ,
+        'house3': [{'object'    : 'zhd', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Zaha Hadid',      'type'      : 'string' } ] ,
+        'house4': [{'object'    : 'fgy', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Frank Gehry',     'type'      : 'string' } ] ,
+        'house5': [{'object'    : 'fgy', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Frank Gehry',     'type'      : 'string' } ] ,
+        'house6': [{'object'    : 'fgy', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Frank Gehry',     'type'      : 'string' } ] ,
+        'house7': [{'object'    : 'fgy', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Frank Gehry',     'type'      : 'string' } ] 
+	} , {
+        'building1' : [{'object'   : 'lcr', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Le Corbusier',  'type'      : 'string' } ] , 
+        'building2': [{'object'    : 'lcr', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Le Corbusier',  'type'      : 'string' } ] ,
+        'building3': [{'object'    : 'fgy', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Frank Gehry',   'type'      : 'string' } ]  ,
+        'building4': [{'object'    : 'jnl', 'sixw'      : 'ds6w:who/Architect',   'dispValue' : 'Jean Nouvel',   'type'      : 'string' } ]      		  
+} ] ;
+</pre>
+<p>The first cell is a JSON structure for the house proxy, and the second cell is a JSON structure for the building proxy.</p>
+<p>For the use case, the subject URIs (house1, ...) have been simplified. Do not forget if your application gives the end user the capabilities 
+to create his/her own tags (see "6WTags Edition" article [<a href="#References">7</a>]), the   subject URIs will be stored in the 6WTags service, a service shared by 
+all applications of the <b>3D</b>EXPERIENCE platform. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="CreateProxy"></a>Proxy Creation</h3>
+<p>The variable <code>taggerProxyHouse</code> and <code>taggerProxyBuilding</code> have been previously declared in the html page.
+Below the lines in the <i>onLoad</i> method
+of the widget:</p>
+<pre class="code">
+onLoad: function() {
+    ...
+    var options= { "widgetId" : widget.id, "filteringMode" : "WithFilteringServices"};
+    taggerProxyHouse = TagNavigatorProxy.<b>createProxy</b>(options);
+    taggerProxyBuilding = TagNavigatorProxy.<b>createProxy</b>(options);
+    taggerProxyHouse.addEvent('onFilterSubjectsChange',MyWidget.<b>onFilterSubjectsChangeHouse )</b>; 
+    taggerProxyBuilding.addEvent('onFilterSubjectsChange',MyWidget.<b>onFilterSubjectsChangeBuilding )</b>; 
+   
+    MyWidget.onRefresh();
+		
+    taggerProxyHouse.<b>setSubjectsTags(subjectDB[houseIndex]) </b>; 
+    taggerProxyBuilding.<b>setSubjectsTags(subjectDB[BuildingIndex])</b>; 
+
+}	
+</pre>
+<p>The first lines of the <i>onLoad</i> method, not detailed here, consists in creating the constant widget DOM elements as the tables
+ and the cells to be fill in with non constant data. See the <a href="#WidgetDeb">picture</a> above.</p>
+<p>Each proxy is created and initialized as explained in the "Implementing 6WTagger Filtering" use case [<a href="#References">4</a>]. After the creation, a callback function for the
+"onFilterSubjectsChange" is declared to be informed after each end-user tag selection. Their contents is explained in the 
+<a href="#WidgetUI">End-User Tag Selection</a> step.
+<p>Then the <a href="#ActivationProxy">onRefresh</a> method is called to update the widget UI accordingly the
+ current proxy state. </p>
+ <p>Finally the 6WTags are given to each proxy.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="ActivationProxy"></a>Proxy Activation/Deactivation</h3>
+<p>The activation/deactivation is operated in the <i>onRefresh</i> method. Just above we have seen that this method is called by the <i>onLoad</i> method. But this method is also triggered 
+when the end-user selects the 
+Refresh item in the widget action menu, and
+after the closure (with Save) of the Preferences menu. The later two cases are due to a callback set by the widget for the <i>onRefresh</i> event. See "Widget Object" article [<a href="#References">4</a>] 
+for a recall about widget events.</p> 
+<p>Let's see the piece of code to take into account the house proxy state. </p>
+<pre class="code">
+onRefresh: function() {
+    var theProxyActHouseElt = widget.body.querySelector('.proxyHouseAct');
+    var theFilteredHouseElt = widget.body.querySelector('.FiltHouse');
+ 
+    if ( widget.getValue("HouseProxyActivation") === "true" ) {
+        taggerProxyHouse.<b>activate();</b>
+        theProxyActHouseElt.innerHTML="activate" ;
+        var currentFilterHouse=taggerProxyHouse.<b>getCurrentFilter();</b>
+        if ( currentFilterHouse && currentFilterHouse.filteredSubjectList ) {
+            theFilteredHouseElt.innerHTML=JSON.stringify(currentFilterHouse.filteredSubjectList) ;
+        }else {
+            theFilteredHouseElt.innerHTML="house1,house2,house3,house4,house5,house6,house7" ;
+        }
+    } else {
+        taggerProxyHouse.<b>deactivate();</b>
+        theProxyActHouseElt.innerHTML="deactivate" ;
+        theFilteredHouseElt.innerHTML="no filtering";
+}
+    ...
+}	
+</pre>
+<p>The proxy is activated or desactivated by the <i>activate</i> and <i>deactivate</i> methods respectively. Both  methods of the
+<a href="#" onclick="CAAlinkJS('TagNavigator', 'TagNavigatorProxy', 'DS/TagNavigatorProxy/AbstractTagger6WProxy'); return false;">AbstractTagger6WProxy</a> class, the class from which 
+<a href="#" onclick="CAAlinkJS('TagNavigator', 'TagNavigatorProxy', 'DS/TagNavigatorProxy/Tagger6WProxy'); return false;">Tagger6WProxy</a> and
+<a href="#" onclick="CAAlinkJS('TagNavigator', 'TagNavigatorProxy', 'DS/TagNavigatorProxy/AbstractTagger6WProxy'); return false;">DS/TagNavigatorProxy/Tagger6WProxyWithFilteringServices</a>  derive from. </p>
+<p>After the activation we get the current filter to know the current refined subjects. The <i>getCurrentFilter</i> is also a method of the base class. The returned filter is the
+same kind of JSON object as the one input of the callback function when a tag is selected. Let's see the next section.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="WidgetUI"></a>End-User Tag Selection</h3>
+<p>This tasks consists in 
+updating the "Filtered Subjects" sections in the widget body according to a given refinement filter. We do it in the 
+callback function the proxy has declared for the <a  href="#CreateProxy">subscription</a> to the "onFilterSubjectsChange" event.  </p>
+<p><code>filter</code>, the unique argument of the callback is, for the 6WTagger filtering case, a JSON object with two keys:</p>
+ 
+  <ul>
+  <li>"allfilters" - for  the selected tags - whose value is a JSON object with 0 to N keys, each key is a predicate, whose value is an array.</li>
+  <li>"filteredSubjectList" - for the refined subjects- whose value is a JSON array with the subject URI list.</li>
+  </ul>
+<p>The format of such filter is fully described <a href="CAA6WTaggerAPI.htm#onFilterSubjectsChange">here</a>. </p>
+ 
+<p>This is the contents of the  <i>onFilterSubjectsChangeHouse</i> method, the callback function:</p>
+<pre class="code">
+<b>onFilterSubjectsChangeHouse</b>: function (filter) {				    
+    var theFilteredSubjectElt = widget.body.querySelector('.FiltHouse');
+    theFilteredSubjectElt.innerHTML=JSON.stringify(filter.filteredSubjectList) ;
+},
+</pre>
+<p>After the selection the widget body is as depicted by the <a href="#WidgetSelect">picture above</a>.</p>
+<p>This callback method is invoked when <b>the proxy is ACTIVE</b>, and </p>
+<ol>
+<li>The end-user has just selected a tag, the 6Wtagger is still open, and the widget is visible,<b> or not</b>, in the current tab page,</li>
+<li>The end-user has previously selected tags from a given tab page, closed the 6WTagger, and just instantiated this widget in the same given  tab page.</li>
+</ol>
+<p>For the first point, we recall that all widget proxies  -except if deactivated - of the same tab page of a dashboard having subscribed to a tag selection event 
+are informed after a selection whatever the widget state: minimized, maximized, windowed or fullscreen. </p>
+<p>For the second point, it means that once instantiated the widget can update its contents accordingly previous tag selection in the current tab page. 
+</p>
+<p><b>Remarks:</b> In case of pre-existing selected tags before the widget instantiation, the use case code seems to update twice 
+the filtered sujects. Once in the <i>onRefresh</i> method, and then in <i>onFilterSubjectsChangeHouse</i> method. The first call is 
+executed by the <i>onLoad</i> method, and the second by the 6WTagger. But it is not true: in the instantiation case in the <i>onRefresh</i> method, the 
+<i>getCurrentMethod</i> returns null. Never call <i>getCurrentMethod</i> in the same thread of code than the proxy creation.</p>
+ 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>You have learnt how to activate, deactivate a proxy, and refresh the UI after a reactivation to take into account the last selected tags.</p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAA6WTaggerIntegration.htm">6WTagger Integration - Principles</a></td>
+	</tr>
+    <tr>
+		<td>[2]</td>
+		<td><a href="CAA6WTaggerAPI.htm#FilterClient">6WTagger Integration- API</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsTaWidgetClass.htm');return false;">Widget Object</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="CAA6WTaggerUcFiltering.htm">Implementing 6WTagger Filtering</a></td>
+	</tr>
+    <tr>
+		<td>[5]</td>
+		<td><a href="CAA6WTaggerUcServerSideFiltering.htm">Implementing Service Side Filtering</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm');return false;">Installing and Launching Widget Use Case</a></td>
+	</tr>
+	 <tr>
+		<td>[7]</td>
+		<td><a href="CAA6WTaggerEdition.htm">6WTags Edition</a></td>
+	</tr> 
+      <tr>
+		<td>[8]</td>
+		<td><a href="CAA6WTaggerAPI.htm#Multi-Proxy">6WTagger Integration- API</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [March 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

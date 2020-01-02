@@ -1,0 +1,97 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Creating Partial Curvilinear Length Dimensions"/>
+<meta name="abstract" content="Partial curvilinear length dimensions are defined using points."/>
+<meta name="description" content="Partial curvilinear length dimensions are defined using points."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Dimensions-PartialCurvilinearLengthDimension.htm#gdr3dmaster-t-Dimensions-PartialCurvilinearLengthDimension"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Dimensions-PartialCurvilinearLengthDimension"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Creating Partial Curvilinear Length Dimensions</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Dimensions-PartialCurvilinearLengthDimension">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Creating Partial Curvilinear Length Dimensions
+				</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Partial curvilinear length dimensions 
+						are defined using points. </span>
+
+						<p>This topic provides more information about 
+						creating partial curvilinear length dimensions.</p>
+						
+						
+					
+				</p>
+<ul><li><a href="#gdr3dmaster-c-Dimensions-PartialCurvilinearLengthDimension__cs-GeneralRemarks" id="toc_rg" title="">General remarks</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Dimensions-PartialCurvilinearLengthDimension.htm#gdr3dmaster-t-Dimensions-PartialCurvilinearLengthDimension" title="Partial curvilinear length dimensions are defined using points. You can create dimensions for the curvilinear length of a curve portion, i.e. to measure the partial length of a curve.">Creating Partial Curvilinear Length Dimensions</a></td></tr></table></td></tr></table>
+
+<div><div class="section" id="gdr3dmaster-c-Dimensions-PartialCurvilinearLengthDimension__cs-GeneralRemarks"><h2 class="sectiontitle">General remarks</h2>
+		<ul>
+			<li>Partial curvilinear length dimensions can be created using
+			<span class="uicontrol">Dimensions</span> and <span class="uicontrol">Length/Distance Dimensions</span>; 
+			they cannot be created using <span class="uicontrol">Stacked Dimensions</span> and
+			<span class="uicontrol">Cumulated Dimensions</span>.</li>
+
+			<li>You can create partial curvilinear length dimensions for all types 
+			of curves: splines, circles, arcs of circle, conics, etc. Note that 
+			in the case of circles and arcs of circle, they are called <cite>partial 
+			circular length</cite> dimensions.</li>
+
+			<li>You can create partial length dimensions for lines. </li>
+
+			<li>The <a href="standards-r-ad-DimensionParams.htm#standards-r-ad-DimensionParams" title="The dimension parameters let you customize the appearance of annotation and dimension elements. These parameters are located in the Dimension node of the standard file.">Dimension Parameters</a> are defined by the administrator in the standards. 
+			The same symbol is used for partial curvilinear dimensions and for curvilinear 
+			dimensions.</li>
+
+			<li>Partial curvilinear length dimensions cannot be True Length dimensions.</li>
+
+			<li>If you delete a point that defines a dimension, the dimension needs an update, and its color changes to fuchsia by default (or according 
+			to the color defined for <span class="uicontrol">Dimensions for which last update failed</span> in the
+			<span class="uicontrol">Elements' Analysis</span> dialog box available via
+			<span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> 
+			&gt; Drafting</span> &gt; <span class="uicontrol">Display</span></span> 
+			tab, under <span class="uicontrol">Elements Analysis</span>, selecting <span class="uicontrol">Activate elements' analysis</span> check box and clicking <span class="uicontrol">Configure</span>). If you delete both points, the dimension becomes a regular 
+			curvilinear dimension.</li>
+
+		</ul>
+
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li>You cannot change the dimension line <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> mode or orientation 
+			after the dimension has been created.</li>
+<li>In the case of the parallel and offset representation modes, the 
+			dimension value cannot be moved out of the curve limits, except for 
+			circles and arcs of circle. As a result, you cannot specify the dimension 
+			value position (Inside, Outside, Auto).</li>
+<li>In some cases, depending on the curve and on the offset value, the 
+			offset representation mode cannot be computed.</li>
+<li>In the case of partial curvilinear length dimensions in offset mode, 
+			it is recommended to select the <span class="uicontrol">Constant offset between dimension 
+			line and geometry</span> check box in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> 
+			&gt; Drafting</span> &gt; <span class="uicontrol">Dimension</span></span> section. This will ensure that the dimension 
+			remains associative if the geometry is moved.</li>
+<li>Partial curvilinear dimensions cannot be measured along a direction. 
+			However, partial length dimensions can be measured along a direction.</li>
+<li>Partial curvilinear dimensions cannot be driving dimensions.</li>
+<li>When creating partial circular length dimensions on circles, you 
+			cannot select a circular sector.</li>
+</ul>
+</td></tr></table>
+</div>
+</div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

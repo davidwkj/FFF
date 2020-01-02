@@ -1,0 +1,230 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Modifying a Bill of Materials"/>
+<meta name="abstract" content="You can modify a created bill of materials (BOM) by reordering components, adding rows, changing sequence of the displayed components and so on."/>
+<meta name="description" content="You can modify a created bill of materials (BOM) by reordering components, adding rows, changing sequence of the displayed components and so on."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Annotations-BillofMaterialCreate.htm#gdr3dmaster-t-Annotations-BillofMaterialCreate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-Annotations-BillofMaterialModify"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Modifying a Bill of Materials</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-Annotations-BillofMaterialModify">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-modifying a bill of materials"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Modifying a Bill of Materials</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>
+    You can modify a created bill of materials (BOM) by reordering components, adding rows, changing sequence of the displayed components and so on.
+  </span>
+<p>The BOM is represented in the form of a table. Therefore, all the actions which  are performed on a table, (copying a table, pasting a table etc.), can be performed on a BOM too except splitting a table. Several bills of material of the same assembly or of different assemblies can be added in the same .  
+</p></p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-ReorderComponentsIntheBillofMaterial" id="toc_rg" title="You can change the sequence of the components displayed in a BOM.">Reorder Components in a Bill of Materials</a></li><li><a href="#t-AddaRow" id="toc_rg" title="You can add a blank line/row to reserve a number in a BOM. This allows you to add information that will be stored in the BOM.">Add a Row in a Bill of Materials</a></li><li><a href="#t-DeleteRowInBillofMaterial" id="toc_rg" title="You can delete a reserved line that is not associated with the product.">Delete a Row in the Bill of Materials </a></li><li><a href="#t-UpdateBillofMaterialAfterPartModification" id="toc_rg" title="You can update a BOM at any time, but it is not automatically integrated in the drawing update and the update status. You can update it using an explicit Update Bill Of Material contextual command. This command updates the BOM based on the product information.">Update a Bill of Materials After Part Modification</a></li><li><a href="#t-ModifytheStructureofABillofMaterial" id="toc_rg" title="You can modify a BOM by changing its content and structure. You can modify the cells value by editing the cells (generic table edition), adding text to the cell, or by removing the attribute link to overload the value (useful to overload quantities, for example).">Modify the Structure of a Bill of Materials</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>
+      
+      <ul>
+        <li>
+          Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> or a layout <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> containing at least one view.
+        </li>
+
+        <li>
+          Create a BOM.
+        </li>
+
+      </ul>
+
+    </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Annotations-BillofMaterialCreate.htm#gdr3dmaster-t-Annotations-BillofMaterialCreate" title="You can generate a bill of materials (BOM) and also position it relative to any other objects, including the objects in the background view.">Working with a Bill of Materials</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+  </div>
+
+
+  <div/>
+
+  <div class="nested1" id="t-ReorderComponentsIntheBillofMaterial">
+    <h2 class="topictitle2">Reorder Components in a Bill of Materials</h2>
+
+  
+    <div><p>
+    You can change the sequence of the components displayed in a BOM.</p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          
+            Right-click the BOM and select <span class="uicontrol">Table.x object &gt; Edit Bill Of Material</span>. 
+          
+          <p> <p><p>Note:
+		You can also edit the BOM using one of the following ways:  <ul><li>Double-click the <span class="uicontrol">BOM.x</span> <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">object</span> available in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>.</li>
+<li>Right-click the <span class="uicontrol">BOM.x </span>object in the tree and select <span class="uicontrol">BOM.x object &gt; Definition</span>.</li>
+</ul>
+ </p>
+ </p>
+            
+          <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li>The contents in this dialog box depend on the selected product and its respective BOM. </li>
+<li>The <span class="uicontrol">Style</span> drop-down list displays available BOM styles. </li>
+<li>As the style is not a persistent property of the BOM, the field is always empty on a BOM. You can select any one of the styles to re-apply to the existing BOM. </li>
+</ul>
+</td></tr></table>
+<p>Note:
+		For our scenario, use this example and reorder item number 3. </p>
+</p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            In the <span class="uicontrol">Bill of Material Edition - BOM.x</span> dialog box, select the item number 3, <span class="uicontrol">High Speed Shaft</span>, and click <span class="uicontrol">Move up</span> <img src="../IconsNormal/I_MoveUp.png"/>.
+          
+          <p>
+            The selected item moves up one level. Repeat this step till it reaches the desired position.
+          </p>
+          
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Click <span class="uicontrol">OK</span>.
+          
+          <p>
+            The selected item is reordered to position 1.</p>
+          <p> 
+            <br/><img src="../Gdr3DMasterImages/billofmaterialedition01NLS.png"/><br/>
+          <p>Notes:
+		<ul><li>The text properties of the selected item remain the same as they were before, even after changing the sequence or reordering the components. </li>
+<li>After reordering a component, all the item numbers are automatically updated.</li>
+</ul>
+</p>
+</p>
+        </p></li>
+
+        
+        
+        
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="t-AddaRow">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Add a Row in a Bill of Materials</h2>
+
+  
+    <div><p>
+    You can add a blank line/row to reserve a number in a BOM. This allows you to add information that will be stored in the BOM.</p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          
+            Right-click the BOM and select 
+          <span class="uicontrol">Table.x object &gt; Edit Bill Of Material</span>. 
+          <p> 
+            <p>Note:
+		For this scenario, use the above example and add a line above item number 3. </p>
+</p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+                        In the <span class="uicontrol">Bill of Material Edition - BOM.x</span> dialog box, select item number 3, <span class="uicontrol">Worm gear</span> and click <span class="uicontrol">New</span> <img src="../IconsNormal/I_DrwNewRow.png"/>.
+          
+          <p> 
+            A blank row is added above the selected item. All the item numbers are automatically rearranged. <br/><img src="../Gdr3DMasterImages/billofmaterialedition02NLS.png"/><br/> 
+          <p>Note:
+		The newly added row is not associated to a product and can be deleted by clicking <span class="uicontrol">Delete</span> <img src="../IconsNormal/I_Erase.png"/>.</p>
+</p>
+        </p></li>
+
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+
+  
+<div class="nested1" id="t-DeleteRowInBillofMaterial"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Delete a Row in the Bill of Materials </h2>
+
+<div><p><span>You can delete a reserved line that is not associated with the product. </span>
+</p>
+<ol><li class="stepexpand"><p>Right-click the BOM and select 
+          <span class="uicontrol">Table.x object &gt; Edit Bill Of Material</span>. <p> <p>Note:
+		For this scenario, use the above example and delete the previously added line. </p>
+</p></p></li>
+<li class="stepexpand"><p>            In the <span class="uicontrol">Bill of Material Edition - BOM.x</span> dialog box, select the newly added line and click <span class="uicontrol">Delete</span> <img src="../IconsNormal/I_Erase.png"/>.<p> The selected line is deleted. <br/><img src="../Gdr3DMasterImages/billofmaterialedition06NLS.png"/><br/></p></p></li>
+</ol>
+<p class="result"/></div>
+</div>
+<div class="nested1" id="t-UpdateBillofMaterialAfterPartModification"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Update a Bill of Materials After Part Modification</h2>
+
+<div><p><span>You can update a BOM at any time, but it is not automatically integrated in the drawing update and the update status.  You can update it using an explicit <span class="uicontrol">Update Bill Of Material</span> contextual command. This command updates the BOM based on the product information. </span>
+<p>If you perform any modification in the product structure on which the BOM is computed, either  by replacing a part, deleting a part or adding a new part, you will need to update the BOM. Also, if you modify properties of a product which is represented in a BOM, then you will need to update the BOM. </p><p>For this scenario, use above example,  perform part modification and update the BOM. </p></p>
+<ol><li class="stepexpand"><p>Replace the part   named <span class="uicontrol">Worm gear</span> with <span class="uicontrol">High Speed Shaft </span>. For more information, see <cite><span>Assembly Design</span> User's Guide: Assembly Components: Replacing Components</cite>. <p> 
+<p>You can replace a component (partial - not on all instances) in the BOM in either of the two following ways: </p><ul><li>If you replace a component with a new component that is not a part of the product, then, a new line is added for this reference at the bottom of the BOM and its quantity <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span> is computed. </li>
+<li>If you replace a component with an existing component that is already a part of the product, thus already appearing in the BOM, then, its quantity attribute is increased.<p>For our scenario, replace a component using this option.</p></li>
+</ul>
+
+</p></p></li>
+<li class="stepexpand"><p>Right-click the BOM and select <span class="uicontrol">Update Bill Of Material</span>. <p> <p>Note:
+		You can also use the <span>context menu</span> on the displayed BOM object in the tree and select <span class="uicontrol">Update Bill Of Material </span>.
+</p>
+<p>The BOM is updated. </p><br/><img src="../Gdr3DMasterImages/billofmaterialedition03NLS.png"/><br/><p><ul><li>Note that the part <span class="uicontrol">High Speed Shaft</span> already exists, so its quantity attribute has been increased (to 2).</li>
+<li>The replaced part <span class="uicontrol">Worm gear</span> has been removed. Its item number has not been reassigned. However, if a new part is added in the BOM, and if the empty line is manually deleted, then, the item number will be reassigned. Otherwise the item number will be kept on the blank line replacing the line where the deleted product used to be.</li>
+</ul>
+ </p></p></p></li>
+<li class="stepexpand"><p>Add a new part under this product. For more information, see <cite><span>Assembly Design</span> User's Guide</cite>. <p> A new part is added in the product structure. </p></p></li>
+<li class="stepexpand"><p>Right-click the BOM and select <span class="uicontrol">Update Bill Of Material</span>.<p> <br/><img src="../Gdr3DMasterImages/billofmaterialedition04NLS.png"/><br/><p>The new part is added at the end of the BOM if the last line  is not a blank line. However, if you  add a blank line at the end of the table, additional parts will be inserted above this blank line.</p></p></p></li>
+<li class="stepexpand"><p>Remove a component from the product. For more information, see <cite><span>Assembly Design</span> User's Guide</cite>. <p> <p>Note:
+		For this scenario, delete the newly added <span class="uicontrol">Product2487</span>. </p>
+<p>The selected part is deleted from the product structure. </p></p></p></li>
+<li class="stepexpand"><p>Right-click the BOM and select <span class="uicontrol">Update Bill Of Material</span>.<p> <p>The BOM is updated and the component is either removed or deleted or struck through from the BOM. This result is  based on the option you selected for the <span class="uicontrol">Display of Removed Products</span> in the <span class="uicontrol">BOM Format </span>tab available by right-clicking the BOM and selecting <span class="uicontrol">Properties</span>. In this scenario, <span class="uicontrol">Keep a blank line</span> is selected.</p><br/><img src="../Gdr3DMasterImages/billofmaterialedition05NLS.png"/><br/><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>The BOM is not updated as part of the drawing update. Also, it does not provide an update status. You need to explicitly update the BOM after any modifications performed in a part or a product. <span class="uicontrol">Update Bill Of Material</span> also updates the attribute links that are contained in the BOM.
+</td></tr></table>
+</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Right-click the BOM and select <span class="uicontrol">Properties &gt; BOM Format</span> tab and select <span class="uicontrol">Strikethrough the line</span> in the <span class="uicontrol">Display of Removed Products</span> list.<p> The removed product line appears struck through which was previously displayed as blank.<br/><img src="../Gdr3DMasterImages/billofmaterialedition07NLS.png"/><br/><p><p>Notes:
+		<ul><li>When you right-click a BOM and select <span class="uicontrol">Properties  &gt; BOM Format</span> tab, the selected option in the <span class="uicontrol">Display of Removed Products</span> is applicable to the current BOM under edition.</li>
+<li>When you change the option of an existing BOM from a blank line or a crossed line to a deleted line, the item numbers are reattributed according to the products listed in the BOM.</li>
+<li>When you choose the option <span class="uicontrol">Delete the line</span> in the <span class="uicontrol">Display of Removed Products</span> list, the line is permanently deleted from the BOM. It is impossible to change it back to a crossed line or a blank line later on.</li>
+</ul>
+</p>
+</p></p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-ModifytheStructureofABillofMaterial"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Modify the Structure of a Bill of Materials</h2>
+
+<div><p><span>You can modify a BOM by changing its content and  structure. You can modify the cells value by editing the cells (generic table edition),  adding text to the cell, or by removing the attribute link to overload the value (useful to overload quantities, for example). </span>
+</p>
+<ol><li class="stepexpand"><p>Perform either of the following operations:<p> <ul><li>Select a column from the BOM and change its column width using the <span>context menu</span>.</li>
+<li>Select a column from the BOM and insert a new column using the <span>context menu</span>. The newly inserted column allows you to manage other properties. </li>
+<li>Modify the cells that do not display the properties values.</li>
+</ul>
+</p></p></li>
+<li class="stepexpand"><p>Right-click the BOM and select <span class="uicontrol">Update Bill Of Material</span><p> <p>All the modifications done in the structure of the BOM such as column width modifications, manual addition of columns and manual modifications of cells are kept after update. These modifications are persistent while updating the BOM. </p><p>Notes:
+		<ul><li>By configuring the structure of the BOM, you can overload the quantity, modify the computed weight, add specific comments and so on.</li>
+<li>You cannot merge the cells of a BOM.</li>
+</ul>
+</p>
+</p></p></li>
+</ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

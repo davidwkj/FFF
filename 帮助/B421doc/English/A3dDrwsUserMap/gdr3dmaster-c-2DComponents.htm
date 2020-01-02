@@ -1,0 +1,210 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About 2D Components"/>
+<meta name="abstract" content="This topic explains the concepts that you need to understand before you begin creating and reusing 2D components."/>
+<meta name="description" content="This topic explains the concepts that you need to understand before you begin creating and reusing 2D components."/>
+<meta name="DC.Relation" scheme="URI" content="../Headers/dsdocKBHeader.htm?id=QA00000021224"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-2DComponents"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About 2D Components</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocServices.js">
+  		/* */
+  		</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-2DComponents">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-2D component::catalogs"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About 2D Components</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic explains the concepts that you need to understand before you begin creating and reusing 2D components. </span>
+
+						
+						
+					
+				</p>
+<ul><li><a href="#c-WhatIsA2DComponent" id="toc_rg" title="A 2D component is a reusable set of geometry and annotations. This component is located in a sheet and can be edited like a view. This is why we call this component a detail view. The 2D component can be instantiated several times, each instance providing a component with a specific orientation, position and scale.">What is a 2D Component?</a></li><li><a href="#c-WhatIsA2DComponentsCatalog" id="toc_rg" title="The catalog is a separate file which references the detail views, enables to group the components, allows classifying them and lets you add information and attributes to these components. This allows overall management of the components. Moreover, the catalog browser can be used to choose a component and instantiate it in a drawing document.">What is a 2D Components Catalog?</a></li><li><a href="#c-GeneralConceptForUsingCatalogs" id="toc_rg" title="This sub topic discusses general concepts for using catalogs.">General Concepts for 
+		Using Catalogs </a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+  <div/><div class="nested1" id="c-WhatIsA2DComponent">
+    <h2 class="topictitle2">What is a 2D Component?</h2>
+
+    <p>A 2D component is a reusable set of geometry 
+		and annotations. This component is located in a sheet and can be edited 
+		like a view. This is why we call this component a detail view.  
+		The 2D component can be instantiated several times, each instance providing 
+		a component with a specific orientation, position and scale. </p>
+
+  </div>
+
+  <div class="nested1" id="c-WhatIsA2DComponentsCatalog">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">What is a 2D Components Catalog?</h2>
+
+    
+    <div><p>The catalog is a separate file which references the detail views, enables 
+		to group the components, allows classifying them and lets you add information and attributes 
+		to these components. This allows overall management of the components. Moreover, 
+		the catalog browser can be used to choose a component and instantiate it 
+		in a drawing document.</p>
+
+		
+		<p>You can synchronize external catalog components. In other words, you 
+		can update a component that is external to the 2D. Note that <span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">associativity</span> 
+		is kept. For this, from the <span class="wintitle">Tools</span> section of the <span>action bar</span>, click <span class="uicontrol">Links &amp; Relations</span> <img src="../IconsNormal/I_PLMLinks.png"/>, and click <span class="uicontrol">Synchronize link</span> in the displayed dialog box.</p>
+		<p>By default, a 2D component (as a whole) can be moved or scaled using 
+		the pointer. If you want to make this impossible, go to <span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Mechanical</span> &gt; <span class="uicontrol">Drafting</span> &gt; <span class="uicontrol">Geometry</span></span> section, under <span class="uicontrol">2D Component</span>,  select
+		<span class="uicontrol">Disable direct manipulation</span> and/or <span class="uicontrol">Disable direct scaling</span> check boxes.</p>
+		
+		</div>
+
+  </div>
+
+  <div class="nested1" id="c-GeneralConceptForUsingCatalogs">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">General Concepts for 
+		Using Catalogs </h2>
+
+    
+    <div><p>This sub topic discusses general concepts for using catalogs.</p>
+
+      <div class="section" id="c-GeneralConceptForUsingCatalogs__cs-InstantiationFromADetailSheet"><h3 class="sectiontitle">Instantiation 
+		from a Detail Sheet</h3>
+		<p>The following figure depicts the instantiation of a 2D component from a reference element that is internal to the <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.</p>
+		<p><br/><img src="../Gdr3DMasterImages/catalog02.gif"/><br/></p>
+		<p><img src="../Gdr3DMasterImages/catalog_one.gif"/>: 2D component (reference)    
+		</p>
+		<p><img src="../Gdr3DMasterImages/catalog_two.gif"/>: <span class="glossterm" id="component-2D-instance" onmouseout="hideTerm()" onmouseover="showTerm('component-2D-instance.xml')">2D component instance</span></p>
+		</div>
+
+      <div class="section" id="c-GeneralConceptForUsingCatalogs__cs-InstantiationFromACatalog"><h3 class="sectiontitle">Instantiation from a Catalog</h3>
+		<p> The following figure depicts the instantiation of a 2D component from a reference element that is external to the representation.</p>
+		<p><br/><a href="../Gdr3DMasterImages/catalog01.png" onClick="ViewImage(this);return false"><img title="Click to enlarge this image" src="../Gdr3DMasterImages/catalog01_s.png"/></a><br/></p>
+		<p><img src="../Gdr3DMasterImages/catalog_one.gif"/>: local copy of reference component</p><p><img src="../Gdr3DMasterImages/catalog_two.gif"/>: instantiated components</p><p><img src="../Gdr3DMasterImages/catalog_three.gif"/>: catalog entry</p><p><img src="../Gdr3DMasterImages/catalog_four.gif"/>: external reference component
+		</p>
+		</div>
+
+      <div class="section" id="c-GeneralConceptForUsingCatalogs__cs-CatalogUpdate"><h3 class="sectiontitle">Catalog Update</h3>
+		<p>When you create a 2D component in a <span class="glossterm" id="detail-sheet" onmouseout="hideTerm()" onmouseover="showTerm('detail-sheet.xml')">detail sheet</span>, store this component 
+		into a catalog and you can perform modifications to this component on the 
+		detail <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>. There are two ways for updating the catalog file:</p>
+		<ul>
+			<li>Select <span class="menucascade"><span class="uicontrol">Add <img src="../Icons22/IP_TopBarNew.png"/></span> &gt; <span class="uicontrol">Generate Catalog</span></span>  on that catalog. 
+			However, in this case, the catalog is regenerated not updated. In 
+			other words, any modification applied to the catalog will be lost.</li>
+
+			<li>Modify the catalog manually using the catalog editor. For 
+			more information, see the <cite><span>Design IP Classification</span> User's Guide</cite>.
+			</li>
+
+		</ul>
+
+		</div>
+
+      <div class="section" id="c-GeneralConceptForUsingCatalogs__cs-SynchronizationOfA2DComponentInstance"><h3 class="sectiontitle">Synchronization of a 
+		2D Component Instance</h3>
+		<p>When a 2D component and its instance are not located in the same <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> 
+		representation, modifying only the graphic properties of the 2D component 
+		desynchronizes the related instance. 
+		In this case, you can  click
+		<span class="uicontrol">Links &amp; Relations</span> <img src="../IconsNormal/I_PLMLinks.png"/> from the <span class="wintitle">Tools</span> section of the <span>action bar</span> and click
+		<span class="uicontrol">Synchronize link</span> (<span class="uicontrol">Edit Links &amp; Relations</span> dialog box) to update the 2D component instance.
+		 </p>
+		</div>
+
+      <div class="section" id="c-GeneralConceptForUsingCatalogs__cs-BrokenLinks"><h3 class="sectiontitle">Broken Links </h3>
+		<p>When you instantiate a component from a catalog, this component appears 
+		on the sheet. In addition, this component definition is locally copied but 
+		you cannot visualize this copy. In that way, the instantiated component 
+		becomes a component which references this locally copied component. As a 
+		result, if the origin component disappears, the link between the locally 
+		copied component and the origin component is broken, but the component can 
+		still be used. If the image of the component in the catalog is modified 
+		and therefore different from the instantiated component, you can click
+		<span class="uicontrol">Links &amp; Relations</span> <img src="../IconsNormal/I_PLMLinks.png"/> from the <span class="wintitle">Tools</span> section of the <span>action bar</span> and click
+		<span class="uicontrol">Synchronize link</span> (<span class="uicontrol">Edit Links &amp; Relations</span> dialog box) to synchronize the broken link.
+		</p>
+		</div>
+
+      <div class="section" id="c-GeneralConceptForUsingCatalogs__cs-LinksAmpRelations"><h3 class="sectiontitle">Links &amp; Relations</h3>
+		<ul>
+			<li>The <span class="uicontrol">Links &amp; Relations</span> dialog box shows all the local 
+			copies and the states of their links. So, synchronizing results 
+			to updating the local copy based on the origin component modifications. 
+			Once the local copy is synchronized, all the instantiated components 
+			referencing this local copy are simultaneously updated. </li>
+
+			<li>A representation containing a 2D component instance from another representation 
+			is autonomous, so there is no need to load the related catalog. 
+			However, when you open the <span class="uicontrol">Links &amp; Relations</span> dialog 
+			box, the catalog is automatically loaded to display the synchronization 
+			status of the links.</li>
+
+		</ul>
+
+		</div>
+
+      <div class="section" id="c-GeneralConceptForUsingCatalogs__cs-OriginComponentModification"><h3 class="sectiontitle">Origin Component Modification</h3>
+		<p>When you save a component in a catalog, you actually make a photo of 
+		the image of this component and also create a link which allows finding 
+		the origin component. As a result, if you modify the origin component 
+		and then try to instantiate this component from the catalog, the instantiated 
+		component will result different from what you expected. </p>
+		</div>
+
+      <div class="section" id="c-GeneralConceptForUsingCatalogs__cs-ExposeA2DComponentFromACatalog"><h3 class="sectiontitle">Expose a 2D Component from a Catalog</h3>
+		<p>The instantiation from a catalog and the Cut/Copy/Paste mechanism are 
+		very similar. A local copy is created when instantiating and/or pasting 
+		a 2D component instance issued from another document. The 2D component is 
+		instantiated from this local copy. Note that the local copy is created 
+		as a result of pasting either a 2D component instance or a 2D component 
+		reference containing a 2D component instance into another document. To remove 
+		the link between the local copy and its original document you can use the
+		<span class="uicontrol">Expose</span> command as explained in
+		<a href="gdr3dmaster-t-2DComponents-2DComponentInstanceFromCatalogExpose.htm#gdr3dmaster-t-2DComponents-2DComponentInstanceFromCatalogExpose" title="You can expose a 2D component after its creation or during its creation.">Exposing a 2D Component from a Catalog</a>.</p>
+		</div>
+
+      <div class="section" id="c-GeneralConceptForUsingCatalogs__cs-Scenarios"><h3 class="sectiontitle">Scenarios</h3>
+		<p>Two scenarios are possible depending on the catalog modification:</p>
+		<ul>
+			<li><span class="uicontrol">Scenario 1</span>: If a component in a detail sheet and in a 
+			catalog is different from each other and if you update the catalog, 
+			you will lose the catalog modifications.</li>
+
+			<li><span class="uicontrol">Scenario 2</span>: Consider both the detail sheet and the catalog 
+			is similar. When you instantiate the component from the catalog into 
+			the representation, if the instantiated component is different from the component 
+			that was saved in the catalog, click <span class="uicontrol">Links &amp; Relations</span> 
+			from the <span class="wintitle">Tools</span> section of the <span>action bar</span> and click <span class="uicontrol">Synchronize link</span>. In fact, 
+			the origin reference component was locally copied and can only be updated 
+			using the <span class="uicontrol">Edit Links &amp; Relations</span> dialog box. 
+			 
+			For more information about this topic, see
+			<a href="gdr3dmaster-t-2DComponents-2DComponentInCatalog.htm#gdr3dmaster-t-2DComponents-2DComponentInCatalog" title="You can create a catalog from a representation containing one or more detail sheets.">Creating a Catalog</a> and <a href="gdr3dmaster-t-2DComponents-2DComponentFromCatalogInstantiate.htm#gdr3dmaster-t-2DComponents-2DComponentFromCatalogInstantiate" title="You can reuse a 2D component previously created in a catalog.">Instantiating a 2D Component from a Catalog</a>.</li>
+
+		</ul>
+
+		
+	
+
+
+
+
+
+</div>
+
+    </div>
+
+    
+  </div>
+
+
+</td></tr></table><div xmlns:mml="http://www.w3.org/1998/Math/MathML" class="relinfo"><strong>In the Knowledge Base</strong><br/><a href="../Headers/dsdocKBHeader.htm?id=QA00000021224" target="_blank">Synchronization of 2D component instances after modifying graphic properties of the reference</a><br/><br/></div><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

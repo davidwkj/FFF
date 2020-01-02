@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2016"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXMLUAPanel.css"/>
+<title xmlns="" xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating a Surface Fill</title>
+<script xmlns="" xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">/* */</script>
+<script xmlns="" xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../MathJax/MathJax.js?config=DS-default,local/local">/* */</script></head>
+<body xmlns="" onLoad="highlightSearchTerms();" id="a3ddesi-t-feature-creating-fill">
+
+<a xmlns:mml = "http://www.w3.org/1998/Math/MathML" name = "hj-top"> </a><table xmlns:mml = "http://www.w3.org/1998/Math/MathML" class = "table1" id = "table11"><tr><td><table class = "DocHeader-UAPanel"><tr><td class = "DocHeader1" colspan = "2"><h1>Creating a Surface Fill</h1></td></tr><tr><td class = "DocHeader4" colspan = "2"/></tr><tr><td class = "DocHeader3" colspan = "2"><table class = "DocThemeIntro-UAPanel" id = "table12"><tr><td class = "Intro1Only"><p class = "header"> You can use this feature to construct a surface to fill a gap in a component. The fill feature constructs a surface patch with any number of sides, within
+a boundary defined by existing edges, sketches, or curves.
+
+
+</p></td></tr></table></td></tr></table>
+
+
+<div>
+<ol>
+<li class = "stepexpand"><p>From the <span class = "wintitle">Modeling</span> section of the <span>action bar</span>, click <span class = "uicontrol">Surface Fill </span><img src = "../Icons22/A3DSurfaceFillHeader.png" height = "20" width = "20"/>.</p></li>
+
+<li class = "stepexpand"><p>Specify surface options.
+<table border = "1" frame = "hsides" rules = "rows" cellpadding = "4" cellspacing = "0" summary = "" class = "choicetableborder">
+<thead><tr><th id = "d11549e30-option" valign = "bottom" align = "left">Option</th>
+<th id = "d11549e30-desc" valign = "bottom" align = "left">Description</th></tr></thead>
+<tbody><tr><td valign = "top" headers = "d11549e30-option" id = "d11549e32"><strong> <img src = "../A3dDesiUserImages/a3ddesiUiExtrudeTypeThin.png"/></strong></td>
+<td valign = "top" headers = "d11549e30-desc d11549e32"> <span class = "uicontrol">Thin</span>. Creates a feature with a constant wall thickness. To specify  the wall thickness, enter a value in the dialog box.<p>When <span class = "uicontrol">Thin</span> is selected, you can define the wall thickness equally in both directions from the profile by clicking <span class = "uicontrol">Midplane</span> <img src = "../A3dDesiUserImages/SWXUiExtrudeThinTypeMidplane.png"/>.</p></td>
+</tr>
+<tr><td valign = "top" headers = "d11549e30-option" id = "d11549e51"><strong><br/><img src = "../A3dDesiUserImages/a3ddesiUiExtrudeTypeSurface.png"/><br/></strong></td>
+	<td valign = "top" headers = "d11549e30-desc d11549e51"><span class = "uicontrol">Surface</span>. Creates a feature with a wall thickness defined as zero. </td>
+</tr>
+</tbody></table>
+</p></li>
+
+<li class = "stepexpand"><p>Specify merge options:
+<table border = "1" frame = "hsides" rules = "rows" cellpadding = "4" cellspacing = "0" summary = "" class = "choicetableborder">
+<thead><tr><th valign = "bottom" align = "left" id = "d11549e62-option">Option</th>
+<th valign = "bottom" align = "left" id = "d11549e62-desc">Description</th></tr></thead>
+<tbody>
+<tr><td valign = "top" headers = "d11549e62-option" id = "d11549e70"><strong>Add <img src = "../A3dDesiUserImages/SWXUiBossMergeType_0.png" height = "20" width = "20"/></strong></td>
+	<td valign = "top" headers = "d11549e62-desc d11549e70">Creates a feature that adds material.</td>
+</tr>
+<tr><td valign = "top" headers = "d11549e62-option" id = "d11549e77"><strong>Cut <img src = "../A3dDesiUserImages/SWXUiBossMergeType_1.png" height = "20" width = "20"/></strong></td>
+	<td valign = "top" headers = "d11549e62-desc d11549e77">Creates a feature that removes material.</td>
+</tr>
+<tr><td valign = "top" headers = "d11549e62-option" id = "d11549e84"><strong>New <img src = "../A3dDesiUserImages/SWXUiBossMergeType_2.png" height = "20" width = "20"/></strong></td>
+	<td valign = "top" headers = "d11549e62-desc d11549e84">Do not merge bodies.</td>
+</tr>
+</tbody></table>
+</p></li>
+<li class = "stepexpand"><p>Select a <span class = "uicontrol">Boundary Selection</span> <img src = "../A3dDesiUserImages/a3ddesiDialogIconSurfaceFillBoundarySelection.png" height = "20" width = "20"/>. The  boundary must be a closed loop in the outer boundary.</p></li>
+
+<li class = "stepexpand"><p>Select an <span class = "uicontrol">Inner Loop Selection</span> <img src = "../A3dDesiUserImages/a3ddesiDialogIconSurfaceFillInnerLoopSelection.png" height = "20" width = "20"/>.  Specify the inner loops from the selected closed loops.</p></li>
+
+<li class = "stepexpand"><p>Select a <span class = "uicontrol">Passing Curve or Point Selection</span> <img src = "../A3dDesiUserImages/a3ddesiDialogIconSurfaceFillConstraintsSelection.png" height = "20" width = "20"/>.  Specify the curves or points for the surface to pass through.</p></li>
+
+<li class = "stepexpand"><p><span class = "run-in">Optional: </span>Click <span class = "uicontrol">Automerge</span> <img src = "../A3dDesiUserImages/SWXA3DGsmLoftShowMerge.Merge_Selected.png" height = "20" width = "20"/> to automatically find bodies to merge with the lofted body.</p></li>
+<li class = "stepexpand"><p><span class = "run-in">Optional: </span>Click <span class = "uicontrol">Tangent Propagation</span> <img src = "../A3dDesiUserImages/SWXUiSweepTangentPropagation.png"/> to include all edges and faces tangent to your selection.</p></li>
+
+<li class = "stepexpand"><p><span class = "run-in">Optional: </span>Click <span class = "uicontrol">Show resulting U and V isoparametric curves</span> <img src = "../A3dDesiUserImages/a3ddesiCraftShowSurfaceIsoCurves.png" height = "20" width = "20"/>  to specify the number of isoparametric curves.</p></li>
+
+<li class = "stepexpand"><p>Click <img src = "../A3dDesiUserImages/a3ddesiUiHUDIconOK.png"/>.</p></li>
+
+</ol>
+
+</div>
+
+
+</td></tr></table><script xmlns:mml = "http://www.w3.org/1998/Math/MathML" type = "text/javascript" src = "../DSDocStats.js">/* */</script><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script>
+</body>
+</html>

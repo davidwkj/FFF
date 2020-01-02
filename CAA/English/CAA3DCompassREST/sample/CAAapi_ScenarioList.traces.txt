@@ -1,0 +1,60 @@
+
+#Input Request
+#-------------
+10 : /resources/AppsMngt/api/custom/applications?filter=OnPremise
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://.../3DSpace/resources/AppsMngt/api/custom/applications?filter=OnPremise
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 30 Nov 2016 15:48:03 GMT
+Server: Microsoft-IIS/7.0
+i3dx-requestid: 8a804835-1b9c-4d80-a2d6-92253356d4f1
+Content-Type: application/json
+Content-Length: 11
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext,x-utc-offset,X-DS-CSRFTOKEN,X-DS-IAM-CSRFTOKEN,keep-alive,DS-API-Version,DS-Client-Step-Name,DS-Request-ID,ENO_CSRF_TOKEN
+Access-Control-Expose-Headers: X-DS-IAM-CSRFTOKEN
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"data":[]}
+
+#Input Request
+#-------------
+15 : /resources/AppsMngt/api/custom/applications 
+
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://.../3DSpace/resources/AppsMngt/api/custom/applications
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 30 Nov 2016 15:48:07 GMT
+Server: Microsoft-IIS/7.0
+i3dx-requestid: c920cdf2-7faf-4fcd-8131-93ec784e22d7
+Content-Type: application/json
+Content-Length: 11
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext,x-utc-offset,X-DS-CSRFTOKEN,X-DS-IAM-CSRFTOKEN,keep-alive,DS-API-Version,DS-Client-Step-Name,DS-Request-ID,ENO_CSRF_TOKEN
+Access-Control-Expose-Headers: X-DS-IAM-CSRFTOKEN
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=98
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"data":[]}

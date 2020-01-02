@@ -1,0 +1,428 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating 2D Shapes in a View or a Sheet Reference</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating 2D Shapes in a View or a Sheet Reference</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAADifSymbol2DShapesCreation use case. This use 
+		case explains how to create 2D shapes in a Sheet or a View Reference.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAADifSymbol2DShapesCreation Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAADifSymbol2DShapesCreation Do</a></li>
+					<li><a href="#How">How to Launch CAADifSymbol2DShapesCreation</a></li>
+					<li><a href="#Where">Where to Find the CAADifSymbol2DShapesCreation Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to create basics geometries in a sheet or a view reference. This use case 
+involves the following objects:</p>
+<ul>
+	<li>Sheet reference</li>
+	<li>View instance</li>
+    <li>View reference</li>
+    <li>2D shapes.</li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAADifSymbol2DShapesCreation Use Case</h2>
+<p>CAADifSymbol2DShapesCreation is a use case of the CAADifSymbolModeler.edu framework that 
+illustrates CATDifSymbolModelerUseItf, CATDibModelerUseItf and CATDifModelerUseItf frameworks capabilities.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAADifSymbol2DShapesCreation Do</h3>
+<p>This use case creates geometries in the sheet then in the view of the oppened 
+2D Presentation :</p>
+<table>
+	<caption style="width: 482px"><a name="Fig1"></a>Fig. 1 The Sheet before 
+	CAADifSymbol2DShapesCreation processing.</caption>
+	<tr>
+		<td>
+		<img alt="The Applicative Reference before 
+	Running CAADifStructureCreation" height="381" src="images/CAADifSymbolModeler02.jpg" width="659"/></td>
+	</tr>
+</table>
+<table>
+	<caption style="width: 479px"><a name="Fig2"></a>Fig. 2 The Sheet after 
+	CAADifSymbol2DShapesCreation processing.</caption>
+	<tr>
+		<td>
+		<img alt="The Applicative Reference before 
+	Running CAADifStructureCreation" height="422" src="images/CAADifSymbolModeler03.jpg" width="658"/></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAADifSymbol2DShapesCreation</h3>
+<p>To launch CAADifSymbol2DShapesCreation, you will need to set up the build time environment, 
+then compile CAADifSymbol2DShapesCreation along with its prerequisites, set up the run time 
+environment, and then execute the use case [<a href="#References">1</a>].</p>
+<pre>mkrun -c &quot;CAADifSymbol2DShapesCreation Repository Server LoginTicket PLMExternalIDValue Version&quot;</pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+	<colgroup align="center" span="1">
+	</colgroup>
+	<tr>
+		<th>Position</th>
+		<th>Description</th>
+		<th>Example</th>
+		<th>Category</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>PLM repository</td>
+		<td>PLM1</td>
+		<td rowspan="3">Connection</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>PLM server</td>
+		<td>The name and port of the server as <em>name</em>:<em>port_number</em></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>LoginTicket</td>
+		<td>The login ticket</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>PLMExternalIDValue</td>
+		<td>sht-33606995-00000002</td>
+		<td rowspan="2">Component Attribute</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>Version</td>
+		<td>A</td>
+	</tr>
+</table>
+<p><strong>Import PLM Data:</strong> The use case may require input PLM Data: PLM 
+Reference or PLM Representation Reference. This data is stored in 3D XML files, 
+whose extension is &quot;3dxml&quot;. You must import these PLM Data in the database 
+using the Add / Import / 3D XML command prior to launching the use case.<br />
+The &quot;3dxml&quot; file is supplied in the the CAADifSymbolModeler.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAADifSymbolModeler.edu\InputData\CAADibNavigationAndCreation.3dxml</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This &quot;3dxml&quot; contains an applicative reference and some 2D representation datas:</p>
+<ul>
+	<li><strong>PLMExternalIDValue</strong> : sht-33606995-00000002</li>
+	<li><strong>Version</strong> : A</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!-- article data-xplore-fw='CAADifSymbolModeler.edu' data-xplore-mod='CAADifSymbol2DShapesCreation.m' -->
+<h3><a name="Where"></a>Where to Find the CAADifSymbol2DShapesCreation Code</h3>
+<p>The CAADifSymbol2DShapesCreation use case is made of a single source file named 
+CAADifSymbol2DShapesCreation.cpp 
+located in the CAADifSymbol2DShapesCreation.m module of the CAADifSymbolModeler.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAADifSymbolModeler.edu\CAADifSymbol2DShapesCreation.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are six steps in CAADifSymbol2DShapesCreation:</p>
+<ol>
+	<li><a href="#Step1">Creating and Initializing the PLM Environment</a></li>
+	<li><a href="#Step2">Querying the Sheet Object in Database and Loading It</a></li>
+	<li><a href="#Step3">Creating 2D Shapes in Sheet</a></li>
+	<li><a href="#Step4">Retrieving the View Reference</a></li>
+    <li><a href="#Step5">Creating 2D Shapes in a View Reference</a></li>
+    <li><a href="#Step6">Saving the Newly Created Objects and Closing the PLM Session</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Creating and Initializing the PLM Environment</h3>
+<pre class="code" style="padding: 0"><span class="auto-style2">int main(int iargc, char *iargv[])
+{
+
+  HRESULT hr = E_FAIL;
+
+  cout &lt;&lt; &quot;CAADifSymbol2DShapesCreation started&quot; &lt;&lt; endl;
+
+  // 1. Creating and Initializing the PLM Environment
+  // ====================================================
+
+  // Checks the input arguments
+  // =========================
+  if (6 != iargc) {
+    cout &lt;&lt; &quot;Usage: &quot; &lt;&lt; iargv[0] &lt;&lt; &quot; &lt;repository&gt; &lt;server&gt; &lt;login_ticket&gt; &lt;PLM External Id Product&gt; &lt;version&gt; &quot;&lt;&lt; endl;
+    return hr;
+  }
+
+  const char* repository = iargv[1];
+  const char* server = iargv[2];
+  const char* login_ticket = iargv[3];
+</span><span class="auto-style1"><span class="auto-style2">  </span></span>const char* comp_externalId = iargv[4];
+  const char* comp_version = iargv[5]; 
+
+  CATBoolean traceok = TRUE;
+  hr = ::CAAAdpCreateSession(repository,server,login_ticket,traceok);
+
+  if (SUCCEEDED(hr))
+  {
+    cout &lt;&lt; &quot;The Session has been opened&quot; &lt;&lt; endl;
+  } 
+  else
+  {
+    cout &lt;&lt; &quot;Failed to create session &amp; connect to input repository&quot; &lt;&lt; endl;
+    return rc;
+  }
+  
+...</pre>
+<p>This section represents the usual sequence for initializing a PLM environment.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Querying the Sheet Object in Database and Loading It</h3>
+<pre class="code">...
+
+  // 2. Querying the Sheet object in Database and Loading It
+
+  // Entire model is loaded
+  CATBoolean ExpandAllMode = TRUE;
+  CATOmbLifeCycleRootsBag Bag;
+
+  cout &lt;&lt; &quot;PLM external ID &quot; &lt;&lt; comp_externalId &lt;&lt; endl;
+  cout &lt;&lt; &quot;comp_version &quot; &lt;&lt; comp_version &lt;&lt; endl;
+  CATIDifSheet_var spSheet;
+  {
+    CATIDifSheet *piSheet = NULL;
+    hr = ::CAAOpenPLMComponent(&quot;DIFSheet&quot;, comp_externalId, comp_version,
+    IID_CATIDifSheet, (void **)&amp;piSheet, Bag, ExpandAllMode);
+
+    // Manage life cycle by using smart pointer
+    if (NULL != piSheet)
+    {
+      spSheet = piSheet;
+      piSheet-&gt;Release(); piSheet = NULL;
+    }
+    if (FAILED(hr) || NULL_var == spSheet)
+    {
+      cout &lt;&lt; &quot;Failure to open the sheet &quot; &lt;&lt; endl;
+    }
+  }
+  
+...</pre>
+<p>This section represents the usual sequence to query a representation reference 
+in the database and open it.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating 2D Shapes in Sheet</h3>
+<pre class="code">...
+
+  // 3. Creating 2D shapes in Sheet
+
+  { // Force the scope
+    CATIDifUseShapeFactory_var spShapeFactory = spSheet;
+    if (NULL_var != spShapeFactory)
+    {
+      // Creating a Polyline
+      CATLISTP(CATMathPoint2D) PointsList;
+      PointsList.Append(new CATMathPoint2D(10., 10.));
+      PointsList.Append(new CATMathPoint2D(10., 831.));
+      PointsList.Append(new CATMathPoint2D(1178., 831.));
+      PointsList.Append(new CATMathPoint2D(1178., 10.));
+      int Close = 1;
+      CATIDifUsePolyline_var spPolyline;
+
+      hr = spShapeFactory-&gt;CreatePolyline(PointsList, Close, spPolyline);
+      if (FAILED(hr) || NULL_var == spPolyline)
+      {
+        cout &lt;&lt; &quot;Cannot create a Polyline&quot; &lt;&lt; endl;
+      }
+    }    
+    else
+    {
+      hr = E_FAIL;
+      cout &lt;&lt; &quot;Unable to retrieve the sheet shape factory&quot; &lt;&lt; endl;
+    }
+  }
+
+...</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Retrieving the View Reference</h3>
+<pre class="code">...
+
+  // 4. Retrieving the View Reference
+  CATListValCATBaseUnknown_var ListViewsInstances;
+
+  CATIDibViewSet_var spViewSet = spSheet;
+  if (NULL_var != spViewSet)
+  {
+    hr = spViewSet-&gt;GetViewInstances(ListViewsInstances);
+    if (FAILED(hr))
+      cout &lt;&lt; &quot;Cannot retrieve views instances from sheet reference&quot; &lt;&lt; endl;
+  }
+  else
+  {
+    cout &lt;&lt; &quot;Cannot get the sheet as view set&quot; &lt;&lt; endl;
+    hr = E_FAIL;
+  }
+
+  int coef = 100;
+  for (int indice = 1; indice &lt;= ListViewsInstances.Size(); indice++)
+  {
+    cout &lt;&lt; &quot;lstViewInstances (&quot; &lt;&lt; indice &lt;&lt; &quot;) = &quot; &lt;&lt; ListViewsInstances[indice]-&gt;GetImpl() &lt;&lt; endl;
+    CATIDibViewInstance_var spViewInstance = ListViewsInstances[indice];
+    if (NULL_var != spViewInstance)
+    {
+      // Get the view reference
+      CATBaseUnknown_var spViewRef;
+      hr = spViewInstance-&gt;GetViewReference(spViewRef);
+      if (SUCCEEDED(hr) &amp;&amp; NULL_var != spViewRef)
+      {
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Creating 2D Shapes in a View Reference</h3>
+<pre class="code">...
+
+        // 5. Creating 2D shapes in a View Reference
+        CATIDifUseShapeFactory_var spShapeFactory = spViewRef;
+        if (NULL_var != spShapeFactory)
+        {
+          // Create a Polyline
+          CATLISTP(CATMathPoint2D) PointsList;
+          PointsList.Append(new CATMathPoint2D(30. + indice * coef, 40. + indice * coef));
+          PointsList.Append(new CATMathPoint2D(70. + indice * coef, 60. + indice * coef));
+          PointsList.Append(new CATMathPoint2D(70. + indice * coef, 40. + indice * coef));
+          PointsList.Append(new CATMathPoint2D(30. + indice * coef, 60. + indice * coef));
+          int Close = 1;
+          CATIDifUsePolyline_var spPolyline;
+          hr = spShapeFactory-&gt;CreatePolyline(PointsList, Close, spPolyline);
+          if (FAILED(hr) || NULL_var == spPolyline)
+          {
+            cout &lt;&lt; &quot;Cannot create a Polyline&quot; &lt;&lt; endl;
+          }
+
+          // Create an Arc Circle
+          double Center[2] = { 50. + indice * coef, 50. + indice * coef };
+          double Radius = 5., StartAngle = 0., EndAngle = CAT2PI;
+          CATIDifUseArcCircle_var spArcCircle;
+
+          hr = spShapeFactory-&gt;CreateArcCircle(Center, Radius, StartAngle, EndAngle, spArcCircle);
+          if (FAILED(hr) || NULL_var == spArcCircle)
+          {
+            cout &lt;&lt; &quot;Cannot create an Arc Circle&quot; &lt;&lt; endl;
+          }
+        }
+        else
+        {
+          hr = E_FAIL;
+          cout &lt;&lt; &quot;Unable to retrieve the sheet shape factory&quot; &lt;&lt; endl;
+        }
+      } 
+    }
+  }
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Saving the Newly Created Objects and Closing the PLM Session</h3>
+<pre class="code">...
+  // 6. Saving the newly created objects and Closing the PLM Session
+
+  CATAdpSaver saver;
+  // Save all modified components
+  if (FAILED(saver.Save()))
+  {
+    cout &lt;&lt; &quot;ERROR saving PLM Data&quot; &lt;&lt; endl;
+    hr = E_FAIL;
+  }
+  else
+    cout &lt;&lt; &quot;PLM Data saved&quot; &lt;&lt; endl;
+
+  //Bag Emptying Operation 
+  //==========================
+  if (SUCCEEDED(Bag.RemoveAll()))
+    cout &lt;&lt; &quot;Empties the Bag&quot; &lt;&lt; endl;
+  else
+  {
+    hr = E_FAIL;
+    cout &lt;&lt; &quot;Error During Empties the Bag&quot; &lt;&lt; endl;
+  }
+  // Close the PLM session
+  //=========================
+  hr = ::CAAAdpCloseSession();
+  if (FAILED(hr)) 
+  {
+    cout &lt;&lt; &quot;ERROR closing PLM session&quot; &lt;&lt; endl;
+  }
+  else
+    cout &lt;&lt; &quot;PLM session closed&quot; &lt;&lt; endl;
+
+  cout &lt;&lt; &quot;CAADifSymbol2DShapesCreation ended&quot; &lt;&lt; endl;
+
+  return hr;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case is dedicated to create 2D shapes in a sheet or a view.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Feb 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

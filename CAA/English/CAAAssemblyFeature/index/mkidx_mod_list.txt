@@ -1,0 +1,10 @@
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfTcAssemblyFeatureToc.htm
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfTcDerivedRepToc.htm
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfTcPatternToc.htm
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfUcAssemblyFeatureCreation.htm
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfUcAssemblyFeatureDeletion.htm
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfUcAssemblyFeatureEdit.htm
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfUcDerivedRepCreation.htm
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfUcDerivedRepEdit.htm
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfUcPatternCreation.htm
+G:\R421\BSF\.\CAAAssemblyFeatureDoc.edu\CAAAssemblyFeature.doc\src\CAAAsfUcPatternEdit.htm

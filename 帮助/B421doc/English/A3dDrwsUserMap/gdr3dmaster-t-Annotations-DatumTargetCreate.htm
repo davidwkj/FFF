@@ -1,0 +1,179 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Working with Datum Targets"/>
+<meta name="abstract" content="You can create a simple datum target or a movable datum target. You can also convert a non-movable datum target into a movable one."/>
+<meta name="description" content="You can create a simple datum target or a movable datum target. You can also convert a non-movable datum target into a movable one."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Annotations-DatumTargetModify.htm#gdr3dmaster-t-Annotations-DatumTargetModify"/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-m-Tolerances-sb.htm#gdr3dmaster-m-Tolerances-sb"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-Annotations-DatumTargetCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Working with Datum Targets</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-Annotations-DatumTargetCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Creating  ::datum target"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Creating  ::movable datum target"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Working with Datum Targets</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>
+    <span>You can</span> create a simple datum target or a  movable datum target. You can also convert a non-movable datum target into a movable one. </span>
+<p>The     can be set either before or after the <span class="glossterm" id="datum-target-2" onmouseout="hideTerm()" onmouseover="showTerm('datum-target-2.xml')">datum target</span> is created.</p></p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-CreateaDatumTarget" id="toc_rg" title="You can create a datum target on a projection view.">Create a Datum Target</a></li><li><a href="#t-ConvertaNonmovableDatumTargetintoaMovableDatumTarget" id="toc_rg" title="You can convert a non-movable datum target into a movable one and vice-versa.">Convert a Non-movable Datum Target into a Movable Datum Target</a></li><li><a href="#t-ManaginganOffsetBetweentheAnchorPointandtheFirstPointoftheLeader" id="toc_rg" title="You can create an offset between the anchor point and the first point of the leader.">Create an Offset between the Anchor Point and the First Point of the Leader</a></li><li><a href="#t-PositionaDatumTargetonanExistingAnnotation" id="toc_rg" title="You can position a datum target on an existing annotation on a specific point at its anchor position. You can also snap datum target position to any predefined place.">Position a Datum Target on an Existing Annotation</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>
+      Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> with geometrical elements.
+      
+    </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Annotations-DatumTargetModify.htm#gdr3dmaster-t-Annotations-DatumTargetModify" title="You can modify a datum target by editing it.">Modifying a Datum Target</a></td></tr><tr><td><a href="gdr3dmaster-m-Tolerances-sb.htm#gdr3dmaster-m-Tolerances-sb" title="This section provides background information about tolerances, and describes how to work with them.">Working with Tolerances</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+  </div>
+<div/>
+
+  
+
+  <div class="nested1" id="t-CreateaDatumTarget">
+    <h2 class="topictitle2">Create a Datum Target</h2>
+
+  
+    <div><p>You can create a datum target on a projection view.</p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          From the <span class="wintitle">Annotation</span> section of the <span>action bar</span>,
+            click <span class="uicontrol">Datum Target</span>
+			<img height="22" width="22" src="../Icons22/I_D3M_DatumTarget.png"/>.
+          
+          
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Select an attachment point for the <span class="glossterm" id="datum" onmouseout="hideTerm()" onmouseover="showTerm('datum.xml')">datum</span> target leader.
+          
+          
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Select a location for positioning the datum target (anchor point).
+          
+          <p><p>Note:
+		If the value selected in the <span class="uicontrol">Associated Datum</span> box changes, it is instantly reflected in the datum target.  </p>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>You can click <span class="uicontrol">Reset</span> <img src="../Gdr3DMasterImages/I_reset.png"/> to reset the <span class="uicontrol">Area Size</span> box to an empty string, the  to <span class="uicontrol">A1</span> and the <span class="uicontrol">Area Size</span> diameter symbol to the datum target style value.</td></tr></table>
+</p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Enter<span> the required</span> values in the <span class="uicontrol">Area Size</span> and <span class="uicontrol">Associated Datum</span> boxes.
+          
+          
+        <p>By default, <span class="uicontrol">A1</span> is the value in the <span class="uicontrol">Associated Datum</span> box.</p></p></li>
+
+        <li class="stepexpand"><p>
+          
+            Select the required area shape icon. 
+          
+          
+          <p> 
+            For example, select the  <span class="uicontrol">Circular area of contact</span> symbol, if you specify the circle as a datum target.
+          <br/><img src="../Gdr3DMasterImages/creatingdatumtarget01NLS.png"/><br/></p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Click <img src="../IconsSmall/I_DRM_OK.png"/> in the dialog box or click in the sheet<span> to validate</span>.
+          <p> 
+             The datum target is created. 
+			 
+			 
+			
+          </p>
+        </p></li>
+
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="t-ConvertaNonmovableDatumTargetintoaMovableDatumTarget">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Convert a Non-movable Datum Target into a Movable Datum Target</h2>
+
+  
+    <div><p><span>You can convert a non-movable datum target into a movable one and vice-versa. </span>
+<p>A movable datum target indicates that the datum target is not fixed at its basic location and is free to translate.</p></p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          
+            Select the datum target.
+          <p> 
+            All the handles of the datum target are displayed.  <p><br/><img src="../Gdr3DMasterImages/nonmovabledatumtarget01NLS.png"/><br/></p></p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Select the red handle.
+          <p> 
+            The datum target is instantly changed to a movable datum target.<span> The handle is oriented to the inside of the movable datum, indicating that it is movable. Slide text handle is also displayed. You can use the text handle to change the position of e datum target.</span><p><br/><img src="../Gdr3DMasterImages/movabledatumtarget01NLS.png"/><br/></p><p>Note:
+		The red movable handle is added on the left or right of the datum depending on the position of the first leader with respect to the datum. For more information about handles on movable datum target, see <a href="gdr3dmaster-c-Annotations-DatumTargetCreate.htm#gdr3dmaster-c-Annotations-DatumTargetCreate" title="A datum target can be a specific point, a line, or an area on a feature that is used to establish a reference for measurements. You can create a datum target, a movable datum target, add leader to the movable datum target and so on. However, you should be familiar with the concepts that are described in this topic before working with datum targets.">About Working with Datum Targets</a>.</p>
+
+          </p>
+        </p></li>
+
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+
+  
+<div class="nested1" id="t-ManaginganOffsetBetweentheAnchorPointandtheFirstPointoftheLeader"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Create an Offset between the Anchor Point and the First Point of the Leader</h2>
+
+<div><p><span>You can create an offset between the anchor point and the first point of the leader.
+        
+            </span>
+</p>
+<ol><li class="stepexpand"><p>Select the datum target.<p>   The manipulation handles appear.</p></p></li>
+<li class="stepexpand"><p>Drag <img src="../Gdr3DMasterImages/I_pointer.png"/> to the required length.<p>You can also drag the white handle <img src="../IconsSmall/I_KinCheckBoxInactive.png"/> to create an offset.</p><p> The line is added or the offset is created between the anchor point and the first point of the leader. <br/><img src="../Gdr3DMasterImages/movabledatumtarget02NLS.png"/><br/></p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-PositionaDatumTargetonanExistingAnnotation"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Position a Datum Target on an Existing Annotation</h2>
+
+<div><p><span>You can position a datum target on an existing annotation on a specific point at its anchor position. You can also snap datum target position to any predefined place.</span>
+</p>
+<div class="p"><!--xxx--><span class="run-in">Before you begin: </span>Create a datum target.</div>
+<ol><li class="stepexpand"><p>            Click <span class="uicontrol">Datum Target</span>
+			<img height="22" width="22" src="../Icons22/I_D3M_DatumTarget.png"/>.
+          </p></li>
+<li class="stepexpand"><p>Click in the sheet to define the leader anchor point.<p> The datum target leader is placed at the indicated location.</p></p></li>
+<li class="stepexpand"><p>Move the pointer over the reference<span> annotation (in this case, the reference datum target)</span>. <p> The attachment points are displayed. The nearest attachment point is highlighted to show that the annotation will be positioned on it if that point is selected.<br/><img src="../Gdr3DMasterImages/datumtargethotpoint.png"/><br/></p></p></li>
+<li class="stepexpand"><p>Select <span>the required</span> attachment point to position the datum target.<p> The leader is removed and the datum target is positioned on the selected attachment point.</p></p></li>
+<li class="stepexpand"><p>Enter<span> the required</span> values in the <span class="uicontrol">Area Size</span> and <span class="uicontrol">Associated Datum</span> boxes.</p></li>
+<li class="stepexpand"><p>             Click <img src="../IconsSmall/I_DRM_OK.png"/> in the dialog box or click in the sheet<span> to validate</span>.<p> The datum target is created.<span> If required, you can change the position of the datum target.</span><p><br/><img border="1" src="../Gdr3DMasterImages/associatedatumtarget03.png"/><br/></p></p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Drag the datum target to change it's position.<p> The datum target is snapped to the selected position and the attachment point is modified.</p></p></li>
+</ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

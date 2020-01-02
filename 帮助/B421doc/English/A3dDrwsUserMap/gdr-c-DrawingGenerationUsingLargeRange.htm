@@ -1,0 +1,375 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Using Drawings with the Design Range Management"/>
+<meta name="abstract" content="The Drawings app supports design range management. The design range is used in creating drawings, layouts, sheets, and views."/>
+<meta name="description" content="The Drawings app supports design range management. The design range is used in creating drawings, layouts, sheets, and views."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-DrawingRepresentationManagement-NewDrawingGenerate.htm#gdr-t-DrawingRepresentationManagement-NewDrawingGenerate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-DrawingGenerationUsingLargeRange"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Using Drawings with the Design Range Management</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-DrawingGenerationUsingLargeRange">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-design range"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Using <span><span>Drawings</span></span> with the Design Range Management</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>The <span><span>Drawings</span></span> <span>app</span> supports design range management. The design range is used in creating drawings, layouts, sheets, and views. 
+    </span>
+
+    
+  </p>
+<ul><li><a href="#gdr-c-DrawingGenerationUsingLargeRange__cs-AutomaticViewCreation" id="toc_rg" title="">Automatic View Creation Using the Design Range Management</a></li><li><a href="#gdr-c-DrawingGenerationUsingLargeRange__cs-GenerativeViewCreationScenarios" id="toc_rg" title="">Generative View Creation Scenarios</a></li><li><a href="#gdr-c-DrawingGenerationUsingLargeRange__cs-Viewfrom3D" id="toc_rg" title="">View from 3D</a></li><li><a href="#gdr-c-DrawingGenerationUsingLargeRange__cs-ViewDressup" id="toc_rg" title="">View Dress-up</a></li><li><a href="#gdr-c-DrawingGenerationUsingLargeRange__cs-V4Import" id="toc_rg" title="">Import from V4</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-t-DrawingRepresentationManagement-NewDrawingGenerate.htm#gdr-t-DrawingRepresentationManagement-NewDrawingGenerate" title="You can generate a new drawing from a 3D representation. You can also choose a suitable method to create a shareable or an aggregated drawing.">Generating a New Drawing</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    
+  <div class="section" id="gdr-c-DrawingGenerationUsingLargeRange__cs-AutomaticViewCreation"><h2 class="sectiontitle">Automatic View Creation Using the Design Range Management</h2> 
+   
+  <p>When a product or a 
+	 <span>3D area</span>
+	 part or a 2D layout is active and a drawing is created, you can create a set of
+	 views automatically. 
+  </p> 
+  <p> 
+	 <p>Note:
+		The word "range" in this section refers to the scale of the drawing. 
+		.
+		
+	 </p>
+ 
+  </p> 
+  <p>The following table explains the two cases of automatic view creation
+	 using the design range: 
+  
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"> 
+		  <tr> 
+			 <th class="cellrowborder" valign="top" width="NaN" id="d80796e58">Cases 
+			 </th>
+ 
+			 <th class="cellrowborder" valign="top" width="NaN" id="d80796e61"> View Generation Options for the Compatible
+				Ranges 
+			 </th>
+ 
+			 <th class="cellrowborder" valign="top" width="NaN" id="d80796e64">Comment 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr> 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d80796e58 ">A 2D layout is active 
+			 </td>
+ 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d80796e61 "> 
+				<ul> 
+				  <li><span class="uicontrol">Empty sheet</span> 
+				  </li>
+ 
+				  <li><span class="uicontrol">All Design Sheets</span> 
+				  </li>
+ 
+				  <li><span class="uicontrol">Current Sheet</span> 
+				  </li>
+ 
+				  <li><span class="uicontrol">Selected Sheets</span> 
+				  </li>
+ 
+				  <li><span class="uicontrol">Custom Sheet Range</span> 
+				  </li>
+ 
+				</ul>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" rowspan="2" valign="top" width="NaN" headers="d80796e64 "> 
+				<p>If the ranges are not compatible, a message is displayed in the 
+				  <span class="uicontrol">Drawing Information</span> tab of the 
+				  <span class="wintitle">Drawing</span> dialog box informing you that the
+				  current range does not allow view generation. 
+				</p> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d80796e58 ">A product or 
+				<span>3D area</span>
+				part is active 
+			 </td>
+ 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d80796e61 "> 
+				<ul> 
+				  <li><span class="uicontrol">Empty sheet</span> 
+				  </li>
+ 
+				  <li><span class="uicontrol">All views</span> 
+				  </li>
+ 
+				  <li><span class="uicontrol">Front, Bottom and Right views</span> 
+				  </li>
+ 
+				  <li><span class="uicontrol">Front, Top and Left views</span> 
+				  </li>
+ 
+				</ul>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+  <p>Notes:
+		 
+	 <ul> 
+		<li>A drawing contains one range corresponding to a set of tolerances:
+		  there is only one range for a given drawing. That is, all views of a drawing
+		  use the same range. Once created, you cannot modify the range of a drawing. 
+		</li>
+ 
+		<li>When the drawing to be generated is under a product, ensure that the
+		  design range of the drawing is less than that of the product. Else, an error
+		  message appears diagnosing the issue. In this case, the views are not
+		  generated. 
+		</li>
+ 
+		<li>When the drawing to be generated is not under the product and the
+		  drawing is of smaller range compared to the product to be represented, an error
+		  message appears. In this case, the views are not generated. 
+		</li>
+ 
+		<li>When the drawing to be generated is not under the product and the
+		  drawing range is greater range compared to the product to be represented, the
+		  following scenarios are possible: 
+		  <ul> 
+			 <li>The views are generated without any checks performed. 
+			 </li>
+ 
+			 <li>A warning message appears and no views are generated. 
+			 </li>
+ 
+			 <li>A warning message appears and views are generated. 
+			 </li>
+ 
+		  </ul>
+ 
+		  <p>You can select the preferences to change the behavior. See 
+			 <a href="../PreferencesMap/gdrpref-c-Generation.htm#gdrpref-c-Generation" title="You can customize generation options for Drafting using this section. You can customize the options to prevent automatic update, represent a view, generate balloons and dimensions, for example.">Generation</a>.
+		  </p> 
+		</li>
+ 
+	 </ul>
+ 
+	 <p>When a product or a 2D layout is active and the 
+		<span><span>Drawings</span></span>
+		
+		<span>app</span>
+		is opened, a warning appears if the ranges of the two are not compatible. In
+		the warning dialog box, you have the following choices: 
+	 <ul> 
+		<li>Click 
+		  <span class="uicontrol">OK</span> to automatically adapt the range of the
+		  drawing with the 3D part to be represented. 
+		</li>
+ 
+		<li>Click 
+		  <span class="uicontrol">Cancel</span> to ignore the warning and use the
+		  preferred or default range. 
+		</li>
+ 
+	 </ul>
+ 
+	 </p> 
+  </p>
+ 
+  </p> 
+</div>
+<div class="section" id="gdr-c-DrawingGenerationUsingLargeRange__cs-GenerativeViewCreationScenarios"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Generative View Creation Scenarios</h2> 
+   
+  <p>The following scenarios are possible when generating views: 
+  <ul> 
+	 <li>If the drawing range is lower than the product range: It displays the
+		message that it is not possible to generate views. After you click 
+		<span class="uicontrol">OK</span> in the message box, an empty drawing is
+		generated. 
+		<p>For example: The drawing range is normal and the product range is
+		  large. 
+		</p> 
+	 </li>
+ 
+	 <li>The drawing range is same as the product range: Views are generated. 
+	 </li>
+ 
+	 <li>If the drawing range is larger than the product range: The views are
+		created based on the value of 
+		<span class="uicontrol">Allow view creation from 3D data of smaller range</span>
+		check box available in 
+		<span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span>
+		
+		<span class="menucascade"><span class="uicontrol">&gt; Mechanical 
+		  </span> &gt; <span class="uicontrol">Drafting</span> &gt; <span class="uicontrol">Generation</span></span> section, under 
+		<span class="uicontrol">View</span>: 
+		<ul> 
+		  <li>If 
+			 <span class="uicontrol">Allow view creation from 3D data of smaller
+				range</span> option is set as 
+			 <span class="uicontrol">Yes (no warning)</span>: The views are created. 
+		  </li>
+ 
+		  <li>If 
+			 <span class="uicontrol">Allow view creation from 3D data of smaller
+				range</span> option is set as 
+			 <span class="uicontrol">Yes (warning)</span>: A warning message appears
+			 informing that the drawing large range is greater than the physical product
+			 normal range. When you click 
+			 <span class="uicontrol">OK</span> in this 
+			 <span class="wintitle">3D View Extraction</span> message box, the views are
+			 generated. 
+		  </li>
+ 
+		  <li>If the option 
+			 <span class="uicontrol">Allow view creation from 3D data of smaller
+				range</span> is set as 
+			 <span class="uicontrol">No</span>: A warning message appears informing that
+			 it is not possible to generate views because drawing large range is greater
+			 than the physical product normal range. When you click 
+			 <span class="uicontrol">OK</span> in this 
+			 <span class="wintitle">3D View Extraction</span> message box, the views are
+			 not generated. 
+		  </li>
+ 
+		</ul>
+ 
+	 </li>
+ 
+  </ul>
+ 
+  </p> 
+</div>
+<div class="section" id="gdr-c-DrawingGenerationUsingLargeRange__cs-Viewfrom3D"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">View from 3D</h2><p>You can create views from <span>2D Layout for 3D Design</span> or <span>3D Tolerancing &amp; Annotation</span> only if the range of the reference view is equal to the drawing range or according to the  value of <span class="uicontrol">Allow view creation from 3D data of smaller range</span>.</p><p>When creating a view from 3D, the compatibility between the drawing range and the root product context range is  checked prior to view creation. If the ranges are not compatible, a warning message appears and the view is not created.</p></div>
+<div class="section" id="gdr-c-DrawingGenerationUsingLargeRange__cs-ViewDressup"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">View Dress-up</h2> 
+   
+  <p> 
+  <ul> 
+	 <li>You can create 2D geometry and annotations using the range of the 
+		. That is, you
+		can create and modify annotations as long as they are attached to a
+		representation or a 
+		<span>3D area</span>
+		shape located inside the 
+		 geometrical
+		limit. Sketched geometry can be created and modified in 
+		<span>Drafting</span>
+		and 
+		<span>2D Layout for 3D Design</span>
+		exactly like in 
+		<span>Sketcher</span>.
+		
+	 </li>
+ 
+	  
+	 <li>You can create and modify an area fill, axis line, center line or
+		thread as long as they are attached to a representation/<span>3D area</span>
+		shape located inside the 
+		 geometrical
+		limit. 
+	 </li>
+ 
+	 <li>You can create and modify dimensions on generated geometry using the
+		range of the 
+		 (whatever the
+		range of the product pointed by the generative view). 
+		<p>Note:
+		The dimension value precision is strongly dependent upon the range
+		  of the 
+		  . 
+		</p>
+ 
+	 </li>
+ 
+  </ul>
+ 
+  </p> 
+  <p> 
+  <dl> 
+	  
+		<dt class="dlterm">2D Components 
+		</dt>
+ 
+		<dd>You cannot instantiate a 2D component in a 
+		   
+		   which has a smaller range than its own
+		  representation. 
+		</dd>
+ 
+	  
+  </dl>
+ 
+  </p> 
+  <dl> 
+	  
+		<dt class="dlterm">Geometry Import and Export 
+		</dt>
+ 
+		<dd>Import and export of geometry is independent of the range of the 
+		  . For DXF,
+		  IG2D, and DWG formats, the export generated data is computed according to the
+		  sheet paper unit. 
+		</dd>
+ 
+		<dd class="ddexpand">When importing a DXF, IG2D or DWG file, the drawing representation is
+		  created with the default range. 
+		</dd>
+ 
+	  
+  </dl>
+ 
+  <dl> 
+	  
+		<dt class="dlterm">Grid 
+		</dt>
+ 
+		<dd>The characteristics of a view geometry grid depend on the range of
+		  the representation containing that view. You can customize it for each range. 
+		</dd>
+ 
+	  
+  </dl>
+ 
+  <dl> 
+	  
+		<dt class="dlterm">Paper Grid 
+		</dt>
+ 
+		<dd>This grid is used for snapping the position of annotations and
+		  dress-up elements. It is adaptive to the view ratio and independent of the
+		  range of view representation. 
+		</dd>
+ 
+	  
+  </dl>
+
+</div>
+<div class="section" id="gdr-c-DrawingGenerationUsingLargeRange__cs-V4Import"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Import from V4</h2><p>Import of views from V4 using range of the drawing. The import behavior is dependant on the drafting preferences in case of small range drawing. For a batch import, the import is done in normal range irrespective of the setting value. </p></div>
+</div>
+
+
+  <div/>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

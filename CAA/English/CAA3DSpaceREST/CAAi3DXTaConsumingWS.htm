@@ -1,0 +1,193 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Consuming 3DSpace Web Services</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Consuming 3DSpace Web Services</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article presents two contexts to consume 3DSpace web services. The first is from a widget application,
+		and the second from a batch application.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="3DSpace-UI"></a>Consuming From a Widget Application</h2>
+<p>This section gives the main tooltips to invoke a 3DSpace web service from a Widget Application (Widget App), in other words a web 
+application instanciated in 3DDashboard [<a href="#References">1</a>]. </p>
+<p>If you are not familiar with the widget app development, start with the "Widget Development Principles" [<a href="#References">2</a>] article, and 
+continue with all other articles beneath the
+ <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSRoot/CAATcWebAppsJSRootToc.htm');return false;">Dashboard Apps Javascript</a> node.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="3DSpace-UI-URL"></a>Retrieving Service URL</h3>
+<p>We use the <i>getServiceUrl</i> function exposed by the 
+<a href="#" onclick="CAAlinkJS('i3DXCompassUI', 'i3DXCompassServices', 'DS/i3DXCompassServices/i3DXCompassServices'); return false;">DS/i3DXCompassServices/i3DXCompassServices</a> module. 
+This function has one argument whose format is a JSON structure (key/value).</p>
+<pre class="code">
+i3DXCompassServices.<b>getServiceUrl</b>( { 
+    <b>serviceName: </b>'3DSpace', 
+    <b>platformId: </b> widget.getValue('<b>x3dPlatformId</b>'),
+    <b>onComplete</b> : function( 3DSpaceURL) { 
+       ...	     
+    } ,
+    <b>onFailure</b>:   ...
+} ) ;  
+</pre>
+<p>Since the call specifies the platform instance with the <code>platformId</code> key, the response, the argument of the <code>onComplete</code> callback function, is a string containing the 3DSpace URL for this platform instance. The service URL does not contain the final /".</p>
+<p>Read the referenced article [<a href="#References">3</a>] to go further with this topic.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="3DSpace-UI-WAFDATA"></a>Invoking Web Services</h3>
+<p>We recommend 
+to use the <a href="#" onclick="CAAlinkJS('WebAppsFoundations', 'WAFData', 'DS/WAFData/WAFData'); return false;">DS/WAFData/WAFData</a> JavaScript module
+for invoking any web services, 3DSpace as others. For the <b>3D</b>EXPERIENCE services, the authentication is 
+taken in charge by this JavaScript module.</p> 
+<p>From 3DEXPERIENCE R2016x, when CORS has been implemented on 3DSpace server,  <i>AuthenticatedRequest</i> is the efficient method: </p>
+<pre class="code">
+var pathWS= 3DSpaceURL +  WebServicePath;
+WAFData.<b>authenticatedRequest</b>(pathWS, {
+    method : '...',
+    ...
+    headers : { ...,
+        'SecurityContext' : encodeURIComponent("Role.Organization.CollaborativeSpace") 
+    },
+    onComplete: ... ,
+    onFailure: ...
+});	
+</pre>
+<p><code>3DSpaceURL</code> is the string returned by <i>getServiceUrl</i>, see the 
+<a href="#3DSpace-UI-URL">Retrieving the Service URL</a> section, and <code>WebServicePath</code> is the resource path with or without query parameters. Just below an example with Person API:</p>
+<pre class="code">
+var WebServicePath= '/resources/modeler/pno/person?pattern=*Jo*&amp;select=firstname';
+</pre>
+<p>Among the header fields, the <code>SecurityContext</code> (SC) is usually expected. Note the UTF8 URL encodage of the value [<a href="#References">4</a>]. Let's see <a href="#3DSpace-UI-SC">Managing Security Context List</a> the next section presenting the SC in the User Interface.</p>
+<p>(*) Previously, only
+the  <i>proxifiedRequest</i> method associated with the 'passport' proxy could be used: </p>
+<pre class="code">
+var pathWS= 3DSpaceURL +  WebServicePath;
+WAFData.<b>proxifiedRequest</b>(pathWS, {
+    method : '...',
+    <b>proxy : 'passport',</b>
+    headers : ... ,
+    onComplete: ... ,
+    onFailure: ...
+});	
+</pre>
+<p>Read the referenced article [<a href="#References">5</a>] to go further with this topic.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<h3><a name="3DSpace-UI-SC"></a>Managing Security Context List</h3>
+<p>For each widget app involving 3DSpace data the end user must be able to choose one of among their security contexts. The user experience recommends 
+to propose the list of security contexts in the <b>Preference</b> menu of the widget. The <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DXPnOWSRef/CAAi3DXPnOWSQrPerson.htm');return false;">Get Person</a> API returns the security contexts 
+available and the preferred one for a given person (from its login name). The <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DXPnOWSRef/CAAi3DXPnOWSQrPersonMe.htm');return false;">Get Me</a> returns the same
+information without passing the current connected person identifier. Both API from People and Organization modeler [<a href="#References">9</a>].</p>
+
+<p>A use case shows how an example of implementation [<a href="#References">6</a>]. </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="3DSpace-Batch"></a>Consuming From a Batch Application</h2>
+<p>The batch before consuming any 3DSpace web services must perform a 
+CAS <b>login</b> using 3DPassport API [<a href="#References">10</a>]. There are two consecutive calls:</p>
+<ol>
+<li>Request the CAS login ticket (lt), (GET) <a href="../CAAiamPassportRef/CAAiamPassportAPILoginTicket.htm">&lt;3DPassportURL&gt;/login?action=get_auth_params</a>
+<p>The successful response is a JSON containing the CAS login ticket (lt) : <code>{"response":"login",<b>"lt"</b>:"LT-1731-rBhnIMYWYBwUuFSEnv7k5UxjjXssnM"}</code></p>
+</li>
+<li>Perform the authentication, (POST)  <a href="../CAAiamPassportRef/CAAiamPassportAPIAuthentication.htm">&lt;3DPassportURL&gt;/login?service=$3DSpaceURL + "?tenant=xxx"</a> , with the lt, the login and the password in the POST BODY
+</li>
+</ol>
+<p>The CAS <b>logout</b>  consists in  to perform 
+(GET)  <a href="../CAAiamPassportRef/CAAiamPassportAPILogout.htm">&lt;3DPassportURL&gt;/logout</a> </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article has presented the main information to know when  consuming a 3DSpace web service from a widget app or from a batch. For a widget app continue with the "Consuming 3DSpace Web Service" use case [<a href="#References">7</a>]. For the batch the "Presenting Batch Client Application Example" article [<a href="#References">8</a>] described a Java 
+based client application. </p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+<tr>
+    <tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSRoot/CAAWebAppsJSTaOverview.htm');return false;">3DEXPERIENCE Applications</td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSRoot/CAAWebAppsTaWidgetWriting.htm');return false;">Widget Principles</td>
+	</tr>
+	
+    <tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm');return false;">About Service URL and Platform Instance</td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="CAAi3DXTa3DSpaceWService.htm#Request-Hdrs">About 3DSpace Web Services</td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm');return false;">About Widget and HTTP Request</td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DXPnOWS/CAAi3DXPnOWSUcWidgetSC.htm');return false;">Credentials with Widget App</td>
+	</tr>
+	<tr>
+		<td>[7]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DX3DSpaceUI/CAAi3DX3DSpaceUConnectedUser.htm');return false;">Consuming 3DSpace Web Service</td>
+	</tr>
+	<tr>
+		<td>[8]</td>
+		<td><a href="CAAi3DXTaJavaClientApp.htm">Presenting Batch Client Application Example</td>
+	</tr>
+	<tr>
+		<td>[9]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DXPnOWS/CAAi3DXPnOWSTaPNOModeler.htm');return false;">People and Organization Modeler</a></td>
+	</tr>
+	<tr>
+		<td>[10]</td>
+		<td><a href="../CAAiamPassport/CAAiamPassportLoginHowTo.htm">Performing Service Login and Logout</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [October 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

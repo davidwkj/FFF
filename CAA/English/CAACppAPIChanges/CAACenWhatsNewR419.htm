@@ -1,0 +1,207 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Ta" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>What's New in 3DEXPERIENCE R2017x</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>What's New in <strong>3D</strong>EXPERIENCE R2017x</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>New modelers, or enhancements to existing modelers are listed here, compared 
+		with the previous release. Some enhancements or maintenance reasons may 
+		also require changes regarding tools or methodologies. This article lists 
+		them, and points to the corresponding documentation.</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="TD"></a>Introduction of Representation Occurrences</h2>
+<p>To support new design capability like the ability to hide/show specific occurrences of a representation, occurrences of the representation objects have 
+been added to the Native Client session model.</p>
+<p>The API has been kept compatible at best for existing apps by temporarily implementing interfaces supported by representation instances on the newly introduced representation occurrences, allowing a progressive adoption of the new session model. Is is however highly recommended to start this adoption in 3DEXPERIENCE R2017x.</p>
+<p>Details on this operation can be found in <a href="#" onclick="CAAlinkOutOfPreqs('CAAPstProductModeler/CAAPstTaAdoptingRepOccurrences.htm'); return false;">Adopting Representation Occurrences</a></p>
+
+<h2><a name="TD"></a>New Way to Manage ExportedBy in Header Files</h2>
+<p>A new syntax is now proposed to manage symbols export and prepare performance 
+optimizations in incoming releases.</p>
+<table class="fill">
+	<thead>
+		<tr>
+			<th>Until V5-6R2016, <b>3D</b>EXPERIENCE R2016x</th>
+			<th>Since V5-6R2017, <b>3D</b>EXPERIENCE R2017x</th>
+		</tr>
+	</thead>
+	<tr>
+		<td>
+		<pre class="code">
+#ifdef _WINDOWS_SOURCE
+
+</pre>
+		</td>
+		<td>
+		<pre>
+#ifndef ExportedByToolkitEdit_H
+#define ExportedByToolkitEdit_H
+</pre>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<pre class="code">
+    #ifdef __ToolkitEdit
+	#define ExportedByToolkitEdit __declspec (dllexport)
+    #else
+        #define ExportedByToolkitEdit __declspec (dllimport)
+    #endif
+
+</pre>
+		</td>
+		<td>
+		<pre>
+    #if defined(__ToolkitEdit)
+        # define ExportedByToolkitEdit   DSYExport
+    #else // __ToolkitEdit
+        # define ExportedByToolkitEdit   DSYImport
+    #endif  // __ToolkitEdit
+</pre>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<pre>
+#else
+
+    #define ExportedByToolkitEdit
+
+#endif
+
+</pre>
+		</td>
+		<td>
+		<pre>
+
+
+    #include "DSYExport.h"
+
+#endif //ExportedByToolkitEdit_H
+</pre>
+		</td>
+	</tr>
+</table>
+<p>No migration is required, part of the API has already been migrated but it has 
+no impact on existing apps. Guidelines have been updated and code generation wizards 
+now generate the new syntax.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="ModelersR419"></a>New Modelers</h2>
+<p>The following modelers is new with <strong>3D</strong>EXPERIENCE R2017x:</p>
+<ul>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAEngSpecUseItf/CAAEseTcEngSpecToc.htm'); return false;">
+	Engineering Specification Capture &amp; Reuse</a></li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="CPPR419"></a>C++ APIs</h2>
+<p><a href="CAACenR419GANewCPPAPI.htm">New C++ APIs in <strong>3D</strong>EXPERIENCE 
+R2017x GA</a></p>
+<p><a href="CAACenR419APIChangeDetail.htm">Changed C++ APIs in <strong>3D</strong>EXPERIENCE 
+R2017x GA</a></p>
+<p><a href="#" onclick="CAAlink('CPP', 'Deprecated'); return false;">Deprecated 
+C++ APIs in <strong>3D</strong>EXPERIENCE R2017x GA</a></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="SettingChangeR419"></a>Modifications in Setting Files Impacting Usage 
+of C++ Settings APIs</h2>
+<p>New setting repositories:</p>
+<ul>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/CAT3DIOptions.htm'); return false;">
+	CAT3DIOptions</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/DELRobSurfSettings.htm'); return false;">
+	DELRobSurfSettings</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/EMPDocumentation.htm'); return false;">
+	EMPDocumentation</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/EMPFormboard.htm'); return false;">
+	EMPFormboard</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/HvcExperienceContent.htm'); return false;">
+	HvcExperienceContent</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/RenderingNetworkSettings.htm'); return false;">
+	RenderingNetworkSettings</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SMAFeaPython.htm'); return false;">
+	SMAFeaPython</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SWXBuImportJSONWidgetSettings.htm'); return false;">
+	SWXBuImportJSONWidgetSettings</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/SWXBuLinkToExcelWidgetSettings.htm'); return false;">
+	SWXBuLinkToExcelWidgetSettings</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/VOCSettings.htm'); return false;">
+	VOCSettings</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/WDGGeneral.htm'); return false;">
+	WDGGeneral</a></li>
+	<li>
+	<a href="#" onclick="CAAlinkOutOfPreqs('CAAScrSettings/WidgetLayoutRepository.htm'); return false;">
+	WidgetLayoutRepository</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="RADER419"></a>Development Toolset News</h2>
+<p>None.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="DocR419"></a>Encyclopedia News</h2>
+<p>None.</p>
+<!--
+<li><a href="#" onclick="CAAlinkOutOfPreqs('xxxxxxxxxxx/yyyyyyyyyyyyyyyyyy.htm'); return false;">XXXXXXXXXXXXXXXXX</a></li>
+-->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2016]</td>
+		<td>Document created for <strong>3D</strong>EXPERIENCE R2017x GA</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

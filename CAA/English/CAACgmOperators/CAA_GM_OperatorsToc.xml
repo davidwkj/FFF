@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="Topological Operators: General Articles" href="CAACgmTcCGMOpeGenArticlesToc.htm" topictype="all">
+		<ITEM name="Overview of Topological Operators" href="CAACgmUcTopOverview.htm" icon="CAAIcons/images/I_Overview.gif" topictype="Ta"/>
+   	<ITEM name="How to Use Topological Operators" href="CAACgmTaHowToUseTopOperators.htm" icon="CAAIcons/images/I_HowTo.gif" topictype="Ta"/> -->	
+		<ITEM name="Understanding Boolean Operators" href="CAACgmTaTopBoolean.htm" icon="CAAIcons/images/I_Understanding.gif" topictype="Ta"/>
+		<ITEM name="List of GM Operators Use Case Modules" href="CAACgmUcOperatorsSummary.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+	</ITEM>
+	<ITEM name="The CGM Journal" href="CAACgmTcCGMJournalToc.htm" topictype="all">
+		<ITEM name="Topological Journal: Principles" href="CAACgmTaTopJournal.htm" icon="CAAIcons/images/I_Understanding.gif" topictype="Ta"/>
+		<ITEM name="Topological Journal: Methodology" href="CAACgmTaTopJournalMethodology.htm" icon="CAAIcons/images/I_Understanding.gif" topictype="Ta"/>
+		<ITEM name="Using the Topological Journal" href="CAACgmUcTopJournal.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Topological Journal: Creation and Validation (1)" href="CAACgmUcJournalChecking1.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Topological Journal: Creation and Validation (2)" href="CAACgmUcJournalChecking2.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Topological Journal: Writing a Validation Tool" href="CAACgmUcJournalChecking3.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Dumping the Topological Journal" href="CAACgmUcTopDumpJournal.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+	</ITEM>
+	<ITEM name="NURBS Creation and Manipulation" href="CAACgmTcTopNURBSToc.htm" topictype="all">
+		<ITEM name="Creating a Single Patch NURBS Surface" href="CAACgmUcTopNurbsSurfSinglePatch.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Creating a Multi Patch NURBS Surface" href="CAACgmUcTopNurbsSurfMultiPatch.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Converting Surfaces into NURBS" href="CAACgmUcFrfSurFittingToNurbsSur.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Converting Curves into NURBS" href="CAACgmUcFrfCrvFittingToNurbsCrv.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Modifying the Degree of a Nurbs" href="CAACgmUcNurbsDegree.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+	</ITEM>
+	<ITEM name="1D Operations" href="CAACgmTcTop1DOpeToc.htm" topictype="all">
+      <ITEM name="Line " href="CAACgmUcOperatorsCreateLine.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to create  body of a line (between two points, with a given direction,tangent or angled to a wire, infinite, normal to a shell)." />
+      <ITEM name="Spline" href="CAACgmUcTopSpline.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to create a Spline" />
+      <ITEM name="Spine" href="CAACgmUcTopSpine.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to create a Spine" />
+      <ITEM name="Conic " href="CAACgmUcOperatorsCreateConics.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+		 text="how are modeled conic curves from geometrical point of view and how to create and to use them." />
+      <ITEM name="Isoparametric Curve" href="CAACgmUcTopExtractIsoParam.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to compute the isoparametric curve along u or v passing through a point on a surface." />
+      <ITEM name="Geodesic" href="CAACgmUcOperatorsCreateGeodesicLine.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to create a geodesic line on a surface." />
+      <ITEM name="Helix" href="CAACgmUcTopCreateHelix.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how  to create a geometric helix by using the CATGeoFactory::CreateHelix API." />
+      <ITEM name="Boundary" href="CAACgmUcTopBoundary.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to retrieve the boundaries of a skin or of a wire by using the CATICGMHybBoundary operator." />
+      <ITEM name="Corner" href="CAACgmUcTopCorner.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to create a corner by using the CATICGMTopCorner operator." />
+      <ITEM name="Create curve lissing a set of points" href="CAACgmUcTopCreateSmoothedCurve.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to create a a smoothed nurbs curve lissing a set of points by using the CATICGMLiss operator." />
+      <ITEM name="Deform curves on a set of points" href="CAACgmUcTopDeformCurves.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to deform curves on a set of points by using the CATICGMInterproxCrv operator." />
+      <ITEM name="Achieving a Given Geometric Continuity along a Wire" href="CAACgmUcAdtCleanCurve.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to correct or improve the (dis)continuities along a wire by using the CATICGMTopCleanCrvOperator operator." />      		
+      <ITEM name="Connecting Wires with Reference Curve" href="CAACgmUcTopConnectCurve.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to connect two wires by specifying a base curve by using the CATICGMTopSimilarCurve operator." />
+      <ITEM name="Connecting Wires with Spline Curve" href="CAACgmUcTopConnectCurveWithSpline.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to connect wires between with a spline curve by using the CATICGMTopologicalBlendCurve operator." />
+      <ITEM name="Splitting a Wire" href="CAACgmUcSplitWire.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to split a wire by another wire, a shell or a vertex by using the CATICGMHybSplit operator." />
+      <ITEM name="Extrapolating a Wire" href="CAACgmUcTopExtrapolWire.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to extrapolate a wire in tangency by using the CATICGMWireExtrapolationOp operator." />
+      <ITEM name="Creating a Non-Manifold Wire" href="CAACgmUcTopNonManifoldWire.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how create a non-manifold wire by assembling lines using the CATICGMHybAssemble operator." />
+      <ITEM name="Reflect Lines" href="CAACgmUcReflectLine.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text="is an example of how to generate reflect lines on a surface by using the CATICGMTopReflectLine operator." />
+   </ITEM>
+	<ITEM name="2D Operations" href="CAACgmTcTop2DOpeToc.htm" topictype="all">
+		<ITEM name="Blend" href="CAACgmUcTopBlend.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text="is an example of creating a surface that connects two wires with a skin by using the CATICGMTopBlend operator." />     
+      <ITEM name="Extrusion" href="CAACgmTcTopExtrusionToc.htm" topictype="all">        
+         <ITEM name="Prism" href="CAACgmUcTopExtrudePrism.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+              text= "is an example of how to create a Prism Surface by using the CATICGMTopPrism operator "/>        
+         <ITEM name="Revolution" href="CAACgmUcTopExtrudeRevolution.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+              text= "is an example of how to create a Revolution Surface by using the CATICGMTopRevolution operator "/>
+         <ITEM name="Profile Sweep" href="CAACgmUcTopExtrudeSweep.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+               text= "is an example of how to create a Sweep Surface by using the CATICGMTopSweep operator "/>
+         <ITEM name="Circle Sweep: One Guide and Tangency Surface" href="CAACgmUcAdtCircleSwTangSurRadius.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+              text= "is an example of how to create a circle sweep with one guide and a tangency surface by using the CATICGMTopSweepWireSkinCircle operator "/>      
+		   <ITEM name="Circle Sweep: Three Guides" href="CAACgmUcAdtCircleSwThreeGuides.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+                text= "is an example of how to create a circle sweep with three guides by using the CATICGMFrFTopologicalSweep operator "/>           
+		   <ITEM name="Circle Sweep: Two Guides and Radius Law" href="CAACgmUcAdtCircleSwTwoGuidesRadiusLaw.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+                text= "is an example of how to create a circle sweep with two guides and radius law  by using the CATICGMFrFTopologicalSweep operator "/>      
+         <ITEM name="Circle Sweep: Two Guides and Tangency Surface" href="CAACgmUcAdtCircleSwTwoGuidesTangSur.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+                text= "is an example of how to create a circle sweep with two guides and Tangency Surface by using the CATICGMFrFTopologicalSweep operator "     />      
+         <ITEM name="Sweep with Two Tangency Surfaces, Implicit Profile" href="CAACgmUcTopSweepTgSurfaces.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+                text= "is an example of how to create a sweep from a Spine and Two Tangency Surfaces by using the CATICGMTopSweepSkinSkinSegment operator "     />      
+		   <ITEM name="Sweep:  Using the Smoothing Options" href="CAACgmUcAdtSweepSmoothing.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+                text= "is an example of how to use the Smooth Sweeping option of the CATICGMFrFTopologicalSweep operator "     />
+      </ITEM>    
+      <ITEM name="Fill" href="CAACgmUcTopPowerFill.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a fill by using the CATICGMPowerFill operator "/>      
+      <ITEM name="Fillet: Untwist" href="CAACgmUcFilletUntwist.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a Fillet by using the CATICGMDynAdvancedFillet operator "/>
+      <ITEM name="Extract a Face from a Solid" href="CAACgmUcExtractFace.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a 2D body from a face belonging to a solid by using the CATICGMTopExtractFace operator "/>
+      <ITEM name="Modify the Geometry of a Face" href="CAACgmUcTopReplaceFace.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to replace the geometry of a face by a new surface by using the CATICGMTopFaceReplaceSurface operator "/>
+      <ITEM name="Modifying the Face Orientations in a Shell" href="CAACgmUcShellOrientation.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to modify the orientation of faces so that they all have the same orientation as the shell by using the CATICGMTopShellOrientation operator "/>
+      <ITEM name="Remove Faces from a Body" href="CAACgmUcAdvRemoveFace.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to remove a set of faces from a body by using the CATICGMAdvancedRemoveFaceOpe operator "/>      
+      <ITEM name="Reflect Lines" href="CAACgmUcReflectLine.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to generate reflect lines on a surface by using the CATICGMTopReflectLine  operator "/>
+      <ITEM name="Silhouette" href="CAACgmUcTopSilhouette.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text= "is an example of how to create silhouette (two-dimensional representation of the shape of body as projected orthographically upon a planar screen) by using the CATICGMTopSilhouette  operator "/>
+		<ITEM name="Splitting a Shell" href="CAACgmUcSplitShell.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to split a shell by another shell or a wire by using the CATICGMHybSplit operator "/>      
+      <ITEM name="Intersecting Shells" href="CAACgmUcTopShellShell.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to intersect two shells by using the CATICGMHybIntersect operator "/>
+      <ITEM name="Triming a shell or a wire by a volume" href="CAACgmUcOperatorsRelimitByVolume.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text="is an example of using the CATICGMTopRelimitByVolume operator." />
+      <ITEM name="Retrieving the CATMathBox2D of An Edge or a Face" href="CAACgmUcMathBox2D.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to compute the CATMathBox2D of an edge or a face by using the CATICGM2DBoxComputation operator "/>
+   </ITEM>
+   
+	<ITEM name="3D Operations" href="CAACgmTcTop3DOpeToc.htm" topictype="all">
+      <ITEM name="Elementary Solid" href="CAACgmUcTopElementarySolid.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create and dump topology of a sphere, a torus, a  pyramid, a cuboid and a cylinder solid "/>
+      <ITEM name="Prism" href="CAACgmUcTopExtrudePrismVolume.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a Prism Volume by using the CATICGMTopPrism operator "/>
+      <ITEM name="Revolution" href="CAACgmUcTopExtrudeRevolutionVolume.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a Revolution Volume by using the CATICGMTopRevolution operator "/>
+      <ITEM name="Sweep" href="CAACgmUcTopExtrudeSweepVolume.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a Sweep Volume by using the CATICGMTopSweep operator"/>
+      <ITEM name="Boolean Intersection" href="CAACgmUcIntersectClash.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to perform a Boolean intersection between two solids "/>
+      <ITEM name="Boolean Union" href="CAACgmUcBooleanUnion.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to perform a Boolean Union between two solids "/>
+ 		<ITEM name="Chamfer" href="CAACgmUcTopChamfer.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a beveled surface between the two original faces common to an edge "/>
+ 		<ITEM name="Basic Draft" href="CAACgmUcDraft1.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a basic draft by using the CATICGMDynDraft operator "/>
+      <ITEM name="Draft: Untwist" href="CAACgmUcDraft2.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a draft with 'untwist' mode, by using the CATICGMDynAdvancedDraft operator "/>
+      <ITEM name="Extract a Face from a Solid" href="CAACgmUcExtractFace.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to extract a face from a solid "/>
+      <ITEM name="Fillet" href="CAACgmUcTopAllFillets.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text= "is an example of how to create constant fillets, variable fillets and fillets with rolling edges "/>
+ 		<ITEM name="Modify the Geometry of a Face" href="CAACgmUcTopReplaceFace.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+       text= "is an example of how to extrapolate the adjacent faces up to the replacing surface in order to build a new solid. "/>
+      <ITEM name="Simplify the topology of a Body" href="CAACgmUcTopSimplifyBody.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+		  text= "is an example of how to simplify a topological body in order to remove unnecessary faces and build a consistent body topology. "/>
+      <ITEM name="Pattern" href="CAACgmUcTopPattern.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"
+      text= "is an example of how to create a pattern "/>
+   </ITEM>
+	<ITEM name="Creating Your Own Operator" href="CAACgmTcTopUserOpeToc.htm" topictype="all">
+		<ITEM name="Threading a Rod" href="CAACgmUcAdtThreadOperator.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+	</ITEM>
+	<ITEM name="Checking Data Validity" href="CAACgmTcTopDataCheckerToc.htm" topictype="all">
+		<ITEM name="Using the Data Checker" href="CAACgmTaTopDataChecker.htm" icon="CAAIcons/images/I_HowTo.gif" topictype="Ta"/>
+		<ITEM name="Using the Body Checker" href="CAACgmUcTopBodyChecker.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+	</ITEM>
+	<ITEM name="Analysis and Measures" href="CAACgmTcTopAnalysisToc.htm" topictype="all">
+		<ITEM name="Computing the Area of a CATFace and the Length of a CATEdge" href="CAACgmUcTopProperties.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Computing the Extrema of a Body" href="CAACgmUcTopExtrema.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+		<ITEM name="Progress Bar" href="CAACgmUcProgressBar.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc"/>
+        <ITEM name="Limits and Bounding Boxes" href="CAACgmTaLimitsAndBoundingBox.htm" icon="CAAIcons/images/I_Understanding.gif" topictype="Ta"/>
+	</ITEM>
+</Root>

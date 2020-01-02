@@ -1,0 +1,225 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="ws" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating Java Based Specific Client Class</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating Java Based Specific Client Class</h1>
+		
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<table class="abstract">
+	<tr>
+		<td>
+			<h2>Abstract</h2>
+			<p>This article describes how to build a Java based class dedicated to a given web service. 
+			This class is intended to be used by the CAA Java client appplication described in another article [<a href="#References">1</a>]. 
+			Both articles form an illustration of the  technical article [<a href="#References">2</a>] describing a
+			Java client application consuming 3DSpace web services. </p>
+			<ul>
+				<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+				<li><a href="#UseCase">The CAAi3dxGetWebServicesClient Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAAi3dxGetWebServicesClient Do</a></li>
+					<li><a href="#How">How to Launch CAAi3dxGetWebServicesClient</a></li>
+					<li><a href="#Where">Where to Find the CAAi3dxGetWebServicesClient Code</a></li>
+				</ul>
+				</li>
+				<li><a href="#Step">Step-by-Step</a></li>
+				<li><a href="#InShort">In Short</a></li>
+				<li><a href="#References">References</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you how to use <code>CAAi3dxClient</code> and <code>CAAURLLoader</code> two classes
+both described in the technical article [<a href="#References">2</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="UseCase"></a>The CAAi3dxGetWebServicesClient Use Case</h2>
+<p>CAAi3dxGetWebServicesClient is a use case of the CAAi3DXWebServicesClient.edu framework.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="What"></a>What Does CAAi3dxGetWebServicesClient Do</h3>
+<p>CAAi3dxGetWebServicesClient builds a Java class managing any 3DSpace resource accessible with such HTTP request features:</p>
+<ul>
+<li>Whatever the path (it is an input),</li>
+<li>with the verb "GET",</li>
+<li>without body.</li>
+</ul>
+<p>The class invokes such web services, and displays the backend response (JSON format expected) in the output file.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="How"></a>How to Launch CAAi3dxGetWebServicesClient</h3>
+<p>See <a href="CAAi3DXUcGettingStarted.htm#How">How to Launch CAAi3DX3DSpaceClientBatch</a></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Where"></a>Where to Find the CAAi3dxGetWebServicesClient Code</h3>
+<p>The CAAi3dxGetWebServicesClient use case is made of one  class located in  the 
+CAAi3DXWebServicesClient.edu framework:</p>
+<pre class="code">
+InstallRootFolder\CAADoc\CAAi3DXWebServicesClient.edu\CAAi3DX3DSpaceClientBatch.mj\src\$PATH\CAAi3dxGetWebServicesClient.java
+</pre>
+<p>Where <code>InstallRootFolder</code> is the folder where the API CD-ROM is installed, and $PATH=<code>com\dassault_systemes\caasamples\i3dxsamples</code>. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The step by step describes the <i>Run</i> method. This unique method, except the class constructor, is called by the Java client application. The unique argument of this method is the security context [<a href="#References">3</a>], a batch input information. The constructor has for inputs the resource path [<a href="#References">4</a>] (<code>/resources/...</code>  ) and the <code>CAAi3dxClient</code> class instance created by the main application path [<a href="#References">1</a>].</p>
+<ol>
+	<li><a href="#Step1">Manage the Security Context</a></li>
+	<li><a href="#Step2">Build the HTTP Request URL</a></li>
+	<li><a href="#Step3">Send Request and Catch response</a></li>
+	<li><a href="#Step4">Display Backend Response</a></li>
+	<li><a href="#Step5">Manage Backend Error</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step1"></a>Manage the Security Context</h3>
+<p>The security context, an input data, is passed to the HTTP request. </p>
+<pre class="code">
+_client.getURLLoader().setSecurityContext(SecurityContext);
+</pre>
+<p><code>_client</code> is the <code>CAAi3dxClient</code> class instance kept as data member of the <code>CAAi3dxGetWebServicesClient</code> class. Its <i>getURLLoader</i> method returns 
+the unique <code>CAAURLLoader</code> class instance of the application. This class fires the HTTP request, and receives the backend response.</p>
+<p><b>Notes:</b> 
+<ul>
+<li>If the security context is not requested by the 3DSpace web service, it does not matter, it will be ignored by the backend server. But if you pass a
+ wrong security context, or no security context when the 3DSpace web service requires it, the request will fail. </li>
+ <li>The <code>CAAURLLoader</code> class UTF8 encodes the security context when the value is passed to the HTTP request header. </li>
+</ul> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step2"></a>Build the HTTP Request URL</h3>
+<p>First, if necessary, we append the tenant (platform instance) as query parameter of the resource path. The tenant,
+input of the batch, is kept by the <code>CAAi3dxClient</code> class.</p>
+<pre class="code">
+String path_to_add = _App_Path; 
+if ( _client.getTenant() != null ) {
+    if ( _App_Path.indexOf("?") != -1 ) {
+        path_to_add += "<b>&amp;tenant</b>" + _client.getTenant(); 
+    } else {
+       path_to_add += "<b>?tenant</b>" + _client.getTenant(); 
+    }
+}
+</pre>
+<p>If the resource path already contains at least one query parameter, as usual for a query parameter, the tenant is added with &amp; character, otherwise it is the ? character. </p>
+<p>Then the resource path is concatenated to the service URL.</p>
+<pre class="code">
+String ws_url = _client.get3DSpaceServer() + path_to_add ;
+</pre>
+<p>The <code>CAAi3dxClient</code> class keeps the 3DSpace URL passed as input of the batch. In our implementation <code>_App_Path</code> is an argument of the <code>CAAi3dxGetWebServicesClient</code> class constructor. It could have been the 
+argument of the <i>Run</i> method to consume different 3DSpace web services during the session. </p> 
+<p><b>Note:</b> If the request fails with 404 as status code [<a href="#References">5</a>], check the URL does not contain  two slash chars before resources: https://...<b>//</b>resources/...</p>  
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step3"></a>Send Request and Catch response</h3>
+<pre class="code">
+byte [] response= _client.getURLLoader().loadUrl(ws_url,"GET", null,null);
+</pre>
+<p>The <i>loadUrl</i> method of the <code>CAAURLLoader</code> class fires the HTTP request, receives the backend response as a <code>InputStream</code> class object, and returns it as an array of bytes after a transformation. </p>  
+<p>If the application is free to choose the resource path, the <code>CAAi3dxGetWebServicesClient</code> class imposes 
+the HTTP request verb is "GET", and no body can be passed (the third (the body) and the forth argument (its format) are null). It is not usual for a GET verb to have a body.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step4"></a>Display Backend Response</h3>
+<p>The <i>Run</i> method displays the backend response in the output console. It can be a successful response as a failure one.</p>
+<pre class="code">
+if ( response != null ) {
+    ...		 
+    String response_type= _client.getURLLoader().<b>getContentTypeFromHeader();</b>
+    if(response_type.indexOf("json") != -1) {
+        System.out.println(CAAi3dxClient.<b>getJSON(response)</b>.toString());
+    } else {
+        System.out.println( "unhandle response Content-Type="+response_type) ;				
+    }
+}
+</pre>
+<p><code>response</code> is the stream part of the backend response. If for a successful response a "GET" verb should return a 
+stream, for a failure it can not exist. Therefore the test about the non null response is important. </p>
+<p>Before transforming the array of bytes into a JSON object, the method checks the response <code>Content-Type</code> header. The <i>getContentTypeFromHeader</i> method returns this  header field which has been set by the <i>getURLLoader</i> method when it 
+parses the response header fields. This check is important because even with "application/json" for the "Accept" header field, the backend response can be another format as for the 404 error [<a href="#References">5</a>].</p>
+<p>The <i>getJSON</i> method of the <code>CAAi3dxClient</code> class transforms an array of bytes into a JSON object.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Step5"></a>Manage Backend Error</h3>
+<p>The <i>Run</i> methods throws an error when the HTTP request does not return the successful status code. For 
+a "GET" verb, the convention is to return 200.</p>
+<pre class="code">
+if ( _client.getURLLoader().<b>getResponseCode()</b> != 200 ) {
+    throw new Exception("WS Response Code="+_client.getURLLoader().getResponseCode() );
+}
+</pre>
+<p>The <i>getResponseCode</i> method returns the response status code which has been set by the <i>getURLLoader</i> method when the latter analyses the backend response.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has shown the contents of the <i>Run</i> method, the main method of a Specific client class.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAAi3DXUcGettingStarted.htm">Creating Java Based Client Application</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAi3DXTaJavaClientApp.htm">Presenting Batch Client Application Example</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAAi3DXTa3DSpaceIntro.htm#SC">3DSpace Role and Openness</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="CAAi3DXTa3DSpaceWService.htm#URL-path">About 3DSpace Web Services</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td><a href="CAAi3DXTa3DSpaceWSFailure.htm">3DSpace Web Service HTTP Failures</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td><a href="CAAi3DXTa3DSpaceWService.htm#Request-Hdrs">About 3DSpace Web Services</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [January 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

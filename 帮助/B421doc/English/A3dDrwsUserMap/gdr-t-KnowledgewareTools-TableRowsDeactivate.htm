@@ -1,0 +1,120 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Deactivating Table Rows"/>
+<meta name="abstract" content="You can deactivate/activate (i.e. hide or display) table rows using Knowledgeware tools. This feature enables you to specify whether a row should be active or not, using what is known as an Activity parameter."/>
+<meta name="description" content="You can deactivate/activate (i.e. hide or display) table rows using Knowledgeware tools. This feature enables you to specify whether a row should be active or not, using what is known as an Activity parameter."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-KnowledgewareTools-TableRowsDeactivate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Deactivating Table Rows</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-KnowledgewareTools-TableRowsDeactivate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-tables::activating/deactivating rows"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-rows, activating/deactivating in tables"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Knowledgeware::activating/deactivating table rows"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-deactivating::table rows"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Deactivating Table Rows</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can deactivate/activate 
+						(i.e. hide or display) table rows using Knowledgeware tools. 
+						This feature enables you to specify whether a row should 
+						be active or not, using what is known as an Activity parameter. 
+						</span>
+
+						
+						<p>For more information about using knowledgeware 
+						capabilities, see the <cite><span>Engineering Rules Capture</span> User's 
+						Guide</cite>. </p>
+						</p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    In a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> <a href="gdr3dmaster-t-Annotations-TableCreate.htm#gdr3dmaster-t-Annotations-TableCreate" title="You can create a table to capture the drawing information in a tabular form using the pointer or the dialog box, with or without selecting a reference. Moreover, you can also insert an attribute link in a table cell.">create a table</a> (in our example, we show three bills of material).   </td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+<ol><li class="stepexpand"><p>Select a table.</p></li>
+<li class="stepexpand"><p>From the <span class="wintitle">Tools</span> section of the action bar, click <span class="uicontrol">Formula</span><img src="../IconsNormal/I_Formula.png"/>. <p> The <span class="uicontrol">Formulas:Table.1</span> dialog box 
+			appears. It displays the formula parameters and the Activity parameters 
+			corresponding to the selected table (Table.1).</p></p></li>
+<li class="stepexpand"><p>In the parameters list, select the following 
+			Activity parameter: the <span class="uicontrol">Sheet.1\Front view\DrwDressUp.1\Table.1Text.1\Activity
+			</span>item. </p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Edit name or value of the current parameter</span> 
+			field, change the parameter value to "false".<p> 
+			
+				
+					
+					
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>The table is immediately updated: its title row is hidden.</p></li>
+<li class="stepexpand"><p>Repeat this operation for the next Activity parameter 
+			in the list: the <span class="uicontrol">Sheet.1\Front view\DrwDressUp.1\Table.1\Text.6\Activity
+			</span>item.  
+			 
+			The table is immediately updated: its header row is hidden.<p> 
+			
+				
+					
+					<br/><img src="../GdrUserImages/deactivaterows01.gif"/><br/>
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Using the same method, reset the Activity parameters 
+			you just modified to their original value "true", to display 
+			the table title row and header row again.  
+ <p> 
+			
+				
+					
+					<br/><img src="../GdrUserImages/deactivaterows03.gif"/><br/>
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Now, set the <span class="uicontrol">Sheet.1\Isometric 
+			view\DrwDressUp.1\Table.1\Text.21\Activity
+			</span>item to "false", and click <span class="uicontrol">Apply</span>. The table is updated 
+			and the corresponding row is hidden. 
+ <p> 
+			
+				
+					
+					<br/><img src="../GdrUserImages/deactivaterows04.gif"/><br/>
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span> to  validate 
+			the latest changes. </p></li>
+</ol>
+<p class="result"><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>
+				<ul>
+					<li>The only way you can display deactivated rows is by reactivating 
+					them through Knowledgeware (i.e. by setting their Activity parameters 
+					to "true"). </li>
+
+					<li>You can also deactivate/activate rows using design tables. 
+					For more information about design tables, see the <cite><span>Engineering Rules Capture</span> User's Guide</cite>. You can also see
+					<a href="gdr-t-KnowledgewareTools-AnnotationsDeactivate.htm#gdr-t-KnowledgewareTools-AnnotationsDeactivate" title="You can deactivate/activate annotations using Knowledgeware tools. This feature enables you to specify whether an annotation should be active or not, using what is known as an Activity parameter. Deactivated annotations are not taken into account anymore.">Deactivating Annotations</a> in this user's guide for a scenario 
+					on using design tables to deactivate annotations.</li>
+
+				</ul>
+
+				</td></tr></table>
+
+		
+		
+	
+
+
+
+
+
+
+</p></div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,425 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Deform curves on a set of points</title>
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+.auto-style2 {
+	text-decoration: underline;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Deform curves on a set of points</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how to deform curves on a set of points by using the 
+		CATICGMInterproxCrv operator.&nbsp; The use of this operator is presented in the 
+		CAAGMOperatorsCreateInterproxCrve sample use case:</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAGMOperatorsCreateInterproxCrve Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMOperatorsCreateInterproxCrve Do</a></li>
+				<li><a href="#How">How to Launch 
+				CAAGMOperatorsCreateInterproxCrve</a></li>
+				<li><a href="#Where">Where to Find the 
+				CAAGMOperatorsCreateInterproxCrve Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you use the CATICGMInterproxCrv geometrical 
+operator. This operator has to be used according to the general scheme of 
+geometrical operators, it do not modify the input operands. If need be, you can take a look at &quot;<a href="../CAACgmModel/CAACgmUcGMModelOpeOverw.htm">How to Use 
+Geometric Operators</a>&quot; [<a href="#References">1</a>] for more information.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAGMOperatorsCreateInterproxCrve Use Case</h2>
+<p>CAAGMOperatorsCreateInterproxCrve is a use case of the CAAGMOperatorsInterfaces.edu framework 
+that illustrates GMOperatorsInterfaces framework capabilities.</p>
+<p>This use case requires the CATICGMInterproxCrv_Model.NCGM file as input data. This file is 
+delivered in the FunctionTests/InputData folder of CAAGMOperatorsInterfaces.edu 
+framework.
+</font>
+If you are not already 
+familiar with geometric modeler use cases, go to
+<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Uses Cases</a>.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMOperatorsCreateInterproxCrve Do</h3>
+<p>The use case:</p>
+<ul>
+	<li>Load the CGM container from the CATICGMInterproxCrv_Model.NCGM input file 
+	.</li>
+	<li>Get the config and create the topdata.</li>
+	<li>Prepare data that will be provided to CATICGMInterproxCrv&nbsp; operator<ul>
+		<li>Retrieve the input curve from tag from the loaded CGM container</li>
+		<li>Convert the input profile curves in nurbs </li>
+		<li>Define the set of points where tension and smoothness will be 
+		modified</li>
+		<li>Define the tension and smoothness that will be set to operator</li>
+		<li>Define the type of constraints at each extremities of the deformed 
+		curve</li>
+	</ul>
+	</li>
+	<li>Create the <strong>CATICGMInterproxCrv</strong> Operator with 
+	CATCGMCreateInterproxCrv global function in ADVANCED mode</li>
+	<li>Run the operator to deform the provided input nurbs curves.</ul>
+<table>
+	<caption>Fig. 1: input data requested by CATICGMInterproxCrv operator</caption>
+	<tr>
+		<td>
+		<p class="auto-style1"><img src="images/CATICGMInterproxCrv_img5.jpg"></p>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMOperatorsCreateInterproxCrve</h3>
+<p>To launch CAAGMOperatorsCreateInterproxCrve, you will need to set up the build time environment, 
+then compile CAAGMOperatorsCreateInterproxCrve.m along with its prerequisites, set up the run 
+time environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>If you simply type CAAGMOperatorsCreateInterproxCrve with no argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example:</p>
+<p><code>CAAGMOperatorsCreateInterproxCrve InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\FunctionTests\InputData\CATICGMInterproxCrv_Model.NCGM e:\CATICGMInterproxCrv_Model_Result.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsSpline.m'>
+<h3><a name="Where"></a>Where to Find the CAATopCreateInterproxCrve Code</h3>
+<p>The CAAGMOperatorsCreateInterproxCrve use case is made of a main named 
+CAATopCreateInterproxCrve.cpp located 
+in the CAAGMOperatorsCreateInterproxCrve.m module of the CAAGMOperatorsInterfaces.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAATGMOperatorsInterfaces.edu\CAAGMOperatorsCreateInterproxCrve.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are six steps in CAATopCreateInterproxCrve.cpp:</p>
+<ol>
+	<li><a href="#Creates the Geometry Factory">Get the Geometry Factory</a></li>
+	<li><a href="#Direct Creation">Prepare data that will be provided to 
+	CATICGMInterproxCrv&nbsp; operator</a></li>
+	<li><a href="#Use of  a Basic Topological Operator">Create the 
+	CATICGMInterproxCrv&nbsp;operator</a>&nbsp;
+	</li>
+	<li><a href="#Writes the Model and Closes the Factory">Writing the Model And 
+	Closing the Container</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creates the Geometry Factory"></a>Get the Geometry Factory; 
+software configuration &amp; topdata</h3>
+<p>The geometry factory (CATGeoFactory) creates and manages all the CATICGMObject. 
+This creation is done by the global function <code>::CATCreateCGMContainer</code>. 
+Notice that the factory can be defined by reading a NCGM file that was previously 
+stored. In that case, the global function <code>::CATLoadCGMContainer</code> must 
+be used.</p>
+<pre class="code">
+cout &lt;&lt; &quot;\n\n==============================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 0 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Preliminary operations : \n&quot; &lt;&lt; endl;
+
+CATGeoFactory* piGeomFactory = <strong>CATLoadCGMContainer</strong>(filetoread);
+if (NULL == piGeomFactory) return (1);
+cout &lt;&lt; &quot; - Get The Geo factory (CATICGMInterproxCrv_Model.ncgm in InputData) : OK &quot; &lt;&lt; endl;
+
+// Create the software configuration and CATTopData
+//
+CATSoftwareConfiguration * pConfig = new <strong>CATSoftwareConfiguration</strong>();
+if (NULL == pConfig) return (1);
+
+CATTopData <strong>topdata</strong>(pConfig, NULL);
+cout &lt;&lt; &quot; - Create the software configuration and CATTopData : OK &quot; &lt;&lt; endl;
+
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Direct Creation"></a>Prepare data that will be provided to 
+CATICGMInterproxCrv&nbsp;operator</h3>
+<p>Retrieve the list of curves intended to be deformed and convert them in Nurbs 
+curve:</p>
+<pre class="code">  // tab of Tag of curves
+//
+int TagCurveToDeform[3];
+
+// Tag set of the curves
+//
+TagCurveToDeform[0] = 1544; // curve 1
+TagCurveToDeform[1] = 1633; // curve 2
+
+int i = 0; 
+
+CATLISTP(CATCurve) profiles;
+CATICGMObject * piCGMObjProfile = NULL;
+CATCurve * pCurveInput = NULL;
+
+// Fill the curve list
+//
+
+for (i = 0; i &lt; 2; i++)
+{
+// Retrieve the curve from it's tag
+//
+piCGMObjProfile = piGeomFactory-&gt;FindObjectFromTag(TagCurveToDeform[i]); 
+if (piCGMObjProfile == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+pCurveInput = (CATCurve *)piCGMObjProfile;
+cout &lt;&lt; &quot;\n - Retrieve the curve &quot; &lt;&lt; i &lt;&lt; &quot; from its tag = &quot;&lt;&lt; TagCurveToDeform[i] &lt;&lt; &quot;: OK&quot; &lt;&lt; endl;
+
+<strong>// convert the input curve in nurbs 
+// The CATICGMInterproxCrve operator works only with Curves where type is a Nurbs</strong>
+// 
+cout &lt;&lt; &quot;Create a Nurbs Curve from input curve&quot; &lt;&lt; endl;
+
+//----------------------------------------------------------------------------
+// <strong>Create a Nurbs Curve</strong> from a 
+// CATICGMCrvFittingToNurbsCrv operator
+//----------------------------------------------------------------------------
+
+// Define the maximum deviation between the input and output curve
+//
+double maxdeviation = 0.1;
+CATNurbsCurve * pNurbsCurve = NULL ;
+<strong>CAAGMTopGeomUtilities::ConvertCurveToNurbs</strong>(piGeomFactory, pConfig, <strong>pCurveInput</strong>, <strong>maxdeviation</strong>, <strong>pNurbsCurve</strong>);
+if (pNurbsCurve == NULL)
+{
+cout &lt;&lt; &quot;+++++ ERROR : Create a Nurbs Curve from input curve FAILS&quot; &lt;&lt; endl;
+return 1;
+}
+
+// <strong><span class="auto-style2">Add the Nurbs curve to list of curves that will be treated by operator.</span>
+</strong>//
+<strong>profiles.Append((CATCurve*)pNurbsCurve);</strong>
+}
+</pre>
+<p>Define the set of points where tension and smoothness will be modified by 
+CATICGMInterproxCrv operator</p>
+<pre class="code"> int NbPoints =11;
+CATMathSetOfPointsND * iPoints = new CATMathSetOfPointsND(3, NbPoints);
+
+double Point0[3] = { 0.,0.,0. };
+(*iPoints).AddPoint(Point0);
+
+double Point1[3] = { 23.362,-5.702,0.951 };
+(*iPoints).AddPoint(Point1);
+
+...
+
+double Point5c[3] = { -22.138,58.743,52.533 };
+(*iPoints).AddPoint(Point5c);
+
+double Point6[3] = { -29.819,49.198,50.186 };
+(*iPoints).AddPoint(Point6);
+
+double Point7[3] = { -37.,36.,44. };
+(*iPoints).AddPoint(Point7);
+
+cout &lt;&lt; &quot;Define the set of points where tension and smoothness will be modified : OK&quot; &lt;&lt; endl;
+</pre>
+	<p>Define :</p>
+	<ul>
+		<li>&nbsp;the tension parameter to strengthens the shape </li>
+		<li>smoothness to regularizes the curvature along the curve</li>
+		<li>Tolerance should always be equal to the factory resolution</li>
+		<li>the type of constraints at each extremities of the deformed curve</li>
+	</ul>
+<pre class="code"> 
+// To keep to 0.
+//
+CATMathSetOfVectors* <strong>iVectors</strong>= NULL;
+
+// The tension parameter strengthens the shape
+//
+double <strong>iTension</strong> = 3.;
+cout &lt;&lt; &quot;Tension parameter : &quot;&lt;&lt; iTension &lt;&lt; endl;
+
+// The smoothness allow to regularizes the curvature along the curve
+//
+double <strong>iSmoothness</strong> = 0.4;
+cout &lt;&lt; &quot;Curvature parameter : &quot; &lt;&lt; iSmoothness &lt;&lt; endl;
+
+// Tolerance should always be equal to the factory resolution
+// 
+double <strong>iTolapp</strong> = piGeomFactory-&gt;<strong>GetResolution</strong>();
+cout &lt;&lt; &quot;Tolerance : &quot; &lt;&lt; iTolapp &lt;&lt; endl;
+
+// Define the type of constraints at each extremities of the deformed curve
+// 0,1,2 for a G0 G1 G2 continuity with the input curve is required
+//
+int <strong>iImposition</strong>[2] ;
+iImposition[0] =2;
+iImposition[1] =2;
+cout &lt;&lt; &quot;Type of constraints at each extremity\n\t\t\t extremity 0 : &quot; &lt;&lt; iImposition[0] &lt;&lt; endl;
+cout &lt;&lt; &quot;\t\t\t extremity 1 : &quot; &lt;&lt; iImposition[1] &lt;&lt; endl;
+
+// The mode of use of the operator
+//
+CATSkillValue <strong>iMode</strong> = ADVANCED;
+</pre>
+	<p>Below the output traces generated by previous code:</p>
+	<p><img src="images/CATICGMInterproxCrv_img9.jpg"></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Use of  a Basic Topological Operator"></a>Create the 
+CATICGMInterproxCrv operator&nbsp; </h3>
+<p>To operate in this mode, the sample proceeds with the following steps that:</p>
+<ol>
+	<li>Create the operator with the appropriate global function 
+	(CATCGMCreateInterproxCrv). </li>
+	<li>Execute the operation: <code>Run</code> method..</li>
+</ol>
+	<p><img src="images/CATICGMInterproxCrv_imgB.jpg"></p>
+<pre class="code">// Creates the operator CATICGMInterproxCrv that deforms the set of input curves on a set of points
+// the set of input curves on a set of points
+//
+CATICGMInterproxCrv * pCGMInterproxCrvOper = <strong>CATCGMCreateInterproxCrv</strong>(piGeomFactory,
+pConfig,
+profiles,
+iPoints,
+iVectors,
+iTension,
+iSmoothness,
+iTolapp,
+iImposition,
+iMode);
+
+if (pCGMInterproxCrvOper == NULL)
+{
+cout &lt;&lt; &quot;Invalid Result : Get The result NULL&quot; &lt;&lt; endl;
+return 1;
+}
+cout &lt;&lt; &quot;Create the CATICGMInterproxCrv Operator : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pCGMInterproxCrvOper-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;</pre>
+<table>
+	<caption>Fig. 2: in green the output deformed curves</caption>
+	<tr>
+		<td>
+		<p class="auto-style1"><img src="images/CATICGMInterproxCrv_imgC.jpg"></p>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Writes the Model and Closes the Factory"></a>Writing the Model and 
+Closing the Container</h3>
+<p>To save the model in a file, the <code>::CATSaveCGMContainer</code> global function 
+is used. Notice that in the use case, the save is conditioned by an input parameter 
+representing the file inside which the model must be saved.</p>
+<p>The use case ends with the closure of the geometry factory, done by the <code>
+::CATCloseCGMContainer</code> global function.</p>
+<pre class="code"> if(1==toStore)
+ {
+#ifdef _WINDOWS_SOURCE
+   ofstream filetowrite(pfileName, ios::binary ) ;
+#else
+   ofstream filetowrite(pfileName,ios::out,filebuf::openprot) ;
+#endif
+
+   <strong>::CATSaveCGMContainer</strong>(piGeomFactory,filetowrite);
+   filetowrite.close();
+ }	
+
+ //
+ // Closes the container
+ //
+ <strong>::CATCloseCGMContainer</strong>(piGeomFactory);</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<ul>
+	<li>The tension or the curvature of a set of curves can be locally modified 
+	on a set of points by giving to curves more flattening or smoothness. </li>
+	<li>CATICGMInterproxCrv is dedicated for this and enables&nbsp; to deform curves 
+	by modifying their tension or smoothness on a set of points </li>
+	<li>Run() method of CATICGMInterproxCrv directly deforms the input curves. 
+	You can run again the operator with different parameters, allowing you to 
+	iterate on the deformation </li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<table class="reference">
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMModelOpeOverw.htm">How to Use 
+Geometric Operators</a></td>
+	</tr>
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Apr 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

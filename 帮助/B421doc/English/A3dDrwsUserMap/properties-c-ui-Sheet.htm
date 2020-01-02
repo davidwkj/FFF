@@ -1,0 +1,234 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Sheet Properties"/>
+<meta name="abstract" content="Sheet lets you modify sheet properties."/>
+<meta name="description" content="Sheet lets you modify sheet properties."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="properties-c-ui-Sheet"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Sheet Properties</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="properties-c-ui-Sheet">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::Sheet"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Sheet Properties</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span><span class="wintitle"> Sheet</span> lets you modify sheet properties.</span>
+<p>
+      Select the <span class="uicontrol"><span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">Sheet</span></span> tab to access properties.
+    </p>
+  
+    
+    
+  </p>
+<ul><li><a href="#properties-c-ui-Sheet__cs-FormatProperties" title="">Format</a></li><li><a href="#properties-c-ui-Sheet__cs-PrintArea" title="">Print Area</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div><dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Name
+          </dt>
+
+          <dd>
+            Defines a meaningful name for the sheet.
+              
+            
+          </dd>
+
+        
+        
+          <dt class="dlterm">
+            Scale
+          </dt>
+
+          <dd>
+            <p>Specifies the scale applicable to all views 
+		in the sheet. <ul>
+					<li>This implies that the scale of all existing views is multiplied 
+					by that of the sheet. For example, if existing views already 
+					have a scale of 1/10, and if you change the sheet scale to 1/10, 
+					then existing views will now have a scale of 1/100. </li>
+
+					<li>The scale does not determine the position of the views or 
+					any other <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">object</span> contained in the sheet. <p>When the grid is displayed, 
+					it does not determine the position of the view. 
+					</p></li>
+
+				</ul>
+</p>
+          <p>The following sheet scale values must be considered: </p></dd>
+<dd class="ddexpand"> 
+  <ul> 
+	 <li>Normal range: Scale must be greater than 1.10<sup>-5</sup> and lower
+		than 1.104 
+	 </li>
+ 
+	 <li>Large range: Scale must be greater than 1.10<sup>-7</sup> and lower
+		than 1.102 
+	 </li>
+ 
+  </ul>
+ 
+  <p>Note:
+		If you specify a scale outside this scale range, an error appears
+	 displaying the scale limits for the current representation. 
+  </p>
+
+</dd>
+
+        
+      </dl>
+<div class="section" id="properties-c-ui-Sheet__cs-FormatProperties"><h2 class="sectiontitle">Format</h2>
+      
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+                        Format
+          </dt>
+
+          <dd>Contains the list of format names defined by the administrator in the 
+		<span class="uicontrol">Standards Editor</span>. <p>For more details, see
+		<a href="standards-r-ad-SheetFormats.htm#standards-r-ad-SheetFormats" title="Sheet format definitions are located in the Standard Definition dialog box, in the drafting category &gt; Sheet Formats node, available via MePreferencesStandards, according to specified normalized standards such as ISO, ANSI-ASME, etc.">Sheet Format Definition</a>.</p><p>You can also 
+				create your own user-defined formats, defined locally for a given 
+				<span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> or layout. To create your own format, type a name for the format 
+				in the <span class="uicontrol">Format</span> field. Then set values for the <span class="uicontrol">Width</span> and the<span class="uicontrol">Height</span> fields. The name of the newly created format must be different from 
+				those in the user-defined lists and in the standard list of formats. If not, a warning message is displayed to inform that the format 
+				name is invalid.</p></dd>
+
+        
+        
+          <dt class="dlterm">
+            Display
+          </dt>
+
+          <dd>
+            Displays the frame representing the format of 
+		the sheet.
+          </dd>
+
+        
+      
+          <dt class="dlterm">
+            Width
+          </dt>
+
+          <dd>
+            
+          Specifies the width of the selected format. <span>This field is available for 
+		user-defined formats only.</span></dd>
+
+        
+          <dt class="dlterm">
+            Height
+          </dt>
+
+          <dd>
+            
+          Specifies the height of the selected format. <span>This field is available for 
+		user-defined formats only.</span> </dd>
+
+        
+          <dt class="dlterm">Portrait
+            
+          </dt>
+
+          <dd>Applies the portrait orientation. <p><span>This 
+		option is available only if the selected format allows you to modify the 
+		orientation type, see
+		<a href="standards-r-ad-SheetFormats.htm" title="Sheet format definitions are located in the Standard Definition dialog box, in the drafting category &gt; Sheet Formats node, available via MePreferencesStandards, according to specified normalized standards such as ISO, ANSI-ASME, etc.">Sheet Format Definition</a>.</span></p> </dd>
+
+        
+          <dt class="dlterm">
+            Landscape
+          </dt>
+
+          <dd>
+            
+          <p>Applies the landscape orientation.</p><p><span>This 
+		option is available only if the selected format allows you to modify the 
+		orientation type, see
+		<a href="standards-r-ad-SheetFormats.htm" title="Sheet format definitions are located in the Standard Definition dialog box, in the drafting category &gt; Sheet Formats node, available via MePreferencesStandards, according to specified normalized standards such as ISO, ANSI-ASME, etc.">Sheet Format Definition</a>.</span></p></dd>
+
+        </dl>
+
+      
+    </div>
+<div class="section" id="properties-c-ui-Sheet__cs-PrintArea"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Print Area</h2>
+      
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Activate
+          </dt>
+
+          <dd>Specifies a specific area of the sheet 
+		that should be printed. <p>Doing this activates the associated fields so that 
+		you can define the print area. 
+            
+          </p><p>In addition, you must select <span class="uicontrol">Document area</span> option as the
+		<span class="uicontrol">Print area</span> in the <span class="wintitle">Print</span> dialog box so that the print area 
+		is printed.</p><p>If you do not select the <span class="uicontrol">Document area</span> option, 
+		the whole document is printed.</p></dd>
+
+        
+        
+          <dt class="dlterm">
+            X
+          </dt>
+
+          <dd>
+            <p>Specifies the X coordinate of the lower left-hand corner of the print area.</p>
+          </dd>
+
+        
+      
+          <dt class="dlterm">
+            Y
+          </dt>
+
+          <dd>
+            
+          <p>Specifies the Y coordinate of the lower left-hand corner of the print area.</p></dd>
+
+        
+          <dt class="dlterm">
+            Width
+          </dt>
+
+          <dd>
+            <p>Specifies the width of the print area.</p>
+          </dd>
+
+        
+          <dt class="dlterm">
+            Height
+          </dt>
+
+          <dd>
+            
+          <p>Specifies the height of the print area.</p></dd>
+
+        <dt class="dlterm">(apply a format)</dt>
+<dd><p>Defines a print format for a particular sheet size and its standard. </p></dd>
+</dl>
+
+      
+    </div>
+</div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

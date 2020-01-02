@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	      
+	<ITEM name="6WTagger Integration - Principles" href="CAA6WTaggerIntegration.htm"  icon="CAAIcons/images/I_Understanding.gif" topictype="Ta" />
+	<ITEM name="6WTagger Integration - APIs" href="CAA6WTaggerAPI.htm"  icon="CAAIcons/images/I_Understanding.gif" topictype="Ta" />
+	<ITEM name="6WTag Edition" href="CAA6WTaggerEdition.htm"  icon="CAAIcons/images/I_Understanding.gif" topictype="Ta" />
+    <ITEM name="Implementing 6WTagger Filtering" href="CAA6WTaggerUcFiltering.htm"  icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+	<ITEM name="Implementing Service Side Filtering" href="CAA6WTaggerUcServerSideFiltering.htm"  icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />	
+    <ITEM name="Using Multi Proxies" href="CAA6WTaggerUcMultiProxy.htm"  icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+    <ITEM name="Editing 6WTags" href="CAA6WTaggerUcEdition.htm"  icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />	
+	<ITEM name="Tagging Data Read from File" href="CAA6WTaggerUcAppliBuilding.htm"  icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />	
+	<ITEM name="Tagging Data Read from File (Server Filtering)" href="CAA6WTaggerUcAppliBuildingServer.htm"  icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />	
+	<IMPORT href="CAATagNavigator/Pro3DEXP_6WTaggerToc.xml" />
+</Root>

@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Third Party App Definition</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="table1">
+	<tr>
+		<td class="DocHeader3"><a name="Top"></a>
+		<table class="DocHeader">
+			<tr>
+				<td class="DocHeader1" colspan="2">
+				<h1>Third Party App Definition</h1>
+				</td>
+			</tr>
+			<tr>
+				<td class="DocHeader4" colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="DocHeader3">
+				<table class="DocHeaderIntro">
+					<tr>
+						<td class="Intro1">
+						
+						<p>This page describes the response format associated with a third party app (TPA). This format is used 
+						  in the <a>create  TPA</a>, <a>list TPA</a>, <a>edit TPA</a> and <a>get TPA</a> API response. </p>
+						<div id="toc"></div>
+						</td>
+					</tr>
+				</table>
+				</td>
+				<td class="DocHeader2">
+				
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="JSON"></a>JSON Format</h2>
+<table class="fill">
+	<tr>
+		<th>Key</th>
+		<th>Description</th>
+		<th>Value</th>		 
+	</tr>
+	<tr><td>type</td> <td>A constant value: "custom/applications"</td> <td>String</td>  </tr>
+	<tr><td>id</td> <td>The application identifier. A value automatically computed.</td> <td>String</td>  </tr>
+	<tr><td>attributes</td> <td>Information about the third party app</td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>type</td> <td>web|widget|native</td> <td>String</td></tr>
+		<tr><td>name</td> <td>The name of the application. This name is visible in the Compass. </td> <td>String</td></tr>
+		<tr><td>tooltip</td> <td>The information when passing over the App icon</td> <td>String</td> </tr>
+		<tr><td>description</td> <td>A free text to describe the application. Not visible interactively.</td> <td>String</td> </tr>
+		<tr><td>icon</td> <td>The URL of an image. </td> <td>String. </td> </tr>
+		<tr><td>config</td> <td>Empty data for native and web app. For a widget it is the widget config file URL.</td> <td>String</td> </tr>
+		<tr><td>launchinfos</td> <td>An URL for a web or widget app. An identifier for a native app.</td> <td>String</td> </tr>
+		<tr><td>exe</td> <td>The custom application name which can be set for a native app.</td> <td>String. </td> </tr>
+		<tr><td>error</td> <td>The custom error message which can be set for a native app.</td> <td>String. </td> </tr>
+		<tr><td>quadrant</td> <td>east|north|west|south</td> <td>String</td> </tr> 
+		</table>
+		</td>  </tr>
+	<tr><td>relationships</td> <td> .</td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>platform</td> <td>Information related to the platform where the third party app is created. </td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>data</td> <td> </td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>type</td> <td>A constant value: "environments"</td> <td>String</td></tr>
+		<tr><td>id</td> <td>identifier of the platform instance</td> <td>String</td></tr>
+		<tr><td>attributes</td> <td>Information about the third party app for the platform.</td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>public</td> <td><ul>
+		<li>false (only the granted people for the app could used it) </li>
+		<li>true (all people granted for the platform could use it)</li></ul></td> <td>boolean</td></tr>
+	 
+		</table>
+		</td> </tr>
+		 
+		</table>
+		</td> </tr>
+		 
+		</table>
+		</td> </tr>
+		 
+		</table>
+		</td>  </tr>
+	
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="Example"></a>Example</h2>
+<p>Extract of a third party app web service response: </p>
+<pre class="code">
+{"type":"custom/applications",
+ "id":"MAP-DLWRSZSTD",
+ "attributes":{
+    "type":"widget",
+    "name":"CAA My Custom App",
+    "tooltip":"The application displaying my 3DPart.",
+    "description":"This application has been deployed for RX. Only available for the granted people.",
+    "icon":"http://www.example.com/icon.png",
+    "config":"",
+    "launchinfos":"http://www.example.com/my_custom_app.htm",
+    "quadrant":"east"
+ },
+ "relationships":{
+    "platform":{
+        "data":{
+            "type":"environments",
+            "id":"OnPremise",
+            "attributes":{
+                "public":false
+            }
+        }
+    }
+ }
+}
+</pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+		</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

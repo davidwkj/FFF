@@ -1,0 +1,151 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="reference"/>
+<meta name="DC.Title" content="Line Type Definition"/>
+<meta name="abstract" content="Line types can be applied to, and drive the representation of, almost all elements in a drawing, such as lines, curves, dimension lines, etc. (Line types cannot be applied to fonts and points). Line type definitions are located in the Standard Definition dialog box, in the drafting category &gt; Line Types node, available via Me &gt; Preferences &gt; Standards."/>
+<meta name="description" content="Line types can be applied to, and drive the representation of, almost all elements in a drawing, such as lines, curves, dimension lines, etc. (Line types cannot be applied to fonts and points). Line type definitions are located in the Standard Definition dialog box, in the drafting category &gt; Line Types node, available via Me &gt; Preferences &gt; Standards."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="standards-r-ad-LineTypes"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Line Type Definition</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="standards-r-ad-LineTypes">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::linetypes parameters"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-linetypes, standard parameters"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Line Type Definition
+				
+				</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Line types can be applied to, and drive the representation 
+						of, almost all elements in a drawing, such as lines, curves, 
+						dimension lines, etc. (Line types cannot be applied to fonts 
+						and points). Line type definitions are located in 
+			the <span class="uicontrol">Standard Definition</span> dialog box, in the <span class="uicontrol">drafting</span> category <span class="uicontrol">&gt; Line Types</span> node, available via <span><span class="menucascade"><span class="uicontrol">Me</span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>. </span>
+
+						
+						
+						
+							
+							
+			
+						
+					
+				</p>
+<ul><li><a href="#r-DefiningLineTypes" id="toc_rg" title="Line types can either be mono-dimensional, i.e. defined by a sequence of non-continuous segments, or bi-dimensional, i.e. defined by a polyline. Once defined, a line type can be applied to any element which supports it, either via Properties, or using the Graphic Properties in the Object Properties panel.">Defining Line Types</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+<div class="nested1" id="r-DefiningLineTypes"><h2 class="topictitle2">Defining Line Types</h2>
+
+<div><p><span>Line types 
+		can either be mono-dimensional, i.e. defined by a sequence of non-continuous 
+		segments, or bi-dimensional, i.e. defined by a polyline. Once defined, a 
+		line type can be applied to any element which supports it, either via
+		<span class="uicontrol">Properties</span>, or using the <span class="uicontrol">Graphic Properties </span> in the <span><span class="wintitle">Object Properties</span></span> panel.
+		</span>
+<p>There are 63 line type definitions in the Standards editor. You cannot 
+		add additional instances of line type definitions. Out of these 63 definitions,<ul>
+			<li>Line type definitions ranging from 1 to 8 are pre-defined with different 
+			parameters for each and cannot be configured.</li>
+
+			<li>Line type definitions ranging from 9 to 19 are pre-defined with 
+			different parameters for each and can be configured.</li>
+
+			<li>Line type definitions ranging from 20 to 63 are not pre-defined 
+			and can be configured. </li>
+
+		</ul>
+</p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> From V5 
+				R17, it is possible to assign bi-dimensional line types on all mono-parametric 
+				geometries (line, circle, spline). However, the line type 8 is an 
+				exception: it is taken into account on geometrical lines and circles. 
+				Note that you can select and apply line type 8 to any other element, 
+				however your change will not be taken into account.</td></tr></table>
+<p>You can configure the definitions of line types ranging from 9 to 63. 
+		To do this, proceed as follows: </p></p>
+<div class="section" id="r-DefiningLineTypes__rs-DefiningLineTypes">
+		
+		
+		
+		
+		
+		<ol>
+			<li>
+			<p>Click the <span class="uicontrol">Line Types </span>node of the <span class="uicontrol">Standard 
+			Definition</span> editor. </p>
+			
+			</li>
+
+			<li>
+			<p>In the right-hand dialog box, double-click the line 
+			type you want to define. </p><p>The line type editor appears for you to set 
+			the line type properties.</p>
+			</li>
+
+			<li>
+			<p>For each line type definition, you can also specify 
+			whether or not a given line type should be available in the line types 
+			list for users to choose from. </p><p>Double-click the number of the line type 
+			you want to make unavailable. Perform the same operation to make an 
+			unavailable line type available.</p>
+			<p>Note:
+		 Users 
+					will only be able to assign "available" line type definitions 
+					when creating or editing elements. However, existing element 
+					properties in <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawings</span> will not be affected: if an existing 
+					element is assigned a line type which is flagged as "unavailable" 
+					in the Standards editor, then this line type will be used for 
+					this element but it will not be available in the line types 
+					list, so that users cannot apply it to other elements.</p>
+
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>
+					<ul>
+						<li>In releases before V5 R11, line types used to be defined 
+						in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3DEXPERIENCE Platform Common Preferences</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Display</span> &gt; <span class="uicontrol">Line Types</span></span> for the <span><span>Drawings</span></span> <span>app</span> as well as for other <span>apps</span>. 
+						For <span><span>Drawings</span></span>, line types are now defined in standards. Therefore, 
+						line types in drawings do not depend on the options defined 
+						in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span>, but on what is defined in 
+						the standards.</li>
+
+						<li>When opening a drawing created with releases before 
+						V5 R11 (i.e. a drawing which does not contain its own line 
+						type parameters), the line type options defined in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span> will be used. You can upgrade a drawing 
+						<span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> to this new standard format at any time, 
+						by performing the following operations in <span class="uicontrol">Page Layout</span>:<ul><li>Changing the standard to another standard (ISO &gt; ANSI-ASME 
+						for example)</li>
+<li>Updating the current standard to the new format.</li>
+</ul>
+ 
+						</li>
+
+					</ul>
+
+					
+			</td></tr></table>
+
+			</li>
+
+		</ol>
+
+		
+	
+
+
+
+
+
+</div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

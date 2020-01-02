@@ -1,0 +1,127 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>3DSpace Web Service HTTP Failures</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>3DSpace Web Service HTTP Failures</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article lists the common HTTP failures when invoking a 3DSpace Web Service.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Proxy"></a>Proxy</h2>
+<p>This article, as well each API web pages, gives the HTTP failure code as returned by the API. But all these errors
+can be transformed by a proxy installed on your server, or on the client side. There is an example with the
+<a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaWAFDataOnFailure.htm');return false;">3DDashboard proxy</a> for web services called from a widget. </p>   
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Failures"></a>Failure Cases</h2>
+<p>The 3DSpace web services can fail for many reasons. The errors, grouped together in tables, have been sorted by logical code level. It starts with the generic HTTP errors, then the generic 3DSpace Web services, and finally the specific cases. Each table
+gives for an error its HTTP backend response. As usual the response is made of of three elements: the status code, the  message, and the potential content of the body. </p> 
+
+<h3><a name="Generic"></a>Generic HTTP Failure Cases</h3>
+<p>The following table lists the most frequent errors. </p> 
+<table class="fill">
+  <tr><th>Status Code</th><th>Message</th><th>Body Content</th><th>Reason</th></tr>
+   <tr><td rowspan="2">404</td><td rowspan="2">Not Found</td><td>an html text.</td><td>
+	   <p>Invalid URL;  check the path: </p><ul>
+    <li>Its case.  </li> <li>There is no double "/" char except the one after the protocol.</li>  </ul> <p>The error is raised by the REST WS infrastructure</p></td></tr>
+   <tr><td>Depends on the WS</td><td>The URL does not match an existing resource. Usually 
+	   the identifier of the resource is invalid. The error is raised by the applicative web service. See the WS API documentation.</td></tr>
+    <tr><td>406</td><td>Not Acceptable</td><td>No</td><td>The request "Accept" header field is incompatible with the API response format(s).</td></tr>
+   <tr><td>415</td><td>Unsupported Media Type</td><td>No</td><td>The request "Content-Type" header  field is not the one expected by the API.</td></tr>
+  
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Generic3DSpace"></a>Generic 3DSpace Failure Cases</h3>
+<p>The following table lists all the errors specific to 3DSpace web services. </p>
+<table class="fill">
+  <tr><th>Status Code</th><th>Message</th><th>Body Content</th><th>Reason</th></tr>
+   <tr><td>401</td><td>Unauthorized</td><td><p> A <a href="#3DSpaceJSONERR">3DSpace Infra Error</a> body content:</p>
+   <p><code>{"error": {"code": "INFXXX", "message": "..."}} </code>where: </p>
+  <ul>
+     <li>INF100  if unknown or expired  session</li>
+	 <li>INF101  if impossible to apply given security context</li>
+	 <li>INF102  if the security context is missing in the request</li>
+	 <li>INF103  if the security context value is empty</li>
+   </ul>
+  </td><td>no authenticated session with 3DPassport, or an invalid/missing security context.</td></tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Specific3DSpace"></a>Specific 3DSpace Failure Cases</h3>
+<p>The main specific to 3DSpace web services are:</p>
+<table class="fill">
+  <tr><th>Status Code</th><th>Message</th><th>Body Content</th><th>Reason</th></tr>
+   <tr><td>400</td><td>Bad Request</td><td><a href="#3DSpaceJSONERR">3DSpace Infra Error</a></td><td>The error comes from the client side: examples:
+   a mandatory input parameter is missing, an input parameter value is wrong, ...</td></tr>
+    <tr><td>500</td><td>Internal Server Error</td><td>Usually no content.</td><td>There is a server side error.</td></tr>
+</table>
+<p><a name="3DSpaceJSONERR"></a><b>3DSpace Infra Error</b>:</p>
+<p>The content type of the response is JSON: </p>
+<pre class="code">
+{"error": {
+    "code": "XXXNumber", 
+    "message": "..."
+   }
+}
+</pre>
+<p>Where:</p>
+<ul>
+<li><p><code>code</code>: a string identifying the error.</p>
+<ul>
+<li>XXX is a 3-letter uppercase prefix identifying the category.</li>
+<li>Number is a number </li>
+</ul></li>
+<li><code>message</code>: a free text message</li>
+</ul> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>2</strong> [April 2016]</td>
+		<td>Document completed</td>
+	</tr>
+		<tr>
+		<td>Version: <strong>1</strong> [Feb 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

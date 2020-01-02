@@ -1,0 +1,395 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Callout Geometry Modification"/>
+<meta name="abstract" content="You can modify callout geometry or re-create callouts."/>
+<meta name="description" content="You can modify callout geometry or re-create callouts."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewModification-CalloutGeometry.htm#gdr-t-ViewModification-CalloutGeometry"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-ViewModification-CalloutGeometry"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Callout Geometry Modification</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-ViewModification-CalloutGeometry">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+    About Callout Geometry Modification
+  </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>You can modify callout geometry or re-create callouts.   </span>
+
+    <p>This topic provides information that may be useful when modifying <span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">callout</span> geometry. The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#c-RecreationofCallouts" id="toc_rg" title="This sub-topic provides information about the re-creation of callouts.">Re-creation of Callouts</a></li><li><a href="#c-RedCallouts" id="toc_rg" title="This sub-topic provides information about red callouts.">Red Callouts
+    </a></li><li><a href="#c-SizeofCalloutsandViewScale" id="toc_rg" title="This sub-topic provides information about the size of callouts related to the view scale.">Size of Callouts and View Scale</a></li><li><a href="#c-CalloutModification" id="toc_rg" title="This sub-topic provides information about direct modification of the callout geometry.">Types of Modifications on Different Callouts</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-t-ViewModification-CalloutGeometry.htm#gdr-t-ViewModification-CalloutGeometry" title="You can modify the geometrical characteristics of a callout used to create detail views, section views, and auxiliary views.">Modifying a Callout Geometry</a></td></tr></table></td></tr></table>
+
+  
+
+  
+  
+  <div/>
+  
+<div class="nested1" id="c-RecreationofCallouts"><h2 class="topictitle2">Re-creation of Callouts</h2>
+
+<div><p><span>This sub-topic provides information about the re-creation of callouts.</span>
+</p>
+<p>The
+        following types of callouts can be
+re-created:
+      </p>
+      <ul>
+        <li> 
+
+Section callouts
+        </li>
+
+        <li>Detail callouts
+        </li>
+<li>Projection callouts</li>
+
+      </ul>
+</div>
+<div class="nested2" id="c-Conditions"><h3 class="topictitle3">Conditions</h3>
+
+<div><p><span>          Callouts may be re-created in one of the following conditions:</span>
+</p>
+<p><ul><li>The callout has been manually deleted.</li>
+<li>The view containing the callout has been deleted.</li>
+<li>The view was cut and pasted to another <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>.</li>
+<li>The view containing the callout has been modified and the callout became
+invalid ("red" callout).</li>
+</ul>
+</p>
+      <p>
+          Furthermore:<ul><li>The projection plane of each view must be
+parallel in case of detail callouts
+and perpendicular in case of projection and section callouts.</li>
+<li>The 3D origin of the reference view and the view in which the callout is to be created must be equal.</li>
+<li>The orientation (first direction, second direction, and normal) of the view projection plane must be
+equal.</li>
+<li>The views must be linked to the same product/part.</li>
+<li>The view's <span class="glossterm" id="section-profile" onmouseout="hideTerm()" onmouseover="showTerm('section-profile.xml')">section profile</span> must be equal in case of detail callout
+re-creation.</li>
+<li>Multiple callouts cannot be recreated from a single defining view.<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Callouts can be re-created in an <span class="glossterm" id="aligned-section-view" onmouseout="hideTerm()" onmouseover="showTerm('aligned-section-view.xml')">aligned section view</span> even if some
+inconsistency may appear in the drawing.
+From a deleted view, the new callout is re-created with the same
+characteristics as the previous view
+.</td></tr></table>
+</li>
+</ul>
+</p></div>
+<div class="nested3" id="c-CalloutTypes"><h4 class="topictitle4">Callout Types
+      </h4>
+
+<div><p><span>The recreated callout type (section, detail or projection) is given
+by the resulting view definition. It is not defined or specified by
+you.</span>
+</p>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d95424e114">If the resulting view is...
+</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d95424e116">and projection planes of resulting and new defining views are...
+</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d95424e118">then the recreated callout is...
+</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d95424e114 ">an <span class="glossterm" id="auxiliary-view" onmouseout="hideTerm()" onmouseover="showTerm('auxiliary-view.xml')">Auxiliary view</span><p><br/><img src="../GdrUserImages/recreatecallout03.gif"/><br/></p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d95424e116 ">perpendicular
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d95424e118 ">a projection callout
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d95424e114 ">a <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">Section view</span><p><br/><img src="../GdrUserImages/recreatecallout04.gif"/><br/></p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d95424e116 ">perpendicular
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d95424e118 ">a section callout
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d95424e114 ">a <span class="glossterm" id="detail-view" onmouseout="hideTerm()" onmouseover="showTerm('detail-view.xml')">Detail view</span><p><br/><img src="../GdrUserImages/recreatecallout05.gif"/><br/></p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d95424e116 ">parallel</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d95424e118 ">a detail callout
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d95424e114 ">a Detailed section view (*)<p><br/><img src="../GdrUserImages/recreatecallout06.gif"/><br/></p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d95424e116 ">parallel</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d95424e118 ">a detail callout
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(*) In this case the defining and resulting view section profiles
+have to be equal.
+</p></div>
+</div>
+</div>
+</div>
+<div class="nested1" id="c-RedCallouts"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Red Callouts
+    </h2>
+
+<p><span>This sub-topic provides information about red callouts.
+    </span>
+</p>
+<div class="nested2" id="c-Modificationofcallouts"><h3 class="topictitle3">Modification of Callouts</h3>
+
+<div><p><span>          If you modify an auxiliary or a section callout in a way that the
+plane of the resulting view is not parallel to the
+previous plane view, or if you reverse the profile:</span>
+</p>
+<p><ul><li>All the callouts of the resulting view are displayed in red.</li>
+<li>You cannot edit them.</li>
+<li>The change is not propagated to the detail view.</li>
+</ul>
+</p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>If you resize a section callout constrained by the supporting lines
+of the profile:
+<ul><li>Any detail callout does not turn red.</li>
+<li>It can be edited.</li>
+</ul>
+</td></tr></table>
+</div>
+</div>
+<div class="nested2" id="c-Translationofsectioncallouts"><h3 class="topictitle3">Translation of Section Callouts</h3>
+
+<div><p><span>If you translate a section callout, the plane of the resulting
+section view is modified. It remains parallel to its previous
+orientation, yet there is a an inconsistency between the section
+view and the detail view defined on the previous plane view. As a
+consequence:</span>
+</p>
+<p><ul><li>The detail callout becomes red.</li>
+<li>Other callouts remain unchanged.</li>
+<li>All callouts can be edited.</li>
+</ul>
+</p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>If you create a detail view on the section view and translate the
+section callout without any visible impact on the resulting section
+view, the detail callout becomes red anyway and is editable.
+</td></tr></table>
+</div>
+</div>
+</div>
+<div class="nested1" id="c-SizeofCalloutsandViewScale"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Size of Callouts and View Scale</h2>
+
+<p><span>This sub-topic provides information about the size of callouts related to the view scale.
+     </span>
+<p>You can specify that the size of callout elements should not be
+dependent on the view scale. To do this, right-click the callout, go to <span class="uicontrol">Properties</span>. In the <span class="uicontrol">Callout</span> tab, select <span class="uicontrol">Size not dependent
+on view scale</span> check box.</p></p>
+</div>
+<div class="nested1" id="c-CalloutModification"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Types of Modifications on Different Callouts</h2>
+
+<div><p><span>This sub-topic provides information about direct modification of the callout geometry.</span>
+</p>
+<div class="section" id="c-CalloutModification__cs-CalloutProfileModification"><h3 class="sectiontitle"> modification</h3> 
+   
+  <p>You can modify a 
+	  in the following ways: 
+  
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"> 
+		  <tr> 
+			 <th class="cellrowborder" valign="top" width="NaN" id="d95424e255">Manipulation in one direction according to the
+				callout
+			 </th>
+ 
+			 <th class="cellrowborder" valign="top" width="NaN" id="d95424e258">Manipulation in two directions according to the
+				callout
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr> 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d95424e255 "> 
+				<p>For aligned section callout profiles: 
+				<ul> 
+				  <li>You can modify the length of the callout segment. 
+				  </li>
+ 
+				  <li>You cannot move the middle segment. 
+				  </li>
+ 
+				</ul>
+ 
+				<div class="fignone"> 
+				  <br/><img src="../GdrUserImages/editprofile01.gif"/><br/> 
+				</div>
+ 
+				</p> 
+			 </td>
+ 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d95424e258 "> 
+				<p>For aligned section callout profiles: 
+				<ul> 
+				  <li>You can modify the length of the callout segment. 
+				  </li>
+ 
+				  <li>You can swivel the first and the last segment. 
+				  </li>
+ 
+				  <li>You cannot move the middle segments or change their
+					 locations. 
+				  </li>
+ 
+				</ul>
+ 
+				<div class="fignone"> 
+				  <br/><img src="../GdrUserImages/editprofile04.gif"/><br/> 
+				</div>
+ 
+				</p> 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d95424e255 "> 
+				<p>For offset section callout profiles: 
+				<ul> 
+				  <li>You can modify the length of the callout segment. 
+				  </li>
+ 
+				  <li>You can move the middle segment of the callout with three or
+					 more segments sideways. 
+				  </li>
+ 
+				  <li>The perpendicularity constraint is maintained 
+				  </li>
+ 
+				</ul>
+ 
+				<div class="fignone"> 
+				  <br/><img src="../GdrUserImages/recreatecallout02.gif"/><br/> 
+				</div>
+ 
+				</p> 
+			 </td>
+ 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d95424e258 "> 
+				<p>For offset section callout profiles: 
+				<ul> 
+				  <li>You can freely move the first and the last segment. 
+				  </li>
+ 
+				  <li>You can move the middle segment of the callout with three or
+					 more segments sideways. 
+				  </li>
+ 
+				  <li>The perpendicularity constraint is maintained 
+				  </li>
+ 
+				</ul>
+ 
+				<div class="fignone"> 
+				  <br/><img src="../GdrUserImages/editprofile03.gif"/><br/> 
+				</div>
+ 
+				</p> 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+  
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"> 
+		  <tr> 
+			 <th class="cellrowborder" valign="top" width="NaN" id="d95424e371">Replace Profile 
+			 </th>
+ 
+			 <th class="cellrowborder" valign="top" width="NaN" id="d95424e374">Reverse View Direction 
+			 </th>
+ 
+		  </tr>
+</thead>
+ 
+		<tbody> 
+		  <tr> 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d95424e371 "> 
+				<div class="fignone"> 
+				  <br/><img src="../GdrUserImages/callout04.gif"/><br/> 
+				</div>
+ 
+			 </td>
+ 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d95424e374 "> 
+				<div class="fignone"> 
+				  <br/><img src="../GdrUserImages/editprofile02.gif"/><br/> 
+				</div>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr> 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d95424e371 "> 
+				<p>In this type of manipulation, you can recreate an existing
+				  profile. The 
+				   view interactively changes once
+				  the modification is done. 
+				</p> 
+			 </td>
+ 
+			 <td class="cellrowborder" valign="top" width="NaN" headers="d95424e374 "> 
+				<p>In this type of manipulation, you can invert the direction of
+				  the profile. The 
+				   view interactively changes once
+				  the modification is done. 
+				</p> 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+   
+  </p> 
+</div>
+<div class="section" id="c-CalloutModification__cs-DetailCallout"><h3 class="sectiontitle">Detail callout profile modification</h3><p>You can modify a circular or a polygonal detail callout profile.</p><p>In a circular detail callout profile, you can perform the following edits:<ul><li>Change the radius and location of the center using the central handle</li>
+<li>Change only the radius using the manipulator on the circle</li>
+<li>Change only the location of the circle using the rectangular frame</li>
+<li>Replace the existing profile using <span class="uicontrol">Replace Profile</span> <img src="../Icons22/I_D3M_ReplaceCalloutSection.png"/>.</li>
+</ul>
+<div class="fignone"><span class="figcap">Circular detail callout profile (allowed movement indicated with arrows)</span><br/><img src="../GdrUserImages/callout03.gif"/><br/></div>
+ </p><p>In a polygonal detail callout profile, you can perform the following edits:<ul><li>Change the location of the vertices using the individual yellow handles</li>
+<li>Change the profile area spread using the square handles in white</li>
+<li>Change the location of the  whole polygon using the rectangular frame</li>
+<li>Replace the existing profile using <span class="uicontrol">Replace Profile</span> <img src="../Icons22/I_D3M_ReplaceCalloutSection.png"/>.</li>
+</ul>
+<div class="fignone"><span class="figcap">Polygonal detail callout profile (allowed movement indicated with arrows)</span><br/><img src="../GdrUserImages/recreatecallout01.gif"/><br/></div>
+ </p><p> If you edit the callout profile that intersects with a broken zone, only one side of the definition view is represented. A warning message appears in a dialog box to indicate this. After the edition, if the profile is in broken zone, another warning message appears near the <span>top bar</span> indicating the same. </p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>During or after the modification, you can use the undo command to retain the original callout profile.</td></tr></table>
+</div>
+<div class="section" id="c-CalloutModification__cs-AuxiliaryCallout"><h3 class="sectiontitle">Auxiliary callout profile modification</h3><p>You can perform the following manipulations to modify an auxiliary callout profile:<ul><li>Point manipulation</li>
+<li>Free manipulation</li>
+<li>Replace profile</li>
+<li>Reverse view direction</li>
+</ul>
+</p><p>The above manipulations function the same way as in a section callout profile modification.</p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li>You cannot edit an auxiliary callout profile that intersects a broken area.</li>
+<li>During edition, a callout is restricted to enter a broken area. If you do enter the broken area, a warning message appears near the <span>top bar</span> indicating the same. Also, the handles are restricted to move into the broken area. </li>
+</ul>
+<p>During or after the modification, you can use the undo command to retain the original callout profile.</p></td></tr></table>
+</div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

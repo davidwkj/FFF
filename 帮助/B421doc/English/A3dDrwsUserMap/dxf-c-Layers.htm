@@ -1,0 +1,169 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Layers"/>
+<meta name="abstract" content="Below is some information about the import and export of layers."/>
+<meta name="description" content="Below is some information about the import and export of layers."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dxf-c-Layers"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Layers</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dxf-c-Layers">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWG::layer"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Layers</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Below is some information about the import and export of layers.</span>
+
+    <p>
+      The following topics are discussed:
+    </p>
+    
+  </p>
+<ul><li><a href="#c-AtImport" id="toc_rg" title="When using the Import From File... command with 2D Layout for 3D Design, layers can be mapped with 2D Layout for 3D Design sheets.">At Import</a></li><li><a href="#c-AtExport" id="toc_rg" title="With the semantic export mode, you can choose to export the layer number or the layer name.">At Export</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  
+
+  <div class="nested1" id="c-AtImport">
+    <h2 class="topictitle2">At Import</h2>
+
+    
+    <div><p><span>When using the <span class="uicontrol"> Import From File...</span> command with <span>2D Layout for 3D Design</span>, layers can be mapped with <span>2D Layout for 3D Design</span> sheets.</span>
+<p>This is done with the <span class="uicontrol">Map DXF Layers with 2D Layout for 3D Design Sheets</span> option found in the <a href="../PreferencesMap/gdrpref-c-DXF2D.htm#gdrpref-c-DXF2D" title="The DXF 2D options let you customize the import and export of DXF 2D files for Converter for IGES.">DXF 2D</a> <span>tab</span> of the <span><span class="wintitle">Preferences</span></span>.</p>
+    	
+    <p>Note:
+		<span class="uicontrol">Map DXF Layers with 2D Layout for 3D Design Sheets</span> is not compatible with <span class="uicontrol">Convert viewports content as Details</span>.</p>
+</p>
+ 
+  <p> When this option is selected, geometries and
+	 annotations are mapped with 
+	 <span>2D Layout for 3D Design</span>
+	 sheets, from the number of the layer the geometries and annotations belong to. 
+	 <p>Note:
+		 
+		<ul> 
+		  <li>Clipping views are not taken into account . 
+		  </li>
+ 
+		  <li>An invisible layer in the drawing is imported
+			 as a layout sheet with its visualization status set to 
+			 <span class="uicontrol">Hide in 3D</span>.
+			 
+		  </li>
+ 
+		</ul>
+ 
+	 </p>
+ 
+  </p> 
+  <p>Example: 
+	 <br/><img src="../FormatExchangeUserImages/DXF_Layer01NLS.png"/><br/> 
+  <ul> 
+	 <li>Entities in layer1 are in blue. 
+	 </li>
+ 
+	 <li>Entities in layer2 are in red. 
+	 </li>
+ 
+	 <li>Entities in layer3 are in green. 
+	 </li>
+ 
+  </ul>
+ 
+  </p> 
+  <p> In this example, the Layout is imported with 4 layout
+	 sheets. The views of the first layout sheet have a display of the corresponding
+	 view on the different layout sheets. 
+	 <br/><img src="../FormatExchangeUserImages/DXF_Layer02NLS.png"/><br/> 
+  <ul> 
+	 <li>The name of the other layout sheets are:
+		"initialSheetName" + "." + "layerIdInFile" 
+	 </li>
+ 
+	 <li>Each imported sheet is converted into a layout
+		sheet containing as many views as there are viewports in the original sheet.
+		Those views are created with entities belonging to layer none ("0" ). If the
+		layer none contains no entity, the view is created empty. 
+	 </li>
+ 
+	 <li>For each layer used in the original layout, an
+		additional Layout sheet is created, containing the same views. Imported
+		geometries and annotations assigned to this layer are converted into 
+		<span><span class="tm-3D">3D</span>EXPERIENCE</span>
+		elements in those views. 
+	 </li>
+ 
+	 <li>For each view, a display filter is created. This
+		same filter is applied to each view of all the layout sheets (corresponding to
+		all layers, including the layer none). 
+	 </li>
+ 
+	 <li>With a filter on the first layout sheet,
+		visualization is equivalent to the original file. 
+		<br/><img src="../FormatExchangeUserImages/DXF_Layer03NLS.png"/><br/> 
+	 </li>
+ 
+	 <li>For a view, the name of this filter is:
+		"MySheet.Name_of_View". 
+	 </li>
+ 
+	 <li>The background visualization of all views in sheet
+		"Mysheet" is set to Standard. The background visualization of all the views in
+		other sheets corresponding to other layers is set to Low-intensified. 
+	 </li>
+ 
+	 <li>If the data are imported with the option 
+		<span class="uicontrol">Keep Model
+		  Space</span>, the Model Space is imported like another independent layout
+		with one Main View. A filter Model is defined and give a display on each Main
+		View of the different layouts. All entities in Model.1 are in layer1, All
+		entities in Model.2 are in layer2, … 
+	 </li>
+ 
+	 <li> Entities in paper space have a layer number. They
+		are created in the corresponding layout. 
+	 </li>
+ 
+	 <li> Layers on Details are not concerned by this
+		dispatch of sheet. 
+	 </li>
+ 
+  </ul>
+ 
+  </p> 
+</div>
+
+
+    
+
+    
+  </div>
+
+
+  <div class="nested1" id="c-AtExport">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">At Export</h2>
+
+    
+    <div><p><span>With the semantic export mode,  you can choose to export the layer number or the layer name.</span>
+
+      
+    </p>
+
+      <p> See <a href="dxf-c-ExportMode.htm#dxf-c-ExportMode" title="Two export modes are available.">About Export Mode</a> for more information.</p></div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

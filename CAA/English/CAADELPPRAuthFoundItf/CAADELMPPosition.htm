@@ -1,0 +1,143 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="all" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Checking the existence of Operation Positions</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Checking the existence of Operation Positions</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAADELMPPosition use case. 
+		It explains how to check the existence of Part or Resource Position on an Operation using <em>DELIAMPPosition</em>  
+		in Equipment Allocation App.
+		</p>
+		<div id="toc">
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case?</h2>
+<p>This use case is intended to help you check if Part Position or Resource Position has been defined on an operation before you go about doing other things with them in Equipment Allocation App.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAADELMPPosition Use Case</h2>
+<p>CAADELMPPosition is a use case of the CAADELPPRAuthFoundItf.edu 
+framework that illustrates Operation Position checking capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAADELMPPosition Do?</h3>
+<p>In this use case user can:</p>
+<ul>
+	<li>Verify if Position for Manufactured Items has been defined on an operation.</li>
+    <li>Verify if Position for Resources has been defined on an operation.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAADELMPPosition?</h3>
+<p>To use CAADELMPPosition, you will need to:</p>
+<ul>
+	<li>Set up the <strong>build time</strong> environment, then compile the CAADELMPPosition.m 
+		module along with its prerequisites [<a href="#References">1</a>].</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAADELMPPosition Code?</h3>
+<p>The CAADELMPPosition use case code is located in the CAADELMPPosition.m 
+module of the CAADELPPRAuthFoundItf.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAADELPPRAuthFoundItf.edu\CAADELMPPosition.m</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>This implementation for this use case is located in the file CAADELMPPosition.m\src\CAADELMPPosition.cpp. 
+Its purpose is to allow user to check if position for Manufactured Items or Resources is defined on an operation.
+</p>
+
+<p>There are two logical steps in CAADELMPPosition:</p>
+<ol>
+	<li><a href="#Step1">Checking position for Manufactured Items</a></li>
+    <li><a href="#Step1">Checking position for Resources</a></li>
+</ol>
+<p>We now comment each of those sections by looking at the code.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Use case 1-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Checking position for Manufactured Items</h3>
+<p>On the selected Operaion call:</p>
+<pre class="code">
+    DELIAMPPosition_var hOperationMPPos(hChildOp);
+    if (NULL_var != hOperationMPPos)
+    {
+        // Part Position Check
+        if (TRUE == <strong>hOperationMPPos->IsPartPositionDefined()</strong>)
+    }
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Use case 2-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Checking position for Resources</h3>
+<p>On the selected Operaion call:</p>
+    <pre class="code">
+    DELIAMPPosition_var hOperationMPPos(hChildOp);
+    if (NULL_var != hOperationMPPos)
+    {
+        // Resource Position Check
+        if (TRUE == <strong>hOperationMPPos->IsResourcePositionDefined()</strong>)
+    }
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Oct 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

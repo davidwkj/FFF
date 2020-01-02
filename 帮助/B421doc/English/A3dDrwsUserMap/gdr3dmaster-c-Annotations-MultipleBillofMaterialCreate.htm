@@ -1,0 +1,80 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Creating Multiple Bills of Material Tables"/>
+<meta name="abstract" content="This topic explains the concepts that you need to understand before you begin creating multiple bills of materials (BOM) tables."/>
+<meta name="description" content="This topic explains the concepts that you need to understand before you begin creating multiple bills of materials (BOM) tables."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Annotations-MultipleBillofMaterialCreate.htm#gdr3dmaster-t-Annotations-MultipleBillofMaterialCreate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Annotations-MultipleBillofMaterialCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Creating Multiple Bills of Material Tables</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Annotations-MultipleBillofMaterialCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Creating Multiple Bills of Material Tables</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic explains the concepts that you need to understand before you begin creating multiple bills of materials (BOM) tables.  </span>
+
+    
+  </p>
+
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Annotations-MultipleBillofMaterialCreate.htm#gdr3dmaster-t-Annotations-MultipleBillofMaterialCreate" title="You can create a multiple bill of materials (BOM) table using the Multiple BOM command. The bill of materials that are created are associative and also consistent with the product structure.">Working with Multiple Bills of Materials</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <p>
+      You can create one or multiple top level and/or summarized BOM tables  for the root product and/or its subassemblies. 
+    </p><p>The <span class="wintitle">Multiple Bills of Material</span> dialog box consists of the following: <ul><li><span class="uicontrol">Root Context</span>: Lets you define the root product context for which the bills of materials are generated. If the drawing consists of one or several views pointing to the same root product, the <span class="uicontrol">Root Context</span> is automatically set to the same root product.  However, you  can still change it by selecting another root amongst the products already opened in the session.<p>If the <span class="uicontrol">Root Context</span> is not automatically set, you need to select the required root product from the <span>tree</span> or select a particular view pointing to that particular root product. <p>Note:
+		At any time during the command execution, you can change the root product as per your requirement.</p>
+</p></li>
+<li>In other cases, you need to select the required root product which is then available in the <span class="uicontrol">Root Context</span> box. </li>
+<li><span class="uicontrol">Configuration</span>: Lets you choose the configuration of the bills of material being created. Available options are:  <ul><li><span class="uicontrol">All Level +Summary</span>: When this option is selected, the <span class="uicontrol">Selection List</span> consists of: <ul><li>The root product as the first item in the list with <span class="uicontrol">T</span> and <span class="uicontrol">S</span> (that is Top Level and Summarized) attributes selected. </li>
+<li>The remaining items in the list are all the subassemblies (except the leaf level sub-products) with only  <span class="uicontrol">T</span> attribute selected. </li>
+</ul>
+</li>
+<li><span class="uicontrol">User Selection</span>: By default this option is selected. With this option, the <span class="uicontrol">Selection List</span> shows the single item of the root product context. You can however, click <span class="uicontrol">Add</span> to add other subassemblies in the list. </li>
+</ul>
+<p><p>Note:
+		If at any point of time you change the configuration selection from <span class="uicontrol">User Selection</span>  to <span class="uicontrol">All Level + Summary</span>, then all the current items are removed from the selection list and this list is  pre-filled with <span class="uicontrol">Root Context</span> and all the subassemblies (except the leaf level sub-products). Similarly if you change the selection from <span class="uicontrol">All Level + Summary</span> to <span class="uicontrol">User Selection</span>, then all the current items  are removed from the selection list except the first <span class="uicontrol">Root Context</span>.</p>
+</p></li>
+<li><span class="uicontrol">BOM Styles</span>: Available options are: <ul><li><span class="uicontrol">Top Level BOM</span>:  Select the style that is used for all the <span class="uicontrol">Top Level BOM</span> tables to be created. <p>Note:
+		<span class="uicontrol">Top Level BOM</span> tables are created only for the selected items in the list which have the Top Level (<span class="uicontrol">T</span>) attribute enabled in the <span class="uicontrol">Selection List</span>.</p>
+ </li>
+<li><span class="uicontrol">Summarized BOM</span>:   Select the style that is used for all the <span class="uicontrol">Summarized BOM</span> tables that are to be created. <p>Note:
+		<span class="uicontrol">Summarized BOM</span> tables are created only for the selected items in the list which have the Summarized (<span class="uicontrol">S</span>) attribute enabled in the <span class="uicontrol">Selection List</span>.</p>
+ </li>
+</ul>
+ 
+</li>
+<li><span class="uicontrol">Selection List</span>:  Displays the selected root product and the subassemblies that are pre-filled or added separately. With this you can create the corresponding BOM tables for each and every item present in this list.  The list also displays the BOM attributes, that is <span class="uicontrol">T</span> (for Top Level BOM) and <span class="uicontrol">S</span> (Summarized BOM) activated or deactivated for the corresponding item in the list. By default, whenever you add a new item (product) in the list, both the attributes are activated. <p>If required, you can click <img src="../Gdr3DMasterImages/I_close.png"/> to remove any unwanted item from the list.  </p> <p>	 <p>Note:
+		If you remove the root product item  from the <span class="uicontrol">Selection List</span>, the <span class="uicontrol">Root Context</span> is not automatically changed.</p>
+</p><p>You can sort all the items present in the <span class="uicontrol">Selection List</span> based on the following available sorting  options:  <ul><li>Product name </li>
+<li>Top Level BOM</li>
+<li>Summarized BOM</li>
+</ul>
+ </p><p>You can click on any of these arrows to sort the list accordingly. </p>   </li>
+<li><span class="uicontrol">Add</span>: Lets you add more items (subassemblies/products) in the <span class="uicontrol">Selection List</span> so as to generate their respective BOM tables. As soon as you click <span class="uicontrol">Add</span>, the drawing document is tiled vertically along with the root product and the configuration option automatically changes to <span class="uicontrol">User Selection</span>. <p>	When you select a product or a subassembly, it gets added in the selection list with the attributes <span class="uicontrol">T</span> and <span class="uicontrol">S</span> activated.  </p><p><p>Notes:
+		<ul><li>You cannot select the same product or subassembly multiple times to be added in the selection list.</li>
+<li>The last used configuration options along with selected styles are saved as a preference and used as a default for the next usage. </li>
+</ul>
+</p>
+ </p></li>
+</ul>
+</p>
+  </div>
+
+
+  <div/>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,110 @@
+## logout:
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://euw1-prj420full-iam.3dx-staging.3ds.com:443/logout
+
+##SERVER RESPONSE [200]  
+##--------------------
+
+Has been redirected. Last Redirect URL : https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/login
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200
+Date: Thu, 08 Feb 2018 13:13:26 GMT
+Server: nginx/0.5.15
+Cache-Control: max-age=0
+Cache-Control: no-store
+Cache-Control: no-cache
+Cache-Control: must-revalidate
+X-Content-Type-Options: nosniff
+X-DS-IAM-VERSION: 2
+X-XSS-Protection: 1; mode=block
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Content-Length: 4702
+Vary: Accept-Encoding
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,X-DS-IAM-CSRFTOKEN
+Access-Control-Max-Age: 600
+Access-Control-Expose-Headers: X-DS-IAM-CSRFTOKEN
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+#RESPONSE BODY
+#--------------------
+
+
+
+
+
+
+    
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3DPassport - Login</title>
+    <link rel="shortcut icon" href="/3DPassport/resources-180205120530/img/3dexperience/favicon.ico" />
+    <link rel="apple-touch-icon" href="/3DPassport/resources-180205120530/img/3dexperience/touchicon.png" />
+    <link rel="stylesheet" href="/3DPassport/resources-180205120530/js/libs/UWA2/assets/css/inline.css" />
+    <link rel="stylesheet" href="/3DPassport/resources-180205120530/css/main-ifwe.css"/>
+    
+    <script src="/3DPassport/resources-180205120530/js/libs/modernizr.js" async="async"></script>
+   
+        
+        <script src="/3DPassport/resources-180205120530/js/libs/AmdLoader/AmdLoader.js"></script>                
+        <script src="/3DPassport/resources-180205120530/js/libs/UIKIT/UIKIT.js"></script>
+        <script src="/3DPassport/resources-180205120530/js/libs/W3DXComponents/W3DXComponents.js"></script>
+        <script src="/3DPassport/resources-180205120530/js/libs/WebAppsFoundations/WebAppsFoundations.js"></script>
+        <script src="/3DPassport/resources-180205120530/js/libs/CefCommunication/CefCommunication.js"></script>
+        
+    
+    
+</head>
+<body>
+<script id="configData" type="application/json">{"authorizeRememberMe":true,"allowRemoteLogin":false,"passwordPolicy":{"allowPasswordRenewalPolicy":false,"allowPasswordWithUsername":false,"allowPasswordWithFirstname":false,"allowPasswordWithLastname":false,"minimumLength":8,"minimumDigits":1,"minimumLetters":1,"minimumLowerCase":1,"minimumUpperCase":1,"ageLimit":-1,"ageMin":-1,"remindUserBefore":-1,"allowPasswordReuse":false,"historyLength":5,"regexp":[],"specialCharactersAllowed":["!","#","=","@","[","\\","]","^","_","{","|","}","$","%","\u0026","(",")","*","+","-"],"minimumSpecial":0,"remindUserBeforeMilliseconds":-86400000},"browserLocale":"en_US","lt":"LT-3507-uk21KwUpcfqtVShgDJgjDgf2Pcyypf","compassImgUrl":"https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/resources/img/3dexperience/3DEXLoginCompassTxt.png","countries":{},"i18nConfig":{"defaultLanguage":"en","supportedLanguages":["de","ja","en","fr","zh"]},"serviceName":null,"url":"https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/login","availableSN":{},"needsCaptcha":false,"cookieDomain":".3dx-staging.3ds.com","loginTicketUrl":"https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/login?action=get_auth_params","liveConnectUrl":"https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/login/remote","forgotPasswordUrl":"https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/forgot-my-password","registerUrl":"https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/loginregister","apiUrlCountries":"https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/api/public/countries","notificationMsgs":[],"createAllowed":true,"errorMsgs":[],"i18nApiUrl":"https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/api/public/i18n/local","getRegisterFormUrl":"https://euw1-prj420full-iam.3dx-staging.3ds.com:443/3DPassport/api/public/registerform"}</script>
+<script>
+    var UWA;
+    requirejs.config({
+        baseUrl: "/3DPassport/resources-180205120530/js/",
+        paths: {
+        	 qwery: "libs/qwery-v1.0.1-203-g6c2e088",                    
+             "dsp/config": "empty:",
+             "UWA": "libs/UWA2/js",
+             "DS/UIKIT": "libs/UIKIT",
+             "DS/W3DXComponents": "libs/W3DXComponents",
+             "DS/WebAppsFoundations": "libs/WebAppsFoundations",
+             "DS/VENHammer": "libs/VENHammer/1.0.1/hammer",
+             "DS/CefCommunication" : "libs/CefCommunication"
+        }
+    });
+    define("dsp/config/login", [], function () {
+        var configData = JSON.parse(document.getElementById("configData").innerHTML);
+        configData.csrfTokenValue = "";
+        configData.csrfTokenName = "";
+        configData.pageId = "login";
+        configData.resourceUrl = "/3DPassport/resources-180205120530";
+        return configData;
+    });
+    require(["dsp/DSP"], function () {
+        require(["dsp/config/login", "dsp/utils/loadCustomCss"], function(configData, loadCustomCss){
+            loadCustomCss(configData);
+        });
+        require(["login"]);
+    });
+</script>
+<script>
+    if (typeof widget !== 'undefined') {
+        widget.setBody('This is not supposed to happen ! Please check that you are not trying to run an authenticated service as a widget');
+    }
+</script>
+</body>
+</html>
+
+
+## End Of logout .

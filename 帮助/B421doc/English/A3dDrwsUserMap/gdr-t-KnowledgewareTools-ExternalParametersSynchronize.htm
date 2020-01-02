@@ -1,0 +1,109 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Synchronizing External Parameters"/>
+<meta name="abstract" content="You can synchronize external parameters between a drawing and another representation."/>
+<meta name="description" content="You can synchronize external parameters between a drawing and another representation."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-KnowledgewareTools-ExternalParametersSynchronize"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Synchronizing External Parameters</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-KnowledgewareTools-ExternalParametersSynchronize">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-external parameters, synchronizing"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-synchronizing external parameters"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+				
+				Synchronizing External Parameters</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can synchronize 
+						external parameters between a drawing and another representation.</span>
+
+						
+						</p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    <ul> <li>Open a <span class="glossterm" id="shape-3D" onmouseout="hideTerm()" onmouseover="showTerm('shape-3D.xml')">3D shape</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.</li>
+ <li>Create a length parameter on this representation, with a value of 10mm.  This parameter should be displayed in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>.  For further information on creating parameters for a 3D shape, see <cite>Knowledge Basics User's Guide: Creating and Working with Parameters</cite>.</li>
+  </ul>
+   </td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+<ol><li class="stepexpand"><p>Go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3DEXPERIENCE Platform Common Preferences</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; General</span> &gt; <span class="uicontrol">3D Shape 
+			Infrastructure.</span></span> section, select <span class="uicontrol"> Keep link 
+			with selected objects</span> check box, then click <span class="uicontrol">OK</span>.<p>  
+			For further information on the <span class="uicontrol">General</span> tab, see
+			<cite><span>Engineering Rules Capture</span> User's Guide</cite>.  
+			First of all, you are going to create new parameter in your drawing 
+			based on the 3D shape representation parameter.</p></p></li>
+<li class="stepexpand"><p>From the <span class="wintitle">Tools</span> section of the action bar, click <span class="uicontrol">Formula</span>
+			<img src="../IconsNormal/I_Formula.png"/>.</p></li>
+<li class="stepexpand"><p>Select <span class="uicontrol">Length</span> in the box.</p></li>
+<li class="stepexpand"><p> In the
+			<span class="uicontrol">Formulas</span> dialog box, click <span class="uicontrol">New parameter of type</span>.</p></li>
+<li class="stepexpand"><p>Position the pointer in the value box and click
+			<span class="uicontrol">Add Formula</span>.</p></li>
+<li class="stepexpand"><p>In the 3D shape tree, select the Length 
+			parameter. 
+			`External Parameters\Length.1` is displayed in the <span class="uicontrol">Formula Editor</span> dialog 
+			box.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span> to close the <span class="uicontrol">Formula Editor</span> dialog 
+			box. 
+			In the <span class="uicontrol">Formulas</span> dialog box, you can see the parameter's value is 10mm.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span> to create the parameter. 
+			<p> The <span class="uicontrol">Length</span> parameter is displayed in the drawing tree as an external parameter.
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>To propagate changes between the 3D shape and the drawing, 
+			double-click the <span class="uicontrol">Length.1</span> parameter in the 3D shape tree.</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Edit Parameter</span> dialog box, change the value from <kbd class="userinput">10</kbd> to <kbd class="userinput">20mm</kbd>.<p> 
+			
+				
+					
+					
+				
+			
+			<p>Back in the drawing tree, you can see 
+			a red symbol displayed on the parameter. It means it needs an update.</p>
+			
+				
+					
+					<br/><img border="1" src="../GdrUserImages/ExtParaNoUpdateNLS.png"/><br/>
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Length</span> parameter.</p></li>
+<li class="stepexpand"><p>From the <span class="wintitle">Tools</span> section of the <span>action bar</span>, click <span class="uicontrol">Links &amp; Relations</span>.</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Edit Links &amp; Relations</span> dialog box, click <span class="uicontrol">Synchronize link</span>. <p> <p>The parameter is updated and a green symbol 
+			is now displayed on the parameter showing it has been synchronized.</p>
+			
+				
+					
+					
+				
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  
+					You cannot use <span class="uicontrol">Update</span> to refresh the parameters. 
+					You have to synchronize them individually.  
+					 
+					</td></tr></table>
+<p>Note:
+		  If you create a 
+					text on the drawing that references the external parameters 
+					using the <span class="uicontrol">Attribute link</span> option, updating the 
+					drawing will synchronize the parameters.</p>
+</p></p></li>
+</ol>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

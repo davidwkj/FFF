@@ -1,0 +1,100 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Moving Features Between Components"/>
+<meta name="abstract" content="In assembly models, you can move features between component products within the assembly hierarchy."/>
+<meta name="description" content="In assembly models, you can move features between component products within the assembly hierarchy."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="a3ddesi-t-moving-features-between-components"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Moving Features Between Components</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="a3ddesi-t-moving-features-between-components">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Moving Features Between Components</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>In assembly models, you can move features between component products within the assembly hierarchy.</span>
+
+    
+  </p>
+
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+  
+  <div>
+    
+    <ol>
+      <li class="stepexpand"><p>
+        
+          In the design 
+        <span>tree</span> of an assembly model, drag a feature from one product to another.
+        
+      <p>You can drag a feature:<ul><li>From the top-level product to a component product</li>
+<li>From a component product to the top-level product</li>
+<li>From one component product to another</li>
+</ul>
+</p><p> The <span class="wintitle">Move Feature</span> dialog box opens. The selection boxes are populated based on the feature you drag and where you drop it.</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Click in the selection boxes to edit the selections. 
+<table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="choicetableborder">
+<thead><tr><th valign="bottom" align="left" id="d45056e42-option">Option</th>
+<th valign="bottom" align="left" id="d45056e42-desc">Description</th></tr></thead>
+<tbody>
+<tr><td valign="top" headers="d45056e42-option" id="d45056e50"><strong><br/><img src="../A3dDesiUserImages/a3ddesiUiMakeComponentFeatureSelection.png"/><br/></strong></td>
+	<td valign="top" headers="d45056e42-desc d45056e50"><span class="uicontrol">Feature Selections</span>. Specifies the features to move. By default, the feature you dragged is listed. You can add other features to the list by selecting them in the <span>work area</span> or design  <span>tree</span>.</td>
+</tr>
+<tr><td valign="top" headers="d45056e42-option" id="d45056e64"><strong><br/><img src="../A3dDesiUserImages/a3ddesiUiComponentizeRelatedFeatures.png"/><br/></strong></td>
+	<td valign="top" headers="d45056e42-desc d45056e64"><span class="uicontrol">Related Features</span>. Lists other features related to the selected features. All listed features are included in the move.<p>You can remove a related feature from the move by hovering over it and clicking <img src="../A3dDesiUserImages/a3ddesiUiClearSelectionFromList.png"/>. This action might result in dangling features, which you need to repair manually.</p></td>
+</tr>
+<tr><td valign="top" headers="d45056e42-option" id="d45056e76"><strong><br/><img src="../A3dDesiUserImages/a3ddesiUiDialogueIconReorgDestination.png"/><br/></strong></td>
+	<td valign="top" headers="d45056e42-desc d45056e76"><span class="uicontrol">Feature Destination</span>. Specifies the product to which the selected features are being moved. By default, the product where you dropped the selected feature is listed.<p>You can change the destination by selecting a different product in the <span>work area</span> or design  <span>tree</span>.</p></td>
+</tr>
+</tbody></table>
+</p></li>
+
+      <li class="stepexpand"><p><span class="run-in">Optional: </span>
+        Set options.
+        
+        
+<table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="choicetableborder">
+<thead><tr><th valign="bottom" align="left" id="d45056e97-option">Option</th>
+<th valign="bottom" align="left" id="d45056e97-desc">Description</th></tr></thead>
+<tbody>
+<tr><td valign="top" headers="d45056e97-option" id="d45056e105"><strong><br/><img src="../A3dDesiUserImages/a3ddesiUiComponentizeMakeCopy.png"/><br/></strong></td>
+	<td valign="top" headers="d45056e97-desc d45056e105"><span class="uicontrol">Copy Shared References</span>. Makes copies of parent and child references that are shared with other features.<p>For example, if two features are extruded from the same sketch and you move one of the features to another product, then the sketch is moved to the other product. If you want a copy of the sketch to remain in the original product, select <span class="uicontrol">Copy Shared References</span> <img src="../A3dDesiUserImages/a3ddesiUiComponentizeMakeCopy.png"/>.</p></td>
+</tr>
+<tr><td valign="top" headers="d45056e97-option" id="d45056e120"><strong><br/><img src="../A3dDesiUserImages/a3ddesiUiIsolateExternalReferenceHeader.png"/><br/></strong></td>
+	<td valign="top" headers="d45056e97-desc d45056e120"><span class="uicontrol">Break Links</span>. Breaks links between the selected geometry and its external references.</td>
+</tr>
+</tbody></table>
+
+      </p></li>
+
+      
+      
+      
+      <li class="stepexpand"><p>
+        
+          Click <img src="../A3dDesiUserImages/a3ddesiUiHUDIconOK.png"/>.
+        
+        
+      </p></li>
+
+    </ol>
+
+    
+  </div>
+
+
+  
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

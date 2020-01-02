@@ -1,0 +1,149 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About the Graphical Properties of Generated Geometry"/>
+<meta name="abstract" content="You can manage graphical properties of generated geometry and dress-up."/>
+<meta name="description" content="You can manage graphical properties of generated geometry and dress-up."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewModification-GraphPropsOfGenElemtsChange.htm#gdr-t-ViewModification-GraphPropsOfGenElemtsChange"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About the Graphical Properties of Generated Geometry</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-graphical properties"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-geometry:: graphical properties of"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+    About the Graphical Properties of Generated Geometry</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>You can manage graphical properties of generated geometry and dress-up. </span>
+<p>This topic provides background information about the graphical properties of generated geometry.
+    
+    </p>
+    <p>
+      The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-GeneralMechanism" id="toc_rg" title="">General Mechanism</a></li><li><a href="#gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-PersistencyatUpdate" id="toc_rg" title="">Persistency at Update
+    </a></li><li><a href="#gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-ParticularCases" id="toc_rg" title="">Particular Cases</a></li><li><a href="#gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-CaseofGeometricalElementsonCylindricalFaces" id="toc_rg" title="">Case of Geometrical Elements on Cylindrical Faces</a></li><li><a href="#gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-CaseofGeometricalElementsonIntersectingPlanes" id="toc_rg" title="">Case of Geometrical Elements on Intersecting Planes</a></li><li><a href="#gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-HandlingLayers" id="toc_rg" title="">Handling Layers</a></li><li><a href="#gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-Miscellaneous" id="toc_rg" title="">Miscellaneous</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-t-ViewModification-GraphPropsOfGenElemtsChange.htm#gdr-t-ViewModification-GraphPropsOfGenElemtsChange" title="You can change the graphical properties of generated geometry.">Changing the Graphical Properties of Generated Geometry</a></td></tr></table></td></tr></table>
+
+  
+
+  
+  <div>
+    
+  <div class="section" id="gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-GeneralMechanism"><h2 class="sectiontitle">General Mechanism</h2><p>This sub-topic introduces the general mechanism that governs the modification of the graphical properties of generated geometry.</p><p>First of all, remember that several elements are taken into account to define the graphical properties of generative views, according to a precise priority order. Some apply at view creation,  some apply once a view has been created. This
+enables you to comply with  the chosen standard, while answering your corporate or individual configuration needs. See <a href="gdr-c-ViewCreation.htm#gdr-c-ViewCreation" title="The Drawings app allows you to create views of varying levels of complexity. This topic provides more information about view creation.">About View Creation</a> and <a href="gdr-c-ViewContentCustomization.htm#gdr-c-ViewContentCustomization" title="You can configure the graphical properties of generative views to configure the view.">About View Content Configuration</a> for more information. </p><p>When these general definitions are not enough, you can modify yourself the graphical properties of generated geometry in a view generated from a 3D <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>, element by element. This enables you to get a configured
+result. </p>
+
+
+<p>Graphical properties include show, layer, symbol, color, line type, line thickness. These modifications are performed through the <span class="uicontrol"> Properties</span> dialog box. These graphical properties and hide/show property are all volatile properties. They have to be persisted at update.</p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>You can change the
+graphical properties of generated geometry in exact and approximate views only.</td></tr></table>
+</p></div>
+<div class="section" id="gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-PersistencyatUpdate"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Persistency at Update
+    </h2><p>This sub-topic explains what you need to know when updating a view after having changed the graphical properties of some of its generated geometry.</p><p> Each time a view is updated, generated geometry is deleted and
+recreated.
+Depending on your configuration, the modifications of the graphical properties of generated geometry (or the deletion of these elements) may or may not be
+persistent at update. This means that these modifications or deletion may or may not be kept when updating the view
+later on. <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Graphic dress-up properties of generated items for a view which is locked or not up-to-date will not be persistent. </td></tr></table>
+</p><p>You can specify whether or not you want to
+preserve these modifications during the view update, you have two different ways: <ul><li>Through the view options in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Generation</span></span> section, under <span class="uicontrol">Generated Geometry</span>, selecting the <span class="uicontrol">Preserve modifications applied to graphical properties</span> check box.</li>
+<li>Using <span class="uicontrol">Preserve
+modifications applied to graphical properties</span> <img src="../Icons22/I_D3M_GMECreation.png"/> from the   <span class="wintitle">View Layout</span> section of the <span>action bar</span>.</li>
+</ul>
+</p><p>On the other hand, you can restore the original properties and/or
+deleted elements in a view using the <a href="gdr-t-ViewModification-DeletedGeneratedElementsRestore.htm#gdr-t-ViewModification-DeletedGeneratedElementsRestore" title="You can restore original properties of generated elements. You can also restore deleted elements.">Restoring Original Properties/Deleted Elements</a>.
+
+      </p>
+
+
+<p>Since generated geometry is deleted and recreated each time the
+view is updated, when edited, the graphical properties of the
+geometry is stored according to the 3D origin of the geometry. This way, the right
+properties are applied to each new geometry according to its 3D
+origin.
+Thus, once updated, generated geometry inherits the graphical
+properties corresponding to the 3D origin previously stored.
+</p><p>The persistency of this graphical
+dress-up/delete:
+
+</p>
+<p>
+<ul>
+<li>Is available in exact and approximate views. In views other than exact and approximate (<span class="glossterm" id="CGR" onmouseout="hideTerm()" onmouseover="showTerm('CGR.xml')">CGR</span> or Raster), an update operation will reset the elements to their original properties. </li>
+
+<li>Creates additional specifications in the <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>, which
+increases the file size and requires additional computing during
+the update process.</li>
+<li>Is available for drawings extracted from CATProcess in DELMIA <span>apps</span>. The following graphical properties can be changed: linetype, line thickness, color, point symbol, layer, show/no show or deleting a generated item.<p>Associative dress-up features can be created by selecting the <span class="uicontrol">Preserve modifications applied to graphical properties</span>  <img src="../Icons22/I_D3M_GMECreation.png"/> check box through  <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Generation</span></span> section, under <span class="uicontrol">Generated Geometry</span>.</p><p>To restore all the associative graphical dress-up properties, 3D properties and deleted elements in a view use the <a href="gdr-t-ViewModification-DeletedGeneratedElementsRestore.htm#gdr-t-ViewModification-DeletedGeneratedElementsRestore" title="You can restore original properties of generated elements. You can also restore deleted elements.">Restoring Original Properties/Deleted Elements</a> command.</p></li>
+
+</ul>
+
+</p><p>Changes in the graphical properties of the following generated
+elements will not be preserved after an update: 
+
+<ul>
+<li>Hatching <span class="glossterm" id="pattern" onmouseout="hideTerm()" onmouseover="showTerm('pattern.xml')">patterns</span> (in sections and <span class="glossterm" id="breakout" onmouseout="hideTerm()" onmouseover="showTerm('breakout.xml')">breakout</span> views)</li>
+
+<li>Edges corresponding to symbolic visualization of fillets</li>
+<li>Edges representing limits of detail, quick detail or section views</li>
+<li>Edges representing profiles of 3D clipping or broken views</li>
+
+
+
+<li>Bend limits in <span class="glossterm" id="unfolded-view" onmouseout="hideTerm()" onmouseover="showTerm('unfolded-view.xml')">unfolded views</span> of <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> metal parts</li>
+<li>Annotations generated from 3D annotations or 3D elements (structure, piping)</li>
+
+</ul>
+</p></div>
+<div class="section" id="gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-ParticularCases"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Particular Cases</h2><p>This sub-topic introduces a few particular cases that you need to be aware of when changing the graphical properties of generated geometry.</p></div>
+<div class="section" id="gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-CaseofGeometricalElementsonCylindricalFaces"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Case of Geometrical Elements on Cylindrical Faces</h2><p>This section provides specific information that apply when changing the graphical properties of generated geometry on views generated from cylindrical faces. </p><p>In the following example, the graphical properties of two elements on a generated view are modified. </p><p>3D part #1:</p><p><br/><img src="../GdrUserImages/3Dpart.gif"/><br/></p><p>The graphical properties of two generated elements are modified in the view:</p><p><br/><img src="../GdrUserImages/ModifItem.gif"/><br/></p><p>After the view is updated, the modified graphical properties are propagated to generated elements with the same 3D origin as the modified elements:</p><p><br/><img src="../GdrUserImages/OriginItem.gif"/><br/></p><p>3D part #2:</p><p><br/><img src="../GdrUserImages/3Dpart2.gif"/><br/></p><p>The graphical properties of a generated element are modified in the view:</p><p><br/><img src="../GdrUserImages/ModifItem2.gif"/><br/></p><p>After the view is updated, the modified graphical properties are propagated to generated elements with the same 3D origin:</p><p><br/><img src="../GdrUserImages/OriginItem2.gif"/><br/></p></div>
+<div class="section" id="gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-CaseofGeometricalElementsonIntersectingPlanes"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Case of Geometrical Elements on Intersecting Planes</h2><p>This section provides specific information that apply when changing the color of generated geometry that belongs to intersecting planes. </p><p>When you update a generated view you have modified, the colors are
+re-generated with the geometrical information from the part, and
+you might obtain unexpected results.
+Take the following part as an example:</p><p><br/><img src="../GdrUserImages/color2d3dpart.gif"/><br/></p><p>On the generated view, the
+color of line a is modified:</p><p><br/><img border="1" src="../GdrUserImages/color2d3ddraw.gif"/><br/></p><p>After the  view is updated, both lines a and b are red:</p><p><br/><img border="1" src="../GdrUserImages/color2d3ddraw2.gif"/><br/></p><p>The reason is that the view is refreshed with the part information and lines a and b are considered as the intersection of two planes and not as two different geometrical elements of the generated view.</p></div>
+<div class="section" id="gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-HandlingLayers"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Handling Layers</h2><p>This sub-topic explains how to handle layers when changing the graphical properties of some generated geometry.</p><p>When you select a layer and modify
+the graphical properties of some elements, the properties will be
+applied only when you update the selected layer.
+By default, the view and its elements are created in the layer
+None, as displayed in the <span class="uicontrol">Graphic Properties</span>
+in the <span><span class="wintitle">Object Properties</span></span> panel. Yet, if you modify your view and add elements, they will
+be created in the current layer, which can be layer 0,
+1, 2 or any layer you select in the toolbar.
+</p><p>Each time a view is updated, generated geometry is deleted and
+recreated. As a result, generated geometry for which no layer is
+explicitly specified (which is set to the layer None),
+is placed into the current layer (that is, the layer which is
+selected in the <span class="uicontrol">Graphic Properties</span> when the view
+is updated). Therefore, to avoid unexpected results, it is
+recommended to set the current layer to None before
+updating a view.
+</p></div>
+<div class="section" id="gdr-c-ViewModification-GraphPropsOfGenGeomAndDressUp__cs-Miscellaneous"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Miscellaneous</h2><p>This sub-topic provides miscellaneous information about the graphical properties of generated geometry.</p><p>If the projection of an element is hidden due to overlapping
+components, its graphical properties are retained. When the element
+is visible again, it is displayed with the same graphical
+properties and not the default ones.
+</p></div>
+</div>
+
+  <div/>
+
+  
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

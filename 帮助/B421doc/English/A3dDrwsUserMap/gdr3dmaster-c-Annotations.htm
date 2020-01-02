@@ -1,0 +1,354 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Annotations"/>
+<meta name="abstract" content="This topic provides general information about annotations."/>
+<meta name="description" content="This topic provides general information about annotations."/>
+<meta name="DC.Relation" scheme="URI" content="../Headers/dsdocKBHeader.htm?id=QA00000018664"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Annotations"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Annotations</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Annotations">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-text properties::setting"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-annotation ::handles"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-handles::display"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Annotations</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p>
+    <span>This topic provides general information 
+						about annotations. </span>
+
+    <p>The following topics are discussed:</p>
+    
+    
+  </p>
+<ul><li><a href="#c-DefinitionOfTextProperties" id="toc_rg" title="You can apply text properties to text, dimension text, text with leader, balloon and datum target, as well as to text included in datum features and geometrical tolerances. You can also set the properties of an annotation text (such as font style, size and justification) either before or after creating the annotation.">Definition of Text Properties</a></li><li><a href="#cs-DSISO1" id="toc_rg" title="When selecting a font style in the Text Properties, one of the available choices will be DS ISO 1.">DS ISO 1 Open Type Font</a></li><li><a href="#c-DefinitionOfThePositionAndOrientationOfAnnotations" id="toc_rg" title="You can specify the horizontal position (X), vertical position (Y) and/or orientation (angle - A) of an annotation using the Object Properties panel under Position and Orientation. Note that the options available in Position and Orientation apply to annotations only (not to dimensions, for example).">
+		Definition 
+		of the Position and Orientation of Annotations</a></li><li><a href="#c-AnnotationManipulators" id="toc_rg" title="You can view different handle shapes and pointer representations according to the manipulation they allow. Using these handles you can perform the annotation's manipulation easily.">Annotation Handles</a></li><li><a href="#c-AnnotationPositioning" id="toc_rg" title="You can position an annotation with respect to another annotation on a specific point (attachment point) at its anchor position.">Annotation Positioning</a></li><li><a href="#c-AnnotationLock" id="toc_rg" title="You can lock annotations for editing using a dedicated option available on various annotations. You can also control the access to this option thereby making it impossible to unlock the locked annotations.">Annotation Lock</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+  <div/><div class="nested1" id="c-DefinitionOfTextProperties">
+    <h2 class="topictitle2">Definition of Text Properties</h2>
+
+    
+    <div><p>
+      <span>You can apply text properties to text, dimension text, text with leader, 
+		balloon and datum target, as well as to text included in datum features 
+		and geometrical tolerances. You can also set the properties of an annotation 
+		text (such as font style, size and justification) either before or after 
+		creating the annotation.</span>
+
+    </p>
+
+		
+		<p>To set text properties, select the text and,  in the  <span><span class="wintitle">Object Properties</span></span> panel, under <span class="uicontrol">Text Properties</span>, choose the properties 
+		you want to apply. </p>
+		
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>In case 
+				of a dimension, the symbol inserted from the <span class="uicontrol">Text Properties</span> is a prefix. You cannot have both the prefix and the suffix 
+				on the dimension. If the suffix is already displayed on the dimension, creating 
+				a prefix with the <span class="uicontrol">Text Properties</span> deletes it 
+				from the view, and only the prefix is displayed.</td></tr></table>
+
+		
+		</div>
+
+  </div>
+
+  <div class="nested1" id="cs-DSISO1"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">DS ISO 1 Open Type Font</h2>
+
+<div><p>When selecting a font style in the <span class="uicontrol">Text Properties</span>, one of the available choices will be <span class="uicontrol">DS ISO 1</span>. </p>
+<p>DS ISO 1 is an Open Type font based on the ISO 3098 
+				standard defining the text <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>. It is delivered along with the <span>app</span> to ease the exchange of standardized documents.</p><p>The DS ISO 1 font supports new engineering symbols. You can access these engineering symbols from the <span class="uicontrol">Engineering Symbols</span> node in the <span class="wintitle">Standard Definition</span> dialog box.</p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>DS ISO 1 is provided "as is". It  is up to you to decide whether this font fits requirements in terms of annotation representation and compliance to ISO standards (or any other standard).</td></tr></table>
+ </p><p>From a general standpoint, DS ISO 1 is a variable-pitch font, designed as Open Type with True Type format outlines definition. It is designed based on ISO 3098-5:1997, ISO 3098-3:2000 and Unicode definition (i.e. character codes are assigned in accordance with Unicode definition). In particular, characters' shape, box and dimensions are based on ISO 3098-5:1997, ISO 3098-3:2000 with lettering type CB vertical (regular) and slopped (italic). </p><p>The bold style is not defined in ISO3098. A thickness is defined for the Bold and Bold Italic styles, consisting in a 50% addition to that of the regular style.</p><p> DS ISO 1 contains Glyph covering
+the following Unicode ranges:</p>
+<ul><li>Controls
+and Basic Latin</li>
+<li>Controls
+and Latin 1 Supplement</li>
+<li>Latin
+Extended A</li>
+<li>Greek</li>
+<li>Cyrillic</li>
+<li>Enclosed
+Alphanumeric.</li>
+</ul>
+<p>For more information, see .</p></div>
+</div>
+
+  <div class="nested1" id="c-DefinitionOfThePositionAndOrientationOfAnnotations">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+		Definition 
+		of the Position and Orientation of Annotations</h2>
+
+    
+    <div><p>
+      <span>You can specify the horizontal position (X), vertical position (Y) and/or 
+		orientation (angle - A) of an annotation using the <span><span class="wintitle">Object Properties</span></span> panel under <span class="uicontrol">Position and Orientation</span>. Note that the options available in <span class="uicontrol">Position and Orientation</span> apply to annotations 
+		only (not to dimensions, for example).</span>
+
+      <a name="ix-object properties::Position and Orientation"> </a>
+      <a name="ix-Position and Orientation"> </a>
+    </p>
+
+		
+		<p>To do this, select the text and enter the required values in the
+		<span><span class="wintitle">Object Properties</span></span> panel, under <span class="uicontrol">Position and Orientation</span>.</p>
+		
+		
+	
+
+
+
+
+
+</div>
+
+  </div>
+
+  <div class="nested1" id="c-AnnotationManipulators"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Annotation Handles</h2>
+
+<div><p><span>You can view different handle shapes and pointer representations according to the manipulation they allow. Using these handles you can  perform  the annotation's manipulation easily.</span>
+</p>
+<p>The following figure depicts an annotation with various handles:</p><p><br/><img src="../Gdr3DMasterImages/AnnotationManipulator02NLS.png"/><br/><p>Note:
+		The display of handles for annotations can be configured based on whether the annotation is selected or its text is being edited. For more information, see <a href="gdr3dmaster-c-Annotations.htm#c-AnnotationManipulators__cs-AnnotationManipulatorsDisplay">Annotation Handles Display</a>.</p>
+</p><p>The following table shows the representation of handles and pointers associated with various manipulations:
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d176867e198">Manipulation</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d176867e200">Handle Representation</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d176867e202">Preselection Pointer</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d176867e204">Manipulation Pointer</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e198 "><p> Translation along a direction</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e200 "><br/><img src="../Gdr3DMasterImages/I_directionhandlerep.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e202 "><br/><img src="../Gdr3DMasterImages/I_directionpreselection.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e204 "><br/><img src="../Gdr3DMasterImages/I_translation_manipulation.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e198 "><p>Free translation</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e200 "><br/><img src="../Gdr3DMasterImages/I_freetranslation.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e202 "><br/><img src="../Gdr3DMasterImages/I_freetranslation_preselection.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e204 "><br/><img src="../Gdr3DMasterImages/I_translation_manipulation.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e198 "><p>Rotation</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e200 "><br/><img src="../Gdr3DMasterImages/I_rotationhandlerep.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e202 "><br/><img src="../Gdr3DMasterImages/I_rotation_preselection.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e204 "><br/><img src="../Gdr3DMasterImages/I_rotation_manipulation.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e198 "><p>Text insertion</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e200 "><br/><img src="../Gdr3DMasterImages/I_textinsertion.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e202 "><br/><img src="../Gdr3DMasterImages/I_textinsertion_preselection.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e204 ">NA</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e198 "><p>Text translation</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e200 "><br/><img src="../Gdr3DMasterImages/I_texttranslation.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e202 "><br/><img src="../Gdr3DMasterImages/I_directionpreselection.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e204 "><br/><img src="../Gdr3DMasterImages/I_directionpreselection.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e198 "><p>Control point</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e200 "><br/><img src="../Gdr3DMasterImages/I_controlpoint.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e202 "><br/><img src="../Gdr3DMasterImages/I_controlpoint_preselection.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e204 "><br/><img src="../Gdr3DMasterImages/I_controlpoint_preselection.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e198 "><p>Move</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e200 ">NA</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e202 "><br/><img src="../Gdr3DMasterImages/I_move_preselection.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e204 "><br/><img src="../Gdr3DMasterImages/I_move_manipulation.png"/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>
+<div class="section" id="c-AnnotationManipulators__cs-AnnotationManipulatorsDisplay"><h3 class="sectiontitle">Annotation Handles Display</h3><p>You can configure the display of  annotation handles based on whether there is annotation selection or text edition.  You can also  configure the  transparency level of the handles depending on whether the pointer is over a handle or not.  For more information about configuring the display of handles, see .</p><p>The following table lists the default values for display of handles:</p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="34.099616858237546%" id="d176867e293">Handle</th>
+<th class="cellrowborder" valign="top" width="26.245210727969347%" id="d176867e295">Representation</th>
+<th class="cellrowborder" valign="top" width="19.157088122605362%" id="d176867e297">Selection</th>
+<th class="cellrowborder" valign="top" width="20.498084291187737%" id="d176867e299">Text Edition</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="34.099616858237546%" headers="d176867e293 "><p><span class="uicontrol">Rotation</span></p></td>
+<td class="cellrowborder" valign="top" width="26.245210727969347%" headers="d176867e295 "><br/><img src="../Gdr3DMasterImages/I_rotationhandlerep.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="19.157088122605362%" headers="d176867e297 ">Displayed</td>
+<td class="cellrowborder" valign="top" width="20.498084291187737%" headers="d176867e299 ">Displayed</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="34.099616858237546%" headers="d176867e293 "><p><span class="uicontrol">Stretch text</span></p></td>
+<td class="cellrowborder" valign="top" width="26.245210727969347%" headers="d176867e295 "><br/><img src="../Gdr3DMasterImages/I_directionhandlerep.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="19.157088122605362%" headers="d176867e297 ">Displayed</td>
+<td class="cellrowborder" valign="top" width="20.498084291187737%" headers="d176867e299 ">Displayed</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="34.099616858237546%" headers="d176867e293 "><p><span class="uicontrol">Resize text</span></p></td>
+<td class="cellrowborder" valign="top" width="26.245210727969347%" headers="d176867e295 "><br/><img src="../Gdr3DMasterImages/I_freetranslation.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="19.157088122605362%" headers="d176867e297 ">Displayed</td>
+<td class="cellrowborder" valign="top" width="20.498084291187737%" headers="d176867e299 ">Displayed</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="34.099616858237546%" headers="d176867e293 "><p><span class="uicontrol">Slide Text</span></p></td>
+<td class="cellrowborder" valign="top" width="26.245210727969347%" headers="d176867e295 "><br/><img src="../Gdr3DMasterImages/I_texttranslation.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="19.157088122605362%" headers="d176867e297 ">Displayed</td>
+<td class="cellrowborder" valign="top" width="20.498084291187737%" headers="d176867e299 ">Not displayed</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="34.099616858237546%" headers="d176867e293 "><p><span class="uicontrol">Resize leader attachment</span></p></td>
+<td class="cellrowborder" valign="top" width="26.245210727969347%" headers="d176867e295 "><br/><img src="../Gdr3DMasterImages/I_directionhandlerep.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="19.157088122605362%" headers="d176867e297 ">Displayed</td>
+<td class="cellrowborder" valign="top" width="20.498084291187737%" headers="d176867e299 ">Not displayed</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="34.099616858237546%" headers="d176867e293 "><p><span class="uicontrol">Move leader anchor point </span></p></td>
+<td class="cellrowborder" valign="top" width="26.245210727969347%" headers="d176867e295 "><br/><img src="../Gdr3DMasterImages/I_moveleaderattachment.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="19.157088122605362%" headers="d176867e297 ">Displayed</td>
+<td class="cellrowborder" valign="top" width="20.498084291187737%" headers="d176867e299 ">Not displayed</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="34.099616858237546%" headers="d176867e293 "><p><span class="uicontrol">Move leader</span></p></td>
+<td class="cellrowborder" valign="top" width="26.245210727969347%" headers="d176867e295 "><br/><img src="../Gdr3DMasterImages/I_controlpoint.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="19.157088122605362%" headers="d176867e297 ">Displayed</td>
+<td class="cellrowborder" valign="top" width="20.498084291187737%" headers="d176867e299 ">Not displayed</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="34.099616858237546%" headers="d176867e293 "><p><span class="uicontrol">Indicate a moveable datum</span></p></td>
+<td class="cellrowborder" valign="top" width="26.245210727969347%" headers="d176867e295 "><br/><img src="../Gdr3DMasterImages/I_moveabledatum.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="19.157088122605362%" headers="d176867e297 ">Displayed</td>
+<td class="cellrowborder" valign="top" width="20.498084291187737%" headers="d176867e299 ">Displayed</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The display of handles can be different depending on whether the pointer is over a handle or not, as explained in the following table:</p><p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d176867e401">When the pointer is...</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d176867e403">What happens...</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d176867e405">How it looks</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e401 ">  not over any annotation handle </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e403 ">handle's representation is transparent.</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e405 "><br/><img src="../Gdr3DMasterImages/AnnotationManipulatorTrans01NLS.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e401 ">over the annotation representation itself</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e403 ">handle's representation is transparent, but the annotation text box is highlighted.</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e405 "><br/><img src="../Gdr3DMasterImages/AnnotationManipulatorTrans02NLS.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d176867e401 ">over a handle</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e403 ">handle's representation becomes solid.</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d176867e405 "><br/><img src="../Gdr3DMasterImages/AnnotationManipulatorTrans03NLS.png"/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p><p><p>Notes:
+		<ul><li>The transparency level of handles representation changes between the transparency level defined in  the options and the solid state depending on whether the pointer is over a handle or not. </li>
+<li>All the handles get hidden as you click  on any one of them. They remain hidden throughout  the manipulation process and become visible again as the manipulation ends.</li>
+</ul>
+</p>
+</p></div>
+<div class="section" id="c-AnnotationManipulators__cs-AnnotationRotation"><h3 class="sectiontitle">Annotation Rotation</h3><p>You can quickly rotate an annotation using a rotation handle while using the <span class="uicontrol">Select</span> command. </p><p>The rotation handle is  at the center-top of the <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">object</span>'s frame.</p>
+<p><br/><img src="../Gdr3DMasterImages/RotationManipulator01NLS.png"/><br/></p><p>During rotation manipulation, a frame is displayed to represent the transient position of the object.</p><p>Handles are hidden as you click to rotate.<br/><img src="../Gdr3DMasterImages/RotationManipulator02NLS.png"/><br/></p></div>
+</div>
+</div>
+
+  <div class="nested1" id="c-AnnotationPositioning"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Annotation Positioning</h2>
+
+<div><p><span>You can position an annotation with respect to another annotation on a specific point (attachment point) at its anchor position.</span>
+<p>The attachment points are visualized when you move the pointer over the reference annotation during the annotation creation. The nearest attachment point is highlighted in blue indicating that the annotation can be positioned on it if that point is selected. Once it is selected, the annotation is positioned on it and all the attachment points disappear. <p>Note:
+		You can select the attachment points of an annotation during creation of a positional link.<p>Select the <span class="uicontrol">Create text on attachment points only</span> check box from <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Annotation and Dress-Up</span></span> section, under <span class="uicontrol">Annotation Creation</span>.</p> </p>
+</p></p>
+<p>The following types of annotations can be positioned associatively: <ul><li><span class="uicontrol">Text</span></li>
+<li><span class="uicontrol"><span class="glossterm" id="datum-target-2" onmouseout="hideTerm()" onmouseover="showTerm('datum-target-2.xml')">Datum Target</span></span></li>
+</ul>
+</p> <p>The following types of annotations can be used in associative annotation positioning:</p><p><ul><li><span class="uicontrol">Text</span></li>
+<li><span class="uicontrol">Datum Target</span></li>
+<li><span class="uicontrol">Datum Feature</span></li>
+<li><span class="uicontrol">Coordinate Dimensions</span></li>
+</ul>
+</p>
+
+<p>The attachment points where an associative position can be created depend on the frame type of the annotation. The following table depicts some of the frame types of annotations and their attachment points:</p><p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="15.89825119236884%" id="d176867e546">Type of Annotation</th>
+<th class="cellrowborder" valign="top" width="24.483306836248016%" id="d176867e548">Type of Frame</th>
+<th class="cellrowborder" valign="top" width="59.61844197138315%" id="d176867e550">Attachment Points</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="15.89825119236884%" headers="d176867e546 "><span class="uicontrol">Text</span></td>
+<td class="cellrowborder" valign="top" width="24.483306836248016%" headers="d176867e548 "><ul><li>No frame</li>
+<li>Rectangle</li>
+<li>Circle</li>
+<li>Triangle</li>
+</ul>
+</td>
+<td class="cellrowborder" valign="top" width="59.61844197138315%" headers="d176867e550 "><br/><img src="../Gdr3DMasterImages/annothotpoint01NLS.png"/><br/><br/><img src="../Gdr3DMasterImages/annothotpoint02NLS.png"/><br/><p><br/><img src="../Gdr3DMasterImages/annothotpoint03NLS.png"/><br/></p><br/><img src="../Gdr3DMasterImages/annothotpoint04NLS.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="15.89825119236884%" headers="d176867e546 "><span class="uicontrol">Datum Feature</span></td>
+<td class="cellrowborder" valign="top" width="24.483306836248016%" headers="d176867e548 ">Square</td>
+<td class="cellrowborder" valign="top" width="59.61844197138315%" headers="d176867e550 "><br/><img src="../Gdr3DMasterImages/datumfeaturehotpoint.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="15.89825119236884%" headers="d176867e546 "><span class="uicontrol">Datum Target</span></td>
+<td class="cellrowborder" valign="top" width="24.483306836248016%" headers="d176867e548 ">Scored circle</td>
+<td class="cellrowborder" valign="top" width="59.61844197138315%" headers="d176867e550 "><br/><img src="../Gdr3DMasterImages/datumtargethotpoint.png"/><br/><p>The <span class="glossterm" id="datum" onmouseout="hideTerm()" onmouseover="showTerm('datum.xml')">datum</span> target has four attachment points from the circular frame and two additional attachment points available in the datum target upper compartment and lower compartment. The attachment points of upper and lower compartment are used to attach the leader anchor point of an annotation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note:
+		The attachment points for all fixed frames are on the frame even if the frame is smaller than the annotation.  </p>
+</p><div class="section" id="c-AnnotationPositioning__cs-AnnotationPlacementonAnotherAnnotation"><h3 class="sectiontitle">Annotation Placement on Another Annotation</h3><p>When placing an annotation on an existing annotation, you can choose an attachment point and position the annotation. You can also change the annotation position by snapping the annotation to a different attachment point.</p><p> Snapping of an annotation can be done during the creation of an annotation or during the creation of an associative positional link, using one of the following commands:</p><p><ul><li><span class="uicontrol">Text</span></li>
+<li><span class="uicontrol">Text with Leader</span></li>
+<li><span class="uicontrol">Datum Feature</span></li>
+<li><span class="uicontrol">Datum Target</span></li>
+</ul>
+</p><p>When positioning an annotation on an existing annotation:<ul><li>If an attachment point is selected, it is highlighted to show that the annotation is positioned at that point. If the annotation has a leader, it is removed.</li>
+<li>The attachment point can be moved interactively. Its position is snapped to the closest attachment point of the reference annotation.  </li>
+<li>The positional and orientation links are created between both the annotations.</li>
+<li>The anchor point of the positioned annotation is also managed to make sure that it is properly aligned with the reference annotation according to the attachment point.</li>
+<li>If no attachment point is selected, the annotation is positioned at the indicated location, without snapping to any attachment point. However, while positioning the annotation leader, the orientation of the leader can be  snapped on  the privileged direction.</li>
+</ul>
+</p>  <p>When positioning an annotation with a leader on an existing annotation:<ul><li>The leader is removed as soon as the target annotation is selected. </li>
+<li>If an annotation with a leader containing an <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span> link or a link <span class="glossterm" id="template-2" onmouseout="hideTerm()" onmouseover="showTerm('template-2.xml')">template</span> is instantiated and positioned on an existing annotation, its leader is removed but the link is resolved.</li>
+</ul>
+</p><p>When creating a positional link between annotations, the following contextual commands are available:<ul><li><span class="uicontrol">Positional Link &gt; Create</span></li>
+<li><span class="uicontrol">Positional Link &gt; Replace</span></li>
+</ul>
+<p>Note:
+		The existing leader is not removed if you  link an annotation with other annotation using the above contextual commands.</p>
+</p>    </div>
+<div class="section" id="c-AnnotationPositioning__cs-AnnotationOrientation"><h3 class="sectiontitle">Annotation Orientation</h3><p>When creating an annotation or instantiating an annotation, you can change  the angle of the annotation to 90deg. To 
+		do this, hold <span class="uicontrol">Alt</span> while clicking in the sheet to position 
+		the annotation. If <span class="uicontrol">Alt</span>  is released, the annotation angle is reset to its previous value.</p></div>
+</div>
+</div>
+
+  <div class="nested1" id="c-AnnotationLock"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Annotation Lock</h2>
+
+<div><p><span>You can lock annotations for editing using a dedicated option available on various annotations. You can also control the  access to this option thereby making it impossible to unlock the locked annotations.</span>
+ </p>
+<p>To lock an annotation to prevent its modification or editing, right-click it and select <span class="uicontrol">Properties &gt; Text</span> tab and select the <span class="uicontrol">Lock Editing</span> check box and click <span class="uicontrol">OK</span>. For more information, see <a href="properties-c-ui-Text.htm#properties-c-ui-Text" title="The Text lets you modify font properties for coordinates dimension, datum, datum target, dimension, flag note, geometrical tolerance, note object attribute, roughness, and text.">Text Tab</a>.</p><p>The following annotations can be locked for editing:</p><p><ul><li>Texts (including <span class="glossterm" id="component-2D-instance" onmouseout="hideTerm()" onmouseover="showTerm('component-2D-instance.xml')">2D component instances</span>)<p>Modifiable text of a 2D component has the same <span class="uicontrol">Lock Editing</span> value (locked or unlocked) as that of the reference text in the 2D component. However, you can change this value in the 2D component instance, if required.</p></li>
+<li>View texts</li>
+<li>Datum feature</li>
+<li>Datum target</li>
+<li>Geometrical tolerance</li>
+<li>Roughness symbol</li>
+<li>Welding symbol</li>
+</ul>
+</p><p>When you right-click an annotation and select <span class="uicontrol">Properties &gt; Text</span> tab and select the  <span class="uicontrol">Lock Editing</span> check box, the annotation is locked. Afterward,  it is impossible to edit the annotation character string by any means, that is using the <span>context menu</span>,  double-clicking the annotation,  etc. In this case, the following actions take place: </p><p><ul><li>The <span class="uicontrol">Text Editor</span> dialog box does not appear.</li>
+<li>If you try to edit the annotation, an error tooltip appears informing that the editing of the annotation has been locked and it can be unlocked using the  <span class="uicontrol">Properties &gt; Text</span> tab.</li>
+<li>If the access to lock editing property has been disabled, the message appears informing that the editing has been locked and only an administrator can unlock it. </li>
+<li>The <span class="uicontrol">Replace</span> is not available in the <span class="uicontrol">Replace</span> dialog box or in the <span class="uicontrol">Find</span> dialog box, when you press <span class="uicontrol">Ctrl+H</span>    when a string to be replaced has been identified in a locked annotation.</li>
+</ul>
+</p>
+<div class="section" id="c-AnnotationLock__cs-TextsinaTableCell"><h3 class="sectiontitle">Texts in a Table Cell</h3><p>You can lock text editing in a table cell. </p><p>When you add a cell to a table, the newly added cell is initialized with the <span class="uicontrol">Lock Editing</span>  value of other cells as per the following rules: </p><p><ul><li>When you add a row, the <span class="uicontrol">Lock Editing</span> value is copied from the upper cell.</li>
+<li>When you add a column, the <span class="uicontrol">Lock Editing</span> value is copied from the left cell.</li>
+</ul>
+</p><p> In general, when you copy and paste an annotation, the pasted annotation gets the <span class="uicontrol">Lock Editing</span> value as that of the copied annotation.</p></div>
+</div>
+</div>
+
+
+</td></tr></table><div xmlns:mml="http://www.w3.org/1998/Math/MathML" class="relinfo"><strong>In the Knowledge Base</strong><br/><a href="../Headers/dsdocKBHeader.htm?id=QA00000018664" target="_blank">Moving annotations and geometry together</a><br/><br/></div><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

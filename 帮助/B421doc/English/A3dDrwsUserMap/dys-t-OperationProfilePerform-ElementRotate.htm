@@ -1,0 +1,122 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Rotating Elements"/>
+<meta name="abstract" content="You can rotate elements using the Rotation command. You can duplicate element or move them using this functionality."/>
+<meta name="description" content="You can rotate elements using the Rotation command. You can duplicate element or move them using this functionality."/>
+<meta name="DC.Relation" scheme="URI" content="dys-m-SmartPick-sb.htm#dys-m-SmartPick-sb"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dys-t-OperationProfilePerform-ElementRotate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Rotating Elements</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dys-t-OperationProfilePerform-ElementRotate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Rotating Elements</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span><span>You can rotate elements using the <span class="uicontrol">Rotation</span> command. You can duplicate element or move them using this functionality.</span></span>
+<p>
+      In this scenario, the geometry is moved keeping internal and <span class="glossterm" id="external-constraints" onmouseout="hideTerm()" onmouseover="showTerm('external-constraints.xml')">external constraints</span>.</p>
+  <p>Rotating elements also
+means re-computing distance values into angle values, if needed. However, note that, only non-fixed elements are updated.
+</p></p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>
+      <ul><li>Create the required 2D elements and internal and external constraints on them.</li>
+<li>Make sure that the 
+  <span class="uicontrol">Open dialog boxes with legacy appearance</span> check box
+  available at 
+  <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="menucascade"><span class="uicontrol">
+		&gt; All Preferenes</span> &gt; <span class="uicontrol">3D Modelling</span> &gt; <span class="uicontrol">3D
+		Modeling Core</span> &gt; <span class="uicontrol">Sketcher</span> &gt; <span class="uicontrol">Dialogs
+		appearance</span></span>, is selected.
+</li>
+</ul>
+</td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="dys-m-SmartPick-sb.htm#dys-m-SmartPick-sb" title="This section describes how to use SmartPick and provides background information about the same.">Using SmartPick</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+    <ol>
+      <li class="stepexpand"><p>
+        
+          <span>From the <span class="wintitle">Sketch</span> section of the <span>action bar</span>,</span> click <span class="uicontrol"> Rotate</span>
+        <img src="../Icons22/I_SktRotate.png"/>.  
+			 
+        
+      </p></li>
+<li class="stepexpand"><p>In the <span class="wintitle">Rotation Definition</span> dialog box, In the <span class="uicontrol">Instances</span> box, select the number 
+			of instances to be created.</p></li>
+
+      <li class="stepexpand"><p>
+        Keep  <span class="uicontrol">Duplicate mode</span> check box selected. 
+        
+        
+      <p>The option is selected by default, which 
+			means that the 2D elements you select are copied.<p>Note:
+		Apart from the 
+  <span class="uicontrol">Duplicate mode</span> check box, the 
+  <span class="uicontrol">Keep internal constraints</span><span class="uicontrol">Keep external constraints</span> check boxes are
+  cleared, by default.
+  <p>However, after you execute this command, your preferences are stored and
+	 saved for the next usage. 
+  </p>
+</p>
+</p></p></li>
+
+      <li class="stepexpand"><p>Select <span class="uicontrol">Keep internal constraints</span> and <span class="uicontrol">Keep external constraints</span>to preserve the 
+			internal and external constraints applied to the selected elements in the  rotation.<p>If you clear <span class="uicontrol">Keep external constraints</span> check box, any external constraint existing between the selected elements and external 
+			elements will be disregarded in the rotation.</p></p></li>
+<li class="stepexpand"><p>
+        
+          Select the geometry to be rotated. 
+
+        
+        
+        <p> 
+          <br/><img src="../DysUserImages/rotate01.png"/><br/>
+        </p>
+      </p></li>
+
+      <li class="stepexpand"><p>
+        
+          Select or click the center point for rotation.
+        
+        <p>You can also enter coordinates in the boxes in the <span class="uicontrol">Tools Palette</span>, or enter a value for the rotation angle
+in the <span class="uicontrol">Rotation Definition</span> dialog box.
+          </p><p> <br/><img src="../DysUserImages/rotate02.png"/><br/>
+        </p>
+      </p></li>
+
+      <li class="stepexpand"><p>
+        
+          Select or click a point to define the reference line that is
+used for computing the angle.
+
+        
+        
+        
+      </p></li>
+
+      <li class="stepexpand"><p>Move the pointer to get the required rotation angle.<p> <br/><img src="../DysUserImages/rotate03.png"/><br/></p></p></li>
+
+    </ol>
+
+    
+  </div>
+
+
+  <div/>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

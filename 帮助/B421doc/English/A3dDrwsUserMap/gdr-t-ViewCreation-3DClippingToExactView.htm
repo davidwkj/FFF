@@ -1,0 +1,116 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Adding a 3D Clipping to an Exact View"/>
+<meta name="abstract" content="3D Clipping lets youYou can easily define the 3D limits of the geometry to be visualized, without entering the DMU app. This command is particularly useful for a large assembly."/>
+<meta name="description" content="3D Clipping lets youYou can easily define the 3D limits of the geometry to be visualized, without entering the DMU app. This command is particularly useful for a large assembly."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewCreation-3DClipping.htm#gdr-c-ViewCreation-3DClipping"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewCreation-3DClippingToExactView"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Adding a 3D Clipping to an Exact View</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewCreation-3DClippingToExactView">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+														Adding a 3D Clipping 
+								to an Exact View</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span><span><span class="uicontrol">3D Clipping</span> lets you</span><span>You can easily</span> define 
+																		the 3D 
+																		limits 
+																		of the 
+																		geometry 
+																		to be 
+																		visualized, 
+																		without 
+																		entering 
+																		the DMU 
+																		<span>app</span>. 
+																		This 
+																		command 
+																		is 
+																		particularly 
+																		useful 
+																		for a 
+																		large assembly.</span>
+
+																		</p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>     Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.   <span>This scenario aims at simplify a <span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">front view</span>, for a better visualization of the area containing the cylinder (surrounded in red).                     <br/><br/> </span></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewCreation-3DClipping.htm#gdr-c-ViewCreation-3DClipping" title="The 3D clipping can be added on a generative view to define the 3D limits of the geometry to be drawn in view. This simplifies the view and gives a better visualization of the required view area.">About 3D Clippings</a></td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--><img border="1" width="365" src="../GdrUserImages/add3dclipping01.gif"/></div>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">View Layout</span> section of the <span>action bar</span>, click <span class="uicontrol">Add 3D Clipping
+								<img height="22" width="22" src="../Icons22/I_D3M_ClippingBox.png"/></span>.<p> 
+                                <p>
+												<br/><img border="1" width="426" src="../GdrUserImages/dbclippingobjectNLS.gif"/><br/></p>
+                                <p> 
+								The <span class="uicontrol">Clipping Object</span> dialog box with a 3D viewer contains the following 
+                                options:</p><p><span class="uicontrol">Clipping Mode</span>: Elements intersecting the clipping planes will be 
+								cut.</p><ul>
+										<li>
+										<p><span class="uicontrol">Clipping Box</span>: 
+										To select 3D elements inside the clipping 
+										box. </p>
+										</li>
+
+										<li>
+										<p><span class="uicontrol">Clipping By Slice</span>: 
+										To select 3D elements between the back clipping 
+										plane and the front clipping plane. </p>
+										</li>
+
+										<li>
+										<p><span class="uicontrol">Back Clipping Plane</span>: 
+										To select 3D elements positioned ahead of 
+										the plane. The blue arrow indicates the 
+										front face of the clipping plane.<span>  
+										By default, this clipping mode is selected.</span></p>
+										</li>
+
+								</ul>
+<p><span class="uicontrol">User Input</span>: To define 
+								the position and dimension of the clipping planes.</p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>To modify the position of a 
+                          clipping plane, you can also drag the green handles positioned at its center.</td></tr></table>
+
+								</p></p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Clipping By Slice</span> 
+								clipping mode, and enter  the<span> required</span> <span class="uicontrol">User Input</span> values.<p>You can also drag the green handles to 
+								position the clipping planes in the 3D viewer.</p><p> 
+                                <p>
+                                <br/><img border="1" width="426" src="../GdrUserImages/dbclippingobject02NLS.gif"/><br/></p>
+                                </p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Create</span>. <p> 
+                                <p>The front view is modified.</p><p>
+                                <br/><img height="210" width="381" src="../GdrUserImages/add3dclipping02.gif"/><br/></p>
+                                </p></p></li>
+</ol>
+<p class="result">
+								
+							
+						
+						
+				
+				
+						
+						
+						
+				
+		
+		
+
+		
+
+
+The background and foreground of 
+								the cylinder are now removed. </p></div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

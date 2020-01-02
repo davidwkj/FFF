@@ -1,0 +1,235 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Analyzing View Geometries"/>
+<meta name="abstract" content="You can analyze view geometries to diagnose a sketch."/>
+<meta name="description" content="You can analyze view geometries to diagnose a sketch."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-GeometryInViewsAnalyze"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Analyzing View Geometries</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-GeometryInViewsAnalyze">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::analyzing geometries"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-analyzing::view geometries"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Analyzing View Geometries
+				</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can analyze view geometries to diagnose a sketch.</span>
+<p>For example, if a sketch contains inconsistent geometry, 
+						you neither can drag the geometry, nor change it in any way. 
+						Therefore, you can find it useful to analyze geometry in 
+						an <span class="glossterm" id="active-view" onmouseout="hideTerm()" onmouseover="showTerm('active-view.xml')">active view</span> through various means.</p>
+						
+						</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-UsingTheSketchSolvingStatus" id="toc_rg" title="This is a quick way to analyze a sketch and detect whether it is under-constrained or over-constrained.">Use the Sketch Solving Status 
+		</a></li><li><a href="#t-UsingTheSketchAnalysis" id="toc_rg" title="This method gives the detailed analysis of a sketch. It provides the status of each element and the constraint of the sketch. It allows you to hide constraints, create geometry, and visualize use-edges in the sketch. You can deactivate, isolate, delete and also replace a 3D geometry.">Use the Sketch Analysis </a></li><li><a href="#task_5D0A92E68FF548609C3BAD497A6D4659" id="toc_rg" title="">Analyze Sketch for Design Range</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span><ul> <li>By default, the <span class="uicontrol">Sketch Solving Status</span> command is not available in any of the <span>action bar</span>s. To make it available, you need to customize the <span>action bar</span>.</li>
+<li>Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.</li>
+ <li>Go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Geometry</span></span> section,  and select the <span class="uicontrol">Create detected and feature-based constraints</span> check box  or from the <span class="wintitle">Sketch</span> section of the  <span>action bar</span>, click <span class="uicontrol">Create Detected Constraints <img height="22" width="22" src="../Icons22/I_D3M_CstCreation.png"/></span>.</li>
+ </ul>
+   </td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+</div>
+<div class="nested1" id="t-UsingTheSketchSolvingStatus"><h2 class="topictitle2">Use the Sketch Solving Status 
+		</h2>
+<div><p><span>This is a quick way to analyze a sketch and detect whether it is under-constrained or over-constrained.</span>
+</p>
+<ol><li class="stepexpand"><p>Select all the circles.</p></li>
+<li class="stepexpand"><p>From the <span class="wintitle">Sketch</span> section of the <span>action bar</span>, click <span class="uicontrol">Constraints Defined in Dialog Box 
+			<img height="22" width="22" src="../IconsNormal/I_ConstraintPanel.png"/></span>. 
+			</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Constraint Definition</span> dialog box, select the <span class="uicontrol">Fix</span> check box, and then click <span class="uicontrol">OK</span>.<p> 
+			The geometry color turns to green indicating that the view geometries 
+			are iso-constrained.</p></p></li>
+<li class="stepexpand"><p>Select the two vertical parallel lines.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Constraints Defined in Dialog Box</span> <img height="22" width="22" src="../IconsNormal/I_ConstraintPanel.png"/> and select the <span class="uicontrol">Fix</span> and the <span class="uicontrol">Vertical</span> check boxes.<p>  
+			The geometry color turns to green indicating that the view geometries 
+			are iso-constrained. 
+			<br/><img src="../Gdr3DMasterImages/Sketchanalysis01.png"/><br/>
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>.</p></li>
+<li class="stepexpand"><p>From the customized section of the <span>action bar</span>, click <span class="uicontrol">Sketch Solving Status</span>
+			<img height="22" width="22" src="../IconsNormal/I_LightSketchAnalysis.png"/>. <p> For more information, see <a href="gdr3dmaster-t-ToolbarCustomizeAddCommands.htm#gdr3dmaster-t-ToolbarCustomizeAddCommands" title="You can customize an action bar by adding or removing commands according to your needs. You can also add the commands which are not directly available in any of the action bar or menus.">Customizing an Action Bar by Adding Commands</a>.</p><p> 
+			
+				
+					
+					
+				
+			
+			<p>This command gives you a quick diagnosis 
+			of the geometry status.  
+			</p><p>The <span class="uicontrol">Sketch Solving Status</span> dialog box appears and informs 
+			you of the general geometry status, whether it is under-constrained, 
+			over-constrained or iso-constrained. </p>
+			
+				
+					
+					
+				
+			
+			<p>Meanwhile, the information given in 
+			the <span class="uicontrol">Sketch Solving Status</span> dialog box is highlighted in the <span>work area</span> and the element that are under-constrained are 
+			highlighted too.</p><p>In this case the four points are highlighted indicating that they are 
+			under-constrained.</p>
+			
+				
+					
+					<br/><img src="../Gdr3DMasterImages/Sketchanalysis02.png"/><br/>
+			</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-UsingTheSketchAnalysis"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Use the Sketch Analysis </h2>
+<div><p><span>This method gives the detailed analysis of a sketch. It provides the status of each element and the constraint of the sketch. It allows you to hide constraints, create geometry, and visualize use-edges in the sketch. You can deactivate, isolate, delete and also replace a 3D geometry.</span>
+</p>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">Sketch</span> section of the <span>action bar</span>, click <span class="uicontrol">Sketch Analysis</span>
+			<img height="22" width="22" src="../Icons22/I_SketchAnalysis.png"/>. 
+			<p> The <span class="uicontrol">Sketch Analysis</span> dialog box contains 
+			three tabs: <span class="uicontrol">Geometry</span>, <span class="uicontrol">Use-edges</span> 
+			and <span class="uicontrol">Diagnostic</span>. 
+			<p>Construction elements appear in blue in the geometry.</p><p>Note that you can sort the displayed elements 
+			in the dialog box by Name, status or Type, by clicking the 
+			appropriate tab. You can also select elements from the dialog box 
+			and they will be highlighted in the <span>work area</span>.</p>
+			</p></p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Geometry </span>tab to display information about 
+			all the connex profiles in the view.</p></li>
+<li class="stepexpand"><p>Click the <span class="uicontrol">Diagnostic</span> tab. <p>It gives information 
+			about every element of the geometry or constraint of a view.</p><p> 
+			
+				
+					
+					
+				
+			
+			<p>For more information, see <a href="gdr3dmaster-c-ui-DialogBoxes-SketchAnalysis.htm#gdr3dmaster-c-ui-DialogBoxes-SketchAnalysis" title="The Sketch Analysis dialog box appears when you click Sketch Analysis from the Sketch section of the action bar.">Sketch Analysis</a>.</p>
+			
+				
+					
+					
+					
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Hide Construction Geometries</span> <img height="22" width="22" src="../IconsNormal/I_HideConstructElt.png"/>.<p> All the construction elements are hidden from the dialog 
+			box.
+			
+				
+					
+					
+				
+			
+			<p>If you select items from the <span class="uicontrol">Detailed Information</span> table, they will be highlighted in the view, 
+			enabling you to identify them easily. To solve constraint-based 
+			problems in the view, you need to edit the geometry directly. 
+			</p>
+			
+				
+					
+					<ul>
+						
+						<li>Driving dimensions use invisible constraints to drive 
+						geometries. So these constraints appear in the <span class="uicontrol">Diagnostic</span> 
+						tab, but are not highlighted in geometry of the view because 
+						they are invisible. If such dimensional constraints (invisible 
+						constraint created for driving dimension) are deleted in 
+						the <span class="uicontrol">Diagnostic</span> tab, then the dimension will turn 
+						not up-to-date. The dimension must be manually deleted.</li>
+
+					</ul>
+
+					
+				
+			
+			
+			</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="task_5D0A92E68FF548609C3BAD497A6D4659"> 
+  <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Analyze Sketch for Design Range</h2>
+  
+  <div><p>You can analyze if
+  an element in the sketch is beyond the design range of the model.</p>
+ 
+	 <ol> 
+		<li class="stepexpand"><p> 
+		   
+			 
+			 
+			 
+			 click 
+			 <span class="uicontrol">Sketch Analysis</span> 
+			 <img height="22" src="../Icons22/I_SketchAnalysis.png" width="22"/>. 
+		   
+		  <p>  appears. 
+		  </p> 
+		</p></li>
+ 
+		<li class="stepexpand"><p> 
+		  In the 
+			 <span class="uicontrol">Sketch Analysis</span> dialog box, click the 
+			 <span class="uicontrol">Diagnostic</span> tab. 
+		   
+		   
+		</p></li>
+ 
+		<li class="stepexpand"><p> 
+		  Under 
+			 <span class="uicontrol">Detailed Information</span>, the 
+			 <span class="uicontrol">Scale check</span> of each element is listed. 
+			 <span class="uicontrol">Scale check</span> can be: 
+		   
+		  <ul> 
+			 <li><span class="uicontrol">Valid: inside limits</span>: For the
+				geometric elements within size limits and with correct positioning. 
+			 </li>
+ 
+			 <li><span class="uicontrol">Invalid: exceeds limits</span>: For the
+				geometric elements beyond the size limits of the design range. It is also
+				applicable for elements which are positioned so far from the origin that they
+				fall outside the footprint. If you exit 
+				<span>Sketcher</span>,
+				without scaling down these elements within the size limits of the model, a
+				warning message appears in 3D prompting the same. 
+			 </li>
+ 
+			 <li><span class="uicontrol">Ignored: not applicable</span>: For the
+				elements that do not appear in 3D such as construction elements, or
+				constraints. 
+			 </li>
+ 
+			 <li><span class="uicontrol">???</span>: For the elements whose status
+				cannot be computed. This is an undesirable status. 
+			 </li>
+ 
+		  </ul>
+ 
+		</p></li>
+ 
+		<li class="stepexpand"><p> 
+		  Resolve errors for invalid elements, if any. 
+		   
+		</p></li>
+ 
+	 </ol>
+ 
+  </div>
+ 
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

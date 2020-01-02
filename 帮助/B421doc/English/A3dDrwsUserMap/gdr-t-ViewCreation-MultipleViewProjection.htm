@@ -1,0 +1,102 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating a Multiple View Projection"/>
+<meta name="abstract" content="You can generate geometry in a view by projecting geometry from previously defined views."/>
+<meta name="description" content="You can generate geometry in a view by projecting geometry from previously defined views."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewCreation-MultipleViewProjection"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating a Multiple View Projection</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewCreation-MultipleViewProjection">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::multiple view projection"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-multiple view projection, creating"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Multiple View Projection"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+				
+				 Creating a Multiple View Projection</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can generate geometry 
+						in a view by projecting geometry from previously defined 
+						views.  </span>
+<p>Selected 
+						<span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">objects</span> are projected onto a plane or a user defined ruled surface, and then transformed into the receiving view. 
+						Projected 
+						geometry retains the same <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attributes</span> it had in the original 
+						multi-view.</p>
+						
+						</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-AddElementsToAnExistingViewUsingTheActionObjectMode" id="toc_rg" title="You can add elements to an existing view using the action-object mode.">Add Elements 
+		to an Existing View, Using the Action-Object Mode</a></li><li><a href="#t-CreateAnIsometricViewFromScratchUsingTheObjectActionMode" id="toc_rg" title="You can create an isometric view from scratch using the object-action mode.">
+		Create an Isometric View from Scratch, 
+		Using the Object-Action Mode </a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    <ul> <li>By default, the <span class="uicontrol">Multiple View Projection</span> command is not available in any of the <span>action bar</span>s. To make it available, you need to customize the <span>action bar</span>. For more information, see <a href="gdr3dmaster-t-ToolbarCustomizeAddCommands.htm#gdr3dmaster-t-ToolbarCustomizeAddCommands" title="You can customize an action bar by adding or removing commands according to your needs. You can also add the commands which are not directly available in any of the action bar or menus.">Customizing an Action Bar by Adding Commands</a>.</li>
+<li>Create a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> with front, right, top views containing geometry and an empty isometric view. </li>
+ <li>Double-click  the view in which you want to create the geometry.</li>
+ <li>Make sure the planes are properly initialized.</li>
+ </ul>
+   </td></tr></table></td></tr></table>
+<a name="CATDrw.DrwCombiView"><!-- --></a>
+<div><div class="p"><!--xxx--></div>
+</div>
+<div class="nested1" id="t-AddElementsToAnExistingViewUsingTheActionObjectMode"><h2 class="topictitle2">Add Elements 
+		to an Existing View, Using the Action-Object Mode</h2>
+<div><p>You can add elements to an existing view using the action-object mode.</p>
+<ol><li class="stepexpand"><p>From the customized section of the <span>action bar</span>, click <span class="uicontrol">Multiple View Projection</span> <img src="../Icons22/I_D3M_CombiView.png"/>.<p><span>This command is not available by default. To add it to the action bar, select <span class="menucascade"><span class="uicontrol">Me</span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Customize</span> &gt; <span class="uicontrol">Commands</span></span>, and drag and drop the command onto a section.</span></p></p></li>
+<li class="stepexpand"><p>Select the object defining the target plane or surface 
+			to be used. <p>This element can be any mono-parametered elements (line, 
+			circle, ellipse, parabola, hyperbola, or curve).  
+			For our scenario, select an arc of a circle in the <span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">front view</span>.
+			</p></p></li>
+<li class="stepexpand"><p>Select the object to be projected in another view.
+			 
+			<p>For our scenario, select the circle representing the hole in the top view.</p></p></li>
+<li class="stepexpand"><p>Select more elements to be projected, if needed, or 
+			click in the open space to end 
+			this command. 
+			<p>In our example, the circle representing the hole is projected from the 
+			front and top views to the right view.</p><p> <br/><img src="../GdrUserImages/combivu1.png"/><br/></p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-CreateAnIsometricViewFromScratchUsingTheObjectActionMode"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+		Create an Isometric View from Scratch, 
+		Using the Object-Action Mode </h2>
+<div><p>You can create an isometric view from scratch using the object-action mode.</p>
+<ol><li class="stepexpand"><p>Double-click the isometric view to make it active. </p></li>
+<li class="stepexpand"><p>Select the elements to be projected into the isometric 
+			empty view.  
+			 <p>For our scenario, select the whole front view.</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Multiple View Projection </span><img src="../Icons22/I_D3M_CombiView.png"/>.</p></li>
+<li class="stepexpand"><p>Select the object defining the view to be created.
+			 
+			<p> All the elements are automatically projected onto the <span class="glossterm" id="active-view" onmouseout="hideTerm()" onmouseover="showTerm('active-view.xml')">active view</span>.<p><br/><img src="../GdrUserImages/combivu2.png"/><br/></p></p></p></li>
+<li class="stepexpand"><p>Repeat the above steps (Object-Action) with the various 
+			elements to be projected, to generate the isometric view.</p></li>
+</ol>
+<p class="result">
+		<p><br/><img src="../GdrUserImages/combivu3.png"/><br/></p>
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  
+				The projected elements keep the same graphical attributes as the 
+				selected element to be projected.</td></tr></table>
+
+ 
+	
+
+
+
+
+
+
+</p></div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,131 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Modifying a View Projection Plane"/>
+<meta name="abstract" content="You can modify a view projection plane of a generated view in order to modify the view."/>
+<meta name="description" content="You can modify a view projection plane of a generated view in order to modify the view."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewModification-ViewProjectionPlaneModify.htm#gdr-c-ViewModification-ViewProjectionPlaneModify"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewModification-ViewProjectionPlaneModify"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Modifying a View Projection Plane</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewModification-ViewProjectionPlaneModify">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-projection plane, modifying"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::projection plane"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Modifying a View Projection Plane</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can modify a view projection plane of a generated view in order to modify the view. </span>
+
+						<p>This task shows you how to:</p>
+						
+						</p>
+<ul><li><a href="#t-ModifyTheProjectionPlaneOfGeneratedViews" id="toc_rg" title="This task shows you how to modify the projection plane of generated views.">Modify the 
+		Projection Plane of Generated Views</a></li><li><a href="#t-ModifyTheProjectionPlaneOfIsometricViews" id="toc_rg" title="This task shows you how to modify the projection plane of isometric views.">Modify the 
+		Projection Plane of Isometric Views</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    Open a generated <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.  </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewModification-ViewProjectionPlaneModify.htm#gdr-c-ViewModification-ViewProjectionPlaneModify" title="This topic provides more information about modifying a view projection plane.">About Modifying a View Projection Plane</a></td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+</div>
+<div/><div class="nested1" id="t-ModifyTheProjectionPlaneOfGeneratedViews"><h2 class="topictitle2">Modify the 
+		Projection Plane of Generated Views</h2>
+<div><p>This task shows you how to modify the projection plane of generated views. </p>
+<ol><li class="stepexpand"><p>Create a <a href="gdr-t-ViewCreation-FrontView.htm#gdr-t-ViewCreation-FrontView" title="You can create a front view of the 3D part using a reference plane.">front view</a> of the part.</p></li>
+<li class="stepexpand"><p>Create a right, left, bottom and top
+			<a href="gdr-t-ViewCreation-ProjectionView.htm#gdr-t-ViewCreation-ProjectionView" title="You can create projection views on the sheet relative to the front view previously generated.">projection view</a>.</p></li>
+<li class="stepexpand"><p>Then create an
+			<a href="gdr-t-ViewCreation-AuxiliaryView.htm#gdr-t-ViewCreation-AuxiliaryView" title="You can create an auxiliary view.">auxiliary view</a> of 
+			the top view.</p></li>
+<li class="stepexpand"><p>Create a
+			<a href="gdr-t-ViewCreation-DetailViewDetailViewProfile.htm#gdr-t-ViewCreation-DetailViewDetailViewProfile" title="You can create a detail view from the 3D using either a circle or a sketched profile as callout.">detail view</a> on the <span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">front view</span>.<p> 
+			<p>
+			<br/><img src="../GdrUserImages/genviews01.gif"/><br/></p>
+			</p></p></li>
+<li class="stepexpand"><p>In the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>, right click and select
+			<span class="uicontrol">Front view object &gt; Modify Projection plane</span>. <p> 
+			<p>The front view and all the projection views are highlighted, 
+			showing that the modification will impact all the views.</p>
+			 
+			</p></p></li>
+<li class="stepexpand"><p>Select an edge of the part as your new reference plane.<p> 
+			<p>
+			<br/><img src="../GdrUserImages/newplane.gif"/><br/></p>
+			
+			<p>The front view with the new reference plane is previewed 
+			in the drawing.</p>
+			<p>
+			<br/><img src="../GdrUserImages/frontview01.gif"/><br/></p>
+			</p></p></li>
+<li class="stepexpand"><p>Click the drawing <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> to create the front view according 
+			to the reference plane you selected.<p> 
+			<p>The front view is updated and, in the tree, each projection view appears as needing an update.</p>
+			<p>
+			<br/><img src="../GdrUserImages/frontview02.gif"/><br/>
+			 </p>
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  
+					The update is made in two steps: first the front view, then 
+					the views linked to the front view, that is, the projection 
+					views and the <span class="glossterm" id="detail-view" onmouseout="hideTerm()" onmouseover="showTerm('detail-view.xml')">detail view</span>. 
+					You will note that the detail view <span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">callout</span> has become red because 
+					there is an inconsistency between the referring view and the 
+					detail view.</td></tr></table>
+
+			</p></p></li>
+<li class="stepexpand"><p>Right-click each projection view and select <span class="uicontrol">Update 
+			selection</span> in the <span>context menu</span> to update the view according 
+			to the new reference plane. 
+			 
+			You can also right-click the drawing node and select <span class="uicontrol">Update selection
+			</span>in the <span>context menu</span> to update all views at once. 
+			 
+			<p> 
+			
+			The right, left, bottom, top and <span class="glossterm" id="auxiliary-view" onmouseout="hideTerm()" onmouseover="showTerm('auxiliary-view.xml')">auxiliary views</span> are updated, as well 
+			as the detail view. The detail view callout turns black again since 
+			there is no inconsistency left.</p></p></li>
+</ol>
+<p class="result">
+		<p>
+			<br/><img src="../GdrUserImages/genviews02.gif"/><br/></p>
+		</p></div>
+</div>
+<div class="nested1" id="t-ModifyTheProjectionPlaneOfIsometricViews"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Modify the 
+		Projection Plane of Isometric Views</h2>
+<div><p>This task shows you how to modify the projection plane of isometric views. </p>
+<ol><li class="stepexpand"><p>Create an
+			<a href="gdr-t-ViewCreation-IsometricView.htm#gdr-t-ViewCreation-IsometricView" title="You can create an isometric view from a 3D part.">isometric view </a> of 
+			the part. 
+			<p> 
+			<img src="../GdrUserImages/isometricview01.gif"/></p></p></li>
+<li class="stepexpand"><p>Modify the part position. 
+			<p> 
+			<img src="../GdrUserImages/partposition.gif"/></p></p></li>
+<li class="stepexpand"><p>Right-click the view and select <span class="uicontrol">Isometric view 
+			object &gt; Modify Projection plane</span>.</p></li>
+<li class="stepexpand"><p>Click the part. <p> 
+			<p>The isometric view with the new reference plane is previewed 
+			in the drawing. 
+			<br/><img src="../GdrUserImages/isometricview02.gif"/><br/> 
+			The isometric view is modified in the drawing. 
+			</p>
+			</p></p></li>
+</ol>
+<p class="result">
+		
+	
+
+
+
+
+
+<br/><img src="../GdrUserImages/isometricview03.gif"/><br/></p></div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

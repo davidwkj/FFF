@@ -1,0 +1,735 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Achieving a Given Continuity along a Wire</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Create Conic Curves </h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td style="width: 1130px">
+		<h2>Abstract</h2>
+		<p>There are different type of conic curves which could be created 
+		directly in 3D space (such as for the circle or ellipse) or in the 
+		parameter space of a surface.&nbsp; The CATGeoFactory class proposes 
+		different methods especially dedicated for this. Each conic curve has an 
+		associated class enabling to get/set his geometrical characteristics. 
+		This article purposes to details the conic geometrical data model and&nbsp; 
+		to describe the sample use case CAA CAAGMModelConic.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#The_Line_data_model">The Conic data model</a></li>
+			<li><a href="#How_to_create_a_line_body">How to create a Conic body</a></li>
+			<li><a href="#UseCase">The CAAGMModelConic Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMModelConic</a></li>
+				<li><a href="#How">How to Launch CAAGMModelConic</a></li>
+				<li><a href="#Where">Where to Find the CAAGMModelConic 
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this use case, you learn how are modeled conic curves from geometrical point of view and how to use the 
+CATGeoFactory&nbsp; 
+in order to create them .</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>Create Conics curves </h2>
+<h3>What are Conics </h3>
+<p>The conic curves are intersection of a cone revolution with a plane not 
+passing by its vertex , then depending on how the plane is located with regards 
+to the cone, you will obtain a circle/ellipse, a parabola or an hyperbola.</p>
+<p><img alt="" src="images/Conics_img41.jpg"></p>
+<p>From mathematical point of view the conic curves could also been defined with 
+focus and directrix.</p>
+<p>A conic with directrix line D, foci F and eccentricity e is the set of point 
+M verifying the following relation : </p>
+<p><img alt="" src="images/Conics_img43.jpg"></p>
+<h3>Ellipse Definition and Characteristics </h3>
+<p>An ellipse curve is defined through two parameters : </p>
+<ul>
+	<li>A : half length of major axis</li>
+	<li>B:&nbsp; half length of minor axis</li>
+</ul>
+<p><img alt="" src="images/Ellipse__img49.jpg"></p>
+<p>Ellipse implicit equation is : </p>
+<p><img alt="" src="images/Ellipse__img4E.jpg"></p>
+<p>Ellipse parametrized equation:&nbsp; </p>
+<p><img alt="" src="images/Ellipse__img54.jpg"></p>
+<p>An ellipse curve has two foci F and F&#8217; which are the two points of the major 
+axis where distance with intersection between minor axis and ellipse is equal to 
+A (half length of the major axis).</p>
+<p>The linear eccentricity lin_e of an ellipse curve is the distance between the 
+foci of the ellipse and its center : </p>
+<p><img src="images/Linearecc_imgA6.jpg"></p>
+<h3>Parabola Definition and Characteristics </h3>
+<p>A Parabola could be defined as an ellipse for which one of the focus value is 
+infinity : </p>
+<p><img src="images/Parabola_mg59.jpg"></p>
+<p>&nbsp;</p>
+<p>Considers P the value of the length from the vertex of the parabola to its 
+focus.</p>
+<p><img src="images/Parabola_img5C.jpg"></p>
+<p>The Parabola&nbsp; implicit equation is : </p>
+<p><img src="images/Parabola_img5A.jpg"></p>
+<p>The Parabola&nbsp; parametrized equation:&nbsp; </p>
+<p><img src="images/Parabola_img5E.jpg"></p>
+<h3>Parabola Definition and Characteristics </h3>
+<p>An Hyperbola is a Conic curve which is represented by the set of points 
+verifying : </p>
+<p><img src="images/Hyperbolaimg64.jpg"></p>
+<p>Considers for an hyperbola curve : </p>
+<p>&nbsp;A: the length between the center and the vertex</p>
+<p>B: the non-focal half axis</p>
+<p><img src="images/Hyperbolaimg6B.jpg"></p>
+<p>The Hyperbola&nbsp; implicit equation is : </p>
+<p><img src="images/Hyperbolaimg65.jpg"></p>
+<p>The Hyperbola&nbsp; parametrized equation:&nbsp; </p>
+<p><img src="images/Hyperbolaimg67.jpg"></p>
+<p>The Hyperbola&nbsp; eccentricity verify:</p>
+<p><img src="images/Hyperbolaimg69.jpg"></p>
+<h3><a name="The_Line_data_model">The Conics data model</a></h3>
+<p>A conic curve is modeled by its associated class deriving from the base 
+interface CATConic when the curve is defined directly in the 3D space and 
+deriving from base interface CATPCurve for the case when the conic curve is 
+defined in the parameter space of a surface.</p>
+<p>A CATConic is a planar geometrical curve of the second order that can be 
+produced by intersecting a plane with a cone. Its axis system is defined by a 
+CATMathPlane: the center of the conics is the plane origin and its axes those of 
+the plane.</p>
+<p>CATConic classes allow to retrieve the&nbsp; support axis system of the conic 
+curve, his eccentricity value, get/set his origin coordinates or axis system.</p>
+<p>Data model of Conics curves:&nbsp;</p>
+<p><img alt="" src="images/Conics_img46.jpg"></p>
+<p>&nbsp;</p>
+<h2><a name="How_to_create_a_line_body">How to create a conic body</a></h2>
+<p>for more details about the methodology showing how to associate topology with 
+geometry and how to map topological entities to geometric entities in order to 
+limit the geometric space, please refer to [<a href="../CAACgmModel/CAACgmTaTobTopoCreate.htm">3</a>]</p>
+<p>Below an exemple of code illustrating how to create a conic and associate it a 
+curve with limit and orientation : </p>
+<pre class="code">
+  // The half length of the major axis.
+double MajorAxis = 10.;
+
+// The half length of the minor axis.
+double MinorAxis = 3.;
+
+// Constructs a plane from a point O and a normal to vector j.
+CATMathPlane mathplaneNormj(o, j);
+
+// Creates a geometric ellipse.
+//
+CATEllipse * pEllipse = piGeomFactory-&gt;<strong>CreateEllipse</strong>(MajorAxis, MinorAxis, mathplaneNormj);
+
+...
+</pre>
+<p><img alt="" src="images/Conic_img48.jpg"></p>
+<p>the second step illustrate how to create to topology associate to the conic 
+curve 
+directly with <strong>CATCGMCreateTopWire</strong> operator enabling to generate 
+a wire from a list of curves as illustrate below.</p>
+<p>This code is provided by the public static method 
+CAAGMTopGeomUtilities::CreateWireFromCurve available in the 
+CAAGMOperatorsInterfaces.edu\PublicInterfaces directory.</p>
+<pre class="code">
+
+// define the geometrical curve and limit and orientation associated to the line
+CATLONG32 nbcurve1 = 1;
+CATCurve ** ListOfCurves1 = new CATCurve * [nbcurve1];
+CATCrvLimits * curLimits1 = new CATCrvLimits[nbcurve1];
+short * wireOrientations1 = new short[nbcurve1];
+
+ListOfCurves1[0] = (CATCurve *)piLine1;
+int i = 0;
+for (; i &lt; nbcurve1 ; i++)
+{
+CATCurve * pLocalCurve = ListOfCurves1[i];
+if (pLocalCurve != NULL)
+pLocalCurve-&gt;GetLimits(curLimits1[i]);
+wireOrientations1[i]=short(1);
+}  
+
+// create the topology associated to the conic curve.
+//
+CATICGMTopWire * pWire1 = ::<strong>CATCGMCreateTopWire</strong> ( piGeomFactory, 
+&amp;topdata,
+nbcurve1,
+ListOfCurves1,
+curLimits1,
+wireOrientations1);
+
+// execute the operator 
+pWire1-&gt;Run();
+
+// retrieve topological result
+CATBody * piInitialWire1 = pWire1-&gt;<strong>GetResult</strong> ();
+...
+</pre>
+<p>In this example, the use of operator <strong>CATCGMCreateTopWire</strong>&nbsp; 
+allow the creation of a wire body underlying with geometry of the conic curve.</p>
+<p><img alt="" src="images/Conic_img47.jpg"></p>
+<p>&nbsp;</p>
+<h2><a name="UseCase">The CAAGMModelConic Use Case</a></h2>
+<p>CAAGMModelConic is a use case of the CAAGMModelInterfaces.edu framework 
+that illustrates the GMModelInterfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMModelConic Do</h3>
+<p>The use case do:</p>
+<ul>
+	<li>Load the CGM container from the ConicModel.NCGM input file 
+	.</li>
+	<li>Creates Ellipses .<ul>
+		<li>Creates a geometric ellipse.</li>
+		<li>Creates a set of trimmed ellipses defined in the space of a surface.</li>
+		<li>Creates a set of untrimmed ellipses defined in the space of a 
+		surface.</li>
+	</ul>
+	</li>
+	<li>Creates Parabolics curves:
+	<ol>
+		<li>Creates set of untrimmed parabola defined in the space of a surface.</li>
+		<li>Creates set of trimmed Parabola defined in the space of a surface.</li>
+	</ol>
+	</li>
+	<li>Creates Hyperbolics curves:<ol>
+		<li>&nbsp;Creates a set of trimmed Hyperbolics curvesdefined in the 
+		space of a surface.</li>
+		<li>Creates a set of untrimmed Hyperbolics curvesdefined in the space of 
+		a surface</li>
+	</ol>
+	</li>
+	<li>Model write factory closure.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMModelConic </h3>
+<p>To launch CAAGMModelConic , you will need to set up the build time environment, 
+then compile CAAGMModelConic.m, set up the run time environment, and then 
+execute the use case [<a href="#References">2</a>].</p>
+<p>If you simply type CAAGMModelConic with only one argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example: </p>
+<p>CAAGMModelConic <code>
+InstallRootFolder\CAADoc\CAAGMModelInterfaces.edu\FunctionTests\InputData\ConicModel.NCGM e:\CAAConicModelResult.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsCleanCrv.m'>
+<h3><a name="Where">Where to Find the CAAGMModelConic Code</a></h3>
+<p>The CAAGMModelConic use case is made of a main named 
+CAATopGeoLine.cpp 
+located in the CAAGMModelConic.m module of the CAAGMModelInterfaces .edu 
+framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMModelInterfaces.edu\CAAGMModelConic.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">2</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The use case is divided into the following main steps:</p>
+<ul>
+	<li><a href="#Preleminary_Operations_">Preleminary Operations </a></li>
+	<li><a href="#Create_Ellipse_curves_">Create Ellipse curves </a></li>
+	<li><a href="#Create_Parametric_Ellipse_curves">Create Parametric Ellipse 
+	curves </a></li>
+	<li><a href="#Create_Parametric_Parabolic_curves">Create Parametric 
+	Parabolic curves </a></li>
+	<li><a href="#Create_Parametric_Hyperbolic_curves">Create Parametric 
+	Hyperbolic curves</a></li>
+</ul>
+	<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Preleminary_Operations_">Preleminary Operations</a> </h3>
+<p>In this operation, the geometrical container is loaded from the input NCGM 
+file in order to get the geormetry that will be treated by operators.</p>
+	<p>The following code illustrates how to&nbsp; retrieve these informations:</p>
+<pre class="code">
+ 
+cout &lt;&lt; &quot;\n\n==============================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 0 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Preliminary operations : \n&quot; &lt;&lt; endl;
+
+CATGeoFactory* piGeomFactory = <strong>CATLoadCGMContainer</strong>(filetoread);
+if (NULL == piGeomFactory) return (1);
+cout &lt;&lt; &quot; - Get The Geo factory (CAAConicModel_Operator.ncgm in InputData) : OK &quot; &lt;&lt; endl;
+...
+</pre>
+	<p>
+	<br></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Create_Ellipse_curves_">Create Ellipse curves </a></h3>
+	<p>An ellipse curve is created in the 3D space by using the 
+	CATGeoFactory::CreateEllipse method that returns a CATEllipse enabling to 
+	get/set its parameters.</p>
+	<p><img src="images/Ellipse_mg6C.jpg"></p>
+	<p>The creation of an ellipse requests as argument:</p>
+	<ul>
+		<li>The half length of the major and minor axis </li>
+		<li>The origin and axis of the ellipse.</li>
+	</ul>
+	<p><img src="images/Ellipse_img6E.jpg"></p>
+	<p>For the case of an ellipse arc it requests to provide a value for the&nbsp; 
+	first and last angle limitation as illustrated below : </p>
+	<p><img src="images/Ellipse_img70.jpg"></p>
+	<p>The following code illustrates how to create&nbsp; a ellipse or arc of 
+	ellipse&nbsp; and how to modify their parameters value : </p>
+<pre class="code">
+ 
+// The half length of the major axis.
+double MajorAxis = 10.;
+
+// The half length of the minor axis.
+double MinorAxis = 3.;
+
+// Constructs a plane from a point O and a normal to vector j.
+CATMathPlane mathplaneNormj(o, j);
+
+// Creates a geometric ellipse.
+//
+CATEllipse * pEllipse = piGeomFactory-&gt;<strong>CreateEllipse</strong>(MajorAxis, MinorAxis, mathplaneNormj);
+
+cout &lt;&lt; &quot;Create Ellipse : OK\n\tMajorAxis = &quot; &lt;&lt; MajorAxis &lt;&lt; &quot;\n\tMinorAxis = &quot; &lt;&lt; MinorAxis &lt;&lt; endl;
+// Modifies the half length of the ellipse major axis
+MajorAxis = 15.;
+pEllipse-&gt;<strong>SetMajorAxis</strong>(MajorAxis);
+cout &lt;&lt; &quot;\nModify Ellipse major axis - MajorAxis = &quot; &lt;&lt; MajorAxis &lt;&lt; &quot;: OK&quot; &lt;&lt; endl;
+
+// Modifies the half length of the ellipse minor axis
+MinorAxis = 4.;
+pEllipse-&gt;<strong>SetMinorAxis</strong>(MinorAxis);
+cout &lt;&lt; &quot;Modify Ellipse minor axis - MinorAxis = &quot; &lt;&lt; MinorAxis &lt;&lt; &quot;: OK&quot; &lt;&lt; endl;
+
+
+// Create a geometric ellipse arc.
+//
+CATMathPlane mathplaneNormk(o, k);
+MajorAxis = 17.;
+MinorAxis = 3.;
+CATAngle Start = CATPI / 3.;
+CATAngle End = 3.*CAT2PI / 4.;
+
+CATEllipse * pEllipseArc = piGeomFactory-&gt;<strong>CreateEllipse</strong>(MajorAxis, MinorAxis, mathplaneNormk, Start, End);
+cout &lt;&lt; &quot;\nCreate Ellipse Arc : OK \n\tMajorAxis = &quot; &lt;&lt; MajorAxis &lt;&lt; &quot;\n\tMinorAxis = &quot; &lt;&lt; MinorAxis &lt;&lt; &quot;\n\tStart Angle = &quot; &lt;&lt; Start &lt;&lt; &quot;\n\tEnd Angle = &quot; &lt;&lt; End &lt;&lt; endl;
+
+// Modify the ellipse arc characteristics
+// 
+MajorAxis = 12.;
+MinorAxis = 2.;
+Start = CATPI / 13.;
+End = 3.*CAT2PI / 4.;
+CATMathPlane mathplaneNormi(o, i);
+
+pEllipseArc-&gt;<strong>Set</strong>(MajorAxis, MinorAxis, mathplaneNormi, Start, End);
+cout &lt;&lt; &quot;\nModify Modifies the ellipse characteristics : OK&quot; &lt;&lt; endl;
+...
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img src="images/Ellipse_img71.jpg"></p>
+	<p>Below a picture showing the result : </p>
+	<p><img src="images/Ellipse_img73.jpg"></p>
+	<p>&nbsp;</p>
+	<h3><a name="Create_Parametric_Ellipse_curves">Create Parametric Ellipse 
+	curves</a></h3>
+	<p>An ellipse curve is created in the space of a surface by using one of the 
+	methods <strong>CreatePEllipse</strong>() enabling to create trimmed or 
+	untrimmed ellipse depending of its signature.</p>
+	<p><img src="images/PEllipseimg7B.jpg"></p>
+	<p>&nbsp;</p>
+	<p>The following code illustrates how to use 
+	CreatePEllipse in order to create an untrimmed ellipse defined in the space 
+	of a surface and how to get and modify its parameters:</p>
+<pre class="code">
+ // Creates an untrimmed ellipse
+//
+cout &lt;&lt; &quot;\n\nPart 1.2 : Create an untrimmed ellipse defined in the space of a surface&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------------------------------------------------------\n&quot; &lt;&lt; endl;
+
+// Get a Surface from loaded model
+//
+CATICGMObject * piCGMObj1 = piGeomFactory-&gt;<strong>FindObjectFromTag</strong>(11614); //surface support
+CATSurface * pSurfaceSupport = (CATSurface *)piCGMObj1;
+cout &lt;&lt; &quot; - Retrieve the surface support from its tag : OK&quot; &lt;&lt; endl;
+
+// Get a Point on the previous Surface from loaded model
+//
+CATICGMObject * piCGMObj2 = piGeomFactory-&gt;<strong>FindObjectFromTag</strong>(13709); //surface support
+CATPointOnSurface * pPtOnSurCenter = (CATPointOnSurface *)piCGMObj2;
+cout &lt;&lt; &quot; - Retrieve the center macro point from its tag : OK&quot; &lt;&lt; endl;
+
+// Get Parameter associated to the point on the surface 
+//
+CATSurParam paramCenter;
+pPtOnSurCenter-&gt;GetParam(paramCenter);
+
+// Get Normal of the surface defined on the previous point
+//
+CATMathDirection Normal;
+pSurfaceSupport-&gt;<strong>EvalNormal</strong>(paramCenter, Normal);
+cout &lt;&lt; &quot;Normal of the surface defined on the previous point \n\tX = &quot; &lt;&lt; Normal.GetX() &lt;&lt; &quot; \n\tY = &quot; &lt;&lt; Normal.GetY() &lt;&lt; &quot; \n\tZ = &quot; &lt;&lt; Normal.GetZ() &lt;&lt; endl;
+
+// Create a plane that will serve as support surface of the ellipse
+//
+CATMathPlane PlaneCenter(MathPoint, Normal);
+CATPlane * PlaneSupport = piGeomFactory-&gt;CreatePlane(PlaneCenter);
+
+// Create the untrimmed ellipse on the plane support.
+//
+CATMathAxis2D Axis2D;
+MajorAxis = 14.;
+MinorAxis = 7.;
+
+
+CATPEllipse * pPEllipse = piGeomFactory-&gt;<strong>CreatePEllipse</strong>(Axis2D,
+MajorAxis,
+MinorAxis,
+(CATSurface *)PlaneSupport);
+
+
+// Get the angle between the surface first direction and the major axis
+//
+CATAngle AngleSurfFirstDirMajAxis = pPEllipse-&gt;<strong>GetOffsetAngle</strong>();
+cout &lt;&lt; &quot;Angle between the surface first direction and the major axis = &quot; &lt;&lt; AngleSurfFirstDirMajAxis &lt;&lt; endl;
+
+// Get the center of a CATPEllipse
+//
+CATSurParam paramCenterEllipse;
+pPEllipse-&gt;<strong>GetCenter</strong>(paramCenter);
+
+CATMathPoint MathCenterPoint = ((CATSurface *)PlaneSupport)-&gt;EvalPoint(paramCenterEllipse);
+cout &lt;&lt; &quot;Get the center of the Parametric Ellipse : \n\tX = &quot; &lt;&lt; MathCenterPoint.GetX() &lt;&lt; &quot;\n\tY = &quot; &lt;&lt; MathCenterPoint.GetY() &lt;&lt; &quot;\n\tZ = &quot; &lt;&lt; MathCenterPoint.GetZ() &lt;&lt; endl;
+
+// Get the low angle limitation
+//
+CATAngle LowAngleLim = pPEllipse-&gt;<strong>GetStartAngle</strong>();
+cout &lt;&lt; &quot;Get the low angle limitation = &quot; &lt;&lt; LowAngleLim &lt;&lt; endl;
+
+// Get the high angle limitation
+//
+CATAngle HighAngleLim = pPEllipse-&gt;<strong>GetEndAngle</strong>();
+cout &lt;&lt; &quot;Get the high angle limitation = &quot; &lt;&lt; HighAngleLim &lt;&lt; endl;
+
+// Modify the Parametric Ellipse 
+//
+MajorAxis = 17;
+MinorAxis = 7.;
+AngleSurfFirstDirMajAxis = CATPI / 4.;
+LowAngleLim = CAT2PI / 17.;
+HighAngleLim = 3 * CAT2PI / 4.;
+
+pPEllipse-&gt;<strong>Set</strong>(MajorAxis,
+MinorAxis,
+AngleSurfFirstDirMajAxis,
+paramCenter,
+LowAngleLim,
+HighAngleLim,
+(CATSurface *)PlaneSupport);
+</pre>
+	<p>
+	Here are the messages on the standard output:</p>
+	<p>
+	<img src="images/Ellipse_img7C.jpg"></p>
+	<p>
+	Below a picture showing the Ellipse result : </p>
+	<p>
+	<img src="images/Ellipse_img7E.jpg"></p>
+	<p>
+	Example of a set of&nbsp; trimmed ellipses defined in the space of surfaces 
+	: </p>
+	<p>
+	<img src="images/Ellipse_img7F.jpg"></p>
+	<p>
+	Example of a set of&nbsp; untrimmed ellipse curves defined in the space of a 
+	surface </p>
+	<p>
+	<img src="images/Ellipse_img82.jpg"></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Create_Parametric_Parabolic_curves">Create Parametric Parabolic 
+curves</a></h3>
+<p>A Parabolic curve is created in the space of a surface by using one of the 
+methods <strong>CreatePParabola</strong>() enabling to create trimmed or 
+untrimmed parabola depending of its signature...</p>
+	<p><img src="images/Parabolaimg86.jpg"></p>
+	<p>The parameters requested for definition of a trimmed parametric parabola 
+	are respectively : </p>
+	<ul>
+		<li>The length from the vertex of the parabola to its focus (P)</li>
+		<li>The parameters of first limit (<em>FirstLimParab</em>) and last&nbsp; 
+		limit&nbsp; (<em>LastLimParab</em>) of the parabola. Theses parameters 
+		correspond to the current limits of the parabola with respect to the 
+		parametrization.</li>
+		<li>The surface on which the parabola is created</li>
+	</ul>
+	<p><img src="images/Parabolaimg9B.jpg"></p>
+	<p>The following code illustrates how to create a untrimmed and untrimmed 
+	parametric parabola on a surface :</p>
+	<pre class="code">
+
+// Creates an untrimmed parabola defined in the space of a surface.
+//
+
+pSurfSupport = (CATSurface*)pSurfPlaneSupport;
+
+// LengthVertexFocus is the length from the vertex of the parabola to its focus
+//
+LengthVertexFocus = 5. + log(index)*sqrt(index);
+
+// Create untrimmed parabola
+//
+CATPParabola * pPParabola = piGeomFactory-&gt;<strong>CreatePParabola</strong>(Axis2D,
+LengthVertexFocus,
+pSurfSupport);
+
+if (NULL == pPParabola) return (1);
+cout &lt;&lt; &quot;\nCreate untrimmed Parabola : OK &quot; &lt;&lt; endl;
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img src="images/Parabolaimg8B.jpg"></p>
+	<p>Below a picture showing the untrimmed parabola result : </p>
+	<p><img src="images/Parabolaimg8D.jpg"></p>
+	<p>The following code illustrates how to create a trimmed parametric 
+	parabola on a surface :</p>
+	<pre class="code">
+
+// Creates a set of trimmed parabola defined in the space of a surface
+//
+cout &lt;&lt; &quot;\nPart 2.2 : Create a set of trimmed parabola defined in the space of a surface&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;-----------------------------------------------------------------------------\n&quot; &lt;&lt; endl;
+NbParabola = 17;
+for (index = 1; index &lt;= NbParabola; index++)
+{
+cout &lt;&lt; &quot;\ni = &quot; &lt;&lt; index &lt;&lt; endl;
+pSurfSupport = (CATSurface*)pSurfPlaneSupport;
+
+
+// Define length from vertex to focus : 
+//
+LengthVertexFocus += sqrt(index*log(index));
+
+// Define the limits : 
+//
+FirstLimParab = 45.*cos(index);
+LastLimParab = 27.*sin(index);
+
+// Create trimmed parabola
+//
+CATPParabola * pPParabola2 = piGeomFactory-&gt;<strong>CreatePParabola</strong>(Axis2D,
+LengthVertexFocus,
+FirstLimParab,
+LastLimParab,
+pSurfSupport);
+if (NULL == pPParabola2) return (1);
+cout &lt;&lt; &quot;\nCreate trimmed Parabola : OK &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\tLength from vertex to focus = &quot; &lt;&lt; LengthVertexFocus &lt;&lt; endl;
+cout &lt;&lt; &quot;\tFirst limit = &quot; &lt;&lt; FirstLimParab &lt;&lt; &quot;\n\tLast limit = &quot; &lt;&lt; LastLimParab &lt;&lt; endl;
+
+// Create a new support for next creation of parabola
+//
+pSurfPlaneSupport = piGeomFactory-&gt;CreatePlane(Normal, index + 1);
+if (NULL == pSurfSupport) return (1);
+cout &lt;&lt; &quot;Create a new support for next creation of parabola : OK &quot; &lt;&lt; endl;
+
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img src="images/Parabolaimg8F.jpg"></p>
+	<p>Below a picture showing the trimmed parabola result : </p>
+	<p><img src="images/Parabolaimg91.jpg"></p>
+	<h3><a name="Create_Parametric_Hyperbolic_curves">Create Parametric 
+	Hyperbolic curves</a></h3>
+	<p>An Hyperbolic curve is created in the space of a surface by using one of 
+	the methods CreatePHyperbola () enabling to create trimmed or untrimmed 
+	hyperbola depending of its signature...</p>
+	<p><img src="images/HyperBolaimg98.jpg"></p>
+	<p>The parameters requested for definition of a trimmed parametric hyperbola 
+	are respectively : </p>
+	<ul>
+		<li>The length between the center and the vertex of hyperbola (A)</li>
+		<li>&nbsp;the non-focal half axis (B)</li>
+		<li>The first limit&nbsp; (<em>FirstLimHyp</em>) and last limit&nbsp; (<em>LastLimHyp</em>) 
+		of the hyperbola with respect to the parameterization.</li>
+	</ul>
+	<p><img src="images/Hyperbolaimg9A.jpg"></p>
+	<p>Below the code illustrating how to create a set of untrimmed Hyperbola 
+	defined in the space of a surface :</p>
+	<pre class="code">
+cout &lt;&lt; &quot;\n\n==============================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 3 :&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Create Hyperbola : &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;---------------------------------------------------------------------------------------\n&quot; &lt;&lt; endl;
+
+// Create a set of untrimmed Hyperbola defined in the space of a surface.
+//
+int NbHyperbola = 12;
+cout &lt;&lt; &quot;\n\nPart 3.1 : Create &quot; &lt;&lt; NbHyperbola &lt;&lt; &quot; untrimmed Hyperbola defined in the space of a surface.&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;-----------------------------------------------------------------------------\n&quot; &lt;&lt; endl;
+
+// iA : First canonical length of the hyperbola.
+// iA : The length between the center and the vertex
+// 
+double <strong>iA_LengthCenterVertex</strong> = 0.;
+
+// iB : Second canonical length of the hyperbola.
+// 
+// c is the distance between focus and center
+// c = sqrt(iA^2+iB^2)
+// e = c/iA
+// 
+double <strong>iB_DistFocusCenter</strong> = 0.;
+
+CATPHyperbola * pPHyperbola = NULL;
+pSurfPlaneSupport = PlaneSupport;
+
+
+// Create NbHyperbola untrimmed hyperbola
+// 
+for (index = 1; index &lt;= NbHyperbola; index++)
+{
+cout &lt;&lt; &quot;\ni = &quot; &lt;&lt; index &lt;&lt; endl;
+// Define canonical lengths of the hyperbola
+//
+iA_LengthCenterVertex = 16. + index;
+iB_DistFocusCenter = 11. + log(index);
+
+pSurfSupport = (CATSurface*)pSurfPlaneSupport;
+
+// Create untrimmed Hyperbola
+//
+pPHyperbola = piGeomFactory-&gt;<strong>CreatePHyperbola</strong>(Axis2D,
+iA_LengthCenterVertex,
+iB_DistFocusCenter,
+pSurfSupport);
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img src="images/Hyperbolicimg9C.jpg"></p>
+	<p>Below the code illustrating how to create a set of untrimmed Hyperbola 
+	defined in the space of a surface. :</p>
+	<pre class="code">
+ NbHyperbola = 14;
+cout &lt;&lt; &quot;\n\nPart 3.2 : Create &quot; &lt;&lt; NbHyperbola &lt;&lt; &quot; trimmed Hyperbola defined in the space of a surface.&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;-----------------------------------------------------------------------------\n&quot; &lt;&lt; endl;
+
+pSurfPlaneSupport = PlaneSupport;
+
+// Create NbHyperbola trimmed hyperbola
+// 
+for (index = 1; index &lt;= NbHyperbola; index++)
+{
+cout &lt;&lt; &quot;\ni = &quot; &lt;&lt; index &lt;&lt; endl;
+// Define canonical lengths of the hyperbola
+//
+iA_LengthCenterVertex = 26. - index;
+iB_DistFocusCenter = 17. - log(index);
+
+// Define the low and high Limimitations of the hyperbola
+//
+FirstLimHyp = -3. + 2.*log(index);
+LastLimHyp = 3. - 2.*log(index);
+
+pSurfSupport = (CATSurface*)pSurfPlaneSupport;
+
+// Create trimmed Hyperbola
+//
+pPHyperbola = piGeomFactory-&gt;<strong>CreatePHyperbola</strong>(Axis2D,
+iA_LengthCenterVertex,
+iB_DistFocusCenter,
+FirstLimHyp,
+LastLimHyp,
+pSurfSupport);
+
+if (NULL == pPHyperbola) return (1);
+cout &lt;&lt; &quot;\nCreate trimmed Hyperbola : OK &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\tFirst canonical length = &quot; &lt;&lt; iA_LengthCenterVertex &lt;&lt; &quot;\n\tSecond canonical length = &quot; &lt;&lt; iB_DistFocusCenter &lt;&lt; endl;
+cout &lt;&lt; &quot;\tLow limit = &quot; &lt;&lt; FirstLimHyp &lt;&lt; &quot;\n\tHigh limit = &quot; &lt;&lt; LastLimHyp &lt;&lt; endl;
+// Create a new support for next creation of hyperbola
+//
+pSurfPlaneSupport = piGeomFactory-&gt;CreatePlane(Normal, index + 1);
+if (NULL == pSurfSupport) return (1);
+cout &lt;&lt; &quot;\tCreate a new support for next creation of hyperbola : OK &quot; &lt;&lt; endl;
+}
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img src="images/Hyperbolicmg9E.jpg"></p>
+	<p><a></a>Below a picture showing the trimmed hyperbola result : </p>
+	<p><img src="images/HyperbolicimgA0.jpg"></p>
+	<p>&nbsp;</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>The CATGeoFactory proposes all methods enabling&nbsp; to create a 
+conic curves depending to use objectives and input parameters. It is a transient object and its execution does not 
+modify the input operands.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="CAACgmUcTopOverview.htm">Overview of Topological Operators</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaTobTopoCreate.htm">
+		How to Associate Topology with Geometry</a> </td>
+	</tr>
+</table>
+	<br>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Marsh 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

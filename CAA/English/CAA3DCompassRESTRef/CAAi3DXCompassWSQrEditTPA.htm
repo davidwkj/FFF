@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Edit Third Party App</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="table1">
+	<tr>
+		<td class="DocHeader3"><a name="Top"></a>
+		<table class="DocHeader">
+			<tr>
+				<td class="DocHeader1" colspan="2">
+				<h1>Edit Third Party App</h1>
+				</td>
+			</tr>
+			<tr>
+				<td class="DocHeader4" colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="DocHeader3">
+				<table class="DocHeaderIntro">
+					<tr>
+						<td class="Intro1">
+						
+						<div id="toc">
+						</div>
+						</td>
+					</tr>
+				</table>
+				</td>
+				<td class="DocHeader2">
+				<table class="DocTopics">
+					<tr>
+						<td class="TopicsTitle">Related Topics</td>
+					</tr>
+					 <tr>
+						<td><a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm">About 3DCompass Web Services</a></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Edits a third party app.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr>
+		<th>&nbsp;Method&nbsp;</th>
+		<th>&nbsp;Path&nbsp;</th> 
+	</tr>
+	<tr>
+		<td>PATCH</td>
+		<td>/resources/AppsMngt/api/custom/applications/&lt;id&gt;</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h3><a name="Body_Parameters"></a>Body</h3>
+<table class="fill">
+	<tr>
+		<th>Key</th>
+		<th>Mandatory</th>
+		<th>Description</th>
+		<th>Value</th>		 
+	</tr>
+	<tr><td>type</td> <td>yes</td><td>A constant value: "custom/applications"</td> <td>String</td>  </tr>
+	
+	<tr><td>attributes</td> <td>yes</td><td>Information about the third party app</td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>name</td> <td>no</td> <td>The name of the application.</td> <td>String with at least 3 chars</td></tr>
+		<tr><td>tooltip</td> <td>no</td> <td>The information when passing over the App icon</td> <td>String</td> </tr>
+		<tr><td>description</td> <td>no</td> <td>A free text to describe the application. Not visible interactively.</td> <td>String</td> </tr>
+		<tr><td>icon</td> <td>no</td> <td>The URL of an image. </td> <td>String. </td> </tr>
+		<tr><td>config</td> <td>no</td><td>For a widget it is the widget config file URL, otherwise the parameter is ignored.</td> <td>String</td> </tr>
+		<tr><td>launchinfos</td> <td>no</td> <td>An URL for a web or widget app. An identifier for a native app.</td> <td>String</td> </tr>
+		<tr><td>quadrant</td> <td>no</td><td>east|north|west|south</td> <td>String. Case sensitive.</td> </tr> 
+		</table>
+		</td>  </tr>
+	<tr><td>relationships</td> <td>no</td><td> .</td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>platform</td> <td>yes</td> <td>Information related to the platform where the third party app is created. </td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>data</td> <td>yes</td> <td> </td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>type</td> <td>yes</td><td>A constant value: "environments"</td> <td>String</td></tr>
+		<tr><td>id</td> <td>yes</td><td>identifier of the platform instance</td> <td>String</td></tr>
+		<tr><td>attributes</td> <td>yes</td><td>Information about the third party app for the platform.</td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr> <td>public</td> <td>yes</td> <td><ul>
+		<li>false (only the granted people for the app could used it) </li>
+		<li>true (all people granted for the platform could use it)</li></ul></td> <td>boolean</td></tr>
+	 
+		</table>
+		</td> </tr>
+		 
+		</table>
+		</td> </tr>
+		 
+		</table>
+		</td> </tr>
+		 
+		</table>
+		</td>  </tr>
+	
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Responses</h2>
+<h3><a name="Resp-200"></a>Success</h3>
+<p>The OK response (status code <b>200</b>) is a JSON object with the <code>data</code> key whose the value is a JSON object as described in the <a href="CAAi3DXCompassWSQrTPA.htm">Third Party App Definition</a>.</p>
+<pre class="code">
+{"data" : {<a href="CAAi3DXCompassWSQrTPA.htm">updateApp</a>} } 
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h3><a name="Resp-ERR"></a>Failure</h3>
+<p>Besides the common <a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm#response-KO">3DCompass Web Service Failures</a> 
+the specific failures are:</p>
+<table class="fill">
+	<tr>
+		<th>Status Code</th>
+		<th>Status Message</th>
+		<th>Reason</th>	
+		 	 
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>Bad Request</td>
+		<td><ul><li>If a mandatory body key is missing.</li>
+		<li>Wrong body format.</li>
+		<li>The application name must be equal or greater than 3 chars.</li>
+		<li>The application type cannot be changed.</li>
+	    <li>The quadrant value is wrong. The value must be in lower letter.</li>
+		<li>Invalid platform instance.</li></ul></td>	
+		<td></td>	
+         		
+	</tr>
+	<tr>
+		<td>403</td>
+		<td>Forbidden</td>
+		<td>The connected person is not admin platform.</td>        		
+	</tr>	
+</table>
+<p>They all return a JSON body. The format is described by <a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm#response-3DComp">Specific 3DCompass Failure Cases</a></p>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="Example"></a>Example</h2>
+<p>An example with <i>attributes</i> key only:</p>
+<pre class="code">
+[PATCH] https:/.../resources/AppsMngt/api/custom/applications/MAP-HOTQDHTWL
+  [HEADER] X-HTTP-Method-Override : PATCH
+POST Data : {"data": {"type" : "custom/applications" , 
+"attributes": {"quadrant":"south", "description" :"the new desc", 
+"config": "http://www.3ds.com/config.txt" , 
+"tooltip": "The tooltip of the application" , "name": "TheApplicatioName" }}}
+Content-Type=application/json;charset=UTF-8
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 17 Aug 2016 08:39:03 GMT
+Server: Microsoft-IIS/7.0
+i3dx-requestid: 56c94d97-fd97-4fdb-a83d-0aa421d897a0
+Content-Type: application/json
+Content-Length: 842
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,last-modified,x-utc-offset,SecurityContext,X-DS-CSRFTOKEN,keep-alive
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+
+{"data":{
+    "type":"custom/applications",
+    "id":"MAP-HOTQDHTWL",
+    "attributes":{
+        "type":"widget",
+        "name":"TheApplicatioName",
+        "tooltip":"The tooltip of the application",
+        "description":"the new desc",
+        "icon":"http://www.3ds.com/icon.jpg",
+        "config":"http://www.3ds.com/config.txt",
+        "launchinfos":"http://www.3ds.com/myconf.json",
+        "quadrant":"south"},
+    "relationships":{"platform":{"data":{"type":"environments","id":"DSDEV014","attributes":{"public":false}
+}}}}}
+</pre>
+<p>An example to change the public attribute only:</p>
+<pre class="code">
+[PATCH] https://.../resources/AppsMngt/api/custom/applications/MAP-HOTQDHTWL
+  [HEADER] X-HTTP-Method-Override : PATCH
+POST Data : {"data": {"type" : "custom/applications" , "attributes": {}, 
+"relationships":{"platform":{"data":{"type":"environments","id":"DSDEV014","attributes":{"public":true}}}}}}  
+Content-Type=application/json;charset=UTF-8
+
+##SERVER RESPONSE [200] OK
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 200 OK
+Date: Wed, 17 Aug 2016 08:58:37 GMT
+Server: Microsoft-IIS/7.0
+i3dx-requestid: a26f0c44-6dcc-47ba-a6f4-e7f9a20b0eac
+Content-Type: application/json
+Content-Length: 429
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,last-modified,x-utc-offset,SecurityContext,X-DS-CSRFTOKEN,keep-alive
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+
+{"data":{
+    "type":"custom/applications",
+    "id":"MAP-HOTQDHTWL",
+    "attributes":{
+        "type":"widget",
+        "name":"TheApplicatioName",
+        "tooltip":"The tooltip of the application",
+        "description":"",
+        "icon":"http://www.3ds.com/icon.jpg",
+        "config":"http://www.3ds.com/config.txt",
+        "launchinfos":"http://www.3ds.com/myconf.json",
+        "quadrant":"south"},
+    "relationships":{"platform":{"data":{"type":"environments","id":"DSDEV014","attributes":{"public":true}}}}}}
+</pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

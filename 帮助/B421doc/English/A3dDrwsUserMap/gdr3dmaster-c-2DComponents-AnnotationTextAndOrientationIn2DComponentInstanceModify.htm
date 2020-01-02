@@ -1,0 +1,157 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Modifying Annotation Text and Orientation"/>
+<meta name="abstract" content="This topic provides more information about modifying annotation text and orientation."/>
+<meta name="description" content="This topic provides more information about modifying annotation text and orientation."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-c-2DComponents.htm#gdr3dmaster-c-2DComponents"/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-2DComponents-AnnotationTextAndOrientationIn2DComponentInstanceModify.htm#gdr3dmaster-t-2DComponents-AnnotationTextAndOrientationIn2DComponentInstanceModify"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-2DComponents-AnnotationTextAndOrientationIn2DComponentInstanceModify"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Modifying Annotation Text and Orientation</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-2DComponents-AnnotationTextAndOrientationIn2DComponentInstanceModify">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-2D components::modifying text"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Modifying Annotation Text and Orientation
+				</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic provides more information about modifying annotation text and orientation.</span>
+  </p>
+<ul><li><a href="#c-AboutTextModifiableInA2DComponentInstance" id="toc_rg" title="This sub topic provides information about modifying annotation text in a 2D component instance.">About Modifiable Text  in a 2D Component Instance</a></li><li><a href="#c-AboutTextOrientation" id="toc_rg" title="You can fix the text orientation in a 2D component. In the 2D component instances, the text will keep the same orientation even if the 2D component instance is rotated or flipped.">About Text Orientation</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-c-2DComponents.htm#gdr3dmaster-c-2DComponents" title="This topic explains the concepts that you need to understand before you begin creating and reusing 2D components.">About 2D Components</a></td></tr><tr><td><a href="gdr3dmaster-t-2DComponents-AnnotationTextAndOrientationIn2DComponentInstanceModify.htm#gdr3dmaster-t-2DComponents-AnnotationTextAndOrientationIn2DComponentInstanceModify" title="You can modify the text and orientation in 2D component instances. It helps you to visualize the annotation text in a better way.">Modifying Annotation Text and Orientation in a 2D Component</a></td></tr></table></td></tr></table>
+
+<div/><div class="nested1" id="c-AboutTextModifiableInA2DComponentInstance"><h2 class="topictitle2">About Modifiable Text  in a 2D Component Instance</h2>
+<div><p>This sub topic provides information about  modifying annotation text in a 2D component instance. </p>
+<p>
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>
+				<ul>
+					<li>Once a text becomes modifiable, it is not possible to make 
+					it non-modifiable.</li>
+
+					<li>Clear <span class="uicontrol">Disable direct manipulation</span> check box available through <span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Mechanical</span> &gt; <span class="uicontrol">Drafting</span> &gt; <span class="uicontrol">Geometry</span></span>  tab. If this check box is selected, you cannot 
+					manipulate the component, nor modify the text strings in 2D 
+					component instances.</li>
+
+				</ul>
+
+				</td></tr></table>
+
+		</p><div class="section" id="c-AboutTextModifiableInA2DComponentInstance__cs-AttributeLink"><h3 class="sectiontitle">Attribute Link</h3>
+		<p>You can add <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span> links in the text content.</p>
+		</div>
+<div class="section" id="c-AboutTextModifiableInA2DComponentInstance__cs-VPMCatalog"><h3 class="sectiontitle">VPM Catalog</h3>
+		<p>For <span class="glossterm" id="component-2D-instance" onmouseout="hideTerm()" onmouseover="showTerm('component-2D-instance.xml')">2D component instances</span> created with a VPM catalog, if a text becomes 
+		modifiable in the catalog, you have to synchronize the external reference 
+		to make the 2D component instance text modifiable too (see <cite><span>Design IP Classification</span> User's Guide: Creating 
+		a Catalog</cite>).</p>
+		</div>
+<div class="section" id="c-AboutTextModifiableInA2DComponentInstance__cs-2DComponentReferenceContainingAnInstance"><h3 class="sectiontitle">2D Component Reference Containing an Instance</h3>
+		<p>If you create a <span class="glossterm" id="component-2D-reference" onmouseout="hideTerm()" onmouseover="showTerm('component-2D-reference.xml')">2D component reference</span> (called MYREF for example) containing 
+		a 2D component instance with a modifiable text, the text will not be modifiable 
+		in instances of MYREF. </p>
+		</div>
+<div class="section" id="c-AboutTextModifiableInA2DComponentInstance__cs-2DComponentsWithTextUsedAsSymbol"><h3 class="sectiontitle">2D Components with Text Used as Symbol</h3>
+		<p>To use 2D components with text as symbols, select these check boxes: </p>
+		<ul>
+			<li><span class="uicontrol">Apply Scale</span> (available when you right-click and select   <span class="uicontrol">Properties &gt; Text</span> tab,
+			under <span class="uicontrol">Options</span>) </li>
+
+			<li><span class="uicontrol">Apply scale at creation to compensate view scale</span> (in <span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Mechanical</span> &gt; <span class="uicontrol">Drafting</span> &gt; <span class="uicontrol">Geometry</span></span> 
+			tab)</li>
+
+		</ul>
+
+		<p>The size of both the 2D component and its text will then be independent 
+		from the view scale.</p>
+		</div>
+</div>
+</div>
+<div class="nested1" id="c-AboutTextOrientation"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">About Text Orientation</h2>
+<div><p>You can fix the text orientation in a 2D component. 
+		In the 2D component instances, the text will keep the same orientation even 
+		if the 2D component instance is rotated or flipped.</p>
+
+		
+		
+		<div class="section" id="c-AboutTextOrientation__cs-SummaryTableOfTextOrientation"><h3 class="sectiontitle">Summary table of text orientation</h3>
+		
+			
+		
+		
+	
+
+
+
+
+
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><tbody><tr><td class="cellrowborder" valign="top" width="21.14164904862579%"> </td>
+<td class="cellrowborder" valign="top" width="21.14164904862579%"><p>Text rotate 
+					with 2D component instance</p></td>
+<td class="cellrowborder" valign="top" width="32.558139534883715%"><p>Text orientation is fixed 
+					and independent from 2D component instance orientation</p>
+					</td>
+<td class="cellrowborder" valign="top" width="25.15856236786469%"> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="21.14164904862579%">Original orientation</td>
+<td class="cellrowborder" valign="top" width="21.14164904862579%"><br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient03.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="32.558139534883715%"><br/><img src="../Gdr3DMasterImages/2Dcannotorient09.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="25.15856236786469%"><br/><img height="80" width="60" src="../Gdr3DMasterImages/2Dcannotorient15.gif"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="21.14164904862579%">Horizontal</td>
+<td class="cellrowborder" valign="top" width="21.14164904862579%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient04.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="32.558139534883715%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient10.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="25.15856236786469%">
+					<br/><img height="80" width="60" src="../Gdr3DMasterImages/2Dcannotorient16.gif"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="21.14164904862579%">Vertical</td>
+<td class="cellrowborder" valign="top" width="21.14164904862579%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient05.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="32.558139534883715%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient11.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="25.15856236786469%">
+					<br/><img height="78" width="86" src="../Gdr3DMasterImages/2Dcannotorient17.gif"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="21.14164904862579%">Flip Horizontal</td>
+<td class="cellrowborder" valign="top" width="21.14164904862579%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient06.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="32.558139534883715%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient12.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="25.15856236786469%">
+					<br/><img height="80" width="60" src="../Gdr3DMasterImages/2Dcannotorient18.gif"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="21.14164904862579%">Flip Vertical</td>
+<td class="cellrowborder" valign="top" width="21.14164904862579%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient07.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="32.558139534883715%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient13.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="25.15856236786469%">
+					<br/><img height="80" width="60" src="../Gdr3DMasterImages/2Dcannotorient19.gif"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="21.14164904862579%">Rotate</td>
+<td class="cellrowborder" valign="top" width="21.14164904862579%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient08.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="32.558139534883715%">
+					<br/><img height="60" width="60" src="../Gdr3DMasterImages/2Dcannotorient14.gif"/><br/></td>
+<td class="cellrowborder" valign="top" width="25.15856236786469%">
+					<br/><img height="85" width="74" src="../Gdr3DMasterImages/2Dcannotorient20.gif"/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

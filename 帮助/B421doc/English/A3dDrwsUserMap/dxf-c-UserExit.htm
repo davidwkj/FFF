@@ -1,0 +1,102 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About User Exit"/>
+<meta name="abstract" content="This section explains how to use knowledge rules to customize the valuation of the public and writable PLM Components attributes when creating them at import, and how to customize the file reference attributes while exporting them."/>
+<meta name="description" content="This section explains how to use knowledge rules to customize the valuation of the public and writable PLM Components attributes when creating them at import, and how to customize the file reference attributes while exporting them."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dxf-c-UserExit"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About User Exit</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dxf-c-UserExit">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWG::user exit"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About User Exit</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This section explains how to use knowledge rules to customize the valuation of the public and writable PLM Components attributes when creating them at  import, and how to customize the file reference attributes while exporting them. 
+
+         
+         </span>
+
+    
+  </p>
+<ul><li><a href="#dxf-c-UserExit__d2180e32" id="toc_rg" title="">At Import</a></li><li><a href="#dxf-c-UserExit__d2180e50" id="toc_rg" title="">At Export</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+  <p>
+  <ul>
+	 <li>This opening is based on knowledge rules.
+	 </li>
+
+	 <li>These PLM Components can be References or
+		Representation References.
+	 </li>
+
+	 <li>The User Exit mechanism provided is based on
+		knowledge scripts, with a default behavior both while importing and exporting. 
+	 </li>
+
+	 <li>You can override these default behaviors by rules
+		provided for each customization, using the PLM Opening ID dedicated to the
+		valuation of attributes at import or export as
+		PLMImportExportAttributesValuation value. 
+	 </li>
+
+  </ul>
+
+  </p>
+  <div class="section" id="dxf-c-UserExit__d2180e32"><h2 class="sectiontitle">At Import</h2>
+	 
+	 <p>New PLM components are created at import. PLM
+		attributes are generated from File information, as follows:
+	 <ul> 
+		<li>The value of V_Name attribute is the File
+		  Reference ID.
+		</li>
+ 
+		<li>The values of the other PLM attributes are
+		  default value.
+		</li>
+
+	 </ul>
+
+	 </p>
+  </div>
+
+  <div class="section" id="dxf-c-UserExit__d2180e50"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">At Export</h2>
+	 
+	 <p>You are proposed this opening in export command to
+		customize the file attributes valuation.
+	 <ul>
+		<li>User Exit gives you the opportunity to export PLM
+		  references in a given context as a customization.
+		</li>
+
+		<li>All public PLM attributes of the Component can be
+		  used to pre-valuate the File Reference ID.
+		</li>
+
+		<li>The File Reference ID is valuated from the
+		  visible attribute, either V_Name or PLM_ExternalID.
+		</li>
+
+	 </ul>
+
+	 </p>
+  </div>
+
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

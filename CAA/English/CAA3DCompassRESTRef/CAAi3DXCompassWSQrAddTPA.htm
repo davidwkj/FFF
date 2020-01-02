@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Add Third Party App</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="table1">
+	<tr>
+		<td class="DocHeader3"><a name="Top"></a>
+		<table class="DocHeader">
+			<tr>
+				<td class="DocHeader1" colspan="2">
+				<h1>Add Third Party App</h1>
+				</td>
+			</tr>
+			<tr>
+				<td class="DocHeader4" colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="DocHeader3">
+				<table class="DocHeaderIntro">
+					<tr>
+						<td class="Intro1">
+						
+						<div id="toc">
+						</div>
+						</td>
+					</tr>
+				</table>
+				</td>
+				<td class="DocHeader2">
+				<table class="DocTopics">
+					<tr>
+						<td class="TopicsTitle">Related Topics</td>
+					</tr>
+					 <tr>
+						<td><a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm">About 3DCompass Web Services</a></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Creates a third party app.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr>
+		<th>&nbsp;Method&nbsp;</th>
+		<th>&nbsp;Path&nbsp;</th> 
+	</tr>
+	<tr>
+		<td>POST</td>
+		<td>/resources/AppsMngt/api/custom/applications</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h3><a name="Body_Parameters"></a>Body</h3>
+<table class="fill">
+	<tr>
+		<th>Key</th>
+		<th>Mandatory</th>
+		<th>Description</th>
+		<th>Value</th>		 
+	</tr>
+	<tr><td>type</td> <td>yes</td><td>A constant value: "custom/applications"</td> <td>String</td>  </tr>
+	
+	<tr><td>attributes</td> <td>yes</td><td>Information about the third party app</td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>type</td> <td>no, default= web</td> <td>web|widget|native</td> <td>String. Not case sensitive.</td></tr>
+		<tr><td>name</td> <td>yes</td> <td>The name of the application.</td> <td>String with at least 3 chars</td></tr>
+		<tr><td>tooltip</td> <td>no, default = ""</td> <td>The information when passing over the App icon</td> <td>String</td> </tr>
+		<tr><td>description</td> <td>no, default = ""</td> <td>A free text to describe the application. Not visible interactively.</td> <td>String</td> </tr>
+		<tr><td>icon</td> <td>yes</td> <td>The URL of an image. </td> <td>String. </td> </tr>
+		<tr><td>config</td> <td>no</td><td>Useless for native and web app. For a widget it is the widget config file URL.</td> <td>String</td> </tr>
+		<tr><td>launchinfos</td> <td>yes for widget|web, no otherwise</td> <td>An URL for a web or widget app. An identifier for a native app.</td> <td>String</td> </tr>
+		<tr><td>exe</td> <td>no, default = "3dexperience.exe"</td> <td>The custom application name which can be set for a native app.</td> <td>String. </td> </tr>
+		<tr><td>error</td> <td>no, default = ""</td> <td>The custom error message which can be set for a native app.</td> <td>String. </td> </tr>
+		<tr><td>quadrant</td> <td>no, default = north</td><td>east|north|west|south</td> <td>String; Not case sensitive.</td> </tr> 
+		</table>
+		</td>  </tr>
+	<tr><td>relationships</td> <td>yes</td><td> .</td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>platform</td> <td>yes</td> <td>Information related to the platform where the third party app is created. </td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>data</td> <td>yes</td> <td> </td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr><td>type</td> <td>yes</td><td>A constant value: "environments"</td> <td>String</td></tr>
+		<tr><td>id</td> <td>yes</td><td>identifier of the platform instance</td> <td>String</td></tr>
+		<tr><td>attributes</td> <td>yes</td><td>Information about the third party app for the platform.</td> <td>A JSON structure 
+		<table class="fill">
+		<tr>
+			<th>Key</th>
+			<th>Mandatory</th>
+			<th>Description</th>
+			<th>Value</th>		 
+		</tr>
+		<tr> <td>public</td> <td>yes</td> <td><ul>
+		<li>false (only the granted people for the app could used it) </li>
+		<li>true (all people granted for the platform could use it)</li></ul></td> <td>boolean</td></tr>
+	 
+		</table>
+		</td> </tr>
+		 
+		</table>
+		</td> </tr>
+		 
+		</table>
+		</td> </tr>
+		 
+		</table>
+		</td>  </tr>
+	
+</table>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Responses</h2>
+<h3><a name="Resp-200"></a>Success</h3>
+<p>The successful response (status code <b>201</b>) is a JSON object with the <code>data</code> key whose the value is a JSON object as described in the <a href="CAAi3DXCompassWSQrTPA.htm">Third Party App Definition</a>.</p>
+<pre class="code">
+{"data" : {<a href="CAAi3DXCompassWSQrTPA.htm">newApp</a>} } 
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h3><a name="Resp-ERR"></a>Failure</h3>
+<p>Besides the common <a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm#response-KO">3DCompass Web Service Failures</a> 
+the specific failures are:</p>
+<table class="fill">
+	<tr>
+		<th>Status Code</th>
+		<th>Status Message</th>
+		<th>Reason</th>		 
+	</tr>
+	<tr>
+		<td>400</td>
+		<td>Bad Request</td>
+		<td><ul><li>If a mandatory body key is missing.</li>
+		<li>Wrong body format.</li>
+		<li>Issue with the name body parameter. Either missing, or its value is less than 3 chars.</li>
+		<li>Wrong application type. Only widget, web and native are authorized.</li>
+		<li>Invalid platform instance.</li></ul></td>	
+		<td></td>	
+         	
+	</tr>
+	<tr>
+		<td>403</td>
+		<td>Forbidden</td>
+		<td>The connected person is not admin for the platform.</td>	        		
+	</tr>
+	
+	<tr>
+		<td>409</td>
+		<td>Conflict</td>
+		<td>Invalid type ("environments" or "custom/applications").</td>	
+         			
+	</tr>
+</table>
+<p>They all return a JSON body. The format is described by <a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm#response-3DComp">Specific 3DCompass Failure Cases</a></p>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="Example"></a>Example</h2>
+<p><pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[POST] https://.../resources/AppsMngt/api/custom/applications
+POST Data : {  "data": {  "type" : "custom/applications" , "attributes": { "type": "WidGEt", 
+ "name": "CAA-Test", "icon": "i","launchinfos": "my_custom_app", 
+ "description": "the joli app" , "quadrant": "EaSt" , "config": "config"},
+ "relationships": { "platform": { "data": 
+ { "type": "environments", "id": "OnPremise", "attributes": { "public": false}}}}  }}
+Content-Type=application/json;charset=UTF-8
+
+##SERVER RESPONSE [201] Created
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 201 Created
+Date: Mon, 08 Aug 2016 08:45:39 GMT
+Server: Microsoft-IIS/7.0
+X-FRAME-OPTIONS: SAMEORIGIN
+i3dx-requestid: 3332d6bd-6ba2-41a2-bed2-5f3e4e256555
+Location: https://sdbstelladsy.ux.dsone.3ds.com/3DSpace/resources/AppsMngt/api/custom/applications/MAP-BQZNZXTGS
+Content-Type: application/json
+Content-Length: 337
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext,x-utc-offset,X-DS-CSRFTOKEN
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+{"data":{
+    "type":"custom/applications",
+    "id":"MAP-BQZNZXTGS",
+    "attributes":{
+        "type":"widget",
+        "name":"CAA-Test",
+        "tooltip":"",
+        "description":"the joli app",
+        "icon":"i",
+        "config":"config",
+        "launchinfos":"my_custom_app",
+        "quadrant":"east"},
+    "relationships":{
+        "platform":{
+            "data":{
+                "type":"environments",
+                "id":"OnPremise",
+                "attributes":{
+                    "public":false}
+}}}}}
+</pre></p>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

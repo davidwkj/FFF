@@ -1,0 +1,113 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Importing From Files"/>
+<meta name="abstract" content="This topic explains the concepts that you need to understand before you begin importing files."/>
+<meta name="description" content="This topic explains the concepts that you need to understand before you begin importing files."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-FromFileImport.htm#gdr3dmaster-t-FromFileImport"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-FromFileImport"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Importing From Files</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocServices.js">
+  		/* */
+  		</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-FromFileImport">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-importing from files::CSV files"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-importing from files::IG2 (2D IGES) files"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Importing From Files</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>    This topic explains the concepts that you need to understand before you begin importing files.
+    </span>
+
+    <p>The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#c-ImportingCSVFiles" id="toc_rg" title="A .csv file is a text file, that is comma delimited file. You can import a table from a .csv file.">About Importing CSV Files</a></li><li><a href="#c-ImportingIG2Files" id="toc_rg" title="You can import an IG2 file into an existing layout representation.">About Importing IG2 (2D IGES) Files</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-FromFileImport.htm#gdr3dmaster-t-FromFileImport" title="You can insert files of certain types into a representation.">Inserting From Files</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div/>
+
+  <div class="nested1" id="c-ImportingCSVFiles">
+    <h2 class="topictitle2">About Importing CSV Files</h2>
+
+    
+    <div><p>
+      A .csv file is a text file, that is comma delimited file.
+    You can import a table from a .csv file. </p>
+
+      <p>Note that the table import is based on system options. In a CSV (Comma Separated Values) file, each line corresponds to a line in the table. Within a given line, each cell is separated by a specific character that depends on the decimal separator specified in the system options. This decimal separator determines the character that will be interpreted as the cell separator: 
+      </p>
+      <ul>
+        <li>If the decimal separator is a dot, then the comma (,) is used as a column separator. 
+        </li>
+
+        <li>If the decimal separator is a comma, then the semi-colon is used as a column separator. 
+        </li>
+
+      </ul>
+
+      
+      
+      
+    <p>The following figure depicts an imported .csv file in a view:</p><p><br/><img src="../Gdr3DMasterImages/importfromCSVNLS.png"/><br/></p></div>
+
+
+    
+
+    
+  </div>
+
+
+  
+<div class="nested1" id="c-ImportingIG2Files">
+      <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">About Importing IG2 (2D IGES) Files</h2>
+
+      
+      <div><p>You can import an IG2  file into an existing layout representation.</p>
+
+        <p>Note:
+		Clear the <span class="uicontrol">Map IGES 2D Layers with 2D Layout for 3D Design Sheets</span> check box from <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3DEXPERIENCE Platform Common Preferences</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Compatibility</span> &gt; <span class="uicontrol">IGES 2D</span></span> section, under <span class="uicontrol">Import</span>, to import the IG2 file in the current sheet.</p>
+<p>When you import an IG2 file, the following actions take place: 
+        </p><p><ul><li>A new view (<span class="glossterm" id="auxiliary-view" onmouseout="hideTerm()" onmouseover="showTerm('auxiliary-view.xml')">auxiliary view</span>) is created in the current <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>.</li>
+<li>The name of the current sheet is not modified.</li>
+<li>The format and standard of the current sheet are not modified.</li>
+<li>By default, the view is  placed in the xy plane.</li>
+</ul>
+</p><p>Otherwise, the creation of views and sheets depend on the layers. For more information, see <cite>Converter for IGES User's Guide: Dealing with IGES 2D Data: IGES 2D Concepts: About Layers</cite></p><p><p>Notes:
+		<ul><li>If an IG2 file contains more than one view, the entities of all IG2 views are created in the current auxiliary view.</li>
+<li>If an IG2 file contains more than one sheet, the entities of all IG2 sheets are created in the current auxiliary view.</li>
+</ul>
+ </p>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>While importing an IG2 file, all the IG2 settings are taken into account. However, the drafting standard of the current sheet remains unaltered.   </td></tr></table>
+</p><p>The following figure depicts an imported IG2 file in a view: </p><p><br/><a href="../Gdr3DMasterImages/importfromIG2NLS.png" onClick="ViewImage(this);return false"><img title="Click to enlarge this image" src="../Gdr3DMasterImages/importfromIG2NLS_s.png"/></a><br/></p>
+      <div class="section" id="c-ImportingIG2Files__cs-SheetBackgroundColor"><h3 class="sectiontitle">Sheet Background Color</h3>  <p><p>Note:
+		The background luminosity value ranges between 0 and 255.</p>
+</p><p><ul><li>If the background luminosity is lower than 100, the black color from IG2 is changed to white (so, both black and white are white).</li>
+<li>If the background luminosity is between 100 and 200, no color is changed.</li>
+<li>If the background luminosity is higher than 200, the white color from IG2 is changed to black (so, both black and white are black).</li>
+</ul>
+</p></div>
+</div>
+
+
+      
+
+      
+    </div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

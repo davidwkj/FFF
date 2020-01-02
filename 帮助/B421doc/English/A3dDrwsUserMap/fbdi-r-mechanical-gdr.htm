@@ -1,0 +1,281 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="reference"/>
+<meta name="DC.Title" content="Drawings File-based Design Import"/>
+<meta name="abstract" content="File-based Design Import (FBDI) enables content migration from V5 to 3DEXPERIENCE."/>
+<meta name="description" content="File-based Design Import (FBDI) enables content migration from V5 to 3DEXPERIENCE."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="fbdi-r-mechanical-gdr"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Drawings File-based Design Import</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="fbdi-r-mechanical-gdr">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-&#xA;      FBDI ::&#xA;        Drafting&#xA;      "> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1><span><span>Drawings</span></span> File-based Design Import</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>
+      <span>File-based
+  Design Import (FBDI) enables content migration from V5 to 
+  <span><span class="tm-3D">3D</span>EXPERIENCE</span>.</span></span>
+</p>
+<ul><li><a href="#r-V5to3DEXPERIENCEDataImportTable" id="toc_rg" title="">V5 to <span><span class="tm-3D">3D</span>EXPERIENCE</span> Data Import Table</a></li><li><a href="#r-V5NativeGeometryUsageAfterImport" id="toc_rg" title="This section describes the different compatibility statuses of V5 CATParts in the 3DEXPERIENCE environment.">V5 Native Geometry Usage After Import</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+  
+  
+
+  <div class="nested1" id="r-V5to3DEXPERIENCEDataImportTable">
+    <h2 class="topictitle2">V5 to <span><span class="tm-3D">3D</span>EXPERIENCE</span> Data Import Table</h2>
+
+    
+    
+    <div>
+      
+      
+      <div class="section" id="r-V5to3DEXPERIENCEDataImportTable__rs-DataImportTable">
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="void" border="1" rules="all"><span class="tabledesc">The following table describes import correspondences between V5 file-based data and <span><span class="tm-3D">3D</span>EXPERIENCE</span> content.
+        
+      <p>The statuses for import results are fully imported, partially imported, and not imported (-).</p></span>
+          
+          
+          
+          <thead align="left">
+            <tr>
+              <th class="cellrowborder" valign="top" width="33.33333333333333%" id="d75282e64">V5 Data Type</th>
+
+              <th class="cellrowborder" valign="top" width="33.66336633663366%" id="d75282e67"><span><span class="tm-3D">3D</span>EXPERIENCE</span> <span>Content Type</span></th>
+
+              <th class="cellrowborder" valign="top" width="33.003300330033%" id="d75282e76">Import Result</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 ">
+                Annotations: <ul><li>Roughness symbol</li>
+<li>Extension line</li>
+</ul>
+</td>
+
+              <td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 ">
+                Annotations: <ul><li>Roughness symbol </li>
+<li>Extension line</li>
+</ul>
+</td>
+
+              <td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 ">
+                <ul><li>Fully imported. <p>The roughness symbol is standard compliant in CATIA <span class="tm-3D">3D</span>EXPERIENCE.  </p></li>
+<li>Fully imported.<p>In a CATIA V5 session, an associated roughness has no extension. After migration, a roughness has an extension line if needed.</p></li>
+</ul>
+
+              </td>
+
+            </tr>
+
+            <tr>
+              <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 ">
+                Pictures
+              </td>
+
+              <td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 ">
+                Pictures
+              </td>
+
+              <td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 ">
+                <p>Partially imported.</p><p>Imported with reference as <span class="uicontrol">Sheet</span> and orientation as <span class="uicontrol">Horizontal</span>  (except for black and white bi-level pixel images) for all data created in CATIA up to the release V5-6R2014.</p><p>Fully imported for all data created in CATIA V5-6R2015.</p></td>
+
+            </tr>
+
+            <tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 ">
+                <p>Inserted objects (OLE):   </p><p><ul><li>Without link</li>
+<li>With link</li>
+</ul>
+</p>
+              </td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 "><p>Inserted objects (OLE): </p><p><ul><li>Without link</li>
+<li>With link</li>
+</ul>
+</p></td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "><ul><li>Fully imported.</li>
+<li>Partially imported. <p>(If the document is accessible).</p><p>Note that as the object is embedded, it can be edited.</p></li>
+</ul>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 "><p>Balloons:    </p><p><ul><li>Associative balloons</li>
+</ul>
+</p></td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 ">Balloons:<p><ul><li>Associative balloons</li>
+</ul>
+</p></td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "> <ul><li>Partially imported. <p>(Isolated)</p></li>
+</ul>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 "><p>Bills of Material, generated report   </p></td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 "><p>Bills of Material, generated report   </p></td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "><p>Partially imported. </p><p>(Isolated)</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 ">Generative view</td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 ">Generative view</td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "><p> Fully imported. </p><p>However, it is seen as "Not-Updated" after import. </p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 "><p><span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">Associativity</span>:     <ul><li><span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">Callout</span> of <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section views</span> associated with 3D sketches </li>
+<li>Views created from DMU boxes</li>
+</ul>
+</p></td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 "><p><span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">Associativity</span>:     <ul><li><span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">Callout</span> of <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section views</span> not associated with 3D sketches </li>
+<li>Views created from DMU boxes</li>
+</ul>
+</p></td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "><p><ul><li>Partially imported.  <p>Section view profile is frozen and no more linked to the 3D sketch (link is isolated)</p></li>
+<li>Partially imported.<p>2D embedded box is frozen. The view is no more linked to the DMU box (link is isolated) </p></li>
+</ul>
+</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 "><ul><li>Views created from DMU and Assembly scenes</li>
+</ul>
+</td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 "><ul><li>Views created from DMU and Assembly scenes</li>
+</ul>
+</td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "><ul><li>Fully imported.</li>
+</ul>
+<p>Associativity is kept as it is.</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 "><p>Views created from FTA: <ul><li>From an FTA view added to a .CATPart  </li>
+<li>From an FTA view added to a .CATProduct </li>
+</ul>
+    </p></td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 "><p>Views created from FTA: <ul><li>From an FTA view added to a .CATPart  </li>
+<li>From an FTA view added to a .CATProduct </li>
+</ul>
+    </p></td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "><ul><li>Fully imported. </li>
+<li>Partially imported. <p>The view is generated as the front view of the product. On importing, a warning message appears to prompt the same.</p></li>
+</ul>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 "><p>.model: <ul><li>CATDrawing generated from a .model</li>
+</ul>
+    </p></td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 "><p>.model: <ul><li>CATDrawing generated from a .model</li>
+</ul>
+    </p></td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "><ul><li>Partially imported.<p>The view is seen with the broken link which is isolated.</p></li>
+</ul>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 ">Product structure properties mapping on drawing views: <ul><li><span class="uicontrol">Show/No show</span></li>
+<li><span class="uicontrol">Do not cut in section views</span></li>
+<li><span class="uicontrol">Do not use when projecting</span></li>
+<li><span class="uicontrol">Represented with hidden lines</span></li>
+</ul>
+</td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 ">Product structure properties mapping on drawing views: <ul><li><span class="uicontrol">Show/No show</span></li>
+<li><span class="uicontrol">Do not cut in section views</span></li>
+<li><span class="uicontrol">Do not use when projecting</span></li>
+<li><span class="uicontrol">Represented with hidden lines</span></li>
+</ul>
+</td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "><p>Imported as an overloaded property according to the option set in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="uicontrol"> &gt; File-based Design Import &gt; Drafting</span> tab.</p><ul><li>Fully   imported (it is actually imported as <span class="uicontrol">Do not use when projecting</span>). </li>
+<li>Fully imported</li>
+<li>Fully imported  </li>
+<li>Fully imported </li>
+</ul>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 ">Views linked to bodies contained in different CATParts</td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 ">New product </td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 ">Partially imported. <p>Imported and a new product reference is created if  <span class="uicontrol">Automatically create a new product reference to keep view associativity</span> check box is selected in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="uicontrol"> &gt; File-based Design Import &gt; Drafting</span> tab, <span class="uicontrol">Import of views linked to bodies contained in different CATPart documents</span> area.</p><p>If this check box is cleared, the views will not be associative and no update can be performed on such views.</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="d75282e64 "><p>CATDrawing <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span></p></td>
+<td class="cellrowborder" valign="top" width="33.66336633663366%" headers="d75282e67 ">Drawing</td>
+<td class="cellrowborder" valign="top" width="33.003300330033%" headers="d75282e76 "><p>Fully  imported. </p><p>The <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> is inserted under the product as a shared representation if <span class="uicontrol">Make the drawing shareable</span> check box is selected in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="uicontrol"> &gt; File-based Design Import &gt; Drafting</span> tab, <span class="uicontrol">Drawing representation location</span> area.</p><p>However, if this check box is cleared, the drawing is inserted under the product as a non-shared representation (aggregated representation). </p></td>
+</tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+      
+    </div>
+
+      
+      
+    <div class="section" id="r-V5to3DEXPERIENCEDataImportTable__rs-Considerations"><h3 class="sectiontitle">Considerations</h3>
+      
+      <p>
+          You should take the following considerations into account:<dl>
+          
+            <dt class="dlterm">
+              FBDI Process
+            </dt>
+
+            
+            <dd>
+              <p>When the FBDI process is successful, a few links/items are partially imported. The table above indicates the modified items and their import status.
+      The FBDI process is successful when the CATDrawing:<ul><li>has links to accessible documents only.</li>
+<li>has links to a non-accessible document but has been isolated (using the <span class="uicontrol">Always activated</span> or <span class="uicontrol">User choice</span> option via <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="uicontrol">&gt; File-based Design Import</span><span class="uicontrol"> &gt; FBDI General</span> tab, <span class="uicontrol">Link Isolation</span> area).</li>
+</ul>
+</p> <p><p>Note:
+		 A CATDrawing isolated from 3D has specific behaviors as follows:<ul><li>Inserted <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">objects</span> (OLE) created with link are deleted. </li>
+<li>Generative views still contain generated geometry, but the links are removed (the broken links icon is displayed in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>). </li>
+<li>If its <span class="glossterm" id="component-2D-reference" onmouseout="hideTerm()" onmouseover="showTerm('component-2D-reference.xml')">2D component reference</span> is not accessible, a 2D component is imported but isolated. </li>
+</ul>
+</p>
+</p>
+            </dd>
+
+          
+          
+        </dl>
+
+      </p>
+    </div>
+</div>
+
+  </div>
+
+
+  <div class="nested1" id="r-V5NativeGeometryUsageAfterImport"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">V5 Native Geometry Usage After Import</h2>
+
+<div><p>
+<span>This section describes the different compatibility statuses of V5
+  CATParts in the 
+  <span><span class="tm-3D">3D</span>EXPERIENCE</span>
+  environment. 
+</span>
+
+<p>For more information about standard behavior, see 
+  <cite>Social and Collaborative: Global Design Management: Coexistence and
+	 Migration: 
+	 <span>ENOVIA VPM V5 Coexistence and Migration</span>:
+	 Understanding Coexistence and Migration: V5 Native Geometry Usage</cite>.
+</p></p>
+
+					<div class="section" id="r-V5NativeGeometryUsageAfterImport__rs-V5Native-Content">
+						<p>There are two cases of V5 native geometry import as follows:<ul><li>When a V5 native 3D shape representation is imported to <span><span class="tm-3D">3D</span>EXPERIENCE</span>, the data can be used as if it were native to <span><span class="tm-3D">3D</span>EXPERIENCE</span>. You can generate drawings for this data using all the <span><span class="tm-3D">3D</span>EXPERIENCE</span> capabilities in the same session.</li>
+<li>When a V5 native .CATDrawing file is imported to <span><span class="tm-3D">3D</span>EXPERIENCE</span>, the data can only be viewed in <span class="uicontrol">Explore</span> mode. It cannot be opened or edited.</li>
+</ul>
+</p>
+					</div>
+
+				</div>
+</div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

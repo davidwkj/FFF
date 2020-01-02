@@ -1,0 +1,115 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Working with Datum Targets"/>
+<meta name="abstract" content="A datum target can be a specific point, a line, or an area on a feature that is used to establish a reference for measurements. You can create a datum target, a movable datum target, add leader to the movable datum target and so on. However, you should be familiar with the concepts that are described in this topic before working with datum targets."/>
+<meta name="description" content="A datum target can be a specific point, a line, or an area on a feature that is used to establish a reference for measurements. You can create a datum target, a movable datum target, add leader to the movable datum target and so on. However, you should be familiar with the concepts that are described in this topic before working with datum targets."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Annotations-DatumTargetCreate.htm#gdr3dmaster-t-Annotations-DatumTargetCreate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Annotations-DatumTargetCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Working with Datum Targets</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Annotations-DatumTargetCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1> About Working with Datum Targets</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>A datum target can be a specific point, a line, or an area on a feature that is used to establish a reference for measurements. You can create a datum target, a movable datum target, 
+    add leader to the movable datum target and so on. However, you should be familiar with the concepts that are described in this topic before working with datum targets.</span>
+
+    <p>The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#c-DatumTargetCreationDialogBox" id="toc_rg" title="This sub-topic provides more information about the datum target creation dialog box.">Datum Target Creation Dialog Box</a></li><li><a href="#c-PositioningADatumTarget" id="toc_rg" title="This sub-topic provides information about positioning a datum target.">Positioning a Datum Target</a></li><li><a href="#c-ManipulatorsonaMovableDatumTarget" id="toc_rg" title="The movable datum target handle is added on the side where the first leader is. The handle is oriented to the inside of the datum. Therefore, when you click the red handle, it changes the datum to unmovable.">Handles on a Movable Datum Target</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Annotations-DatumTargetCreate.htm#gdr3dmaster-t-Annotations-DatumTargetCreate" title="You can create a simple datum target or a movable datum target. You can also convert a non-movable datum target into a movable one.">Working with Datum Targets</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div/>
+
+  <div class="nested1" id="c-DatumTargetCreationDialogBox"><h2 class="topictitle2">Datum Target Creation Dialog Box</h2>
+
+<div><p><span>This sub-topic provides more information about the datum target creation dialog box.</span>
+</p>
+<p>During <span class="glossterm" id="datum-target-2" onmouseout="hideTerm()" onmouseover="showTerm('datum-target-2.xml')">datum target</span> creation, if the <span class="uicontrol">Use style values to create new objects</span> check box is selected in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="uicontrol"> &gt; Administration</span> tab, under <span class="uicontrol">Style</span>, then boxes in this dialog box are initialized as follows:</p><ul><li><span class="uicontrol">Area Size</span>: Initially this box is empty. </li>
+<li><span class="uicontrol">Area Shape</span> icon box:  It initializes depending upon the values specified in the <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span><span class="uicontrol"> &gt; Drafting &gt; [StandardName] &gt; Styles &gt; Datum Target &gt; Size Specifier</span> parameter.<br/><img src="../Gdr3DMasterImages/dbdatumtarget02NLS.png"/><br/>  Note that, if the <span class="uicontrol">Use style values to create new objects </span>check box is not selected, then  the <span class="uicontrol">Area Shape</span> icon box and the <span class="uicontrol">Area Size Editor</span> box  are initialized with the values of the last <span class="glossterm" id="datum" onmouseout="hideTerm()" onmouseover="showTerm('datum.xml')">datum</span> target created.</li>
+<li><span class="uicontrol">Associated Datum</span>: It initializes to <span class="uicontrol">A1</span>. <p>All the existing datum features of a  are parsed to retrieve the highest letter of all the  letters used. For example, if a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> contains datum features such as, A, B, D, then the letter D is selected.  </p><p>Then all the datum targets are parsed to check if there are datum targets which already use this letter. If it is not the case, then the <span class="uicontrol">Associated Datum</span> is initialized with the selected letter and the number 1. Otherwise, it is initialized with the selected letter and the maximum number is incremented by 1.</p><p>So in this case, if the drawing contains datum targets with associated datum text A1 and B1, the associated datum is initialized to D1.</p><p>If it contains A1, B1, D1 and D3, the associated datum is initialized to D4.</p></li>
+</ul>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>You can click <span class="uicontrol">Reset</span> <img src="../Icons22/I_Update.png"/> to reset the <span class="uicontrol">Area Size</span> box to an empty string, the <span class="uicontrol">Associated Datum</span> box to <span class="uicontrol">A1</span>, and the <span class="uicontrol">Area Size</span> diameter symbol to the datum target style value.</td></tr></table>
+</div>
+</div>
+<div class="nested1" id="c-PositioningADatumTarget">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Positioning a Datum Target</h2>
+
+    
+    <div><p>
+      This sub-topic provides information about positioning a datum target.</p>
+
+      <p>The anchor point of the leader is either in a fix or in an automatic mode.  </p><p>For a movable datum target, two anchor points are available. Therefore, in <span class="uicontrol">Automatic  Positioning </span>mode, depending on  which side (left or right) of the datum target the first leader point is, the anchor point nearest to that side is selected.</p>
+<p>For a non-movable datum target, only one anchor point is available, that is, the center of the circle. Therefore, it is not possible to switch between the fix and the automatic mode of the leader.</p>
+
+      
+      
+      
+      
+    <p>Note:
+		You can switch between the fix and the automatic mode of the leader using the <span>context menu</span> on the anchor point handle. However, for movable datum target, the <span class="uicontrol">Allow only standard positions</span> command is not available, since there are always two possible positions for the anchor point of the leader.</p>
+<div class="section" id="c-PositioningADatumTarget__cs-AddingRemovingaLeader"><h3 class="sectiontitle">Adding/Removing a Leader</h3><p>You can add/remove a leader to/from the datum target. However, when you remove a leader from the movable datum target, it is visualized as if it is a non-movable datum target.
+      
+            </p></div>
+</div>
+
+
+    
+
+    
+  </div>
+
+
+  
+<div class="nested1" id="c-ManipulatorsonaMovableDatumTarget">
+      <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Handles on a Movable Datum Target</h2>
+
+      
+      <div><p>The movable datum target handle is added on the side where the first leader is. The handle is oriented to the inside of the datum. Therefore, when you click the red handle, it changes the datum to unmovable.</p>
+
+        <p>The following handles are available on a movable datum target to manage the leader: </p>
+      <p><br/><img src="../Gdr3DMasterImages/movabledatumtarget01NLS.png"/><br/></p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="23.980815347721823%" id="d165321e212">Handle</th>
+<th class="cellrowborder" valign="top" width="76.01918465227818%" id="d165321e214">Allows to</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="23.980815347721823%" headers="d165321e212 "><img src="../Gdr3DMasterImages/I_moveleaderattachment.png"/></td>
+<td class="cellrowborder" valign="top" width="76.01918465227818%" headers="d165321e214 ">Change the anchor point of the leader.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="23.980815347721823%" headers="d165321e212 "><img src="../Gdr3DMasterImages/I_directionhandlerep.png"/></td>
+<td class="cellrowborder" valign="top" width="76.01918465227818%" headers="d165321e214 ">Resize the leader attachment (offset between the anchor point and the first point of the leader).</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="23.980815347721823%" headers="d165321e212 "><img src="../Gdr3DMasterImages/I_texttranslation.png"/></td>
+<td class="cellrowborder" valign="top" width="76.01918465227818%" headers="d165321e214 ">Slide the annotation text along the leader attachment direction.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+      
+
+      
+    </div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

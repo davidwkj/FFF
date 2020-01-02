@@ -1,0 +1,148 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Managing View Texts"/>
+<meta name="abstract" content="You can create a view text while creating a view in Drafting, 2D Layout for 3D Design, Generative Functional Tolerancing, or 3D Tolerancing &amp; Annotation. You can also configure the view text representation in detail through .xml standard files. You can enforce the creation of view texts that comply with international standards, like ISO, JIS or ASME. In addition, you can quickly position the view text according to a view's overall dimensions, so as to ensure good readability."/>
+<meta name="description" content="You can create a view text while creating a view in Drafting, 2D Layout for 3D Design, Generative Functional Tolerancing, or 3D Tolerancing &amp; Annotation. You can also configure the view text representation in detail through .xml standard files. You can enforce the creation of view texts that comply with international standards, like ISO, JIS or ASME. In addition, you can quickly position the view text according to a view's overall dimensions, so as to ensure good readability."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-ViewTextCustomize"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Managing View Texts</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-ViewTextCustomize">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-adding view text"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-editing view text"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-aligning view text"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Managing View Texts</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>
+    You can create a view text while creating a view in Drafting, <span>2D Layout for 3D Design</span>, <span>Generative Functional Tolerancing</span>,  or <span>3D Tolerancing &amp; Annotation</span>.  You can also configure the view text representation in detail through .xml standard files.   You can enforce the creation of view texts that comply with international standards, like ISO, JIS or ASME. In addition, you can quickly position the view text according to a view's overall dimensions, so as to ensure good readability. 
+      </span>
+</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-AddViewText" id="toc_rg" title="You can create a single view text in a view (Drafting, 2D Layout for 3D Design, Generative Functional Tolerancing and 3D Tolerancing &amp; Annotation) or in a multi-plane section view (2D Layout for 3D Design, Generative Functional Tolerancing, and 3D Tolerancing &amp; Annotation). View texts visible in the background of a 2D layout view are generated in Drafting.">Add a View Text</a></li><li><a href="#t-AlignViewText" id="toc_rg" title="When a view text is created, it is aligned in the view it belongs to according to the view text's alignment standard value and the view's overall dimensions. You can adjust the position of the view text anywhere in the view it belongs to. In addition, you can align a view text to predefined locations according to the view's overall dimensions.">Align a View Text</a></li><li><a href="#t-EditViewText" id="toc_rg" title="You can edit a view text as any other text (provided the view is not locked), by performing the following operations:">Edit a View Text</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  <div/>
+
+  <div class="nested1" id="t-AddViewText">
+    <h2 class="topictitle2">Add a View Text</h2>
+
+  
+    <div><p>You can create a single view text in a view (Drafting, <span>2D Layout for 3D Design</span>, <span>Generative Functional Tolerancing</span>  and <span>3D Tolerancing &amp; Annotation</span>) or in a multi-plane section view (<span>2D Layout for 3D Design</span>, <span>Generative Functional Tolerancing</span>, and <span>3D Tolerancing &amp; Annotation</span>).  View texts visible in the background of a 2D layout view are generated in Drafting. </p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          Right-click  a view and select
+          <span class="uicontrol">XXX view object &gt; Add View Text</span> (Where XXX is the name of the view).
+          
+        <p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li>You can use the  <span class="uicontrol">Add View Text</span> command for a selection of multiple views.</li>
+<li>You cannot access this command if the selected view already contains a view text, or if the view is locked.</li>
+</ul>
+ </td></tr></table>
+<p>The view text is filled according to the view it belongs to. The view text is always filled with the name text and the scale text: </p><ul><li>If the name text and the scale text (except for <span>Generative Functional Tolerancing</span> and <span>3D Tolerancing &amp; Annotation</span>) are not empty.</li>
+<li>	If the settings or the standard specifies they must be added.</li>
+</ul>
+</p></p></li>
+
+        
+        <li class="stepexpand"><p>In the <span class="uicontrol">Text Editor</span> dialog box, enter the view text.<p> This re-frames on the view's overall dimensions (including the view text).
+            <p>Note:
+		You can modify the name of the view text feature displayed in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span> ("View Text.n") by right-clicking it and selecting <span class="uicontrol"> Properties &gt; Feature Properties</span>.
+              
+            </p>
+</p></p></li>
+
+
+        
+        
+        
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="t-AlignViewText">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Align a View Text</h2>
+
+  
+    <div><p><span>
+    When a view text  is created, it is aligned in the view it belongs to according to the view text's alignment standard value and the view's overall dimensions.
+        
+      You can adjust  the  position of the view text anywhere in the view it belongs to. In addition, you can align a view text to predefined locations according to the view's overall dimensions.
+      
+    </span>
+<p>Notes:
+		<ul><li>If the view overall dimensions are empty, then the view text is positioned at the origin of the view.</li>
+<li>2D elements in the view background are not taken into account to compute the view's overall dimensions.</li>
+</ul>
+  </p>
+</p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          Right-click the view text.
+          
+        </p></li>
+<li class="stepexpand"><p>Perform either of the following operations:<p><ul><li>Select <span class="uicontrol">View Text.* object &gt; Alignment &gt; Standard</span>. <p>The view text is aligned as per defined standards.</p><p>Note:
+		You can also use the <span class="uicontrol">View Text Standard Alignment</span> command available when you right-click a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>, a layout, an annotation set, <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheets</span> and views to align the view texts as per standards.</p>
+</li>
+<li>Right-click a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>, a layout, an annotation set, <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheets</span> and views, and select any one of the predefined locations.</li>
+</ul>
+</p></p></li>
+
+        
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="t-EditViewText">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Edit a View Text</h2>
+
+  
+    <div><p><span>You can edit a view text as any other text (provided the view is not locked), by performing the following operations:  </span>
+<ul><li>Insert <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span> links.</li>
+<li>Isolate view texts. <p>Note:
+		In this case, all attribute links are isolated (including Name Texts and Scale Texts).</p>
+</li>
+<li>Edit properties of the selected text to apply a text style to turn its characters to bold, to change it to italic or to change its color, for example. You can do this in the <span class="uicontrol">Properties</span> dialog box or in the <span><span class="wintitle">Object Properties</span></span> panel.<p>Note:
+		Editing view text properties lets you edit view properties (view scale, view lock, view angle...) and vice versa.</p>
+</li>
+<li>Delete the selected text.</li>
+</ul>
+</p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          
+            Right-click the view text and select <span class="uicontrol">View Text.* object &gt; Definition</span>. 
+          
+        </p></li>
+
+        
+      <li class="stepexpand"><p>In the <span class="uicontrol">Text Editor</span> dialog box, edit the view text.</p></li>
+</ol>
+
+      
+    
+    </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

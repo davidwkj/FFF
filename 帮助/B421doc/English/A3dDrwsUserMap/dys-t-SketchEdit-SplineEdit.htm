@@ -1,0 +1,181 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Editing a Spline"/>
+<meta name="abstract" content="You can edit the spline by using various options available in the Spline Definition dialog box."/>
+<meta name="description" content="You can edit the spline by using various options available in the Spline Definition dialog box."/>
+<meta name="DC.Relation" scheme="URI" content="dys-t-SimpleProfileSketch-Spline.htm#dys-t-SimpleProfileSketch-Spline"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dys-t-SketchEdit-SplineEdit"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Editing a Spline</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dys-t-SketchEdit-SplineEdit">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-editing::spline"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Editing a Spline</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can edit the spline by using various options available in the <span class="uicontrol">Spline Definition</span> dialog box.</span>
+  
+					
+					
+					</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-ModifySplineControlPoints" id="toc_rg" title="You can change the control points of a spline using a graphical handle.">Modify the Spline Control Points
+</a></li><li><a href="#t-AddPoint" id="toc_rg" title="You can add a point to a spline. There are several possibilities, depending on whether you want to add an existing point, or create a point on the sketch while editing the spline.">Add a Point
+</a></li><li><a href="#t-ReplacePoint" id="toc_rg" title="You can replace the point on a spline.">Replace a Point
+</a></li><li><a href="#t-CloseSpline" id="toc_rg" title="You can close a given spline.">Close a Spline
+</a></li><li><a href="#t-RemovePoint" id="toc_rg" title="You can remove the point on a spline.">Remove a Point
+</a></li><li><a href="#t-DefineTangent" id="toc_rg" title="You can modify the spline by modifying its control points.">Modify a Spline
+</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    Create a spline.</td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="dys-t-SimpleProfileSketch-Spline.htm#dys-t-SimpleProfileSketch-Spline" title="You can create a spline with controlled curvature.">Creating Splines</a></td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+</div>
+<div/><div class="nested1" id="t-ModifySplineControlPoints"><h2 class="topictitle2">Modify the Spline Control Points
+</h2>
+<div><p>You can change the control points of a spline using a  graphical handle.</p>
+<ol><li class="stepexpand"><p>Double-click the control point you want to edit.
+<p> The tangency and curvature radius handles appear in gray along with the <span class="uicontrol">Control Point Definition</span> dialog box.<p><br/><img src="../DysUserImages/editspline01.png"/><br/></p></p></p></li>
+<li class="stepexpand"><p>Enter new coordinates in the <span class="uicontrol">H</span> (horizontal) and<span class="uicontrol">
+V</span> (vertical) boxes respectively.
+</p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Tangency</span> check box to impose a tangency on this
+control point.
+<p> The tangency handle is highlighted and the <span class="uicontrol">Reverse Tangent</span> and the <span class="uicontrol">Curvature Radius</span> becomes available in the dialog box.<p>Note:
+		The curvature radius computation is dependent on the tangency option. </p>
+
+</p></p></li>
+<li class="stepexpand"><p>Rotate the tangency handle around the control point till you get the desired angle with respect to the H direction of the Sketcher axis system.<p> The tangency angle value is updated in the dialog box and simultaneously the spline curve is modified.<br/><img src="../DysUserImages/editspline02.png"/><br/></p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Click <span class="uicontrol">Reverse
+Tangent</span> to reverse the tangent direction.
+</p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Curvature Radius</span> check box.<p> The curvature handle is highlighted using which you can change the radius of curvature.</p></p></li>
+<li class="stepexpand"><p>Drag the curvature handle along the direction perpendicular to the direction of the tangent till you get the required radius.<p> The curvature radius value is updated in the dialog box and simultaneously the spline curve is modified.<p><p>Note:
+		Both the manipulations are independent of each other. If the radius curvature handle is under manipulation, the tangency value remains constant and vice versa for the tangency handle.</p>
+</p></p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>.
+<p> The point is moved and an arrow appears on this point to indicate the
+tangency.
+<br/><img src="../DysUserImages/btspline03.png"/><br/><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tips:
+				</span><ul><li>You can modify the spline shape by selecting a point and then dragging it.</li>
+<li>You can also modify the control point by right-clicking it and selecting <span class="uicontrol">CtrlPoint.X object &gt; Edit Tangency-Curvature</span>. </li>
+</ul>
+</td></tr></table>
+</p></p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-AddPoint"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Add a Point
+</h2>
+<div><p><span>You can add a point to a spline. There are several possibilities, depending on
+whether you want to add an existing point, or create a point on
+the sketch while editing the spline.</span>
+
+</p>
+<ol><li class="stepexpand"><p>Double-click the spline.
+<p> The <span class="uicontrol">Spline Definition</span> dialog box appears.
+</p></p></li>
+<li class="stepexpand"><p>To add an existing point, follow the steps from 3 through 5.<p> To create the point on the <span class="glossterm" id="sketch" onmouseout="hideTerm()" onmouseover="showTerm('sketch.xml')">sketch</span> while editing the spline, follow the steps from 6 through 8. 
+</p></p></li>
+<li class="stepexpand"><p>In the dialog box, select the spline point after or before which
+you want to add a point. Select <span class="uicontrol">CtrlPoint.2</span> for example.
+</p></li>
+<li class="stepexpand"><p>Choose <span class="uicontrol">Add Point After</span> or <span class="uicontrol">Add Point
+Before</span> (depending on whether you want to add a point after or
+before the selected point). Select <span class="uicontrol">Add Point After</span> for
+example.
+</p></li>
+<li class="stepexpand"><p>Click on the existing point you want to add in the spline.
+<p> If you proceed as shown below, for example:
+<br/><img src="../DysUserImages/editspline9.gif"/><br/><p>You will get this result:
+</p><br/><img src="../DysUserImages/editspline7.gif"/><br/></p></p></li>
+<li class="stepexpand"><p>In the dialog box, select the spline point after or before which
+you want to add a point. Select <span class="uicontrol">CtrlPoint.2</span> for example.
+</p></li>
+<li class="stepexpand"><p>Choose <span class="uicontrol">Add Point After</span> or <span class="uicontrol">Add Point
+Before </span>(depending on whether you want to add a point after or
+before the selected point). Select <span class="uicontrol">Add Point After</span> for
+example.
+</p></li>
+<li class="stepexpand"><p>Click on the sketch, at the location where you want to add
+the new point.
+<p> If you proceed as shown below, for example:
+<br/><img src="../DysUserImages/editspline6.gif"/><br/><p>You will get this result:
+</p><br/><img src="../DysUserImages/editspline7.gif"/><br/><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Right-click the spline
+and select
+<span class="uicontrol">Spline.x
+object &gt; Add Control Point</span> to directly insert intermediate control points. You can also use <span class="uicontrol">Spline.x
+object &gt; Add Tangency-Curvature</span> command to define the tangency angle and curvature radius of the inserted control point. </td></tr></table>
+</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Select the <span class="uicontrol">Construction element </span>check box and click <span class="uicontrol">OK</span>.  <p> The spline becomes a construction element. To make it a standard element, clear the <span class="uicontrol">Construction element </span>check box in the <span class="uicontrol">Spline Definition</span> dialog box.</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-ReplacePoint"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Replace a Point
+</h2>
+<div><p>You can replace the point on a spline.</p>
+<ol><li class="stepexpand"><p>To replace a point, select the spline point that you want to
+replace in the <span class="uicontrol">Spline Definition</span> dialog box.
+</p></li>
+<li class="stepexpand"><p>Select <span class="uicontrol">Replace Point</span>, and click on the sketch,
+at the location where you want to add the new point.
+<p> If you proceed as shown below, for example:
+<br/><img src="../DysUserImages/editspline4.gif"/><br/><p>You will get this result:
+</p><br/><img src="../DysUserImages/editspline3.gif"/><br/></p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-CloseSpline"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Close a Spline
+</h2>
+
+<div><p>You can close a given spline.</p>
+<ol><li class="stepexpand"><p>Double-click the spline.</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Spline Definition</span> dialog box, select the <span class="uicontrol">Close Spline</span> check box to close a spline.
+
+<p> The spline is closed in such a way that it is continuous in
+curvature at the closure point.
+<br/><img src="../DysUserImages/editspline5NLS.gif"/><br/><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>To edit closed splines using a continuity in point at the closure
+point: select <span class="uicontrol">Close spline</span> which makes such splines
+continuous in curvature at the closure point.
+</td></tr></table>
+</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-RemovePoint"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Remove a Point
+</h2>
+
+<div><p>You can remove the point on a spline.</p>
+<ol><li class="stepexpand"><p>Select the point that you want to remove in the <span class="uicontrol">Spline Definition</span> dialog box.
+</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Remove Point</span>.
+</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>.</p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-DefineTangent"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Modify a Spline
+</h2>
+
+<div><p>You can modify the spline by modifying its control points.</p>
+<ol><li class="stepexpand"><p>Double-click the spline. <p> The tangency and curvature radius handles appear in gray at the first control point along with the <span class="uicontrol">Spline Definition </span>dialog box.</p></p></li>
+<li class="stepexpand"><p>Select the point you want to modify in the <span class="uicontrol">Spline Definition</span> dialog box.</p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Tangency</span> check box.
+<p> This activates the <span class="uicontrol">Curvature Radius</span> check box and the <span class="uicontrol">Reverse Tangent</span>. The tangency handles get activated and highlighted in blue.</p></p></li>
+<li class="stepexpand"><p>Follow the steps 4 through 8 as explained in <a href="dys-t-SketchEdit-SplineEdit.htm#t-ModifySplineControlPoints" title="You can change the control points of a spline using a graphical handle.">Modify the Spline  Control Points</a>.<p> The control point is modified and as a result the spline is modified accordingly.  <p>Note:
+		The handles for corresponding control point are displayed when you move the pointer over the associated control point. When the edition of spline is started, the handle is displayed at the first control point, by default. The handles remain associated with the previous control point until you move  the pointer over other control point belonging to the same spline in edition.</p>
+</p></p></li>
+ </ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

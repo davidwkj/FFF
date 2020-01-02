@@ -1,0 +1,166 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Update and PLM Update"/>
+<meta name="abstract" content="This topic provides information regarding update and PLM update in Drawings."/>
+<meta name="description" content="This topic provides information regarding update and PLM update in Drawings."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-ViewUpdate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Update and PLM Update</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-ViewUpdate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Update"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-PLM Update"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+     
+     About Update and PLM Update</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic provides information regarding update and PLM update in <span><span>Drawings</span></span>.
+    
+    </span>
+
+    <p>
+      The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#gdr-c-ViewUpdate__cs-AboutUpdateinGenerativeDrafting" id="toc_rg" title="">About Update in <span><span>Drawings</span></span></a></li><li><a href="#gdr-c-ViewUpdate__cs-Update" id="toc_rg" title="">Update</a></li><li><a href="#gdr-c-ViewUpdate__cs-PLMUpdate" id="toc_rg" title="">PLM Update</a></li><li><a href="#gdr-c-ViewUpdate__cs-OperationsPerformedduringUpdate" id="toc_rg" title="">Operations Performed during 
+     Update</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+
+         <div><div class="section" id="gdr-c-ViewUpdate__cs-AboutUpdateinGenerativeDrafting"><h2 class="sectiontitle">About Update in <span><span>Drawings</span></span></h2><p><span><span>Drawings</span></span> views (projections or sections) are generated (created or updated) 
+     from 3D definitions, i.e. the 3D mechanical <span>apps</span> and the associated <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representations</span>.
+     </p><p>When modifications are applied to the 3D specifications, the <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> representation 
+     needs an update. </p><p>However, note that the view needs an update only if the feature represented in the view undergoes show/no show modification in 3D. It means that the view update is required only for the views in which the part tool/set containing the modified feature appears.</p>
+
+     <ul>
+       <li>The <span class="uicontrol">Update Current Sheet</span> <img src="../Icons22/I_D3M_UpdateSheet.png"/> 
+       and the <span class="uicontrol">Update</span> <img src="../IconsNormal/I_AsmUpdate.png"/> 
+       commands are active when a <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> (or drawing) contains views that need to be updated 
+       (this can be all views in the sheet or some of them only). You can update 
+       all views in the active sheet and/or drawing by clicking these icons.
+       </li>
+
+       <li>Furthermore, the <span class="uicontrol">Update</span> <img src="../IconsNormal/I_AsmUpdate.png"/> icon is active when the <span>3D area</span> is not up-to-date.</li>
+
+       <li>The <span class="uicontrol">Update</span> symbols appears in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span> to indicate 
+       the drawings
+       <img src="../GdrUserImages/I_UpdateDrwDrawing.gif"/>, 
+       sheets
+       <img src="../GdrUserImages/I_UpdateDrwView.gif"/> 
+       and views
+       <img src="../GdrUserImages/I_UpdateDrwView2.gif"/> 
+       that need to be updated. </li>
+
+       <li>You can update a drawing (this will update all sheets - and therefore 
+       all views - it contains), a sheet or a selection of sheets (this will update 
+       all views it contains), a view or a selection of views.</li>
+
+       <li>The <span class="uicontrol">Update</span> symbols remain in the tree for the items 
+       that have not been updated, so you always know which items are up-to-date 
+       and which are not.</li>
+
+     </ul>
+
+     <p>Views may be updated on the basis of:</p>
+     <ul>
+       <li>A possibly not up-to-date <span>3D area</span> through the standard <span class="uicontrol">Update Current Sheet</span>
+       <img src="../Icons22/I_D3M_UpdateSheet.png"/> 
+       command. See  <a href="#gdr-c-ViewUpdate__cs-Update">Update</a> below. </li>
+
+       <li>An up-to-date <span>3D area</span> through the <span class="uicontrol">Update</span>
+       <img src="../IconsNormal/I_AsmUpdate.png"/> 
+       command. See  <a href="#gdr-c-ViewUpdate__cs-PLMUpdate">PLM Update</a> below.</li>
+
+     </ul>
+</div>
+<div class="section" id="gdr-c-ViewUpdate__cs-Update"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Update</h2><p>The <span class="uicontrol">Update</span> <img src="../IconsNormal/I_AsmUpdate.png"/> command lets you update drawings, sheets or views 
+     without updating the <span>3D area</span>.</p><p>The <span class="uicontrol">Update Current Sheet</span> <img src="../Icons22/I_D3M_UpdateSheet.png"/> command  
+     in the <span>standard area</span> lets you update the current sheet or selected items, or use the <span>context menu</span> to update selected items.</p></div>
+<div class="section" id="gdr-c-ViewUpdate__cs-PLMUpdate"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">PLM Update</h2><p>
+     <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>PLM Update is 
+         available in the <span>Assembly Design</span> <span>app</span> as well as in the <span><span>Drawings</span></span> <span>app</span>. For more information regarding PLM Update in the context 
+         of <span>Assembly Design</span>, see
+         <cite><span>Assembly Design</span> User's Guide: PLM Update</cite>. 
+         Particularly, note that the <span class="uicontrol">Automatic</span> and <span class="uicontrol">Manual</span> 
+         options in <span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Mechanical</span> &gt; <span class="uicontrol">Assembly Design</span> &gt; <span class="uicontrol">General</span></span> section, <span class="uicontrol">Update status computation</span> area, define how 
+         the PLM update status is computed. By default, the computation is set to
+         <span class="uicontrol">Manual</span>. You can change this option to <span class="uicontrol">Automatic</span> 
+         to ensure that the update status is automatically computed.</td></tr></table>
+
+     The <span class="uicontrol">Update</span>
+     <img src="../IconsNormal/I_AsmUpdate.png"/> 
+     command lets you update all views of the drawing along with the <span>3D area</span> 
+     when the later is not up-to-date, and therefore ensures that views are updated 
+     on the basis of a <span>3D area</span> that reflect the latest design changes.
+     The <span class="uicontrol">Update</span>
+     <img src="../IconsNormal/I_AsmUpdate.png"/> provides a status of your PLM relational design: 
+     <ul>
+       <li>If the icon is disabled: <span>3D area</span> and the drawing, sheets or views 
+       are up-to-date.
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Note that if 
+           the <span>3D area</span> is not loaded, the icon will also be disabled. To load 
+           the <span>3D area</span> associated to your drawing, use the <span class="uicontrol">Load 3D data</span> 
+           or <span class="uicontrol">Open 3D  data</span> commands. For more information, refer 
+           to <a href="gdr-t-DrawingRepresentationManagement-3DDataLoadOpen.htm#gdr-t-DrawingRepresentationManagement-3DDataLoadOpen" title="You can load 3D data for one or several views, sheets or for a whole drawing, with or without opening its associated 3D product.">Loading/Opening 3D Data</a>.</td></tr></table>
+
+       </li>
+
+       <li>If the icon is enabled: <span>3D area</span> and/or the drawing, sheets or views 
+       are not up-to-date. In this case, you can click the icon to update them all 
+       at once.</li>
+
+     </ul>
+
+     
+     
+     </p><p>The up-to-date status computation is improved for the assembly drawing view based on an assembly layout view when using visual display filter. When a modified product structure object is visualized in layout view visual display filter, the status of the drawing view associated only to that layout view is changed to not up-to-date.</p></div>
+<div class="section" id="gdr-c-ViewUpdate__cs-OperationsPerformedduringUpdate"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Operations Performed during 
+     Update</h2><p>During view update, the following operations are performed:</p>
+     <ul>
+       <li>Views from 3D (<span>2D Layout for 3D Design</span> views and <span>3D Tolerancing &amp; Annotation</span> views) are systematically synchronized. Therefore, any change in 3D, such as, the supporting plane (<span>3D Tolerancing &amp; Annotation</span> <span>app</span> and <span>2D Layout for 3D Design</span> <span>app</span>) or the <span class="glossterm" id="back-clipping" onmouseout="hideTerm()" onmouseover="showTerm('back-clipping.xml')">back-clipping</span> plane (<span>2D Layout for 3D Design</span> only) would be synchronized automatically during the view update.</li>
+
+       <li>Associative section/<span class="glossterm" id="auxiliary-view" onmouseout="hideTerm()" onmouseover="showTerm('auxiliary-view.xml')">auxiliary view</span> profiles are re-computed.</li>
+
+       <li>The geometry is regenerated.</li>
+
+       <li>Annotations, dimensions and/or dress-up elements linked to the generated 
+       geometry are re-computed.</li>
+
+       <li>In the case of element(s) that have been graphically modified or deleted, 
+       these modifications/deletions are preserved, on the condition the view was 
+       up-to-date when you deleted or modified it.</li>
+
+     </ul>
+
+     <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li>Note that 
+         you can
+         <a href="gdr-t-ViewModification-DeletedGeneratedElementsRestore.htm#gdr-t-ViewModification-DeletedGeneratedElementsRestore" title="You can restore original properties of generated elements. You can also restore deleted elements.">restore original properties</a> at any time by selecting 
+         the <span class="uicontrol">Restore Properties</span> option from the <span>context menu</span> and then 
+         updating the view. You can either use <span class="uicontrol">Update Current Sheet</span> <img src="../Icons22/I_D3M_UpdateSheet.png"/> if you modified the 
+         3D part, or key in <kbd class="userinput">C:Force Update</kbd> in the power input 
+         field (available in the Status Bar) if you did not modify the 3D part. 
+          
+         </li>
+<li>If you delete, or modify 
+         the properties of, a generated item and subsequently perform an update, 
+         all items that have the same 3D origin as the deleted item will not be 
+         generated. Likewise, if you transfer a generated item to <span class="uicontrol">No Show</span> 
+         and subsequently perform an update, all items that have the same 3D origin 
+         as the item in <span class="uicontrol">No Show</span> will be transferred to <span class="uicontrol">No Show</span>.</li>
+</ul>
+  </td></tr></table>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

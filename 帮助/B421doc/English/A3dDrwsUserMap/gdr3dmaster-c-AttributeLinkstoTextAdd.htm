@@ -1,0 +1,104 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Adding Attribute Links and Text Templates"/>
+<meta name="abstract" content="Attribute link text is a text which associatively reflects a value. Texts can have attribute links with PLM attributes as well as with other attributes that are not exposed as PLM entities (for example dimension from 3D data)."/>
+<meta name="description" content="Attribute link text is a text which associatively reflects a value. Texts can have attribute links with PLM attributes as well as with other attributes that are not exposed as PLM entities (for example dimension from 3D data)."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-AttributeLinksToTextAdd.htm#gdr3dmaster-t-AttributeLinksToTextAdd"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-AttributeLinkstoTextAdd"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Adding Attribute Links and Text Templates</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-AttributeLinkstoTextAdd">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Adding attribute links to text"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Text attribute links update"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-PLM update"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Loading/opening 3D data"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1> About Adding Attribute Links and Text Templates</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Attribute link text is a text which associatively reflects a value. Texts can have attribute links with PLM attributes as well as with other attributes that are not exposed as PLM entities (for example dimension from 3D data).</span>
+<p><span class="run-in">Important:
+		</span>If the text annotation and its associative parameter (<span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span> link or <span class="glossterm" id="text-template" onmouseout="hideTerm()" onmouseover="showTerm('text-template.xml')">text template</span>) are both in the same location and in the same <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>, they are updated synchronously.</p>
+
+    <p> The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#c-TextAttributeLinktoaPLMAttribute" id="toc_rg" title="You can create an attribute link to a PLM attribute so that the text associatively reflects the value of the PLM attribute.">Text Attribute Links and Text Templates</a></li><li><a href="#c-TextAttributeLinksUpdate" id="toc_rg" title="Whenever the attributes the texts or tables are linked with are modified, their attribute links need to be updated. Consequently, you need to update the drawing views which take into account the status of these texts. You can also right-click the texts or the tables and select Update Selection to update the attribute links quickly.">Text Attribute Links Update</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-AttributeLinksToTextAdd.htm#gdr3dmaster-t-AttributeLinksToTextAdd" title="You can add one or more links to text and also in a table. These text attribute links let you annotate drawing representations with texts that reflect important information extracted from the 3D shape or product (such as a part number, the owner of a representation, etc.).">Adding Attribute Links</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div/>
+
+  
+
+  
+<div class="nested1" id="c-TextAttributeLinktoaPLMAttribute"><h2 class="topictitle2">Text Attribute Links and Text Templates</h2>
+
+<div><p><span>You can create an attribute link to  a PLM attribute so that the text associatively reflects the value of the PLM attribute.</span>
+Additionally, you can instantiate a text containing link <span class="glossterm" id="template-2" onmouseout="hideTerm()" onmouseover="showTerm('template-2.xml')">templates</span> to PLM attributes so that the instantiated text associatively reflects the value of the PLM attributes. </p>
+<p>If a view or a <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> contains not up-to-date text attribute links, it needs an update.    Consequently, the <span class="uicontrol">Update</span> command becomes available. Therefore, when you click <span class="uicontrol">Update</span>, it updates the sheet, its views as well as the text attribute links in the view.
+</p><p>However, if you want to update only the text attribute links quickly, you can do so by right-clicking the attribute link and selecting <span class="uicontrol">Update Selection</span>. If the link is up-to-date, the <span class="uicontrol">Update Selection</span> command is not available in its <span>context menu</span>. </p><p>The following types of PLM attributes are supported: </p><p><ul><li>PLM attributes of a reference (<span class="uicontrol">PLM Reference</span> or <span class="uicontrol">PLM Representation Reference</span>) </li>
+<li>PLM attributes of an instance (<span class="uicontrol">PLM Instance </span>or <span class="uicontrol">PLM Representation Instance</span>)</li>
+<li>PLM attributes of a port (<span class="uicontrol">PLM Port</span>) </li>
+<li>PLM attributes of a connection (<span class="uicontrol">PLM Connection</span>) </li>
+<li>PLM attributes of an extension (<span class="uicontrol">PLM Extension</span>) are supported with the reference (<span class="uicontrol">PLM Reference</span>) it extends</li>
+</ul>
+</p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>All types of PLM attributes are supported. However string and binary types are supported under the following conditions:<ul><li>The attribute max length must be defined.</li>
+<li>The max length must be less than 256 characters. </li>
+</ul>
+If these conditions are not satisfied, a non-associative attribute link is created. </td></tr></table>
+ </p>  <p>Attribute link texts and text template instantiations are associative to these PLM attributes. That is, attribute link texts and text template instantiations associatively reflect the value of a PLM attribute. As a result, the  links created by the attribute link texts or text templates associative to PLM attributes of the containing representation are taken into account by the PLM update.</p><p>In this case, if a PLM attribute contained in an attribute link or a text template is modified, the display of the  link or the text template is synchronously visualized. However, note that, synchronous visualization is not automatic update. It does not modify the model nor updates the data. It only updates the visualization of the text synchronously. </p><p>After modification of the pointed PLM Attribute, the attribute link text display is altered due to synchronous visualization. </p><p>After you click <span class="uicontrol">Update</span>, the associative position of the pointed text is recalculated and the   becomes up-to-date.</p></div>
+</div>
+<div class="nested1" id="c-TextAttributeLinksUpdate">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Text Attribute Links Update</h2>
+
+    
+    <div><p><span>Whenever the attributes the texts or tables are linked with are modified, their attribute links need to be updated. Consequently, you need to update the <span>drawing</span> views which take into account the status of these texts. You can also right-click the texts or the tables and select <span class="uicontrol">Update Selection</span> to update the attribute links quickly.</span>
+<p><p>Note:
+		The <span class="uicontrol">Update Selection</span> is available from the <span>context menu</span> of one or several texts and tables in the following scenarios: <ul><li>When at least one of the selected annotations or selected cells contains an attribute link or an instantiated link template points to an attribute of an <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">object</span> located outside of the <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>.</li>
+<li>At least one of these annotations or table cells is not up-to-date.</li>
+</ul>
+</p>
+</p></p>
+
+    <p>If a text attribute link is included in a view or a sheet, any change in it has an impact on the following objects:</p><div class="section" id="c-TextAttributeLinksUpdate__cs-Sheets"><h3 class="sectiontitle">Sheets</h3><p>Sheets are shown as not up-to-date in any one of the following conditions:</p><ul><li>If they contain at least one not up-to-date text.</li>
+<li>If they contain at least one not up-to-date table. <p>Note:
+		When a text with an attribute link in a table is modified, it impacts the table, its view and its sheet.  Therefore, when a view with table is updated, that table is also updated. When a table is updated, all the texts in the view are updated, provided:</p>
+</li>
+<li>Their background contains at least one not up-to-date text. </li>
+<li>They contain at least one not up-to-date view.</li>
+</ul>
+<p>In this case, the update status of the text is displayed on the sheet objects in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>.</p></div>
+<div class="section" id="c-TextAttributeLinksUpdate__cs-InteractiveDraftingViews"><h3 class="sectiontitle"><span><span>Drawings</span></span> Views</h3><p><span><span>Drawings</span></span> views are shown as not up-to-date if they contain at least one not up-to-date text.</p><p>In this case, the update status of the text is displayed on the view objects in the tree.</p></div>
+<div class="section" id="c-TextAttributeLinksUpdate__cs-Drawings"><h3 class="sectiontitle">Drawings</h3><p>Drawings are shown as not up-to-date if they contain at least one not up-to-date sheet.</p><p>The following figure depicts this scenario:</p><p><br/><img src="../Gdr3DMasterImages/textattributeupdate01NLS.png"/><br/></p><p>Notes:
+		<ul><li>When updating a sheet, all the views in the sheet are updated. When updating a view, all the annotations in the view are also updated. Then, when a text is updated, its attribute link is updated.
+        </li>
+<li>The <span><span>Drawings</span></span> <span>tree</span> displays the update status taking into account the update status of a text.</li>
+</ul>
+</p>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul><li>Since the sheet update status depends on the status of the text attribute link, the drawings will more often require an  update. </li>
+<li>However, updating a view does not update the whole view but only necessary objects. For example, if a view is not up-to-date only because of a not up-to-date text attribute link, its update will only update the involved text (and its impacts if necessary).</li>
+<li>You need to upgrade the views created in earlier version to take into account the text attribute link update status. </li>
+</ul>
+</td></tr></table>
+</div>
+<div class="section" id="c-TextAttributeLinksUpdate__cs-PLMUpdate"><h3 class="sectiontitle">PLM Update</h3><p>The <span class="uicontrol">Update All</span> icon <img src="../IconsNormal/I_AsmUpdate.png"/> is active if there is at least one not up-to-date drawing. Using this, you can update the drawing from the database, without opening it in the authoring session.</p></div>
+</div>
+
+
+    
+
+    
+  </div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

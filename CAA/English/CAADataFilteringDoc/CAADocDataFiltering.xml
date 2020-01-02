@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM	name="Engineering IP Control"
+			product="@name" appname="@name"
+			icon="CAAIcons/images/CATDF1_AP_AppIcon.png"
+			href="CAADataFilteringDoc/CAADocDataFilteringToc.htm"
+			topictype="all"
+			childtoc="CAADataFilteringDoc/CAADocDataFilteringToc.xml" 
+			dir="CAADataFilteringDoc">
+		<PITEM name="CATDataExchControlUseItf" type="framework" />
+	</DITEM>
+</Root>

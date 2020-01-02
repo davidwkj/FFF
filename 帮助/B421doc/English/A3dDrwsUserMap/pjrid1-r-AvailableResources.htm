@@ -1,0 +1,104 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="reference"/>
+<meta name="DC.Title" content="2D Layout for 3D Design Resources"/>
+<meta name="abstract" content="A resource is a PLM object (for example, a catalog or a business rule) or another type of file (for example, a bitmap or a spreadsheet). In Data Setup, resources are grouped in resource sets. A resource set is a PLM object that implements a single resource table. This topic lists available resources in Drafting and 3D Master Resources and Standard Resources."/>
+<meta name="description" content="A resource is a PLM object (for example, a catalog or a business rule) or another type of file (for example, a bitmap or a spreadsheet). In Data Setup, resources are grouped in resource sets. A resource set is a PLM object that implements a single resource table. This topic lists available resources in Drafting and 3D Master Resources and Standard Resources."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="pjrid1-r-AvailableResources"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">2D Layout for 3D Design Resources</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="pjrid1-r-AvailableResources">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-PRM resources ID1 GDR LO1"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>   <span><span>2D Layout for 3D Design</span> Resources</span>  </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span><span>A resource is a PLM object (for example, a catalog or a business rule) or another type of file (for example, a bitmap or a spreadsheet).</span> In  <span>Data Setup</span>, resources  are grouped in resource sets. <span>A resource set is
+  a PLM object that implements a single resource
+  table.</span> This topic lists available resources in <span>Drafting</span> and 3D Master Resources and Standard Resources.</span>
+<p>You must be assigned the role of an <span>Owner</span> to set these resources and bind to your collaborative space.</p> 
+   
+  </p>
+<ul><li><a href="#pjrid1-r-AvailableResources__cs-AccessingResources" id="toc_rg" title="">Accessing Resources</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><caption><span class="tablecap"><span>Drafting</span> and 3D Master Resources</span></caption>
+
+
+
+
+
+<thead align="left"><tr><th class="cellrowborder" valign="top" id="d273214e54"> Logical Name</th>
+<th class="cellrowborder" valign="top" id="d273214e56">Resource Type</th>
+<th class="cellrowborder" valign="top" id="d273214e58">Description</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" headers="d273214e54 "><samp class="codeph">Standards for Drafting - OBSOLETE</samp></td>
+<td class="cellrowborder" valign="top" headers="d273214e56 ">XML Document</td>
+<td class="cellrowborder" valign="top" headers="d273214e58 ">Allows to customize the  Standards used for <span>Drafting</span>.  This is an obsolete resource.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" headers="d273214e54 "><samp class="codeph">Standards for 3D Master - OBSOLETE</samp>
+</td>
+<td class="cellrowborder" valign="top" headers="d273214e56 ">XML Document</td>
+<td class="cellrowborder" valign="top" headers="d273214e58 ">Allows to customize the Standards used for <span>2D Layout for 3D Design</span>, <span>3D Tolerancing &amp; Annotation</span> and <span>Generative Functional Tolerancing</span>. This is an obsolete resource.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" headers="d273214e54 "><samp class="codeph">Generative View Styles - OBSOLETE</samp></td>
+<td class="cellrowborder" valign="top" headers="d273214e56 ">XML Document</td>
+<td class="cellrowborder" valign="top" headers="d273214e58 ">Allows to customize Generative View Styles used by <span>2D Layout for 3D Design</span> and <span>Drafting</span>.This is  an obsolete resource.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" headers="d273214e54 "><samp class="codeph">General Tolerances</samp></td>
+<td class="cellrowborder" valign="top" headers="d273214e56 ">Sheet</td>
+<td class="cellrowborder" valign="top" headers="d273214e58 ">Allows to add customized general tolerances used for <span>3D Tolerancing &amp; Annotation</span> and <span>Generative Functional Tolerancing</span>. <p><span class="run-in">Important:
+		</span><ul><li>When you add the customized tolerances in the resource excel sheet, follow the below guidelines:<ul><li> In the first column, define the standard and dimension type, e.g. ISO.LinearSize. <p>This decides for which conventional standard (ISO, ANSI-ASME, or JIS) 
+the customized standard is going to appear.</p></li>
+<li> In the second column, define the general tolerance standard and class, e.g. ISO 2768 - f.</li>
+<li> In the third and the fourth column, and every third column after, define the nominal values range in increasing order.<p> The variation lower limit and upper limit for the nominal value range need to be defined in the column next to the larger nominal value column.</p></li>
+<li> The serial column number need to be specified  till the last column of the sheet (with at least one filled cell value). </li>
+</ul>
+</li>
+<li>The customized general tolerances does not appear under <span class="uicontrol"> General tolerance class</span> available in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span> <span class="menucascade"><span class="uicontrol"> &gt; Mechanical</span> &gt; <span class="uicontrol">Tolerances</span></span> tab.</li>
+<li> When you open a 3D model with dimension having general tolerance values which are not defined in the resource sheet, only the standard name is displayed in the tooltip. When you edit the dimensions, they are not proposed in the list.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" headers="d273214e54 "><samp class="codeph">ISO Generative Functional Tolerancing options</samp></td>
+<td class="cellrowborder" valign="top" headers="d273214e56 ">Sheet</td>
+<td class="cellrowborder" valign="top" headers="d273214e58 ">Allows to use predefined options for <span>Generative Functional Tolerancing</span> for ISO standards</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" headers="d273214e54 "><samp class="codeph">ISO Generative Functional Tolerancing default values</samp></td>
+<td class="cellrowborder" valign="top" headers="d273214e56 ">Sheet</td>
+<td class="cellrowborder" valign="top" headers="d273214e58 ">Allows to use predefined default values for <span>Generative Functional Tolerancing</span> for ISO standards</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" headers="d273214e54 "><samp class="codeph">ASME Generative Functional Tolerancing options</samp></td>
+<td class="cellrowborder" valign="top" headers="d273214e56 ">Sheet</td>
+<td class="cellrowborder" valign="top" headers="d273214e58 ">Allows to use predefined options for <span>Generative Functional Tolerancing</span> for ASME standards</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" headers="d273214e54 "><samp class="codeph">ASME Generative Functional Tolerancing default values</samp></td>
+<td class="cellrowborder" valign="top" headers="d273214e56 ">Sheet</td>
+<td class="cellrowborder" valign="top" headers="d273214e58 ">Allows to use predefined default values for <span>Generative Functional Tolerancing</span> for ASME standards</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+  <div class="section" id="pjrid1-r-AvailableResources__cs-AccessingResources"><h2 class="sectiontitle">Accessing Resources</h2><p>When you bind a resource table to your collaborative space, you   can directly access its resources from the server, whenever necessary. To access the other standards and generative view styles on your computer, you have to switch to offline mode.   </p></div>
+</div>
+
+
+  
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

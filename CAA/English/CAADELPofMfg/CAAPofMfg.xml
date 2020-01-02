@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM	name="Heavy Industry Fluidic Fabrication"
+			href="CAADELPofMfg/CAAPofMfgTcToc.htm"
+			icon="CAAIcons/images/homelogodelpof.png"
+			product="@name" appname="@name"
+			childtoc="CAADELPofMfg/CAAPofMfgToc.xml"
+			dir="CAADELPofMfg">
+		<PITEM name="DELPofMfgUseItf" type="framework" />
+	</DITEM>
+</Root>

@@ -1,0 +1,333 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating/Modifying Coordinate Dimensions"/>
+<meta name="abstract" content="You can automatically create 2D or 3D coordinate dimensions on elements and define the display format of coordinate dimensions. Coordinate dimensions let you define the coordinates of a point relative to the X, Y, and possibly Z, axes."/>
+<meta name="description" content="You can automatically create 2D or 3D coordinate dimensions on elements and define the display format of coordinate dimensions. Coordinate dimensions let you define the coordinates of a point relative to the X, Y, and possibly Z, axes."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-Dimensions-CoordinateDimension"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating/Modifying Coordinate Dimensions</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-Dimensions-CoordinateDimension">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::coordinate dimensions"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-coordinate dimensions, creating and modifying"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-modifying::coordinate dimensions"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Coordinate Dimension"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-dimensions::coordinate dimensions"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-dimensions::modifying dimension line location"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-modifying::dimension line location"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Creating/Modifying Coordinate Dimensions</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can automatically 
+						create 2D or 3D coordinate dimensions on elements and  
+						define the display format of coordinate dimensions.
+						Coordinate dimensions let you define the coordinates 
+						of a point relative to the X, Y, and possibly Z, axes.</span>
+
+						
+						</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-CreatingCoordinateDimensions" id="toc_rg" title="You can create coordinate dimensions.">Creating Coordinate Dimensions</a></li><li><a href="#t-ModifyingCoordinateDimensionValueDisplayFormat" id="toc_rg" title="You can modify coordinate dimension value display format.">Modifying Coordinate Dimension 
+		Value Display Format</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> containing geometry.    </td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+</div>
+<div class="nested1" id="t-CreatingCoordinateDimensions"><h2 class="topictitle2">Creating Coordinate Dimensions</h2>
+<div><p><span>You can create coordinate dimensions.</span>
+
+		
+	
+	
+		
+		</p>
+<ol><li class="stepexpand"><p>From the  <span class="wintitle">Annotation</span> section of the <span>action bar</span>, click <span class="uicontrol">Coordinate Dimension</span>
+			<img height="22" width="22" src="../Icons22/I_D3M_DimCoord2D.png"/>.<p><p>In the <span class="uicontrol">Tools Palette</span>,  the following options are available:</p>
+			
+				
+				
+					
+					<ul>
+						<li>
+						<span class="uicontrol">2D Coordinates</span>
+						<img height="22" width="22" src="../IconsNormal/I_DrwDimCoordType2D.png"/> 
+						lets you create 2D (x, y) coordinate dimensions for interactive 
+						geometry.
+						</li>
+
+						<li>
+						<span class="uicontrol">3D Coordinates</span>
+						<img height="22" width="22" src="../IconsNormal/I_DrwDimCoordType3D.png"/> 
+						lets you create 3D (x, y, z) coordinate dimensions for generative 
+						geometry.
+						<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>
+								<ul>
+									<li>These options are also available through the 
+									<span>context menu</span>.</li>
+
+									<li>This choice of options is valid for generative 
+									geometry only. In the case of a generative drawing, 
+									or in the case of a drawing containing a mix 
+									of generative and interactive elements, both 
+									options are available. But if you select 
+									sketched (i.e. interactive) geometry, the 2D 
+									Coordinates option is applied automatically 
+									(even if you selected the 3D Coordinates option). 
+									In the case of a purely interactive drawing, 
+									the options are not displayed at all, and 
+									only the 2D Coordinates option is applied.</li>
+
+								</ul>
+
+								</td></tr></table>
+
+						</li>
+
+					</ul>
+</p>
+			
+					
+				
+			
+			
+			</p></li>
+<li class="stepexpand"><p>Select <span class="uicontrol">3D Coordinates</span>
+			<img height="22" width="22" src="../IconsNormal/I_DrwDimCoordType3D.png"/> to dimension elements generated 
+			from the 3D.
+			</p></li>
+<li class="stepexpand"><p>Select the element for which you want to create the 
+			3D coordinate dimension.<p> 
+			
+				
+				
+					
+					<p>The coordinate dimension is created.</p><p><br/><img height="291" width="228" src="../Gdr3DMasterImages/coordinatedimensions01NLS.gif"/><br/></p>
+				
+			
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul>
+						<li>At this point, you can right-click to display the <span>context menu</span>, which allows you to add a breakpoint to the leader, 
+						or to choose the leader symbol.</li>
+
+						<li>You can also select a set of elements by trapping them 
+						with the mouse, to create several coordinate dimensions 
+						in one shot.</li>
+
+					</ul>
+
+					</td></tr></table>
+
+			</p></p></li>
+<li class="stepexpand"><p>Click in the sheet to position the dimension.
+			</p></li>
+<li class="stepexpand"><p>Click the coordinate dimension to modify its position.</p></li>
+<li class="stepexpand"><p>Drag the dimension or the yellow handle to a new position.<p> 
+			
+				
+				
+					
+					<p>
+					<br/><img height="84" width="227" src="../Gdr3DMasterImages/coordinatedimensions02NLS.gif"/><br/></p>
+					
+				
+			
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul>
+						<li>Coordinates are relative to the absolute axis system 
+						except for views created by selecting a 3D local axis system.</li>
+
+						<li>The yellow anchor point is associative and is linked 
+						to the element you dimensioned.</li>
+
+						<li>If you create a coordinate dimension on the origin, 
+						this dimension is invariably non-associative. In this case, 
+						the leader symbol may be different from the leader symbol 
+						used for associative coordinate dimensions.  For more 
+						information, see
+						<a href="standards-r-ad-DimensionStyles.htm#standards-r-ad-DimensionStyles" title="The dimension styles let you define the default values that will be used when creating different types of dimensions.">Dimension Styles</a>. </li>
+
+					</ul>
+
+					</td></tr></table>
+
+			</p></p></li>
+<li class="stepexpand"><p>Click anywhere in the sheet to validate.<p> 
+			
+			
+				
+				
+					
+					<p>
+					<br/><img height="90" width="176" src="../Gdr3DMasterImages/coordinatedimensions03NLS.gif"/><br/></p>
+					
+				
+			
+			
+			</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-ModifyingCoordinateDimensionValueDisplayFormat"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Modifying Coordinate Dimension 
+		Value Display Format</h2>
+<div><p><span>You can modify coordinate dimension value display format.</span>
+
+		</p>
+<div class="p"><!--xxx--><span class="run-in">Before you begin: </span> Create a coordinate dimension.</div>
+<ol><li class="stepexpand"><p>To modify the coordinate dimension value display format, 
+			right-click the coordinate dimension 
+			and select <span class="uicontrol">Properties</span>.
+			
+			</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Properties</span> dialog box,  under <span class="uicontrol">Numerical</span> 
+			tab, the display format can be changed.<p><span class="uicontrol">
+			Format</span>: You can set the required format.
+			
+				
+				
+					
+					<ul>
+						<li>
+						<span class="uicontrol">Description</span>: Select a type of 
+						format. To get the detailed description about the format 
+						selected from the list, click the information 
+						point
+						<img height="14" width="15" src="../IconsSymbol/S_DrwMoreInfo.png"/>.
+						
+						
+							
+							
+								
+								
+							
+						
+						
+						<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> 
+								The <span class="uicontrol">Description </span>standard and its format 
+								values can be customized by the administrator in
+								<a href="standards-r-ad-ValueFormatParams.htm#standards-r-ad-ValueFormatParams" title="These parameters are located in the Value Formats node of the standard file.">Dimension Value Formats</a> <span class="uicontrol">(</span><span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span><span class="uicontrol"> &gt; [standard 
+								name] &gt; Value Formats)</span>.</td></tr></table>
+
+						</li>
+
+					<li>
+						<span class="uicontrol">Display</span>: Depending on the selected 
+						format, you can choose to display one, two or three factors. 
+						</li>
+<li>
+						<span class="uicontrol">Format</span>: Only decimal format available.
+						
+						</li>
+<li>
+						<span class="uicontrol">Precision</span>: Select the value precision.
+						
+						
+						<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>
+								<ul>
+									<li>The properties of the display value format 
+									can be configured by the administrator in
+									<a href="standards-r-ad-DimensionStyles.htm#standards-r-ad-DimensionStyles" title="The dimension styles let you define the default values that will be used when creating different types of dimensions.">Dimension Styles</a> <span class="uicontrol">(</span><span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span><span class="uicontrol"> &gt; [standard name] &gt; Value Display Format)</span>.</li>
+
+									<li>If new styles have been defined by the administrator 
+									in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span> for this type 
+									of element, then they are displayed in 
+									the <span class="uicontrol">Style</span> list. The properties of the element can be changed 
+									by selecting another style from the list.</li>
+
+								</ul>
+
+								</td></tr></table>
+
+						</li>
+
+						
+						
+						
+					</ul>
+</p>
+					
+				
+			
+			
+			</p></li>
+<li class="stepexpand"><p>Select description as <span class="uicontrol">FEET-INC</span> and display as <span class="uicontrol">2 factors</span> and then click <span class="uicontrol">OK</span>.<p>The 
+			coordinate dimension display value is changed.
+			</p><p> 
+			<p>If only the description format name and precision value 
+			is to be changed, then you can use <span class="uicontrol">Numerical Properties</span> and select from the list.</p>
+			
+				
+				
+					
+					 
+					
+				
+			
+			
+			
+				
+				
+					
+					<br/><img height="91" width="159" src="../Gdr3DMasterImages/coordinatedimensions05NLS.gif"/><br/>
+				
+			
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>
+					<ul>
+						<li>Each coordinate dimensions can have different display 
+						parameters (format description, precision value, etc.).</li>
+
+						<li>The <span class="uicontrol">Display Units</span> option (by right-clicking and selecting <span class="uicontrol">Properties &gt; Text</span>, tab) is available for 
+						only those pre-R18 coordinate dimensions that do not have 
+						format information.</li>
+
+						<li>When the given format name is not valid (i.e. does not correspond 
+						to an existing value format description or left blank), 
+						then the coordinate dimension on which the style is applied 
+						or the NUM.DIMM format, or the first allowed in the Allowed 
+						Numerical Formats will be applied.</li>
+
+						<li>For pre-R18 drawings:<ul>
+							<li>If the option <span class="uicontrol">Use style values to create new 
+							objects</span> is selected in <span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Mechanical</span> &gt; <span class="uicontrol">Drafting</span> &gt; <span class="uicontrol">Administration</span></span> section, the description information 
+							is not set and the resulting coordinate dimension 
+							follows the old display.</li>
+
+							<li>If this option is cleared the value available in 
+							the <span class="uicontrol">Numerical Properties</span> is 
+							used.</li>
+
+						</ul>
+
+						</li>
+
+					</ul>
+
+					</td></tr></table>
+
+			
+			</p></p></li>
+</ol>
+
+		
+	
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,168 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Grouping Sketch Elements Together"/>
+<meta name="abstract" content="You can group various sketcher elements together using the Group command. You can make this group rigid, if required. The grouped elements can be translated, rotated, or scaled."/>
+<meta name="description" content="You can group various sketcher elements together using the Group command. You can make this group rigid, if required. The grouped elements can be translated, rotated, or scaled."/>
+<meta name="DC.Relation" scheme="URI" content="dys-c-ElementTogetherFix.htm#dys-c-ElementTogetherFix"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dys-t-ConstraintSet-ElementTogetherFix"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Grouping Sketch Elements Together</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dys-t-ConstraintSet-ElementTogetherFix">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-constrained sketches"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Grouping Sketch Elements Together</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can group 
+						various sketcher elements together using the <span class="uicontrol">Group</span> 
+						command. You can make this group rigid, if required. The grouped elements can be translated, rotated, or scaled.</span>
+The internal constraints of the group remain intact.
+						
+						<p>Note:
+    	The external reference constraints of the sketch can limit the operations that can be performed on the group. For example, a <span class="uicontrol">Fix</span> <img src="../Icons22/I_FixElement.png"/> constraint on an element of the groups disables all of them.</p>
+<p>This capability is helpful for the 2D kinematics studies 
+						in the <span>Sketcher</span>.</p>
+						</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-Create" id="toc_rg" title="You can group certain elements in the sketch and make the group rigid.">Create a Group and Make it Rigid</a></li><li><a href="#t-Edit" id="toc_rg" title="You can edit the created group and change its constituent elements. You can also change the rigidity status of the group.">Edit the Group and its Rigidity</a></li><li><a href="#t-TranslateRotate" id="toc_rg" title="Once a group is created, you can translate or rotate it without effecting the internal constraints.">Translate or Rotate a Group</a></li><li><a href="#t-Scale" id="toc_rg" title="">Scale a Group</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    Create a sketch with geometrical elements.  </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="dys-c-ElementTogetherFix.htm#dys-c-ElementTogetherFix" title="Grouping elements together lets you constrain a set of geometric elements even if constraints or dimensions are already defined for some of them.">About Grouping Elements Together</a></td></tr></table></td></tr></table>
+
+  
+
+  
+ 
+  <div>
+    <div class="p"><!--xxx--></div>
+
+  </div>
+
+
+  
+
+  <div/><div class="nested1" id="t-Create">
+    <h2 class="topictitle2">Create a Group and Make it Rigid</h2>
+
+    
+    <div><p>You can group certain elements in the sketch and make the group rigid.
+      </p>
+
+      <ol>
+        <li class="stepexpand"><p>Select the geometrical elements to group together.<p> <div class="fignone"><span class="figcap">Selection of the elements to be grouped</span><br/><div class="imagecenter"><img class="imagecenter" src="../DysUserImages/GroupSelection.png"/></div><br/></div>
+
+			</p></p></li>
+<li class="stepexpand"><p><span>From the <span class="wintitle">Sketch</span> section of the <span>action bar</span>,</span>  click <span class="uicontrol">Group</span><img src="../Icons22/I_SktFixTogether.png"/>.
+			<a name="ix-Command::Fix Together"> </a> 
+			<p> The <span class="wintitle">Group Definition</span> dialog box appears, displaying 
+			all selected geometrical elements.</p></p></li>
+<li class="stepexpand"><p>Select or clear the <span class="uicontrol">Rigid</span> check box to change the rigidity status.<p>A non-rigid group is indicated by a <img src="../IconsMask/I_MaskInactive.png"/> mask in the <span>tree</span>.</p></p></li>
+
+        
+        
+        
+        
+        
+      </ol>
+
+      <p class="result">
+        The elements are grouped and a 
+       icon <img src="../Icons22/I_SktFixTogether.png"/> appears in the <span>work area</span> indicating the grouping. A <span class="uicontrol">Group</span> node is added to the <span>tree</span>.
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><tbody><tr><td class="cellrowborder" valign="top"><div class="fignone"><span class="figcap">Rigid group</span><br/><div class="imagecenter"><img class="imagecenter" src="../DysUserImages/GroupRigid.png"/></div><br/></div>
+</td>
+<td class="cellrowborder" valign="top"><div class="fignone"><span class="figcap">Non-rigid group</span><br/><div class="imagecenter"><img class="imagecenter" src="../DysUserImages/GroupNonRigid.png"/></div><br/></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>Click the  icon <img src="../Icons22/I_SktFixTogether.png"/> in the <span>work area</span> or  the node of the group in the  <span>tree</span>, and on the <span>context toolbar</span>, click <span class="uicontrol">Select geometrical elements</span> <img src="../Icons22/I_SktSelectFixtGeoms.png"/>. This selects all the geometrical elements in the group. </td></tr></table>
+</p>
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="t-Edit">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Edit the Group and its Rigidity</h2>
+
+    
+    <div><p>You can edit the created group and change its constituent elements. You can also change the rigidity status of the group.</p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          
+            Double-click the  icon <img src="../Icons22/I_SktFixTogether.png"/> in the <span>work area</span> or  the node of the group in the  <span>tree</span>.
+          
+        </p></li>
+
+        <li class="stepexpand"><p>
+          In the <span class="wintitle">Group Definition</span> dialog box, select or clear the <span class="uicontrol">Rigid</span> check box to change the rigidity status.
+          
+        <p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>Alternately, click the  icon <img src="../Icons22/I_SktFixTogether.png"/> in the <span>work area</span> or the node of the group in the  <span>tree</span>, and on the <span>context toolbar</span>, click <span class="uicontrol">Attach Group</span> <img src="../Icons22/I_2DGroupFix.png"/> to make the group rigid and <span class="uicontrol">Detach Group</span>  <img src="../Icons22/I_2DGroupUnfix.png"/> to make it non-rigid.</td></tr></table>
+</p></p></li>
+<li class="stepexpand"><p>In the list, add or remove elements from the grouped geometry.</p></li>
+
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+<div class="nested1" id="t-TranslateRotate">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Translate or Rotate a Group</h2>
+
+    
+    <div><p>Once a group is created, you can translate or rotate it without effecting the internal constraints.</p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          
+            Click the  icon <img src="../Icons22/I_SktFixTogether.png"/> in the <span>work area</span> or  the node of the group in the <span>tree</span>.
+          <p> 
+            <ul><li>A box envelopes the group. If the group is non-rigid, then handles appear on the box.</li>
+<li>A <span><span class="uicontrol">Robot</span></span> appears on the group.</li>
+</ul>
+</p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          Drag the box by the edges in the <span>work area</span>  to freely translate the group. 
+          
+        </p></li>
+<li class="stepexpand"><p>Drag the <span><span class="uicontrol">Robot</span></span> by the central circle and place it anywhere in the <span>work area</span>.<p>The circle is the center of rotation of the group.</p></p></li>
+<li class="stepexpand"><p>Rotate the arc of the  <span><span class="uicontrol">Robot</span></span>.<p> The group is rotated about the center of the <span><span class="uicontrol">Robot</span></span>.</p></p></li>
+
+      </ol>
+
+      
+    </div>
+
+  </div>
+<div class="nested1" id="t-Scale"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Scale a Group</h2>
+
+<div><p>You can scale a group that is not rigid. </p>
+<ol><li class="stepexpand"><p>
+          
+            Click the  icon <img src="../Icons22/I_SktFixTogether.png"/> in the <span>work area</span> or  the node of the group in the <span>tree</span>.
+          <p> 
+            <ul><li>A box envelopes the group. If the group is non-rigid, then handles appear on the box.</li>
+<li>A <span><span class="uicontrol">Robot</span></span> appears on the group.</li>
+</ul>
+</p>
+        </p></li>
+<li class="stepexpand"><p>Drag a handle to scale the group. </p></li>
+</ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

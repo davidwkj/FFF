@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root>
+	<ITEM name="Filtering a Product" href="CAADocUcFilteringProduct.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+	<ITEM name="Filtering and Merging a Product" href="CAADocUcFilteringMergingProduct.htm" icon="CAAIcons/images/I_UseCase.gif" topictype="Uc" />
+</Root>

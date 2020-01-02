@@ -1,0 +1,228 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta content="Ta" name="topictype" />
+<meta content="cpp" name="devlang" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>2D Presentation PLM Modeler Overview</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>2D Presentation PLM Modeler Overview</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the 2D Presentation PLM Modeler foundations:</p>
+		<ul>
+			<li><a href="#Overview">2D Presentation PLM Modeler Overview</a></li>
+			<li><a href="#Prerequisites">2D Presentation PLM Modeler Prerequisites</a></li>
+			<li><a href="#Structure">2D Presentation PLM Modeler Objects</a></li>
+			<li><a href="#CopyPaste">Life Cycle</a></li>
+			<li><a href="#Licensing">Licensing</a></li>
+			<li><a href="#References">References</a></li>
+			<li><a href="#InShort">In Short</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Overview"></a>2D Presentation PLM Modeler Overview</h2>
+<p>This modeler provides to applications a generic way to implement a 2D representations 
+of their data. This 2D representation helps the user to understand complex systems 
+in a format they are familiar with. </p>
+<ul>
+	<li><b>Layout</b>: It is an ordered list of sheets instances. The concept might 
+	be mapped to the drawing object in drafting.</li>
+	<li><b>Sheet Reference</b>: It is the visualization and the print unit of this 
+	modeler. It aggregates a list of positioned views instances and owns a dedicated 
+	stream for background design such as title block. It is conceptually a numeric 
+	sheet of paper.</li>
+	<li><b>Sheet Instance</b>: An instance of a sheet reference. The sheet instance 
+	represents the sheet in different instantiation context. The same sheet can 
+	be represented in different layout for different purposes.</li>
+	<li><b>View Reference</b>: It is the atom design unit. The view is defined for 
+	a dedicated applicative purpose. The content of the view is stored in a feature 
+	stream.</li>
+	<li><b>View Instance</b>: An instance of a view reference. The view instance 
+	represents the view reference in different instantiation context. Each instances 
+	of a view reference can be positioned differently in several sheets.</li>
+</ul>
+<p>This modeler is used within applications such as FL Editor and Schematics (for 
+Electrical diagram, P&amp;ID &#8230;). All reference object can be used directly 
+and their life cycle are independent of each others. </p>
+<p>The 2D representation is not aggregated under the applicative reference but pointed 
+through a PLM connection.</p>
+<p>
+<img alt="Modeler representation" height="376" src="images/CAADifModeler01.jpg" width="785"/></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Prerequisites"></a>2D Presentation PLM Modeler Prerequisites</h2>
+<p>2 frameworks contain the 2D Presentation PLM Modeler API:</p>
+<ol>
+	<li>CATDifModelerUseItf: This framework is dedicated to managing the 2D Presentation 
+	PLM modeler objects.</li>
+	<li>CATDibModelerUseItf: This framework is dedicated to centralizing all the 
+	basic cross application 2D services.</li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Structure"></a>2D Presentation PLM Modeler Structuring Objects </h2>
+<p>The application using the&nbsp;2D Presentation PLM modeler includes a set of 
+API to manage and create a 2D presentation.</p>
+<p>The 2D presentation object can be acceded from the applicative reference:</p>
+<ul>
+	<li><i>CATIDifPresentationAccess</i> is implemented on applicative references 
+	enables you to access, attach or detach one or several attached presentations.
+	<table class="fill">
+		<tr>
+			<td><code>ListDifPresentations</code></td>
+			<td>retrieves all the 2D Representation attached to the implementing 
+			application reference. </td>
+		</tr>
+		<tr>
+			<td><code>AttachDifPresentation</code></td>
+			<td>attaches a 2D Representation to the implementing application reference.
+			</td>
+		</tr>
+		<tr>
+			<td><code>DetachDifPresentation</code></td>
+			<td>detaches a 2D Representation from the implementing application reference.
+			</td>
+		</tr>
+	</table>
+	</li>
+</ul>
+<p>Once the 2D Representation is retrieved, you can use the following API in order 
+to navigate through its structure:</p>
+<ul>
+	<li><i>CATIDifLayout</i> is dedicated to manipulate the Layout object. </li>
+	<li><i>CATIDibSheetSet</i> is dedicated to manage a set of sheets. It is implemented 
+	on Layout object.
+	<table class="fill">
+		<tr>
+			<td><code>GetSheetInstances</code></td>
+			<td>retrieves all the Sheet Instance of the implementing object.
+			</td>
+		</tr>
+	</table>
+	</li>
+	<li><i>CATIDifSheetInstance</i> is dedicated to manage the sheet instance object.
+	<table class="fill">
+		<tr>
+			<td><code>GetSheetReference</code> retrieves the Sheet Reference related 
+			to the sheet instance.</td>
+		</tr>
+		<tr>
+			<td><code>GetDifLayout</code> retrieves the Layout object which aggregates 
+			this instance.</td>
+		</tr>
+	</table>
+	</li>
+	<li><i>CATIDibViewSet</i> is dedicated to manage a set of Views Instances. This 
+	interface is implemented by the Sheet.
+	<table class="fill">
+		<tr>
+			<td><code>GetViewInstances</code> retrieves the aggregated Views Instances 
+			under the Sheet Reference.</td>
+		</tr>
+	</table>
+	</li>
+	<li><i>CATIDibViewInstance</i> is dedicated to manage a View Instance.
+	<table class="fill">
+		<tr>
+			<td><code>GetViewReference</code> retrieves the View Reference related 
+			to this instance.</td>
+		</tr>
+		<tr>
+			<td><code>GetViewOwner</code> retrieves the object where the instance 
+			is aggregated.</td>
+		</tr>
+	</table>
+	</li>
+	<li><i>CATIDifView</i> is dedicated to manage the View Reference. </li>
+</ul>
+<ul>
+	<li>
+	<p>The <i>CATDifFactoriesServices</i> allows you to create a genereric 2D Presentation 
+	structure. The View factory is provided by each application because of the semantic 
+	aspect of each views.</p>
+	<table class="fill">
+		<tr>
+			<td><code>CreateLayout</code></td>
+			<td>creates a generic 2D Layout object. </td>
+		</tr>
+		<tr>
+			<td><code>CreateSheet</code></td>
+			<td>creates a genereric Sheet Refence object, you can create a standalone 
+			Sheet or a Sheet instatiated under a Layout. </td>
+		</tr>
+	</table>
+	</li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="CopyPaste"></a>Life Cycle</h2>
+<p>The reference objects have all their own life cycle. The instances life cycle 
+is related to their aggregators.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Licensing"></a>Licensing</h2>
+<p>2D Presentation PLM Modeler API are available if license one of the following 
+technical product is granted: </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+</div>
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAADifUcCreateStructure.htm">Creating a New 2D Presentation 
+		Structure and Attaching it to an Applicative Reference</a> </td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAADifUcNavigateOnDifPresentation.htm">Navigating a 2D Presentation Structure</a> </td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAADifUcManageViewPositioning.htm">Managing View Instance Positioning in a Sheet Reference</a> </td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article has explained the foundations of the 2D Presentation PLM Modeler.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table>
+	<tr>
+		<td>Version: <strong>1</strong> [Feb 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

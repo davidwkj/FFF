@@ -1,0 +1,291 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Sections"/>
+<meta name="abstract" content="You can create section views, that is, aligned section views, aligned section cuts, offset section views and offset section cuts."/>
+<meta name="description" content="You can create section views, that is, aligned section views, aligned section cuts, offset section views and offset section cuts."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewCreation-Constraints.htm#gdr-c-ViewCreation-Constraints"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewCreation-OffsetSectionViewCut.htm#gdr-t-ViewCreation-OffsetSectionViewCut"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewCreation-AlignedSectionViewCut.htm#gdr-t-ViewCreation-AlignedSectionViewCut"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-ViewCreation-Sections"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Sections</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-ViewCreation-Sections">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Sections</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>You can create section views, that is, aligned section views, aligned section cuts, offset section views and offset section cuts.
+    
+    </span>
+
+    <p>
+      The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#c-WhatAreSections" id="toc_rg" title="This sub-topic provides background information about sections.">What Are Sections?</a></li><li><a href="#c-CutInSectionView" id="toc_rg" title="This sub-topic provides information about the Cut in section views capability.">
+      The Cut in Section Views Capability</a></li><li><a href="#c-Pattern" id="toc_rg" title="This sub-topic provides information about the patterns which are used to represent sections.">
+      Patterns</a></li><li><a href="#c-CreationofSectionProfilesinaViewContainingBrokenProfiles" id="toc_rg" title="You can create an offset or an aligned section view or a section cut in a view which already contains a single/multiple broken profiles.">Creation of Section Profiles in a View Containing Broken Profile(s)</a></li><li><a href="#c-UnexpectedResults" id="toc_rg" title="This sub-topic provides information that may help you understand unexpected results:">
+      Understanding Unexpected Results</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewCreation-Constraints.htm#gdr-c-ViewCreation-Constraints" title="This topic provides information about constraints used in creating aligned/offset section view/cut. You can constrain a section profile either by applying a directional or a positional constraint. You can also constrain a second or a higher profile segment by applying an offset constraint for offset section views and/or cuts. You can define an offset constraint with respect to a hole, a generated line, one of the coordinates axis of the sheet, as well as a sketched line as a reference element for aligned as well as offset section views and/or cuts.">About Constraints Available in Tools Palette</a></td></tr><tr><td><a href="gdr-t-ViewCreation-OffsetSectionViewCut.htm#gdr-t-ViewCreation-OffsetSectionViewCut" title="You can create an offset section view or an offset section cut using a cutting profile. Additionally, you can create an offset section view or an offset section cut in a view which already contains a broken profile.">Creating an Offset Section View/Cut</a></td></tr><tr><td><a href="gdr-t-ViewCreation-AlignedSectionViewCut.htm#gdr-t-ViewCreation-AlignedSectionViewCut" title="You can create an aligned section view or an aligned section cut using a cutting profile. Additionally, you can create an aligned section view or an aligned section cut in a view which already contains a broken profile.">Creating an Aligned Section View/Cut</a></td></tr></table></td></tr></table>
+
+  
+
+  
+  
+  <div/><div class="nested1" id="c-WhatAreSections"><h2 class="topictitle2">What Are Sections?</h2>
+
+<div><p><span>This sub-topic provides background information about sections.</span>
+</p>
+<p>
+      An <span class="glossterm" id="aligned-section-view" onmouseout="hideTerm()" onmouseover="showTerm('aligned-section-view.xml')">aligned section view</span> or aligned <span class="glossterm" id="section-cut" onmouseout="hideTerm()" onmouseover="showTerm('section-cut.xml')">section cut</span> is a view created from a cutting
+profile defined from non parallel planes. To include certain angled elements in a
+section, the cutting plane may be bent so
+as to pass through those features. The plane and feature are then
+imagined to be revolved around the original plane.
+
+    <br/><img src="../GdrUserImages/AlignedMPSV.png"/><br/></p><p>An <span class="glossterm" id="offset-section-view-cut" onmouseout="hideTerm()" onmouseover="showTerm('offset-section-view-cut.xml')">offset section view</span> or offset  section cut is a view that allows sectioning
+through irregular <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">objects</span>, making it possible to show several
+features that do not lie in a straight line by offsetting or
+bending the cutting plane. It is created with multiple planes parallel to each other.<br/><img src="../GdrUserImages/OffsetMPSV.png"/><br/></p></div>
+</div>
+<div class="nested1" id="c-CutInSectionView">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+      The Cut in Section Views Capability</h2>
+
+    <div><p><span>This sub-topic provides information about the <span class="uicontrol">Cut in section views</span> capability. </span>
+<p>Note:
+		As its name implies, this capability applies to <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section views</span> only.
+</p>
+</p>
+ 
+  <p>In an assembly, you can specify whether a product should or should not be
+	 sectioned when generated into section views or breakout views. (This capability
+	 is not available for section cuts). 
+  </p> 
+  <p>The 3D part not intended to be cut, should have a dedicated Boolean
+	 property named E_DrwUncutInSections, valuated as TRUE through product 
+	 <span class="uicontrol">Properties</span>. 
+  </p> 
+  <p>You can also do this when overloading element properties in a generated
+	 view. 
+	 <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>If you choose not to cut the elements in section
+		views (that is clear the 
+		<span class="uicontrol">Cut in section views</span> check box), this capability
+		does not work for section views generated using the Approximate generation mode
+		(selected elements will be cut nonetheless). Likewise, if you switch an exact
+		view to the approximate mode, the elements for which you cleared the 
+		<span class="uicontrol">Cut in section views</span> check box will be cut in the
+		view. 
+	 </td></tr></table>
+ 
+  </p> 
+  <p>In other way, you can specify using a drafting extension. For more
+	 information, see 
+	 <a href="gdr-t-ViewCreation-SectionsInAssemblyContext.htm#gdr-t-ViewCreation-SectionsInAssemblyContext" title="You can specify whether a product should or should not be sectioned when generated into section views or breakout views using a drafting extension.">Creating Sections in Assembly Context</a>.
+	 
+  </p> 
+</div>
+</div>
+<div class="nested1" id="c-Pattern">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+      Patterns</h2>
+
+    
+    <div><p><span>This sub-topic provides information about the patterns which are used to represent sections.</span>
+<p>Note:
+		<span class="glossterm" id="pattern" onmouseout="hideTerm()" onmouseover="showTerm('pattern.xml')">Patterns</span> will not be applied to aligned sections which are tangent
+to the 3D faces.
+</p>
+</p>
+ 
+  <p>Patterns are defined in the standards. For more
+	 information, see 
+	 <a href="standards-r-ad-PatternParams.htm#standards-r-ad-PatternParams" title="Pattern definitions are located in the Standard Definition dialog box, in the drafting category &gt; Patterns node, available via MePreferencesStandards.">Pattern Definition</a>.
+	 
+  </p> 
+  <p>You may modify the pattern (hatching, dotting, coloring
+	 or motif) by right-clicking it and selecting 
+	 <span class="uicontrol">Properties</span>. In
+	 the 
+	 <span class="uicontrol">Properties</span> dialog box, select a new pattern or
+	 modify some graphical attributes of the existing pattern. 
+  </p> 
+  <p> 
+	 <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>In case of parts which use a material to which a
+		specific pattern is associated, views generated using the 
+		<span class="uicontrol">Approximate</span> generation mode do not inherit the
+		material properties from the 3D, and therefore do not use the pattern
+		associated to this material. Furthermore, as the pattern properties are not
+		persistent, the pattern may change after switching an exact view to the
+		approximate mode and vice versa. 
+	 </td></tr></table>
+ 
+  </p> 
+</div>
+</div>
+
+  
+<div class="nested1" id="c-CreationofSectionProfilesinaViewContainingBrokenProfiles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Creation of Section Profiles in a View Containing Broken Profile(s)</h2>
+
+<div><p><span>You can create an offset or an aligned section view or a section cut in a view which already contains a single/multiple broken profiles.</span>
+</p>
+<p>A view having single/multiple broken profile(s) can be divided into a number of zones. Consider the following view containing two broken operator profiles: <br/><img src="../GdrUserImages/brokenviewzones01NLS.png"/><br/><ul><li>Three zones are defined as shown: Zone 1, Zone 2 and Zone 3.</li>
+<li>Broken region is the area between the broken operator profile lines. </li>
+</ul>
+</p><p>In this case, you can create valid aligned or offset <span class="glossterm" id="section-profile" onmouseout="hideTerm()" onmouseover="showTerm('section-profile.xml')">section profile</span> types such as section <span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">callout</span> in single zone, or across broken region but with certain rules as mentioned below.  
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="42.49578414839798%" id="d89203e211">Types of Profiles</th>
+<th class="cellrowborder" valign="top" width="40.64080944350759%" id="d89203e213">Description</th>
+<th class="cellrowborder" valign="top" width="16.863406408094438%" id="d89203e215">Section Callout Creation</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="42.49578414839798%" headers="d89203e211 ">Section callout profile in single zone<p><br/><img border="1" src="../GdrUserImages/sectionsinglezone.png"/><br/></p></td>
+<td class="cellrowborder" valign="top" width="40.64080944350759%" headers="d89203e213 ">A section callout profile (aligned/offset) is in a single zone, when all the callout profile segments lie completely in  Zone 1, Zone 2 or Zone 3 and do not intersect/cut any broken operator profile lines.</td>
+<td class="cellrowborder" valign="top" width="16.863406408094438%" headers="d89203e215 ">Possible</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="42.49578414839798%" headers="d89203e211 "><p>Section callout profile partially in the broken region</p><br/><img border="1" src="../GdrUserImages/sectionpartialzone.png"/><br/><p>This scenario is possible only when a section callout profile is already present in the view and then a broken profile is created such that part of the section callout profile is encompassed inside the broken region.</p></td>
+<td class="cellrowborder" valign="top" width="40.64080944350759%" headers="d89203e213 "><p>A section callout profile (aligned/offset) is in partially in the broken region zone, if some of the profile segments of section callout are present in the broken region and remaining of them are strictly present in a single zone.</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.863406408094438%" headers="d89203e215 ">Not possible</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="42.49578414839798%" headers="d89203e211 "><p>Section callout profile across the broken region</p><br/><img border="1" src="../GdrUserImages/sectionacross.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="40.64080944350759%" headers="d89203e213 ">A section callout profile (aligned/offset) is across the broken region zone, if some of the end segment points of section callout profile are present in Zone 1 and some of the segment end points are present in adjacent Zone 2, crossing the broken region.</td>
+<td class="cellrowborder" valign="top" width="16.863406408094438%" headers="d89203e215 ">Possible when perpendicularity rule is followed.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="42.49578414839798%" headers="d89203e211 "><p>Section callout profile completely in  the broken region</p><br/><img border="1" src="../GdrUserImages/sectioncomplete.png"/><br/><p>This scenario is possible only when a section callout profile is  already present in the view and a broken profile such that the whole section callout profile is encompassed inside the broken region.</p></td>
+<td class="cellrowborder" valign="top" width="40.64080944350759%" headers="d89203e213 ">A section callout profile (aligned/offset) is completely in the broken region zone, if all the segments of the section callout profile are present completely inside the broken region zone.  </td>
+<td class="cellrowborder" valign="top" width="16.863406408094438%" headers="d89203e215 ">Not possible</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="42.49578414839798%" headers="d89203e211 "><p>Section callout profile across multiple broken region zones</p><br/><img border="1" src="../GdrUserImages/sectionmultibroken.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="40.64080944350759%" headers="d89203e213 ">A section callout profile (aligned/offset) is across the multiple broken region zones, if some or all segment end points of section callout profile are present on either side of the multiple broken operators.   </td>
+<td class="cellrowborder" valign="top" width="16.863406408094438%" headers="d89203e215 ">Possible when perpendicularity rule is followed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p> <p>In short, consider the following points when  creating an aligned section callout profile: <ul><li>A valid aligned section callout profile cannot have any end point of a profile segment inside a broken region zone.</li>
+<li>	A valid aligned section callout profile can be created across broken region zone(s) when the segment crossing the broken region zone is perpendicular to the two broken lines of that broken operator. This is referred as the perpendicularity rule.</li>
+</ul>
+</p><p>Similarly, consider the following points when creating an offset section callout profile: 	   </p><p><ul><li>A valid offset section callout profile cannot have start point of the first segment or end point of the  last segment of a callout profile inside a broken region zone. (For example, for single segment offset profile, no end points can be inside the broken region zone).</li>
+<li>An offset section callout profile can only have even numbered profile segment(s) fully defined inside a broken region zone. This is referred as even number rule. (Profile segment number starting with 1).<br/><img border="1" src="../GdrUserImages/evennumberrule.png"/><br/></li>
+<li>A valid offset section callout profile can be created across broken region zone/s when the segment crossing or intersecting the broken region zone follows the perpendicularity rule with respect to the broken operator lines.</li>
+</ul>
+</p><p>However, if an invalid profile is created, a message is displayed informing that such a section callout profile cannot be created. <p>Note:
+		You can create a broken profile on a view which already contains a section callout profile without any restrictions.</p>
+</p><div class="section" id="c-CreationofSectionProfilesinaViewContainingBrokenProfiles__cs-EditionofSectionCalloutProfile"><h3 class="sectiontitle">Edition of Section Callout Profile</h3><p>You can edit the section callout profile or create a completely new section callout profile using the<span class="uicontrol"> Replace Profile</span> command in the Callout Edition <span>app</span>.</p><p>You can edit only valid section callout profiles. A warning message is displayed when you try to edit an invalid section callout. <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>In Callout Edition <span>app</span>, the section callout appears in a broken state while the generated geometry in the background appears in an unbroken state.</td></tr></table>
+</p><p>After edition of a section callout is complete, the resultant callout has to be a valid one and follow the same rules as mentioned in <a href="gdr-c-ViewCreation-Sections.htm#c-CreationofSectionProfilesinaViewContainingBrokenProfiles" title="You can create an offset or an aligned section view or a section cut in a view which already contains a single/multiple broken profiles.">Creation of Section Profiles in a View Containing Broken Profile(s)</a>. If the newly created callout is found invalid, appropriate message is displayed.</p><p>The following table gives the summary of edition of section callout profiles:  </p><p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="16.374269005847957%" id="d89203e333"> </th>
+<th class="cellrowborder" valign="top" width="14.619883040935672%" id="d89203e334">Section Callout Profile in Single Zone</th>
+<th class="cellrowborder" valign="top" width="18.128654970760234%" id="d89203e336">Section Callout Profile Partially in Broken Region Zone
+</th>
+<th class="cellrowborder" valign="top" width="18.128654970760234%" id="d89203e338">Section Callout Profile across Broken Region Zone</th>
+<th class="cellrowborder" valign="top" width="15.497076023391815%" id="d89203e340">Section Callout Profile Completely in Broken Region Zone</th>
+<th class="cellrowborder" valign="top" width="17.251461988304094%" id="d89203e342">Section Callout Profile across Multiple Broken Region Zones</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="16.374269005847957%" headers="d89203e333 ">Section callout profile before edition</td>
+<td class="cellrowborder" valign="top" width="14.619883040935672%" headers="d89203e334 ">Allowed (aligned/offset)</td>
+<td class="cellrowborder" valign="top" width="18.128654970760234%" headers="d89203e336 ">Not allowed</td>
+<td class="cellrowborder" valign="top" width="18.128654970760234%" headers="d89203e338 ">Allowed when perpendicularity rule is followed. (Aligned) <p>Allowed when perpendicularity rule and even number rules are followed. (Offset)</p></td>
+<td class="cellrowborder" valign="top" width="15.497076023391815%" headers="d89203e340 ">Not allowed (aligned/offset)</td>
+<td class="cellrowborder" valign="top" width="17.251461988304094%" headers="d89203e342 ">Allowed when perpendicularity rule is followed. (Aligned) <p>Allowed when perpendicularity rule and even number rules are followed. (Offset)</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="16.374269005847957%" headers="d89203e333 ">Section callout profile after edition</td>
+<td class="cellrowborder" valign="top" width="14.619883040935672%" headers="d89203e334 ">Valid (aligned/offset)</td>
+<td class="cellrowborder" valign="top" width="18.128654970760234%" headers="d89203e336 ">Invalid</td>
+<td class="cellrowborder" valign="top" width="18.128654970760234%" headers="d89203e338 ">Allowed when perpendicularity rule is followed. (Aligned) <p>Allowed when perpendicularity rule and even number rules are followed. (Offset)</p></td>
+<td class="cellrowborder" valign="top" width="15.497076023391815%" headers="d89203e340 ">Invalid</td>
+<td class="cellrowborder" valign="top" width="17.251461988304094%" headers="d89203e342 ">Allowed when perpendicularity rule is followed. (Aligned) <p>Allowed when perpendicularity rule and even number rule are followed. (Offset)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</p>   </div>
+<div class="section" id="c-CreationofSectionProfilesinaViewContainingBrokenProfiles__cs-VisualizationofSectionCalloutProfiles"><h3 class="sectiontitle">Visualization of Section Callout Profiles</h3><p>You can click the <span class="uicontrol">Callouts</span> node in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span> or directly click on the callout profile and visualize the section callout fully or in a truncated  manner or not visualize it at all, depending on the type of section callout profile.</p><p>The following table summarizes the visualization of section callout profiles: </p><p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d89203e404"> </th>
+<th class="cellrowborder" valign="top" width="NaN" id="d89203e405">Section Callout Profile in Single Zone</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d89203e407">Section Callout Profile Partially in Broken Region Zone
+</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d89203e409">Section Callout Profile across Broken Region Zone</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d89203e411">Section Callout Profile Completely in Broken Region Zone</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d89203e413">Section Callout Profile across Multiple Broken Region Zones</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d89203e404 ">Aligned/offset section callout</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d89203e405 ">Fully seen</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d89203e407 ">Truncated</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d89203e409 ">Fully seen/truncated</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d89203e411 ">Not seen</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d89203e413 ">Fully seen/truncated</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p></div>
+<div class="section" id="c-CreationofSectionProfilesinaViewContainingBrokenProfiles__cs-PropagationofBrokenandBreakoutSpecifications"><h3 class="sectiontitle">Propagation of Broken and Breakout Specifications</h3><p>You can propagate the broken and <span class="glossterm" id="breakout" onmouseout="hideTerm()" onmouseover="showTerm('breakout.xml')">breakout</span> specifications of a view to a newly created view by selecting the  <span class="uicontrol">Propagation of broken &amp; breakout specifications</span> check box available through <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting &gt; </span> &gt; <span class="uicontrol">Generation</span></span> section, under <span class="uicontrol">View</span>.</p><p>For aligned section callout, the broken specifications will be propagated to a newly created section view only if it is a valid single segment callout and it crosses all the broken operators present in that view. </p><p>For offset section callout profile, the broken specifications will be propagated only if it is a valid callout profile and it crosses all the broken operators present in that view,  and the first segment of this valid section callout is perpendicular to the broken operator lines. (It is valid for a single as well as multiple segment callout).</p></div>
+</div>
+</div>
+<div class="nested1" id="c-UnexpectedResults">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+      Understanding Unexpected Results</h2>
+
+    <div><p><span>This sub-topic provides information that may  help you understand unexpected results: 
+    </span>
+</p>
+<ul><li><a href="gdr-c-ViewCreation-Sections.htm#gdr-c-ViewCreation-Sections" title="You can create section views, that is, aligned section views, aligned section cuts, offset section views and offset section cuts.">In the case of aligned sections</a></li>
+<li><a href="gdr-c-ViewCreation-Sections.htm#gdr-c-ViewCreation-Sections" title="You can create section views, that is, aligned section views, aligned section cuts, offset section views and offset section cuts.">In the case of offset sections</a></li>
+</ul>
+</div>
+
+    
+    
+  <div class="nested2" id="cs-UnexpectedResults-Aligned"><h3 class="topictitle3">Case of Aligned Sections</h3>
+
+<div><p><span>This sub-topic provides information that should be useful in understanding the  unexpected results in the case of aligned sections views or aligned section cuts.</span>
+</p>
+
+      <p>Contrary to the other view types, in an aligned section view/cut, the 2D geometry 
+     seen in the view is not based on a single 3D plane, but on numerous 3D planes. 
+     However, like all generative views, the aligned section view represents only 
+     one projection plane. Then it selects only one of the 3D planes (the one corresponding 
+     to the first segment of its profile). As a consequence, some results can be 
+     different from your expectations: </p>
+    <ul>
+       <li>
+       <p>Symbolic <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> of threads can be ill-formed. </p>
+       </li>
+
+       <li>
+       <p>When creating an auxiliary, section, breakout or box clipping 
+       view from the aligned section view/cut, the result might not be the expected 
+       one. </p>
+       </li>
+
+     </ul>
+<p>In these particular cases, create a view of each part to get the results you expect.</p></div>
+</div>
+<div class="nested2" id="cs-UnexpectedResults-Offset"><h3 class="topictitle3">Case of Offset Sections</h3>
+
+<div><p><span>This sub-topic provides information that should be useful in understanding the unexpected results in the case of offset sections views or offset section cuts.</span>
+</p>
+<p>When a planar face belongs to the section profile, you may get unexpected results. For example, the section edge may or may not be displayed, and the section may or may not be represented by a pattern. Indeed, as the <span class="glossterm" id="cutting-profile" onmouseout="hideTerm()" onmouseover="showTerm('cutting-profile.xml')">cutting profile</span> can be considered as being either inside or outside the part, the result largely depends on computing tolerances. Consequently, when defining the section profile, we advise that you avoid getting into such a geometrical configuration.</p><p>The example here shows what kind of results you may get for a given
+section:
+<br/><img src="../GdrUserImages/planarface_sectionprofile.gif"/><br/></p><p>Expected result:<br/><img src="../GdrUserImages/section_expctd_rslt.gif"/><br/></p><p>Unexpected results:<br/><img src="../GdrUserImages/section_unexpctd_rslt01.gif"/><br/><br/><img src="../GdrUserImages/section_unexpctd_rslt02.gif"/><br/></p></div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

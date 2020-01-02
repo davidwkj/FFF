@@ -1,0 +1,283 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="reference"/>
+<meta name="DC.Title" content="Drawings Database Design Import"/>
+<meta name="abstract" content="Database Design Import (DBDI) enables the migration of CATIA V5 data stored in a legacy database into 3DEXPERIENCE."/>
+<meta name="description" content="Database Design Import (DBDI) enables the migration of CATIA V5 data stored in a legacy database into 3DEXPERIENCE."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dbdi-r-mechanical-gdr"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Drawings Database Design Import</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dbdi-r-mechanical-gdr">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix- DBDI ::Drafting"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1><span><span>Drawings</span></span> Database Design Import</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span><span>Database Design
+  Import (DBDI) enables the migration of CATIA V5 data stored in a legacy database into
+  
+  <span><span class="tm-3D">3D</span>EXPERIENCE</span>.</span></span>
+<p>This topic specifies the import correspondences between V5 data types and <span><span class="tm-3D">3D</span>EXPERIENCE</span> content types, and the import result. The statuses for import results are fully imported, partially imported, and not imported (-).</p>
+    
+  </p>
+<ul><li><a href="#r-com-Databaseto3DEXP" id="toc_rg" title="This section describes the behavior of CATIA V5 data stored in legacy databases imported into 3DEXPERIENCE that is common to all connectors.">Common Import Behavior</a></li><li><a href="#r-V5NativeGeometryUsageAfterImport" id="toc_rg" title="This section describes the different compatibility statuses of V5 CATParts in the 3DEXPERIENCE environment.">V5 Native Geometry Usage After Import</a></li><li><a href="#r-v55-DataImport" id="toc_rg" title="There are no differences with respect to the common import behavior."><span>ENOVIA VPM V5</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></a></li><li><a href="#r-v54-Databaseto3DEXP" id="toc_rg" title="There are no differences with respect to the common import behavior."><span>ENOVIAvpm</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></a></li><li><a href="#r-v5d-Databaseto3DEXP" id="toc_rg" title="There are no differences with respect to the common import behavior."><span>X-CAD Design Management</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></a></li><li><a href="#r-v5s-Databaseto3DEXP" id="toc_rg" title="There are no differences with respect to the common import behavior."><span>SmarTeam</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></a></li><li><a href="#r-xpg-Databaseto3DEXP" id="toc_rg" title="There are no differences with respect to the common import behavior."><span>Adapter for X-PDM</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+   
+  
+
+  <div class="nested1" id="r-com-Databaseto3DEXP">
+    <h2 class="topictitle2">Common Import Behavior</h2>
+
+      
+    <div><p>This section describes the behavior of CATIA V5 data stored in legacy databases imported into <span><span class="tm-3D">3D</span>EXPERIENCE</span> that is common to all connectors.</p>
+
+      <div class="section" id="r-com-Databaseto3DEXP__rs-com-Behavior">
+        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="void" border="1" rules="all">
+              
+              
+              
+              <thead align="left">
+                <tr>
+                  <th class="cellrowborder" valign="top" width="NaN" id="d2307e65">V5  Data Type</th>
+
+                  <th class="cellrowborder" valign="top" width="NaN" id="d2307e68"><span><span class="tm-3D">3D</span>EXPERIENCE</span> <span>Content Type</span></th>
+
+                  <th class="cellrowborder" valign="top" width="NaN" id="d2307e77">Import Result</th>
+
+                </tr>
+
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 ">
+                Annotations: <ul><li>Roughness symbol</li>
+<li>Extension line</li>
+</ul>
+</td>
+
+                  <td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 ">
+                Annotations: <ul><li>Roughness symbol </li>
+<li>Extension line</li>
+</ul>
+</td>
+
+                  <td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 ">
+                <ul><li>Fully imported. <p>The roughness symbol is standard compliant in CATIA <span><span class="tm-3D">3D</span>EXPERIENCE</span>.  </p></li>
+<li>Fully imported.<p>In a CATIA V5 session, an associated roughness has no extension. After migration, a roughness has an extension line if needed.</p></li>
+</ul>
+
+              </td>
+
+                </tr>
+
+                <tr>
+                  <td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 ">
+                Pictures
+              </td>
+
+                  <td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 ">
+                Pictures
+              </td>
+
+                  <td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 ">
+                <p>Partially imported.</p><p>Imported with reference as <span class="uicontrol">Sheet</span> and orientation as <span class="uicontrol">Horizontal</span>  (except for black and white bi-level pixel images).  
+              </p></td>
+
+                </tr>
+
+                <tr>
+                  <td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 ">
+                <p>Inserted objects (OLE):   </p><p><ul><li>Without link</li>
+<li>With link</li>
+</ul>
+</p>
+              </td>
+
+                  <td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 "><p>Inserted objects (OLE): </p><p><ul><li>Without link</li>
+<li>With link<p>(If the document is accessible).</p><p>Note that as the object is embedded, it can be edited.</p></li>
+</ul>
+</p></td>
+
+                  <td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 "><ul><li>Fully imported.</li>
+<li>Partially imported. </li>
+</ul>
+</td>
+
+                </tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 "><p>Balloons:    </p><p><ul><li>Associative balloons</li>
+</ul>
+</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 ">Balloons:<p><ul><li>Associative balloons<p>(Isolated)</p></li>
+</ul>
+</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 "> <ul><li>Partially imported. </li>
+</ul>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 "><p>Bills of Material, generated report   </p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 "><p>Bills of Material, generated report   </p><p>(Isolated)</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 "><p>Partially imported. </p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 ">Generative view</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 ">Generative view</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 "><p> Fully imported. </p><p>However, it is seen as "Not-Updated" after import. </p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 "><p><span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">Associativity</span>:     <ul><li><span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">Callout</span> of <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section views</span> associated with 3D sketches </li>
+<li>Views created from DMU boxes</li>
+</ul>
+</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 "><p><span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">Associativity</span>:     <ul><li><span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">Callout</span> of <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section views</span> not associated with 3D sketches </li>
+<li>Views created from DMU boxes<p>(Isolated)</p></li>
+</ul>
+</p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 "><p><ul><li>Partially imported.  </li>
+<li>Partially imported.</li>
+</ul>
+</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 "><ul><li>Views created from DMU and Assembly scenes</li>
+</ul>
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 "><ul><li>Views created from DMU and Assembly scenes</li>
+</ul>
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 "><ul><li>Fully imported.</li>
+</ul>
+<p>Associativity is kept as it is.</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 "><p>Views created from FTA: <ul><li>From an FTA view added to a .CATPart  </li>
+<li>From an FTA view added to a .CATProduct </li>
+</ul>
+    </p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 "><p>Views created from FTA: <ul><li>From an FTA view added to a .CATPart  </li>
+<li>From an FTA view added to a .CATProduct <p>(Isolated)</p></li>
+</ul>
+    </p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 "><ul><li>Fully imported. </li>
+<li>Partially imported. </li>
+</ul>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 "><p>.model: <ul><li>CATDrawing generated from a .model</li>
+</ul>
+    </p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 "><p>.model: <ul><li>CATDrawing generated from a .model<p>(Isolated)</p></li>
+</ul>
+    </p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 "><ul><li>Partially imported.</li>
+</ul>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 ">Views linked to bodies contained in different CATParts</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 ">New product </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 ">Partially imported. <p>Imported and a new product reference is created if  <span class="uicontrol">Automatically create a new product reference to keep view associativity</span> check box is selected in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="uicontrol"> &gt; File-based Design Import &gt; Drafting</span> tab, <span class="uicontrol">Import of views linked to bodies contained in different CATPart documents</span> area.</p><p>If this check box is cleared, the views will not be associative and no update can be performed on such views.</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d2307e65 "><p>CATDrawing <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span></p></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e68 ">Drawing</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d2307e77 "><p>Fully  imported. </p><p>The <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> is inserted under the product as a shared representation if <span class="uicontrol">Make the drawing shareable</span> check box is selected in <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="uicontrol"> &gt; File-based Design Import &gt; Drafting</span> tab, <span class="uicontrol">Drawing representation location</span> area.</p><p>However, if this check box is cleared, the drawing is inserted under the product as a non-shared representation (aggregated representation). </p></td>
+</tr>
+
+              </tbody>
+
+            </table>
+</div>
+     
+      </div>
+
+
+      
+
+      
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="r-V5NativeGeometryUsageAfterImport"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">V5 Native Geometry Usage After Import</h2>
+
+<div><p>
+<span>This section describes the different compatibility statuses of V5
+  CATParts in the 
+  <span><span class="tm-3D">3D</span>EXPERIENCE</span>
+  environment. 
+</span>
+
+<p>For more information about standard behavior, see 
+  <cite>Social and Collaborative: Global Design Management: Coexistence and
+	 Migration: 
+	 <span>ENOVIA VPM V5 Coexistence and Migration</span>:
+	 Understanding Coexistence and Migration: V5 Native Geometry Usage</cite>.
+</p></p>
+
+					<div class="section" id="r-V5NativeGeometryUsageAfterImport__rs-V5Native-Content">
+						<p>There are two cases of V5 native geometry import as follows:<ul><li>When a V5 native 3D shape representation is imported to <span><span class="tm-3D">3D</span>EXPERIENCE</span>, the data can be used as if it were native to <span><span class="tm-3D">3D</span>EXPERIENCE</span>. You can generate drawings for this data using all the <span><span class="tm-3D">3D</span>EXPERIENCE</span> capabilities in the same session.</li>
+<li>When a V5 native .CATDrawing file is imported to <span><span class="tm-3D">3D</span>EXPERIENCE</span>, the data can only be viewed in <span class="uicontrol">Explore</span> mode. It cannot be opened or edited.</li>
+</ul>
+</p>
+					</div>
+
+				</div>
+</div>
+<div class="nested1" id="r-v55-DataImport">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2"><span>ENOVIA VPM V5</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></h2>
+
+    
+    <p> <span>There are no differences with respect to the common import behavior.</span></p>
+
+    
+  </div>
+
+
+  <div class="nested1" id="r-v54-Databaseto3DEXP">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2"><span>ENOVIAvpm</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></h2>
+
+    
+    <p><span>There are no differences with respect to the common import behavior.</span></p>
+
+    
+  </div>
+
+
+  <div class="nested1" id="r-v5d-Databaseto3DEXP">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2"><span>X-CAD Design Management</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></h2>
+
+    
+    <p><span>There are no differences with respect to the common import behavior.</span></p>
+
+    
+  </div>
+
+
+  <div class="nested1" id="r-v5s-Databaseto3DEXP">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2"><span>SmarTeam</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></h2>
+
+    
+    <p><span>There are no differences with respect to the common import behavior.</span></p>
+
+    
+  </div>
+
+
+  <div class="nested1" id="r-xpg-Databaseto3DEXP">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2"><span>Adapter for X-PDM</span> Database to <span><span class="tm-3D">3D</span>EXPERIENCE</span></h2>
+
+    
+    <p><span>There are no differences with respect to the common import behavior.</span></p>
+
+    
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

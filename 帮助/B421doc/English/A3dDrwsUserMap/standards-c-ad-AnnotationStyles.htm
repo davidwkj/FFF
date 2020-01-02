@@ -1,0 +1,2369 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Annotation Styles"/>
+<meta name="abstract" content="The annotation styles let you define the default values that will be used when creating annotations."/>
+<meta name="description" content="The annotation styles let you define the default values that will be used when creating annotations."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="standards-c-ad-AnnotationStyles"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Annotation Styles</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="standards-c-ad-AnnotationStyles">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::annotation styles"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-annotations::styles"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Annotation Styles
+				
+				 </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>The annotation styles let you define the default values that will be used 
+						when creating annotations.
+    </span>
+
+    
+  </p>
+<ul><li><a href="#standards-c-ad-AnnotationStyles__rs-TextStyles" id="toc_rg" title="">Text Styles</a></li><li><a href="#standards-c-ad-AnnotationStyles__rs-TableStyles" id="toc_rg" title="">Table Styles </a></li><li><a href="#standards-c-ad-AnnotationStyles__rs-DatumFeatureStyles" id="toc_rg" title="">Datum Feature Styles </a></li><li><a href="#standards-c-ad-AnnotationStyles__rs-DatumTargetStyles" id="toc_rg" title="">Datum Target Styles </a></li><li><a href="#standards-c-ad-AnnotationStyles__rs-ToleranceStyles" id="toc_rg" title="">Tolerance Styles </a></li><li><a href="#standards-c-ad-AnnotationStyles__rs-BalloonStyles" id="toc_rg" title="">Balloon Styles </a></li><li><a href="#standards-c-ad-AnnotationStyles__rs-RoughnessSymbolStyles" id="toc_rg" title="">Roughness Symbol Styles </a></li><li><a href="#standards-c-ad-AnnotationStyles__rs-WeldingSymbolStyles" id="toc_rg" title="">Welding Symbol Styles</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <p>
+      Annotation styles are located in the <span class="uicontrol">Styles</span> node of the <span class="uicontrol">Standard 
+		Definition</span> editor, available via <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>.
+    </p><p>By default, a style called <span class="uicontrol">Default</span> is available for each annotation style.</p><p>All the parameters associated to a given annotation style are listed 
+		in a dedicated table.  
+		</p><p>The Description column provides a description of each parameter.  
+		Certain parameters are only taken into account at creation time (i.e. when 
+		creating the annotation), and not at modification time (i.e. when reapplying 
+		a style to an annotation: the Applies at modification column indicates whether 
+		this parameter is taken into account at modification time. 
+ </p>
+  <div class="section" id="standards-c-ad-AnnotationStyles__rs-TextStyles"><h2 class="sectiontitle">Text Styles</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e62">Parameter</th>
+<th class="cellrowborder" valign="top" width="42.01030927835052%" id="d279500e64">Description</th>
+<th class="cellrowborder" valign="top" width="32.21649484536083%" id="d279500e66">Applies at modification</th>
+</tr>
+</thead>
+<tbody><tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e70" headers="d279500e62 "><span class="uicontrol"> Font &gt; Name</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e70 d279500e64 "><p>Specifies the name of the font that should be used for texts. If no font name is specified, the system's default font will be used.</p><p>Make sure that the text font specified here belongs to the list of allowed text fonts, as defined in the<span class="uicontrol"> General &gt; AllowedTextFonts</span> node of the Standards editor.</p></td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e70 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e84" headers="d279500e62 "><span class="uicontrol"> Font &gt; Bold</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e84 d279500e64 "><p>Indicates whether or not texts should be displayed in bold. </p>
+</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e84 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e94" headers="d279500e62 "><span class="uicontrol"> Font &gt; Italic</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e94 d279500e64 "><p>Indicates whether or not texts should be displayed in italic. </p>
+</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e94 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e104" headers="d279500e62 "><span class="uicontrol"> Font &gt; Size</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e104 d279500e64 ">Indicates the font size that should be used for 
+				texts.<p>Make sure that the font size specified here belongs 
+				to the list of allowed fonts sizes, as defined in the <span class="uicontrol">General 
+				&gt; Allowed Text Font Sizes</span> node of the Standards editor.</p></td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e104 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e117" headers="d279500e62 "><span class="uicontrol">Font &gt; Underline</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e117 d279500e64 ">Indicates whether or not texts should be underlined.
+				</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e117 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e125" headers="d279500e62 "><span class="uicontrol">Font &gt; Color</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e125 d279500e64 ">Specifies the color that should be used to display 
+				texts.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e125 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e133" headers="d279500e62 "><span class="uicontrol">Font &gt; Ratio</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e133 d279500e64 ">Specifies the ratio that should be used to display 
+				texts.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e133 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e141" headers="d279500e62 "><span class="uicontrol">Font &gt; Slant</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e141 d279500e64 ">Specifies the slant that should be used to display 
+				texts.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e141 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e149" headers="d279500e62 "><span class="uicontrol"> Font &gt; Spacing</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e149 d279500e64 ">Specifies the spacing that should be used to display 
+				texts.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e149 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e157" headers="d279500e62 "><span class="uicontrol">Font &gt; Pitch</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e157 d279500e64 ">Specifies the pitch (fixed or variable) that should 
+				be used to display texts.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e157 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e165" headers="d279500e62 "><span class="uicontrol">Font &gt; Strikethrough</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e165 d279500e64 ">Indicates whether or not strikethrough should be 
+				used for texts. </td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e165 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e174" headers="d279500e62 "><span class="uicontrol">Font &gt; Overline</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e174 d279500e64 ">Indicates whether or not text should be overlined.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e174 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e182" headers="d279500e62 "><span class="uicontrol">Font &gt; Kerning</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e182 d279500e64 ">Indicates whether or not text should be kerned.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e182 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e190" headers="d279500e62 "><span class="uicontrol">Text &gt; Frame</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e190 d279500e64 ">Specifies the type of frame that should be used 
+				to represent texts. Note that fixed-size frames are defined in the 
+				Frame node of the current standard.<p>Accepted value: any</p></td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e190 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e200" headers="d279500e62 "><span class="uicontrol">Text &gt; Frame &gt; Fill</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e200 d279500e64 ">Specifies whether or not to add color fill to the frame.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e200 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e208" headers="d279500e62 "><span class="uicontrol">Text &gt; Frame &gt; Fill Color</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e208 d279500e64 ">Specifies the default color to fill.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e208 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e216" headers="d279500e62 "><span class="uicontrol">Text &gt; Frame &gt; Horizontal Margin</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e216 d279500e64 ">Specifies the horizontal margin of frame.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e216 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e224" headers="d279500e62 "><span class="uicontrol">Text &gt; Frame &gt; Vertical Margin</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e224 d279500e64 ">Specifies the vertical margin of frame.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e224 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e232" headers="d279500e62 "><span class="uicontrol">Text &gt; Anchor Point</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e232 d279500e64 ">Specifies the text position in relation to the anchor 
+				point (e.g., top left, middle left, etc.).</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e232 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e240" headers="d279500e62 "><span class="uicontrol">Text &gt; Anchor Line</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e240 d279500e64 ">Specifies the text position in relation to the anchor 
+				line (e.g., top or bottom, cap or base, etc.).</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e240 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e248" headers="d279500e62 "><span class="uicontrol">Text &gt; Line Spacing</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e248 d279500e64 ">Specifies the spacing that should be used between 
+				two lines of text.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e248 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e256" headers="d279500e62 "><span class="uicontrol">Text &gt; Line Spacing Mode</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e256 d279500e64 ">Specifies the spacing mode between two lines of 
+				text (e.g., bottom to top, base to cap, etc.).</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e256 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e265" headers="d279500e62 "><span class="uicontrol">Text &gt; Justification</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e265 d279500e64 ">Specifies a justification for the text.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e265 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e273" headers="d279500e62 "><span class="uicontrol">Text &gt; Word Wrap</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e273 d279500e64 ">Specifies a width to wrap the text.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e273 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e281" headers="d279500e62 "><span class="uicontrol">Text &gt; Orientation Reference</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e281 d279500e64 ">Specifies whether the <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>, or whether the view 
+				or 2D component should be used as the reference for the text orientation.
+				</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e281 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e292" headers="d279500e62 "><span class="uicontrol">Text &gt; Angle</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e292 d279500e64 ">Specifies the text orientation angle according to 
+				the chosen reference.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e292 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e300" headers="d279500e62 "><span class="uicontrol">Text &gt; Mirroring</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e300 d279500e64 ">Specifies whether a symmetry, and which one, should 
+				be applied to the text. </td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e300 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e308" headers="d279500e62 "><span class="uicontrol">Text &gt; Back Field</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e308 d279500e64 ">Specifies whether or not superscript and subscript 
+				texts should be aligned above one another.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e308 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e316" headers="d279500e62 "><span class="uicontrol">Text &gt; Superscript Offset</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e316 d279500e64 ">Specifies the offset value (as a percentage of the 
+				font height) for superscript texts.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e316 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e324" headers="d279500e62 "><span class="uicontrol">Text &gt; Superscript Size</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e324 d279500e64 ">Specifies the size (as a percentage of the font 
+				height) of superscript texts.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e324 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e332" headers="d279500e62 "><span class="uicontrol">Text &gt; Subscript Offset</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e332 d279500e64 ">Specifies the offset value (as a percentage of the 
+				font height) for subscript texts.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e332 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e340" headers="d279500e62 "><span class="uicontrol">Text &gt; Subscript Size</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e340 d279500e64 ">Specifies the size (as a percentage of the font 
+				height) of subscript texts.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e340 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e348" headers="d279500e62 "><span class="uicontrol">Text &gt; Display Unit</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e348 d279500e64 ">Specifies whether or not texts should be displayed.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e348 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e357" headers="d279500e62 "><span class="uicontrol">Text &gt; Apply Scale</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e357 d279500e64 ">Specifies whether or not the scale of the view or 
+				of the 2D reference component scale should be applied to the display 
+				of the text.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e357 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e365" headers="d279500e62 "><span class="uicontrol">Text &gt; Blank Background</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e365 d279500e64 ">Indicates whether or not <span class="glossterm" id="blanking" onmouseout="hideTerm()" onmouseover="showTerm('blanking.xml')">blanking</span> should be used.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e365 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e376" headers="d279500e62 "><span class="uicontrol">Graphic &gt; Thickness</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e376 d279500e64 ">Specifies the line thickness index (as defined in 
+				the LineThickness node of the current standard) that should be used 
+				to represent text frames and leaders.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e376 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e384" headers="d279500e62 "><span class="uicontrol">Graphic &gt; Linetype</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e384 d279500e64 ">Specifies the number of the linetype (as defined 
+				in the LineTypes node of the current standard) that should be used 
+				to represent text frames and leaders. </td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e384 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e392" headers="d279500e62 "><span class="uicontrol">Graphic &gt; Color</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e392 d279500e64 ">Specifies the color that should be used to represent 
+				text frames and leaders.</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e392 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e400" headers="d279500e62 "><span class="uicontrol">Leader &gt; Symbol</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e400 d279500e64 ">Specifies the symbol (e.g., simple arrow, circle, 
+				etc.) that should be used for text leaders.<p>If you choose the Automatic option, a default symbol 
+				will be used, depending on the standard type:</p><ul>
+					<li>
+					<p>Filled arrow for ANSI-ASME </p>
+					</li>
+
+					<li>
+					<p>Simple arrow (a.k.a. Open arrow) for ISO/JIS</p>
+					</li>
+
+				</ul>
+</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e400 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e424" headers="d279500e62 "><span class="uicontrol">Leader &gt; Delta</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e424 d279500e64 ">Specifies the length of the first leader segment 
+				(i.e. the segment which is located before the first leader breakpoint).</td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e424 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e432" headers="d279500e62 "><span class="uicontrol">Leader &gt; Anchor Point</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e432 d279500e64 ">Specifies the leader position in relation to the 
+				anchor point of the text frame.<p>When the <span class="uicontrol">Leader &gt; StandardBehavior</span> parameter 
+				is set to <span class="uicontrol">Yes</span>: 
+				- 0 positions the leader automatically on the closest anchor point. 
+				- 1 positions the leader on the left-hand anchor point. 
+				- 2 positions the leader on the right-hand anchor point.</p><p>When the <span class="uicontrol">Leader &gt; StandardBehavior</span> parameter 
+				is set to <span class="uicontrol">No</span>: 
+				- 0 positions the leader automatically on the closest anchor point. 
+				- 1 to 8 position the leader on a specific anchor point.</p></td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e432 d279500e66 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25.773195876288664%" id="d279500e456" headers="d279500e62 "><span class="uicontrol">Leader &gt; Standard Behavior</span></th>
+<td class="cellrowborder" valign="top" width="42.01030927835052%" headers="d279500e456 d279500e64 ">Specifies whether or not the position of text leaders 
+				can be different than left or right. </td>
+<td class="cellrowborder" valign="top" width="32.21649484536083%" headers="d279500e456 d279500e66 ">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		</div>
+<div class="section" id="standards-c-ad-AnnotationStyles__rs-TableStyles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Table Styles </h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="firstcol" valign="top" width="25%" id="d279500e475">Parameter</th>
+<th class="cellrowborder" valign="top" width="43.5%" id="d279500e477">Description</th>
+<th class="cellrowborder" valign="top" width="31.5%" id="d279500e479">Applies at modification</th>
+</tr>
+</thead>
+<tbody><tr><th class="firstcol" valign="top" width="25%" id="d279500e483" headers="d279500e475 "><span class="uicontrol">Cell Formats</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e483 d279500e477 "><p>Specifies the format for top and bottom row styles and/or for left and right column styles. The format for all the four elements can be specified. There are two parameters for each of the format styles:</p><p><ul><li><span class="uicontrol">Apply Row_Column_Name format</span>: Select the required check box to configure the format. All the formats and any combination of the formats are possible. </li>
+<li><span class="uicontrol">Number of Row_Column_Name</span>: Indicate the number of rows or columns to which the format is to be applied. </li>
+</ul>
+</p><p>On selecting the format that you want to configure a new node, which is a duplicate of <span class="uicontrol">Whole Table</span> style, is added under <span class="uicontrol">Cell Formats</span> in the same level as <span class="uicontrol">Whole Table</span>.</p><p>The Right/Left Column style overloads the <span class="uicontrol">Whole Table</span> style.</p><p>The Top/Bottom Row style overloads the <span class="uicontrol">Whole Table</span> style and Right/Left Column style.</p></td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e483 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e523" headers="d279500e475 "><span class="uicontrol">Cell Formats &gt; Top Rows</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e523 d279500e477 "><p>Specifies the format that should be used for the top row or rows (as specified in the <span class="uicontrol">Number of top rows</span> field) in the table.</p><p>All the nodes under it are duplication of <span class="uicontrol">Whole Table</span> style.</p></td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e523 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e540" headers="d279500e475 "><span class="uicontrol">Cell Formats &gt; Bottom Rows</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e540 d279500e477 "><p>Specifies the format that should be used for the bottom row or rows (as specified in the <span class="uicontrol">Number of bottom rows</span> field) in the table.</p><p>All the nodes under it are duplication of <span class="uicontrol">Whole Table</span> style.</p></td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e540 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e557" headers="d279500e475 "><span class="uicontrol">Cell Formats &gt; Left Columns</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e557 d279500e477 "><p>Specifies the format that should be used for the left column or columns (as specified in the <span class="uicontrol">Number of left columns</span> field) in the table.</p><p>All the nodes under it are duplication of <span class="uicontrol">Whole Table</span> style.</p></td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e557 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e574" headers="d279500e475 "><span class="uicontrol">Cell Formats &gt; Right Columns</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e574 d279500e477 "><p>Specifies the format that should be used for the right column or columns (as specified in the <span class="uicontrol">Number of right columns</span> field) in the table.</p><p>All the nodes under it are duplication of <span class="uicontrol">Whole Table</span> style.</p></td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e574 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e591" headers="d279500e475 "><span class="uicontrol">Cell Formats &gt; Whole Table  &gt; Font &gt; Name
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e591 d279500e477 ">Specifies the name of the font that should be used 
+				for text in table cells. If no font name is specified, the system's 
+				default font will be used.<p>Make sure that the text font specified here belongs 
+				to the list of allowed text fonts, as defined in the <span class="uicontrol">General 
+				&gt; AllowedTextFonts</span> node of the Standards editor.</p></td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e591 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e604" headers="d279500e475 "><span class="uicontrol">Cell Formats &gt; Whole Table &gt; Font &gt; Bold</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e604 d279500e477 ">Indicates whether or not texts in table cells should 
+				be displayed in bold. </td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e604 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e612" headers="d279500e475 "><span class="uicontrol">Cell Formats &gt; Whole Table  &gt; Font &gt; Italic</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e612 d279500e477 ">Indicates whether or not texts in table cells should 
+				be displayed in italic. </td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e612 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e620" headers="d279500e475 "><span class="uicontrol">Cell Formats &gt; Whole Table  &gt; Font &gt; Size
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e620 d279500e477 ">Indicates the font size that should be used for 
+				texts in table cells.</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e620 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e628" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Font &gt; Underline
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e628 d279500e477 ">
+				Indicates whether or not texts in table cells should 
+				be underlined. 
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e628 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e637" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Font &gt; Color
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e637 d279500e477 ">
+				Specifies the color that should be used to display 
+				texts in table cells. 
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e637 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e647" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Font &gt; Ratio
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e647 d279500e477 ">
+				Specifies the ratio that should be used to display 
+				texts in table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e647 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e656" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Font &gt; Slant
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e656 d279500e477 ">
+				Specifies the slant that should be used to display 
+				texts in table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e656 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e665" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Font &gt; Spacing
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e665 d279500e477 ">
+				Specifies the spacing that should be used to display 
+				texts in table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e665 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e674" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Font &gt; Pitch
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e674 d279500e477 ">
+				Specifies the pitch (fixed or variable) that should 
+				be used to display texts in table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e674 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e683" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Font &gt; Strikethrough
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e683 d279500e477 ">
+				Indicates whether or not strikethrough should be 
+				used for texts in table cells. 
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e683 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e692" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Font &gt; Overline
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e692 d279500e477 ">
+				Indicates whether or not texts in table cells should 
+				be overlined. 
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e692 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e701" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Line Spacing</span>
+				</th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e701 d279500e477 ">
+				Specifies the spacing that should be used between 
+				two lines of text in table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e701 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e711" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Line Spacing Mode</span>
+				</th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e711 d279500e477 ">
+				Specifies the spacing mode between two lines of 
+				text in table cells (e.g., bottom to top, base to cap, etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e711 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e721" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Backfield
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e721 d279500e477 ">
+				Specifies whether or not superscript and subscript 
+				texts in table cells should be aligned above one another.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e721 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e730" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Superscript Offset
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e730 d279500e477 ">
+				Specifies the offset value (as a percentage of the 
+				font height) for superscript texts in table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e730 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e739" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Superscript Size
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e739 d279500e477 ">
+				Specifies the size of superscript texts (as a percentage 
+				of the font height) in table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e739 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e749" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Subscript Offset
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e749 d279500e477 ">
+				Specifies the offset value for subscript texts (as 
+				a percentage of the font height) in table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e749 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e758" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole table  &gt; Subscript Size
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e758 d279500e477 ">
+				Specifies the size of subscript texts (as a percentage 
+				of the font height) in table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e758 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e767" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table  &gt; Display Unit
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e767 d279500e477 ">
+				Specifies whether or not texts in table cells should 
+				be displayed.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e767 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e776" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Horizontal Alignment
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e776 d279500e477 ">
+				Specifies the horizontal alignment for the contents 
+				of table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e776 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e785" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table  &gt; Vertical Alignment
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e785 d279500e477 ">
+				Specifies the vertical alignment for the contents 
+				of table cells.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e785 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e794" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Horizontal Margin</span>
+				</th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e794 d279500e477 ">
+				Specifies the horizontal space between the contents 
+				and the inside border of a cell.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e794 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e804" headers="d279500e475 ">
+				<span class="uicontrol">Cell Formats &gt; Whole Table &gt; Vertical Margin
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e804 d279500e477 ">
+				Specifies the vertical space between the contents 
+				and the inside border of a cell.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e804 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e813" headers="d279500e475 ">
+				<span class="uicontrol">Anchor Point
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e813 d279500e477 ">
+				Specifies the position of the table in relation 
+				to the anchor point (e.g., top left, middle left, etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e813 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e822" headers="d279500e475 ">
+				<span class="uicontrol">Orientation Reference
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e822 d279500e477 ">
+				Specifies whether the sheet, or whether the view 
+				or 2D component should be used as the reference for the orientation 
+				of the table. 
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e822 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e831" headers="d279500e475 ">
+				<span class="uicontrol">Angle</span>
+				</th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e831 d279500e477 ">
+				Specifies the orientation angle of the table according 
+				to the chosen reference.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e831 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e841" headers="d279500e475 ">
+				<span class="uicontrol">Graphic &gt; Thickness
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e841 d279500e477 ">
+				Specifies the line thickness index (as defined in 
+				the LineThickness node of the current standard) that should be used 
+				to represent table frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e841 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e851" headers="d279500e475 ">
+				<span class="uicontrol">Graphic &gt; Linetype
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e851 d279500e477 ">
+				Specifies the number of the linetype (as defined 
+				in the LineTypes node of the current standard) that should be used 
+				to represent table frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e851 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e860" headers="d279500e475 ">
+				<span class="uicontrol">Graphic &gt; Color
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e860 d279500e477 ">
+				Specifies the color that should be used to represent 
+				table frames and leaders.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e860 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e869" headers="d279500e475 ">
+				<span class="uicontrol">Leader &gt; Symbol
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e869 d279500e477 ">
+				Specifies the symbol (e.g., simple arrow, circle, 
+				etc.) that should be used for table leaders. 
+				<p>If you choose the Automatic option, a default symbol 
+				will be used, depending on the standard type:</p>
+				<ul>
+					<li>
+					<p>Filled arrow for ANSI-ASME </p>
+					</li>
+
+					<li>
+					<p>Open arrow for ISO/JIS</p>
+					</li>
+
+				</ul>
+
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e869 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e896" headers="d279500e475 ">
+				<span class="uicontrol">Leader &gt; Delta
+				</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e896 d279500e477 ">
+				Specifies the value of the delta that should be 
+				applied between a table and its leader.
+				</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e896 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e905" headers="d279500e475 "><span class="uicontrol">Leader &gt; Anchor Point</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e905 d279500e477 "><p>Specifies the leader position in relation to the anchor point of the text frame.</p><p>When the <span class="uicontrol">Leader &gt; StandardBehavior </span>parameter is set to Yes:</p><p><ul><li>0 positions the leader automatically on the closest anchor point.</li>
+<li>1 positions the leader on the left-hand anchor point.</li>
+<li>2 positions the leader on the right-hand anchor point.</li>
+</ul>
+ </p><p>When the<span class="uicontrol"> Leader &gt; StandardBehavior</span> parameter is set to No:</p><p><ul><li>0 positions the leader automatically on the closest anchor point.</li>
+<li> 1 to 8 position the leader on a specific anchor point.</li>
+</ul>
+ </p></td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e905 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e940" headers="d279500e475 "><span class="uicontrol">Leader &gt; Standard Behavior</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e940 d279500e477 ">Specifies whether or not the position of text leaders can be different than left or right. </td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e940 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e948" headers="d279500e475 "><span class="uicontrol">Blank Background</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e948 d279500e477 "><p>Specifies whether or not blanking should be applied. In case blanking is applied specifies which blanking mode is to be applied.</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e948 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e958" headers="d279500e475 "><span class="uicontrol">Horizontal Margin</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e958 d279500e477 ">Specifies the horizontal space between the contents and the inside border of a cell.</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e958 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e966" headers="d279500e475 "><span class="uicontrol">Vertical Margin</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e966 d279500e477 "><p>Specifies the vertical space between the contents and the inside border of a cell.</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e966 d279500e479 ">Yes</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="25%" id="d279500e976" headers="d279500e475 "><span class="uicontrol">Mirroring</span></th>
+<td class="cellrowborder" valign="top" width="43.5%" headers="d279500e976 d279500e477 "><p>Specifies whether or not to flip the table.</p><p>No Flip – The table does not flip.</p><p>Auto flip – The table is automatically flipped, according to its angle, to have its content  always displayed in a readable position.</p></td>
+<td class="cellrowborder" valign="top" width="31.5%" headers="d279500e976 d279500e479 ">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		</div>
+<div class="section" id="standards-c-ad-AnnotationStyles__rs-DatumFeatureStyles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Datum Feature Styles </h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="firstcol" valign="top" width="NaN" id="d279500e1000">Parameter</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d279500e1002">Description</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d279500e1004">Applies at modification</th>
+</tr>
+</thead>
+<tbody><tr><th class="firstcol" valign="top" width="NaN" id="d279500e1008" headers="d279500e1000 ">
+				<span class="uicontrol">Orientation Reference
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1008 d279500e1002 ">
+				Specifies whether the sheet, or whether the view 
+				or 2D component should be used as the reference for the orientation 
+				of <span class="glossterm" id="datum" onmouseout="hideTerm()" onmouseover="showTerm('datum.xml')">datum</span> features. 
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1008 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1020" headers="d279500e1000 ">
+				<span class="uicontrol">Angle</span>
+				</th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1020 d279500e1002 ">
+				Specifies the orientation angle of datum features 
+				according to the chosen reference.
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1020 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1030" headers="d279500e1000 ">
+				<span class="uicontrol">Anchor Point
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1030 d279500e1002 ">
+				Specifies the position of datum features in relation 
+				to the anchor point (e.g., top left, middle left, etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1030 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1039" headers="d279500e1000 ">
+				<span class="uicontrol">Display</span>
+				</th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1039 d279500e1002 ">
+				Choose the display mode you want for the datum feature: 
+				- Show value: displays the datum feature, its leader and its frame.
+				 
+				- Show box: replaces the datum feature and its frame by a rectangular 
+				box and displays its leader.  
+				- Hide value: hides the datum feature and its frame but displays 
+				its leader. 
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1039 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1049" headers="d279500e1000 ">
+				<span class="uicontrol">Leader &gt; Symbol
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1049 d279500e1002 ">
+				Specifies the symbol (e.g., simple arrow, circle, 
+				etc.) that should be used for datum feature leaders. 
+				<p>If you choose the Automatic option, a default symbol 
+				will be used, depending on the standard type:</p>
+				<ul>
+					
+					<li>
+					<p>Filled Triangle for ANSI-ASME </p>
+					</li>
+
+					<li>
+					<p>Blanked triangle (a.k.a. Triangle) for ISO/JIS</p>
+					</li>
+
+				</ul>
+
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1049 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1076" headers="d279500e1000 ">
+				<span class="uicontrol">Font &gt; Name
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1076 d279500e1002 ">
+				Specifies the name of the font that should be used 
+				for datum feature texts. If no font name is specified, the system's 
+				default font will be used.
+				<p>Make sure that the text font specified here belongs 
+				to the list of allowed text fonts, as defined in the <span class="uicontrol">General 
+				&gt; AllowedTextFonts</span> node of the Standards editor.</p>
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1076 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1091" headers="d279500e1000 ">
+				<span class="uicontrol">Font &gt; Bold
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1091 d279500e1002 ">
+				Indicates whether or not datum feature texts should 
+				be displayed in bold. 
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1091 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1100" headers="d279500e1000 ">
+				<span class="uicontrol">Font &gt; Italic
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1100 d279500e1002 ">
+				Indicates whether or not datum feature texts should 
+				be displayed in italic. 
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1100 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1109" headers="d279500e1000 ">
+				<span class="uicontrol">Font &gt; Size
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1109 d279500e1002 ">
+				Indicates the font size that should be used for 
+				datum feature texts.
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1109 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1118" headers="d279500e1000 ">
+				<span class="uicontrol">Font &gt; Apply Scale
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1118 d279500e1002 ">
+				Indicates whether or not datum feature texts should 
+				be scaled according to the view or the 2D reference component's 
+				scale.
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1118 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1127" headers="d279500e1000 ">
+				<span class="uicontrol">Font &gt; Blank Background
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1127 d279500e1002 ">
+				Indicates whether or not the background should be 
+				blank.
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1127 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1137" headers="d279500e1000 ">
+				<span class="uicontrol">Graphic &gt; Thickness
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1137 d279500e1002 ">
+				Specifies the line thickness index (as defined in 
+				the LineThickness node of the current standard) that should be used 
+				to represent datum feature frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1137 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1146" headers="d279500e1000 ">
+				<span class="uicontrol">Graphic &gt; Linetype
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1146 d279500e1002 ">
+				Specifies the number of the linetype (as defined 
+				in the LineTypes node of the current standard) that should be used 
+				to represent datum feature frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1146 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="NaN" id="d279500e1155" headers="d279500e1000 ">
+				<span class="uicontrol">Graphic &gt; Color
+				</span></th>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1155 d279500e1002 ">
+				Specifies the color that should be used to represent 
+				datum feature frames, leaders and texts.
+				</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d279500e1155 d279500e1004 ">
+				Yes
+				</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		</div>
+<div class="section" id="standards-c-ad-AnnotationStyles__rs-DatumTargetStyles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Datum Target Styles </h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1175">Parameter</th>
+<th class="cellrowborder" valign="top" width="32.786885245901644%" id="d279500e1177">Description</th>
+<th class="cellrowborder" valign="top" width="34.42622950819673%" id="d279500e1179">Applies at modification</th>
+</tr>
+</thead>
+<tbody><tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1183" headers="d279500e1175 ">
+				<span class="uicontrol">Size Specifier</span>
+				</th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1183 d279500e1177 ">
+				Indicates whether the surface is planar or cylindrical.
+				You can specify:<ul><li>None</li>
+<li>Diameter</li>
+<li>Square</li>
+</ul>
+</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1183 d279500e1179 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1200" headers="d279500e1175 ">
+				<span class="uicontrol">Orientation Reference
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1200 d279500e1177 ">
+				Specifies whether the sheet, or whether the view 
+				or 2D component should be used as the reference for the orientation 
+				of <span class="glossterm" id="datum-target-2" onmouseout="hideTerm()" onmouseover="showTerm('datum-target-2.xml')">datum targets</span>. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1200 d279500e1179 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1212" headers="d279500e1175 ">
+				<span class="uicontrol">Angle</span>
+				</th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1212 d279500e1177 ">
+				Specifies the orientation angle of datum targets 
+				according to the chosen reference.
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1212 d279500e1179 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1222" headers="d279500e1175 ">
+				<span class="uicontrol">Anchor Point
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1222 d279500e1177 ">
+				Specifies the position of datum targets in relation 
+				to the anchor point (e.g., top left, middle left, etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1222 d279500e1179 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1231" headers="d279500e1175 ">
+				<span class="uicontrol">Display</span>
+				</th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1231 d279500e1177 ">
+				Choose the display mode you want for the datum target:<ul><li>Show value: Displays the datum target, its leader and its frame.
+				 
+				</li>
+<li>Show box: Replaces the datum target and its frame by a rectangular 
+				box and displays its leader.  
+				</li>
+<li>Hide value: Hides the datum target and its frame but displays 
+				its leader. 
+				</li>
+</ul>
+</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1231 d279500e1179 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1248" headers="d279500e1175 ">
+				<span class="uicontrol">Font &gt; Name
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1248 d279500e1177 ">
+				Specifies the name of the font that should be used 
+				for datum target texts. If no font name is specified, the system's 
+				default font will be used.
+				<p>Make sure that the text font specified here belongs 
+				to the list of allowed text fonts, as defined in the <span class="uicontrol">General 
+				&gt; AllowedTextFonts</span> node of the Standards editor.</p>
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1248 d279500e1179 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1263" headers="d279500e1175 ">
+				<span class="uicontrol">Font &gt; Bold
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1263 d279500e1177 ">
+				Indicates whether or not datum target texts should 
+				be displayed in bold. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1263 d279500e1179 ">Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1272" headers="d279500e1175 ">
+				<span class="uicontrol">Font &gt; Italic
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1272 d279500e1177 ">
+				Indicates whether or not datum target texts should 
+				be displayed in italic. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1272 d279500e1179 ">Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1281" headers="d279500e1175 ">
+				<span class="uicontrol">Font &gt; Size
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1281 d279500e1177 ">
+				Indicates the font size that should be used for 
+				datum target texts.
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1281 d279500e1179 ">Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1290" headers="d279500e1175 ">
+				<span class="uicontrol">Font &gt; Apply Scale
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1290 d279500e1177 ">
+				Indicates whether or not datum target texts should 
+				be scaled according to the view or the 2D reference component's 
+				scale.
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1290 d279500e1179 ">Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1299" headers="d279500e1175 ">
+				<span class="uicontrol">Font &gt; Blank Background
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1299 d279500e1177 ">
+				Indicates whether or not the background should be 
+				blank.
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1299 d279500e1179 ">Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1309" headers="d279500e1175 ">
+				<span class="uicontrol">Graphic &gt; Thickness
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1309 d279500e1177 ">
+				Specifies the line thickness index (as defined in 
+				the LineThickness node of the current standard) that should be used 
+				to represent datum target frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1309 d279500e1179 ">Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1318" headers="d279500e1175 ">
+				<span class="uicontrol">Graphic &gt; Linetype
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1318 d279500e1177 ">
+				Specifies the number of the linetype (as defined 
+				in the LineTypes node of the current standard) that should be used 
+				to represent datum target frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1318 d279500e1179 ">Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1327" headers="d279500e1175 ">
+				<span class="uicontrol">Graphic &gt; Color
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1327 d279500e1177 ">
+				Specifies the color that should be used to represent 
+				datum target frames, leaders and texts.
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1327 d279500e1179 ">Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1336" headers="d279500e1175 ">
+				<span class="uicontrol">Leader &gt; Symbol
+				</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1336 d279500e1177 ">
+				Specifies the symbol (e.g., simple arrow, circle, 
+				etc.) that should be used for datum feature leaders. 
+				<p>If you choose the Automatic option, a default symbol 
+				will be used, depending on the standard type:</p>
+				<ul>
+					
+					<li>
+					<p>Closed arrow (a.k.a. Unfilled arrow) for ANSI-ASME
+					</p>
+					</li>
+
+					<li>
+					<p>Open arrow for ISO/JIS</p>
+					</li>
+
+				</ul>
+
+				</td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1336 d279500e1179 "> </td>
+</tr>
+<tr><th class="firstcol" valign="top" width="32.786885245901644%" id="d279500e1362" headers="d279500e1175 "><span class="uicontrol">Movable</span></th>
+<td class="cellrowborder" valign="top" width="32.786885245901644%" headers="d279500e1362 d279500e1177 "><p>Indicates whether or not the datum target should be movable. </p></td>
+<td class="cellrowborder" valign="top" width="34.42622950819673%" headers="d279500e1362 d279500e1179 ">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		</div>
+<div class="section" id="standards-c-ad-AnnotationStyles__rs-ToleranceStyles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Tolerance Styles </h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1382">Parameter</th>
+<th class="cellrowborder" valign="top" width="34.375%" id="d279500e1384">Description</th>
+<th class="cellrowborder" valign="top" width="34.375%" id="d279500e1386">Applies at modification</th>
+</tr>
+</thead>
+<tbody><tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1390" headers="d279500e1382 ">
+				<span class="uicontrol">Type</span>
+				</th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1390 d279500e1384 ">
+				Specifies the tolerance type (e.g. straightness, 
+				circularity, etc.).</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1390 d279500e1386 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1400" headers="d279500e1382 ">
+				<span class="uicontrol">Value</span>
+				</th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1400 d279500e1384 ">
+				Specifies the tolerance value.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1400 d279500e1386 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1410" headers="d279500e1382 ">
+				<span class="uicontrol">Upper Text
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1410 d279500e1384 ">
+				Specifies the tolerance upper text.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1410 d279500e1386 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1419" headers="d279500e1382 ">
+				<span class="uicontrol">Lower Text
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1419 d279500e1384 ">
+				Specifies the tolerance lower text.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1419 d279500e1386 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1428" headers="d279500e1382 ">
+				<span class="uicontrol">Font &gt; Name
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1428 d279500e1384 ">
+				Specifies the name of the font that should be used 
+				for tolerances. If no font name is specified, the system's default 
+				font will be used.
+				<p>Make sure that the text font specified here belongs 
+				to the list of allowed text fonts, as defined in the <span class="uicontrol">General 
+				&gt; AllowedTextFonts</span> node of the Standards editor.</p>
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1428 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1443" headers="d279500e1382 ">
+				<span class="uicontrol">Font &gt; Bold
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1443 d279500e1384 ">
+				Indicates whether or not tolerances should be displayed 
+				in bold. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1443 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1452" headers="d279500e1382 ">
+				<span class="uicontrol">Font &gt; Italic
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1452 d279500e1384 ">
+				Indicates whether or not tolerances should be displayed 
+				in italic. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1452 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1461" headers="d279500e1382 ">
+				<span class="uicontrol">Font &gt; Size
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1461 d279500e1384 ">
+				Indicates the font size that should be used for 
+				tolerances.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1461 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1470" headers="d279500e1382 ">
+				<span class="uicontrol">Font &gt; Ratio
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1470 d279500e1384 ">
+				Specifies the ratio that should be used to display 
+				tolerances.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1470 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1479" headers="d279500e1382 ">
+				<span class="uicontrol">Font &gt; Spacing
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1479 d279500e1384 ">
+				Specifies the spacing that should be used to display 
+				tolerances.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1479 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1488" headers="d279500e1382 ">
+				<span class="uicontrol">Text &gt; Anchor Point
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1488 d279500e1384 ">
+				Specifies the tolerance text position in relation 
+				to the anchor point (e.g., top left, middle left, etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1488 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1498" headers="d279500e1382 ">
+				<span class="uicontrol">Text &gt; Orientation Reference
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1498 d279500e1384 ">
+				Specifies whether the sheet, or whether the view 
+				or 2D component should be used as the reference for the tolerance 
+				text orientation. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1498 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1507" headers="d279500e1382 ">
+				<span class="uicontrol">Text &gt; Angle
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1507 d279500e1384 ">
+				Specifies the tolerance text orientation angle according 
+				to the chosen reference.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1507 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1516" headers="d279500e1382 ">
+				<span class="uicontrol">Text &gt; Blanking
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1516 d279500e1384 ">
+				Indicates whether or not blanking should be used.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1516 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1525" headers="d279500e1382 ">
+				<span class="uicontrol">Text &gt; Mirroring
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1525 d279500e1384 ">
+				Specifies whether a symmetry, and which one, should 
+				be applied to the tolerance. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1525 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1534" headers="d279500e1382 ">
+				<span class="uicontrol">Text &gt; Blanking
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1534 d279500e1384 ">
+				Indicates whether or not blanking should be used.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1534 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1543" headers="d279500e1382 ">
+				<span class="uicontrol">Graphic &gt; Thickness
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1543 d279500e1384 ">
+				Specifies the line thickness index (as defined in 
+				the LineThickness node of the current standard) that should be used 
+				to represent text frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1543 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1552" headers="d279500e1382 ">
+				<span class="uicontrol">Graphic &gt; Linetype
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1552 d279500e1384 ">
+				Specifies the number of the linetype (as defined 
+				in the LineTypes node of the current standard) that should be used 
+				to represent tolerance frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1552 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1561" headers="d279500e1382 ">
+				<span class="uicontrol">Graphic &gt; Color
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1561 d279500e1384 ">
+				Specifies the color that should be used to represent 
+				tolerance frames and leaders.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1561 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1570" headers="d279500e1382 ">
+				<span class="uicontrol">Leader &gt; Symbol
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1570 d279500e1384 ">
+				Specifies the symbol (e.g., simple arrow, circle, 
+				etc.) that should be used for tolerance leaders. 
+				<p>If you select the <span class="uicontrol">Automatic</span>, a default symbol 
+				will be used, depending on the standard type and on whether the 
+				leader is associated to an element or not:</p>
+				<ul>
+					<li>
+					<p>If the leader is associated to an element:</p>
+					<ul>
+						<li>
+						<p>Filled arrow for ANSI-ASME </p>
+						</li>
+
+						<li>
+						<p>Open arrow for ISO/JIS</p>
+						</li>
+
+					</ul>
+
+					</li>
+
+					<li>
+					<p>If the leader is not associated to an element:</p>
+					<ul>
+						<li>
+						<p>Symmetric circle (a.k.a. Unfilled circle) 
+						for ANSI-ASME </p>
+						</li>
+
+						<li>
+						<p>Filled circle for ISO/JIS</p>
+						</li>
+
+					</ul>
+
+					</li>
+
+				</ul>
+
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1570 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1630" headers="d279500e1382 ">
+				<span class="uicontrol">Leader &gt; Delta
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1630 d279500e1384 ">
+				Specifies the value of the delta that should be 
+				applied between a tolerance and its leader.
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1630 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="31.25%" id="d279500e1639" headers="d279500e1382 ">
+				<span class="uicontrol">Leader &gt; Anchor Point
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1639 d279500e1384 ">
+				Specifies the leader position in relation to the 
+				anchor point of the tolerance frame.  
+				- 0 positions the leader automatically on the closest anchor point. 
+				- 1 positions the leader on the middle-left anchor point. 
+				- 2 positions the leader on the middle-right anchor point. 
+				
+				</td>
+<td class="cellrowborder" valign="top" width="34.375%" headers="d279500e1639 d279500e1386 ">
+				Yes
+				</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		</div>
+<div class="section" id="standards-c-ad-AnnotationStyles__rs-BalloonStyles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Balloon Styles </h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1660">Parameter</th>
+<th class="cellrowborder" valign="top" width="34.346504559270514%" id="d279500e1662">Description</th>
+<th class="cellrowborder" valign="top" width="35.25835866261398%" id="d279500e1664">Applies at modification</th>
+</tr>
+</thead>
+<tbody><tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1668" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Name
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1668 d279500e1662 ">
+				Specifies the name of the font that should be used 
+				for balloons. If no font name is specified, the system's default 
+				font will be used.
+				<p>Make sure that the text font specified here belongs 
+				to the list of allowed text fonts, as defined in the <span class="uicontrol">General 
+				&gt; AllowedTextFonts</span> node of the Standards editor.</p>
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1668 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1683" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Bold
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1683 d279500e1662 ">
+				Indicates whether or not balloons should be displayed 
+				in bold. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1683 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1692" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Italic
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1692 d279500e1662 ">
+				Indicates whether or not balloons should be displayed 
+				in italic. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1692 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1701" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Size
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1701 d279500e1662 ">
+				Indicates the font size that should be used for 
+				balloons.
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1701 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1710" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Underline
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1710 d279500e1662 ">
+				Indicates whether or not balloon fonts should be 
+				underlined. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1710 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1719" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Ratio
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1719 d279500e1662 ">
+				Specifies the ratio that should be used to display 
+				balloons.
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1719 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1728" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Slant
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1728 d279500e1662 ">
+				Specifies the slant that should be used to display 
+				balloons.
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1728 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1737" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Spacing
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1737 d279500e1662 ">
+				Specifies the spacing that should be used to display 
+				balloons.
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1737 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1746" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Pitch
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1746 d279500e1662 ">
+				Specifies the pitch (fixed or variable) that should 
+				be used to display balloons.
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1746 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1755" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Strikethrough
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1755 d279500e1662 ">
+				Indicates whether or not strikethrough should be 
+				used in balloons. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1755 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1764" headers="d279500e1660 ">
+				<span class="uicontrol">Font &gt; Overline
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1764 d279500e1662 ">
+				Indicates whether or not overline should be used 
+				in balloons. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1764 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1774" headers="d279500e1660 ">
+				<span class="uicontrol">Text &gt; Frame
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1774 d279500e1662 ">
+				Specifies the type of frame that should be used 
+				to represent balloons. Note that fixed-size frames are defined in 
+				the Frame node of the current standard. 
+				<p>Accepted values: none, circle, fixed-size circle.</p>
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1774 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1786" headers="d279500e1660 ">
+				<span class="uicontrol">Text &gt; Anchor Point
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1786 d279500e1662 ">
+				Specifies the balloon position in relation to the 
+				anchor point (e.g., top left, middle left, etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1786 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1795" headers="d279500e1660 ">
+				<span class="uicontrol">Text &gt; Anchor Line
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1795 d279500e1662 ">
+				Specifies the balloon position in relation to the 
+				anchor line (e.g., top or bottom, cap or base, etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1795 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1804" headers="d279500e1660 ">
+				<span class="uicontrol">Text &gt; Orientation Reference
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1804 d279500e1662 ">
+				Specifies whether the sheet, or whether the view 
+				or 2D component should be used as the reference for the balloon 
+				orientation. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1804 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1813" headers="d279500e1660 ">
+				<span class="uicontrol">Text &gt; Angle
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1813 d279500e1662 ">
+				Specifies the balloon orientation angle according 
+				to the chosen reference.
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1813 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1822" headers="d279500e1660 ">
+				<span class="uicontrol">Text &gt; Mirroring
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1822 d279500e1662 ">
+				Specifies whether a symmetry, and which one, should 
+				be applied to the balloon. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1822 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1831" headers="d279500e1660 ">
+				<span class="uicontrol">Text &gt; Apply Scale
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1831 d279500e1662 ">
+				Specifies whether or not the scale of the view or 
+				of the 2D reference component scale should be applied to the display 
+				of the balloon.
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1831 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1840" headers="d279500e1660 ">
+				<span class="uicontrol">Text &gt; Display
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1840 d279500e1662 ">
+				Choose the display mode you want for the balloon: 
+				- Show value: displays the balloon, its leader and its frame.
+				 
+				- Show box: replaces the balloon and its frame by a rectangular 
+				box and displays its leader.  
+				- Hide value: hides the balloon and its frame but displays its leader.
+				
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1840 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1849" headers="d279500e1660 ">
+				<span class="uicontrol">Text &gt; Blanking
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1849 d279500e1662 ">
+				Indicates whether or not blanking should be used.
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1849 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1858" headers="d279500e1660 ">
+				<span class="uicontrol">Graphic &gt; Thickness
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1858 d279500e1662 ">
+				Specifies the line thickness index (as defined in 
+				the LineThickness node of the current standard) that should be used 
+				to represent balloon frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1858 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1867" headers="d279500e1660 ">
+				<span class="uicontrol">Graphic &gt; Linetype
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1867 d279500e1662 ">
+				Specifies the number of the linetype (as defined 
+				in the LineTypes node of the current standard) that should be used 
+				to represent balloon frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1867 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1877" headers="d279500e1660 ">
+				<span class="uicontrol">Graphic &gt; Color
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1877 d279500e1662 ">
+				Specifies the color that should be used to represent 
+				balloon frames, leaders and texts.
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1877 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="30.3951367781155%" id="d279500e1886" headers="d279500e1660 ">
+				<span class="uicontrol">Leader &gt; Symbol
+				</span></th>
+<td class="cellrowborder" valign="top" width="34.346504559270514%" headers="d279500e1886 d279500e1662 ">
+				Specifies the symbol (e.g., simple arrow, circle, 
+				etc.) that should be used for balloon leaders. 
+				<p>If you choose the Automatic option, a default symbol 
+				will be used, depending on the standard type and on whether the 
+				leader is associated to an element or not:</p>
+				<ul>
+					<li>
+					<p>If the leader is associated to an element:</p>
+					<ul>
+						<li>
+						<p>Closed arrow (a.k.a. Unfilled arrow) for 
+						ANSI-ASME </p>
+						</li>
+
+						<li>
+						<p>Open arrow for ISO/JIS</p>
+						</li>
+
+					</ul>
+
+					</li>
+
+					<li>
+					<p>If the leader is not associated to an element:</p>
+					<ul>
+						<li>
+						<p>Blanked circle for ANSI-ASME </p>
+						</li>
+
+						<li>
+						<p>Filled circle for ISO/JIS</p>
+						</li>
+
+					</ul>
+
+					</li>
+
+				</ul>
+
+				</td>
+<td class="cellrowborder" valign="top" width="35.25835866261398%" headers="d279500e1886 d279500e1664 ">
+				Yes
+				</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		</div>
+<div class="section" id="standards-c-ad-AnnotationStyles__rs-RoughnessSymbolStyles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Roughness Symbol Styles </h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e1954">
+				Parameter
+				</th>
+<th class="cellrowborder" valign="top" width="35.311572700296736%" id="d279500e1956">
+				Description
+				</th>
+<th class="cellrowborder" valign="top" width="35.01483679525222%" id="d279500e1958">
+				Applies at modification
+				</th>
+</tr>
+</thead>
+<tbody><tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e1962" headers="d279500e1954 ">
+				<span class="uicontrol">Values &gt; Rugosity Type
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e1962 d279500e1956 ">
+				Specifies the roughness symbol type (e.g. basic, 
+				machining required, machining prohibited).</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e1962 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e1971" headers="d279500e1954 ">
+				<span class="uicontrol">Values &gt; Direction of Lay
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e1971 d279500e1956 ">
+				Specifies the roughness surface <span class="glossterm" id="pattern" onmouseout="hideTerm()" onmouseover="showTerm('pattern.xml')">pattern</span> (e.g. M, 
+				C, orthogonal, etc.).</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e1971 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e1983" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; Specification Line
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e1983 d279500e1956 ">
+				Indicates whether or not the specification line 
+				should be displayed.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e1983 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e1991" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; All Around
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e1991 d279500e1956 ">
+				Indicates whether or not an all-around symbol should 
+				be added.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e1991 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e1999" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; Sampling Length
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e1999 d279500e1956 ">
+				Specifies the first requirement.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e1999 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2007" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; Waviness
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2007 d279500e1956 ">
+				Specifies the second requirement.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2007 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2015" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; Other Requirement
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2015 d279500e1956 ">
+				Specifies another requirement (this parameter is 
+				available only with the JIS standard mode).
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2015 d279500e1958 ">
+				No</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2023" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; Working Process
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2023 d279500e1956 ">
+				Specifies the production method.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2023 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2031" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; Machining Allowance
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2031 d279500e1956 ">
+				Specifies the machining allowance.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2031 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2039" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; Cutoff
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2039 d279500e1956 ">
+				Specifies the cutoff value (this parameter is available 
+				only with the JIS standard mode).
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2039 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2047" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; Center Line Maximum Roughness
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2047 d279500e1956 ">
+				Specifies the maximum value.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2047 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2056" headers="d279500e1954 "><span class="uicontrol">
+				Values &gt; Center Line Mean/Minimum Roughness
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2056 d279500e1956 ">
+				Specifies the minimum value.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2056 d279500e1958 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2064" headers="d279500e1954 "><span class="uicontrol">
+				Text &gt; Anchor Point
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2064 d279500e1956 ">
+				Specifies the position of roughness symbol texts 
+				in relation to the anchor point (e.g., top left, middle left, etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2064 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2072" headers="d279500e1954 "><span class="uicontrol">
+				Text &gt; Anchor Line
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2072 d279500e1956 ">
+				Specifies the position of roughness symbol texts 
+				in relation to the anchor line (e.g., top or bottom, cap or base, 
+				etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2072 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2080" headers="d279500e1954 "><span class="uicontrol">
+				Text &gt; Blank Background
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2080 d279500e1956 ">
+				Indicates whether or not blanking should be used.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2080 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2088" headers="d279500e1954 "><span class="uicontrol">
+				Graphic &gt; Color
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2088 d279500e1956 ">
+				Specifies the color that should be used to represent 
+				roughness symbols.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2088 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2096" headers="d279500e1954 "><span class="uicontrol">
+				Graphic &gt; Linetype
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2096 d279500e1956 ">
+				Specifies the number of the linetype (as defined 
+				in the Line Types node of the current standard) that should be used 
+				to represent roughness symbol leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2096 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2104" headers="d279500e1954 "><span class="uicontrol">
+				Graphic &gt; Thickness
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2104 d279500e1956 ">
+				Specifies the line thickness index (as defined in 
+				the Line Thickness node of the current standard) that should be 
+				used to represent the roughness symbol and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2104 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2112" headers="d279500e1954 "><span class="uicontrol">
+				Font &gt; Name
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2112 d279500e1956 ">
+				Specifies the name of the font that should be used 
+				for roughness symbols. If no font name is specified, the system's 
+				default font will be used.
+				<p>Make sure that the text font specified here belongs 
+				to the list of allowed text fonts, as defined in the <span class="uicontrol">General 
+				&gt; Allowed Text Fonts</span> node of the Standards editor.</p>
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2112 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2126" headers="d279500e1954 "><span class="uicontrol">
+				Font &gt; Bold
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2126 d279500e1956 ">
+				Indicates whether or not roughness symbol fonts 
+				should be displayed in bold. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2126 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2134" headers="d279500e1954 "><span class="uicontrol">
+				Font &gt; Italic
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2134 d279500e1956 ">
+				Indicates whether or not roughness symbol fonts 
+				should be displayed in italic. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2134 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2142" headers="d279500e1954 "><span class="uicontrol">
+				Font &gt; Size
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2142 d279500e1956 ">
+				Indicates the font size that should be used for 
+				roughness symbols.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2142 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2151" headers="d279500e1954 "><span class="uicontrol">
+				Font &gt; Ratio
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2151 d279500e1956 ">
+				Specifies the ratio that should be used to display 
+				roughness symbols.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2151 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2159" headers="d279500e1954 "><span class="uicontrol">
+				Font &gt; Spacing
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2159 d279500e1956 ">
+				Specifies the spacing that should be used to display 
+				roughness symbols.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2159 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2167" headers="d279500e1954 "><span class="uicontrol">
+				Leader &gt; Symbol
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2167 d279500e1956 ">
+				Specifies the symbol (e.g., simple arrow, circle, 
+				etc.) that should be used for roughness symbol leaders. 
+				<p>If you choose the Automatic option, a default symbol 
+				will be used, depending on the standard type and on whether the 
+				leader is associated to an element or not:</p>
+				<ul>
+					<li>
+					<p>If the leader is associated to an element:</p>
+					<ul>
+						<li>
+						<p>Closed arrow (a.k.a. Unfilled arrow) for 
+						ANSI-ASME </p>
+						</li>
+
+						<li>
+						<p>Open arrow for ISO/JIS</p>
+						</li>
+
+					</ul>
+
+					</li>
+
+					<li>
+					<p>If the leader is not associated to an element:</p>
+					<ul>
+						<li>
+						<p>Symmetric circle (a.k.a. Unfilled circle) 
+						for ANSI-ASME </p>
+						</li>
+
+						<li>
+						<p>Filled circle for ISO/JIS</p>
+						</li>
+
+					</ul>
+
+					</li>
+
+				</ul>
+<p>The leader extremities of geometrical tolerance are always a  filled circle <img src="../IconsSymbol/S_DrwDimFilledCircle.png"/> except when there are extension lines or when they are  in the alignment of dimensions.</p>
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2167 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2227" headers="d279500e1954 "><span class="uicontrol">
+				Leader &gt; Delta
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2227 d279500e1956 ">
+				Specifies the value of the delta that should be 
+				applied between a roughness symbol and its leader.
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2227 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.673590504451035%" id="d279500e2235" headers="d279500e1954 ">
+				<span class="uicontrol">Leader &gt; Anchor Point
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2235 d279500e1956 ">
+				Specifies the leader position in relation to the 
+				anchor point of the roughness symbol.  
+				- 0 positions the leader automatically on the closest anchor point. 
+				- 1 positions the leader on the middle-left anchor point. 
+				- 2 positions the leader on the middle-right anchor point. 
+				
+				</td>
+<td class="cellrowborder" valign="top" width="35.01483679525222%" headers="d279500e2235 d279500e1958 ">
+				Yes
+				</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		</div>
+<div class="section" id="standards-c-ad-AnnotationStyles__rs-WeldingSymbolStyles"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Welding Symbol Styles</h2>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2255">
+				Parameter
+				</th>
+<th class="cellrowborder" valign="top" width="35.01483679525223%" id="d279500e2257">
+				Description
+				</th>
+<th class="cellrowborder" valign="top" width="35.311572700296736%" id="d279500e2259">
+				Applies at modification
+				</th>
+</tr>
+</thead>
+<tbody><tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2263" headers="d279500e2255 ">
+				<span class="uicontrol">First Length</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2263 d279500e2257 ">
+				Specifies the length of the first welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2263 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2272" headers="d279500e2255 ">
+				<span class="uicontrol">First Size</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2272 d279500e2257 ">
+				Specifies the size of the first welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2272 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2281" headers="d279500e2255 "><span class="uicontrol">
+				First Welding Type</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2281 d279500e2257 ">
+				Specifies the type (e.g. SquareWelding, UGrooveWelding, 
+				etc.) of the first welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2281 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2289" headers="d279500e2255 "><span class="uicontrol">First 
+				Surface Shape</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2289 d279500e2257 ">
+				Specifies the surface shape (e.g. flat, convex, 
+				etc.) of the first welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2289 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2297" headers="d279500e2255 "><span class="uicontrol">First 
+				Finishing Method</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2297 d279500e2257 ">
+				Specifies the finishing method (e.g. grinding, hammering, 
+				etc.) of the first welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2297 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2305" headers="d279500e2255 "><span class="uicontrol">Second 
+				Length</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2305 d279500e2257 ">
+				Specifies the length of the second welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2305 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2313" headers="d279500e2255 "><span class="uicontrol">Second 
+				Size</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2313 d279500e2257 ">
+				Specifies the size of the second welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2313 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2321" headers="d279500e2255 "><span class="uicontrol">
+				Second Welding Type</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2321 d279500e2257 ">
+				Specifies the type (e.g. SquareWelding, UGrooveWelding, 
+				etc.) of the second welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2321 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2329" headers="d279500e2255 "><span class="uicontrol">
+				Second Surface Shape</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2329 d279500e2257 ">
+				Specifies the surface shape (e.g. flat, convex, 
+				etc.) of the second welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2329 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2337" headers="d279500e2255 "><span class="uicontrol">Second 
+				Finishing Method</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2337 d279500e2257 ">
+				Specifies the finishing method (e.g. grinding, hammering, 
+				etc.) of the second welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2337 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2345" headers="d279500e2255 "><span class="uicontrol">
+				Reference
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2345 d279500e2257 ">
+				Specifies the reference of the welding symbol.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2345 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2354" headers="d279500e2255 "><span class="uicontrol">
+				Field Weld
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2354 d279500e2257 ">
+				Indicates whether or not a field weld should be 
+				added.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2354 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2362" headers="d279500e2255 "><span class="uicontrol">
+				All Around
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2362 d279500e2257 ">
+				Indicates whether or not a weld-all-around symbol 
+				should be added.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2362 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2370" headers="d279500e2255 "><span class="uicontrol">
+				Reference Line
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2370 d279500e2257 ">
+				Indicates whether the reference line should be up 
+				or down. <cite>This parameter works only for the ISO standard</cite>.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2370 d279500e2259 ">
+				No
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2381" headers="d279500e2255 "><span class="uicontrol">
+				Text &gt; Frame
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2381 d279500e2257 ">
+				Specifies the type of frame that should be used 
+				to represent welding symbols. Note that fixed-size frames are defined 
+				in the Frame node of the current standard. 
+				<p>Accepted values: none, rectangle</p>
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2381 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2392" headers="d279500e2255 "><span class="uicontrol">
+				Text &gt; Orientation Reference
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2392 d279500e2257 ">
+				Specifies whether the sheet, or whether the view 
+				or 2D component should be used as the reference for the welding 
+				symbol orientation. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2392 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2400" headers="d279500e2255 "><span class="uicontrol">
+				Text &gt; Angle
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2400 d279500e2257 ">
+				Specifies the welding symbol orientation angle according 
+				to the chosen reference.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2400 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2408" headers="d279500e2255 "><span class="uicontrol">
+				Text &gt; Line Spacing
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2408 d279500e2257 ">
+				Specifies the spacing that should be used between 
+				two lines of text.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2408 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2416" headers="d279500e2255 "><span class="uicontrol">
+				Text &gt; Line Spacing Mode
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2416 d279500e2257 ">
+				Specifies the spacing mode between two lines of 
+				text (e.g., bottom to top, base to cap, etc.).
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2416 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2424" headers="d279500e2255 "><span class="uicontrol">
+				Text &gt; Blank Background
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2424 d279500e2257 ">
+				Indicates whether or not the background should be 
+				blank.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2424 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2432" headers="d279500e2255 "><span class="uicontrol">
+				Font &gt; Name
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2432 d279500e2257 ">
+				Specifies the name of the font that should be used 
+				for welding symbols. If no font name is specified, the system's 
+				default font will be used.
+				<p>Make sure that the text font specified here belongs 
+				to the list of allowed text fonts, as defined in the <span class="uicontrol">General 
+				&gt; Allowed Text Fonts</span> node of the Standards editor.</p>
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2432 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2446" headers="d279500e2255 "><span class="uicontrol">
+				Font &gt; Bold
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2446 d279500e2257 ">
+				Indicates whether or not welding symbols should 
+				be displayed in bold. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2446 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2455" headers="d279500e2255 "><span class="uicontrol">
+				Font &gt; Italic
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2455 d279500e2257 ">
+				Indicates whether or not welding symbols should 
+				be displayed in italic. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2455 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2463" headers="d279500e2255 "><span class="uicontrol">
+				Font &gt; Size
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2463 d279500e2257 ">
+				Indicates the font size that should be used for 
+				welding symbols.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2463 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2471" headers="d279500e2255 "><span class="uicontrol">
+				Font &gt; Ratio
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2471 d279500e2257 ">
+				Specifies the ratio that should be used to display 
+				welding symbols.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2471 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2479" headers="d279500e2255 "><span class="uicontrol">
+				Font &gt; Spacing
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2479 d279500e2257 ">
+				Specifies the spacing that should be used to display 
+				welding symbols.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2479 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2487" headers="d279500e2255 "><span class="uicontrol">
+				Graphic &gt; Thickness
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2487 d279500e2257 ">
+				Specifies the line thickness index (as defined in 
+				the LineThickness node of the current standard) that should be used 
+				to represent welding symbol frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2487 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2495" headers="d279500e2255 "><span class="uicontrol">
+				Graphic &gt; Linetype
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2495 d279500e2257 ">
+				Specifies the number of the linetype (as defined 
+				in the LineTypes node of the current standard) that should be used 
+				to represent welding symbol frames and leaders. 
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2495 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2503" headers="d279500e2255 "><span class="uicontrol">
+				Graphic &gt; Color
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2503 d279500e2257 ">
+				Specifies the color that should be used to represent 
+				welding symbol frames and leaders.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2503 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+<tr><th class="firstcol" valign="top" width="29.67359050445104%" id="d279500e2511" headers="d279500e2255 "><span class="uicontrol">
+				Leader &gt; Symbol
+				</span></th>
+<td class="cellrowborder" valign="top" width="35.01483679525223%" headers="d279500e2511 d279500e2257 ">
+				Specifies the symbol (e.g., simple arrow, circle, 
+				etc.) that should be used for welding symbol leaders. If you choose 
+				the Automatic option, filled arrow will be used by default.
+				</td>
+<td class="cellrowborder" valign="top" width="35.311572700296736%" headers="d279500e2511 d279500e2259 ">
+				Yes
+				</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		
+	
+
+
+
+
+
+</div>
+</div>
+
+
+  
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

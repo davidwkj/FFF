@@ -1,0 +1,167 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="View Properties"/>
+<meta name="abstract" content="The View lets you modify view/annotation planes properties."/>
+<meta name="description" content="The View lets you modify view/annotation planes properties."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="properties-c-ui-View"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">View Properties</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="properties-c-ui-View">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::View"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::Front View"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::Section View"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::Section Cut View"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>View Properties</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>The <span class="wintitle">View</span> lets you modify view/annotation planes properties.</span>
+
+    
+    <p>
+      Select the <span class="uicontrol">View</span> tab to access properties.
+    </p>
+  </p>
+<ul><li><a href="#properties-c-ui-View__cs-OrientationAndScale" title="">Orientation and Scale</a></li><li><a href="#properties-c-ui-View__cs-Attributes" title="">Attributes</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+  
+
+  
+
+  <div>
+	 <dl class="uicontrol">
+		  
+			 <dt class="dlterm">Name</dt>
+
+			 <dd> 
+				Defines the annotation view name.</dd>
+
+		  
+		  
+			 <dt class="dlterm">ID</dt>
+
+			 <dd>Defines the annotation view ID.</dd>
+
+		  
+		  
+			 <dt class="dlterm">Suffix
+			 </dt>
+
+			 <dd>Defines the annotation view suffix.</dd>
+
+		  
+		<dt class="dlterm"><img src="../IconsSmall/I_Kwe2_Formula.png"/> Formula</dt>
+<dd>Creates a formula to define the annotation view naming.</dd>
+</dl>
+
+	 <div class="section" id="properties-c-ui-View__cs-OrientationAndScale"><h2 class="sectiontitle">Orientation and Scale</h2>
+		 
+		 
+		  
+		
+		<dl class="uicontrol">
+		  
+			 <dt class="dlterm">Angle
+			 </dt>
+
+			 <dd><span/> 
+				
+			 </dd>
+
+		  
+		  
+			 <dt class="dlterm">Scale
+			 </dt>
+
+			 <dd><span/><p>The following view scale values must be considered: </p></dd>
+
+		  <dd class="ddexpand"> 
+  <ul> 
+	 <li>Normal range: Scale must be greater than 1.10<sup>-5</sup> and lower
+		than 1.104 
+	 </li>
+ 
+	 <li>Large range: Scale must be greater than 1.10<sup>-7</sup> and lower
+		than 1.102 
+	 </li>
+ 
+  </ul>
+ 
+  <p>Note:
+		If you specify a scale outside this scale range, an error appears
+	 displaying the scale limits for the current representation. 
+  </p>
+
+</dd>
+<dd class="ddexpand">When properties are edited for a set of views with heterogeneous representation ranges, the authorized scale range is computed as an intersection of allowed scale ranges. </dd>
+ 
+		  
+			 <dt class="dlterm"><a name="properties-c-ui-View__dlentry-ratio"><!-- --></a>Ratio
+			 </dt>
+
+			 <dd> 
+				Defines the view ratio which is applied to all its annotations.
+				 
+				<ul> 
+				  <li>This ratio corresponds to a same scale factor applied to all
+					 texts, symbols and graphic <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representations</span> contained in annotations regardless
+					 of their own properties.
+				  </li>
+ 
+				  <li>The reverse of this ratio is applied when generating the
+					 related 2D drafting view, except when the view is contained in an offset or
+					 <span class="glossterm" id="aligned-section-view" onmouseout="hideTerm()" onmouseover="showTerm('aligned-section-view.xml')">aligned section view</span>. <p>In these cases, the reverse ratio of the first annotation
+					 view is applied to all the views of the offset or aligned <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section view</span>.
+				  </p></li>
+ 
+				</ul>
+ 
+			 </dd>
+
+		  
+		</dl>
+
+	 </div>
+
+	 <div class="section" id="properties-c-ui-View__cs-Attributes"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Attributes</h2>
+		 
+		 
+		  
+		
+		<dl class="uicontrol">
+		  
+			 <dt class="dlterm">Display View Frame
+			 </dt>
+
+			 <dd> 
+				Defines whether the annotation <span class="glossterm" id="view-frame" onmouseout="hideTerm()" onmouseover="showTerm('view-frame.xml')">view frame</span> is displayed or not.
+				 
+			 </dd>
+
+		  
+		  
+			 <dt class="dlterm">Lock View
+			 </dt>
+
+			 <dd> 
+            
+           
+				<span/> 
+			 </dd>
+
+		  
+		</dl>
+
+	 </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

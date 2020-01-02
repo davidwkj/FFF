@@ -1,0 +1,125 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Updating Views"/>
+<meta name="abstract" content="You need to update the representation whenever there are any changes done in the 3D product or in any of the text attribute links."/>
+<meta name="description" content="You need to update the representation whenever there are any changes done in the 3D product or in any of the text attribute links."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewUpdate.htm#gdr-c-ViewUpdate"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-DrawingsUsingBatchMonitorUpdate.htm#gdr-t-DrawingsUsingBatchMonitorUpdate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewUpdate-ViewsUpdate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Updating Views</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewUpdate-ViewsUpdate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Updating Views</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You need to update the representation whenever there are any changes done in the 3D product or in any of the text attribute links.</span>
+
+														
+						
+						This task shows you how to:
+						
+						</p>
+<ul><li><a href="#t-UpdateViewsUsingUpdate" id="toc_rg" title="You can update views using Update command.">Update Views using Update</a></li><li><a href="#t-UpdateViewsUsingPLMUpdate" id="toc_rg" title="You can update views using PLM update.">Update Views using PLM Update</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    <p> Open an existing product and the associated <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>. Modify the <span>3D area</span> or modify a text <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span> link. </p>     </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewUpdate.htm#gdr-c-ViewUpdate" title="This topic provides information regarding update and PLM update in Drawings.">About Update and PLM Update</a></td></tr><tr><td><a href="gdr-t-DrawingsUsingBatchMonitorUpdate.htm#gdr-t-DrawingsUsingBatchMonitorUpdate" title="You can update a list of drawing representations and also bills of materials using the batch monitor. The batch monitor lets you create as many batch configurations as required, and follow the progress of an update. Updating drawings via the batch monitor will be particularly helpful in the following cases:">Updating Drawings Including the Bills of Materials Using the Batch Monitor</a></td></tr></table></td></tr></table>
+<a name="CATDrw.CATDrwUpdateSelection"><!-- --></a>
+<div><div class="p"><!--xxx--></div>
+<div class="section"><p><span class="uicontrol">Update</span> symbols must appear in the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span> to indicate the drawings <img src="../GdrUserImages/I_UpdateDrwDrawing.gif"/>, <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheets</span> <img src="../GdrUserImages/I_UpdateDrwView.gif"/> and views <img src="../GdrUserImages/I_UpdateDrwView2.gif"/> that need to be updated. The <span class="uicontrol">Update current sheet</span> <img height="22" width="22" src="../Icons22/I_D3M_UpdateSheet.png"/> and the <span class="uicontrol">Update</span> <img height="22" width="22" src="../Icons22/I_AsmUpdate.png"/> must be active.</p><p>Note: To avoid updating a drawing when only minor changes have been performed in the <span>3D area</span>, <span class="uicontrol">Update</span> symbols will not be active after a change in the 3D color or 3D point symbol, when these are inherited from the <span>3D area</span> (as specified in the <a href="properties-c-ui-Generation.htm#properties-c-ui-Generation" title="Generation lets you modify dress-up features, type of view generation mode, type of generative view style and so on.">Generation Properties</a> of the <span class="uicontrol">Properties</span> dialog box).</p></div>
+</div>
+<div/><div class="nested1" id="t-UpdateViewsUsingUpdate"><h2 class="topictitle2">Update Views using Update</h2>
+<div><p>You can update views using Update command.</p>
+<ol><li class="stepexpand"><p> Open an existing 3D product and the associated drawing representation. Modify the 3D geometry. </p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Update current sheet</span>
+				<a name="ix-commands::Update current sheet"> </a>
+			<img height="22" width="22" src="../Icons22/I_D3M_UpdateSheet.png"/>
+			 to update all views 
+				in the active sheet.</p></li>
+<li class="stepexpand"><p>Select and right-click the views 
+				and select <span class="uicontrol">Update Selection</span> 
+				to update the selected views.</p></li>
+<li class="stepexpand"><p>Type <kbd class="userinput">C:Force Update</kbd> in the 
+				<span class="uicontrol">Power Input</span> box (available in the Status Bar) to update the drawing 
+				in accordance with the 3D. <p> </p></p></li>
+</ol>
+<p class="result">
+		
+		</p></div>
+</div>
+<div class="nested1" id="t-UpdateViewsUsingPLMUpdate"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Update Views using PLM Update</h2>
+<div><p>You can update views using PLM update. </p>
+<ol><li class="stepexpand"><p>Go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Assembly 
+			Design</span> &gt; <span class="uicontrol">Update</span></span> section, under <span class="uicontrol">Automatic Update Status Computation</span>, and 
+			check whether the computation is set to <span class="uicontrol">Yes</span> or
+			<span class="uicontrol">No</span>. This defines how the PLM update status is computed. 
+			<p> 
+			Setting the option to <span class="uicontrol">Automatic</span> ensures that the update status 
+			is automatically computed.</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Update</span>
+			<img height="22" width="22" src="../Icons22/I_AsmUpdate.png"/><a name="ix-commands::Update All"> </a>. 
+			<p> The <span class="uicontrol">Confirm PLM Update</span> dialog box is displayed, indicating 
+			that during the update process, memory is optimized so that modifications 
+			that have no consequence on data update are ignored. 
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>You 
+					can select the <span class="uicontrol">Do not show this message again</span> check box. 
+					In this case, the dialog box will not  be displayed next 
+					time you launch the <span class="uicontrol">Update All</span> command.</td></tr></table>
+
+			</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Yes</span>.<p> 
+			A dialog box is displayed while 
+			the update is being performed. <ul>
+			<li>All of the <span>3D area</span> associated to the current drawing is updated, 
+			if necessary. </li>
+
+			<li>All of the generated views of the drawing are updated, on all sheets 
+			of the drawing.</li>
+
+		</ul>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Note that 
+				if a problem occurs while the <span>3D area</span> is being updated, the 
+				update process is interrupted and the views are not updated. On 
+				the other hand, if a problem occurs while the views are being updated, 
+				the update process continues and subsequent views are updated (provided 
+				that the <span class="uicontrol">Stop update on first error</span> check box is cleared 
+				in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Assembly Design</span> &gt; <span class="uicontrol">General</span></span> section,
+				under <span class="uicontrol">Update behavior on errors</span>).</td></tr></table>
+</p></p></li>
+</ol>
+<p class="result">
+		
+		
+		<p>Once the update is complete, the <span class="uicontrol">Update All</span> and the <span class="uicontrol">Update</span>  
+		icons are both disabled.</p>
+		<p>If a problem was encountered during update, an error report is displayed 
+		reporting both 3D update errors and views update errors. For more information, see 
+		<a href="gdr-c-ui-DialogBoxes-ViewUpdateReport.htm#gdr-c-ui-DialogBoxes-ViewUpdateReport" title="The View Update Report dialog box appears after you click Update, if a problem is encountered.">View Update Report Dialog Box</a>.</p>
+		
+	
+
+
+
+
+
+
+</p></div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

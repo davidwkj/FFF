@@ -1,0 +1,294 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="all" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Customizing the Action Bar for the Planning Structure App</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Customizing the Action Bar for the Planning Structure App</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAALivePPREditorWkbAddin use case. 
+		It explains how to implement the <em>DELIPPRLivePPREditorWkbAddin</em> to add 
+		Planning Structure App commands in a new section of the action 
+		bar.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAALivePPREditorWkbAddin Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAALivePPREditorWkbAddin 
+						Do</a></li>
+					<li><a href="#How">How to Launch CAALivePPREditorWkbAddin</a></li>
+					<li><a href="#Where">Where to Find the CAALivePPREditorWkbAddin 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you create your own section in the action 
+bar for the Planning Structure App with command headers launching different Planning Structure 
+functionalities. It consists of:</p>
+<ul>
+	<li>Describing the different steps dedicated to the knowhow of the company through 
+		the customization.</li>
+	<li>Implementing the methods of <em>DELIPPRLivePPREditorWkbAddin</em> to create a 
+	section in the action bar for the Planning Structure App.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAALivePPREditorWkbAddin Use Case</h2>
+<p>CAALivePPREditorWkbAddin is a use case of the CAADELPPRAuthFoundItf.edu 
+framework that illustrates Planning Structure App customization capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAALivePPREditorWkbAddin Do</h3>
+<p>This use case:</p>
+<ul>
+	<li>Adds a new section in the action bar for commands of the Planning Structure App.</li>
+	<li>Creates commands headers for these commands that will launch Planning Structure App functionalities.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAALivePPREditorWkbAddin</h3>
+<p>To use CAALivePPREditorWkbAddin, you will need to:</p>
+<ul>
+	<li>Set up the <strong>build time</strong> environment, then compile the CAALivePPREditorWkbAddin.m 
+		module along with its prerequisites [<a href="#References">1</a>].</li>
+	<li>Edit the interface dictionary, that is, the CAADELPPRAuthFoundItf.edu.dico 
+		file located in:
+		<p><code>InstallRootFolder\CAADoc\CAADELPPRAuthFoundItf.edu\CNext\code\dictionary\</code></p>
+		<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is 
+		the folder where the API CD-ROM is installed, and uncomment the following 
+		line by removing the '#CAA#' character:</p>
+		<pre>CAALivePPREditorWkbAddinExt DELIPPRLivePPREditorWkbAddin libCAALivePPREditorWkbAddin</pre>
+	</li>
+	<li>Set up the <strong>run time</strong> environment.</li>
+	<li>Launch a <strong>3D</strong>EXPERIENCE session.</li>
+	<li>Go to the Planning Structure App.</li>
+	<li>Look for the &quot;CAA Planning Structure AppAddin Toolbar&quot; 
+		section of the action bar.
+<!-- (if this toolbar is not visible, make it visible from the list that 
+		is displayed when right clicking any toolbar). -->
+		</li>
+	<li>Select the first icon in the section that launches a command.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAALivePPREditorWkbAddin Code</h3>
+<p>The CAALivePPREditorWkbAddin use case code is located in the CAALivePPREditorWkbAddin.m 
+module of the CAADELPPRAuthFoundItf.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAADELPPRAuthFoundItf.edu\CAALivePPREditorWkbAddin.m</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The class <em>CAALivePPREditorWkbAddin</em> implements the Interface
+<em>DELIPPRLivePPREditorWkbAddin</em>. This implementation is located in the file CAALivePPREditorWkbAddin.m\src\CAALivePPREditorWkbAddin.cpp. 
+Its purpose is to create the new section and to lay out the commands in it. Only two 
+methods need be defined: <code><a href="#CreateToolbars">CreateToolbars</a></code> 
+and <code><a href="#CreateCommands">CreateCommands</a></code>.</p>
+<p>Here is the declaration of this class:</p>
+<pre class="code">class CAALivePPREditorWkbAddin: public CATBaseUnknown {
+  CATDeclareClass;
+  public:
+    // Standard constructors and destructors for an implementation class
+    // -----------------------------------------------------------------
+    CAALivePPREditorWkbAddin();
+    virtual ~CAALivePPREditorWkbAddin();
+    void <strong>CreateCommands</strong>();
+    CATCmdContainer *<strong>CreateToolbars</strong>();
+  private:
+    // The copy constructor and the assignment operator must not be implemented
+    // -------------------------------------------------------------------
+    CAALivePPREditorWkbAddin (CAALivePPREditorWkbAddin &amp;);
+    CAALivePPREditorWkbAddin&amp; operator=(CAALivePPREditorWkbAddin &amp;);
+    static CATCmdContainer* _pCreatedToolbar;
+};</pre>
+<p>There are three logical steps in CAALivePPREditorWkbAddin:</p>
+<ol>
+	<li><a href="#Step1">Creating the Command Headers to Launch Planning Structure 
+	App 
+		Functionalities</a></li>
+	<li><a href="#Step2">Adding a Planning Structure App Section in 
+	the Action Bar</a></li>
+	<li><a href="#Step3">Creating the Resources</a></li>
+</ol>
+<p>We now comment each of those sections by looking at the code.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Creating the Command Headers to Launch Planning Structure App 
+Functionalities</h3>
+<p>The command called when the toolbar button is clicked 
+is created by the method <code>CAALivePPREditorWkbAddin::CreateCommands</code>.</p>
+<pre class="code">void <a name="CreateCommands"></a><strong>CAALivePPREditorWkbAddin::CreateCommands</strong>()
+{
+  CAALivePPREditorWkbAddinTRACE(&quot;&gt;&gt;CAALivePPREditorWkbAddin::CreateCommands()&quot;);
+  // Instantiates the command header for the command
+  <strong>CATAfrCommandHeader::CATCreateCommandHeader(&quot;CAALivePPREditorWkbAddinCmd1&quot;,
+                                             &quot;CAALivePPREditorWkbAddin&quot;,
+                                             &quot;CAALivePPREditorWkbAddinCmd&quot;,
+                                             (void *)NULL,
+                                             &quot;CAALivePPREditorWorkbenchAddin&quot;,
+                                             CATFrmAvailable);</strong>
+  CAALivePPREditorWkbAddinTRACE(&quot;&lt;&lt;CAALivePPREditorWkbAddin::CreateCommands()&quot;);
+}</pre>
+<p>Here a command named <strong>CAALivePPREditorWkbAddinCmd1</strong> is 
+created. This command is tied with the action bar button, as explained 
+in the next section. It is located in the <strong>CAALivePPREditorWkbAddin</strong> 
+shared library and its associated class is <strong><em>CAALivePPREditorWkbAddinCmd</em></strong>. 
+The base name for resource files for this command will be <strong>CAALivePPREditorWorkbenchAddin</strong> 
+as explained later.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Adding a Planning Structure App Section in the Action Bar</h3>
+<p>The new section of the action bar and the button to access the 
+command <strong>CAALivePPREditorWkbAddinCmd1</strong> created above 
+is created by implementing the method <code>CAALivePPREditorWkbAddin::CreateToolbars</code>.</p>
+<pre class="code">CATCmdContainer *<a name="CreateToolbars"></a><strong>CAALivePPREditorWkbAddin::CreateToolbars</strong>()
+{
+  CAALivePPREditorWkbAddinTRACE(&quot;&gt;&gt; CAALivePPREditorWkbAddin::CreateToolbars()&quot;);
+  // Verify if tool bar has not been created already
+  if (_pCreatedToolbar==NULL)
+  {
+    // create the section called: CAALivePPREditorWkbAddinToolbar
+    NewAccess (CATCmdContainer,pToolBarPPRLiveSystem,CAALivePPREditorWkbAddinToolbar);
+
+    // create the command starter called CAALivePPREditorWkbAddinStarter
+    NewAccess (CATCmdStarter,pCommandStarter,CAALivePPREditorWkbAddinStarter);
+
+    // tell to the system that the starter we have just created starts the command called CAALivePPREditorWkbAddinCmd1
+    SetAccessCommand (pCommandStarter,&quot;CAALivePPREditorWkbAddinCmd1&quot;);
+
+    // adding the command starter as a child of the new created section
+    SetAccessChild (pToolBarPPRLiveSystem,pCommandStarter);
+
+    // add the section
+    // it is by default Visible and on the Top side
+    int visibleFlag = 1;
+    AddToolbarView (pToolBarPPRLiveSystem,visibleFlag,Top);
+    CAALivePPREditorWkbAddinTRACE(&quot;&lt;&lt; CAALivePPREditorWkbAddin::CreateToolbars()&quot;)
+
+    _pCreatedToolbar = pToolBarPPRLiveSystem;
+    return pToolBarPPRLiveSystem;
+  }
+  else
+  { 
+    // in case it was already created (this function was already called) return NULL,
+    // that avoids the creation of the section two times
+    return NULL;
+   }
+}</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating the Resources</h3>
+<p>There are two visible objects: the section container and its command.</p>
+<h4>The Section Container</h4>
+<p>The title of the section named CAALivePPREditorWkbAddinToolbar is defined 
+in the file <code>CAALivePPREditorWorkbenchAddin.CATNls</code> which can 
+be found in the <code>InstallRootFolder\CAADoc\CAADELPPRAuthFoundItf.edu\CNext\resources\msgcatalog</code> 
+folder. The name of this file is predetermined and it should be used as it is. 
+All the custom sections that you will define should define their names using this file, 
+following the same format:<br />
+</p>
+<pre class="code"> NAME_OF_THE_TOOLBAR.Title = &quot;Localized Title Text&quot;;
+On this example the title is defined as follows: 
+
+CAALivePPREditorWkbAddinToolbar.Title = &quot;CAA Planning Structure AppAddin Toolbar&quot;;</pre>
+<p><strong>Note</strong>: The NAME_OF_THE_TOOLBAR part is on this case replaced 
+by: &quot;CAALivePPREditorWkbAddinToolbar&quot;. This is the name given to 
+the toolbar when creating its container using the <code>NewAccess</code> macro in the
+<code>CreateToolbars</code> method.</p>
+<h4>The Command</h4>
+<p>CAALivePPREditorWkbAddinCmd1 resources are defined by three files:</p>
+<ol>
+	<li><code>CAALivePPREditorWorkbenchAddin.CATNls</code> (located in the
+		<code>InstallRootFolder\CAADoc\CAADELPPRAuthFoundItf.edu\CNext\resources\msgcatalog</code> 
+		folder):
+		<pre class="code">CAALivePPREditorWorkbenchAddin.CAALivePPREditorWkbCmd1.Title = &quot;Example PST Command&quot;;
+CAALivePPREditorWorkbenchAddin.CAALivePPREditorWkbCmd1.Help = &quot;Example PST Command detailed help&quot;;
+CAALivePPREditorWorkbenchAddin.CAALivePPREditorWkbCmd1.ShortHelp = &quot;Example PST Command short help&quot;;</pre>
+		<p>These texts correspond to the screen tip, the documentation line, and 
+		the command prompt input.</p>
+		<p><strong>Note</strong>: The name &quot;CAALivePPREditorWorkbenchAddin&quot; 
+		is the name given when calling <code>CATAfrCommandHeader::CATCreateCommandHeader</code>.</p>
+	</li>
+	<li>
+		<p><code>CAALivePPREditorWorkbenchAddin.CATRsc</code> (located in 
+		the <code>InstallRootFolder\CAADoc\CAADELPPRAuthFoundItf.edu\CNext\resources\msgcatalog</code> 
+		folder) defines the bitmap name for the command icon:</p>
+		<pre class="code">CAALivePPREditorWorkbenchAddin.CAALivePPREditorWkbAddinCmd1.Icon.Normal=&quot;CAALivePPREditorWkbAddin_I&quot;;</pre>
+	</li>
+	<li><code>CAALivePPREditorWkbAddin_I.png</code> (located in the <code>
+		InstallRootFolder\CAADoc\CAADELPPRAuthFoundItf.edu\CNext\resources\graphic\icons\normal</code> 
+		folder) contains the bitmap the command icon.</li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article provides an example on how to use the <em>DELIPPRLivePPREditorWkbAddin</em> 
+interface to add a Planning Structure section in the action bar with a 
+sample command.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>2</strong> [Feb 2016]</td>
+		<td>Adapted for <strong>3D</strong>EXPERIENCE</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>1</strong> [Apr 2010]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

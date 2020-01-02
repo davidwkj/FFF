@@ -1,0 +1,79 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Generating Balloons"/>
+<meta name="abstract" content="This topic provides more information about generating balloons."/>
+<meta name="description" content="This topic provides more information about generating balloons."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Annotations-GenerateBalloons.htm#gdr3dmaster-t-Annotations-GenerateBalloons"/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Annotations-BalloonCreate.htm#gdr3dmaster-t-Annotations-BalloonCreate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Annotations-GenerateBalloons"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Generating Balloons</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Annotations-GenerateBalloons">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-balloon generation scenarios"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Generating Balloons</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic provides more information about generating balloons.
+    </span>
+
+    
+  </p>
+<ul><li><a href="#gdr3dmaster-c-Annotations-GenerateBalloons__cs-AutomaticBalloonsGeneration" id="toc_rg" title="">Automatic Balloons Generation</a></li><li><a href="#gdr3dmaster-c-Annotations-GenerateBalloons__cs-BalloonGenerationScenarios" id="toc_rg" title="">Balloon Generation Scenarios</a></li><li><a href="#gdr3dmaster-c-Annotations-GenerateBalloons__s-BallonsLifecycle" id="toc_rg" title="">Balloons Lifecycle</a></li><li><a href="#gdr3dmaster-c-Annotations-GenerateBalloons__cs-BalloonPositioning" id="toc_rg" title="">Balloon Positioning</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Annotations-GenerateBalloons.htm#gdr3dmaster-t-Annotations-GenerateBalloons" title="You can generate all the balloons automatically in a generative view. Additionally, you can configure generating balloons as desired.">Generating Balloons</a></td></tr><tr><td><a href="gdr3dmaster-t-Annotations-BalloonCreate.htm#gdr3dmaster-t-Annotations-BalloonCreate" title="You can create balloons corresponding to the references defined on the different parts of an assembly. You can set text properties for balloons either before or after you create them.">Creating Balloons</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    
+  <div class="section" id="gdr3dmaster-c-Annotations-GenerateBalloons__cs-AutomaticBalloonsGeneration"><h2 class="sectiontitle">Automatic Balloons Generation</h2><p><ul><li>      Using the <span class="uicontrol">Automatic Balloons Generation</span> command, you can create the balloons in an <span class="glossterm" id="active-view" onmouseout="hideTerm()" onmouseover="showTerm('active-view.xml')">active view</span> for all the instances of the part, that is all the leaf products represented in the view.</li>
+<li>If the command is used twice on the same view, new balloons are generated on the parts, irrespective of whether balloons already exist on the parts (either automatically generated or manually added) or not. In this case, the balloons are also generated on the newly added parts/products in the product structure represented in the view. However, it is possible to use one of the two options <span class="uicontrol">Update</span> or <span class="uicontrol">Reset</span> to avoid having duplicated balloons.</li>
+<li>The balloons that were automatically generated, but manually deleted are created again  provided that the product they are attached to is still in the corresponding BOM.</li>
+</ul>
+</p><p>	Once created, the balloons are positioned automatically according to the position of the ballooned part in the view.</p>  </div>
+<div class="section" id="gdr3dmaster-c-Annotations-GenerateBalloons__cs-BalloonGenerationScenarios"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Balloon Generation Scenarios</h2><p>A few scenarios are possible depending on whether a <span class="glossterm" id="bill-of-materials-3" onmouseout="hideTerm()" onmouseover="showTerm('bill-of-materials-3.xml')">bill of materials</span> (BOM) exists in a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> or not: </p><p>	<ul><li>If there is only one bill of materials in the drawing and it points to the same root product as the view, it is selected in the list and the balloons are generated with reference to this BOM.</li>
+<li>If one or several parts seen in the view are not in the BOM (for example, balloons for phantom products that are not listed in the referenced BOM), the balloons will show a number that is increased as the balloons are created.  However, content of these balloons does not change associatively because they do not have their respective part/product <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> in the BOM. </li>
+<li>If there is one or several bills of material in the drawing that point to a different root product from that of the view or that are isolated, then the balloons show a number that is increased as the balloons are created (1,2,...,N).</li>
+<li>	If there is no BOM  in the drawing then the <span class="uicontrol">BOM</span> list will be empty and the balloons will show a number that is increased as the balloons are created (1,2,...,N).</li>
+</ul>
+</p><p><dl><dt class="dlterm">About Update</dt>
+<dd>You can use <span class="uicontrol">Update</span> in a view where balloons have previously been created and if you select the same associated BOM and its creation options.<p>When using <span class="uicontrol">Update</span>, if a phantom product that was previously listed in the BOM is no longer listed in it because of a change of BOM format, and if you do not select the <span class="uicontrol">Show Phantom Products</span> option, then its balloon is updated with a <span class="uicontrol">?</span> symbol to indicate that the content is no longer valid. Otherwise, its number is changed to an incremented number.</p><p>Likewise, if you select the <span class="uicontrol">Show Phantom Products</span> option:<ul><li>If an N-line BOM becomes an N+X-line BOM (when a product is added in the product structure), and if a phantom product that was not listed in the referring N-line BOM is ballooned with number N+1, its content is updated to N+X+1. </li>
+<li>If an N-line BOM becomes an N-X-line BOM (when a product is removed in the product structure), and if a phantom product that was not listed in the referring N-line BOM is ballooned with number N+1, its content is updated to N-X+1.</li>
+<li>The BOM used as a reference for the balloons can also be preselected before clicking on the <span class="uicontrol">Automatic Balloons Generation</span> command. In this case, the selected BOM is automatically displayed in the <span class="uicontrol">BOM</span> list of  <span class="uicontrol">Automatic Ballooning Options</span> dialog box. However, if required, you can change this selection by choosing another BOM in the <span class="uicontrol">BOM</span> list.</li>
+ </ul>
+</p> </dd>
+</dl>
+</p> </div>
+<div class="section" id="gdr3dmaster-c-Annotations-GenerateBalloons__s-BallonsLifecycle"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Balloons Lifecycle</h2><p>The lifecycle of the balloons generated through the command is managed and therefore is different from the ones generated manually. <ul><li>In the active view, you can delete all the balloons and recreate them as new if you select <span class="uicontrol">Reset</span> during <span class="uicontrol">Automatic Balloons Generation</span>.</li>
+<li>If a BOM line associated with a balloon disappears (but the geometry still exists), the balloon’s content changes to <span class="uicontrol">?</span>.</li>
+<li>	If a balloon automatically generated points to a product which geometry disappears from the view (whether it is because it has been deleted or because another product is now hiding its geometry in this view), the balloon’s content changes to <span class="uicontrol">?</span>.</li>
+<li>	If a Top Level BOM becomes a Summarized one or vice versa, the previously automatically  generated balloons associated to this BOM are deleted and recreated in the next usage of the command.</li>
+<li>	If a BOM associated to balloons is deleted, its balloons are isolated.</li>
+<li>If a balloon automatically generated is cut or copied, it becomes isolated from the BOM when pasted.</li>
+<li>If a part pointed by a balloon is deleted, its balloon is not deleted, but its content will change to <span class="uicontrol">?</span> if updated using the <span class="uicontrol">Automatic Balloons Generation</span> command.</li>
+</ul>
+</p>  </div>
+<div class="section" id="gdr3dmaster-c-Annotations-GenerateBalloons__cs-BalloonPositioning"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Balloon Positioning</h2><p>Balloon leader can be positioned on dimension lines either with a perpendicular extremity or without it.<ul><li>When you snap the balloon leader on the specified perpendicular directions, the balloon is positioned with the perpendicular extremity link.</li>
+<li>When you position the balloon on a dimension line with a perpendicular extremity, the balloon switches from one dimension line to the other, depending on the closest position with balloon body. This property is applicable only for leaders with perpendicular extremity link.<p><br/><img src="../Gdr3DMasterImages/balloondimensionline01.png"/><br/></p><p>To stop switching the balloon from one dimension line to the other:<ol><li>Right-click the yellow handle at the leader extremity, select <span class="uicontrol">Extremity Link</span> and clear the <span class="uicontrol">Perpendicular</span> check.</li>
+<li>Drag the balloon to the required location.</li>
+</ol>
+</p></li>
+<li>When you position the balloon on a dimension line in an inclined position, the switch of the balloon from one dimension line to the other does not occur.<p><br/><img src="../Gdr3DMasterImages/balloondimensionline02.png"/><br/></p></li>
+</ul>
+</p></div>
+</div>
+
+
+  <div/>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

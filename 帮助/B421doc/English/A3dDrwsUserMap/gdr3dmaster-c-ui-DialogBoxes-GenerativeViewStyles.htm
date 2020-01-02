@@ -1,0 +1,98 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Generative View Styles Dialog Box"/>
+<meta name="abstract" content="The Generative View Styles dialog box appears when you select Me &gt; Preferences&gt; Generative View Styles."/>
+<meta name="description" content="The Generative View Styles dialog box appears when you select Me &gt; Preferences&gt; Generative View Styles."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-ui-DialogBoxes-GenerativeViewStyles"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Generative View Styles Dialog Box</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-ui-DialogBoxes-GenerativeViewStyles">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Generative View Styles Dialog Box"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Generative View Styles Dialog Box</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>
+      The <span class="wintitle">Generative View Styles</span> dialog box appears when you select <span><span class="menucascade"><span class="uicontrol">Me</span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="uicontrol">&gt; Generative View Styles.</span></span>
+
+    <p>
+      This dialog box contains controls for embedded <span class="glossterm" id="generative-view-style" onmouseout="hideTerm()" onmouseover="showTerm('generative-view-style.xml')">generative view styles</span>.
+    </p></p>
+<ul/>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="section" id="gdr3dmaster-c-ui-DialogBoxes-GenerativeViewStyles__s-General"><h2 class="sectiontitle">General</h2>
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">Style
+          </dt>
+
+          <dd>Displays all the generative view styles embedded in a layout or a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>.
+            <p>Once you assign a generative view style to a view, it is embedded in the layout or the drawing (if not already done). So, to benefit from the new parameters available in a later version of a generative view style, you need to update the embedded version with the latest version of the XML file. </p>
+
+          </dd>
+
+        
+        
+          <dt class="dlterm">Update
+          </dt>
+
+          <dd>Updates the selected generative view style with the latest version of the XML file.
+          Updating a generative view style leads to the reset of all parameter overrides stored on that view. <p><p>Notes:
+		<ul><li>An icon <img src="../Gdr3DMasterImages/I_GenerativeViewStyle03.png"/> is not displayed for the embedded generative view styles for which there is no corresponding XML file. In this case the <span class="uicontrol">Update</span> is disabled when the style is selected.</li>
+<li>After you update a generative view style, the newer imported version of the generative view style overrides the older version. This may affect the result of views generated from the views using this generative view style.</li>
+<li>If the layout or drawing contains views which use generative view styles other than the ones you update, these views are not affected by the update.</li>
+<li>If you paste a view containing generative view style parameter override, the overridden parameters are reset. </li>
+</ul>
+</p>
+</p></dd>
+
+        
+      
+          <dt class="dlterm">Delete
+          </dt>
+
+          <dd>Deletes the selected generative view style from the layout or drawing. <p><ul><li>If one of the selected generative view styles is used by at least one view, then a message is displayed, prompting you to confirm the deletion. </li>
+<li>If you confirm, then all views that refer to this generative view style are disassociated from it and no longer refer to any generative view style.</li>
+</ul>
+</p>
+          </dd>
+
+        
+          <dt class="dlterm">Clean-up
+          </dt>
+
+          <dd>Deletes the embedded generative view style(s) that are not used by any view in the layout or drawing. <p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>You cannot undo the <span class="uicontrol">Update</span>, <span class="uicontrol">Delete</span> and <span class="uicontrol">Clean-up</span> actions. Therefore,  a message is displayed to inform you about this.</td></tr></table>
+</p>
+          </dd>
+
+        <dd class="ddexpand"><p><img src="../Gdr3DMasterImages/I_GenerativeViewStyle01.png"/> Indicates that the related style is embedded.</p><p><img src="../Gdr3DMasterImages/I_GenerativeViewStyle02.png"/> Indicates that the related style is embedded but not applied to any view.</p></dd>
+<dd class="ddexpand"><p><img src="../Gdr3DMasterImages/I_GenerativeViewStyle03.png"/> Indicates that the related style has an available XML definition.</p></dd>
+<dd class="ddexpand"/>
+<dd class="ddexpand"/>
+</dl>
+
+    </div>
+
+    
+    
+    
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

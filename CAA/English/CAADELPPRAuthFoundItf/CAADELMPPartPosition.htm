@@ -1,0 +1,225 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="all" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Customizing the Part Position</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Customizing the Part Position</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAADELMPPartPosition use case. 
+		It explains how to customize Part Position using <em>DELIAMPPartPosition</em>  
+		in Equipment Allocation App.
+		</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAADELMPPartPosition Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAADELMPPartPosition Do?</a></li>
+					<li><a href="#How">How to Launch CAADELMPPartPosition?</a></li>
+					<li><a href="#Where">Where to Find the CAADELMPPartPosition Code?</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case?</h2>
+<p>This use case is intended to help you customize Part Position functionality
+    in Equipment Allocation App. It consists of:</p>
+<ul>
+	<li>Describing the different steps dedicated to the knowhow of the company through 
+		the customization.</li>
+	<li>Using the methods of <em>DELIAMPPartPosition</em> to add/remove/retrieve
+    Part Position in the Equipment Allocation App.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAADELMPPartPosition Use Case</h2>
+<p>CAADELMPPartPosition is a use case of the CAADELPPRAuthFoundItf.edu 
+framework that illustrates Part Position customization capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAADELMPPartPosition Do?</h3>
+<p>In this use case user can:</p>
+<ul>
+	<li>Define a Position for a Manufactured Item implemented by an operation.</li>
+	<li>Retrieve the position defined for a Manufactured Item.</li>
+    <li>Remove Manufactured Item position defined on an Operation.</li>
+    <li>Remove positions defined for all Manufactured Items on Operation.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAADELMPPartPosition?</h3>
+<p>To use CAADELMPPartPosition, you will need to:</p>
+<ul>
+	<li>Set up the <strong>build time</strong> environment, then compile the CAADELMPPartPosition.m 
+		module along with its prerequisites [<a href="#References">1</a>].</li>
+	<li>Set up the <strong>run time</strong> environment.</li>
+	<li>Launch a <strong>3D</strong>EXPERIENCE session.</li>
+	<li>Go to the Equipment Allocation App.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Where"></a>Where to Find the CAADELMPPartPosition Code?</h3>
+<p>The CAADELMPPartPosition use case code is located in the CAADELMPPartPosition.m 
+module of the CAADELPPRAuthFoundItf.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAADELPPRAuthFoundItf.edu\CAADELMPPartPosition.m</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The class <em>CAADELMPPartPositionCmd</em> provides a command.
+This implementation is located in the file CAADELMPPartPosition.m\src\CAADELMPPartPositionCmd.cpp. 
+Its purpose is to allow user to define/manage Part position on an operation.
+</p>
+
+<p>There are four logical steps in CAADELMPPartPosition:</p>
+<ol>
+	<li><a href="#Step1">Defining position for Manufactured Items</a></li>
+    <li><a href="#Step2">Retrieving the positioned Manufactured Items</a></li>
+	<li><a href="#Step2">Retrieving the positioned Manufactured Items and their positions</a></li>
+	<li><a href="#Step3">Removing position defined for a set of Manufactured Items on Operation</a></li>
+    <li><a href="#Step3">Removing positions defined for all Manufactured Items on Operation</a></li>
+</ol>
+<p>We now comment each of those sections by looking at the code.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Use case 1-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Defining position for Manufactured Items</h3>
+<p>Launch the command CAADELMPPartPositionCmd and Select an Operaion.
+    Then select a Manufactured Item that is implemented by the operation.
+    </p>
+<pre class="code">void <a name="CreateCommands"></a><strong>CAADELMPPartPositionCmd::OnSetRelativePosition</strong>()
+{
+    HRESULT RC = E_FAIL;
+    CATListPtrCATIPLMNavOccurrence ListPtrManufacturedItemOccs;
+    ListPtrManufacturedItemOccs.Append(pMfgItemNavOcc);
+    CATMathTransformation RelativeProductPosition;
+	CATMathVector Vector(300, 0, 0);
+	RelativeProductPosition.SetVector(Vector);
+    <strong>RC = _hPartPosition->SetRelativePositionForManufacturedItems(ListPtrManufacturedItemOccs, RelativeProductPosition);</strong>
+}</pre>
+<p>If the <em>ListPtrManufacturedItemOccs</em> contains at least one of the Manufactured Items implemented by the Operation,
+    all the implemented Manufactured Items are positioned together.
+    If the Operation implements any Manufactured Items, the <em>ListPtrManufacturedItemOccs</em> CANNOT contain any non-implemented
+    Manufactured Items. The position is set to all the Manufactured Items in <em>ListPtrManufacturedItemOccs</em>. Calling this API will 
+    first remove all the existing positions and set positions for Manufactured Items present in <em>ListPtrManufacturedItemOccs</em>.
+    If user needs to set position to a set of new Manufactured Items in addition to the existing ones, then it is required to 
+    first retireve all the already positioned Manufactured Items, append new items to that list and set positions for the cumulative list.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Use case 2-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Retrieving the positioned Manufactured Items</h3>
+<p>After positioning one or more Manufactured Items on operation, user can retrieve those Manufactured Items only.</p>
+<pre class="code">void <a name="CreateCommands"></a><strong>CAADELMPPartPositionCmd::OnGetPositionedItems</strong>()
+{
+    HRESULT RC = E_FAIL;
+    CATListValCATBaseUnknown_var ListManufacturedItemOccs;
+    <strong>RC = _hPartPosition->GetPositionedManufacturedItems(ListManufacturedItemOccs);</strong>
+}</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+
+    <p>
+        The API <strong>DELIAMPResourcePosition::GetPositionedManufacturedItems</strong> retrieves <em>only</em> the Manufactured Items that are <strong>loaded</strong>.
+    </p>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Use case 3-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Retrieving the positioned Manufactured Items and their positions</h3>
+<p>After positioning one or more Manufactured Items on operation, user can retrieve those Manufactured Items and their positions.</p>
+<pre class="code">void <a name="CreateCommands"></a><strong>CAADELMPPartPositionCmd::OnGetRelativePosition</strong>()
+{
+    HRESULT RC = E_FAIL;
+    CATMathTransformation RelativeProductPosition;
+    CATListValCATBaseUnknown_var ListManufacturedItemOccs;
+    <strong>RC = _hPartPosition->GetRelativePositionForManufacturedItems(ListManufacturedItemOccs, RelativeProductPosition);</strong>
+}</pre>
+
+    <p>
+        The API <strong>DELIAMPResourcePosition::GetRelativePositionForManufacturedItems</strong> retrieves <em>only</em> the Manufactured Items that are <strong>loaded</strong>.
+        The positions retrieved are relative to the Design Position.
+    </p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Use case 4-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Remove positions for a set of Manufactured Items defined on an Operation</h3>
+<p>It is possible to remove position for a set of Manufactured Items.</p>
+<pre class="code">void <a name="CreateCommands"></a><strong>CAADELMPPartPositionCmd::OnRemovePosition</strong>()
+{
+    HRESULT RC = E_FAIL;
+    DELIAMPPartPosition_var hPartPosition(_hOperation);
+    CATListValCATBaseUnknown_var ListManufacturedItemOccs;
+    <strong>RC = _hPartPosition->RemovePositionForManufacturedItems(ListManufacturedItemOccs);</strong>
+}</pre>
+
+<p>Also, it is possible to remove <strong>ALL</strong> Manufactured Items and their positions.</p>
+<pre class="code">void <a name="CreateCommands"></a><strong>CAADELMPPartPositionCmd::OnRemoveAll</strong>()
+{
+    DELIAMPPartPosition_var hPartPosition(_hOperation);
+    if(NULL_var != hPartPosition)
+    <strong>_hPartPosition->RemoveAllPositions();</strong>
+}</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Use case 5-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article provides an example on how to use the <em>DELIAMPPartPosition</em> 
+interface to add/modify/remove positions for Manufactured Items on operation in Equipment Allocation App.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Oct 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,567 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About the Report File"/>
+<meta name="abstract" content="DXF/DWG generates report files to follow the conversions."/>
+<meta name="description" content="DXF/DWG generates report files to follow the conversions."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dxf-c-Report"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About the Report File</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dxf-c-Report">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWG::report file"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About the Report File</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>DXF/DWG generates report files to follow the conversions.</span>
+
+    <p>
+      The following topics are discussed:
+    </p>
+    
+  </p>
+<ul><li><a href="#c-ReportFiles" id="toc_rg" title="The report file gives you information about the import or export, and helps you solve problems. Always check the report file after a conversion: Some problems may have occurred without been visually highlighted.">Report Files</a></li><li><a href="#c-Troubleshooting" id="toc_rg" title="Below are some information to solve errors.">Troubleshooting</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  
+
+  <div class="nested1" id="c-ReportFiles">
+    <h2 class="topictitle2">Report Files</h2>
+
+    
+    <div><p><span>The report file gives you information about the import or export, and helps you solve problems.
+    Always check the report file after a conversion: Some problems may have occurred without been visually highlighted.</span>
+
+    	
+    </p>
+
+    <div class="section" id="c-ReportFiles__cs-AtImport"><h3 class="sectiontitle">At Import</h3><p><a name="ix-DXF/DWG::report file"> </a>After importing DXF/DWG files, the system generates a 
+      report file (<span class="uicontrol">name_of_file.rpt</span>) where you can find 
+      references about the quality of the transfer. This file is created in a location referenced by:  </p>
+    <ul>
+      <li>
+      the <var class="varname">CATUserSettingPath USERPROFILE</var>  variable on 
+      NT. Its default value is <span class="filepath">Profiles\user\Local Settings\Application Data\Dassault SystemesCATReport</span> 
+      on NT (<span class="uicontrol">user</span> being you logon id)</li>
+
+      <li>
+      the <var class="varname">HOME</var> variable on UNIX. Its default value is
+      <var class="varname">$HOME/CATReport</var> on UNIX. </li>
+
+    </ul>
+
+    <p>In this report file (<span class="uicontrol">name_of_file.rpt</span>), 
+    you will find information about:<ul>
+      <li>The file imported</li>
+
+      <li>The transfer options used</li>
+
+      <li>The mappings used,</li>
+
+    </ul>
+</p>
+    
+    <p>And messages:<ul>
+      <li>Status messages about eventual transfer problems for a given element.</li>
+
+      <li>Information messages written by the support teams.</li>
+
+    </ul>
+</p>
+    
+     <p>Example of a report file:<pre class="msgblock">E:\tmp\MySettings\CATReport\DxfImport1.rpt
+Input: DxfImport1.dxf
+Output: DxfImport1.CATDrawing
+~~~~~~~~~~~~~~~~~~~~~~~OPTIONS~~~~~~~~~~~~~~~~~~~~~~
+Drafting Standard              : ISO
+DXF Standard                   : DXF
+Unit of the file               : Automatic
+Paper Spaces in Background     : Disabled
+Keep Model Space               : Disabled
+Create end points              : Never
+Convert dimensions as          : Exploded Geometry
+Color to thickness             : Disabled
+~~~~~~~~~~~~~~~~~DETAILED CONVERSION~~~~~~~~~~~~~~~~~
+Message types: &lt;E&gt; = Error, &lt;W&gt; = Warning, &lt;I&gt; = Information&lt;W&gt; 
+Some elements may be invisible because they are in an invisible layer.
+They can be seen with activating the filter named Invisible Imported Layers
+&lt;W&gt; Type "insert" Identifier "137" : This element was transferred partially
+&lt;W&gt; Type "insert" Identifier "13D" : This element was transferred partially
+&lt;W&gt; Type "insert" Identifier "13E" : This element was transferred partially
+&lt;W&gt; Type "insert" Identifier "13F" : This element was transferred partially
+&lt;W&gt; Type "insert" Identifier "145" : This element was transferred partially
+&lt;W&gt; Type "insert" Identifier "146" : This element was transferred partially
+&lt;W&gt; Type "insert" Identifier "147" : This element was transferred partially
+~~~~~~~~~~~~~~~~~~AUTOMATISATION~~~~~~~~~~~~~~~~~~~~
+Format : 
+Imported Details -&gt; A1 ISO
+Model -&gt; A1 ISO
+Unit : Millimeter (mm)
+~~~~~~~~~~~~~~~~~~~USED MAPPINGS~~~~~~~~~~~~~~~~~~~~
+For Line Types:
+CONTINU -&gt; 1
+CONTINUOUS -&gt; 1
+AXES -&gt; 7
+For Text Fonts:
+EUCSYMB -&gt; SSS4
+=====================================================
+~~~~~~~~~~~~~~~~~CONVERSION SUMMARY~~~~~~~~~~~~~~~~~
+OK = Transferred  
+KO = Not transferred  
+NS = Unsupported 
+OUT = Out of size 
+DEG = Degenerated 
+INV = Invalid  
+------------------------------------------------------------
+|  Entity Type  |  OK  |  KO  |  NS  |  OUT  |  DEG  |  INV  |  
+------------------------------------------------------------
+| arc           |  156 |    0 |    0 |     0 |     0 |     0 | 
+| block         |   50 |    0 |    0 |     0 |     0 |     0 | 
+| circle        |   21 |    0 |    0 |     0 |     0 |     0 | 
+| dimension     |   80 |    0 |    0 |     0 |     0 |     0 | 
+| insert        |   43 |    0 |    0 |     0 |     7 |     0 |
+| layer         |    2 |    0 |    0 |     0 |     0 |     0 |  
+| layout        |    1 |    0 |    0 |     0 |     0 |     0 |
+| line          | 4639 |    0 |    0 |     0 |     0 |     0 |
+| point         |  356 |    0 |    0 |     0 |     0 |     0 |  
+| polyline      |  408 |    0 |    0 |     0 |     0 |     0 |
+| text          |  264 |    0 |    0 |     0 |     0 |     0 | 
+------------------------------------------------------------  
+|  Result       | 6020 |    0 |    0 |     0 |     7 |     0 | 
+------------------------------------------------------------ 
+====================================================== 
+Transcription time in seconds: 5.289000</pre></p><dl><dt class="dlterm">The first lines</dt>
+<dd> Indicate:<ul><li>The name and path of the input file</li>
+<li>The name of the input</li>
+<li>The name of the output.</li>
+</ul>
+</dd>
+<dt class="dlterm">OPTIONS</dt>
+<dd>Lists the options used in the settings. </dd>
+<dt class="dlterm">DETAILED CONVERSION</dt>
+<dd>Lists the status messages.<dl><dt class="dlterm">Syntax</dt>
+<dd>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d6272e138">Message Type</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d6272e140">Element Type</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d6272e142">Identifier</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d6272e144">Element Status/Information Text</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d6272e138 ">&lt;E&gt;</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d6272e140 ">Type hatch</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d6272e142 ">Identifier 8434</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d6272e144 ">This element was not transferred</td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd>
+<dt class="dlterm">Message Type</dt>
+<dd>Either <span class="uicontrol">E</span>rror, <span class="uicontrol">W</span>arning or 
+    <span class="uicontrol">I</span>nformation:<ul>
+      <li>Error means that there is a failure.</li>
+
+      <li>Warning means that there may be a failure.</li>
+
+      <li>Information informs you of the possible cause of failure.</li>
+
+    </ul>
+</dd>
+<dt class="dlterm">Element Type</dt>
+<dd>Type of the DXF/DWG element processed.</dd>
+</dl>
+</dd>
+<dt class="dlterm">Identifier</dt>
+<dd>Hexadecimal number referencing the 
+    DXF/DWG element processed.</dd>
+<dt class="dlterm">Element Status/Information Text</dt>
+<dd> Informative part of the 
+    message.</dd>
+<dt class="dlterm">AUTOMATISATION</dt>
+<dd>Lists the format and unit chosen.</dd>
+<dt class="dlterm">USED MAPPINGS</dt>
+<dd>Lists the mappings used in that operation for the line 
+    types and the fonts.
+    <p>Notes:
+		<ul><li>The mappings can be changed. See <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a> for more information.</li>
+<li>Only those actually used are listed.
+    </li>
+<li>The report file does not yet indicate whether the mapping is the 
+      default one or a customized one.</li>
+<li>There is no information yet about an automatic Thickness/Thickness 
+      mapping.</li>
+</ul>
+</p>
+</dd>
+<dt class="dlterm">CONVERSION SUMMARY</dt>
+<dd>Lists the conversion results.</dd>
+<dt class="dlterm">The last line</dt>
+<dd>Gives the <span class="uicontrol">Transcription time</span>.</dd>
+</dl>
+
+ 
+
+    
+    
+ 
+    
+    
+    
+    
+    
+    
+    
+
+    
+</div>
+
+  <div class="section" id="c-ReportFiles__cs-AtExport"><h3 class="sectiontitle">At Export</h3><p>After exporting data to DXF/DWG files, the system 
+    generates a 
+      report file (<span class="uicontrol">name_of_file.rpt</span>) where you can find references 
+    about the quality of the transfer. This file is created in a location referenced by:</p>
+    <ul>
+      <li>
+      the <var class="varname">USERPROFILE</var> variable on NT.  
+      Its default value is <span class="filepath">Profiles\user\Local Settings\Application Data\Dassault Systemes\CATReport</span>
+       
+      on NT (<span class="uicontrol">user</span> being you logon id).</li>
+
+      <li>
+      the <var class="varname">HOME</var> variable on UNIX. Its default value is
+      <span class="filepath">$HOME/CATReport</span> on UNIX. </li>
+
+    </ul>
+
+    <p>In this report file, 
+    you will find information about:<ul>
+      <li>The result</li>
+
+      <li>The transfer options used</li>
+
+    </ul>
+</p>
+    
+    <p>And messages:<ul>
+      <li>Status messages about eventual transfer problems for a given element.</li>
+
+      <li>Information messages written by the support teams.</li>
+
+    </ul>
+</p>
+    
+    <p>Example of a report file:<pre class="msgblock">E:\tmp\MySettings\CATReport\DxfExportPicturePattern.rpt 
+Input: DxfExportPicturePattern --- IN_WORK
+Output: DxfExportPicturePattern.dxf
+~~~~~~~~~~~~~~~~~~~~~~~OPTIONS~~~~~~~~~~~~~~~~~~~~~~
+Exported sheets                : Only current
+Version                        : DXF/DWG 2000
+Export mode                    : Semantic
+Export dimensions as Dimensions: Enabled
+Export blocks                  : One level
+Export layer mode              : Export layer number
+Export Unit                    : Millimeter (mm)
+~~~~~~~~~~~~~~~~~DETAILED CONVERSION~~~~~~~~~~~~~~~~~
+Message types: &lt;E&gt; = Error, &lt;W&gt; = Warning, &lt;I&gt; = Information
+~~~~~~~~~~~~~~~~~~~USED MAPPINGS~~~~~~~~~~~~~~~~~~~~
+For CATIA Patterns Motif :
+DrwPatternMotifConcret1 -&gt; AR-CONC
+===================================================== 
+~~~~~~~~~~~~~~~~~CONVERSION SUMMARY~~~~~~~~~~~~~~~~~ 
+OK = Transferred  
+KO = Not transferred  
+NS = Unsupported 
+OUT = Out of size 
+DEG = Degenerated
+INV = Invalid  
+------------------------------------------------------------
+|  Entity Type  |  OK  |  KO  |  NS  |  OUT  |  DEG  |  INV  |  
+------------------------------------------------------------
+| arc           |    2 |    0 |    0 |     0 |     0 |     0 |
+| circle        |    1 |    0 |    0 |     0 |     0 |     0 |
+| ellipse       |    1 |    0 |    0 |     0 |     0 |     0 |
+| hatch         |    3 |    0 |    0 |     0 |     0 |     0 | 
+| line          |   20 |    0 |    0 |     0 |     0 |     0 | 
+ ------------------------------------------------------------
+|  Result       |   27 |    0 |    0 |     0 |     0 |     0 | 
+ ------------------------------------------------------------
+======================================================
+Transcription time in seconds: 0.749000</pre></p><dl><dt class="dlterm">The first lines</dt>
+<dd>Iindicate:<ul><li>Where the report file has been 
+    created.</li>
+<li>The name of the input.</li>
+<li>The name of the output.</li>
+</ul>
+</dd>
+<dt class="dlterm">OPTIONS</dt>
+<dd>Lists the options used in the settings.</dd>
+<dt class="dlterm">DETAILED CONVERSION</dt>
+<dd>Empty at export.</dd>
+<dt class="dlterm">USED MAPPINGS</dt>
+<dd>Lists the mappings used during export, namely for the patterns.</dd>
+<dt class="dlterm">CONVERSION SUMMARY</dt>
+<dd>Lists the conversion results.</dd>
+<dt class="dlterm">The last line</dt>
+<dd>Gives the <span class="uicontrol">Transcription time</span>.</dd>
+</dl>
+
+ 
+
+
+
+
+    
+ 
+  
+  
+
+
+
+
+</div>
+</div>
+
+
+    
+
+    
+  </div>
+
+
+  <div class="nested1" id="c-Troubleshooting">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Troubleshooting</h2>
+
+    
+    <div><p><span>Below are some information to solve errors.</span>
+
+      <a name="ix-DXF/DWG::troubleshooting"> </a>
+    </p>
+
+      <p>
+        <dl><dt class="dlterm">The R of a radius dimension is a conglomerate of a P with a small \</dt>
+<dd>The DXF model is probably the result of a graphic export. 
+      In this case, texts are no real texts but geometry.</dd>
+<dt class="dlterm">In export/import loops, some line types are lost.
+</dt>
+<dd><a name="ix-DXF/DWG::lost line"> </a>The mapping of the line types is not complete:<ul><li>For line types between 1 and 8, there is an automatic mapping
+between AutoCAD and <span><span class="tm-3D">3D</span>EXPERIENCE</span> line types. The line type is kept during
+export/import loops.
+</li>
+<li>For line types over 8, there is no automatic mapping between
+AutoCAD and <span><span class="tm-3D">3D</span>EXPERIENCE</span> line types. Those line types are exported to DXF
+with a continuous graphic representation and a name such as CATIA9,
+CATIA10, etc. Those names enable you to identify them in the DXF
+file.
+</li>
+<li>You can enhance the mapping. See <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a>.</li>
+</ul>
+
+</dd>
+<dt class="dlterm">Problem of alignment of DIMtext to DIMline</dt>
+<dd>            <a name="ix-DXF/DWG::dimension alignement"> </a>This occurs while opening a DXF file created with ANSI standard 
+            using an ISO standard (or vice-versa). Select the required Drawing standard. </dd>
+<dt class="dlterm">Inconsistency between the import of dimensions with the semantic
+preserving option (Convert dimensions as: Dimensions)
+and the import of dimensions with the graphic preserving option
+(Convert dimensions as: Details or Geometry</dt>
+<dd><a name="ix-DXF/DWG::semantic vs graphic"> </a>This is generally due to an inconsistency in the DXF/DWG file
+itself (the aspect is different in AUTOCAD14 and AUTOCAD2000). This happens with files that have not been generated with AUTOCAD.
+
+Usually, the graphic mode should be used, but only the author of
+the file can confirm it.
+The DXF/DWG file contains both data:<ul>
+<li>The semantic data is the definition of the dimension: its
+attach points and all the properties of the value, text, line,
+leaders, …, most of them inherited from the dimension style.</li>
+
+<li>The graphic data is the resulting representation of the
+dimension, composed with lines, arcs, texts, gathered in an
+internal block.</li>
+
+</ul>
+
+
+<p>Most of the time, the graphic and semantic data are consistent
+but nothing in the DXF/DWG format can insure that.
+The DXF import option lets you choose the data to use during the
+import.
+
+A way to check that the inconsistency comes from the DXF/DWG file
+itself is to open it in DraftSight. The graphic representation is
+first displayed. When pointing a dimension and moving slightly a
+point for example, the graphic representation is recomputed from
+the semantic data and may be completely different from the original
+one.</p>
+</dd>
+<dt class="dlterm">Proxy Entities</dt>
+<dd><a name="ix-DXF/DWG::proxy"> </a>Proxy entities are found in a DXF/DWG files that are not generated
+directly by AutoCAD but by an application based on AutoCAD, e.g.
+AutoCAD Mechanical.
+This application manages applicative objects that are not included
+in the standard DXF format. These objects can be edited and
+manipulated only by the application that generated them, but for a
+compatibility purpose, a graphic representation can be associated
+to this object. This associated representation is optional and is
+named a Proxy (type ACAD_PROXY_ENTITY). During import the proxy is
+converted into a graphic block that is imported as a <span><span>Drawings</span></span>
+detail instantiated at the place of the proxy. It can be edited
+like any detail.
+</dd>
+<dt class="dlterm">Hatches imported as geometry</dt>
+<dd><a name="ix-DXF/DWG::hatch"> </a>The result of import is a geometry instead of a filled area.The original DXF/DWG file does not contain real hatches but geometry or 
+      blocks.
+      <p>Note:
+		Real hatches are mapped automatically.</p>
+</dd>
+<dt class="dlterm">Incorrect fonts</dt>
+<dd><ul>
+      <li><a name="ix-DXF/DWG::font"> </a>See <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a> to check the mappings.</li>
+
+          <li>Problems with accented characters</li>
+<li>True Type fonts on Windows provide the same fonts in your system 
+            and AUTOCAD.</li>
+
+      <li>Check the Report file in order to identify the fonts that were mapped 
+      to default or incorrectly mapped, and correct the DXF standard in 
+      consequence.</li>
+<li>Texts are larger than their frame. Check the ratio in the TextFontMapping section of the mapping.</li>
+
+    </ul>
+</dd>
+<dt class="dlterm">Incorrect lines types</dt>
+<dd><a name="ix-DXF/DWG::line type"> </a>DXF lineTypes become CONTINUOUS:<ul>
+      <li>See <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a>  
+      to define the mapping between the line types you use in AutoCAD and the 
+      line types you will associate in <span><span>Drawings</span></span>. </li>
+
+      <li>The mapping between DXF and <span><span>Drawings</span></span> line types is available in the Line 
+      Type Mapping section of the DXF standard. </li>
+
+      <li>Check the Report file in order to identify the line types that were 
+      mapped to default (continuous) or incorrectly mapped and correct the DXF 
+      standard in consequence.</li>
+
+    </ul>
+</dd>
+<dt class="dlterm">Missing header</dt>
+<dd> <a name="ix-DXF/DWG::missing header"> </a>Arrows and rectangle are missing when importing a Text with Leader 
+	from AutoCAD. The width of the polyline is not correctly processed:<ul>
+		<li>Arrow heads are not supported.</li>
+
+		<li>The rectangle will be imported by improving the mapping of thick DXF 
+		polylines in the corresponding section of the 
+      DXF standard with <span class="uicontrol">ThickPolylineMapping/CreateAreaFill </span>and 
+		<span class="uicontrol">ThickPolylineMapping/MinThicknessForAreaFill</span>.  
+		When the width of the polyline is not null:<ul>
+			<li><span class="uicontrol">CreateAreaFill=yes</span> authorizes the area fill creation. 
+			In this case, if width is greater than the value of <span class="uicontrol">MinThicknessForAreaFill,</span> an area fill that represents the 
+			exact geometry of the thick polyline is created.</li>
+
+			<li><span class="uicontrol">CreateAreaFill=No</span>, or if width is lower than the 
+			value of <span class="uicontrol">MinThicknessForAreaFill</span>, the lines and arcs are 
+			created with a line thickness mapped from the polyline width.</li>
+
+		</ul>
+
+		</li>
+
+	</ul>
+ </dd>
+<dd class="ddexpand">The value taken for the width is the greater one of <span class="uicontrol">startWidth</span> 
+	or <span class="uicontrol">endWidth</span> for each segment of the polyline. 
+	The standard values of the parameters above will avoid the missing 
+	rectangle. 
+	The report file indicates how the thick polylines are mapped.<p>Notes:
+		  <ul>
+            <li>When an area fill is created, the linetype of the polyline is 
+			not taken into account. This applies only when the width is greater 
+			than the value of <span class="uicontrol">MinThicknessForAreaFill</span> given in the 
+			DXF standard. </li>
+
+			<li>When no area fill is created, in the case of polyline with 
+			constant width, arcs or lines will be created for each segment, but 
+			no <span><span>Drawings</span></span> polyline.</li>
+
+          </ul>
+</p>
+</dd>
+<dt class="dlterm">Missing elements</dt>
+<dd>If some elements are missing, make sure that the All Visible or the None 
+    filter is activated and restart the export.</dd>
+<dt class="dlterm">Unexpected visible entities</dt>
+<dd><ul><li>      All DXF/DWG invisible layers are gathered in a filter 
+            named Invisible Imported Layers.</li>
+<li>All DXF/DWG visible layers are gathered in a 
+    filter 
+            named Visible Imported Layers.
+          </li>
+</ul>
+<p>If the expected entities are not visible, activate the Visible 
+          Imported Layers filter, 
+          or if too many entities are visible, activate the Invisible Imported 
+          Layers filter.</p></dd>
+<dt class="dlterm">Small entities</dt>
+<dd><p>When importing a 
+    DXF/DWG file, the display of small entities may depend on zoom factor. To 
+    see the complete Drawing regardless of their size, switch the value of Level of detail/static to zero. </p></dd>
+<dt class="dlterm">Modified coordinates of points</dt>
+<dd><a name="ix-DXF/DWG::modified coordinates of points"> </a>In export/import loops, coordinates of points have changed:<ul><li>The export does not yet support views.</li>
+<li>The geometry of each view is 
+    transferred as seen in the input sheet axis system.</li>
+</ul>
+  <p>In this case, the 
+    coordinates that were seen in the view axis system are not kept: they are given in the sheet axis system.</p></dd>
+<dt class="dlterm">Too small or too large an imported file </dt>
+<dd>A DXF/DWG file does not contain its units. 
+    You must enter the unit used for the creation of the file to import it at 
+    the correct scale. </dd>
+<dt class="dlterm">Unexpected exported scale</dt>
+<dd><p><a name="ix-DXF/DWG::export scale"> </a>You have exported a view with a scale 2:1, with geometry in it. The result is not a 
+      view with a scale 2:1 but geometry twice as big as the input geometry.</p><p>The export does not yet support views. The geometry of each view is 
+      transferred as seen in the input sheet axis system. In this case, the 
+      scale of the view has been applied to the geometry.</p></dd>
+<dt class="dlterm">Curve tolerance</dt>
+<dd><a name="ix-DXF/DWG::curve tolerance"> </a>When working with 
+    V4, if you open a DXF or DWG file created in <span><span>Drawings</span></span>,
+    you need to set the curve tolerance to 0.0001 (0.1 as default). </dd>
+<dt class="dlterm">Multi-sheet Drawing</dt>
+<dd><a name="ix-DXF/DWG::multi-sheet drawing"> </a>Multi-sheet drawing export has some limitations:<ul><li>When there are several sheets, the name of the file really created is not that entered by the user in the Save as dialog box, since it is concatenated with that of the sheet. Therefore, it is not possible to check if a file with the same name already exists and any existing file will be overwritten without warning.</li>
+<li>If one of the sheets contains no geometry, no DXF file is created.</li>
+<li>The number of characters of the name of the result file is limited to 150.</li>
+<li>If the name of a sheet contains one of the following characters <span class="uicontrol"> \ / : * ? " &lt; &gt; ¦ . £ $ % ^ &amp; ! # ~ @ ; </span> or a blank space, the character will be replaced with <span class="uicontrol">_</span> (underscore). </li>
+</ul>
+ </dd>
+<dt class="dlterm">Kanji and Unicode Fonts</dt>
+<dd><a name="ix-DXF/DWG::kanji"> </a><a name="ix-DXF/DWG::unicode"> </a>Exported Kanji or unicode characters may be missing or displayed
+incorrectly after opening the DXF/DWG file in the receiving system.
+In order to visualize them, edit the the text style STANDARD in this system and associate the font associated to this style to an unicode font.</dd>
+<dt class="dlterm">Code Pages</dt>
+<dd><a name="ix-DXF/DWG::code page"> </a>DBCS (Double Byte Character Set) Supported Code Pages are:<ul><li>932 (Japanese)</li>
+
+<li>936 (Simplified Chinese)</li>
+<li>949
+(Korean)</li>
+
+<li>950 (Traditional Chinese).</li>
+
+</ul>
+</dd>
+</dl>
+
+      </p>
+    </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

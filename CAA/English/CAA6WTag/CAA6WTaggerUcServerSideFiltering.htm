@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Implementing Service Side Filtering</title>
+</head>
+<body onload="createToc();highlightSearchTerms();">
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Implementing Service Side Filtering</h1>
+		</td>
+	</tr>
+	<tr> 
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<table class="abstract">
+	<tr>
+		<td>
+			<h2>Abstract</h2>
+			<p>This article describes a widget implementing the scenario where the subject filtering is performed (by simulation) on 
+			server side.
+			It is an implementation of the scenario presented in the "6WTagger Integration - API" article [<a href="#References">1</a>]. </p>
+            <p>The reading of 6WTagger Integration - Principles [<a href="#References">2</a>] is a pre-requisit, as well the article about widget object [<a href="#References">3</a>]. </p> 			
+			<ul>
+				<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+				<li><a href="#UseCase">The ServerSideFiltering Use Case</a>
+				<ul>
+					<li><a href="#What">What Does ServerSideFiltering Do</a></li>
+					<li><a href="#How">How to Launch ServerSideFiltering</a></li>
+					<li><a href="#Where">Where to Find the ServerSideFiltering Code</a></li>
+				</ul>
+				</li>
+				<li><a href="#Step">Step-by-Step</a></li>
+				<li><a href="#InShort">In Short</a></li>
+				<li><a href="#References">References</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you how to create and work with the 
+<a href="#" onclick="CAAlinkJS('TagNavigator', 'TagNavigatorProxy', 'DS/TagNavigatorProxy/Tagger6WProxy'); return false;">Tagger6WProxy</a> class.
+ </p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="UseCase"></a>The ServerSideFiltering Use Case</h2>
+<p>ServerSideFiltering is a use case of the CAATagNavigator.edu framework. 
+It illustrates 6WTagger integration inside widgets capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="What"></a>What Does ServerSideFiltering Do</h3>
+<p>Before showing the widget UI, let's describe the data. </p>
+<h4>About Data</h4>
+<p>ServerSideFiltering  is a widget managing data which are buildings (generic name for houses and buildings). They share the fact to have been conceived by an architect. From that 
+we deduce the following subject/predicate/object links:</p>
+ <table>
+	<tr>
+		<td><img alt="onLoad" src="images/CAA6WTagUcFilteringSchema.png"/></td>
+	</tr>
+</table>
+<p>The data are all listed by this array. The first column is the building name (suject), and the second column is the architect name (object).</p>
+<table class="fill">
+<tr><th>Building Name</th><th>Architect Name</th></tr>
+<tr><td>house1</td><td>Le Corbusier</td></tr>
+<tr><td>house2</td><td>Le Corbusier</td></tr>
+<tr><td>house3</td><td>Zaha Hadid</td></tr>
+<tr><td>house4</td><td>Frank Gehry</td></tr>
+<tr><td>house5</td><td>Frank Gehry</td></tr>
+<tr><td>house6</td><td>Frank Gehry</td></tr>
+<tr><td>house7</td><td>Frank Gehry</td></tr>
+<tr><td>building1</td><td>Le Corbusier</td></tr>
+<tr><td>building2</td><td>Le Corbusier</td></tr>
+<tr><td>building3</td><td>Frank Gehry</td></tr>
+<tr><td>building4</td><td>Jean Nouvel</td></tr>
+</table>
+<p>The predicate "hasForArchitect" is classified within the "who" category, one of the six root categories. The display name for the predicat is "Architect".</p> 
+<p>In this use case, we choose to <b>simulate</i> server side filtering</b>. The subjects are useless for the 6WTagger. The 6WTags are provided as a summary: a count of subjects for
+a predicate/object couple. </p>
+<table class="fill">
+<tr><th>Architect Name</th><th>Count</th></tr>
+<tr><td>Le Corbusier</td><td>4</td></tr>
+<tr><td>Zaha Hadid</td><td>1</td></tr>
+<tr><td>Frank Gehry</td><td>5</td></tr>
+<tr><td>Jean Nouvel</td><td>1</td></tr>
+</table>
+<h4>About UI</h4>
+<p>Once the widget is launched in a dashboard, <b>open the Preferences menu</b> and choose "Server Side Filtering" (default widget preference)</p> 
+ <table>
+	<tr>
+		<td><img alt="Preferences" src="images/CAA6WTagUcFilteringServerSideUP.png"/></td>
+	</tr>
+</table>
+<p><a name="WidgetDeb"></a><b>The widget body shows </b>all the data, the current selected tags, and the refined subjects. At first no filtering, therefore all the subjects are listed.</p>
+ <table>
+	<tr>
+		<td><img alt="WidgetBody" src="images/CAA6WTagUcServerSideWdgWoFiltering.png"/></td>
+	</tr>
+</table>
+<p><b>Open the 6WTagger</b>, the predicate with the 4 objects are visible:</p>
+ <table>
+	<tr>
+		<td><img alt="Openthe6WTagger" src="images/CAA6WTagUcServerSideTaggerWoFiltering.png"/></td>
+	</tr>
+</table>
+<p><a name="WidgetSelect"></a><b>Select tags</b>, the list of refined sujects, as well the selected tag set, are automatically updated.</p>
+ <table>
+	<tr>
+		<td><img alt="SelectTag" src="images/CAA6WTagUcServerSideTaggerWithFiltering.png"/></td>
+	</tr>
+</table>
+<p>The list of filtered subjects is computed by a function based on the selected tag set.</p> 
+ 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="How"></a>How to Launch ServerSideFiltering</h3>
+<p>To launch ServerSideFiltering please follow the instructions described here  [<a href="#References">4</a>].
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Where"></a>Where to Find the ServerSideFiltering Code</h3>
+<p>The ServerSideFiltering use case is made of one file  located in: </p>
+<p><code>InstallRootFolder\CAADoc\CAATagNavigator.edu\CAA6WTagFilteringMode.mweb\src\CAA6WTagFilteringMode.html</code>.</p>
+	
+<p>Where <code>InstallRootFolder</code> is the folder where the API CD-ROM is installed [<a href="#References">4</a>].
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are several logical steps in ServerSideFiltering use case: </p>
+<ul>
+	<li>In the onLoad method
+	<ul>
+    <li><a href="#Create6WTags">Create the 6WTags as Summary</a></li>
+	<li><a href="#CreateProxy">Create the Proxy</a></li>
+	<li><a href="#EventSubs">onFilterChange Event Subscription</a></li>
+	<li><a href="#WidgetUI">Put in Place Widget UI</a></li>
+	</ul>
+	</li>
+	<li>In the callback method
+	  <ul>
+		<li><a href="#Filtering">Update UI After Tag Selection</a></li>
+		<li><a href="#Set6WTags">Set 6WTags to the Proxy</a></li>
+    </ul>
+	</li>
+	<li>Widget Refresh
+	<ul>
+		<li><a href="#Deletion">Proxy Deletion</a></li>
+    </ul>
+	</li>
+	<li>Server Side Filtering
+	<ul>
+		<li><a href="#FilteringSS">Subject Filtering</a></li>
+    </ul>
+	</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Create6WTags"></a>Create the 6WTags as Summary</h3>
+<p>The JSON object, named <code>dataDB</code>, containing the 6WTags as a summary form is as follows:</p>
+<pre class="code">
+var dataDB= [ 
+   {'object'    : 'lcr', 'sixw'     : 'ds6w:who/Architect',  'dispValue' : 'Le Corbusier',  'type'      : 'string', 'count'     : 4 }, 
+   {'object'    : 'zhd', 'sixw'     : 'ds6w:who/Architect',  'dispValue' : 'Zaha Hadid',    'type'      : 'string', 'count'     : 1 } , 
+   {'object'    : 'fgy', 'sixw'     : 'ds6w:who/Architect',  'dispValue' : 'Frank Gehry',   'type'      : 'string', 'count'     : 5 } ,
+   {'object'    : 'jnl', 'sixw'     : 'ds6w:who/Architect',  'dispValue' : 'Jean Nouvel',   'type'      : 'string', 'count'     : 1 }
+]  ;
+</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="CreateProxy"></a>Create the Proxy</h3>
+<p>The variable <code>taggerProxy</code> has been previously declared in the html page.</p>
+<p>From now on we are inside the <i>onLoad</i> method of the widget. </p>
+<pre class="code">
+var options= {
+    <b>widgetId</b> : widget.id,
+    <b>filteringMode</b> : widget.getValue("FilteringMode")   // ="FilteringOnServer"
+};
+taggerProxy = TagNavigatorProxy.<b>createProxy</b>(options);
+</pre>
+<p>The proxy is created using the <i>createProxy</i> of the 
+<a href="#" onclick="CAAlinkJS('TagNavigator', 'TagNavigatorProxy', 'DS/TagNavigatorProxy/TagNavigatorProxy'); return false;">DS/TagNavigatorProxy/TagNavigatorProxy</a>  AMD module [<a href="#References">5</a>] represented by 
+the variable <i>TagNavigatorProxy</i>.  The unique argument of this method is a JSON containing the widget identifier, and the type of proxy. 
+For the latter the value is "FilteringOnServer". </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="EventSubs"></a>onFilterChange Event Subscription</h3>
+<p>The proxy makes a subscription to be informed when the end-user makes a tag selection. </p>
+<pre class="code">
+taggerProxy.<b>addEvent</b>('onFilterChange',MyWidget.onFilterChange );
+</pre>
+<p>The first argument is the event name ("onFilterChange"), and the second a callback function described in the <a href="#Filtering">Update UI After Tag Selection</a> step.  
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="WidgetUI"></a>Put in Place Widget UI</h3>
+<p>Before providing the tags to the 6WTaggers we initialize the widget body contents as you can see on a picture <a href="#WidgetDeb">above</a>. </p> 
+<pre class="code">
+widget.body.innerHTML ="&lt;h3&gt;All Subjects:&lt;/h3&gt;"; 
+    widget.body.innerHTML += MyWidget.displaySubjects(subjectDB);
+    widget.body.innerHTML +="&lt;br/&gt;";
+    widget.body.innerHTML +="&lt;h3&gt;Selected Tags:&lt;/h3&gt;"; 
+    widget.body.innerHTML +="&lt;table&gt;&lt;tr&gt;&lt;td class='classTags'&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" ;
+    widget.body.innerHTML +="&lt;br/&gt;";
+    widget.body.innerHTML +="&lt;h3&gt;Subjects:&lt;/h3&gt;"; 
+    widget.body.innerHTML +="&lt;table&gt;&lt;tr&gt;&lt;td class='classSubjects'&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" ;
+...
+MyWidget.<a href="#Filtering">onFilterChange</a>(null); 
+...
+</pre>
+<p>In our basic use case, we create the DOM elements in the <i>onLoad</i> method. Then we update the "Selected Tags" and "Filtered Subjects" sections 
+ using the  
+same function (onFilterChange) which is triggered when the end-user makes a tag selection. Setting null as input argument of this function means no filtering, and leads to display 'no selected tag' and
+'house1,house2,house3,house4,house5,house6,house7,building1,building2,building3,building4' in the mentioned sections respectively. </p>
+<p>The <i>onFilterChange</i> function is
+detailed in <a href="#Filtering">Update UI After Tag Selection</a>, the next step.</p> 
+<p>We have reached the end of the <i>onLoad</i> method.</p>
+<p><b>Note:</b> When the onLoad function is finished, if there is a current selection, and if 6WTags are associated with the proxy (see next step), 
+the 6WTagger emits a "onFilterChange" event, so the widget UI could be updated to take into account previous selections.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Filtering"></a>Update UI After Tag Selection</h3>
+<p>This tasks consists in 
+updating the "Selected Tags" and "Filtered Subjects" sections in the widget body according to a given refinement filter. We do it in the 
+callback function the proxy has declared for the <a  href="#EventSubs">subscription</a> to the "onFilterChange" event. </p>
+<p><code>filter</code>, the unique argument of the callback can be:</p>
+<ul>
+<li>null, when we call it in the <i>onLoad</i> method to <a href="#WidgetUI">initialize the UI</a>.</li>
+<li>A JSON object containing on key: (The format of such non null filter is fully described <a href="CAA6WTaggerAPI.htm#onFilterChange">here</a>)
+  <ul>
+  <li>"allfilters" - for  the selected tags - whose value is a JSON object with 0 to N keys, each key is a predicate, whose value is an array.</li>
+
+  </ul>
+ 
+  </li>
+</ul>
+<p>This is the contents of the  <i>onFilterChange</i> method, the callback function:</p>
+<pre class="code">
+<b>onFilterChange</b>: function (filter) {
+ 
+    // Display Selected Tags
+    var theSelectedTagElt = widget.body.querySelector('.classTags'); 
+    <b>if ( filter && filter.allfilters ) {</b>
+        theSelectedTagElt.innerHTML= JSON.stringify(filter.allfilters) ;
+    }else {
+        theSelectedTagElt.innerHTML= "No Selected Tags" ;
+    }
+	
+    //Display Subjects
+    var theSubjectsElt = widget.body.querySelector('.classSubjects'); 
+    var SubjectList= MyWidget.<a href="#FilteringSS">subjectFromTags</a>(filter); 
+    if ( SubjectList.length == 0 ) {
+        theSubjectsElt.innerHTML="No Content to display";
+    } else {
+        theSubjectsElt.innerHTML=MyWidget.subjectFromTags(filter);
+    }
+    
+    //Set tags - see next step	
+}
+</pre>
+<p>The list of filtered building should be performed server side. The  <i>subjectFromTags</i> method simulates it. </p>
+<p>After the selection the widget body is as depicted by the <a href="#WidgetSelect">picture above</a>.</p>
+<p>This callback method is invoked when:</p>
+<ol>
+<li>The end-user has just selected a tag, the 6Wtagger is still open, and the widget is visible,<b> or not</b>, in the current tab page,</li>
+<li>The end-user has selected a tag from the current tab page, closed the 6WTagger, and instantiated this widget in the same  current tab page.</li>
+</ol>
+<p>For the first point, we recall that all widget proxies  -except if deactivated - of the same tab page of a dashboard having subscribed to a tag selection event 
+are informed after a selection whatever the widget state: minimized, maximized, windowed or fullscreen. </p>
+<p>For the second point, it means that once instantiated the widget can update its contents accordingly previous tag selection in the current tab page. 
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Set6WTags"></a>Set 6WTags to the Proxy</h3>
+<p>This step MUST BE performed in the onFilterChange callback function, otherwise the 6Wtagger will hang. </p> 
+<pre class="code">
+taggerProxy.<b>setTags</b>(null,<a href="#Create6WTags">dataDB</a>);
+</pre>
+<p>The first argument is null because the widget does not allow the end user to create explicit tags  [<a href="#References">6</a>] .</p>
+<p>The second argument is the 6WTags as a summary, whose the contents is defined server side. In our case the contents does not change, we use the same variable.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Deletion"></a>Proxy Deletion</h3>
+<p>In our use case we need to perform a deletion of the created proxy when the widget is refreshed by 
+the end user. This appends when using the "Refresh" item in the action menu of the widget [<a href="#References">7</a>]. Indeed the widget does not 
+subscribe to the onRefresh event, so the <i>onLoad</i> method is triggered when the Refresh item is selected. The widget callback order is explained in the referenced article
+[<a href="#References">3</a>].</p>
+<p>So in the <i>onLoad</i> before <a href="#CreateProxy">creating the proxy</a>, if the proxy already exists we delete it. </p>
+<pre class="code">
+...
+if ( taggerProxy ) {
+    taggerProxy.<b>die();</b>
+}
+taggerProxy = TagNavigatorProxy.createProxy(options);
+...
+</pre>
+<p>If the widget is reloaded by the dashboard, the deletion is automatically performed by the 3DDashboard engine. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="FilteringSS"></a>Subject Filtering</h3>
+<p>The use case has almost (*) implemented the refinement algorithm explained at the end of the referenced technical article [<a href="#References">2</a>].</p>
+<pre class="code">
+subjectFromTags : function (filter) {
+    var listSubject = [] ;
+    var subjectDBFiltered = {} ;
+
+    var subjectDBCopy = JSON.parse(JSON.stringify(subjectDB));
+
+    var atLeastOnFilter=false ;
+    if ( filter && filter.allfilters ) {
+        var allFilters=filter.allfilters ;
+        for (var predicate in allFilters){  
+            atLeastOnFilter=true;
+            listSubject = [] ;
+            var predicateObjects= allFilters[predicate] ;
+            for ( var couple in predicateObjects ) {
+                var object=predicateObjects[couple].object;
+
+                for (var subject in subjectDBCopy){
+                    var SubjectArray=subjectDBCopy[subject] ;
+                    var i=0 ;
+                    var found= false ;								
+                    while ( ! found &&  ( i&lt; SubjectArray.length )  ) {
+                        var objectToComp = SubjectArray[i].object ;
+                        var predicateToComp = SubjectArray[i].sixw ;
+                        if ( ( objectToComp === object ) && ( predicateToComp === predicate  ) ) {
+                            listSubject.push(subject);
+                            subjectDBFiltered[subject] = SubjectArray ;
+                            found = true;
+                        }
+                        i++ ;
+                    }
+                }							
+            }
+            // switch subjectDBFiltered and subjectDBCopy
+            subjectDBCopy=subjectDBFiltered;
+            subjectDBFiltered = {} ;
+        }
+    }
+    // If no filter, all DB subjects are OK
+    if ( ! atLeastOnFilter ) {
+        for (var subject in subjectDB){
+            listSubject.push(subject);
+        }
+    }					
+    return listSubject ;
+},
+</pre>
+<p>For a given 
+selected predicate, all subjects  ( <code>subjectDBCopy</code> ) associated with this predicate and the current selected object are added to the list (<code>listSubject</code>), 
+and a new list ( <code>subjectDBFiltered</code>) of complete tags is created. When the 
+predicate change, the filtering is still performed with  <code>subjectDBCopy</code> but equal to <code>subjectDBFiltered</code>, and (<code>listSubject</code>) is emptied. </p>
+<p>The schema below explains the logic:</p>
+ <table>
+	<tr>
+		<td><img alt="SelectTag" src="images/CAA6WTagUcRefinementAlgo.png"/></td>
+	</tr>
+</table>
+<p>At the beginning, <code>subjectDBCopy</code> is equal to <code>subjectDB</code>. Its contents is given in the
+step <a href="CAA6WTaggerUcFiltering.htm#Create6WTags">Create the 6WTags with Subjects</a> step of another use case. </p>
+<p>(*) The filtering for date should take into account the partial filtering. If the exact date is YYYY/MM/DD, and the end user has selected the year only,
+the test <code>objectToComp === object</code> should not be ===. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>You have learnt how to create the proxy and manage its lifecycle. You have learnt how to manage the widget UI after a previous tag selection (before the 
+widget instantiation) or a new one. </p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+    <tr>
+		<td>[1]</td>
+		<td><a href="CAA6WTaggerAPI.htm#FilterServer">6WTagger Integration- API</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAA6WTaggerIntegration.htm">6WTagger Integration - Principles</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsTaWidgetClass.htm');return false;">Widget Object</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm');return false;">Installing and Launching Widget Use Case</a></td>
+	</tr>	
+<tr>
+		<td>[5]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWidget/CAAWebAppsTaAMDConcepts.htm');return false;">AMD Concepts</a></td>
+	</tr>	
+<tr>
+		<td>[6]</td>
+		<td><a href="CAA6WTaggerEdition.htm">6WTags Edition</a></td>
+	</tr> 
+	<tr>
+		<td>[7]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSRoot/CAAWebAppsJSTaOverview.htm');return false;">3DEXPERIENCE Applications</a></td>
+	</tr>		
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [March 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

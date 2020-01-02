@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2016"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXMLUAPanel.css"/>
+<title xmlns="" xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating Projection Curves</title>
+<script xmlns="" xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">/* */</script>
+<script xmlns="" xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../MathJax/MathJax.js?config=DS-default,local/local">/* */</script></head>
+<body xmlns="" onLoad="highlightSearchTerms();" id="a3ddesi-t-creating-projection-curves">
+
+<a xmlns:mml = "http://www.w3.org/1998/Math/MathML" name = "hj-top"> </a><table xmlns:mml = "http://www.w3.org/1998/Math/MathML" class = "table1" id = "table11"><tr><td><table class = "DocHeader-UAPanel"><tr><td class = "DocHeader1" colspan = "2"><h1>Creating Projection Curves</h1></td></tr><tr><td class = "DocHeader4" colspan = "2"/></tr><tr><td class = "DocHeader3" colspan = "2"><table class = "DocThemeIntro-UAPanel" id = "table12"><tr><td class = "Intro1"><p class = "header"> You can create geometry by projecting one or more elements onto a face or plane. The projection may be normal or along a direction.
+    
+</p></td></tr><tr><td class = "Intro2"><hr class = "header"/><span class = "run-in">Before you begin: </span>Create a 3D shape containing a surface and at least one wire
+element.
+    </td></tr></table></td></tr></table>
+
+  
+
+  
+  
+  <div>
+    <div class = "p"><!--xxx--></div>
+
+    <ol>
+      <li class = "stepexpand"><p>
+        
+          From the <span class = "uicontrol">Modeling</span> section of the <span>action bar</span>, click <span class = "uicontrol">Projection</span> <img src = "../Icons32/SWXUiProjectionCurveHeader.png"/>.
+        
+      </p></li>
+
+      <li class = "stepexpand"><p>
+        
+          In <span class = "uicontrol">Projection Item</span>  <img src = "../A3dDesiUserImages/SWXUiDialogIconEdgesOrFacesSelection.png"/>, select one or more items from the <span>work area</span> to project.
+        <p>
+          You can select any sketch entities, edges, or vertices.
+        </p>
+        
+      </p></li>
+
+      <li class = "stepexpand"><p>
+        
+          In <span class = "uicontrol">Projection Target</span> <img src = "../A3dDesiUserImages/a3ddesiFaceIcon.png"/>, select the target face or plane from the <span>work area</span>.
+        
+        
+      </p></li>
+
+      <li class = "stepexpand"><p>
+        
+          Select one of the following projection types:
+        
+        
+<table border = "1" frame = "hsides" rules = "rows" cellpadding = "4" cellspacing = "0" summary = "" class = "choicetableborder">
+<thead><tr><th valign = "bottom" align = "left" id = "d7306e71-option">Option</th>
+<th valign = "bottom" align = "left" id = "d7306e71-desc">Description</th></tr></thead>
+<tbody>
+<tr><td valign = "top" headers = "d7306e71-option" id = "d7306e79"><strong>Normal <img src = "../A3dDesiUserImages/SWXUiCurvesProjType_0.png" height = "20" width = "19"/></strong></td>
+	<td valign = "top" headers = "d7306e71-desc d7306e79">Projects the element normal to the projection target.
+</td>
+</tr>
+<tr><td valign = "top" headers = "d7306e71-option" id = "d7306e86"><strong>Direction <img src = "../A3dDesiUserImages/SWXUiCurvesProjType_1.png" height = "20" width = "19"/></strong></td>
+	<td valign = "top" headers = "d7306e71-desc d7306e86">Projects the element along a direction. From the <span class = "uicontrol">Projection Selection</span> <img src = "../A3dDesiUserImages/SWXUiDialogIconEdgesOrFacesSelection.png"/> field, you can define the
+direction by
+selecting one of the following:<ul><li>A line</li>
+<li>A plane (projection direction will be normal to the plane)</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+
+        
+      </p></li>
+
+      <li class = "stepexpand"><p><span class = "run-in">Optional: </span>
+        Select one of the following extrapolation modes:
+        
+<table border = "1" frame = "hsides" rules = "rows" cellpadding = "4" cellspacing = "0" summary = "" class = "choicetableborder">
+<thead><tr><th valign = "bottom" align = "left" id = "d7306e109-option">Option</th>
+<th valign = "bottom" align = "left" id = "d7306e109-desc">Description</th></tr></thead>
+<tbody>
+<tr><td valign = "top" headers = "d7306e109-option" id = "d7306e117"><strong>No Extrapolation <img src = "../A3dDesiUserImages/SWXUiExtrapolationMode_0.png" height = "20" width = "20"/></strong></td>
+	<td valign = "top" headers = "d7306e109-desc d7306e117">The projected entity is not extrapolated.
+</td>
+</tr>
+<tr><td valign = "top" headers = "d7306e109-option" id = "d7306e124"><strong>Tangency <img src = "../A3dDesiUserImages/SWXUiExtrapolationMode_1.png" height = "20" width = "20"/></strong></td>
+	<td valign = "top" headers = "d7306e109-desc d7306e124">Extrapolates the entity's extremities in tangency to the surface
+boundary.
+</td>
+</tr>
+<tr><td valign = "top" headers = "d7306e109-option" id = "d7306e131"><strong>Curvature <img src = "../A3dDesiUserImages/SWXUiExtrapolationMode_2.png" height = "20" width = "20"/></strong></td>
+	<td valign = "top" headers = "d7306e109-desc d7306e131">Extrapolates the entity's extremities in curvature to the surface
+boundary.
+</td>
+</tr>
+</tbody></table>
+
+        
+      </p></li>
+
+      <li class = "stepexpand"><p><span class = "run-in">Optional: </span>
+        
+          Select one of the following smoothing modes:
+        
+        
+      
+<table border = "1" frame = "hsides" rules = "rows" cellpadding = "4" cellspacing = "0" summary = "" class = "choicetableborder">
+<thead><tr><th valign = "bottom" align = "left" id = "d7306e145-option">Option</th>
+<th valign = "bottom" align = "left" id = "d7306e145-desc">Description</th></tr></thead>
+<tbody>
+<tr><td valign = "top" headers = "d7306e145-option" id = "d7306e153"><strong>None <img src = "../A3dDesiUserImages/SWXUiCurvesSmoothMode_0.png" height = "20" width = "20"/></strong></td>
+	<td valign = "top" headers = "d7306e145-desc d7306e153">No smoothing.</td>
+</tr>
+<tr><td valign = "top" headers = "d7306e145-option" id = "d7306e160"><strong>Tangency <img src = "../A3dDesiUserImages/SWXUiCurvesSmoothMode_1.png" height = "20" width = "20"/></strong></td>
+	 <td valign = "top" headers = "d7306e145-desc d7306e160">Enhances the current continuity to tangent continuity.
+</td>
+</tr>
+<tr><td valign = "top" headers = "d7306e145-option" id = "d7306e167"><strong>Curvature <img src = "../A3dDesiUserImages/SWXUiCurvesSmoothMode_2.png" height = "20" width = "20"/></strong></td>
+	<td valign = "top" headers = "d7306e145-desc d7306e167">Enhances the current continuity to curvature continuity.
+</td>
+</tr>
+<tr><td valign = "top" headers = "d7306e145-option" id = "d7306e174"><strong>Deviation <img src = "../A3dDesiUserImages/A3DUiDeviation.png" height = "20" width = "20"/></strong></td>
+	<td valign = "top" headers = "d7306e145-desc d7306e174">Specifies the maximum 
+
+deviation
+
+for tangency or curvature smoothing.
+<p>Note:
+		Only available when <span class = "uicontrol">Tangency</span> 
+
+<img src = "../A3dDesiUserImages/SWXUiCurvesSmoothMode_1.png" height = "20" width = "20"/> or 
+
+<span class = "uicontrol">Curvature</span> <img src = "../A3dDesiUserImages/SWXUiCurvesSmoothMode_2.png" height = "20" width = "20"/> smoothing is selected.</p>
+</td>
+</tr>
+</tbody></table>
+</p></li>
+<li class = "stepexpand"><p><span class = "run-in">Optional: </span>Select <span class = "uicontrol">3D Smoothing</span> <img src = "../A3dDesiUserImages/SWXUiConceptSketchSmooth.png" height = "20" width = "20"/> to smooth the projected element without specifying any support
+surface.</p></li>
+
+    </ol>
+
+    
+  </div>
+
+
+  
+
+</td></tr></table><script xmlns:mml = "http://www.w3.org/1998/Math/MathML" type = "text/javascript" src = "../DSDocStats.js">/* */</script><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script>
+</body>
+</html>

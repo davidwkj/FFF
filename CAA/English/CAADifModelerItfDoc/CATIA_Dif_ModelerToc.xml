@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 2015-2018, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="2D Presentation PLM Modeler Overview" href="CAATaDifModelerOverView.htm" topictype="Ta" icon="CAAIcons/images/I_Overview.gif" />
+	<ITEM name="Creating a New 2D Presentation Structure and Attaching it to an Applicative Reference" href="CAADifUcCreateStructure.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM name="Navigating a 2D Presentation Structure" href="CAADifUcNavigateOnDifPresentation.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+	<ITEM name="Managing View Instance Positioning in a Sheet Reference" href="CAADifUcManageViewPositioning.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif" />
+</Root>

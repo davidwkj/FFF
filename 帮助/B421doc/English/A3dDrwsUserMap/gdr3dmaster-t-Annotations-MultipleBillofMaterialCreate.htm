@@ -1,0 +1,234 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Working with Multiple Bills of Materials"/>
+<meta name="abstract" content="You can create a multiple bill of materials (BOM) table using the Multiple BOM command. The bill of materials that are created are associative and also consistent with the product structure."/>
+<meta name="description" content="You can create a multiple bill of materials (BOM) table using the Multiple BOM command. The bill of materials that are created are associative and also consistent with the product structure."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-c-Annotations-MultipleBillofMaterialCreate.htm#gdr3dmaster-c-Annotations-MultipleBillofMaterialCreate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-t-Annotations-MultipleBillofMaterialCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Working with Multiple Bills of Materials</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-t-Annotations-MultipleBillofMaterialCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Multiple BOM"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-bill of materials"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Working with Multiple Bills of Materials</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can create a multiple bill of materials (BOM) table using the <span class="uicontrol">Multiple BOM</span> command. 
+        The bill of materials that are created are associative and also consistent with the product structure.</span>
+
+    
+  </p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-CreateMultipleBOMs" id="toc_rg" title="">Create Multiple Bills of Materials</a></li><li><a href="#t-PositionBOMs" id="toc_rg" title="You can position the bills of materials accurately by selecting a point (used as an anchor point), a line, a table, or a frame and title block as a reference.">Position Multiple Bills of Materials</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>
+      <ul>
+        <li>
+          Open an assembly product containing several sub-products.
+        <p><p><span class="run-in">Important:
+		</span>You must keep the product <span>tab</span> open till you complete creating multiple BOM tables. </p>
+</p></li>
+
+        <li>
+          Generate a drawing of the assembly.
+        </li>
+
+      </ul>
+
+    </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-c-Annotations-MultipleBillofMaterialCreate.htm#gdr3dmaster-c-Annotations-MultipleBillofMaterialCreate" title="This topic explains the concepts that you need to understand before you begin creating multiple bills of materials (BOM) tables.">About Creating Multiple Bills of Material Tables</a></td></tr></table></td></tr></table>
+<a name="CATDrw.CATDrwMultiBOMHdr"><!-- --></a>
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+  </div>
+
+
+  <div/>
+
+  <div class="nested1" id="t-CreateMultipleBOMs">
+    <h2 class="topictitle2">Create Multiple Bills of Materials</h2>
+
+    
+    <div>
+      <ol>
+      <li class="stepexpand"><p>
+        
+          From the <span class="wintitle">Annotation</span> section of the <span>action bar</span>, click <span class="uicontrol">Multiple BOM</span> <img src="../Icons22/I_D3M_MultiBOMCmd.png"/>. 
+        <p> 
+          The <span class="wintitle">Multiple Bill of Material</span> dialog box appears displaying <span class="uicontrol">No Selection</span> in the <span class="uicontrol">Root Context</span> box. 
+        </p>
+      </p></li>
+
+      <li class="stepexpand"><p>
+        
+          Select the product in  the <span>3D area</span>. 
+        <p> The <span class="wintitle">Multiple Bill of Material</span> dialog box displays the name of the selected product in the <span class="uicontrol">Root Context</span> box.  
+        </p>
+        <p> 
+                    <p>Notes:
+		<ul><li>The <span class="uicontrol">Root Context</span> box automatically displays the name of the root product   if all the views in the current drawing  point to the same root product. </li>
+<li>Alternatively, you can select a particular view of the current drawing that is pointing to the root product. In this case, the <span class="uicontrol">Root Context</span> box automatically displays the name of the root product.</li>
+</ul>
+</p>
+ 
+        <p>The <span class="uicontrol">Configuration</span> box displays <span class="uicontrol">All Level+Summary</span> and the root product gets listed in the <span class="uicontrol">Selection List</span>. </p></p>
+      </p></li>
+
+      <li class="stepexpand"><p>
+        
+          Select the required configuration from the list. 
+        
+        <p>If you change the configuration to <span class="uicontrol">User Selection</span>, you can add the required sub-assemblies in the selection list to create the bill of materials table.
+        </p>
+        
+      </p></li>
+
+      <li class="stepexpand"><p>
+        
+          Select the required style in the <span class="uicontrol">Top Level BOM</span> and <span class="uicontrol">Summarized BOM </span>boxes. 
+        
+         
+        <p> 
+          By default, 
+        the <span class="uicontrol">Default</span> style is selected. </p>
+      </p></li>
+
+      <li class="stepexpand"><p>Change the type of BOM for the selected product. For example, click <span class="uicontrol">T</span> to make it unavailable. <p><span class="uicontrol">T</span> denotes the top level BOM and <span class="uicontrol">S</span> denotes the summarized BOM. You can change the type of BOM by selecting or clearing appropriate attributes.  <p>Note:
+		You cannot make both the attributes <span class="uicontrol">T</span> and <span class="uicontrol">S</span> unavailable for single product available in the selection list. If you try to do so, an appropriate message appears in the upper right corner of the screen. </p>
+ </p></p></li>
+<li class="stepexpand"><p>
+        <span class="run-in">Optional: </span>
+          Click <img src="../Gdr3DMasterImages/I_close.png"/> to remove the product from the <span class="uicontrol">Selection List</span>. 
+        
+        
+        <p> 
+          The product is removed from the list. You can redefine the root context 
+        by following the steps from 2 through 4.<p>If you remove a product from the list, or if there is only one product in the list and that is removed, then the <span class="uicontrol">Configuration</span> option automatically changes to <span class="uicontrol">User Selection</span> and you can add the product again by clicking <span class="uicontrol">Add</span>. </p></p>
+      </p></li>
+
+      <li class="stepexpand"><p>
+        
+          Click <span class="uicontrol">Add</span>. 
+        
+        <p> As soon as you click <span class="uicontrol">Add</span>, the drawing document is tiled vertically along with the root product. 
+           </p>
+      </p></li>
+
+    <li class="stepexpand"><p>Select the required product(s) from the <span>work area</span>. <p> The selected products are added in the <span class="uicontrol">Selection List </span>. By default, for each added product, both the BOM attributes <span class="uicontrol">T</span> and <span class="uicontrol">S</span> are selected. </p></p></li>
+<li class="stepexpand"><p>Click <img src="../GdrUserImages/tickmark.png"/> in the <span class="wintitle">Multiple Bill of Material</span> dialog box.</p></li>
+<li class="stepexpand"><p>Click anywhere in the sheet to place the bill of materials. <p> Multiple bill of materials are created. </p></p></li>
+</ol>
+
+      <p class="result">
+      <br/><img border="1" src="../Gdr3DMasterImages/multiplebom.png"/><br/>
+    </p>
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="t-PositionBOMs">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Position Multiple Bills of Materials</h2>
+
+    
+    <div><p><span>You can position the bills of materials  accurately by selecting a point (used as an anchor point), a line, a table, or a frame and title block as a reference. </span>
+
+      
+    </p>
+
+      <div class="p"><!--xxx--><span class="run-in">Before you begin: </span>Create a line in the active view.</div>
+<ol>
+        <li class="stepexpand"><p>
+          Follow the steps 1 through 9 to create a set of bills of material. See, <a href="gdr3dmaster-t-Annotations-MultipleBillofMaterialCreate.htm#t-CreateMultipleBOMs">Creating Multiple Bills of Materials</a>.
+          
+        </p></li>
+
+        <li class="stepexpand"><p>
+          <span>Select the line you created.
+          </span>
+          <p><br/><img border="1" src="../Gdr3DMasterImages/multiplebom02.png"/><br/></p><p> <span> The reference
+  line is highlighted and the BOM is displayed along with the red orientation
+  handles and a 
+  <span>context toolbar</span>
+  showing the selected mode of BOM creation. 
+</span></p>
+        </p></li>
+<li class="stepexpand"><p>
+  <span class="run-in">Optional: </span>Select the red handle to invert the orientation of
+	 the BOM in the corresponding direction.
+  
+</p></li>
+<li class="stepexpand"><p> 
+  <span class="run-in">Optional: </span>Use the 
+	 <span>context toolbar</span>
+	 commands to change the creation mode of the BOM. 
+   
+  <p>  
+	 <p>By default, it displays 
+		<span class="uicontrol">Create a table aligned on nearest extremity</span> mode.
+		That is, it creates the BOM aligned on the nearest extremity of the selected
+		line. For more information about the table creation modes, see 
+		<a href="gdr3dmaster-c-Annotations-TableCreate.htm#gdr3dmaster-c-Annotations-TableCreate" title="This topic provides more information about creating a table.">About Creating a Table</a>. 
+	 </p> 
+	 <p> 
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> 
+		  <ul> 
+			 <li>If the size of the reference is smaller than the size of the
+				created BOM, then, only two table creation modes are displayed, aligned on
+				reference and aligned on the nearest extremity. 
+			 </li>
+ 
+			 <li>When the reference size is bigger than that of the created BOM, 
+				<span class="uicontrol">Creates a table constrained on reference</span>
+				mode is displayed. In this case, the BOM is automatically resized (either by
+				adjusting columns' height or width) to match the selected reference geometry.
+				This mode is unavailable when multiple tables are generated with the 
+				<span class="uicontrol">Multiple BOM</span> command. If there is a single
+				table created using 
+				<span class="uicontrol">Multiple BOM</span>, this mode is available. 
+			 </li>
+ 
+		  </ul>
+ 
+		</td></tr></table>
+ 
+	 </p> 
+  </p> 
+</p></li>
+<li class="stepexpand"><p> 
+  <span class="run-in">Optional: </span>Hover over the 
+	 <span>context toolbar</span>
+	 and drag and place it to the required position. 
+   
+  <p> The pointer changes to 
+	 <img src="../Gdr3DMasterImages/positioncursor.png"/> that lets you change the position of the 
+	 <span>context toolbar</span>
+	 as required. 
+  </p> 
+</p></li>
+<li class="stepexpand"><p>
+  Click in the sheet to validate the BOM creation.
+  
+</p></li>
+
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

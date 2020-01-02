@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="ws" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/Javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/Javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/Javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Experiencing 3DSpace Web Services</title>
+<style type="text/css">
+</style>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Experiencing 3DSpace Web Services</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>The <b>3D</b>EXPERIENCE platform requires an authentication before using one of its services, therefore you 
+		 cannot use external tools, as Postman, to consume its web services. So we have created a basic CAA batch (a Java client application) named <i>CAAi3dxScenarioMain</i>. It performs the login (and finally the logout), and between can consume 3DSpace web services listed in an input file.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="WHAT"></a>CAAi3dxScenarioMain Batch</h2>
+<p><code>CAAi3dxScenarioMain</code> is a Java client application which performs in this order:
+<ul>
+<li>A login to the <b>3D</b>EXPERIENCE platform using 3DPassport web services, </li>
+<li>A loop to execute one by one 3DSpace web services found into an input file,</li>
+<li>A logout with still 3DPassport service.</li>
+</ul>
+<p>The next chapter, <a href="#Scenario">Input File Description</a>, 
+explains the expected contents of the batch input file. </p> 
+<p>All along the execution the batch logs in output files information about the HTTP requests  (URL, Verb, Body) and their responses (status code, message, body). </p>
+<ul>
+<li><a href="samples/CAALogin.traces.txt">login.traces</a>, for the 3DPassport login </li>
+<li><a href="samples/CAAapi_ScenarioList.traces.txt">api_ScenarioList.traces</a>, for all 3DSpace web services</li>
+<li><a href="samples/CAALogout.traces.txt">logout.traces</a>, for the 3DPassport logout </li>
+</ul>
+<p>If you click the links just above you have the result for the <a href="samples/CAAScenario3DSpace.txt">CAAScenario3DSpace.txt</a> input file. It lists, counts, creates and deletes <i>CAAMyTask</i> objects. <i>CAAMyTask</i> is in an internal 3DSpace resource. </p>
+<p>If one web service fails, the batch is stopped. The failure reason is visible in the console, 
+and within the <i>api_ScenarioList.traces</i> file you can find more details.</p>
+<p>The execution requires to have access to a <b>3D</b>EXPERIENCE environment. You should know the URL of 3DPassport and 3DSpace. </p>
+<script type="text/Javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Scenario"></a>Input File Description</h2>
+<p>The input file is a text file containing the description of one or more 3DSpace web services. Each web service is
+defined through one line with the following format:  </p>
+<pre class="code">
+XX=VERB.&lt;path&gt;[?param1=val1&amp;paramI=valI]
+</pre>
+<p>Where: </p>
+<ul>
+<li><code>XX</code> is a number ranging from 0 to 99. The place order in the file does not matter. The program makes a loop from 0 to 99 to look for a possible entry. </li>
+<li><code>VERB</code> is the HTTP method which can be GET, DELETE, PATCH, PUT or POST. </li>
+<li><code>path</code> is the 3DSpace resource path.</li>
+</ul>
+<p>Let's see an example with the <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DXPnOWSRef/CAAi3DXPnOWSQrPersons.htm');return false;">Person</a> resource.</p>
+<pre class="code">
+01=GET./resources/modeler/pno/person?pattern=*Jo*&amp;select=firstname    
+</pre></p>
+<p>If the HTTP request requires a <b>body</b> as input, add a second line which 
+starts by the same number <code>XX</code>, and defines the body contents accordingly its format: </p>
+<ul>
+<li>The format is JSON: 
+<pre class="code">XX_JSON= {"param1": "val1" , ....} </pre>	
+<p>There is no depth limitation with the JSON object.</p> 	
+</li> 
+<li>The format is FORM:
+<pre class="code">XX_FORM=param1=val1&amp;param2=val2 ...</pre>
+<p>The form parameters are not URL encoded by the batch.</p></li>
+</ul>
+<p>About the input body and the verb:</p>
+<ul>
+<li>For <b>GET</b>, the body is optional, its format can only be JSON</li>
+<li>For <b>PUT</b>, <b>PATCH</b> and <b>POST</b>, the body is mandatory, its format can be JSON or FORM</li>
+<li>For <b>DELETE</b>, no body</li>
+</ul>
+
+<p>A line starting by # is a comment. </p>
+<p>So, the possibilities are:</p>
+<pre class="code">
+<b>#GET </b>
+10=GET./resources/mymodeler/fctname[?param1=val1&amp;paramI=valI]
+
+30=GET./resources/mymodeler/fctname[?param1=val1&amp;paramI=valI]
+30_JSON={"param1": "val1" , "param2" : [ { "param3" : "val31" } , {"param3" : "val32"} ]}
+
+<b>#PUT or POST or PATCH</b>
+30=PUT./resources/mymodeler[?param1=val1&amp;paramI=valI]
+30_JSON={"param1": "val1" , "param2" : [ { "param3" : "val31" } , {"param3" : "val32"} ]}
+
+40=PUT./resources/mymoder[?param1=val1&amp;paramI=valI]
+40_FORM=param1=val1&amp;param2=val2
+
+<b>#DELETE </b>
+10=DELETE./resources/mymodeler[?param1=val1&amp;paramI=valI]
+</pre>
+<script type="text/Javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Build"></a>Building CAAi3dxScenarioMain</h2>
+<p>Before launching the batch, there are three steps to execute: </p>
+<ol>
+<li>Fetching the CAAi3dxScenarioMain code.
+<p>The application is located in the CAAi3DXWebServicesClient.edu framework. </p>
+<pre class="code">
+InstallRootFolder\CAADoc\CAAi3DXWebServicesClient.edu\
+</pre>
+<p>Where <code>InstallRootFolder</code> is the folder where the API CD-ROM is installed. </p>
+<p>You can keep all the Java modules, but only the next ones are mandatory:
+<ul>
+<li>CAAi3DX3DSpaceScenarioBatch.mj</li>
+<li>CAAi3DXJavaClient.mj</li>
+<li>CAAJavax.json-api.mjext</li>
+</ul>
+</li>
+</p>
+<li>Setting up the build time environment, then compile the CAAi3DXWebServicesClient.edu framework.</li>
+<li>Setting up the $CLASSPATH variable with the jar file paths:</p>
+<ul>
+<li>$WS\win_b64\docs\javacommon\javax.json.jar;</li>
+<li>$WS\win_b64\docs\java\CAAi3DX3DSpaceClientBatch.jar;</li>
+<li>$WS\win_b64\docs\java\CAAi3DXJavaClient.jar;</li>
+</ul>
+<p>Where <code>$WS</code> is the path of your workspace. If the last two jar come from the compilation of the CAAi3DXWebServicesClient.edu framework, the first one is the jar containing the json-api implementation. You can retrieve one from internet.</p>
+</li>
+</ol>
+<script type="text/Javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Exe"></a>Launching CAAi3dxScenarioMain</h2>
+<p>Launching the application is done via Java standard command:</p>
+ <p>
+<pre class="code">
+java com.dassault_systemes.caasamples.i3dxsamples.CAAi3dxScenarioMain 
+                        %3DPassport_url%  %login%   %password%  
+                        %3DSpace_url%     %security_context% 
+                        %output_dir%     %inputfilepath%  [%platform_instance%]
+</pre>
+<p>Where:</p>
+<table class="fill">
+<tr>
+  <th>argument</th>
+  <th>meaning</th>
+</tr>
+<tr>
+  <td>3DPassport_url</td>
+  <td>The 3DPassport URL of a 3DEXPERIENCE platform. </td>
+</tr>
+<tr>
+  <td>login</td>
+  <td>A valid login for the given 3DEXPERIENCE platform</td>
+</tr>
+<tr>
+  <td>password</td>
+  <td>The password of the login.</td>
+</tr>
+<tr>
+  <td>3DSpace_url</td>  
+  <td>The 3DSpace URL of the same 3DEXPERIENCE platform. </td>
+</tr>
+<tr>
+  <td>security_context</td>
+  <td>A string:
+     <ul>
+	 <li>An empty string. In this case no security context is sent to the 3DSpace server.</li>
+	 <li>A string with this format: <i>role.organization.collabspace</i>.  </li>  
+   </ul>
+   <p>The same security context value is used for all 3DSpace web services. </p>
+   </td>
+</tr>
+<tr>
+  <td>output_dir</td>
+  <td>Directory for traces of HTTPS requests and responses. Do not append / at the end, the program appends it.
+  three files are generated: <i>login.traces</i> for login step, <i>logout.traces</i> for logout step, and <i>api_ScenarioList.traces</i> for the 3DSpace web services. </td>
+</tr>
+<tr>
+  <td>inputfilepath</td>
+  <td>The path of the text file with 3DSpace web services to execute. The path can be absolute or 
+  relative to the directory where is executed the batch.</td>
+</tr>
+<tr>
+  <td>platform_instance</td>
+  <td>The platform instance (or tenant) is mandatory for cloud, but optional for OnPremise environment. This data - when given - is 
+   passed as query parameter of the 3DSpace URL path for its login and for all 3DSpace web services listed in the scenario file.</td>
+</tr>
+</table>
+<script type="text/Javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Example"></a>Execution Traces</h2>
+<p>Let's suppose you launch such a line command (replace batch arguments by your contextual values)</p>
+<pre class="code">
+java  com.dassault_systemes.caasamples.i3dxsamples.CAAi3dxScenarioMain PassportURL X1 yyy 3DSpaceURL  "A.B.C" e:\temp CAAScenario3DSpace.txt 
+</pre>
+<p>For a  <b>successful</b> execution, the console traces are as follows:</p>
+<pre class="code">
+## Getting input arguments :
+ catch 3DPassport URL=PassportURL
+ catch user login=X1
+ catch user password=yyy
+ catch 3DSpace URL=3DSpaceURL
+ catch Security Context (role.organization.collabspace) = A.B.C
+ catch output directory =e:\temp\
+ catch input scenario file =CAAScenario3DSpace.txt
+ catch platform instance: no value
+## End Of arguments catching
+
+
+
+## Login
+
+## Consume 3DSpace Web Services
+
+## Logout
+</pre>
+<p>In the output directory there are three files:  </p>
+<ul>
+<li><a href="samples/CAALogin.traces.txt">login.traces</a>, for the 3DPassport login </li>
+<li><a href="samples/CAAapi_ScenarioList.traces.txt">api_ScenarioList.traces</a>, for all 3DSpace web services of <a href="samples/CAAScenario3DSpace.txt">CAAScenario3DSpace.txt</a></li>
+<li><a href="samples/CAALogout.traces.txt">logout.traces</a>, for the 3DPassport logout </li>
+</ul>
+
+<p>Now, let's see an <b>error case</b> with the same command line at the top of this  section.</p>
+<pre class="code">
+## Getting input arguments :
+ catch 3DPassport URL=PassportURL
+ catch user login=X1
+ catch user password=yyy
+ catch 3DSpace URL=3DSpaceURL
+ catch Security Context (role.organization.collabspace) =A.B.C
+ catch output directory =e:\temp\
+ catch input scenario file =CAAScenario3DSpace.txt
+ catch platform instance: no value
+## End Of arguments catching
+
+
+
+## Login
+
+## Consume 3DSpace Web Services
+##[ERROR] WS Response Code=404- Not Found - for key=05
+</pre>
+<p>In this example, the first 3DSpace web service does not exist (or not deployed). The <a href="samples/CAAapi_ScenarioListKO.traces.txt">api_ScenarioList.traces</a> contains more information about 
+the failure case. </p>
+<p>But let's suppose there are successful requests before a failure. The output file contains the successful request traces as well the first failure case. The following <a href="samples/CAAapi_ScenarioListKO2.traces.txt">api_ScenarioList.traces</a> is an
+example. </p> 
+<p>Finally an example with <b>cloud</b> replay.</p>
+<pre class="code">
+## Getting input arguments : 
+ catch 3DPassport URL=https://euw1-prj420full-iam.3dx-staging.3ds.com:443
+ catch user login=uxodtitp
+ catch user password=....
+ catch 3DSpace URL=https://dsdev001-euw1-prj420full-space.3dx-staging.3ds.com:443/enovia
+ catch Security Context (role.organization.collabspace) =VPLMAdmin.Company Name.Default
+ catch output directory =e:/temp
+ catch input scenario file =e:/CAAi3dxScenarioTenant.txt
+ catch platform instance =DSDEV001
+## End Of arguments catching
+</pre>
+<p>As usual, the three files:</p>
+<ul>
+<li><a href="samples/CAAlogin.traces.cloud.txt">login.traces</a>, for the 3DPassport login </li>
+<li><a href="samples/CAAapi_ScenarioList.traces.cloud.txt">api_ScenarioList.traces</a>, for all 3DSpace web services of <a href="samples/CAAi3dxScenarioTenant.cloud.txt">CAAi3dxScenarioTenant.txt</a></li>
+<li><a href="samples/CAAlogout.traces.cloud.txt">logout.traces</a>, for the 3DPassport logout </li>
+</ul>
+<script type="text/Javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This article explains how you can consume 3DSpace web services  by batch. The 
+batch, a basic Java client
+application, performs the login to the <b>3D</b>EXPERIENCE, a pre-requisite before consuming any platform web services. Thanks to the output files you can experience the 3DSpace API: for a given URL/data you can see the response of the
+HTTP Request.</p> 
+<p>To know more about this batch, read the <a href="CAAi3DXTaJavaClientApp.htm">Presenting Batch Client Application Example</a> article. </p>
+
+<script type="text/Javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [January 2016]</td>
+		<td>Document created</td>
+	</tr>
+	<tr>
+		<td>Version: <strong>2</strong> [January 2018]</td>
+		<td>Document updated to add the tenant (platform instance) as batch input</td>
+	</tr>
+</table>
+<script type="text/Javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+
+<script type="text/Javascript">insertCopyright();</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Upgrading Standard Files from Previous Releases"/>
+<meta name="abstract" content="You can upgrade your standard files from previous releases."/>
+<meta name="description" content="You can upgrade your standard files from previous releases."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="standards-c-ad-StandardsUpgrade"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Upgrading Standard Files from Previous Releases</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="standards-c-ad-StandardsUpgrade">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-upgrading standards::more about"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::more about upgrading"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1> About Upgrading Standard Files from Previous Releases
+				</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>You can upgrade your standard files from previous releases. </span>
+
+
+						<p>However, you should be familiar with some concepts that are described in this section before you begin upgrading standard files.  </p><p>The following 
+						topics are discussed:</p>
+
+						
+					
+				</p>
+<ul><li><a href="#c-UpgradingCATDrwStandardFilesToTheCurrentXMLStandardFiles" id="toc_rg" title="You can upgrade CATDrwStandard files to the current XML standard files.">Upgrade of CATDrwStandard Files to the Current 
+		XML Standard Files</a></li><li><a href="#c-UpgradingXMLStandardFilesFromPreviousReleasesToTheCurrentLevel" id="toc_rg" title="You can upgrade XML standard files from previous releases to the current level.">Upgrade of XML Standard Files 
+		from Previous Releases to the Current Level</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+<div/><div class="nested1" id="c-UpgradingCATDrwStandardFilesToTheCurrentXMLStandardFiles"><h2 class="topictitle2">Upgrade of CATDrwStandard Files to the Current 
+		XML Standard Files</h2>
+<div><p><span>You can upgrade CATDrwStandard files to the current XML standard files.</span>
+</p>
+
+		<p>Up to and including V5R8, the standard file defining standard XXX was 
+		a file named XXX.CATDrwStandard, located in <samp class="codeph">install_root/reffiles/Drafting</samp>.</p>
+		<p>In V5R9, the format of the standard file was changed to XML. The standard 
+		file defining standard XXX is now a file named XXX.xml, located in <samp class="codeph">
+		install_root/resources/standard/drafting</samp>.</p>
+		<p>If you have configured or defined a CATDrwStandard file, and want to 
+		re-use this configuration in the current release, you need to convert your 
+		CATDrwStandard file into a XML file. There are 2 ways of doing this:</p>
+		<div class="section" id="c-UpgradingCATDrwStandardFilesToTheCurrentXMLStandardFiles__cs-ManualUpgrade"><h3 class="sectiontitle">Manual upgrade</h3>
+		<p>If the degree of configuration of the standard file is small, you can 
+		start from one of the 4 pre-defined standard files (ISO, ANSI-ASME or JIS), 
+		and modify it using the standards editor (<span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>). 
+		You will need to modify the parameter values, and add the styles that you 
+		had defined in the CATDrwStandard file.</p>
+		</div>
+<div class="section" id="c-UpgradingCATDrwStandardFilesToTheCurrentXMLStandardFiles__cs-AutomaticUpgrade"><h3 class="sectiontitle">
+		Automatic upgrade</h3><a name="ix-utilities::CATAnnStandardTools"> </a><a name="ix-CATAnnStandardTools0"> </a>
+		<p>A batch utility is provided  to automatically generate the XXX.xml 
+		file starting from a XXX.CATDrwStandard file. All the configuration done 
+		on the CATDrwStandard file will be reproduced in the XML file, and all styles 
+		defined in CATDrwStandard file will be added.</p>
+		<p>The utility will also add to the XML file the new standard parameters 
+		(with default values), as well as the new pre-defined styles.</p>
+		
+		</div>
+</div>
+</div>
+<div class="nested1" id="c-UpgradingXMLStandardFilesFromPreviousReleasesToTheCurrentLevel"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Upgrade of XML Standard Files 
+		from Previous Releases to the Current Level</h2>
+<div><p><span>You can upgrade XML standard files from previous releases to the current level.</span>
+</p>
+
+		<p>The XML standard file has evolved in each release since V5R9. New standard 
+		parameters have been added, some have been modified, and new functionality 
+		(such as styles) have been introduced. </p>
+		<p>If you have configured or defined an XML standard file in a previous 
+		release (i.e. a release starting from V5R9), and want to re-use this configuration 
+		in the current level, you need to upgrade your XML file. There are 2 ways 
+		of doing this:</p>
+		<div class="section" id="c-UpgradingXMLStandardFilesFromPreviousReleasesToTheCurrentLevel__cs-ManualUpgrade"><h3 class="sectiontitle">Manual upgrade</h3>
+		<p>If the degree of configuration of the standard file is small, you can 
+		start from one of the 4 pre-defined standard files (ISO, ANSI-ASME or JIS), 
+		and modify it using the standards editor (<span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>). 
+		You will need to modify the parameter values and configure new parameters 
+		and/or styles.</p>
+		</div>
+<div class="section" id="c-UpgradingXMLStandardFilesFromPreviousReleasesToTheCurrentLevel__cs-AutomaticUpgrade"><h3 class="sectiontitle">
+		Automatic upgrade</h3><a name="ix-utilities::CATAnnStandardTools"> </a><a name="ix-CATAnnStandardTools"> </a>
+		<p>A batch utility is provided to automatically generate the current 
+		XML file starting from an XML file from a previous release. All the configuration 
+		done on the starting file will be reproduced in the upgraded XML file.</p>
+		<p>The utility will also add the new parameters and styles introduced in 
+		the current release (with default values) in the XML file.</p>
+		
+		
+		
+	
+
+
+
+
+
+</div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,330 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Extracting the Canonical Representation of a Curve</title>
+<style type="text/css">
+.style3 {
+				color: #FB7203;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1>Extracting the Canonical Representation of a Curve</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>Given a curve representing and approaching&nbsp; line or a circle but not defined as a 
+		line or a circle, you can extract the canonical definition of the curve.</p>
+		<ul>
+			<li><a href="#OpeToBeUsed">Operator to be Used</a></li>
+			<li><a href="#UseCaseDescription">Use Case Description</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="OpeToBeUsed">Operator to be Used</a></h2>
+
+<p>Use the CATICGMConvertCurveToCanonic 
+operator in GMModelInterfaces. 
+This operator is created by the CATCGMCreateConvertCurveToCanonic global 
+function.
+
+<h2><a name="UseCaseDescription">Use Case Description</a></h2>
+<p>The CAAGMModelConvertToCanonic.m module in CAAGMModelInterfaces.edu 
+illustrates how to extract the canonical definition of a line which is basically 
+created as a spline. This use case creates its own input data: a spline curve. If you are not already 
+familiar with geometric modeler use cases, go to
+<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Uses Cases</a>.</p>
+<p>With the code below:</p>
+<TABLE class="code">
+    <TR>
+        <TD>
+       <pre>
+const double Scale = 100.;
+const CATLONG32 NbPoints = 10;
+CATMathSetOfPointsND Points(3,NbPoints);
+double eps = 0.01*piGeomFactory->GetResolution();
+Points.Reset();
+for (CATLONG32 k=0; k < NbPoints; k++)
+   {
+	  double lambda =double(k)/double(NbPoints);
+	  double p[3];
+	  p[0] =Scale*lambda;
+	  p[1] =Scale*lambda;
+	  p[2] =eps*sin(2.2*lambda);
+	   Points.AddPoint(p);
+	}
+CATSplineCurve * pSpline1 =piGeomFactory->CreateSplineCurve(&Points, 0, 1, 2, 0);
+...
+	</pre>
+	</TD>
+    </TR>
+</TABLE>
+<p>a spline is created. This spline passes through the points which are all 
+aligned:</p>
+<ul>
+				<li>[0,&nbsp;&nbsp; 0,&nbsp; &#949;]</li>
+				<li>[10, 10, &#949;]</li>
+				<li>[20, 20, &#949;]</li>
+				<li>[..., ...,&nbsp; &#949;]</li>
+				<li>[90, 90, &#949;]</li>
+</ul>
+The code below creates a curve whose type is CATLineType
+<TABLE class="code">
+    <TR>
+        <TD>
+       <pre>
+CATICGMConvertCurveToCanonic * pCrvToCanonicOpe1 = NULL;
+pCrvToCanonicOpe1 =::CATCGMCreateConvertCurveToCanonic(piGeomFactory,pConfig,pSpline1,Lim1);
+...
+pCrvToCanonicOpe1->Run();
+CATCurve * pCrv1 = pCrvToCanonicOpe1->GetResult(oCrvLim1);
+if (pCrv1==NULL ||!pCrv1->IsATypeOf(CATLineType))
+	{
+	...
+	}
+		</pre>
+	</TD>
+    </TR>
+</TABLE>
+<br><img alt="" src="images/img3.gif"><br>
+<br>
+Replacing the coordinates of Points[3] with {40,40,0.05} makes impossible the extraction of the canonical
+line definition as the new point is not aligned with the others.<p>This use case 
+treat also about on how to convert to a canonic curve an edge curve built from a 
+set of point approaching the curve of a circle arc :</p>
+<p><img alt="" src="images/img5.jpg"></p>
+<p>From the definition of an edge curve approaching the curve of a circle arc,&nbsp; 
+it is possible to convert it to a line curve : </p>
+<pre> // Convert the created curves to a canonical curve.
+// ==================================================
+CATSkillValue Mode = ADVANCED;
+CATICGMConvertCurveToCanonic * pConvertEdgeCurveToCanonicOpe = ::CATCGMCreateConvertCurveToCanonic(piGeomFactory,
+pConfig,
+pEdgeCurve,
+pStartPOEC,
+pEndPOEC,
+pSurfaceSupport,
+Mode);
+
+// Defines the tolerance to fit the input curve, in case of approximated recognition mode
+// =====================================================================================
+pConvertEdgeCurveToCanonicOpe-&gt;SetTolerance(1.); // specify a tolerance
+cout &lt;&lt; &quot;Set the tolerance to 1.0&quot; &lt;&lt; endl;
+
+// Defines the recognition mode as Approximated recognition
+// ========================================================
+pConvertEdgeCurveToCanonicOpe-&gt;SetRecognitionMode(FALSE);
+cout &lt;&lt; &quot;Set recognition mode as Approximated recognition&quot; &lt;&lt; endl;
+
+// Runs the operator
+// ===================
+pConvertEdgeCurveToCanonicOpe-&gt;Run();
+cout &lt;&lt; &quot;Runs the operator pConvertEdgeCurveToCanonicOpe &quot; &lt;&lt; endl;
+
+
+// retrieve the created canonical curve
+// =====================================
+CATCrvLimits CanonicCrvLim;
+CATCurve * pCanonicCrv = pConvertEdgeCurveToCanonicOpe-&gt;GetResult(CanonicCrvLim);
+</pre>
+<pre><img alt="" src="images/img8.jpg"></pre>
+<p>We provide another example showing how to convert an edge curve built from 
+approaching a part of an ellipse to a canonic ellipse curve :</p>
+<p>&nbsp;</p>
+<pre>
+
+// Convert the created curves to a canonical curve.
+// -------------------------------------------------
+Mode = ADVANCED;
+CATICGMConvertCurveToCanonic * pConvertEdgeCurveToCanonicOpe2 = ::CATCGMCreateConvertCurveToCanonic(piGeomFactory,
+pConfig,
+pEdgeCurve2,
+pStartPOEC2,
+pEndPOEC2,
+pSurfaceSupport,
+Mode);
+...
+// Defines the tolerance to fit the input curve, in case of approximated recognition mode
+// =====================================================================================
+pConvertEdgeCurveToCanonicOpe2-&gt;SetTolerance(1.2); // specify a tolerance
+cout &lt;&lt; &quot;Set the tolerance to 1.2&quot; &lt;&lt; endl;
+
+// Defines the recognition mode as Approximated recognition
+// ========================================================
+
+pConvertEdgeCurveToCanonicOpe2-&gt;SetRecognitionMode(FALSE);
+cout &lt;&lt; &quot;Set recognition mode as Approximated recognition&quot; &lt;&lt; endl;
+
+// Runs the operator
+pConvertEdgeCurveToCanonicOpe2-&gt;Run();
+cout &lt;&lt; &quot;Runs the operator CATCGMCreateConvertCurveToCanonic &quot; &lt;&lt; endl;
+
+// retrieve the created canonical curve
+// =====================================
+CATCrvLimits CanonicCrvLim2; // The limits of the created curve
+CATCurve * pCanonicCrv2 = pConvertEdgeCurveToCanonicOpe2-&gt;GetResult (CanonicCrvLim2);
+
+if (pCanonicCrv2 == NULL || !pCanonicCrv2-&gt;IsATypeOf(CATEllipseType))
+{
+cout &lt;&lt; &quot;ERROR !! The input Spline curve conversion does not return a CATEllipseType&quot; &lt;&lt; endl;
+return (1);
+}
+else
+{
+// global parameter value of the first &amp; last limitation of the curve
+double GlobalLow, GlobalHigh;
+CanonicCrvLim2.GetExtremities(GlobalLow, GlobalHigh);
+
+cout &lt;&lt; &quot;The input Spline curve has been converted to a canonic CATEllipseType curve&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;parameter value of the Ellipse Canonic curve : the first limitation : &quot; &lt;&lt; GlobalLow &lt;&lt; &quot; last limitation : &quot; &lt;&lt; GlobalHigh &lt;&lt; endl;
+}</pre>
+<p><img alt="" src="images/img9.jpg"></p>
+<p>&nbsp;</p>
+<p>This&nbsp; use case shows also how to convert a set of curves to a canonic 
+curve.</p>
+<p>For this, you have to specify the set of curves with their limit as following 
+: </p>
+<pre> // allocate a tab of 5 CATCurve
+CATLONG32 NbCrv = 5;
+
+CATCurve ** iTabCrv = NULL;
+iTabCrv = new CATCurve *[NbCrv];
+
+iTabCrv[0] = pCurve1;
+iTabCrv[1] = pCurve2;
+iTabCrv[2] = pCurve3;
+iTabCrv[3] = pCurve4;
+iTabCrv[4] = pCurve5;
+
+
+// allocate two tab of CATCrvParam defining :
+// - the first parameter on the curves (beginning of the domain to analyze for each curve)
+// - the last parameter on the curves, (end of the domain to analyze for each curve) .
+
+CATCrvParam * StartParam = new CATCrvParam[NbCrv];
+CATCrvParam * EndParam = new CATCrvParam[NbCrv];
+
+for (int i = 0; i &lt; NbCrv; i++)
+{
+
+  CATCrvLimits CrvCurrentLimits;
+  if (iTabCrv[i])
+  {
+    iTabCrv[i]-&gt;GetLimits(CrvCurrentLimits);
+
+    CATCrvParam LowParam, HighParam;
+    CrvCurrentLimits.GetExtremities(LowParam, HighParam);
+    StartParam[i] = LowParam;
+    EndParam[i] = HighParam;
+
+    double startparamValue = LowParam.GetParam();
+    double EndparamValue = HighParam.GetParam();
+    cout &lt;&lt; &quot;Curve [ &quot;&lt;&lt; i+1 &lt;&lt; &quot; ] : \t Start Param value : &quot; &lt;&lt; startparamValue &lt;&lt; &quot; \t End Param value : &quot;&lt;&lt; EndparamValue &lt;&lt; endl;
+  }
+}</pre>
+<pre>&nbsp;</pre>
+<p>In next we create the operator pConvertSetOfCurveToCanonic dedicated to 
+compute the most approaching canonical curve of the set of curves lying on the 
+same plane.</p>
+<pre>CATICGMConvertCurveToCanonic * pConvertSetOfCurveToCanonic = ::CATCGMCreateConvertCurveToCanonic(piGeomFactory,
+pConfig,
+NbCrv,
+iTabCrv,
+StartParam, 
+EndParam,
+pSurfaceSupport,
+ADVANCED);
+
+
+...
+
+
+// Defines the tolerance to fit the input curve, in case of approximated recognition mode
+// =====================================================================================
+pConvertSetOfCurveToCanonic-&gt;SetTolerance(2.); // specify a tolerance
+cout &lt;&lt; &quot;Set the tolerance to 2.&quot; &lt;&lt; endl;
+
+// Defines the recognition mode as Approximated recognition
+// ========================================================
+pConvertSetOfCurveToCanonic-&gt;SetRecognitionMode(FALSE);
+cout &lt;&lt; &quot;Set recognition mode as Approximated recognition&quot; &lt;&lt; endl;
+
+// Runs the operator
+pConvertSetOfCurveToCanonic-&gt;Run();
+cout &lt;&lt; &quot;Runs the operator CATCGMCreateConvertCurveToCanonic &quot; &lt;&lt; endl;
+
+// retrieve the created canonical curve
+// =====================================
+CATCrvLimits CanonicCrvLim3; // The limits of the created curve
+CATCurve * pCanonicCrv3 = pConvertSetOfCurveToCanonic-&gt;GetResult(CanonicCrvLim3);</pre>
+<p><img alt="" src="images/img7.jpg"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+&nbsp;<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaUseTopoOperators.htm">How to Use Topological Operators</a></td>
+	</tr>
+
+<tr>
+		<td>[4]</td>
+		<td class="style3">
+		<a href="CAACgmUcGMModelOpeOverw.htm">How to Use Geometric Operators</a></td>
+	</tr>
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Dec 2011]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

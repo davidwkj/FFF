@@ -1,0 +1,349 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating a Front View"/>
+<meta name="abstract" content="You can create a front view of the 3D part using a reference plane."/>
+<meta name="description" content="You can create a front view of the 3D part using a reference plane."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewCreation.htm#gdr-c-ViewCreation"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewCreation-FrontView"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating a Front View</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewCreation-FrontView">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::front views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::front views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Front View"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Creating a Front View
+         
+          </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can create a front view of the 3D part using a reference plane.</span>
+<p>This task shows you how to:</p>
+             
+             
+             </p>
+<ul><li><a href="#t-CreateAFrontView" id="toc_rg" title="You can create the front view either from a part or from the sub-part of a product, using a reference plane.">Create a Front View</a></li><li><a href="#t-DefineTheViewOrientationDuringViewCreation" id="toc_rg" title="When creating a view, you can redefine the orientation of its reference plane using the view orientation manipulator.">Define the 
+     View Orientation during View Creation</a></li><li><a href="#t-CreateAFrontViewWithALocalAxisSystem" id="toc_rg" title="This functionality lets you to take into account a local axis system when creating a view. That way, the origin of the generated view is the projection of the origin of the local axis system selected in the view plane.">Create a Front View with a Local Axis System
+     
+     </a></li><li><a href="#t-CreateAFrontViewFromSpecificSubbodiessubproducts" id="toc_rg" title="You can multi-select specific sub-products in a product and/or several sub-bodies in a part to create front views displaying the selected elements only. These multi-selected 3D elements will be previewed and then used as reference planes for generating several front views.">Create a Front View from Specific Sub-bodies/Sub-products
+     
+     </a></li><li><a href="#t-CreateAFrontViewUsingSelectionSets" id="toc_rg" title="Selection sets let you gain in productivity, particularly in the case of large assemblies, when generating several views with numerous common features: you can select and store these features once and reuse the selection set as often as necessary without having to select the features again.">Create a Front View using Selection Sets
+     
+      </a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>                    Open        a 3D part <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> and       create a new drawing with an empty <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>.                </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewCreation.htm#gdr-c-ViewCreation" title="The Drawings app allows you to create views of varying levels of complexity. This topic provides more information about view creation.">About View Creation</a></td></tr></table></td></tr></table>
+<a name="CATDrw.DrwFrontView"><!-- --></a>
+<div><div class="p"><!--xxx--></div>
+</div>
+<div/><div class="nested1" id="t-CreateAFrontView"><h2 class="topictitle2">Create a Front View</h2>
+<div><p><span>You can create the front view  either from a part or from the sub-part of 
+     a product, using a reference plane.</span>
+
+     </p>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">View Layout</span> section of the <span>action bar</span>, click <span class="uicontrol"><span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">Front View</span></span> <img height="22" width="22" src="../Icons22/I_D3M_DrwFrontView.png"/>. </p></li>
+<li class="stepexpand"><p>To define the reference plane, select either of the following:
+       <ul><li>A plane of the 3D part or a plane surface. <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> If you select 
+             a plane surface, the reference orientation will be the external normal 
+             of the planar surface.</td></tr></table>
+</li>
+<li>Two edges: These edges correspond to both axes defining 
+         the reference plane according to which the front view will be generated. 
+         The first edge determines the horizontal axis.</li>
+<li>A point and an edge or vice-versa, two points and 
+         an edge, or three points: you will thus define a plane.</li>
+</ul>
+<p> 
+       
+       <p>View orientation manipulator appears that lets you redefine the projection 
+       plane before generating the view. For more information, see
+       <a href="gdr-t-ViewCreation-FrontView.htm#gdr-t-ViewCreation-FrontView">Define the 
+       view orientation during view creation</a>.</p>
+       <p>
+       <br/><img height="153" width="313" src="../GdrUserImages/creatingfrontview01.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>Click in the <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> to generate the view.<p> 
+       <p>
+       <br/><img height="167" width="111" src="../GdrUserImages/creatingfrontview07.gif"/><br/></p>
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>  By default, 
+           the axis and center lines are generated. You can also view hidden lines, 
+           threads, fillets, project 3D points, etc. To configure the view properties, 
+           right-click the frame of the view and select <span class="uicontrol">Properties</span>. In the <span class="uicontrol">Properties</span> dialog box, under the <span class="uicontrol">View</span> tab, select the required options.</td></tr></table>
+
+       
+       </p></p></li>
+</ol>
+<p class="result">
+     </p></div>
+</div>
+<div class="nested1" id="t-DefineTheViewOrientationDuringViewCreation"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Define the 
+     View Orientation during View Creation</h2>
+<div><p><span>When creating a view, you can redefine the orientation of its reference 
+     plane using the view orientation manipulator.</span>
+<p> This is the case when 
+     generating a <a href="gdr-t-ViewCreation-FrontView.htm#gdr-t-ViewCreation-FrontView" title="You can create a front view of the 3D part using a reference plane.">front view</a>, an
+     <a href="gdr-t-ViewCreation-IsometricView.htm#gdr-t-ViewCreation-IsometricView" title="You can create an isometric view from a 3D part."> isometric view</a> or when generating 
+     views using the <a href="gdr-t-ViewCreation-ViewsViaTheWizard.htm#gdr-t-ViewCreation-ViewsViaTheWizard" title="You can create views using a wizard. These views are generated automatically once the drawing representation is opened and then behave as any other view of the same type.">wizard</a>.</p>
+     <p>Open a 3D part representation and start creating a front view.</p>
+     </p>
+<ol><li class="stepexpand"><p>Click the right or left arrow to visualize the right or left 
+       side respectively.<p> 
+       <p>
+       <br/><img height="130" width="280" src="../GdrUserImages/creatingfrontview02.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>Click the bottom arrow to visualize the bottom side.<p> 
+       <p>
+       <br/><img height="167" width="280" src="../GdrUserImages/creatingfrontview03.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>Click the counterclockwise arrow to rotate the reference 
+       plane.<p> 
+       <p>
+       <br/><img height="185" width="296" src="../GdrUserImages/creatingfrontview04.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>Drag the green knob to redefine the rotating angle.<p> The default 
+       increment value is 30 degrees.</p><p> 
+       <p>
+       <br/><img height="197" width="306" src="../GdrUserImages/creatingfrontview05.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>You can modify the increment value. Right-click the green knob and select 
+       the required option:<ul><li><span class="uicontrol">Free hand rotation</span>: Lets you rotate the knob 
+         in a free manner using the mouse, instead of snapping it to a given increment.</li>
+<li><span class="uicontrol">Incremental hand rotation</span>: Snaps the rotation 
+         to a given increment (from 30 to 30 degrees, between zero and 330). This 
+         is the default value.</li>
+<li><span class="uicontrol">Set increment...</span>: Displays the <span class="uicontrol">Increment 
+         Setting</span> dialog box. Enter the required value in the <span class="uicontrol">Increment 
+         value</span> field. For example, type 5 deg (for 5 degrees) and click
+         <span class="uicontrol">OK</span>.</li>
+<li><span class="uicontrol">Set current angle to</span>: 
+         <ul>
+           <li>
+           <p><span class="uicontrol">0 deg</span>: Sets the current angle value to 0 degrees.</p>
+           </li>
+
+           <li>
+           <p><span class="uicontrol">90 deg</span>: Sets the current angle value to 90 
+           degrees.</p>
+           </li>
+
+           <li>
+           <p><span class="uicontrol">180 deg</span>: Sets the current angle value to 180 
+           degrees.</p>
+           </li>
+
+           <li>
+           <p><span class="uicontrol">270 deg</span>: Sets the current angle value to 270 
+           degrees.</p>
+           </li>
+
+           <li>
+           <p><span class="uicontrol">Set angle value...</span>: Displays the <span class="uicontrol">Angle 
+           Setting</span> dialog box. Enter the required value in the <span class="uicontrol">current 
+           angle (deg) </span> field. For example, type <span class="uicontrol">30</span> and click
+           <span class="uicontrol">OK</span>.</p>
+           </li>
+
+         </ul>
+</li>
+</ul>
+<p> 
+       
+       </p></p></li>
+</ol>
+<p class="result">
+     <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  Remember 
+         that there is no <span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">associativity</span> between the selected plane or face in the 
+         3D part and the projection plane of the generated views. Yet, you can modify 
+         the view projection plane if you change the 3D part orientation. For more 
+         information, see
+         <a href="gdr-t-ViewModification-ViewProjectionPlaneModify.htm#gdr-t-ViewModification-ViewProjectionPlaneModify" title="You can modify a view projection plane of a generated view in order to modify the view.">Modifying a View Projection Plane</a>.</td></tr></table>
+
+     
+     
+     </p></div>
+</div>
+<div class="nested1" id="t-CreateAFrontViewWithALocalAxisSystem"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Create a Front View with a Local Axis System
+     
+     </h2>
+<div><p><span>This functionality lets you to take into account a local axis system when 
+     creating a view. That way, the origin of the generated view is the projection 
+     of the origin of the local axis system selected in the view plane.
+     
+     </span>
+<p>
+     <br/><img border="1" height="118" width="184" src="../GdrUserImages/axisprojection04.gif"/><br/></p>
+     <p>
+     <br/><img border="1" height="224" width="309" src="../GdrUserImages/axisprojection05.gif"/><br/></p>
+     </p>
+<ol><li class="stepexpand"><p>Click <span class="uicontrol">Front View</span>
+       <img height="22" width="22" src="../Icons22/I_D3M_DrwFrontView.png"/>. <a name="ix-local axis system, creating front views with"> </a><a name="ix-front views::creating with local axis system"> </a><a name="ix-views::front views with local axis system"> </a><p> 
+       </p></p></li>
+<li class="stepexpand"><p>In the part <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span>, select the local axis system, 
+       Axis System.1.<p> 
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  Remember 
+           that you have to select the axis system in the tree and 
+           not in the 3D part. Otherwise it would be like selecting a line in the 
+           <span>3D area</span> instead of the axis system.</td></tr></table>
+
+       </p></p></li>
+<li class="stepexpand"><p>Select one plane of the 3D part or a plane surface, to define 
+       the reference plane.<p> 
+       <p>
+       <br/><img border="1" height="360" width="290" src="../GdrUserImages/axisprojection02.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>Click in the drawing to create the view. The part local 
+       axis system appears in the view.<p> 
+       <p>
+       <br/><img height="290" width="176" src="../GdrUserImages/axisprojection03.gif"/><br/></p>
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  When 
+           creating views with a local axis system, only the origin of the axis 
+           system is taken into account and respected in the generated view. The 
+           orientation is not taken into account.</td></tr></table>
+
+       
+       </p></p></li>
+</ol>
+<p class="result">
+     </p></div>
+</div>
+<div class="nested1" id="t-CreateAFrontViewFromSpecificSubbodiessubproducts"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Create a Front View from Specific Sub-bodies/Sub-products
+     
+     </h2>
+<div><p><span>You can multi-select specific sub-products in a product and/or several sub-bodies 
+     in a part to create front views displaying the selected elements only. These 
+     multi-selected 3D elements will be previewed and then used as reference planes 
+     for generating several front views.</span>
+
+     <p>Open a 3D product.</p>
+     </p>
+<ol><li class="stepexpand"><p>Click <span class="uicontrol">Front View</span>
+       <img height="22" width="22" src="../Icons22/I_D3M_DrwFrontView.png"/>. <a name="ix-sub-bodies/sub-products, creating front views from"> </a><a name="ix-front views::creating from sub-bodies/sub-products"> </a><a name="ix-views::front views from sub-bodies/sub-products"> </a><p> 
+       </p></p></li>
+<li class="stepexpand"><p>Select one body, or press <span class="uicontrol">Ctrl +</span> 
+       multi-select the required elements in the tree.<p> 
+       <p>
+       <br/><img height="361" width="227" src="../GdrUserImages/multibody03.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>In the <span>3D area</span>, point to the geometry to choose a projection plane. 
+       As you go over the geometry with the pointer, the oriented preview automatically 
+       appears on the <span>work area</span>.<p> 
+       <p>
+       <br/><img height="416" width="345" src="../GdrUserImages/multibody04.gif"/><br/></p>
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  Be careful 
+           once you multi-select bodies or sub-products, and go further into the 
+           procedure, you cannot select or de-select any more bodies or sub-products.<ul>
+             <li>As you highlight a 3D element (going over it with the cursor), 
+             you can preview and then select the plane corresponding to this highlighted 
+             element.</li>
+
+             <li>As you highlight and select one or more elements defining the final 
+             plane, you can preview and assign a given orientation to this final 
+             plane.</li>
+
+             <li>Once you defined the plane, you can preview the front view within 
+             the 3D representation.</li>
+
+           </ul>
+
+           <p>Note 
+           that once an element is selected, that element becomes gray colored.
+           In addition, you can only work in one 3D document. If you try to select 
+           another document, the <span class="uicontrol">Front View</span> command quits.</p></td></tr></table>
+
+       
+       </p></p></li>
+<li class="stepexpand"><p>When the oriented preview corresponds to the projection plane 
+       you want, click the plane to validate.<p> 
+       <p>The front view is previewed. At this point, you can still 
+       modify its orientation: </p>
+       <p>
+       <br/><img height="272" width="370" src="../GdrUserImages/multibody01.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>Click in the drawing to generate the view.<p> 
+       <p>
+       <br/><img height="271" width="358" src="../GdrUserImages/multibody05.gif"/><br/></p>
+       
+       </p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-CreateAFrontViewUsingSelectionSets"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Create a Front View using Selection Sets
+     
+      </h2>
+<div><p><span>Selection sets let you gain in productivity, particularly in the case of 
+     large assemblies, when generating several views with numerous common features: 
+     you can select and store these features once and reuse the selection set as 
+     often as necessary without having to select the features again. </span>
+
+     <p>Open a 3D product.</p>
+     </p>
+<ol><li class="stepexpand"><p>Before you start creating views from selection sets, you 
+       first need to create one or more selection sets for this product. For more 
+       information, see <a href="../ComUserMap/com-t-Select-SelectionSets.htm#com-t-Select-SelectionSets" title="You can use selection sets to group selections or to quickly select objects.">Using Selection Sets</a>. For example, create a selection 
+       set to store product screws.<a name="ix-selection sets, creating front views with"> </a><a name="ix-views::front views with selection sets"> </a><a name="ix-front views::creating with selection sets"> </a><p> 
+       </p></p></li>
+<li class="stepexpand"><p>Click <span class="wintitle">Front View</span>
+       <img height="22" width="22" src="../Icons22/I_D3M_DrwFrontView.png"/>. 
+       </p></li>
+<li class="stepexpand"><p>In the tree, activate the 3D shape representation.</p></li>
+<li class="stepexpand"><p>From the <span class="wintitle">Tools</span> section of  the <span>action bar</span>, click <span class="uicontrol">Selection 
+       Sets...</span> <img height="22" width="22" src="../Icons22/I_SelectionSetList.png"/>.</p></li>
+<li class="stepexpand"><p>In the <span class="wintitle">Selection Sets Selection</span> dialog box, select a selection set and click <span class="uicontrol">Select</span>. <p> 
+       The selection 
+       set items are highlighted in the <span>3D area</span> and in the tree.<p> For more 
+       information, see <a href="../ComUserMap/com-t-Select-SelectionSets.htm#com-t-Select-SelectionSets" title="You can use selection sets to group selections or to quickly select objects.">Using Selection Sets</a>.</p>
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  After selecting a selection set, press <span class="uicontrol">Ctrl</span> 
+           to select additional sub-bodies or sub-products.</td></tr></table>
+
+       </p></p></li>
+<li class="stepexpand"><p>In the <span>3D area</span>, point at  the geometry to select a projection plane. 
+       <p> As you move the cursor over the geometry, the oriented preview appears.
+       <p>
+       <br/><img height="287" width="376" src="../GdrUserImages/selectionsets02NLS.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>When the oriented preview corresponds to the projection plane 
+       you want, click the plane to validate.<p> 
+       <p>The front view is previewed. At this point, you can still 
+       modify its orientation:</p>
+       <p>
+       <br/><img height="193" width="379" src="../GdrUserImages/selectionsets04.gif"/><br/></p>
+       </p></p></li>
+<li class="stepexpand"><p>Click in the drawing to generate the view.<p> 
+       <p>
+       <br/><img height="316" width="331" src="../GdrUserImages/selectionsets03.gif"/><br/></p>
+       <p>Notes:
+		
+           <ul>
+             <li>You can also use selection sets when creating isometric views.</li>
+
+             <li>You can also use selection sets to select the sub-bodies and/or 
+             sub-products from which you want to generate the front view.</li>
+
+             <li>Views created from selection sets are not associative with the 
+             selection sets themselves: if you modify a selection set after having 
+             created a view from it, the view will not be seen as needing an update, 
+             and if you do update the view, its definition will not change. You 
+             have to create the view over again so that your modifications 
+             will be taken into account.</li>
+
+           </ul>
+
+           </p>
+
+       </p></p></li>
+</ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

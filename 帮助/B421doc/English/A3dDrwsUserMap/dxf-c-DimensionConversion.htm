@@ -1,0 +1,99 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Dimension Conversion"/>
+<meta name="abstract" content="Dimensions can be imported in several different ways."/>
+<meta name="description" content="Dimensions can be imported in several different ways."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dxf-c-DimensionConversion"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Dimension Conversion</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dxf-c-DimensionConversion">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWG::convert dimensions as"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Dimension Conversion</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Dimensions can be imported in several different ways.
+    </span>
+
+    <p>Options for dimension conversion are found in the <a href="../PreferencesMap/gdrpref-c-DXF2D.htm#gdrpref-c-DXF2D" title="The DXF 2D options let you customize the import and export of DXF 2D files for Converter for IGES.">DXF 2D</a> <span>tab</span> of the <span><span class="wintitle">Preferences</span></span>.</p>
+  </p>
+
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <p><span class="uicontrol">Convert dimensions as</span>
+          can be set to the following values:<ul><li><span class="uicontrol">Dimensions</span>: Preserves the semantic of AutoCAD dimensions in <span><span class="tm-3D">3D</span>EXPERIENCE</span>
+as best as possible.<ul>
+<li>In most cases, the whole semantic of the dimension is kept.
+This means the position, the layout and the text are preserved. The
+position, color, thickness, text caption (symbol, value, tolerance,
+font, color) can be edited.</li>
+
+<li>In some cases, text with redundant information (e.g. tolerance
+present both in the dimension field and in the dimension text) or
+dual dimension, or other unrecognized information is dealt with as
+a text with an associative link with the dimension. This dimension
+has a "fake value" that is blanked. To display the true dimension
+value, delete the associated text and enter the data in the
+properties of the dimension.</li>
+
+</ul>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>With the <span class="uicontrol">Dimensions</span> option:<ul>
+<li>Problems may occur while positioning texts for Angular
+dimensions</li>
+
+<li>Following attributes are not yet supported :<ul>
+<li>Suppression of one of the dimension lines (for half
+dimensioning)</li>
+
+<li>Offset extension or suppression of extension lines</li>
+
+<li>Arrowhead choice (the <span><span class="tm-3D">3D</span>EXPERIENCE</span> default arrowhead is used)</li>
+
+<li>Automatic suppression of arrowheads if space is not
+sufficient.</li>
+
+</ul>
+</li>
+
+</ul>
+
+
+
+</td></tr></table>
+</li>
+<li><span class="uicontrol">Geometry</span>: Keeps the graphical aspect. Geometry is
+exploded into multiple lines, arcs, texts. (this mode increases
+performance when loading a model). </li>
+<li><span class="uicontrol">Details</span>: Turns dimensions   into details. This is an halfway notion
+between the previous two, in which the geometry is preserved and
+the dimension is easy to handle (it can be all selected at
+once).</li>
+</ul>
+</p>
+
+
+
+
+
+
+
+  </div>
+
+
+  
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

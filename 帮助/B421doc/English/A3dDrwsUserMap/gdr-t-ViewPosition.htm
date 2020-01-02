@@ -1,0 +1,142 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Positioning a View"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewPosition"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Positioning a View</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewPosition">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::positioning"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-positioning views::methods"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Positioning a View</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span/>
+
+						
+						
+						</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-AlignViewsUsingElements" id="toc_rg" title="You can align (translate) a view with another view using geometrical elements (projected as lines, circles, or points).">Align Views Using Elements</a></li><li><a href="#t-SuperposeViews" id="toc_rg" title="You can superpose a view with another view according to their origins.">Superpose Views
+		
+		</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>     Open or create a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.  </td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+</div>
+<div class="nested1" id="t-AlignViewsUsingElements"><h2 class="topictitle2">Align Views Using Elements</h2>
+<div><p><span>You can align (translate) a view with 
+		another view using geometrical elements (projected as lines, circles, or points).
+		</span>
+
+		</p>
+<ol><li class="stepexpand"><p>Right-click the view that you want to reposition and select <span class="uicontrol">View Positioning &gt;</span> <span class="uicontrol">Align Views 
+			Using Elements</span>.<a name="ix-views::aligning"> </a><a name="ix-aligning views"> </a><a name="ix-positioning views::aligning"> </a><a name="ix-commands::Align Views Using Elements"> </a></p></li>
+<li class="stepexpand"><p>On this view, select the first geometrical element that 
+			you want to align. <p>This element may be projected either as a point, a line 
+			or a circle (aligned according to its center). A visual feedback is 
+			provided to indicate the kind of geometry detected, and in the case 
+			of a line, its orientation (the orientation being determined by the 
+			proximity of the pointer with one of its extremities).</p><p> 
+			
+				
+					
+					
+						
+							
+							<br/><img src="../GdrUserImages/alignviews01.png"/><br/>
+						
+					
+					
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>On the reference view, select the geometrical element 
+			that you want to align. <p> 
+			
+				
+					
+					
+						
+							
+							<br/><img src="../GdrUserImages/alignviews02.png"/><br/>
+						
+					
+					
+				
+			
+			<p>Notes:
+		 <ul><li>If 
+					both the selections are lines, you can press <span class="uicontrol">Shift</span> before 
+					clicking the second element to view where both the line origins 
+					meet. In this case, both the lines will be made collinear and their 
+					origin points coincident.</li>
+<li>If the lines are parallel, both the views are aligned.</li>
+<li>If the lines are non-parallel, the first view is oriented according to the reference element selected, without any alignment.</li>
+</ul>
+</p>
+
+			<p>The first view is moved, and both views are aligned 
+			according to the elements and orientations you selected. Any associative 
+			positional link that existed between the two views prior to their alignment 
+			is removed, and no new one is created.</p>
+			
+				
+					
+					
+						
+							
+							<br/><img src="../GdrUserImages/alignviews03.png"/><br/>
+						
+					
+					
+				
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span> If you want 
+					to restore an associative positional link between the views, 
+					you can right-click the view and select <span class="uicontrol">View Positioning 
+					&gt; Position According to Reference View</span>.</td></tr></table>
+
+			</p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-SuperposeViews"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Superpose Views
+		
+		</h2>
+<div><p><span>You can superpose a view with another view according 
+		to their origins.</span>
+
+		</p>
+<ol><li class="stepexpand"><p>Right-click the view that you want to superpose, and select <span class="uicontrol">View Positioning &gt;</span> <span class="uicontrol">Superpose</span>.
+			<a name="ix-views::superposing"> </a><a name="ix-superposing views"> </a><a name="ix-positioning views::superposing"> </a><a name="ix-commands::Superpose"> </a></p></li>
+<li class="stepexpand"><p>Click the view on which you want to superpose the first 
+			view. <p> The first view is moved and superposed on to the second one.
+			
+				
+					
+					
+						
+							
+							<br/><img src="../GdrUserImages/superposeviews01.png"/><br/>
+						
+					
+					
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Click in the drawing, outside the views, to validate 
+			the superposition.</p></li>
+</ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,24 @@
+##CLIENT REQUEST
+##------------------------------------------------------------
+[GET] https://sdbstelladsy.ux.dsone.3ds.com/3DSpace/resources/caasample/basicrestws/User
+  [HEADER] SecurityContext : VPLMProjectLeader.MyCompany.3DS Private Collab Space encoded as: VPLMProjectLeader.MyCompany.3DS+Private+Collab+Space <-
+
+##SERVER RESPONSE [404] 
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 404 Not Found
+Date: Fri, 15 Apr 2016 07:20:03 GMT
+Server: Microsoft-IIS/7.0
+Content-Type: text/html;charset=ISO-8859-1
+Content-Length: 1752
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext,x-utc-offset
+Access-Control-Max-Age: 600
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+#RESPONSE BODY 
+#--------------------
+unhandle response Content-Type=text/html;charset=ISO-8859-1

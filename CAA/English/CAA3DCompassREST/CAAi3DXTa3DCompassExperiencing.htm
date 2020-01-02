@@ -1,0 +1,185 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Experiencing 3DCompass Web Services</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Experiencing 3DCompass Web Services</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how you can quickly experience 3DCompass web services using a batch. This
+		batch executes the 3DEXPERIENCE platform login and authentication, and consumes 
+		3DCompass web services logged in a txt file.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Batch"></a>CAAi3dxScenarioMain Batch</h2>
+<p>The batch used to experience 3DCompass web services can be the one used to experience 3DSpace web services [<a href="#References">1</a>]. Follow the instructions
+given by the referenced article to retrieve and install the executable on your environment. </p>
+<p>The batch is a Java Client application you launch as follows:</p> 
+<pre class="code">
+java com.dassault_systemes.caasamples.i3dxsamples.CAAi3dxScenarioMain 
+                        %3DPassport_url%  %login%   %password%  
+                        <b>%3DCompass_url%     %security_context% </b>
+                        %output_dir%     %inputfilepath%  
+</pre>
+<p>In bold the arguments changing from a 3DSpace context.</p>
+<p>Where:</p>
+<table class="fill">
+<tr>
+  <th>argument</th>
+  <th>meaning</th>
+</tr>
+<tr>
+  <td>3DPassport_url</td>
+  <td>The 3DPassport URL of a 3DEXPERIENCE platform. The URL can or cannot contain a final /.</td>
+</tr>
+<tr>
+  <td>login</td>
+  <td>A valid login for the given 3DEXPERIENCE platform</td>
+</tr>
+<tr>
+  <td>password</td>
+  <td>The password of the login.</td>
+</tr>
+<tr>
+  <td><b>3DCompass_url</b></td>  
+  <td>The 3DCompass URL of the same 3DEXPERIENCE platform. The URL must not finish with /. For a cloud environment, the 
+  3DCompass URL can be different for each platform instance even if this service is no multi-tenant. So using any 3DCompass 
+URL works.</td>
+</tr>
+<tr>
+  <td><b>security_context</b></td>
+  <td>An empty string. 3DCompass web services does not require a security context.
+   </td>
+</tr>
+<tr>
+  <td>output_dir</td>
+  <td>Directory for traces of HTTPS requests and responses. Do not append / at the end, the program appends it.
+  three files are generated: <i>login.traces</i> for login step, <i>logout.traces</i> for 
+  logout step, and <i>api_ScenarioList.traces</i> for the 3DCompass web services. </td>
+</tr>
+<tr>
+  <td>inputfilepath</td>
+  <td>The path of the text file with 3DCompass web services to execute. The path can be absolute or 
+  relative to the directory where is executed the batch.</td>
+</tr>
+</table>
+<p>The batch is over when all web services are
+successfully executed, or at the first failure. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Platform"></a>Input File</h2>
+<p>The last argument of the java application is a text file containing a list of web services to execute.
+ The format of this file is also detailed in the referenced article [<a href="#References">1</a>].</p>
+<p><b>List Third Party Applications</b></p>
+<pre class="code">
+10=GET./resources/AppsMngt/api/custom/applications?filter=OnPremise
+15=GET./resources/AppsMngt/api/custom/applications 
+</pre>
+<p><b>Get a Third Party Application</b></p>
+<pre class="code">
+18=GET./resources/AppsMngt/api/custom/applications/MAP-XXXX
+</pre>
+<p><b>Add Third Party Applications</b></p>
+<p>If you copy/paste those lines, at least replace &lt;PLATFORMINSTANCE&gt; by a valid platform instance (OnPremise or tenant id). </p>
+<pre class="code">
+20=POST./resources/AppsMngt/api/custom/applications
+20_JSON={  "data": {  "type" : "custom/applications" , "attributes": { "type": "widget",  "name": "CAA My Custom App", "icon": "http://www.3ds.com/icon.jpg","launchinfos": "http://www.3ds.com","quadrant": "EaSt" },"relationships": { "platform": { "data": { "type": "environments", "id": "&lt;PLATFORMINSTANCE&gt;", "attributes": { "public": false}}}}  }}
+25=POST./resources/AppsMngt/api/custom/applications
+25_JSON={  "data": {  "type" : "custom/applications" , "attributes": { "type": "native",  "name": "CAA My Native Custom App", "icon": "http://www.3ds.com/icon.jpg","tooltip": "The custom native app","exe": "MyBatch.bat" },"relationships": { "platform": { "data": { "type": "environments", "id": "&lt;PLATFORMINSTANCE&gt;", "attributes": { "public": true}}}}  }}
+</pre>
+<p><b>Edit a Third Party Application</b></p>
+<pre class="code">
+30=PATCH./resources/AppsMngt/api/custom/applications/MAP-XXX
+30_JSON={"data": {"type" : "custom/applications" , "attributes": {"quadrant":"North"} }}
+</pre>
+<p><b>Delete a Third Party Application</b></p>
+<pre class="code">
+40=DELETE./resources/AppsMngt/api/custom/applications/MAP-XXXX
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Example"></a>Execution Traces</h2>
+<p>Let's suppose you launch such a line command (replace batch arguments by your contextual values)</p>
+<pre class="code">
+java  com.dassault_systemes.caasamples.i3dxsamples.CAAi3dxScenarioMain PassportURL X1 yyy 3DCompassURL  "" e:\temp scenario.txt 
+</pre>
+<p>For a  <b>successful</b> execution, the console traces (*) are as follows:</p>
+<pre class="code">
+## Getting input arguments :
+ catch 3DPassport URL=PassportURL
+ catch user login=X1
+ catch user password=yyy
+ catch 3DSpace URL=3DCompassURL
+ catch Security Context (role.organization.collabspace) = 
+ catch output directory =e:\temp\
+ catch input scenario file =scenario.txt
+## End Of arguments catching
+
+
+
+## Login
+
+## Consume 3DSpace Web Services
+
+## Logout
+</pre>
+<p>In the output directory there are three files. One for the login and logout execution, and one, 
+as <a href="sample/CAAapi_ScenarioList.traces.txt">api_ScenarioList.traces</a>, for all 3DCompass web service execution. </p>
+<p>(*) Does not let you trouble with the <i>3DSpace</i> word, if you use a 3DCompass URL as forth argument it will work.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+<tr>
+    <td>[1]</td>
+	<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAA3DSpaceREST/CAAi3DXTaScenarioJavaClientApp.htm')">Experiencing 3DSpace Web Services</a></td>
+</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [October 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

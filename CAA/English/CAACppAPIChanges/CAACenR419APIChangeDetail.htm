@@ -1,0 +1,285 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Qr" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Changed C++ APIs in 3DEXPERIENCE R2017x GA</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Changed C++ APIs in <strong>3D</strong>EXPERIENCE R2017x GA</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article presents by frameworks the detail of CAA C++ resources modified 
+		in <strong>3D</strong>EXPERIENCE R2017x and how to modify your code accordingly.</p>
+		<p>Each modification is listed for a resource (file, class, method) with 
+		a classification. They will generally be detected by a recompilation of 
+		the code. Most of the time, signature modifications are obvious. Check in 
+		the framework detail how to replace deleted entities. Possibly impacting 
+		modifications are highlighted in red.</p>
+		<table class="fill" style="margin-left: 40px">
+			<tr>
+				<th>Classification</th>
+				<th>Meaning</th>
+			</tr>
+			<tr>
+				<td><a name="LHC"></a>LHC</td>
+				<td>@CAA2Level Has Changed: a L1 file is no more L1.</td>
+			</tr>
+			<tr>
+				<td><a name="UHC"></a>UHC</td>
+				<td>@CAA2Usage Has Changed: usage has changed for a more restricted 
+				usage. For example a class tagged as derivable is not derivable 
+				anymore.</td>
+			</tr>
+			<tr>
+				<td><a name="CHBD"></a>CHBD</td>
+				<td>Class Has Been Deleted</td>
+			</tr>
+			<tr>
+				<td><a name="FHBD"></a>FHBD</td>
+				<td>File Has Been Deleted</td>
+			</tr>
+			<tr>
+				<td><a name="ADVHC"></a>ADVHC</td>
+				<td>Argument Default Value Has Changed</td>
+			</tr>
+			<tr>
+				<td><a name="MHBDM"></a>MHBDM</td>
+				<td>Method Has Been Deleted or Modified</td>
+			</tr>
+			<tr>
+				<td><a name="MRTHC"></a>MRTHC</td>
+				<td>Method Returned Type Has Changed</td>
+			</tr>
+			<tr>
+				<td><a name="NPVM"></a>NPVM</td>
+				<td>New Pure Virtual Method. A new pure virtual method has been 
+				added in a derivable class or in an interface to be implemented 
+				without an adapter.</td>
+			</tr>
+			<tr>
+				<td><a name="INDM"></a>INDM</td>
+				<td>Method is no more documented. It does not break your code in 
+				any way but means that you are not supposed to use it anymore. Check 
+				that you do not use it or look for replacement information.</td>
+			</tr>
+			<tr>
+				<td><a name="MINMV"></a>MINMV</td>
+				<td>Method is no more virtual. If occurs on a U1 class, may require 
+				modifications in Imakefile.mk of client code. If occurs on a U2 
+				class, see details on the documentation of the concerned resource 
+				modification.</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>Moved Files</h2>
+<p>The following files have been moved into a different framework, requesting only 
+modification of client application <code>IdentityCard.h</code> and <code>Imakefile.mk</code> 
+files.</p>
+<table class="fill">
+	<thead>
+	<tr>
+		<th rowspan="2">Frameworks</th>
+		<th rowspan="2">Headers</th>
+		<th rowspan="2">Modules</th>
+		<th colspan="2">New Locations</th>
+	</tr>
+		<th>Frameworks</th>
+		<th>Modules</th>
+	<tr>
+	</tr>
+	</thead>
+	</tbody>
+	<tr>
+		<td rowspan="19">VisualizationController</td>
+		<td>CAT3DSimpleSphereRep.h</td>
+		<td rowspan="19">CATVisController</td>
+		<td rowspan="19">SGManager</td>
+		<td rowspan="19">SceneGraphManager</td>
+	</tr>
+	<tr>
+		<td>CATIVisuFilter.h</td>
+	</tr>
+	<tr>
+		<td>CATAddElements.h</td>
+	</tr>
+	<tr>
+		<td>CATColorPathElementRep.h</td>
+	</tr>
+	<tr>
+		<td>CATCsoNotfication.h</td>
+	</tr>
+	<tr>
+		<td>CATDisplayType.h</td>
+	</tr>
+	<tr>
+		<td>CATEmptyElements.h</td>
+	</tr>
+	<tr>
+		<td>CATExtIModelEvents.h</td>
+	</tr>
+	<tr>
+		<td>CATExtIVisu.h</td>
+	</tr>
+	<tr>
+		<td>CATGenerativeAttribute.h</td>
+	</tr>
+	<tr>
+		<td>CATGraphicPathElement.h</td>
+	</tr>
+	<tr>
+		<td>CATHSO.h</td>
+	</tr>
+	<tr>
+		<td>CATModelForRep2D.h</td>
+	</tr>
+	<tr>
+		<td>CATPathElementRep.h</td>
+	</tr>
+	<tr>
+		<td>CATPSO.h</td>
+	</tr>
+	<tr>
+		<td>CATRemoveElements.h</td>
+	</tr>
+	<tr>
+		<td>CATSO.h</td>
+	</tr>
+	<tr>
+		<td>CATVisManager.h</td>
+	</tr>
+	<tr>
+		<td>CATVisRepUtils.h</td>
+	</tr>
+	<tr>
+		<td>CATXSO.h</td>
+	</tr>
+	
+	</tbody>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2>Modified Classes and Methods</h2>
+<table class="fill">
+	<tr>
+		<th>Frameworks</th>
+		<th>Headers</th>
+		<th>Classes</th>
+		<th>Methods</th>
+		<th>Signatures</th>
+		<th>Modifications</th>
+		<th>Details and How To</th>
+	</tr>
+	<tr>
+		<td>ProductStructureInterfaces</td>
+		<td>CATIPrd3DPartReferenceFactory.h</td>
+		<td>CATIPrd3DPartReferenceFactory</td>
+		<td>Create3DPart</td>
+		<td>HRESULT Create3DPart(CATIAdpEnvironment * ipEnv, CATListValCATICkeParm_var &amp; iPrdAttributesValues, CATListValCATICkeParm_var &amp; iPrdRepAttributesValues, CATIPLMProducts *&amp; op3DPartReference)</td>
+		<td>MHBDM</td>
+		<td>Signature without CATIType has been removed, use the signature with an additional CATIType argument. Details can be found in <a href="#" onclick="CAAlinkOutOfPreqs('CAAPstProductModeler/CAAPstTaCreateAPIMigration.htm'); return false;">Product Modeler API Changes for Objects Creation</a>.</td>
+	</tr>
+	<tr>
+	<tr>
+		<td rowspan="2">PLMCustomLinkInterfaces</td>
+		<td>PLMICustomRelationship.h</td>
+		<td>PLMICustomRelationship</td>
+		<td rowspan="2"></td>
+		<td rowspan="2"></td>
+		<td rowspan="2">FHBD</td>
+		<td rowspan="2">Custom link functionality lead to data corruption problem and has been withdrawn.</td>
+	</tr>
+	<tr>
+		<td>PLMICustomRelationshipManager.h</td>
+		<td>PLMICustomRelationshipManager</td>
+	</tr>
+	<tr>
+		<td rowspan="9">VisualizationFoundation</td>
+		<td rowspan="5">CAT3DLightSourceGP.h</td>
+		<td rowspan="5">CAT3DLightSourceGP</td>
+		<td>GatherDiskLightInfo</td>
+		<td>void GatherDiskLightInfo(CATMathPointfamp; oOrigin,CATMathDirectionfamp; oNormal,floatamp; oRadius,float* oDiffuse,floatamp; oRadiance)const</td>
+		<td rowspan="9">INDM</td>
+		<td rowspan="9">Exosition Error: methods should not be used and are now @nodoc.</td>
+	</tr>
+	<tr>
+		<td>GatherRectangleLightInfo</td>
+		<td>void GatherRectangleLightInfo(CATMathPointfamp; oOrigin,CATMathDirectionfamp; oNormal,CATMathDirectionfamp; oUpDir,floatamp; oRightSize,floatamp; oUpSize,float* oDiffuse,floatamp; oRadiance)const</td>
+	</tr>
+	<tr>
+		<td>GatherSphereLightInfo</td>
+		<td>void GatherSphereLightInfo(CATMathPointfamp; oOrigin,floatamp; oRadius,float* oDiffuse,floatamp; oRadiance)const</td>
+	</tr>
+	<tr>
+		<td>GatherTubeLightInfo</td>
+		<td>void GatherTubeLightInfo(CATMathPointfamp; oOrigin,CATMathDirectionfamp; oTubeDir,floatamp; oLength,floatamp; oRadius,float* oDiffuse,floatamp; oRadiance)const</td>
+	</tr>
+	<tr>
+		<td>GetAreaType</td>
+		<td>inline CATLightSourceAreaType GetAreaType()const</td>
+	</tr>
+	<tr>
+		<td rowspan="3">CATGraphicMaterial.h</td>
+		<td rowspan="3">CATGraphicMaterial</td>
+		<td>GetShaderImplementation</td>
+		<td>void GatherDiskLightInfo(CATMathPointfamp; oOrigin,CATMathDirectionfamp; oNormal,floatamp; oRadius,float* oDiffuse,floatamp; oRadiance)const</td>
+	</tr>
+	<tr>
+		<td>GetStreamable</td>
+		<td>CATBoolean GetStreamable()</td>
+	</tr>
+	<tr>
+		<td>SetStreamable</td>
+		<td>void SetStreamable(CATBoolean streamable)</td>
+	</tr>
+	<tr>
+		<td>VisualizationFoundation</td>
+		<td>CATMaterialApplication.h</td>
+		<td>CATMaterialApplication</td>
+		<td>CATMaterialApplication</td>
+		<td>CATMaterialApplication(CATGraphicMaterial* pMat,CATULONG32 inherit = 0,CATULONG32 layer = LAYER_MAX_MINUS_ONE)</td>
+		<td>ADVHC</td>
+		<td>Default value for the inherit argument is now 1.</td>
+	</tr>
+
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2016]</td>
+		<td>Document created for <strong>3D</strong>EXPERIENCE R2017x</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

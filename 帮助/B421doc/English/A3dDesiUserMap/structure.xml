@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<Root>
+ <ITEM href = "a3ddesi-m-ui-sb.htm" title = "User Interface" reference = "yes">
+  <ITEM href = "a3ddesi-r-ui-ActBar-Freehand.htm" title = "Freehand Section" reference = "yes"/>
+  <ITEM href = "a3ddesi-r-ui-ActBar-Modeling.htm" title = "Features Section" reference = "yes"/>
+  <ITEM href = "a3ddesi-r-ui-ActBar-Surfaces.htm" title = "Surfaces Section" reference = "yes"/>
+  <ITEM href = "a3ddesi-r-ui-ActBar-Assembly.htm" title = "Assembly Section" reference = "yes"/>
+  <ITEM href = "a3ddesi-r-ui-ActBar-View.htm" title = "View Section" reference = "yes"/>
+  <ITEM href = "a3ddesi-r-ui-ActBar-Tools.htm" title = "Tools Section" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "a3ddesi-m-ConceptSk-sb.htm" title = "Freehand Sketches" reference = "yes">
+  <ITEM href = "a3ddesi-c-ConceptSk-About.htm" title = "About Freehand Sketches" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-ConceptSk-ConceptCurve.htm" title = "Sketching Freehand Curves" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-ConceptSk-Fill.htm" title = "Filling Regions Enclosed by Curves in Freehand Sketches" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-ConceptSk-EntitiesErase.htm" title = "Erasing and Deleting Curves from Freehand Sketches" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-ConceptSk-EntitiesReflect.htm" title = "Reflecting Curves" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-ConceptSk-EntitiesMove.htm" title = "Moving Sketch Entities in Freehand Sketches" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "a3ddesi-t-start-sketch.htm" title = "Starting a Sketch" reference = "yes"/>
+ <ITEM href = "a3ddesi-m-Features-sb.htm" title = "Features" reference = "yes">
+  <ITEM href = "a3ddesi-m-Features-Reference-sb.htm" title = "Reference Geometry and Components" reference = "yes">
+   <ITEM href = "a3ddesi-t-reference-plane-basics.htm" title = "Creating a Reference Plane" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-reference-axis-basics.htm" title = "Creating a Reference Axis" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-creating-ref-points.htm" title = "Creating Reference Points" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-define-coordinate-system.htm" title = "Defining a Coordinate System" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-m-Features-Bodies-sb.htm" title = "Bodies" reference = "yes">
+   <ITEM href = "a3ddesi-m-Features-Extrudes-sb.htm" title = "Feature Extrudes" reference = "yes">
+    <ITEM href = "a3ddesi-t-extrude-cut-basics.htm" title = "Creating an Extrude or Extrude Cut" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-extrude-types.htm" title = "Extrude Types" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-extrude-end-conditions.htm" title = "Extrude End Conditions" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-extrude-more-options.htm" title = "Extrude Options" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "a3ddesi-m-Features-Revolves-sb.htm" title = "Feature Revolves" reference = "yes">
+    <ITEM href = "a3ddesi-t-revolve-and-cut-basics.htm" title = "Creating a Revolve or Revolve Cut" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-revolve-types.htm" title = "Revolve Types" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-revolve-end-conditions.htm" title = "Revolve End Conditions" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-revolve-options.htm" title = "Revolve Options" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "a3ddesi-m-Features-Sweeps-sb.htm" title = "Feature Sweeps" reference = "yes">
+    <ITEM href = "a3ddesi-t-sweep-basics.htm" title = "Creating a Sweep Feature" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-sweep-types.htm" title = "Sweep Types" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-sweep-path-options.htm" title = "Sweep Profile Orientation Options" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-sweep-offset-options.htm" title = "Sweep End Conditions" reference = "yes"/>
+    <ITEM href = "a3ddesi-r-sweep-more-options.htm" title = "Sweep Options" reference = "yes"/>
+   </ITEM>
+   <ITEM href = "a3ddesi-t-feature-creating-loft.htm" title = "Creating Loft and Loft Cut" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-m-Features-Add-sb.htm" title = "Adding Features to Existing Bodies" reference = "yes">
+   <ITEM href = "a3ddesi-t-creating-fillets.htm" title = "Creating Fillets" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-fillet-options.htm" title = "Fillet Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-chamfer-basics.htm" title = "Creating a Chamfer" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-chamfer-option.htm" title = "Chamfer Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-draft-basics.htm" title = "Creating a Draft Feature" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-draft-options.htm" title = "Draft Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-feature-surface-thicken.htm" title = "Thicken a Surface" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-creating-a-shell-of-uniform-thickness.htm" title = "Creating a Shell of Uniform Thickness" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-creating-a-shell-with-multi-thickness-faces.htm" title = "Creating a Shell with Faces of Varying Thickness" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-shell-options.htm" title = "Shell Options" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-m-Features-Pattern-sb.htm" title = "Patterning Features" reference = "yes">
+   <ITEM href = "a3ddesi-t-Mirroring-a-Feature.htm" title = "Mirroring a Feature" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Creating-Linear-Feature-Pattern.htm" title = "Creating a Linear Pattern" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-linear-pattern-feature-options.htm" title = "Linear Pattern Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Creating-Circular-Feature-Pattern.htm" title = "Creating a Circular Pattern" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-circular-pattern-feature-options.htm" title = "Circular Pattern Options" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-m-Features-BodiesModify-sb.htm" title = "Modifying Bodies" reference = "yes">
+   <ITEM href = "a3ddesi-t-combine-basics.htm" title = "Combining Bodies" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-combine-options.htm" title = "Combine Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-split-basics.htm" title = "Splitting Bodies or Faces" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-moving-faces.htm" title = "Moving Faces" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-moving-faces-options.htm" title = "Moving Face Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-move-body.htm" title = "Moving a Body" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-moving-body-options.htm" title = "Moving Body Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-delete-face-basics.htm" title = "Deleting Faces" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-deleting-bodies.htm" title = "Deleting Bodies" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-Deletion-Types.htm" title = "Deletion Types" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-scale-basics.htm" title = "Scaling Bodies" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-m-Features-DirectEdit-sb.htm" title = "Direct Edit" reference = "yes">
+   <ITEM href = "a3ddesi-c-direct-edit.htm" title = "About Direct Edit" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-convert-to-direct-edit.htm" title = "Converting a Feature to Direct Edit" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-moving-direct-edit-faces.htm" title = "Moving Direct-Edit Faces" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-scaling-direct-edit-features.htm" title = "Offsetting Direct Edit Features" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-copying-direct-edit-features.htm" title = "Copying Direct-Edit Features and Bodies" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-dimensioning-direct-edit-features.htm" title = "Dimensioning Direct-Edit Features" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-adding-direct-edit-constraints.htm" title = "Adding Direct-Edit Constraints" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-m-Features-Edit-sb.htm" title = "Editing Features" reference = "yes">
+   <ITEM href = "a3ddesi-t-feature-edit.htm" title = "Editing Features" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-editing-features-quick-edit.htm" title = "Editing Features with Quick Edit" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-feature-reorder-basics.htm" title = "Reordering Features in the Design Tree" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-roll-to-basics.htm" title = "Rolling Back in the Design Tree" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-suppress-unsuppress-basics.htm" title = "Suppressing Features" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-t-deleting-features.htm" title = "Deleting Features" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "a3ddesi-m-Surfaces-sb.htm" title = "Surfaces" reference = "yes">
+  <ITEM href = "a3ddesi-t-creating-projection-curves.htm" title = "Creating Projection Curves" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-creating-intersection-curves.htm" title = "Creating Intersection Curves" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-creating-through-points-curves.htm" title = "Creating Through Points Curves" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-CreatingSurfaceExtrudeandExtrudeCut.htm" title = "Creating a Surface Extrude or Extrude Cut" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-CreatingaSurfaceRevolveorRevolveCut.htm" title = "Creating a Surface Revolve or Revolve Cut" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-Creating-Surface-Sweep.htm" title = "Creating a Surface Sweep" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-Creating-Surface-Loft.htm" title = "Creating a Surface Loft" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-feature-creating-fill.htm" title = "Creating a Surface Fill" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-feature-knit.htm" title = "Knitting to Combine Faces and Bodies" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-trimming-Surface.htm" title = "Trimming a Surface" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-feature-surface-offest.htm" title = "Creating an Offset Face or Body" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-feature-surface-extend.htm" title = "Extending a Surface" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-creating-ruled-surface.htm" title = "Creating Ruled Surface" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "a3ddesi-m-Assemblies-sb.htm" title = "Assemblies" reference = "yes">
+  <ITEM href = "a3ddesi-m-Assemblies-Create-sb.htm" title = "Creating Assemblies" reference = "yes">
+   <ITEM href = "a3ddesi-t-making-components.htm" title = "Making Components from Bodies" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-make-component-options.htm" title = "Make Component Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-inserting-a-new-component.htm" title = "Inserting New Components" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-inserting-an-existing-component.htm" title = "Inserting Existing Components" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-moving-features-between-components.htm" title = "Moving Features Between Components" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-assembly-new-product.htm" title = "Creating a Physical Product" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-t-regenerate-assembly-basics.htm" title = "Regenerating an Assembly" reference = "yes"/>
+  <ITEM href = "a3ddesi-m-Assemblies-Patterns-sb.htm" title = "Component Patterns and Mirrors" reference = "yes">
+   <ITEM href = "a3ddesi-t-Mirroring-Component-Assembly.htm" title = "Mirroring a Component" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-mirror-component-options.htm" title = "Mirror Component Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Creating-Linear-Patterns-Assemblies.htm" title = "Creating Linear Patterns of Components" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-linear-pattern-more-options.htm" title = "Linear Component Pattern Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Creating-Circular-Patterns-Assemblies.htm" title = "Creating Circular Patterns of Components" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-circular-pattern-more-options.htm" title = "Circular Component Pattern Options" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-m-Assemblies-Mates-sb.htm" title = "Mates" reference = "yes">
+   <ITEM href = "a3ddesi-c-Mates-overview.htm" title = "About Mates" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Mate-Add.htm" title = "Adding Mates" reference = "yes"/>
+   <ITEM href = "a3ddesi-c-Mates-ConstraintStatus.htm" title = "Constraint Status in the Design Tree" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-Mate-FunctionalMates.htm" title = "Functional Mates" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Mate-Edit.htm" title = "Editing Mates" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Mate-AlignmentFlip.htm" title = "Flipping the Mate Alignment" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-Mate-Options.htm" title = "Mate Options" reference = "yes"/>
+   <ITEM href = "a3ddesi-r-mate-icons.htm" title = "Mate Icons" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Mate-BeltAdd.htm" title = "Adding a Belt Mate" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Mate-GearAdd.htm" title = "Adding a Gear Mate" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Assembly-Mates-LockAdd.htm" title = "Adding a Lock Mate" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Mate-RackPinionAdd.htm" title = "Adding a Rack and Pinion Mate" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Mate-ScrewAdd.htm" title = "Adding a Screw Mate" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Mate-UniversalJointAdd.htm" title = "Adding a Universal Joint Mate" reference = "yes"/>
+   <ITEM href = "a3ddesi-c-Mates-Automatic-GeometryBased.htm" title = "Geometry-Based Automatic Mates" reference = "yes"/>
+   <ITEM href = "a3ddesi-c-Mates-Automatic-HistoryBased.htm" title = "History-Based Automatic Mates" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Mates-Automatic-SuggestComponents.htm" title = "Finding Companion Components" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-Assembly-Mates-Smart.htm" title = "Smart Mating" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-m-Assemblies-Links-sb.htm" title = "External References" reference = "yes">
+   <ITEM href = "a3ddesi-t-listing-links.htm" title = "Listing External References" reference = "yes"/>
+   <ITEM href = "a3ddesi-t-controlling-link-creation.htm" title = "Controlling the Creation of External References" reference = "yes"/>
+  </ITEM>
+  <ITEM href = "a3ddesi-t-replacing-components.htm" title = "Replacing Components" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "a3ddesi-m-ViewCommands-sb.htm" title = "View Commands" reference = "yes">
+  <ITEM href = "a3ddesi-t-view-normal-to.htm" title = "Viewing a Product Normal To" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-standard-views.htm" title = "Applying Standard Views" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-view-mirroring.htm" title = "Mirroring the View" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-using-view-selector.htm" title = "Using the View Selector" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-applying-ambience.htm" title = "Applying an Ambience" reference = "yes"/>
+  <ITEM href = "a3ddesi-t-applying-view-styles.htm" title = "Applying a View Style" reference = "yes"/>
+ </ITEM>
+ <ITEM href = "a3ddesi-t-MassProps.htm" title = "Viewing Mass Properties" reference = "yes"/>
+ <ITEM href = "a3ddesi-t-inserting-picture.htm" title = "Inserting Pictures Into a Plane" reference = "yes"/>
+ <ITEM href = "a3ddesi-t-Measure.htm" title = "Measuring Items" reference = "yes"/>
+ <ITEM href = "a3ddesi-t-UpdateLib.htm" title = "Updating Library Content" reference = "yes"/>
+ <ITEM href = "a3ddesi-t-show-hide.htm" title = "Showing and Hiding Items" reference = "yes"/>
+ <ITEM href = "Sitemap.htm" title = "Sitemap" reference = "no"/>
+</Root>

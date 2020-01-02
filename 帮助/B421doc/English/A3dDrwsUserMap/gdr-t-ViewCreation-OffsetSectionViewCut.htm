@@ -1,0 +1,272 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating an Offset Section View/Cut"/>
+<meta name="abstract" content="You can create an offset section view or an offset section cut using a cutting profile. Additionally, you can create an offset section view or an offset section cut in a view which already contains a broken profile."/>
+<meta name="description" content="You can create an offset section view or an offset section cut using a cutting profile. Additionally, you can create an offset section view or an offset section cut in a view which already contains a broken profile."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewCreation-Sections.htm#gdr-c-ViewCreation-Sections"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewCreation-SectionsUsingOffsetConstraints.htm#gdr-t-ViewCreation-SectionsUsingOffsetConstraints"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewCreation-AlignedSectionViewCut.htm#gdr-t-ViewCreation-AlignedSectionViewCut"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewCreation-SectionsUsingAlternativeMethods.htm#gdr-t-ViewCreation-SectionsUsingAlternativeMethods"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewCreation-OffsetSectionViewCut"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating an Offset Section View/Cut</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewCreation-OffsetSectionViewCut">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-offset section cuts"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-offset section views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::offset section views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::offset section cuts"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::offset section views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::offset section cuts"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Offset Section View"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Offset Section Cut"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>
+         
+         Creating an Offset Section View/Cut
+          
+         </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can create an offset section view or an offset section cut using a cutting profile. Additionally, you can create an offset section view or an offset section cut in a view which already contains a broken profile. </span>
+
+             
+             </p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-CreateanOffsetSectionViewCut" id="toc_rg" title="You can create an offset section view or an offset section cut using a cutting profile as cutting plane.">Create an Offset Section View/Cut</a></li><li><a href="#t-CreateanOffsetSectionViewCutContainingaBrokenView" id="toc_rg" title="You can create an offset section view/cut which already contains a broken profile.">Create an Offset Section View/Cut Containing a Broken View</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>                          <ul>        <li>Open a product containing a 3D part and a generated <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.</li>
+        <li>Make sure the <span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">front view</span> is active on the drawing (double-click it if needed).</li>
+<li>Tile your windows vertically to see both your part and the related
+drawing.</li>
+       </ul>
+                  </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewCreation-Sections.htm#gdr-c-ViewCreation-Sections" title="You can create section views, that is, aligned section views, aligned section cuts, offset section views and offset section cuts.">About Sections</a></td></tr><tr><td><a href="gdr-t-ViewCreation-SectionsUsingOffsetConstraints.htm#gdr-t-ViewCreation-SectionsUsingOffsetConstraints" title="You can create sections (aligned/offset) by applying an offset constraint with respect to a valid edge or a hole as a reference element. You can also apply an offset constraint to the second or a higher profile segment for offset section views and cuts.">Creating Sections Using Offset Constraints</a></td></tr><tr><td><a href="gdr-t-ViewCreation-AlignedSectionViewCut.htm#gdr-t-ViewCreation-AlignedSectionViewCut" title="You can create an aligned section view or an aligned section cut using a cutting profile. Additionally, you can create an aligned section view or an aligned section cut in a view which already contains a broken profile.">Creating an Aligned Section View/Cut</a></td></tr><tr><td><a href="gdr-t-ViewCreation-SectionsUsingAlternativeMethods.htm#gdr-t-ViewCreation-SectionsUsingAlternativeMethods" title="You can create aligned sections views, aligned section cuts, offset section views or offset section cuts.">Creating Sections Using Alternative Methods</a></td></tr></table></td></tr></table>
+<a name="CATDrwGreyIcon.DrwSectCutView"><!-- --></a><a name="CATDrwGreyIcon.DrwSectView"><!-- --></a>
+
+				 <div><div class="p"><!--xxx--></div>
+</div>
+<div/><div class="nested1" id="t-CreateanOffsetSectionViewCut"><h2 class="topictitle2">Create an Offset Section View/Cut</h2>
+
+<div><p><span>You can create an offset section view or an offset section cut using a cutting profile as cutting plane.</span>
+</p>
+<ol><li class="stepexpand"><p>
+  
+  From the 
+	 <span class="wintitle">View Layout 
+	 </span>section of the 
+	 <span>action bar</span>,
+	 click 
+	 <span class="uicontrol">Offset Section
+		View</span> 
+	 <img height="22" src="../Icons22/I_D3M_DrwSectionView.png" width="22"/> or 
+	 <span class="uicontrol">Offset Section
+		Cut</span> 
+	 <img height="22" src="../Icons22/I_D3M_DrwSectionCutView.png" width="22"/>. 
+   
+  <p>  
+	 <ul> 
+		<li>In the 
+		  <span class="uicontrol">Tools
+			 Palette</span>, only the offset constraint is available for selection. 
+		</li>
+ 
+		<li><span>In the 
+  <span class="uicontrol">Creation Options</span> panel, you can select the graphic
+  properties and the operator specifications that you can propagate to this view
+  from its reference view. If the 
+  <span class="uicontrol">Disable generative view style usage</span> check box is
+  cleared in 
+  <span><span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Administration</span></span></span>
+  tab, then you can also apply the available generative view styles to this view.
+  For more information, see 
+  <a href="gdr-t-GVS-ViewUsingGVSCreate.htm#gdr-t-GVS-ViewUsingGVSCreate" title="Generative view styles are defined by an administrator and specify the appearance and behavior of a generated view.">Creating a View using Generative View Styles</a>.</span>
+		  
+		</li>
+ 
+	 </ul>
+ 
+  </p> 
+</p></li>
+<li class="stepexpand"><p>Click in the view to create the first point of the profile. <p> <p> In the <span class="uicontrol">Tools Palette</span>, you can now select any of the following constraints: <span class="uicontrol">Parallel</span>, <span class="uicontrol">Perpendicular</span>, <span class="uicontrol">Angle</span>, or <span class="uicontrol">Offset</span>.</p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Parallel, perpendicular and angle are all directional constraints while an offset is a positional constraint. For more information, see  <a href="gdr-c-ViewCreation-Constraints.htm#gdr-c-ViewCreation-Constraints" title="This topic provides information about constraints used in creating aligned/offset section view/cut. You can constrain a section profile either by applying a directional or a positional constraint. You can also constrain a second or a higher profile segment by applying an offset constraint for offset section views and/or cuts. You can define an offset constraint with respect to a hole, a generated line, one of the coordinates axis of the sheet, as well as a sketched line as a reference element for aligned as well as offset section views and/or cuts.">About Constraints Available in Tools Palette</a>.</td></tr></table>
+</p>
+       
+       
+       
+       </p></p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Tools Palette</span>, click the appropriate constraint.<p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>If you select the first constraint other than the offset (parallel, perpendicular or angle), you can select the offset constraint as the second constraint of the profile segment. In this case, the current segment will be constrained two times with parallel/perpendicular/angle constraint along with the offset constraint. When the second constraint (offset) is selected, the <span class="uicontrol">Tools Palette</span> will be hidden as long as the second point of the current line is not created.<p>However, if you choose the offset constraint as the first constraint, you cannot constrain the current segment using any other constraint.</p></td></tr></table>
+</p></p></li>
+<li class="stepexpand"><p>To set the direction of the profile, select one of the following valid reference element:<p> 
+       <ul>
+         <li>
+         A generated line, such as an 
+           edge, a center line or an axis line. In this case, the constraint will be associative 
+         to the referenced 3D geometry.
+         </li>
+<li>A generated circle. In this case, the constraints will be associative to the 3D.</li>
+
+         <li>
+         One of the coordinates axis of the <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>. In this case, the constraint will not be associative to the 3D.</li>
+
+         <li>
+         A sketched line. In this case, the constraint will not be associative to the 3D. 
+         </li>
+
+       </ul>
+
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tips:
+				</span><ul>
+             <li>Selecting a constraint keeps the <span class="uicontrol">Tools Palette</span> hidden, 
+             as long as the second point of the current line is not created.</li>
+
+             
+             
+             <li>The selected constraint is not applied if you select the reference element either as a 2D point (in this case, the profile segment goes through this point), or a 2D circle (in this case, the coincidence constraint is applied and the profile segment goes through the center of this 2D circle).</li>
+<li>If you are not satisfied with the profile you created, you can, 
+             at any time, use <span class="uicontrol">Undo</span>
+             <img height="22" width="22" src="../IconsNormal/I_Undo.png"/> 
+             or <span class="uicontrol">Redo</span>
+             <img height="22" width="22" src="../IconsNormal/I_Redo.png"/>. 
+             Note that
+             Smartpick assists you when creating this profile. For more information, see <cite>Sketcher User's Guide: Using Smartpick</cite>.</li>
+
+             <li>Once the profile is created, the constraints associated can be 
+             deleted in the edit mode but cannot be modified nor recreated unless you 
+             recreate the whole profile.</li>
+
+             <li>In case the 3D geometry to which the profile is associative is 
+             deleted, the profile is still available, but is not associative 
+             and the constraint is shown in the edit mode.</li>
+<li>In case the <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section view</span> is isolated, all the profile constraints are lost.</li>
+
+             <li>You can select a cylindrical surface, which is projected as a 2D 
+             edge, as the reference element for applying a section constraint. In 
+             this case, the constraint is always applied to the axis of the selected 
+             cylindrical surface.</li>
+
+           </ul>
+
+           </td></tr></table>
+
+       <p>The section plane appears on the 3D part and moves dynamically 
+       on the part.</p>
+       
+       </p></p></li>
+<li class="stepexpand"><p>Double-click in the sheet to end the <span class="glossterm" id="cutting-profile" onmouseout="hideTerm()" onmouseover="showTerm('cutting-profile.xml')">cutting profile</span> creation.<p><p>When creating an <span class="glossterm" id="offset-section-view-cut" onmouseout="hideTerm()" onmouseover="showTerm('offset-section-view-cut.xml')">offset section view</span>, remember that positioning 
+       the section view using the cursor defines the section view direction. 
+       The cutting profile is associative to the hole.</p></p><p> 
+       
+       
+       <p>
+       <br/><img src="../GdrUserImages/creatingoffsetsectionview05.gif"/><br/></p>
+       <p>
+       <br/><img src="../GdrUserImages/creatingoffsetsectionview06.gif"/><br/></p>
+       <p>Click in the sheet to define the section cut direction and position 
+       the view.</p><p>
+       <br/><img src="../GdrUserImages/creatingoffsetsectionview07.gif"/><br/></p></p></p></li>
+<li class="stepexpand"><p>Double-click the profile to modify 
+       the <span class="glossterm" id="section-profile" onmouseout="hideTerm()" onmouseover="showTerm('section-profile.xml')">section profile</span>. On the context toolbar, select any one of the following:<p><ul><li><span class="uicontrol">Replace Profile</span></li>
+<li><span class="uicontrol">Reverse View Direction</span></li>
+<li><span class="uicontrol">Manipulation in one direction according to the callout</span> or <span class="uicontrol">Manipulation in two directions according to the callout</span></li>
+</ul>
+</p>
+       
+       
+       
+       </p></li>
+<li class="stepexpand"><p>Select <span class="uicontrol">Replace Profile</span> and sketch a new profile.</p></li>
+<li class="stepexpand"><p> Click in the sheet to define the section cut direction and position 
+       the view.<p> <p>
+       <br/><img src="../GdrUserImages/creatingoffsetsectioncut205.gif"/><br/></p></p></p></li>
+<li class="stepexpand"><p>Right-click the callout and select <span class="uicontrol">Properties</span>. Under the <span class="uicontrol">Callout</span> tab,  modify the required callout properties.<p> 
+       <p>
+       <br/><img src="../GdrUserImages/creatingoffsetsectioncut204.png"/><br/><p>Notes:
+		
+         
+           <ul><li>The frame of the <span class="glossterm" id="active-view" onmouseout="hideTerm()" onmouseover="showTerm('active-view.xml')">active view</span> adapts to the length of the cutting 
+           profile.</li>
+<li>You can assign a line type to the view to be generated. For this, 
+           go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">View</span></span> section, click  <span class="uicontrol">Configure</span>  next to
+           <span class="uicontrol">View Linetype</span> and select the required options from the dialog 
+           box.</li>
+<li>There is no <span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">associativity</span> for .model files.</li>
+<li>You can also create a wavy section edge when the profile of the offset section cut/view ends inside the geometry. For more information, see <a href="generativeviewstyles-r-ad-ViewDressUpParams.htm#r-Operators__rs-Section">Section</a>.<p><br/><img src="../GdrUserImages/alignedsection05.png"/><br/></p></li>
+</ul>
+
+           
+           
+         
+         </p>
+</p>
+       
+       </p></p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-CreateanOffsetSectionViewCutContainingaBrokenView"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Create an Offset Section View/Cut Containing a Broken View</h2>
+
+<div><p><span>You can create an offset section view/cut which already contains a broken profile. </span>
+</p>
+<div class="p"><!--xxx--><span class="run-in">Before you begin: </span>Open a generative drawing representation and <a href="gdr-t-ViewCreation-BrokenView.htm#gdr-t-ViewCreation-BrokenView" title="You can create a broken view, which is used to shorten elongated objects, using two profiles corresponding to the part to be broken from the view extremities.">create a broken view</a>. Double-click this view to activate it.</div>
+<ol><li class="stepexpand"><p>
+  
+  From the 
+	 <span class="wintitle">View Layout 
+	 </span>section of the 
+	 <span>action bar</span>,
+	 click 
+	 <span class="uicontrol">Offset Section
+		View</span> 
+	 <img height="22" src="../Icons22/I_D3M_DrwSectionView.png" width="22"/> or 
+	 <span class="uicontrol">Offset Section
+		Cut</span> 
+	 <img height="22" src="../Icons22/I_D3M_DrwSectionCutView.png" width="22"/>. 
+   
+  <p>  
+	 <ul> 
+		<li>In the 
+		  <span class="uicontrol">Tools
+			 Palette</span>, only the offset constraint is available for selection. 
+		</li>
+ 
+		<li><span>In the 
+  <span class="uicontrol">Creation Options</span> panel, you can select the graphic
+  properties and the operator specifications that you can propagate to this view
+  from its reference view. If the 
+  <span class="uicontrol">Disable generative view style usage</span> check box is
+  cleared in 
+  <span><span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Administration</span></span></span>
+  tab, then you can also apply the available generative view styles to this view.
+  For more information, see 
+  <a href="gdr-t-GVS-ViewUsingGVSCreate.htm#gdr-t-GVS-ViewUsingGVSCreate" title="Generative view styles are defined by an administrator and specify the appearance and behavior of a generated view.">Creating a View using Generative View Styles</a>.</span>
+		  
+		</li>
+ 
+	 </ul>
+ 
+  </p> 
+</p></li>
+<li class="stepexpand"><p>Click in the view to create the first point of the profile. <p> <p>Note:
+		Consider the following points while creating an offset section profile: <p><ul><li>A valid offset section <span class="glossterm" id="callout" onmouseout="hideTerm()" onmouseover="showTerm('callout.xml')">callout</span> profile cannot have start point of the first segment or end point of the  last segment of a callout profile inside a broken region zone. </li>
+<li>	An offset section callout profile can only have even numbered profile segment(s) fully defined inside a broken region zone.  (Profile segment number starting with 1).</li>
+<li>A valid offset section callout profile can be created across the broken region zone(s) when the segment crossing or intersecting the broken region zone follows the perpendicularity rule with respect to the broken operator lines.</li>
+</ul>
+</p><p>For more information, see <a href="gdr-c-ViewCreation-Sections.htm#c-CreationofSectionProfilesinaViewContainingBrokenProfiles" title="You can create an offset or an aligned section view or a section cut in a view which already contains a single/multiple broken profiles.">About Sections</a>. </p></p>
+</p></p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Tools Palette</span>, click the appropriate constraint and create the valid offset section profile.</p></li>
+<li class="stepexpand"><p>Double-click to end the section profile creation.</p></li>
+<li class="stepexpand"><p>Click in the sheet to generate the view.<p> The section view is generated.<br/><img border="1" src="../GdrUserImages/creatingoffsetsectionview08.png"/><br/></p></p></li>
+</ol>
+<p class="result"/></div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

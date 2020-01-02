@@ -1,0 +1,65 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Querying Annotation Links"/>
+<meta name="abstract" content="This topic provides more information about querying annotation links."/>
+<meta name="description" content="This topic provides more information about querying annotation links."/>
+<meta name="DC.Relation" scheme="URI" content="gdr3dmaster-t-Annotations-LinksQuery.htm#gdr3dmaster-t-Annotations-LinksQuery"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr3dmaster-c-Annotations-LinksQuery"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Querying Annotation Links</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr3dmaster-c-Annotations-LinksQuery">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-querying annotation links"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1> About Querying Annotation Links</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>This topic provides more information about querying annotation links.</span>
+
+    
+  </p>
+
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr3dmaster-t-Annotations-LinksQuery.htm#gdr3dmaster-t-Annotations-LinksQuery" title="You can query annotation links in a drawing and zoom on the linked object.">Querying Annotation Links</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <p>You can query the annotation links with <span class="uicontrol">Query Object Links</span> that is  available in the <span>context menu</span> of all the annotations containing links. 
+    </p><p>It displays the <span class="uicontrol">Query Link</span> dialog box showing all the links of the selected <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">objects</span>.</p><p>The following columns are displayed in the dialog box giving specific information about the links. </p><p><ul><li><span class="uicontrol">Type</span>: It shows the type of the link between the object and the corresponding reference. The following types are possible: <ul><li>Positional link </li>
+<li>Positional link on leader</li>
+<li>Orientation link </li>
+<li>Orientation link on leader</li>
+<li>	Instantiated link <span class="glossterm" id="template-2" onmouseout="hideTerm()" onmouseover="showTerm('template-2.xml')">template</span> </li>
+<li><span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">Attribute</span> link</li>
+<li>Welding specification</li>
+</ul>
+</li>
+</ul>
+</p> <ul><li><span class="uicontrol">Value</span>: It shows the value of the attribute referenced by a link of the following type: <ul><li>Instantiated link template</li>
+<li>Attribute link</li>
+</ul>
+<p>For other types of link, this column remains empty.</p></li>
+<li><span class="uicontrol">From</span>: It shows the object that contains the link, displayed as a path from its container. In case of <span><span>Drawings</span></span>, the container is the view while in case of <span>3D Tolerancing &amp; Annotation</span>,  it is the annotation set.</li>
+<li><span class="uicontrol">To</span>: It shows the object pointed by the link, displayed as a path inside its PLM component. If the object is not found in a session, it shows the status of the object. This status can be: <ul><li>Not loaded</li>
+<li>Broken</li>
+<li>Isolated</li>
+</ul>
+</li>
+<li><span class="uicontrol">In</span>: It shows the PLM component containing the pointed object displayed in the column <span class="uicontrol">To</span>. It is shown only if the link is external and can be resolved. Otherwise this column is empty.</li>
+</ul>
+           
+  <p><span class="uicontrol">Re-frame the window</span>: When you select this check box and choose a link in the <span class="uicontrol">Query Link</span> dialog box,  it focuses and highlights the annotation and the object pointed by it. </p>  <p>However, the annotation and the object pointed by it are highlighted only if they exist in the active <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>. If none of these objects exist in the same representation, they are not highlighted.</p><p>Similarly, the annotation and the object pointed by it are focused only if they exist in the active representation and in the current <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>. If none of these objects exist in the same representation and in the same sheet, they are not focused.</p></div>
+
+
+  <div/>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

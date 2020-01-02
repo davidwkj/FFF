@@ -1,0 +1,363 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Spine</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Create a Spine</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how to create a Spine by using the 
+		CATICGMTopSpine operator.&nbsp; The use of this topological operator is presented in the 
+		CAAGMOperatorsSpine 
+		sample use case:</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAGMOperatorsSpine Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMOperatorsSpine Do</a></li>
+				<li><a href="#How">How to Launch CAAGMOperatorsSpine</a></li>
+				<li><a href="#Where">Where to Find the CAAGMOperatorsSpine Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to help you use the CATICGMTopSpine topological 
+operator. This operator has to be used according to the general scheme of 
+topological operators. If need be, you can take a look at &quot;Overview of the 
+Topological Operators&quot; [<a href="#References">1</a>] for more information.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAGMOperatorsSpine Use Case</h2>
+<p>CAAGMOperatorsSpine is a use case of the CAAGMOperatorsInterfaces.edu framework 
+that illustrates GMOperatorsInterfaces framework capabilities.</p>
+<p>This use case requires the ModelSpine.NCGM file as input data. This file is 
+delivered in the FunctionTests/InputData folder of CAAGMOperatorsInterfaces.edu 
+framework.
+</font>
+If you are not already 
+familiar with geometric modeler use cases, go to
+<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Uses Cases</a>.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMOperatorsSpine Do</h3>
+<p>The use case:</p>
+<ul>
+	<li>Load the CGM container from the ModelSpine.NCGM input file 
+	.</li>
+	<li>Create the config &amp; topdata.</li>
+	<li>Create a spine curve from a list of profile.<ul>
+		<li>Retrieve the profiles body&nbsp; from tag</li>
+		<li>Create the CATICGMTopSpine Operator</li>
+	</ul>
+	</li>
+	<li>Relimitations on the extremity profile &amp; Define Guides</li>
+	<li>Defines an imposed point of the Spine<li>Run the operator and get the 
+	Spine result body</ul>
+<table>
+	<caption>Fig. 1: The ModelSpine.NCGM input file</caption>
+	<tr>
+		<td>
+		<p><img src="images/ModelSpine_img6.jpg"></p>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMOperatorsSpine</h3>
+<p>To launch CAAGMOperatorsSpine, you will need to set up the build time environment, 
+then compile CAAGMOperatorsSpine.m along with its prerequisites, set up the run 
+time environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>If you simply type CAAGMOperatorsSpine with no argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example:</p>
+<p><code>CAAGMOperatorsSpine InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\FunctionTests\InputData\ModelSpine.NCGM e:\ModelSpine_Result.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsSpline.m'>
+<h3><a name="Where"></a>Where to Find the CAATopSpline Code</h3>
+<p>The CAAGMOperatorsSpine use case is made of a main named CAATopSpine.cpp located 
+in the CAAGMOperatorsSpine.m module of the CAAGMOperatorsInterfaces.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAATGMOperatorsInterfaces.edu\CAAGMOperatorsSpine.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are six steps in CAATopSpine.cpp:</p>
+<ol>
+	<li><a href="#Creates the Geometry Factory">Get the Geometry Factory</a></li>
+	<li><a href="#Direct Creation">Retrieve the list of profiles serving to 
+	define the Spine from their tag in CGM Container</a></li>
+	<li><a href="#Use of  a Basic Topological Operator">Create the Spine 
+	operator</a>&nbsp;
+	</li>
+	<li><a href="#Define_the_parameters">Define the parameters (relimitations on 
+	the extremity profiles, the guides &amp; imposed point), Run and Get the result 
+	Spine</a></li>
+	<li><a href="#Writes the Model and Closes the Factory">Writing the Model And 
+	Closing the Container</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creates the Geometry Factory"></a>Get the Geometry Factory</h3>
+<p>The geometry factory (CATGeoFactory) creates and manages all the CATICGMObject. 
+This creation is done by the global function <code>::CATCreateCGMContainer</code>. 
+Notice that the factory can be defined by reading a NCGM file that was previously 
+stored. In that case, the global function <code>::CATLoadCGMContainer</code> must 
+be used.</p>
+<pre class="code">cout &lt;&lt; &quot;Preliminary operations : \n&quot; &lt;&lt; endl;
+
+CATGeoFactory* piGeomFactory = <strong>CATLoadCGMContainer</strong>(filetoread);
+if (NULL == piGeomFactory) return (1);
+cout &lt;&lt; &quot; - Get The Geo factory (ModelSpine.ncgm in InputData) : OK &quot; &lt;&lt; endl;
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Direct Creation"></a>Retrieve the list of profiles serving to 
+define the Spine from their tag in CGM Containery</h3>
+<p>You retrieve the list of profiles that will serve to define the Spine as 
+following</p>
+<pre class="code"> // Tag of bodies used by operators
+//
+int tabTagProfile[5];
+
+// Tag set of the profile defining the Spine
+//
+tabTagProfile[0] = 34250; 	// Wire 1
+tabTagProfile[1] = 2194; 	// Wire 2
+tabTagProfile[2] = 8754; 	// Wire 3
+tabTagProfile[3] = 17337; 	// Wire 4
+tabTagProfile[4] = 25311; 	// Wire 5
+int i = 0; 
+
+CATLISTP(CATGeometry) profiles;
+CATICGMObject * piCGMObjProfile = NULL;
+CATGeometry * pBodyProfile = NULL;
+
+// Fill the profiles list
+//
+for (i = 0; i &lt;= 4; i++)
+{
+  // Body of the profiles
+  //
+  piCGMObjProfile = piGeomFactory -&gt;<strong> FindObjectFromTag</strong>(tabTagProfile[i]); // First Point
+  pBodyProfile = (CATGeometry *)piCGMObjProfile;
+  cout &lt;&lt; &quot;\n - Retrieve the Body of the profile &quot; &lt;&lt; i &lt;&lt; &quot; from its tag = &quot;&lt;&lt; tabTagProfile[i] &lt;&lt; &quot;: OK&quot; &lt;&lt; endl;
+  profiles.Append(pBodyProfile);
+}
+</pre>
+<p>The operator configuration is the level of software you want to use to run this 
+operator. By default, define an open configuration as in this use case to run with 
+the current level. Moreover here, the pointer to the journal is set to <code>NULL</code> 
+in the operator data. So that the journal is not filled.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Use of  a Basic Topological Operator"></a>Create the Spine 
+operator&nbsp; </h3>
+<p>To operate in this mode, the sample proceeds with the following steps that:</p>
+<ol>
+	<li>Create the operator with the appropriate global function (CATCGMCreateTopSpine<code> Operator</code>). </li>
+	<li>Execute the operation: <code>Run</code> method..</li>
+</ol>
+<pre class="code">// Create the Spine operator
+//
+CATICGMTopSpine * pCGMSpineOper = <strong>CATCGMCreateTopSpine</strong>(piGeomFactory, &amp;topdata, profiles);
+if (pCGMSpineOper == NULL)
+{
+cout &lt;&lt; &quot;Invalid Result : Get The result NULL&quot; &lt;&lt; endl;
+return 1;
+}
+cout &lt;&lt; &quot;Create the CATICGMTopSpine Operator : OK&quot; &lt;&lt; endl;</pre>
+	<h3><a name="Define_the_parameters">Define the parameters (relimitations on 
+	the extremity profiles, the guides &amp; imposed point), Run and Get the result 
+	Spine</a> </h3>
+<pre class="code">cout &lt;&lt; &quot;Relimitations on the extremity profile &amp; Define Guides: \n&quot; &lt;&lt; endl;
+
+// The relimitations on the extremity profiles.
+// 
+CATTopSpineRelimitation_Type SpineRelimitationMode = CATTopSpineRelimitation_OnLimitProfiles;
+pCGMSpineOper-&gt;<strong>SetRelimitationMode</strong>(SpineRelimitationMode);
+cout &lt;&lt; &quot;\nThe spine is relimited on the extremity profiles : OK&quot; &lt;&lt; endl;
+
+// Tag of guide body used by operator
+//
+int tabTagGuide[3];
+
+// Tag set of the guide of the Spine
+//
+tabTagGuide[0] = 34937; // guide 1
+tabTagGuide[1] = 38287; // guide 2
+tabTagGuide[2] = 35274; // guide 3
+
+// Guides to refine the definition of the spine
+//
+CATLISTP(CATGeometry) GuidesToRefine;
+CATICGMObject * piCGMObjGuide = NULL;
+CATGeometry * pBodyGuide = NULL;
+
+// Fill the GuidesToRefine list
+//
+for (i = 0; i &lt;= 2; i++)
+{
+piCGMObjGuide = piGeomFactory-&gt;FindObjectFromTag(tabTagGuide[i]); 
+if (piCGMObjGuide == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+pBodyGuide = (CATGeometry *)piCGMObjGuide;
+cout &lt;&lt; &quot;\n - Retrieve the Body of the Guide &quot;&lt;&lt; i &lt;&lt; &quot; from tag : OK&quot; &lt;&lt; endl;
+<strong>GuidesToRefine.Append(pBodyGuide);
+</strong>}
+
+// Defines the guides to refine the definition of the spine
+//
+pCGMSpineOper-&gt;<strong>SetGuides</strong>(GuidesToRefine);
+cout &lt;&lt; &quot;\nDefines the guides to refine the definition of the spine : OK&quot; &lt;&lt; endl;
+
+...
+cout &lt;&lt; &quot;Defines an imposed point of the Spine: \n&quot; &lt;&lt; endl;
+
+CATICGMObject * piCGMObjPoint = piGeomFactory-&gt;FindObjectFromTag(25877); // Imposed Point
+if (piCGMObjPoint == NULL)
+{
+cout &lt;&lt; &quot;No object with the specified tag&quot; &lt;&lt; endl;
+return 1;
+}
+CATGeometry * pBodyPoint = (CATGeometry *)piCGMObjPoint;
+cout &lt;&lt; &quot; - Retrieve the Body of the imposed point from its tag : OK&quot; &lt;&lt; endl;
+
+// Defines an imposed point of the Spine
+//
+pCGMSpineOper-&gt;<strong>ImposePointOnProfile</strong>(1, pBodyPoint);
+cout &lt;&lt; &quot;\nImposePointOnProfile : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pCGMSpineOper-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+CATBody *pCGMSpineResBody2 = pCGMSpineOper-&gt;<strong>GetResult</strong>();;</pre>
+	<p>&nbsp;</p>
+	<p>You get this result&nbsp; (The Spine curve in green):</p>
+<table>
+	<caption>Fig. 1: The Spine result</caption>
+	<tr>
+		<td>
+		<p><img src="images/CATICGMTopSpine_img7.jpg"></p>
+		</td>
+	</tr>
+</table>
+	<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Writes the Model and Closes the Factory"></a>Writing the Model and 
+Closing the Container</h3>
+<p>To save the model in a file, the <code>::CATSaveCGMContainer</code> global function 
+is used. Notice that in the use case, the save is conditioned by an input parameter 
+representing the file inside which the model must be saved.</p>
+<p>The use case ends with the closure of the geometry factory, done by the <code>
+::CATCloseCGMContainer</code> global function.</p>
+<pre class="code"> if(1==toStore)
+ {
+#ifdef _WINDOWS_SOURCE
+   ofstream filetowrite(pfileName, ios::binary ) ;
+#else
+   ofstream filetowrite(pfileName,ios::out,filebuf::openprot) ;
+#endif
+
+   <strong>::CATSaveCGMContainer</strong>(piGeomFactory,filetowrite);
+   filetowrite.close();
+ }	
+
+ //
+ // Closes the container
+ //
+ <strong>::CATCloseCGMContainer</strong>(piGeomFactory);</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<ul>
+	<li>The basic topological operators are transient objects used to create basic 
+	topological objects. They work inside one container.</li>
+	<li>They are base on the general scheme of the GM operators: creation, optionally 
+	set of advanced options, run, read of the results, deletion</li>
+	<li>Basic bodies can also be directly created by a global function.</li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+<table class="reference">
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaUseTopoOperators.htm">How to Use Topological Operators</a></td>
+	</tr>
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Apr 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

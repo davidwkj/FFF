@@ -1,0 +1,106 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Defining Standard Parameters"/>
+<meta name="abstract" content="You can configure standard parameters and define new format."/>
+<meta name="description" content="You can configure standard parameters and define new format."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="standards-t-ad-StandardParametersCustomize"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Defining Standard Parameters</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="standards-t-ad-StandardParametersCustomize">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::configuring parameters"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::defining formats"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-configuring::standard parameters"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-defining::standard formats"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-administering::standard parameters"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Defining Standard Parameters  </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can configure standard 
+						parameters and define new format.</span>
+
+						
+						<p>Note: This task provides an example of 
+						dimension configuration, but the procedure is the same when 
+						configuring other standard parameters (dimensions, annotations, 
+						dress-up elements, etc.). The procedure differs when configuring 
+						styles. For more information, refer to
+						<a href="standards-c-ad-StandardStyles.htm#standards-c-ad-StandardStyles" title="Styles are used as default values when creating new elements.">About Styles</a>.</p>
+						</p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-CustomizeStandardParameters" id="toc_rg" title="You can configure standard parameters.">Configure Standard Parameters</a></li><li><a href="#t-DefineANewFormat" id="toc_rg" title="You can define a new dimension tolerance format.">Define a New Format</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    You must have administrator rights. Select <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span> to launch the standards editor. Choose the <span class="uicontrol">Drafting</span> category, and then open the ISO.xml file from the drop-down list.  </td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+</div>
+<div class="nested1" id="t-CustomizeStandardParameters"><h2 class="topictitle2">Configure Standard Parameters</h2>
+<div><p><span>You can configure standard parameters. </span>
+
+		<p>With the pre-defined ISO standard, a radius dimension extension lines 
+		reaches the center of the circle. The administrator will modify the extension 
+		line so that it does not reach the center of the circle.</p>
+		<p><br/><img src="../StandardImages/standard01.gif"/><br/></p>
+		</p>
+<ol><li class="stepexpand"><p>Select the <span class="uicontrol">Dimensions</span> node in the editor.</p></li>
+<li class="stepexpand"><p>Modify the <span class="uicontrol">DIMLRadiusExtReachCenter</span> parameter 
+			value from Yes to No. </p></li>
+<li class="stepexpand"><p>Set the <span class="uicontrol">DIMLRadiusExtLength </span>parameter value 
+			to 2. </p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span> to save your modifications.</p></li>
+</ol>
+</div>
+</div>
+<div class="nested1" id="t-DefineANewFormat"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Define a New Format</h2>
+<div><p><span>You can define a new dimension tolerance format.</span>
+<p>In this scenario, the administrator will create a new dimension tolerance 
+		format, with superimposed tolerance values and parenthesis as separators. 
+		The new tolerance format will appear in the <span class="uicontrol">Tolerance</span> combo box 
+		of the <span class="uicontrol">Dimension Properties</span> in the <span><span class="wintitle">Object Properties</span></span> panel.</p>
+		<p><br/><img src="../StandardImages/standard03.gif"/><br/></p>
+		</p>
+<ol><li class="stepexpand"><p>
+			Select the <span class="uicontrol">Tolerance Formats</span> node in the editor.</p></li>
+<li class="stepexpand"><p>
+			Click <span class="uicontrol">Add Instance</span>.<p> 
+			A format called TOLXXX is 
+			created.</p></p></li>
+<li class="stepexpand"><p>Rename this format TOL_USER.</p></li>
+<li class="stepexpand"><p>Configure the values as follows:<p> 
+			
+				
+					
+					<br/><img border="1" src="../StandardImages/ToleranceFormatAddedNLS.gif"/><br/>
+				
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><ul>
+						<li>Make sure you set every parameter.</li>
+
+						<li>You must use the symbol used by the computer system 
+						to set a parameter to a real value ("," or "."). 
+						Note: you can use a fraction to set a parameter. </li>
+
+					</ul>
+
+					</td></tr></table>
+
+			</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK </span>to save the ISO.xml file and exit 
+			the Standards editor. </p></li>
+</ol>
+<p class="result">
+		
+	
+
+
+
+
+
+</p></div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

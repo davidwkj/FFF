@@ -1,0 +1,266 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Qr" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>New C++ APIs in 3DEXPERIENCE R2019x GA</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>New C++ APIs in <strong>3D</strong>EXPERIENCE R2019x GA</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="NewsR421"></a><strong>3D</strong>EXPERIENCE R2019x News</h3>
+<p>The following are the new <strong>3D</strong>EXPERIENCE R2019x GA C++ APIs, compared with V6R2018x at GA level.</p>
+<ul>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CAADELProcPlanningItf');return false;">CAADELProcPlanningItf</a> framework
+    <ul>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'CAADELProcPlanningItf', 'class', 'CATListOfCATIPLMNavOccurrence');return false;">CATListOfCATIPLMNavOccurrence</a></li>
+      <li>Macro or #define <a href="#" onclick="javascript:CAAlink('CPP', 'CAADELProcPlanningItf', 'define', 'CATLISTV_Locate');return false;">CATLISTV_Locate</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmFunctionalUseItf');return false;">CATAsmFunctionalUseItf</a> framework
+    <ul>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmFunctionalUseItf', 'class', 'CATCreateAssemblyFeatureManager');return false;">CATCreateAssemblyFeatureManager</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmFunctionalUseItf', 'interface', 'CATIAssemblyFeatureManager');return false;">CATIAssemblyFeatureManager</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmFunctionalUseItf', 'interface', 'CATIAssemblyFeature');return false;">CATIAssemblyFeature</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmPatternUseItf');return false;">CATAsmPatternUseItf</a> framework
+    <ul>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmPatternUseItf', 'class', 'CATCreateAssemblyUsePatternManager');return false;">CATCreateAssemblyUsePatternManager</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmPatternUseItf', 'class', 'CATListPtrCATIAssemblyUsePattern');return false;">CATListPtrCATIAssemblyUsePattern</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmPatternUseItf', 'interface', 'CATIAssemblyUsePatternManager');return false;">CATIAssemblyUsePatternManager</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmPatternUseItf', 'interface', 'CATIAssemblyUsePattern');return false;">CATIAssemblyUsePattern</a></li>
+      <li>Structure <a href="#" onclick="javascript:CAAlink('CPP', 'CATAsmPatternUseItf', 'struct', 'CATAssemblyUsePatternOptions');return false;">CATAssemblyUsePatternOptions</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATAssemblyUseItf');return false;">CATAssemblyUseItf</a> framework
+    <ul>
+      <li>Macro or #define <a href="#" onclick="javascript:CAAlink('CPP', 'CATAssemblyUseItf', 'define', 'CATDerivedRepOption');return false;">CATDerivedRepOption</a></li>
+      <li>Global Function <a href="#" onclick="javascript:CAAlink('CPP', 'CATAssemblyUseItf', 'function', 'CATGetCATIDerivedRepManager');return false;">CATGetCATIDerivedRepManager</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATAssemblyUseItf', 'interface', 'CATIDerivedRepManager');return false;">CATIDerivedRepManager</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATDifSymbolModelerUseItf');return false;">CATDifSymbolModelerUseItf</a> framework
+    </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATEngConnectionUseItf');return false;">CATEngConnectionUseItf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATEngConnectionUseItf', 'interface', 'CATIAssemblyDOFDescriptor');return false;">CATIAssemblyDOFDescriptor</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATFmoFuncModInterfaces');return false;">CATFmoFuncModInterfaces</a> framework
+    </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATGSMUseItf');return false;">CATGSMUseItf</a> framework
+    <ul>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'CATGSMUseItf', 'class', 'CATLISTP(CATLIST(IID))');return false;">CATLISTP(CATLIST(IID))</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'CATGSMUseItf', 'class', 'CATListBehaviorSpecs');return false;">CATListBehaviorSpecs</a></li>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATGSMUseItf', 'enum', 'CATGSMExtrapolExactBoundariesMode');return false;">CATGSMExtrapolExactBoundariesMode</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATGSMUseItf', 'interface', 'CATIGeomExtendAttrBehavior');return false;">CATIGeomExtendAttrBehavior</a></li>
+      <li>Structure <a href="#" onclick="javascript:CAAlink('CPP', 'CATGSMUseItf', 'struct', 'ListPtrIID');return false;">ListPtrIID</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATPLMUIInterfaces');return false;">CATPLMUIInterfaces</a> framework
+    <ul>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'CATPLMUIInterfaces', 'class', 'CATPLMOpenServicesFactory');return false;">CATPLMOpenServicesFactory</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATPLMUIInterfaces', 'interface', 'CATIPLMOpenServices');return false;">CATIPLMOpenServices</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATRmaInterfaces');return false;">CATRmaInterfaces</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATRmaInterfaces', 'interface', 'CATIRmaAppearanceInformation');return false;">CATIRmaAppearanceInformation</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATRmaInterfaces', 'interface', 'CATIRmaAppearanceMapping');return false;">CATIRmaAppearanceMapping</a></li>
+      <li>Structure <a href="#" onclick="javascript:CAAlink('CPP', 'CATRmaInterfaces', 'struct', 'MappingInformations');return false;">MappingInformations</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATSimRepInterfaces');return false;">CATSimRepInterfaces</a> framework
+    <ul>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATSimRepInterfaces', 'enum', 'SAM_QualitySearch');return false;">SAM_QualitySearch</a></li>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATSimRepInterfaces', 'enum', 'SAM_Quality');return false;">SAM_Quality</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATSimRepInterfaces', 'interface', 'CATISimAnalysisScan');return false;">CATISimAnalysisScan</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATSimRepInterfacesUI');return false;">CATSimRepInterfacesUI</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATSimRepInterfacesUI', 'interface', 'CATISimulationUIWkb');return false;">CATISimulationUIWkb</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATStrUseItf');return false;">CATStrUseItf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATStrUseItf', 'interface', 'CATIStrUsePosDualRef');return false;">CATIStrUsePosDualRef</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATSurfacicOpeUseItf');return false;">CATSurfacicOpeUseItf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATSurfacicOpeUseItf', 'interface', 'CATIGSMAutomaticFillGeo');return false;">CATIGSMAutomaticFillGeo</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATSurfacicOpeUseItf', 'interface', 'CATIGSMFactoryGeo');return false;">CATIGSMFactoryGeo</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf');return false;">CATTPSBaseUseItf</a> framework
+    <ul>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'enum', 'CATTPSAngularSizeOperatorISO');return false;">CATTPSAngularSizeOperatorISO</a></li>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'enum', 'CATTPSControledRadius');return false;">CATTPSControledRadius</a></li>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'enum', 'CATTPSISO1101CapitalizedSymb');return false;">CATTPSISO1101CapitalizedSymb</a></li>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'enum', 'CATTPSLinearSizeOperatorISO');return false;">CATTPSLinearSizeOperatorISO</a></li>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'enum', 'CATTPSSpecificationType');return false;">CATTPSSpecificationType</a></li>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'enum', 'CATTPSToleranceValueType');return false;">CATTPSToleranceValueType</a></li>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'enum', 'CATTPSUnitBasisArea');return false;">CATTPSUnitBasisArea</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSCollectionOfFeatures');return false;">CATITPSCollectionOfFeatures</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSCollectionPlane');return false;">CATITPSCollectionPlane</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSContinuousFeature');return false;">CATITPSContinuousFeature</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSControledRadius');return false;">CATITPSControledRadius</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSDatumBSCModifier');return false;">CATITPSDatumBSCModifier</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSDatumTranslationModifier');return false;">CATITPSDatumTranslationModifier</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSDirectionFeature');return false;">CATITPSDirectionFeature</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSISOAssociatedTolerancedFeature');return false;">CATITPSISOAssociatedTolerancedFeature</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSISOCharacteristic');return false;">CATITPSISOCharacteristic</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSISOSizesModifiers');return false;">CATITPSISOSizesModifiers</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSISOTolerancedFeatureFilter');return false;">CATITPSISOTolerancedFeatureFilter</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSIntersectionPlane');return false;">CATITPSIntersectionPlane</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSMedianFeature');return false;">CATITPSMedianFeature</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSOrientationCstOnly');return false;">CATITPSOrientationCstOnly</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSOrientationPlane');return false;">CATITPSOrientationPlane</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSProjectedExtension');return false;">CATITPSProjectedExtension</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSSeparateFeatures');return false;">CATITPSSeparateFeatures</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSSetISODefaultSpecifications');return false;">CATITPSSetISODefaultSpecifications</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSSituationFeatures');return false;">CATITPSSituationFeatures</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSToleranceZoneConstraint');return false;">CATITPSToleranceZoneConstraint</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSUnitBasisRefinement');return false;">CATITPSUnitBasisRefinement</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSUnitedFeatures');return false;">CATITPSUnitedFeatures</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSBaseUseItf', 'interface', 'CATITPSVariableDistance');return false;">CATITPSVariableDistance</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSUseItf');return false;">CATTPSUseItf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'CATTPSUseItf', 'interface', 'CATITPSNumericalDisplayFormat');return false;">CATITPSNumericalDisplayFormat</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'DELFitPathPlanningUseItf');return false;">DELFitPathPlanningUseItf</a> framework
+    </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'DELPPRAuthFoundationInterfaces');return false;">DELPPRAuthFoundationInterfaces</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'DELPPRAuthFoundationInterfaces', 'interface', 'DELIAMPPartPosition');return false;">DELIAMPPartPosition</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'DELPPRAuthFoundationInterfaces', 'interface', 'DELIAMPPosition');return false;">DELIAMPPosition</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'DELShipMfgItf');return false;">DELShipMfgItf</a> framework
+    <ul>
+      <li>Global Function <a href="#" onclick="javascript:CAAlink('CPP', 'DELShipMfgItf', 'function', 'GetDELHeavyMfgItemAuthAccess');return false;">GetDELHeavyMfgItemAuthAccess</a></li>
+      <li>Global Function <a href="#" onclick="javascript:CAAlink('CPP', 'DELShipMfgItf', 'function', 'GetDELHeavyMfgResourceAuthAccess');return false;">GetDELHeavyMfgResourceAuthAccess</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'DELShipMfgItf', 'interface', 'DELIHeavyMfgItemAuth');return false;">DELIHeavyMfgItemAuth</a></li>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'DELShipMfgItf', 'interface', 'DELIHeavyMfgResourceAuth');return false;">DELIHeavyMfgResourceAuth</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'DELTimeAnalysisAsIsItf');return false;">DELTimeAnalysisAsIsItf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'DELTimeAnalysisAsIsItf', 'interface', 'DELITimeAnalysisAuthAdvanced');return false;">DELITimeAnalysisAuthAdvanced</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'DELWkiExposeUseItf');return false;">DELWkiExposeUseItf</a> framework
+    </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'DataExchangeBaseRepsItf');return false;">DataExchangeBaseRepsItf</a> framework
+    <ul>
+      <li>Macro or #define <a href="#" onclick="javascript:CAAlink('CPP', 'DataExchangeBaseRepsItf', 'define', 'S_OK_ALPHA_ONLY');return false;">S_OK_ALPHA_ONLY</a></li>
+      <li>Macro or #define <a href="#" onclick="javascript:CAAlink('CPP', 'DataExchangeBaseRepsItf', 'define', 'S_OK_COLOR_ONLY');return false;">S_OK_COLOR_ONLY</a></li>
+      <li>Macro or #define <a href="#" onclick="javascript:CAAlink('CPP', 'DataExchangeBaseRepsItf', 'define', 'UNSPECIFIED_VALUE');return false;">UNSPECIFIED_VALUE</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'Dialog');return false;">Dialog</a> framework
+    <ul>
+      <li>Typedef <a href="#" onclick="javascript:CAAlink('CPP', 'Dialog', 'typedef', 'CATDlgCursor');return false;">CATDlgCursor</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'DraftingUseItf');return false;">DraftingUseItf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'DraftingUseItf', 'interface', 'CATIDftVectorPattern');return false;">CATIDftVectorPattern</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'ElecFlatteningItf');return false;">ElecFlatteningItf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'ElecFlatteningItf', 'interface', 'CATIEhfElecDimFactory');return false;">CATIEhfElecDimFactory</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'IVInterfaces');return false;">IVInterfaces</a> framework
+    <ul>
+      <li>Structure <a href="#" onclick="javascript:CAAlink('CPP', 'IVInterfaces', 'struct', 'IVAtomicType');return false;">IVAtomicType</a></li>
+      <li>Typedef <a href="#" onclick="javascript:CAAlink('CPP', 'IVInterfaces', 'typedef', 'IVAtomicID');return false;">IVAtomicID</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'MachiningResourceUseItf');return false;">MachiningResourceUseItf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'MachiningResourceUseItf', 'interface', 'DELIMfgFSConfigManagement');return false;">DELIMfgFSConfigManagement</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'MachiningU5Itf');return false;">MachiningU5Itf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'MachiningU5Itf', 'interface', 'DELIMfgTPReplayActivityToolVisu2');return false;">DELIMfgTPReplayActivityToolVisu2</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'MachiningUIUseItf');return false;">MachiningUIUseItf</a> framework
+    <ul>
+      <li>Interface <a href="#" onclick="javascript:CAAlink('CPP', 'MachiningUIUseItf', 'interface', 'DELIMfgMachineSimulationUtility');return false;">DELIMfgMachineSimulationUtility</a></li>
+    </ul>
+  </li>
+  <li><a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices');return false;">SMAISrvSimServices</a> framework
+    <ul>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvElemCentroidField');return false;">SMAISrvElemCentroidField</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvElemIntegrationPointField');return false;">SMAISrvElemIntegrationPointField</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvElemNodalField');return false;">SMAISrvElemNodalField</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvElementCentroidFieldReader');return false;">SMAISrvElementCentroidFieldReader</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvElementIntegrationPointFieldReader');return false;">SMAISrvElementIntegrationPointFieldReader</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvElementNodalFieldReader');return false;">SMAISrvElementNodalFieldReader</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvFieldReader');return false;">SMAISrvFieldReader</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvField');return false;">SMAISrvField</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvGenericPositionFieldReader');return false;">SMAISrvGenericPositionFieldReader</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvResultsReader');return false;">SMAISrvResultsReader</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvResultsWriter');return false;">SMAISrvResultsWriter</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvUniqueNodalFieldReader');return false;">SMAISrvUniqueNodalFieldReader</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvUniqueNodalField');return false;">SMAISrvUniqueNodalField</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvWholeElemField');return false;">SMAISrvWholeElemField</a></li>
+      <li>Class <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'class', 'SMAISrvWholeElementFieldReader');return false;">SMAISrvWholeElementFieldReader</a></li>
+      <li>Enumeration <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'enum', 'ResultType');return false;">ResultType</a></li>
+      <li>Structure <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'struct', 'SMAISrvDimensionDetails');return false;">SMAISrvDimensionDetails</a></li>
+      <li>Structure <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'struct', 'SMAISrvFieldInfo');return false;">SMAISrvFieldInfo</a></li>
+      <li>Typedef <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'typedef', 'SMAISrvDimensionDetailVector');return false;">SMAISrvDimensionDetailVector</a></li>
+      <li>Typedef <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'typedef', 'SMAISrvDoubleVector');return false;">SMAISrvDoubleVector</a></li>
+      <li>Typedef <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'typedef', 'SMAISrvFieldInfoVector');return false;">SMAISrvFieldInfoVector</a></li>
+      <li>Typedef <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'typedef', 'SMAISrvFloatVector');return false;">SMAISrvFloatVector</a></li>
+      <li>Typedef <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'typedef', 'SMAISrvIntVector');return false;">SMAISrvIntVector</a></li>
+      <li>Typedef <a href="#" onclick="javascript:CAAlink('CPP', 'SMAISrvSimServices', 'typedef', 'SMAISrvStringVector');return false;">SMAISrvStringVector</a></li>
+    </ul>
+  </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="History"></a>History</h3>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Sep 2018]</td>
+		<td>Document created for <strong>3D</strong>EXPERIENCE R2019x GA</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

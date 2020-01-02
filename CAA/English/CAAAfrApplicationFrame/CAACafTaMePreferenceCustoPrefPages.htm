@@ -1,0 +1,573 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>How to Add an App Preferences Tab</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style3 {
+	color: #252525;
+	font-family: serif;
+}
+.auto-style4 {
+	margin-left: 80px;
+}
+.auto-style5 {
+	font-family: serif;
+	font-style: italic;
+	font-size: medium;
+}
+.auto-style6 {
+	margin-top: 19px;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>How to Add App Preference Pages</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>The <kbd>New Preferences</kbd> command enables an end user to customize persistent properties 
+		for each app. When the command is launched, a dialog box is displayed 
+		containing a list of apps and their associated properties, organized in 
+		collapsible sections.&nbsp; This article explains how to add your own 
+		collapsible sections into the N<kbd>ew Preferences</kbd> dialog box.
+		</p>
+		<ul>
+			<li><a href="#What_is_the_New_Preferences_command">What is the New Preferences Command?</a>
+			<ul>
+				<li>
+				<span lang="EN-US" style="mso-ansi-language:EN-US;mso-fareast-language:FR">
+				<a href="#Working_with_new_Preferences_panel">Working with new 
+				Preferences panel</a><o:p></o:p></span></li>
+			</ul>
+			</li>
+			<li><a href="#Property">Property Access</a></li>
+			<li><a href="#Creating_Your_App_Preference_Pages">Creating Your App 
+			Preference Pages </a>
+		    <ul>
+			  <li><a href="#More_about_Setting_Metadata_XML_File_">More about 
+			  Setting Metadata XML File</a></li>
+		    </ul>
+		    </li>
+		    <li><a href="#Creating_the_Preferences_page_Dialog">Creating the Preferences 
+			page Dialog</a>
+		    <ul>
+		    <li>
+			<a href="#A_preference_page_contains_a_set_of_collapsible_sections">A 
+			preference page contains a set of collapsible sections</a></li>
+		    <li><a href="#CAA_Analyze_Geo_collapsible_section.">&quot;CAA Analyze 
+			Geo&quot; collapsible section.</a></li>
+		    <li>
+			<a href="#CAA_Create_Geometry_collapsible_section." name="CAA_Create_Geometry_collapsible_section.0">
+			&quot;CAA Create Geometry&quot; collapsible section.</a></li>
+		    </ul>
+		    </li>
+			<li><a href="#PPDoc">Creating a Preferences Page Documentation</a><ul>
+				<li>
+				<a href="#How_to_create_a_documentation_page_" name="How_to_create_a_documentation_page_0">How to create a documentation page ?</a></li>
+			</ul>
+			</li>
+			<li><a href="#InShort">In Short</a> </li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		&nbsp;</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="What_is_the_New_Preferences_command">What is the New Preferences command?</a></h2>
+<p>The 
+&quot;New
+<span lang="EN-US" style="line-height: 115%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; color: black; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">
+Preferences&quot; command gathers in one single dialog box all the app properties 
+that can be customized and made persistent in the user's settings files. </span></p>
+<p>
+<span lang="EN-US" style="line-height: 115%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; color: black; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">
+The 
+command is launched from the&nbsp;</span><kbd><b><span lang="EN-US" style="line-height: 115%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; color: #757E84; letter-spacing: -.6pt; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">Me 
+Services-&gt;</span><span lang="EN-US" style="line-height: 115%; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-theme-font: major-fareast; color: #757E84; letter-spacing: -.6pt; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">New
+</span>
+<span lang="EN-US" style="line-height: 115%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; color: #757E84; letter-spacing: -.6pt; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">
+Preferences</span></b></kbd><span lang="EN-US" style="line-height: 115%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; color: black; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">&nbsp;menu 
+in the top bar, as shown in the picture below:</span></p>
+<p>
+<img alt="" height="362" src="images/CAACafMePreferencesCmd.jpg" width="379"/></p>
+<p><span lang="EN-US" style="color: black; mso-ansi-language: EN-US">The&nbsp; </span>
+<kbd><b>
+<span lang="EN-US" style="color: #757E84; letter-spacing: -.6pt; mso-ansi-language: EN-US">
+New Preferences</span></b></kbd><span lang="EN-US" style="color: black; mso-ansi-language: EN-US">&nbsp;dialog 
+box is organized in two parts:</span></p>
+<p><![if !supportLists]><span style="mso-list: Ignore">
+<span lang="EN-US" style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana; color: black; mso-ansi-language: EN-US">
+-</span><span lang="EN-US" style="mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana; color: black; mso-ansi-language: EN-US"><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span lang="EN-US" style="color: black; mso-ansi-language: EN-US">On the right 
+hand side &#8220;Preference Categories&#8221; are displayed the apps classified by category: &#8220;Main Preferences&#8221; and &#8220;All Preferences&#8221;. <o:p></o:p>
+</span></p>
+<p>
+<o:p>
+<img alt="" height="81" src="images/PreferencePagescategories.jpg" width="304"/></o:p></p>
+<p><![if !supportLists]><span style="mso-list: Ignore">
+<span lang="EN-US" style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana; color: black; mso-ansi-language: EN-US">
+-</span><span lang="EN-US" style="mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana; color: black; mso-ansi-language: EN-US"><span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>
+<span lang="EN-US" style="color: black; mso-ansi-language: EN-US">On the left 
+hand side &#8220;Preference Pages&#8221; is the page where all settings associated to the 
+selected 
+category are displayed. </span></p>
+<p><span lang="EN-US" style="color: black; mso-ansi-language: EN-US">When an app is 
+selected, the preferences pages associated with this app are 
+displayed on the right. </span></p>
+<p><span lang="EN-US" style="color: black; mso-ansi-language: EN-US">Each preferences page displays controls to set parameter 
+values or working options for a given property.<o:p></o:p></span></p>
+<p><span lang="EN-US" style="color: black; mso-ansi-language: EN-US">The tab 
+&#8220;Main Preference&#8221; is dedicated to global settings not specific to an app and 
+then allows specifying General, Display and Modeling settings.</span></p>
+<p><span lang="EN-US" style="color: black; mso-ansi-language: EN-US">It gathers 
+preferences pages common to all apps.<o:p></o:p></span></p>
+
+<p>
+<img alt="" height="750" src="images/CAACafToolsOptMePref.png" width="1071"/></p>
+<p>The 
+<span lang="EN-US" style="font-size: 8.0pt; line-height: 115%; font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; color: black; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">
+&#8220;All Preferences&#8221; tab is dedicated for management of settings specific to 
+each app:</span></p>
+
+<p>
+<img alt="" height="745" src="images/CAACafToolsOpt2MePref.png" width="1072"/></p>
+<p>For&nbsp;the preference pages associated to the Sketcher 
+app, there is only one page (or collapsible section) for this app: </p>
+<p>
+<img alt="" height="927" src="images/CAACafToolsOptSketcherAppMePref.jpg" width="1262"/></p>
+<p>The old Preference Tabs is now replaced by collapsible sections, supporting 
+all basic controls and admin lock. </p>
+<p><img alt="" height="552" src="images/collapsiblesections.jpg" width="956"/></p>
+<p>&nbsp;</p>
+<p>The New Preferences dialog box works as follows:</p>
+<ul>
+	<li>
+	<p class="MsoNormal">
+	<span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; color: black; mso-ansi-language: EN-US; mso-fareast-language: FR">
+	Clicking&nbsp;</span><b><span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Courier New&quot;; color: #757E84; letter-spacing: -.6pt; mso-ansi-language: EN-US; mso-fareast-language: FR">OK</span></b><span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; color: black; mso-ansi-language: EN-US; mso-fareast-language: FR">&nbsp;commits 
+	all the changed values in all the preferences pages, that is saves the 
+	setting repository objects with these values, and closes the&nbsp;</span><b><span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Courier New&quot;; color: #757E84; letter-spacing: -.6pt; mso-ansi-language: EN-US; mso-fareast-language: FR">Preferences</span></b><span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; color: black; mso-ansi-language: EN-US; mso-fareast-language: FR">&nbsp;dialog 
+	box.<o:p></o:p></span></p>
+	</li>
+	<li>
+	<p class="MsoNormal"><b>
+	<span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Courier New&quot;; color: #757E84; letter-spacing: -.6pt; mso-ansi-language: EN-US; mso-fareast-language: FR">
+	Apply</span></b><span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; color: black; mso-ansi-language: EN-US; mso-fareast-language: FR">&nbsp;save 
+	the modification done so far and keep panel open.<o:p></o:p></span></p>
+	</li>
+	<li>
+	<p class="MsoNormal">
+	<span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; color: black; mso-ansi-language: EN-US; mso-fareast-language: FR">
+	Clicking&nbsp;</span><b><span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Courier New&quot;; color: #757E84; letter-spacing: -.6pt; mso-ansi-language: EN-US; mso-fareast-language: FR">Close</span></b><span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; color: black; mso-ansi-language: EN-US; mso-fareast-language: FR">&nbsp;closes 
+	the Preferences dialog box.<o:p></o:p></span></p>
+	</li>
+	<li>
+	<p class="MsoNormal">
+	<span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; color: black; mso-ansi-language: EN-US; mso-fareast-language: FR">
+	The </span><b>
+	<span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Courier New&quot;; color: #757E84; letter-spacing: -.6pt; mso-ansi-language: EN-US; mso-fareast-language: FR">
+	Reset</span></b><span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; color: black; mso-ansi-language: EN-US; mso-fareast-language: FR"> 
+	icon enables to reset select between reset of pages at present node or all 
+	the values to the default ones</span><span lang="EN-US" style="mso-ansi-language: EN-US"><o:p></o:p></span></p>
+	</li>
+</ul>
+<p><img alt="" height="107" src="images/CAACafToolsOptReset.png" width="182"/><br />
+</p>
+
+
+<p>Remark: There is another type of preferences, those dedicated to a given 
+object and accessed from the&nbsp;Properties&nbsp;item of the contextual menu triggered 
+from the object. These object property tabs manage parameters or attributes that 
+are stored with the objects in the model. </p>
+<p>&nbsp;</p>
+<h3><span lang="EN-US" style="mso-ansi-language:EN-US;mso-fareast-language:FR">
+<a name="Working_with_new_Preferences_panel">Working with new Preferences panel</a><o:p></o:p></span></h3>
+<p class="MsoNormal">You <![if !supportLists]>
+<span style="mso-bidi-font-size: 10.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol; color: #252525; mso-fareast-language: FR">
+<span style="mso-list:Ignore">
+<span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;">
+can&nbsp; </span></span></span><![endif]>l<span style="mso-fareast-font-family: &quot;Times New Roman&quot;; color: #252525; mso-fareast-language: FR">aunch 
+your test application<o:p> thanks to following command:</o:p></span></p>
+<ul>
+	<li>
+	<p class="MsoNormal"><i class="auto-style1">
+	<span lang="EN-US" style="font-size:10.5pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#252525;mso-ansi-language:EN-US;mso-fareast-language:FR">mkrun -c 
+	&quot;AfrUnitTestApplication -ViewerOnly CATCAfrPreferencesCmd 
+	CATAfrPrferenceOptions&quot;</span></i><span lang="EN-US" style="font-size:10.5pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#252525;mso-ansi-language:EN-US;mso-fareast-language:FR"><o:p></o:p></span></p>
+	</li>
+</ul>
+<p class="auto-style3" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: FR">
+The New Preferences command is accessible from 3DEXPERIENCE<o:p> </o:p>
+only if you launch your session&nbsp;
+<o:p>as following:</o:p></p>
+<ul class="auto-style4">
+	<li>
+	<p class="MsoNormal"><i>
+	<span style="font-size:10.5pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;color:#252525;
+mso-fareast-language:FR">set NewToolsPreference=1</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#252525;mso-fareast-language:FR"><o:p></o:p></span></p>
+	</li>
+	<li>
+	<p class="MsoNormal"><i>
+	<span style="font-size:10.5pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;color:#252525;
+mso-fareast-language:FR">mkrun</span></i><span style="font-size:10.5pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#252525;mso-fareast-language:FR"><o:p></o:p></span></p>
+	</li>
+</ul>
+<p>&nbsp;</p>
+
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Property"></a>Property Access</h2>
+<p>Properties displayed in a preferences collapsible section are stored in a setting file. A 
+preference section can use several setting files. </p>
+<p>In memory the setting file is represented by a setting repository. Setting repositories 
+are made up of three different parts:</p>
+<ol>
+	<li>A setting metadata XML file</li>
+	<li>A setting file</li>
+	<li>Two setting memory areas at run time</li>
+</ol>
+<p>Setting repositories are first defined in XML files [<a href="#References">4</a>]. 
+There is an XML file for each setting repository which contains the setting 
+repository and attributes metadata. Setting repositories are end-user and 
+environment dependent. A set of setting files exists for each environment an end 
+user accesses from his/her machine. A setting file has a <strong>CATSettings</strong> extension. 
+Once the session is launched 
+and a setting repository accessed, the setting attributes are read from the setting 
+file and stored in a memory area. If the setting file does not exist, it is created 
+from the XML file. </p>
+<p>A setting repository is handled using a setting repository controller, either 
+the generic controller <em>CATSysSettingRepository</em> [<a href="#References">1</a>], 
+or a dedicated controller when the generic one cannot apply. This setting 
+controller manages and controls the access to the setting repository. </p>
+<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Creating_Your_App_Preference_Pages">Creating Your App Preference 
+Pages</a></h2>
+<p>For the CAA app &quot;CAA Analyze Geometry&quot; and &quot;CAA Create Geometry&quot;, we will create 
+two preference pages that will be displayed in &quot;All Preferences/3DEXPERIENCE 
+Platform Common\Display&quot;.</p>
+<p>
+<img src="images/MePreference_img3.jpg"/></p>
+<p>&nbsp;</p>
+<p>For creation of these two Preference Pages&nbsp; you need to create :</p>
+<ul>
+	<li>For each Preference page one xml file located in directory 
+	&quot;CafrComponents/AllPreferences/Common_Preferences/Display&quot;. The xml file 
+	will&nbsp; contain description of the user interface of each preference 
+	group (see picture below). The xml file details the preferences page <strong>dialog</strong>.
+		It gathers the different controls that enable the end user to see and edit 
+		the different parameters.</li>
+</ul>
+<p>
+<img alt="" height="664" src="images/CAAMePreferenceDisplayArch.jpg" width="1053"/></p>
+<ul>
+	<li>An xml for the settings description. CAACafGeometryElt.xml will describe 
+	attribute settings associated to the App &quot;CAA Analyze Geo&quot; and 
+	CAACafGeometryView for the attribute settings&nbsp; of the app &quot;CAA Create 
+	Geometry&quot;.</li>
+</ul>
+<p>
+<img alt="" height="749" src="images/CAACafGeometryView01.png" width="1152"/>&nbsp;</p>
+<p class="auto-style3" style="mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: FR">
+Concerning these declarative file<o:p>s we have :</o:p></p>
+<ul class="auto-style4">
+	<li>
+	<p class="MsoNormal">
+	<span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; color: #252525; mso-ansi-language: EN-US; mso-fareast-language: FR">
+	One declarative file for each tab page (collapsible section)<o:p></o:p></span></p>
+	</li>
+	<li>
+	<p class="MsoNormal">
+	<span class="auto-style5" lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; color: #252525; mso-ansi-language: EN-US; mso-fareast-language: FR">
+	Reuse of information from&nbsp;<b>SettingsMetadata</b>&nbsp;files</span></p>
+	</li>
+</ul>
+<h2>&nbsp;</h2>
+<h3><a name="More_about_Setting_Metadata_XML_File_">More about Setting Metadata 
+XML File </a></h3>
+<p class="MsoNormal">
+<span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; color: #252525; mso-ansi-language: EN-US; mso-fareast-language: FR">
+There is an XML file for each setting repository which contains the setting 
+repository and attributes metadata.<o:p></o:p></span></p>
+<p class="MsoNormal">
+<span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; color: #252525; mso-ansi-language: EN-US; mso-fareast-language: FR">
+This XML file is used, for example, whenever a setting attribute is read or 
+written, to check whether a definition for this setting attribute exists, and 
+the consistency of the read or write operation against this definition.<o:p></o:p></span></p>
+<p class="MsoNormal">
+<span lang="EN-US" style="mso-fareast-font-family: &quot;Times New Roman&quot;; color: #252525; mso-ansi-language: EN-US; mso-fareast-language: FR">
+The XML files are located in the run time view:<o:p></o:p></span></p>
+<ul>
+	<li>
+	<p class="MsoNormal"><![if !supportLists]>
+	<span style="mso-bidi-font-size: 10.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol; color: #252525; mso-fareast-language: FR">
+	<span style="mso-list:Ignore">
+	<span style="font-style: normal; font-variant: normal; font-weight: normal; line-height: normal;">&nbsp;</span></span></span><![endif]><i><span style="mso-fareast-font-family: &quot;Times New Roman&quot;; color: #252525; mso-fareast-language: FR">os_x\resources\SettingsMetadata</span></i><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#252525;mso-fareast-language:FR"><o:p></o:p></span></p>
+	</li>
+</ul>
+<p class="MsoNormal">&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Creating_the_Preferences_page_Dialog">Creating the Preferences page Dialog</a></h2>
+
+<h3><a name="A_preference_page_contains_a_set_of_collapsible_sections">A 
+preference page contains a set of collapsible sections</a></h3>
+<p>A preferences 
+collapsible section 
+is divided in a set of group. Each group has a title, and has a frame on where 
+are grouped a set of parameters.</p>
+<table>
+	<tr>
+		<td>
+		<img alt="" height="528" src="images/CAACafToolsOptDialogFrames01.jpg" width="375"/></td>
+		<td>This preferences section contains 5 groups, only the first doesn't have 
+		an icon.</td>
+	</tr>
+</table>
+<p><br />
+</p>
+<h3><a name="CAA_Analyze_Geo_collapsible_section.">&quot;CAA Analyze Geo&quot; collapsible 
+section.</a></h3>
+<p>&nbsp;</p>
+<p>&nbsp;Lets see the xml syntax enabling to design the Preference Page section of 
+app &quot;CAA Analyze Geo&quot;.</p>
+<p class="auto-style6">
+<img alt="" height="147" src="images/CAAAnalyseGeometryPPage.jpg" width="401"/></p>
+<p class="auto-style6">&nbsp;</p>
+<p>The xml dedicated for description of the preference dialog is defined in the 
+file CAAAnalyzeGeo located at 
+CAfrComponents/AllPreferences/Common_Preferences/Display directory</p>
+<p>
+<img alt="" height="571" src="images/CAAAnalysisGeoPregGroup.jpg" width="1029"/></p>
+<p>The Preference page is named &quot;CAAAnalyzeGeo&quot; aggregate a preference group 
+named &quot;3DRepGroup&quot;.</p>
+<p>The tag Resource is valued SampleCAAMePreference is the name of CATRsc and 
+CATNls files associated to resources of preference dialog objects (icon name, 
+title, ..)&nbsp; : </p>
+<ul>
+	<li><a>
+	CAACATIAApplicationFrm.edu\CAACATIAApplicationFrm.eduRscCNext.m\src\CNext\resources\msgcatalog\SampleCAAMePreferences.CATRsc</a></li>
+	<li><a>
+	CAACATIAApplicationFrm.edu\CAACATIAApplicationFrm.eduRscCNext.m\src\CNext\resources\msgcatalog\SampleCAAMePreferences.C</a>ATNls&nbsp; 
+	&nbsp; </li>
+</ul>
+<p>
+<img alt="" height="495" src="images/SampleCAAMePreferences.jpg" width="1077"/></p>
+<p>&nbsp;</p>
+<p>The Preference group &quot;3DRepGroup&quot; has one Preference item &quot;3DRep&quot; with type 
+radio button. </p>
+<p>The attribute &quot;3DRep&quot; is associated to this Preference item and is described 
+in the file CAACafGeometryView defined in SettingMetadata: </p>
+<p><img alt="" height="662" src="images/CAAAnalyseGeo01.jpg" width="978"/></p>
+<p>Titles associated to public view of preference group with its attributes are 
+defined in the SampleCAAMePreference.CATNls file.</p>
+<p>For CAAAnalyzeGeo we have :&nbsp; </p>
+<p><img alt="" height="190" src="images/3DRepGroupNls.jpg" width="410"/></p>
+<p>&nbsp;</p>
+<h3><a name="CAA_Create_Geometry_collapsible_section.">&quot;CAA Create Geometry&quot; 
+collapsible section.</a></h3>
+<p>Lets see the xml syntax enabling to design the Preference Page section of app 
+&quot;<strong>CAA Create Geometry</strong>&quot;.</p>
+<p>
+<img alt="" height="551" src="images/CAACreateGeometryPPage.jpg" width="374"/></p>
+<p>&nbsp;</p>
+<p>The xml dedicated for description of the preference dialog is defined in the 
+file CAACreateGeometry.xml located at 
+CAfrComponents/AllPreferences/Common_Preferences/Display directory</p>
+<p>&nbsp;</p>
+<p>
+<img alt="" height="717" src="images/CAACreateGeoPregGroup.jpg.png" width="1674"/></p>
+<p>Below the xml description of the different preference group of the &quot;CAA 
+Create Geometry&quot; Preference page :</p>
+<ul>
+	<li>&quot;IdentifierGroup&quot;</li>
+	<li>&nbsp;&quot;MaxPointsCurveGroup&quot;</li>
+	<li>&nbsp;&quot;ImplicitPointsGroup&quot;</li>
+	<li>&nbsp;&quot;ElementsColorGroup&quot; :</li>
+</ul>
+<p>
+<img alt="" height="412" src="images/CAAAnalysisGeoPregGroup02.jpg" width="1158"/></p>
+<p>For each preference item of a given preference group, is associated an 
+attribute.</p>
+<p>&nbsp;The attributes are described in the file CAACafGeometryElt.xml located 
+in CNEXT/resources/SettingsMetadata directory.</p>
+<p>The attribute &quot;Identifier&quot; is associated to the Preference Item &quot;Identifier&quot; 
+and it is of type Enum with value : &quot;Hide&quot;, &quot;Show&quot; and &quot;PreSelectShow&quot;.</p>
+<p>The IdentPrefix item&nbsp; is a String attribute.</p>
+<p><img alt="" height="756" src="images/CAAIdentifierGeo01.jpg" width="888"/></p>
+<p>Below the description of the attribute MaxPointCurve :</p>
+<p>
+<img alt="" height="289" src="images/CAAMaxPointsCurveGeo01.jpg" width="973"/></p>
+<p>Below the xml description of the attribute &quot;ImplPoint&quot;:</p>
+<p>
+<img alt="" height="359" src="images/CAAImplicitPointsGeo01.jpg" width="885"/></p>
+<p>Below the xml description of the attribute &quot;ColorOfElement&quot;:</p>
+<p>
+<img alt="" height="301" src="images/CAAColorElementsGeo01.jpg" width="759"/></p>
+<p>&nbsp;</p>
+<p>The preference group &quot;Elements Selection&quot; contains five check buttons 
+associated to a boolean attribute.</p>
+<p>
+<img alt="" height="725" src="images/CAAAnalysisGeoPregGroup03.jpg" width="741"/></p>
+<p>Below the xml description of the different attributes grouped under the 
+&quot;Element Selection&quot; Preference group:</p>
+<p>
+<img alt="" height="874" src="images/CAAElementsSelectionGeo01.jpg" width="1076"/></p>
+<ul>
+	<li>&nbsp;<p>It is the icon bmp image file name without the bmp extention. If in a 
+		CNext/resources/graphic/icons/normal subdirectory you have the <code>I_CAAIconeName.bmp</code> 
+		file, set I_CAAIconeName for <code>iIconName.</code></p>
+	</li>
+</ul>
+<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="PPDoc"></a>Creating a Preferences Page Documentation</h2>
+<p>When you click F1 in a property page, a documentation is displayed if you have 
+set the TabPage.<strong>LongHelpId</strong> keyword in the CATRsc file of the property 
+page editor.</p>
+<pre class="code">TabPage.<strong>LongHelpId</strong>= &quot;<strong>ToolsOptions</strong>.xxx.[yyy.]zzz&quot; ;</pre>
+<p>where:</p>
+<ul>
+	<li>ToolsOptions: is mandatory</li>
+	<li>xxx: English name of the category. (A::Z, a::z)</li>
+	<li>yyy: English name of the app.(A::Z, a::z)]</li>
+	<li>zzz: English name of the preferences tab. (A::Z, a::z)</li>
+</ul>
+<p>Example:</p>
+<pre class="code">TabPage.<strong>LongHelpId</strong>=&quot;<strong>ToolsOptions</strong>.Infrastructure.CAAGeometricalCreation.Elements&quot;;</pre>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How_to_create_a_documentation_page_">How to create a documentation page ?</a></h3>
+<p>In the documentation directory [<a href="#References">3</a>], create an html 
+document and in the <strong>xxxId2url.</strong>CATNls, where xxx represents the 
+product line, add the following line:</p>
+<pre class="code"><strong>ToolsOptions</strong>.xxx.[yyy.]zzz=&quot;ppp&quot;;</pre>
+<p>where:</p>
+<ul>
+	<li>xxx: English name of the solution. (A::Z, a::z),</li>
+	<li>yyy: English name of the app.(A::Z, a::z)],</li>
+	<li>zzz: English name of the property page. (A::Z, a::z),</li>
+	<li>ppp is the relative path, from the <code>online</code> directory, of the 
+		html document.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>To create a new Preference Page in the Preferences command dialog box, you will need to 
+create a directory structure similar to tree structure 
+inside&nbsp;\resources\CAfrComponents. When node is selected, only pages present in 
+the directory with name same as selected node will be displayed. </p>
+<p>The preferences Page contains a set of Preference group (collapsible 
+section). Each section regroups a set of Preference item dedicated to model parameters and their values.</p>
+<p>The descrition of a collapsible section is done through two xml files, first 
+one dedicated for user interface approach and is 
+inside&nbsp;\resources\CAfrComponents, the second one describe the attributes 
+associated to the preference items and is define inside&nbsp; 
+CNEXT/resources/SettingsMetadata directory.</p>
+<p>Associated with the preferences tab editor, two resource files must be created:</p>
+<ul>
+	<li>a CATNls file for the title of the preferences groups and items.</li>
+	<li>a CATRsc file to specify the icon name associated to the preference 
+	items.</li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAASysMiddleware/CAASysTaMidSettingHowTo.htm">
+		How to Use Settings</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAAAfrTaI18NWorkshop.htm">How to Create Resources for Apps </a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAAAfrTaHelpOnLine.htm">Contextual Help</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="CAACafTaMePreferenceCustoCateg.htm">How to Add App Preference 
+		Category</a></td>
+	</tr>
+	<tr>
+		<td>[5]</td>
+		<td>
+		<a href="../CAACppTechArticles/CAADocSettingXML.htm">
+		Settings Creation Guidelines</a></td>
+	</tr>
+	<tr>
+		<td>[6]</td>
+		<td>
+		<a href="CAACafTaMePreferenceGettingStartedWithMePref.htm">Getting 
+		Started with New Preferences</a> </td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [March 2018]</td>
+		<td>Document created</td>
+	</tr>
+	
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

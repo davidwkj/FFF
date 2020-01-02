@@ -1,0 +1,404 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Exporting Data to a DXF/DWG File"/>
+<meta name="abstract" content="You can export the data contained in a drawing representation into a disk based DXF or DWG file."/>
+<meta name="description" content="You can export the data contained in a drawing representation into a disk based DXF or DWG file."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dxf-t-Export"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Exporting Data to a DXF/DWG File</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dxf-t-Export">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-DXF/DWG::export"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Exporting Data to a DXF/DWG 
+File</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>You can export the data contained 
+    in a drawing representation into a disk based DXF or DWG file. </span>
+
+    
+  </p>
+
+</p></td></tr></table></td></tr></table>
+
+  
+
+  
+  
+  <div>
+    
+    <ol>
+      <li class="stepexpand"><p>In the <a href="../PreferencesMap/gdrpref-c-DXF2D.htm#gdrpref-c-DXF2D" title="The DXF 2D options let you customize the import and export of DXF 2D files for Converter for IGES.">DXF 2D</a> <span>tab</span> of the <span><span class="wintitle">Preferences</span></span><ol type="a"><li class="substepexpand">Select the default standard file, or customized ones. See <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a>.
+    </li>
+<li class="substepexpand"> Select a version:<p><ul><li>
+              DXF files correspond to ASCII format.</li>
+
+              <li>
+              DWG files correspond to binary 
+      format.</li>
+<li>DXF/DWG 
+    formats version 12, 13, 14, Autocad2000, Autocad2004, Autocad2007,  Autocad2010 and Autocad2013 are supported.</li>
+</ul>
+</p></li>
+<li class="substepexpand">Select other required options. Their behavior is described in the next chapters.</li>
+</ol>
+</p></li>
+<li class="stepexpand"><p>Go to the <span>tab</span> containing the data to export. Make sure that the data have been saved, and not modified since last save.<p><p>Note:
+		If unsaved data exist, a message is displayed. Follow the instructions it provides.</p>
+</p></p></li>
+<li class="stepexpand"><p>Select  <span><span class="menucascade"><span class="uicontrol">Share <img src="../Icons22/IP_TopBarShare.png"/></span> &gt; <span class="uicontrol">Export</span></span></span>.  <p> For more information, see <a href="../ExchUserMap/exch-m-Export-sb.htm#exch-m-Export-sb" title="This section explains how to export data to 3D XML files and CATIA V5.">Export</a>.</p></p></li>
+
+      <li class="stepexpand"><p>Go to the directory where you want to export the file. 
+      <ol type="a"><li>Select either <span class="uicontrol">DXF (*.dxf)</span> or
+      <span class="uicontrol">DWG (*.dwg)</span> as the format. 
+      </li>
+<li>Key in the name of the file to create in the <span class="uicontrol">Filename</span> field.</li>
+<li>Click <span class="uicontrol">OK</span>.</li>
+</ol>
+<p> <ul><li>A message is displayed when the 
+      export is completed. See <a href="dxf-c-Report.htm#dxf-c-Report" title="DXF/DWG generates report files to follow the conversions.">About the Report File</a> for more information.</li>
+<li>The export unit depends on the current unit of the session:<ul><li>If the current unit belongs to the metric system (millimeter,
+centimeter, meter, ...) the export unit is the millimeter.</li>
+<li>If the current unit belongs to the Anglo-Saxon system (inch,
+foot, ...) the export unit is the inch.
+</li>
+</ul>
+</li>
+<li>Entities are exported as follows:</li>
+</ul>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" colspan="2" valign="top" id="d11006e150"><span><span class="tm-3D">3D</span>EXPERIENCE</span></th>
+<th class="cellrowborder" colspan="2" valign="top" id="d11006e155">DXF/DWG</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">Element</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">Sub-type</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Graphic export</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Semantic export</td>
+</tr>
+<tr><td class="cellrowborder" colspan="4" valign="top" headers="d11006e150 d11006e155 "><span class="uicontrol">Structures</span></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">sheet<a name="ix-sheet"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">One DXF file per sheet.<p>The contents of each Sheet is transferred to the 'Model Space'
+of the AutoCAD model.
+The file, which is saved as DXF, does not include 'Paper
+Spaces'.</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" rowspan="2" valign="top" width="NaN" headers="d11006e150 ">views<a name="ix-views"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">interactive view</td>
+<td class="cellrowborder" rowspan="4" valign="top" width="NaN" headers="d11006e155 "><p>The structure is not exported.</p>
+<p><p>Note:
+    	Raster views are not supported.</p>
+</p>
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">The structure is not exported.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">generative view</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="NaN" headers="d11006e155 ">The structure is not exported. All the geometric entities of the
+view are gathered into a single Insert/Block.
+The above applies to CGR, approximate, exact views.
+<p>Note:
+    	Raaster views are not supported.</p>
+
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">detail<a name="ix-detail"> </a> (Component)</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">ditto<a name="ix-ditto"> </a> (Instance)</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">See <span class="uicontrol">Export blocks</span> in <a href="dxf-c-DimensionConversion.htm#dxf-c-DimensionConversion" title="Dimensions can be imported in several different ways.">About Dimension Conversion</a></td>
+</tr>
+<tr><td class="cellrowborder" colspan="4" valign="top" headers="d11006e150 d11006e155 "><span class="uicontrol">Attributes</span></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">unit<a name="ix-unit"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">The export unit depends on the current unit of your session.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">show/noshow<a name="ix-show/noshow"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">Only visible elements are exported.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">pick/no pick<a name="ix-pick/nopick"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">NoPick ignored.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">line type<a name="ix-line type"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">Automatic mapping:
+
+
+<ul><li>Line types lower than or equal to 7 are converted
+to standard line types with their graphic
+representation.</li>
+<li>Line type 8 is converted to a polyline keeping the
+graphic representation of the initial entity.</li>
+<li> Line types greater than or equal to 9 are
+exported to DXF with a continuous graphic representation and a name
+containing the line type number such as CATIA9, CATIA10, etc. Those
+names enable you to identify them in the DXF file.</li>
+</ul>
+ </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">line thickness<a name="ix-line thickness"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">Automatic mapping.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">marker type <a name="ix-marker type"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">Ignored.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">color<a name="ix-color"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">Automatic color.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">construction element</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Not exported</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Automatic mapping but construction element attributes not kept.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">text attributes<a name="ix-text attributes"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">font<a name="ix-font"> </a></td>
+<td class="cellrowborder" rowspan="8" valign="top" width="NaN" headers="d11006e155 "><p>Exported implicitly through the graphic representation of
+text.</p>
+<p>Only the contour of characters is exported.</p>
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Default mapping with font isocp.shx (fixed),
+For Kanji or unicode characters see <a href="dxf-c-Report.htm#c-Troubleshooting" title="Below are some information to solve errors.">Troubleshooting</a>.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">bold, italic</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Not supported.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">underlined</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Text + line.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">space (x-scale)</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Space.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">height</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Height.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">justification</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Justification.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">flip</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Flip.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">frame</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Text + geometry.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">layer<a name="ix-layer"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">Not supported.</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">See <span class="uicontrol">Layers</span>  in <a href="dxf-c-DimensionConversion.htm#dxf-c-DimensionConversion" title="Dimensions can be imported in several different ways.">About Dimension Conversion</a>.</td>
+</tr>
+<tr><td class="cellrowborder" colspan="4" valign="top" headers="d11006e150 d11006e155 "><span class="uicontrol">Annotations</span></td>
+</tr>
+<tr><td class="cellrowborder" rowspan="2" valign="top" width="NaN" headers="d11006e150 ">dimension<a name="ix-dimension"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">linear circular angular</td>
+<td class="cellrowborder" rowspan="17" valign="top" width="NaN" headers="d11006e155 ">The geometrical basic elements of each Drawing Representation are
+exported.
+</td>
+<td class="cellrowborder" rowspan="17" valign="top" width="NaN" headers="d11006e155 ">See <span class="uicontrol">Semantic</span>  in  in <a href="dxf-c-DimensionConversion.htm#dxf-c-DimensionConversion" title="Dimensions can be imported in several different ways.">About Dimension Conversion</a></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">curvilinear</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">axis line<a name="ix-axis line"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">center line<a name="ix-center line"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">thread<a name="ix-thread"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">welding symbol<a name="ix-welding symbol"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">coordinate dimension<a name="ix-coordinate dimension"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">ballon<a name="ix-balloon"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">datum target<a name="ix-datum target"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">datum feature<a name="ix-datum feature"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">GDT<a name="ix-GDT"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">rougness symbol<a name="ix-roughness symbol"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">table<a name="ix-table"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">leader<a name="ix-leader"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">arrow<a name="ix-arrow"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">callout<a name="ix-callout"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">text<a name="ix-text"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+</tr>
+<tr><td class="cellrowborder" rowspan="4" valign="top" width="NaN" headers="d11006e150 ">area fill<a name="ix-area fill"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">hatching pattern</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="NaN" headers="d11006e155 ">The geometrical basic elements of each Drawing Representation are
+exported.</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="NaN" headers="d11006e155 ">The geometrical elements making the hatches are gathered into an
+INSERT/BLOCK.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">dotting pattern
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">image pattern</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">The image is not exported. 
+The contour of the Area fill and a set of white/black SOLIDS are
+exported.
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">The image is not exported, but can be mapped with a DXF pattern. 
+The contour of the Area fill and a set of white/black SOLIDS are
+gathered into an INSERT/BLOCK.
+<p>Note:
+    	see <a href="dxf-c-Standards.htm#dxf-c-Standards" title="Standards are used to define how DXF/DWG data are imported or exported.">About Standards</a> for special pattern mapping cases.</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">coloring pattern
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">The coloring pattern is exported as a set of SOLIDS.
+</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e155 ">The coloring pattern is exported as a set of SOLIDS gathered into
+one INSERT/BLOCK.
+</td>
+</tr>
+<tr><td class="cellrowborder" colspan="4" valign="top" headers="d11006e150 d11006e155 "><span class="uicontrol">Geometry</span></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">curve<a name="ix-curve"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">point</td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">POINT
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">line</td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">LINE
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">polyline</td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">2D POLYLINE
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">circle</td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">CIRCLE
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">arc</td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">ARC
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">spline</td>
+<td class="cellrowborder" rowspan="2" colspan="2" valign="top" headers="d11006e155 ">If the Export mode is set to Graphic, or the Version is set to
+DXF/DWG R12 or R13, they are exported as 2D POLYLINE.
+If the Export mode is set to Semantic and the Version is set to
+DXF/DWG R14 or above:<ul>
+<li>Splines or NURBS originated from Interactive <span><span>Drawings</span></span> and
+Splines originated from exact views of Generative <span><span>Drawings</span></span> are
+exported into DXF Splines (with consistent graphical attribute such
+as color, line thickness, line type and show no show).</li>
+
+<li>The Spline or NURBS inside a 2D Component are not managed (they
+are still exported as DXF polyline).</li>
+
+</ul>
+
+
+Only the generative exact view can contain Spline or NURBS.
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">NURBS</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">ellipse</td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">2D POLYLINE OR ELLIPSE
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">hyperbola</td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">2D POLYLINE
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">parabola</td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">2D POLYLINE
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">constraints<a name="ix-constraints"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">Not supported.</td>
+</tr>
+<tr><td class="cellrowborder" colspan="4" valign="top" headers="d11006e150 d11006e155 "><span class="uicontrol">Miscellaneous</span></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">OLE link<a name="ix-OLE link"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">Not supported.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">picture<a name="ix-picture"> </a> (bitmap)</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">Not supported.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 ">drawing preview in dwg file<a name="ix-drawing preview in dwg file"> </a></td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d11006e150 "> </td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d11006e155 ">Not supported.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p></p></li>
+
+      
+      
+      
+      
+    </ol>
+
+    
+  </div>
+
+
+  
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

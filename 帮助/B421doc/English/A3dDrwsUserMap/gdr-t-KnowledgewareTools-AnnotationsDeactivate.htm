@@ -1,0 +1,150 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Deactivating Annotations"/>
+<meta name="abstract" content="You can deactivate/activate annotations using Knowledgeware tools. This feature enables you to specify whether an annotation should be active or not, using what is known as an Activity parameter. Deactivated annotations are not taken into account anymore."/>
+<meta name="description" content="You can deactivate/activate annotations using Knowledgeware tools. This feature enables you to specify whether an annotation should be active or not, using what is known as an Activity parameter. Deactivated annotations are not taken into account anymore."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-KnowledgewareTools-AnnotationsDeactivate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Deactivating Annotations</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-KnowledgewareTools-AnnotationsDeactivate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-annotations::activating/deactivating"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Knowledgeware::activating/deactivating annotations"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-deactivating::annotations"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Deactivating Annotations</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can deactivate/activate 
+						annotations using Knowledgeware tools. This feature enables 
+						you to specify whether an annotation should be active or 
+						not, using what is known as an Activity parameter. Deactivated 
+						annotations are not taken into account anymore. </span>
+
+						
+						<p>Deactivating dimensions, for example, 
+						enables you to avoid problems when some dimensions cannot 
+						be computed anymore (for example,  when geometry has been deleted).
+						</p>
+						<p>In this scenario, you will see how to 
+						deactivate dimensions, but you can also deactivate texts, 
+						balloons, welding symbols and geometrical tolerances.
+						</p>
+						<p>For more information about using knowledgeware 
+						capabilities, see the <cite><span>Engineering Rules Capture</span> User's 
+						Guide</cite>. </p>
+						</p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>    Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> containing annotations. In our example, it contains three views, each of which shows a number of dimensions.    <br/><br/> </td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--><img height="444" width="430" src="../GdrUserImages/deactivatedimensions01.gif"/></div>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">Tools</span> section of the action bar, click <span class="uicontrol">Design Table</span> 
+			<img height="22" width="22" src="../IconsNormal/I_DesignTable.png"/>.  </p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Creation of a Design Table</span> dialog box, replace the default name and comment for 
+			the design table.</p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Create a design table with current parameter 
+			values</span> check box.</p></li>
+<li class="stepexpand"><p>Select the <span class="uicontrol">Vertical</span> orientation check box.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>. <p> 
+			<p>In the <span class="uicontrol">Select parameters to insert</span> 
+			dialog box, in the <span class="uicontrol">Parameters to insert</span> list, you can 
+			notice that there are Activity parameters for a number of annotations 
+			(dimensions and texts, in this specific case). </p>
+			</p></p></li>
+<li class="stepexpand"><p>For this scenario, we select all of the 
+			Activity parameters for dimensions: the <span class="uicontrol">Sheet.1\Front view\DrwDressUp.1\Dimension.#\Activity, 
+			Sheet.1\Top view\DrwDressUp.1\Dimension.#\Activity </span>and <span class="uicontrol">Sheet.1\Left 
+			view\DrwDressUp.1\Dimension.#\Activity</span> items. Then, we click the 
+			right arrow to add these items to the <span class="uicontrol">Inserted parameters </span>
+			list. </p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>.<p> The <span class="uicontrol">Save As</span> dialog box 
+			appears. </p></p></li>
+<li class="stepexpand"><p>Specify a path and filename for the design table to 
+			be created. Click <span class="uicontrol">OK </span>in the file selection dialog box. 
+			The design table feature is added to the <span class="glossterm" id="tree" onmouseout="hideTerm()" onmouseover="showTerm('tree.xml')">tree</span> and a dialog 
+			box displays the newly created design table. This design table contains 
+			only one configuration, on line 1. By default, all dimensions are active 
+			(their Activity parameters are set to "true").<p> 
+			
+				
+					
+					<br/><img border="1" height="45" width="651" src="../GdrUserImages/dbdesigntable02.gif"/><br/>
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Click the <span class="uicontrol">Edit table... </span> to start the Microsoft 
+			Excel  (under Windows) or open the text editor (under Unix).
+			</p></li>
+<li class="stepexpand"><p>In column C, set each item to "false".</p></li>
+<li class="stepexpand"><p>In column D, set each <span class="uicontrol">Sheet.1\Front view\DrwDressUp.1\Dimension.#\Activity</span> 
+			item to <span class="uicontrol">Sheet.1\Top view\DrwDressUp.1\Dimension.#\Activity
+			</span>and <span class="uicontrol">Sheet.1\Left view\DrwDressUp.1\Dimension.#\Activity
+			</span>item to "false". This will enable you to deactivate some of the 
+			dimensions while keeping other dimensions active.<p> 
+			
+				
+					
+					<br/><img border="1" height="240" width="594" src="../GdrUserImages/deactivatedimensions02.gif"/><br/>
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Save your Excel or .txt file and close it. 
+			An information message is displayed to let you know that the design 
+			table was updated; click <span class="uicontrol">Close</span>. The design table now contains 
+			3 configurations. </p></li>
+<li class="stepexpand"><p>You can now select another configuration in the Design 
+			table dialog box. Select line 3, for example, and click <span class="uicontrol">Apply</span>. 
+			You can notice that the dimensions in the <span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">front view</span> are deactivated, 
+			while the dimensions in the other views remain active. 
+ <p> 
+			
+				
+					
+					<br/><img height="398" width="409" src="../GdrUserImages/deactivatedimensions03.gif"/><br/>
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK </span>to exit the dialog box and add the 
+			design table to the representation. </p></li>
+</ol>
+<p class="result">
+				
+			
+		
+		
+	
+	
+		
+		
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>
+				<ul>
+					<li>The only way you can display deactivated annotations is 
+					by reactivating them through Knowledgeware (i.e. by setting 
+					their Activity parameter to "true"). </li>
+
+					<li>You can also deactivate/activate annotations using formulas. 
+					For more information about formulas, see the <cite><span>Engineering Rules Capture</span> User's Guide</cite>.  You can also see
+					<a href="gdr-t-KnowledgewareTools-TableRowsDeactivate.htm#gdr-t-KnowledgewareTools-TableRowsDeactivate" title="You can deactivate/activate (i.e. hide or display) table rows using Knowledgeware tools. This feature enables you to specify whether a row should be active or not, using what is known as an Activity parameter.">Deactivating Table Rows</a> in this User's Guide for a scenario on using 
+					formulas to deactivate rows in a table.</li>
+
+				</ul>
+
+				</td></tr></table>
+
+		
+	
+
+
+
+
+
+
+</p></div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

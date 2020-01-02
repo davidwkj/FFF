@@ -1,0 +1,110 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About Generating Hatched Areas from 3D Specifications"/>
+<meta name="abstract" content="Hatched areas in generative views are used to define or highlight some specific 3D areas to represent some type of technological information such as painting, chemical treatment, thermal treatment, etc. You can generate associative 2D hatched areas in generative views from a dedicated 3D specification."/>
+<meta name="description" content="Hatched areas in generative views are used to define or highlight some specific 3D areas to represent some type of technological information such as painting, chemical treatment, thermal treatment, etc. You can generate associative 2D hatched areas in generative views from a dedicated 3D specification."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-ViewModification-GenerateHatchedAreas"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About Generating Hatched Areas from 3D Specifications</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-ViewModification-GenerateHatchedAreas">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About Generating Hatched Areas from 3D Specifications</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Hatched areas in generative views are used to define or highlight some specific 3D areas to represent some type of technological information such as painting, chemical treatment, thermal treatment, etc. You can generate associative 2D hatched areas in generative views from a dedicated 3D specification. </span>
+<p>However, before you begin generating hatched area, you need to understand the concepts that are described in this topic.</p><p>The following topics are discussed:
+    </p>
+  </p>
+<ul><li><a href="#c-Extractionof3DArea" id="toc_rg" title="You can extract the dedicated NOA type specification in 2D generative views as generated shapes.">Extraction of 3D Area</a></li><li><a href="#c-ViewUpdate" id="toc_rg" title="When modifications are applied to the used NOA specifications, the drawing representation requires an update and the Update icon is activated.">View Update</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+
+  <div><p>To create associative 2D hatched areas:</p><p><ul><li>You need to specify the 3D areas in the <span>work area</span> through the Note <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">Object</span> <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">Attribute</span> (NOA) defined in the <span>3D Tolerancing &amp; Annotation</span> <span>app</span>.</li>
+<li>You also need to specify the same NOA in the associated <span class="glossterm" id="generative-view-style" onmouseout="hideTerm()" onmouseover="showTerm('generative-view-style.xml')">generative view style</span> which is used to generate 2D views. For more information, see <a href="gdr-t-ViewModification-GenerateHatchedAreas.htm#gdr-t-ViewModification-GenerateHatchedAreas" title="You can generate associative 2D hatched areas in generative views from a dedicated 3D specification."> Generating Hatched Areas from 3D Specifications</a>.</li>
+</ul>
+  </p></div>
+
+
+  
+
+  
+
+  
+<div class="nested1" id="c-Extractionof3DArea"><h2 class="topictitle2">Extraction of 3D Area</h2>
+
+<div><p><span>You can extract the dedicated NOA type specification in 2D generative views as generated shapes.</span>
+<p><p>Note:
+		 Dimensions and annotations created on these generated shapes are not associative with 3D.
+</p>
+</p></p>
+<div class="section" id="c-Extractionof3DArea__s-StandardGenerativeViews"><h3 class="sectiontitle">Standard Generative Views</h3><p><ul><li>You can generate 2D hatched areas in all the standard generative views by defining the dedicated type NOA specifications to be extracted as a hatched area in  the generative view style.</li>
+<li>You can also generate hatched areas in section, detail, clipping,  broken, <span class="glossterm" id="breakout" onmouseout="hideTerm()" onmouseover="showTerm('breakout.xml')">breakout</span> and 3D clipping views. </li>
+</ul>
+</p></div>
+<div class="section" id="c-Extractionof3DArea__s-ViewFrom3D"><h3 class="sectiontitle">View From 3D</h3><p>You can generate 2D hatched areas in  views generated from 3D, that is from 2D Layout for 3D Design by defining the NOA specifications dedicated to be extracted as a hatched area in the generative view style. </p><p>Views from <span>3D Tolerancing &amp; Annotation</span>: In this case, all the Note Object Attributes are extracted as annotations. No hatched areas are  generated.</p><p><p>Note:
+		Only the annotations belonging to the current <span class="glossterm" id="active-view" onmouseout="hideTerm()" onmouseover="showTerm('active-view.xml')">active view</span> are considered.</p>
+ </p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>If the NOA specifications to be extracted are overlapping with each other (that is, several NOA are associated to the same face, whether they are created in the same product or not),  extracted hatched areas may overlap in the resulting view. </td></tr></table>
+</p></div>
+</div>
+</div>
+<div class="nested1" id="c-ViewUpdate">
+      <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">View Update</h2>
+
+      
+      <div><p><span>When modifications are applied to the used NOA specifications, the drawing representation requires an update and the <span class="uicontrol">Update</span> icon <img src="../Icons22/I_D3M_UpdateSheet.png"/> is activated.</span>
+</p>
+
+      <div class="section" id="c-ViewUpdate__s-SupportedViews"><h3 class="sectiontitle">Supported View Projection Modes</h3><p>During the view update process, modifications done in the dedicated NOA specifications are extracted only in the views generated in the exact projection mode.</p></div>
+<div class="section" id="c-ViewUpdate__s-PatternAssociatedtoProjectedArea"><h3 class="sectiontitle">Pattern Associated to the Projected Area</h3><p>The default <span class="glossterm" id="pattern" onmouseout="hideTerm()" onmouseover="showTerm('pattern.xml')">pattern</span> used for hatched areas is the pattern defined in the dedicated generative view style file. The specified pattern name has to be defined in the standard associated to the <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>. For more information about defining pattern parameters, see <a href="generativeviewstyles-r-ad-FunctionalTolerancingAnnotationParams.htm#generativeviewstyles-r-ad-FunctionalTolerancingAnnotationParams" title="3D Tolerancing &amp; Annotation parameters are located in the FunctionalTolerancingAndAnnotation node of the generative view style XML file (available through MePreferencesStandards &gt; generativeparameters category &gt; DefaultGenerativeStyle.xml ).">3D Tolerance &amp; Annotation Parameters</a>.</p><p><p>Note:
+		If you define a pattern name, which does not belong to standard, then a default hatching pattern is used.</p>
+</p><p>All the patterns associated to a given  extracted 3D typed NOA specifications are associative even if:</p><p><ul><li>Hatched areas are belonging to different generative views.</li>
+<li>Pattern is manually modified.<p>Modification is propagated to all areas linked to the same extracted 3D typed NOA specifications.</p></li>
+</ul>
+</p><p><p>Notes:
+		<ul><li>You can independently modify the pattern properties associated to different extracted 3D typed NOA  specifications using the <span>context menu</span> command <span class="uicontrol">Properties</span>. </li>
+<li>After you modify the pattern graphical properties, they are kept during next view updates. That is, the subsequent views will be generated using this modified pattern.</li>
+</ul>
+</p>
+</p></div>
+</div>
+
+
+      <div class="nested2" id="c-OverloadingProperties">
+        <h3 class="topictitle3">Overloading Properties</h3>
+
+        
+        <div><p><span>The added overload properties attributes are relative to the selected 3D instance.</span>
+<p>For more information about overloading properties, see <a href="gdr-t-ViewModification-ElementPropertiesOverload.htm#gdr-t-ViewModification-ElementPropertiesOverload" title="You can overload the properties of 3D components in a view generated from a 3D product.">Overloading Element Properties</a>.</p></p>
+
+          <p>Consider the following points when overloading properties of generated shapes: </p><p> <ul><li><span class="uicontrol">Use when projecting</span>: If this check box is cleared, then the 3D typed NOA belonging to the unused instance will not be created.</li>
+<li><span class="uicontrol">Shown</span>: If this check box is cleared, then the 3D typed NOA belonging to the not-shown instance will not be created.</li>
+</ul>
+</p>
+        
+        </div>
+
+      </div>
+
+
+      
+    <div class="nested2" id="c-AnnotationSetHideShowBehavior"><h3 class="topictitle3">Annotation Set Hide/Show Behavior</h3>
+
+<div><p><span>The generation of resulting 2D hatched area in standard generative views is independent of the hide/show status of the dedicated type NOA specification.</span>
+</p>
+<p>Note that this NOA specification is considered as a technological specification and not as a 3D geometry.
+</p></div>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

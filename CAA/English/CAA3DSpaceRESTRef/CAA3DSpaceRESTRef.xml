@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	  <ITEM name="3DSpace" icon="CAAIcons/images/I_Reference.gif"	topictype="Ta" href="CAA3DSpaceRESTRef/CAATc3DSpaceRESTRefToc.htm" >
+	    <ITEM name="Get Login Ticket" icon="CAAIcons/images/I_Reference.gif"	topictype="Ta" href="CAA3DSpaceRESTRef/CAA3DSpaceWSQrLoginTicket.htm" />
+	    <!-- IMPORT href="CAAi3DXDocumentWSRef/CAAi3DXDocumentWSRef.xml"/-->	
+		<!-- IMPORT href="CAAi3DXLibraryWSRef/CAAi3DXLibraryWSRef.xml"/-->
+		<IMPORT href="CAAi3DXPnOWSRef/CAAi3DXPnOWSRef.xml"/>
+		<IMPORT href="CAADocumentWS/CAADocumentWS.xml"/>
+	</ITEM>
+</Root>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+  <ITEM name="Assembly Pattern" href="../CAAAssemblyFeature/CAAAsfTcPatternToc.htm" >
+    <ITEM name="Creating Assembly Pattern" href="../CAAAssemblyFeature/CAAAsfUcPatternCreation.htm" icon=" CAAIcons/images/I_UseCase.gif"/>
+    <ITEM name="Editing Assembly Pattern" href="../CAAAssemblyFeature/CAAAsfUcPatternEdit.htm" icon=" CAAIcons/images/I_UseCase.gif"/>
+  </ITEM>
+  <ITEM name="Assembly Feature" href="../CAAAssemblyFeature/CAAAsfTcAssemblyFeatureToc.htm" >
+    <ITEM name="Creating Assembly Feature" href="../CAAAssemblyFeature/CAAAsfUcAssemblyFeatureCreation.htm" icon=" CAAIcons/images/I_UseCase.gif"/>
+    <ITEM name="Editing Assembly Feature" href="../CAAAssemblyFeature/CAAAsfUcAssemblyFeatureEdit.htm" icon=" CAAIcons/images/I_UseCase.gif"/>
+    <ITEM name="Deleting Assembly Feature" href="../CAAAssemblyFeature/CAAAsfUcAssemblyFeatureDeletion.htm" icon=" CAAIcons/images/I_UseCase.gif"/>
+  </ITEM>
+  <ITEM name="Derived Representation" href="../CAAAssemblyFeature/CAAAsfTcDerivedRepToc.htm" >
+    <ITEM name="Creating Derived Representation" href="../CAAAssemblyFeature/CAAAsfUcDerivedRepCreation.htm" icon=" CAAIcons/images/I_UseCase.gif"/>
+    <ITEM name="Editing Derived Representation" href="../CAAAssemblyFeature/CAAAsfUcDerivedRepEdit.htm" icon=" CAAIcons/images/I_UseCase.gif"/>
+  </ITEM>
+</Root>

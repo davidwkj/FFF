@@ -1,0 +1,86 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating a Breakout View"/>
+<meta name="abstract" content="You can create a breakout view from a generated view by using a cutting profile to section a view in desired dimensions to visualize the internal area."/>
+<meta name="description" content="You can create a breakout view from a generated view by using a cutting profile to section a view in desired dimensions to visualize the internal area."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewCreation-BreakoutView.htm#gdr-c-ViewCreation-BreakoutView"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-ViewCreation-BreakoutViewModify.htm#gdr-t-ViewCreation-BreakoutViewModify"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewCreation-BreakoutView"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating a Breakout View</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewCreation-BreakoutView">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-breakout views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::breakout views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::breakout views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-commands::Breakout View"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Creating a Breakout View</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can create a breakout view from a generated view by using a cutting profile to section a view in desired dimensions to visualize the internal area.</span>
+
+             
+             </p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>                    Open        a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> containing a view from which you want to remove        material. Double-click this view to activate it, and make sure it is        up-to-date.           </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewCreation-BreakoutView.htm#gdr-c-ViewCreation-BreakoutView" title="Breakout views are created by removing material locally from a generated view to visualize the remaining visible internal part.">About Breakout Views</a></td></tr><tr><td><a href="gdr-t-ViewCreation-BreakoutViewModify.htm#gdr-t-ViewCreation-BreakoutViewModify" title="You can modify a breakout view, through the modification of its profile and then its depth.">Modifying a Breakout View</a></td></tr></table></td></tr></table>
+<a name="CATDrwGreyIcon.BreakoutView"><!-- --></a>
+<div><div class="p"><!--xxx--></div>
+<ol><li class="stepexpand"><p>From the <span class="wintitle">View Layout </span>section of the <span>action bar</span>, click <span class="uicontrol">Breakout View</span> <img src="../Icons22/I_D3M_BreakOut.png"/>.</p></li>
+<li class="stepexpand"><p>Click in the sheet to create the first point of the <span class="glossterm" id="breakout" onmouseout="hideTerm()" onmouseover="showTerm('breakout.xml')">breakout</span> profile.</p></li>
+<li class="stepexpand"><p>Click as many points as required to create the profile, and click the first point to close the profile or double-click to end the profile creation.<p> <br/><img src="../GdrUserImages/breakoutview01.png"/><br/><p>The 3D Viewer appears, displaying the 3D part corresponding 
+       to the generated view and an arrow indicating in which direction the breakout 
+       will be created.</p><p>Note:
+		The 3D Viewer lets you position the 3D part. 
+           It also lets you visualize a view plane and use it to define 
+           the depth of the breakout. </p>
+</p></p></li>
+<li class="stepexpand"><p>Perform either of the following operations:<ul><li>In the 3D Viewer, drag the arrow to the required 
+         location. The breakout will not be associative with any element.</li>
+<li>In the drawing, select an axis, a center 
+         line or an edge (circular or linear) of a perpendicular view. The 3D plane 
+         will be moved accordingly. This method lets you break the view through 
+         a hole or a face, for example. The breakout will be associative with the 
+         selected element.<p>  
+         For example, select the center line to use it as 
+         an extremity plane, as shown below.</p> <br/><img src="../GdrUserImages/breakoutview02.png"/><br/></li>
+<li>In the 3D Viewer:<ol type="a"><li>Click the arrow to activate the reference element selection.</li>
+<li>Select a point, a line, a circle, a face, or an axis as a reference element to define the depth 
+         of the breakout.</li>
+<li>In the <span class="uicontrol">Depth (in mm)</span> box, enter a value (you can also define the depth by dragging the arrow).</li>
+</ol>
+This method lets you define the depth of the breakout precisely. The breakout 
+         will be associative with the selected reference element and with the depth 
+         value.  <br/><img src="../GdrUserImages/breakoutview03.png"/><br/><p>Note:
+		You can select any one of the following for plane translation during reference selection:<ul><li><span class="uicontrol">Translate plane to geometry</span>: <p>Moves the plane according to the selected element. By default, this option is selected.</p><p>If the selected element is perpendicular to the viewing plane, the breakout plane is positioned at the centre of the element. Else, it is positioned at the start or end of the element. </p></li>
+<li><span class="uicontrol">Translate plane to bounding box</span>:<p>Allows selection of plane using bounding box of the selected element. The bounding box defines two alternative reference faces displayed in white. The selected face is highlighted with cyan color.</p></li>
+</ul>
+</p>
+</li>
+</ul>
+</p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Under <span class="uicontrol">Display</span>, click the following options to change the visualization accordingly:<p><ul><li><span class="uicontrol">Clipping tool</span><ul><li>Display background and clipping tool: Shows 3D
+object as well as clipping tool.</li>
+<li>Display clipped background and clipping tool:
+Shows the clipped 3D object and the clipping
+tool.</li>
+<li>Display clipping tool: Shows only the clipping
+tool.</li>
+</ul>
+</li>
+<li><span class="uicontrol">Transparency</span>: to modify transparency of the clipping tool.</li>
+<li><span class="uicontrol">Turn viewpoint</span>: to turn the viewpoint of 3D object and the clipping tool to Iso, Front, Rear, Left, Right, Top, or Bottom.</li>
+</ul>
+</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">OK</span>.<p> The breakout 
+       view is created.
+       
+       <p><br/><img src="../GdrUserImages/breakoutview04.png"/><br/></p></p></p></li>
+</ol>
+</div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

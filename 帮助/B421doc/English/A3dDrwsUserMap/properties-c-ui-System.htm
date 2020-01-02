@@ -1,0 +1,194 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="System Properties"/>
+<meta name="abstract" content="System lets you modify dimension system properties."/>
+<meta name="description" content="System lets you modify dimension system properties."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="properties-c-ui-System"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">System Properties</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocServices.js">
+  		/* */
+  		</script></head>
+<body onLoad="highlightSearchTerms();" id="properties-c-ui-System">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Properties::Dimension System"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>System Properties</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span><span class="wintitle"> System</span> lets you modify dimension system properties.</span>
+
+    
+    
+  <p>
+      Select the <span class="uicontrol">System</span> tab to access properties.
+    </p>
+  </p>
+<ul><li><a href="#properties-c-ui-System__cs-DimensionLinesAlignment" title="">Dimension lines alignment</a></li><li><a href="#properties-c-ui-System__cs-Dimensionvaluealignment" title="">Dimension values alignment</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+  
+  
+
+  
+
+  <div><div class="section" id="properties-c-ui-System__cs-DimensionLinesAlignment"><h2 class="sectiontitle">Dimension lines alignment</h2>
+      
+      
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Offset mode
+          </dt>
+
+          <dd>
+            Select the desired option:
+      <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><p>Available properties depend on the 
+		selected dimensions system type.</p></td></tr></table>
+<dl class="uicontrol"><dt class="dlterm">Constant</dt>
+<dd>The offset between dimensions of a system remains 
+			constant and equal to the value defined in the <a href="#properties-c-ui-System__dlentry-Offsetbetweendimensions">Offset between dimensions</a> 
+			box. <p>Available for stacked dimension systems.</p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  
+					<p>The offset between dimensions remains constant to the scale 
+					of the view as well.</p><p>Consequently, if you modify the scale of 
+					a view and perform an alignment on the dimension system, the 
+					offset between dimensions is also modified so as to remain constant 
+					to the view's scale.</p></td></tr></table>
+</dd>
+<dt class="dlterm">Free</dt>
+<dd>The dimensions of a system can be moved independently. 
+			<p>Available for stacked dimension systems and cumulated dimension systems.</p></dd>
+</dl>
+
+          </dd>
+
+        
+        
+          <dt class="dlterm"><a name="properties-c-ui-System__dlentry-Offsetbetweendimensions"><!-- --></a>
+            Offset between dimensions
+          </dt>
+
+          <dd>
+            Defines the value of the offset between dimensions. 
+          </dd>
+
+        
+      
+        
+      </dl>
+
+    </div>
+<div class="section" id="properties-c-ui-System__cs-Dimensionvaluealignment"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="sectiontitle">Dimension values alignment</h2>
+      
+      <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  
+				<p><span class="glossterm" id="chained-dimension" onmouseout="hideTerm()" onmouseover="showTerm('chained-dimension.xml')">Chained dimension</span> systems can only be centered.</p> </td></tr></table>
+
+        
+      <dl class="uicontrol">
+        
+          <dt class="dlterm">
+            Align cumulated dimension values
+          </dt>
+
+          <dd>Select the desired option to specify how dimension values should be aligned for 
+		cumulated dimensions systems.<dl class="uicontrol"><dt class="dlterm">Reference line</dt>
+<dd/>
+<dt class="dlterm">Center</dt>
+<dd/>
+<dt class="dlterm">Opposite</dt>
+<dd/>
+<dt class="dlterm">From standard</dt>
+<dd/>
+</dl>
+
+            
+          <p>In the image below, <span class="uicontrol">d</span> is the <span class="uicontrol">Values Offset</span> properties:</p><p><br/><a href="../Gdr3DMasterImages/cumuldimalignNLS.gif" onClick="ViewImage(this);return false"><img title="Click to enlarge this image" src="../Gdr3DMasterImages/cumuldimalignNLS_s.gif"/></a><br/>
+		</p></dd>
+
+        
+        
+          <dt class="dlterm">
+            Align stacked dimension values
+          </dt>
+
+          <dd>Select the required option to specify how dimension values should be aligned for 
+		stacked dimensions systems. <dl class="uicontrol"><dt class="dlterm">Reference line</dt>
+<dd/>
+<dt class="dlterm">Center</dt>
+<dd/>
+<dt class="dlterm">Opposite</dt>
+<dd/>
+</dl>
+
+            
+          <p>In the image below, <span class="uicontrol">d </span>is the <span class="uicontrol">Values Offset</span> properties:</p><p>
+		<br/><a href="../Gdr3DMasterImages/stackeddimalignNLS.gif" onClick="ViewImage(this);return false"><img title="Click to enlarge this image" src="../Gdr3DMasterImages/stackeddimalignNLS_s.gif"/></a><br/></p></dd>
+
+        
+      
+          <dt class="dlterm">
+            Values Offset
+          </dt>
+
+          <dd>Specifies the distance between the alignment reference and the dimension 
+		value. 
+            
+          <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><p> 
+				In the standards, the
+				<a href="standards-r-ad-DimensionParams.htm#standards-r-ad-DimensionParams" title="The dimension parameters let you customize the appearance of annotation and dimension elements. These parameters are located in the Dimension node of the standard file.">Dimension Parameters</a> parameter lets you specify 
+				whether cumulated dimensions are set with their value oriented along 
+				extension lines or dimension lines.</p><p>The cumulated dimension behavior then differs depending on what 
+				you chose as the value orientation reference:</p><ul>
+					<li>Extension lines: The
+					<a href="standards-r-ad-DimensionParams.htm#standards-r-ad-DimensionParams" title="The dimension parameters let you customize the appearance of annotation and dimension elements. These parameters are located in the Dimension node of the standard file.">Dimension Parameters</a> standard parameters are used. 
+					<p>Only some
+					<a href="standards-r-ad-DimensionSystemStyles.htm#standards-r-ad-DimensionSystemStyles" title="The dimension system styles let you define the default values that will be used when creating different types of dimension systems.">Dimension System Styles</a> are used.</p></li>
+
+					<li>Dimension lines: Some
+					<a href="standards-r-ad-DimensionParams.htm#standards-r-ad-DimensionParams" title="The dimension parameters let you customize the appearance of annotation and dimension elements. These parameters are located in the Dimension node of the standard file.">Dimension Parameters</a> standard parameters are used. <p>However, 
+					the value horizontal positioning is not defined in the standards 
+					(the corresponding parameters are deprecated), but by the following
+					<a href="standards-r-ad-DimensionSystemStyles.htm#standards-r-ad-DimensionSystemStyles" title="The dimension system styles let you define the default values that will be used when creating different types of dimension systems.">Dimension System Styles</a>: Aligned cumulated dimension values 
+					and Values Offset.</p></li>
+
+				</ul>
+
+				</td></tr></table>
+</dd>
+
+        
+          <dt class="dlterm">
+            Automatically add a funnel
+          </dt>
+
+          <dd>Adds <span class="glossterm" id="funnel" onmouseout="hideTerm()" onmouseover="showTerm('funnel.xml')">funnels</span> to 
+		cumulated or stacked systems whenever a dimension value line-up is performed.<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span><p> In order 
+				to ensure a readable layout of dimensions values, the funnel shape 
+				properties width, height and angle are automatically computed.</p><p>Therefore, 
+				if the <span class="uicontrol">Automatically add a funnel</span> option is selected 
+				then the <span class="uicontrol">Dimensions System Style</span> values are ignored.</p></td></tr></table>
+
+            
+          <p>If you do not select this option, you can add funnels manually via
+		<span class="menucascade"><span class="uicontrol">Edit</span> &gt; <span class="uicontrol">Properties</span></span> or when creating the dimension system.</p></dd>
+
+        
+        
+      </dl>
+
+    </div>
+</div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

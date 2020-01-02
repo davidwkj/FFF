@@ -1,0 +1,619 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Creating a smoothed curve lissing a set of points</title>
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating a smoothed curve lissing a set of points</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how to smoothes a set of points to create a 
+		nurbs curve and how to constrain the degree, continuity and 
+		parameterization of the result nurbs curve. Few examples illustrating 
+		the capabilities of CATICGMLiss operator are provided.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAGMOperatorsCreateLissCurve Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMOperatorsCreateLissCurve Do?</a></li>
+				<li><a href="#How">How to Launch CAAGMOperatorsCreateLissCurve</a></li>
+				<li><a href="#Where">Where to Find the 
+				CAAGMOperatorsCreateLissCurve Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this use case, you learn how to create a a smoothed nurbs curve lissing a 
+set of points.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAGMOperatorsCreateLissCurve Use Case</h2>
+<p>CAAGMOperatorsCreateLissCurve is a use case of the CAAGMOperatorsInterfaces.edu framework 
+that illustrates GMOperatorsInterfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMOperatorsCreateLissCurve Do?</h3>
+<p>This use case:</p>
+<ol>
+	<li>Preleminary operations : creates the geometric factory, software 
+	configuration and TopData.</li>
+	<li>Create a wire that liss a set of points approximating an hyperbolical 
+	conical spiral<ul>
+		<li>Create a cone surface with its associated skin</li>
+		<li>Create a set of points approximating an hyperbolical conical spiral</li>
+		<li>Create NURBS curve that liss a set of point</li>
+		<li>Creation of the wire body embedding the smoothed curve</li>
+	</ul>
+	</li>
+	<li>Create a wire that liss a set of points approximating a Torus solenoid<ul>
+		<li>Create a Torus surface with its associated skin</li>
+		<li>Create a set of points approximating approaching a Torus Solenoid</li>
+		<li>Create a NurbsCurve lissing the set of point</li>
+		<li>Create the wire body embedding the smoothed curve</li>
+	</ul>
+	</li>
+	<li>Writes the model and closes the container.</li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMOperatorsCreateLissCurve</h3>
+<p>To launch CAAGMOperatorsCreateLissCurve, you will need to set up the build time environment, 
+then compile CAAGMOperatorsCreateLissCurve.m along with its prerequisites, set up the 
+run time environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>If you simply type CAAGMOperatorsCreateLissCurve with no argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example:</p>
+<p><code>CAAGMOperatorsCreateLissCurve e:\file.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsProperties.m'>
+<h3><a name="Where"></a>Where to Find the CAAGMOperatorsCreateLissCurve Code</h3>
+<p>The CAAGMOperatorsCreateLissCurve use case is made of a main named CAATopCreateLissCurve.cpp 
+located in the CAAGMOperatorsCreateLissCurve.m module of the GMOperatorsInterfaces framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\CAAGMOperatorsCreateLissCurve.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The program: </p>
+<ol>
+	<li><a href="#Creates the Geometry Factory">Preleminary operations : creates 
+	the geometric factory, software configuration and TopData</a></li>
+	<li><a href="#Creates a Skin Body">Create a wire that liss a set of points 
+	approximating an hyperbolical conical spiral</a></li>
+	<li><a href="#Solid_Torus">Create a wire that liss a set of points 
+	approximating a Torus solenoid </a>
+	</li>
+	<li><a href="#Writing_the_Model_and_Closing_the_Container">Writes the Model and 
+	Closes the Container</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creates the Geometry Factory"></a>Preleminary operations : creates 
+the geometric factory, software configuration and TopData</h3>
+<p>The geometry factory (CATGeoFactory) creates and manages all the <code>CATICGMObject</code>: 
+it creates the points, curves, surfaces and bodies and remove them.</p>
+<p>The CATGeoFactory creation itself is done by the global function <code>::CATCreateCGMContainer</code>.</p>
+<p>Notice that the factory can be defined by reading a NCGM file that was previously 
+stored. In that case, the global function <code>::CATLoadCGMContainer</code> must 
+be used.</p>
+<pre class="code"> cout &lt;&lt; &quot;Preliminary operations : \n&quot; &lt;&lt; endl;
+
+CATGeoFactory* piGeomFactory = ::<strong>CATCreateCGMContainer</strong>() ;
+if (NULL==piGeomFactory) return (1);
+cout &lt;&lt; &quot; - Get The Geo factory : OK &quot; &lt;&lt; endl;
+
+// Get the Config
+//
+CATSoftwareConfiguration * pConfig = new <strong>CATSoftwareConfiguration</strong>();
+if (NULL == pConfig) return (1);
+cout &lt;&lt; &quot; - Get the software config : OK &quot; &lt;&lt; endl;
+
+// Get the Topological journal
+//
+CATCGMJournalList* pJournal = new <strong>CATCGMJournalList</strong>(pConfig, NULL);
+if (NULL == pJournal) return (1);
+cout &lt;&lt; &quot; - Get the Topological journal : OK &quot; &lt;&lt; endl;
+
+CATTopData <strong>topdata</strong>(pConfig, pJournal);
+cout &lt;&lt; &quot; - Create the software configuration and CATTopData : OK &quot; &lt;&lt; endl;</pre>
+	<p> <a name="Creates a Box and a Cylinder Primitives0"></a>Below the output traces 
+:</p>
+	<p> <img alt="" src="images/CAAGMOperatorsCreateLissCurve_Prelem.jpg"><br>
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creates a Skin Body"></a>Create a wire that liss a set of points 
+approximating an hyperbolical conical spiral</h3>
+<p>The CATICGMLiss creation follows the scheme of all topological operators. 
+You must create the operator by using the CATCGMCreateLiss global function, 
+then run it and get the resulting body.</p>
+	<p><img alt="" src="images/CATCGMCreateLiss_mg8.jpg"></p>
+	<p>The CATICGMLiss operator requests a set of points as input, we can for 
+	example in order to illustrate it&nbsp; imagine a set of points appproaching 
+	the curve of an hyperbolical conical spiral.</p>
+	<p>We create the cloud of points based on a cartesian parametrisation of an 
+	Hyperbolical conical spiral.</p>
+	<p>An hyperbolical conical spiral is a spiral build on a cone surface and 
+	where result of orthogonal projection is&nbsp; an hyperbolical spiral. His 
+	cartesian parametrisation verify following equation : </p>
+	<ul>
+		<li>x(t) = a.(cos(t)/t)&nbsp; </li>
+		<li>y(t) = a.(sin(t)/t)</li>
+		<li>z(t) = a.(cot(Alfa)/t)&nbsp; </li>
+	</ul>
+	<p>where parameter are :</p>
+	<ul>
+		<li>&nbsp;a is equal to product between of high limit of the slant 
+		height of the cone and the sin of cone angle value.</li>
+		<li>Alpha is the angle of axis Oz with a straight generatrix of the cone 
+		on which the conic spiral lies.</li>
+	</ul>
+	<p>Below the CAA code allowing to create the set of points appproaching the 
+	curve of an hyperbolical conical spiral :</p>
+<pre class="code"> // ====================================================================================
+// CreateHyperbolicalConicalSpiralSetOfPoints : 
+// ---------------------------------------------
+// Create a set of points based on cartesian parametrisation 
+// of an Hyperbolical conical spiral
+//
+// Cartesian Parametrisation of Hyperbolical conical spiral :
+// 
+// x(t) = a.(cos(t)/t)
+// y(t) = a.(sin(t)/t)
+// z(t) = a.(cot(Alfa)/t)
+//
+// ====================================================================================
+void <strong>CreateHyperbolicalConicalSpiralSetOfPoints</strong> (int NbPoints, double LengthConeAngle, double AngleAlpha, CATMathSetOfPointsND *&amp;pSetPointsToLiss)
+{
+   pSetPointsToLiss = new CATMathSetOfPointsND(3, NbPoints); 
+   int i = 0;
+   for (i = 0; i &lt; NbPoints; i++)
+   {
+      double IPx = LengthConeAngle*cos(i + 1) / (i + 1);
+      double IPy = LengthConeAngle *sin(i + 1) / (i + 1);
+      double IPz = LengthConeAngle *(atan(AngleAlpha)) / (i + 1);
+      double Point[3] = { IPx,IPy, IPz };
+      (*pSetPointsToLiss).AddPoint(Point);
+   }
+   return;
+}
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<p><a name="Creates a Box and a Cylinder Primitives"></a>The code of creation of 
+the nurbs curve approaching the set of points&nbsp; : </p>
+<pre class="code"> 
+cout &lt;&lt; &quot;\nPart 1.2 : Create NURBS curve that liss a set of point approaching an hyperbolical conical spiral &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;---------------------------------------------------------------------------------------------------\n&quot; &lt;&lt; endl;
+
+// Create a cloud of point based on cartesian parametrisation 
+// of an Hyperbolical conical spiral
+// 
+CATMathSetOfPointsND * pSetPointsToLiss = NULL;
+double LengthConeAngle = iEndRuleLength*sin(iConeAngle);
+int NbPoints = 30;
+double AngleAlpha = CATPI/3. ;
+<strong>CreateHyperbolicalConicalSpiralSetOfPoints</strong>(NbPoints, LengthConeAngle, AngleAlpha ,pSetPointsToLiss);
+cout &lt;&lt; &quot;Create a cloud of point approaching an Hyperbolical conical spiral : OK &quot; &lt;&lt; endl;
+...
+
+// Create a NurbsCurve lissing the set of point
+//
+<strong>CATICGMLiss</strong>* pLissOperator = NULL; 
+CATLONG32 degree = 5;
+<strong>CATNurbsCurve</strong> * pNurbsCurve = NULL;
+
+<strong>LissSetOfPointsByNurbsCurve</strong>(	piGeomFactory,
+				pConfig,
+				topdata, 
+				pSetPointsToLiss,
+				pLissOperator,
+				degree,
+				pNurbsCurve);
+
+cout &lt;&lt; &quot;Creation of a NurbsCurve lissing the set of point : OK &quot; &lt;&lt; endl;</pre>
+	<p> The function LissSetOfPointByNurbsCurve is a function of the use case 
+	illustrating the use of the CATICGMLiss operator.</p>
+	<p> This function <strong>LissSetOfPointsByNurbsCurve</strong> can of course 
+	be enriched and customized by using&nbsp; different other services provided 
+	by <strong>CATICGMLiss </strong>operator.</p>
+	<p> The code of&nbsp; <strong>LissSetOfPointsByNurbsCurve</strong>&nbsp; 
+	function is : </p>
+	<pre class="code">// ====================================================================================
+// LissSetOfPointsByNurbsCurve : 
+// -----------------------------
+// Smooth the input set of point by a Nurbs curve of degree and display parameters 
+// value associated to each point with value of maximum deviation between a point 
+// and the smoothed curve.
+//
+//
+// piGeomFactory : The Geometrical Factory
+// pConfig : The software configuration to be used to run a topological operator
+// topdata : inputs of the topological operators (software config + Journal) 
+// pSetPointsToLiss: Set of point to smooth by a nurbs curve 
+// pLissOperator : Geometric operator that smoothes a set of points to create a curve
+// degree : degree of the resulting curve .
+// pNurbsCurve : The created smoothed curve
+//
+// ====================================================================================
+int       <strong>LissSetOfPointsByNurbsCurve</strong>(	CATGeoFactory * piGeomFactory,
+					CATSoftwareConfiguration * pConfig,
+					CATTopData &amp; topdata, 
+					CATMathSetOfPointsND * <em><strong>pSetPointsToLiss</strong></em>,
+					CATICGMLiss *&amp; <strong>pLissOperator</strong>, 
+					CATLONG32 degree, 
+					CATNurbsCurve *&amp; pNurbsCurve )
+{
+...
+
+// Define the maximum distance between an input point and the smoothed curve. 
+//
+double iTolerance = piGeomFactory-&gt;GetResolution();
+cout &lt;&lt; &quot;Maximum distance between an points and the smoothed curve = &quot; &lt;&lt; iTolerance &lt;&lt; endl;
+
+// Creates the operator that smoothes a set of points to create a curve.
+//
+<strong>pLissOperator</strong> = <strong>CATCGMCreateLiss</strong>(
+				  piGeomFactory,
+				  pConfig,
+				  <em><strong>pSetPointsToLiss</strong></em>,
+				  iTolerance,
+				  <strong>ADVANCED</strong>);
+
+...
+cout &lt;&lt; &quot;Create CATICGMLiss operator for lissing a set of points : OK &quot; &lt;&lt; endl;
+
+// Defines the degree of the curve
+// 
+pLissOperator-&gt;<strong>SetDegree</strong>(degree);
+cout &lt;&lt; &quot;Expect a curve result with degree = &quot; &lt;&lt; degree &lt;&lt; endl;
+
+
+int NbPoints = pSetPointsToLiss-&gt;GetNumberOfPoints();
+int i = 0;
+
+// Defines the maximum number of arcs of the created curve
+//
+CATLONG32 iMaxNumber = NbPoints;
+pLissOperator-&gt;<strong>SetMaxNumberOfArcs</strong>(iMaxNumber);
+
+// Run the operator
+//
+pLissOperator-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;\nRun the CATICGMLiss operator : OK &quot; &lt;&lt; endl;
+
+// <em><strong>Get the created smoothed curve</strong></em>
+// 
+<strong>pNurbsCurve</strong> = pLissOperator-&gt;<strong>GetResult</strong>();
+...
+
+cout &lt;&lt; &quot;\nGet the created smoothed curve : OK &quot; &lt;&lt; endl;
+
+
+// Get the parameters associated to each point .
+//
+double * pTabParams = NULL;
+pTabParams = pLissOperator-&gt;<strong>GetParameters</strong>();
+
+cout &lt;&lt; &quot;\nGet the parameters associated to point each point :&quot; &lt;&lt; endl;
+for ( i = 0; i &lt; NbPoints; i++)
+cout &lt;&lt; &quot;\t\ti = &quot; &lt;&lt; i &lt;&lt; &quot;\t\t Param = &quot; &lt;&lt; pTabParams[i] &lt;&lt; endl;
+
+// Compute the <strong>maximum deviation</strong> between a point and the smoothed curve
+//
+double MaxDeviation = pLissOperator-&gt;<strong>GetMaxDeviation</strong>();
+cout &lt;&lt; &quot;\nThe maximum deviation between a point and the smoothed curve : &quot; &lt;&lt; MaxDeviation &lt;&lt; endl;
+
+...
+
+return 0;
+}
+
+...</pre>
+	<p>We finish by creation of the topological wire associated to the result 
+	Nurbs curve by using the service CreateWireFromNurbsCurve of <strong>
+	CAAGMTopGeomUtilities</strong> as following: </p>
+	<pre class="code"> cout &lt;&lt; &quot;\nPart 1.3 : Creation of the wire body embedding the smoothed curve &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------------------------------------------------------ \n&quot; &lt;&lt; endl;
+
+// Create the wire
+//
+CATBody * piLissWire = NULL;
+CAAGMTopGeomUtilities::<strong>CreateWireFromNurbsCurve</strong>(piGeomFactory, topdata, pNurbsCurve, piLissWire);
+...
+cout &lt;&lt; &quot;\t\t\tHyperbolical Conical Spiral Wire Body : Tag = &quot; &lt;&lt; piLissWire-&gt;GetPersistentTag() &lt;&lt; endl;
+</pre>
+	<p>Below the output traces 
+:</p>
+	<p><img alt="" src="images/CAAGMOperatorsCreateLissCurve_img9.jpg"></p>
+	<p>Nurbs curve result smoothing the hyperbolical conical spiral set of 
+	points : </p>
+	<p><img alt="" src="images/NurbsCurveSmootingHypSpiralimg3E.jpg">&nbsp;</p>
+	<p>Exemple of extruded surface along direction OYZ of the hyperbolical 
+	conical spiral (alpha=CATPIBY3) : </p>
+	<p><img alt="" src="images/CAAGMOperatorsCreateLissCurve_imgB.jpg"></p>
+	<p>Exemple of sweep surface with an arc circle as profile and an 
+	hyperbolical conical spiral (alpha=CATPIBY2) as guided curve: </p>
+	<p><img alt="" src="images/CAAGMOperatorsCreateLissCurve_img1F.jpg">&nbsp;</p>
+	<p>&nbsp;</p>
+	<h3><a name="Solid_Torus">Create a wire that liss a set of points 
+	approximating a Torus solenoid </a></h3>
+<p>We see now another example illustrating the use of CATICGMLissOperator for 
+creation of a wire that liss a set of points approximating a Torus solenoid.</p>
+	<p>For this we adopt same methodology as previously for the hyperbolical 
+	conical spiral.</p>
+	<p>Begin by create a set of point approaching the solenoid curve. Consider 
+	first of all, create a torus skin as following; </p>
+	<pre class="code">  
+// create a torus surface with its associated skin
+//
+cout &lt;&lt; &quot;Part 2.1 : Create a Torus surface with its associated skin&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;--------------------------------------------------------------\n&quot; &lt;&lt; endl;
+
+
+// The Torus axis
+//
+CATMathAxis iTorusAxis(Center);
+double iMajorRadius = 120.;
+CATAngle iMajorStartAngle = 0.;
+CATAngle iMajorEndAngle = CAT2PI;
+double iMinorRadius = 30;
+CATAngle iMinorStartAngle = 0.;
+CATAngle iMinorEndAngle = CAT2PI;
+
+CATTorus * piSupportTorus = piGeomFactory-&gt;<strong>CreateTorus</strong>(	iTorusAxis,
+							iMajorRadius,
+							iMajorStartAngle,
+							iMajorEndAngle,
+							iMinorRadius,
+							iMinorStartAngle,
+							iMinorEndAngle);
+...
+
+// Create a body associate to the Torus surface
+//
+CATBody *pTorusBody = NULL;
+<strong>CAAGMTopGeomUtilities</strong>::<strong>CreateSkinFromSurface</strong>(piGeomFactory,
+topdata,
+pSurfaceTorus,
+pTorusBody);
+</pre>
+	<p><img alt="" src="images/LissSetOfPointsByNurbsCurve_img21.jpg"></p>
+	<p>In next, we create the set of point approaching the solenoid curve built 
+	on the previous torus surface. </p>
+	<p>His cartesian parametrisation verify following equation : </p>
+<ul>
+	<li>X(t) = (R + r.cos(nt)).cos(t)</li>
+	<li>Y(t) = (R + r.cos(nt)).sin(t)</li>
+	<li>Z(t) =&nbsp; r.sin(nt)</li>
+</ul>
+	<p>where parameters R and r are respectively the major and minor radius of 
+	the torus.</p>
+	<p>Below the CAA code allowing to create the set of points:</p>
+<pre class="code"> 
+// ====================================================================================
+// CreateTorusSolenoidSetOfPoints
+// -----------------------------------
+// Create a set of point that approach Torus solenoid (Solenoid where central curve is
+// winding regulary aroud a torus)
+// 
+// Cartesian Parametrisation : 
+//
+// X(t) = (R + r.cos(nt)).cos(t)
+// Y(t) = (R + r.cos(nt)).sin(t)
+// Z(t) = r.sin(nt)
+// 
+// R : Major radius of the torus
+// r : Minor radius of the torus
+//
+// ====================================================================================
+void <strong>CreateTorusSolenoidSetOfPoints</strong>(	int NbPoints,
+					double iMajorRadius, 
+					double iMinorRadius, 
+					int n, 
+					CATMathSetOfPointsND *&amp;pSetPointsToLiss)
+{
+
+pSetPointsToLiss = new CATMathSetOfPointsND(3, NbPoints);
+
+for (int i = 0; i &lt; NbPoints; i++)
+{
+double IPx = (iMajorRadius + iMinorRadius*cos(n*i))*cos(i);
+double IPy = (iMajorRadius + iMinorRadius*cos(n*i))*sin(i);
+double IPz = iMinorRadius * sin(n*i);
+double Point[3] = { IPx,IPy, IPz };
+(*pSetPointsToLiss).AddPoint(Point);
+}
+return;
+}</pre>
+	<p>Below the cloud of point generated with method <strong>
+	CreateTorusSolenoidSetOfPoints</strong> (NbPoints=500):</p>
+	<p><img alt="" src="images/LissSetOfPointsByNurbsCurve_img22.jpg"></p>
+	<p>We generate the Nurbs curve approaching this set of point as previously 
+	done for the hyperbolical conical spiral as following: </p>
+<pre class="code"> 
+cout &lt;&lt; &quot;\nPart 2.2 : Create a NurbsCurve approaching a Torus Solenoid&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;--------------------------------------------------------------\n&quot; &lt;&lt; endl;
+
+// Torus Solenoid set of points
+//
+NbPoints =500; 
+int n = 70; 
+CATMathSetOfPointsND * pSetPointsToLiss05 = NULL; 
+<strong>CreateTorusSolenoidSetOfPoints</strong>(NbPoints, iMajorRadius, iMinorRadius, n, pSetPointsToLiss05);
+...
+cout &lt;&lt; &quot;\nCreate a cloud of point approaching an Torus Solenoid curve : OK &quot; &lt;&lt; endl;
+
+// Create the topological points of the pSetPointsToLiss
+//
+CAAGMTopGeomUtilities::<strong>CreateTopologicalSetOfPoints</strong>(piGeomFactory, topdata, pSetPointsToLiss05);
+
+// Create a NurbsCurve lissing the set of point
+//
+pNurbsCurve = NULL;
+<strong>LissSetOfPointsByNurbsCurve</strong>(	piGeomFactory,
+				pConfig,
+				topdata,
+				pSetPointsToLiss05,
+				pLissOperator,
+				degree,
+				pNurbsCurve);
+if (NULL == pLissOperator || NULL == pNurbsCurve)
+{
+::CATCloseCGMContainer(piGeomFactory);
+return (1);
+}
+cout &lt;&lt; &quot;Creation of a Torus Solenoid Curve lissing the set of point : OK &quot; &lt;&lt; endl;
+...
+
+// (b) - Create the wire
+//
+
+CATBody * piLissWireSolenoidTorusCurve = NULL;
+<strong>CAAGMTopGeomUtilities</strong>::<strong>CreateWireFromNurbsCurve</strong>(piGeomFactory, topdata, pNurbsCurve, piLissWireSolenoidTorusCurve);
+if (piLissWireSolenoidTorusCurve == NULL)
+{
+::CATCloseCGMContainer(piGeomFactory);
+return (1);
+}
+cout &lt;&lt; &quot;\t\t\tTorus Solenoid Wire Body : Tag = &quot; &lt;&lt; piLissWireSolenoidTorusCurve-&gt;GetPersistentTag() &lt;&lt; endl;
+
+</pre>
+	<p>Below the output traces 
+:</p>
+	<p><img alt="" src="images/LissSetOfPointsByNurbsCurve_img23.jpg"></p>
+	<p>...</p>
+	<p><img alt="" src="images/LissSetOfPointsByNurbsCurve_img27.jpg"></p>
+	<p>Below the wire result :</p>
+	<p><img alt="" src="images/LissSetOfPointsByNurbsCurve_img29.jpg"></p>
+	<p>Below a sweep surface with an arc circle as profile and a nurbs curve 
+	lissing set of points approaching a torus solenoid as guided curve :</p>
+	<p><img alt="" src="images/Solenoideimg3B.jpg"></p>
+	<p>Here another example of&nbsp; sweep surface&nbsp; with a torus solenoid 
+	as guided curve :</p>
+	<p><img alt="" height="446" src="images/Solenoidimg3C.jpg" width="952"></p>
+	<p><br></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3>Few examples of smoothing curves</h3>
+<p>Below another example of smoothing curves <a name="Solid Pyramid0">generated
+</a>with CATICGMLiss Operator: </p>
+	<p>Create a NurbsCurve approaching a Cylinder Sine Wave (approach a cylinder 
+	sinusoid which is the windings of a sinusoid around a cylinder).</p>
+	<ul>
+		<li>&nbsp;x(t) = R.cos (t)</li>
+		<li>y(t) = R.sin (t)</li>
+		<li>z(t) = L.cos(n.t)</li>
+	</ul>
+	<p>whrer R is the radius of the cylinder, L the Length of the cylinder and&nbsp; 
+	n the number of arches</p>
+<table>
+	<tr>
+		<td class="auto-style1">
+		<img alt="" height="526" src="images/LissSetOfPointsByNurbsCurve_img2E.jpg" width="513"><br>
+		NbPoints = 370 , n = 7</td>
+		<td class="auto-style1">
+		<img alt="" src="images/LissSetOfPointsByNurbsCurve_img30.jpg"><br>
+		result Nurbs curve</td>
+	</tr>
+</table>
+	<p></p>
+	<h3><a name="Writing_the_Model_and_Closing_the_Container">Writing the Model and 
+Closing the Container</a></h3>
+<p>Before ending, we must first release the software configuration.</p>
+<pre class="code">// Releases the configuration
+    pConfig-&gt;Release();</pre>
+<p>To save the model in a file, the <code>::CATSaveCGMContainer</code> global function 
+is used. Notice that in the use case, the save is conditioned by an input parameter 
+representing the file inside which the model must be saved.</p>
+<p>The use case ends with the closure of the geometry factory, done by the <code>
+::CATCloseCGMContainer</code> global function.</p>
+<pre class="code"> if(1==toStore)
+ {
+#ifdef _WINDOWS_SOURCE
+   ofstream filetowrite(pfileName, ios::binary ) ;
+#else
+   ofstream filetowrite(pfileName,ios::out,filebuf::openprot) ;
+#endif
+
+   <strong>::CATSaveCGMContainer</strong>(piGeomFactory,filetowrite);
+   filetowrite.close();
+ }	
+
+ //
+ // Close the container
+ //
+	
+ <strong>::CATCloseCGMContainer</strong>(piGeomFactory);</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case explains how to liss a set of point&nbsp; with a nurbs curve and how to associate topology 
+to this curve.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Feb 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

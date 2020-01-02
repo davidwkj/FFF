@@ -1,0 +1,190 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Updating Drawings Including the Bills of Materials Using the Batch Monitor"/>
+<meta name="abstract" content="You can update a list of drawing representations and also bills of materials using the batch monitor. The batch monitor lets you create as many batch configurations as required, and follow the progress of an update. Updating drawings via the batch monitor will be particularly helpful in the following cases:"/>
+<meta name="description" content="You can update a list of drawing representations and also bills of materials using the batch monitor. The batch monitor lets you create as many batch configurations as required, and follow the progress of an update. Updating drawings via the batch monitor will be particularly helpful in the following cases:"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-DrawingsUsingBatchMonitorUpdate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Updating Drawings Including the Bills of Materials Using the Batch Monitor</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-DrawingsUsingBatchMonitorUpdate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Updating Drawings Including the Bills of Materials Using the Batch Monitor
+         
+           
+         </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can update a list of drawing representations and also bills of materials using the batch
+monitor. The batch monitor lets you create as many batch
+configurations as required, and follow the progress of an update.
+Updating drawings via the batch monitor will be particularly
+helpful in the following cases:
+</span>
+
+    <ul><li>If you need to update a large number of <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawings</span> (but do not need to visualize them while doing so).</li>
+<li>If you need to update drawings which require large CPU resources.</li>
+<li>When the <span class="uicontrol">Disable automatic updates when view is modified</span> check box is selected (from <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span>
+<span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Generation</span></span> section).</li>
+</ul>
+<p>You can run the batch from your computer or from a remote
+platform.
+For more information on using the batch monitor, see <a href="../ComUserMap/com-t-BatchMonitor-DirectlyFromBatchMonitorRun.htm#com-t-BatchMonitor-DirectlyFromBatchMonitorRun" title="You can run a batch directly from its interface or, if the required parameters have already been defined, you can run it directly from the Batch Monitor.">Running a Batch Directly</a>.</p><p>This task shows you how to:
+</p></p>
+<ul><li><a href="#t-DefineTheDrawingBatchParameters" id="toc_rg" title="When you are using the batch monitor for the first time, it is necessary to define the drawing batch parameters that will be used to launch the drawing update. This consists of:">Define the Drawing Batch Parameters</a></li><li><a href="#t-RunTheDrawingBatch" id="toc_rg" title="Once you have defined batch parameters in an xml file, you can run the batch.">Run the Drawing Batch</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span><ul><li>From <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span>
+<span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Generation</span></span> section, select the <span class="uicontrol">Disable  automatic           updates when view is modified</span> check box.</li>
+<li>Also, when creating           a drawing that will be updated via the batch, make sure that           in <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">View</span></span> 
+tab, the <span class="uicontrol">3D extracted representation</span> check box is not set           to <span class="uicontrol">As session</span> (as the batch needs to load the           3D data before updating a view).</li>
+<li>From the <span class="wintitle">Tools</span> section of the <span>action bar</span>, click <span class="uicontrol">Utility</span> and log on. The batch           monitor appears, listing available batches.</li>
+<li>Before running the batch, especially on a remote platform, check
+that CATIA can access the graphic card and Open GL resources, and then
+tune the process accordingly.
+</li>
+</ul>
+                         
+<p>Note:
+    	The batch only updates drawings including the bills of materials, not the associated 3D
+specifications. Therefore, you may want to make sure that your <span>3D area</span> is up-to-date by checking its status in the <span>Assembly Design</span><span>app</span> through the <span class="uicontrol">PLM Update</span> command. For more
+information, see <cite>Assembly Design User's Guide: PLM Update</cite>.
+</p>
+</td></tr></table></td></tr></table>
+
+
+
+<div><div class="p"><!--xxx--></div>
+</div>
+
+
+  <div class="nested1" id="t-DefineTheDrawingBatchParameters"><h2 class="topictitle2">Define the Drawing Batch Parameters</h2>
+<div><p><span>When you are using the batch monitor for the first time, it is necessary to define the drawing batch parameters that will be used to launch the drawing update. This consists 
+     of:</span>
+
+     <ul>
+       <li>Selecting the impacted files, optionally the impacted views in these 
+       files.</li>
+
+       <li>Defining the action to run: update, force update, isolate or update status.</li>
+
+       <li>Indicating the directory where the update report will be saved. </li>
+
+       <li>Optionally entering a host name if the batch is not processed from your 
+       computer.</li>
+
+       <li>Optionally indicating the CATIA settings directory.</li>
+
+     </ul>
+
+     </p>
+<ol><li class="stepexpand"><p>From the list of available batches, double-click <span class="uicontrol">Drawing 
+       Batch</span> (you can also right-click <span class="uicontrol">Drawing Batch</span> and 
+       select <span class="uicontrol">New parameters file</span>).  
+       <p>  appears.
+       </p></p></li>
+<li class="stepexpand"><p>In        the <span class="uicontrol">Drawing Batch </span>dialog box, under <span class="uicontrol">Selected Operation</span>, select the action to launch (create from 2D layout, update, force update, isolate or update status) and the  
+       impacted 
+       views from the appropriate list.<p> 
+       <p>For this scenario, select <span class="uicontrol">Force update</span> as action and <span class="uicontrol"><span class="glossterm" id="active-view" onmouseout="hideTerm()" onmouseover="showTerm('active-view.xml')">Active view</span></span> as the impacted view.</p>
+       <p><p>Note:
+		To update the bills of material <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">object</span>, you must select <span class="uicontrol">Views from whole drawing</span> or <span class="uicontrol">Views from active sheet</span>.</p>
+</p>
+       <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> These parameters 
+           will be applied to every drawing selected in steps 3 and 4. 
+           However, you can customize these parameters afterwards for one or several 
+           drawings. To do this, select (or multi-select) a drawing in the list, then 
+           change its parameters in the <span class="uicontrol">Selected Operation</span> section.</td></tr></table>
+
+       </p></p></li>
+<li class="stepexpand"><p>Click
+       <img src="../IconsNormal/I_TeamPDMFindDocument.png"/> 
+       to select the drawing <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representations</span> to update or isolate by batch.
+        
+       <p> 
+       The <span class="uicontrol">[Name_of_the_provider_you_are_connected_to] Object Management</span> 
+       dialog box appears. For more information about this dialog box, see <a href="../ComUserMap/com-t-Batch-ObjectSearch.htm#com-t-Batch-ObjectSearch" title="You can use a dedicated interface to search for objects stored in the environment you are connected to.">Searching for Objects</a>.</p></p></li>
+<li class="stepexpand"><p>Define your search criteria, click <span class="uicontrol">Apply</span>, and then
+       <span class="uicontrol">OK</span>. 
+       <p> 
+       The selected files are now listed in the <span class="uicontrol">Object Selection </span>table, 
+       along with the impacted views and action to execute. 
+       </p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Repeat steps 3 and 4 to include files from another 
+       location.<p> 
+       <p>Note: You can remove files from the list of the files to 
+       update. To do so, select the unwanted file and click
+       <img src="../IconsNormal/I_Erase.png"/>.</p>
+       </p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>In the <span class="uicontrol">Report directory</span> box, modify 
+       the path of the directory in which the reports will be stored. <p> 
+       </p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Modify the name that will be used for the report 
+       in the <span class="uicontrol">Report name</span> box. By default, the global report dealing 
+       with all the documents that have been processed is named GlobalResults.htm.<p> 
+       </p></p></li>
+<li class="stepexpand"><p>For this scenario, select  <span class="uicontrol">Run local</span>. 
+       <p> </p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Save</span>.</p></li>
+<li class="stepexpand"><p>Browse to the directory in which you want to save the batch 
+       parameters file, specify a file name in the appropriate box, and click
+       <span class="uicontrol">Save</span>.<p> 
+        Your parameters are saved in an xml file.</p></p></li>
+<li class="stepexpand"><p>You can now either click <span class="uicontrol">Run</span> to run the batch 
+       immediately or click <span class="uicontrol">Cancel</span> to close the <span class="uicontrol">Update Batch</span> dialog box and run the batch later.  
+       For this scenario, click <span class="uicontrol">Cancel</span>.<p> 
+       <p>You can now exit the batch monitor. However, for the next 
+       task <a href="gdr-t-DrawingsUsingBatchMonitorUpdate.htm#t-RunTheDrawingBatch" title="Once you have defined batch parameters in an xml file, you can run the batch.">Run the Drawing Batch</a>, you will need to reopen 
+       the batch monitor.</p>
+       
+       </p></p></li>
+</ol>
+<p class="result">
+     </p></div>
+</div>
+<div class="nested1" id="t-RunTheDrawingBatch"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Run the Drawing Batch</h2>
+<div><p><span>Once you have defined batch parameters in an xml file, you can run the batch.</span>
+
+     </p>
+<ol><li class="stepexpand"><p>From the list of available batches, right-click <span class="uicontrol">Drawing 
+       Update PLM</span> and select <span class="uicontrol">Associate a parameter file</span>.</p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Associate</span> dialog box, browse to the directory where you previously saved the 
+       xml batch parameters file, and select this file.</p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Open</span>.</p></li>
+<li class="stepexpand"><p>Click the <span class="uicontrol">Start</span> tab which now displays the name 
+       and location of the file you just associated to the batch.</p></li>
+<li class="stepexpand"><p>Right-click the batch and select <span class="uicontrol">Run</span>.<p> 
+       The batch 
+       execution starts.</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>During or after the batch execution, you can get 
+       more information on the process in the <span class="uicontrol">Processes</span> tab, such as the batch name, the batch identification number, 
+       name on the host computer (if you run the batch on a remote computer), the 
+       status (in progress or ended) and the start and end times.</p></li>
+<li class="stepexpand"><p>To display the report of the batch execution, double-click 
+       the desired batch in the list.<p> The <span class="uicontrol">Results</span> window appears.
+        
+       </p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Open the GlobalResults.htm file for details.</p></li>
+<li class="stepexpand"><p>When the batch execution is over, you can exit the <span class="uicontrol">Batch 
+       Monitor</span>. <p> In the drawing representation, the bills of material is updated according to the changes done in the 3D.</p></p></li>
+</ol>
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

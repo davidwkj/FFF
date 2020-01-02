@@ -1,0 +1,105 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Generating Hatched Areas from 3D Specifications"/>
+<meta name="abstract" content="You can generate associative 2D hatched areas in generative views from a dedicated 3D specification."/>
+<meta name="description" content="You can generate associative 2D hatched areas in generative views from a dedicated 3D specification."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-GVS-ViewUsingGVSCreate.htm"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewModification-GenerateHatchedAreas.htm#gdr-c-ViewModification-GenerateHatchedAreas"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewModification-GenerateHatchedAreas"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Generating Hatched Areas from 3D Specifications</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewModification-GenerateHatchedAreas">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Generating Hatched Areas from 	3D Specifications</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can generate associative 2D hatched areas in generative views from a dedicated 3D specification. </span>
+<p>For this, you need to create a dedicated Note <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">Object</span> <span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">Attribute</span>  (NOA) in the <span>3D Tolerancing &amp; Annotation</span> <span>app</span>, to store the 3D specification. For more information about Note Object Attribute, see <cite><span>3D Tolerancing &amp; Annotation</span> User's Guide: Note Object Attributes</cite>.
+      </p></p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>
+      Open a <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> of a product containing a pad. 
+        
+    </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-t-GVS-ViewUsingGVSCreate.htm" title="Generative view styles are defined by an administrator and specify the appearance and behavior of a generated view.">Creating a View using Generative View Styles</a></td></tr><tr><td><a href="gdr-c-ViewModification-GenerateHatchedAreas.htm#gdr-c-ViewModification-GenerateHatchedAreas" title="Hatched areas in generative views are used to define or highlight some specific 3D areas to represent some type of technological information such as painting, chemical treatment, thermal treatment, etc. You can generate associative 2D hatched areas in generative views from a dedicated 3D specification.">About Generating Hatched Areas from 3D Specifications</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+    <ol>
+      <li class="stepexpand"><p>Create a dedicated Note Object Attribute associated to a 3D face in the <span>3D Tolerancing &amp; Annotation</span> <span>app</span>.
+        <p> For more information, see  <cite><span>3D Tolerancing &amp; Annotation</span> User's Guide: Note Object Attributes: Creating Note Object Attribute from a Text</cite>. <p><br/><img src="../GdrUserImages/createNOA01.png"/><br/></p><p>Notes:
+		<ul><li>The Note Object Attribute can be associated to one face, several faces or relimited faces.  </li>
+<li>The Note Object Attributes associated to features or wire-frame objects are not processed during the view update to create 2D hatched areas.</li>
+</ul>
+</p>
+</p></p></li>
+<li class="stepexpand"><p>                    Go to <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Administration</span></span>  tab, and clear the <span class="uicontrol">Disable generative view style usage</span> check box.
+        <p> This activates the <span class="glossterm" id="generative-view-style" onmouseout="hideTerm()" onmouseover="showTerm('generative-view-style.xml')">generative view style</span> functionality.</p></p></li>
+
+      <li class="stepexpand"><p>
+        
+                    Go to <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>. In the standards editor, select the <span class="uicontrol">generativeparameters</span> category, and then select the <span class="uicontrol">DefaultGenerativeStyle.xml</span> from the <span class="uicontrol">File</span> list.
+        
+        
+        
+      </p></li>
+
+      <li class="stepexpand"><p>
+        
+          Then, for example, go to <span class="uicontrol">DefaultGenerativeStyle &gt; FunctionalTolerancingAndAnnotation &gt; NoteObjectAttribute &gt; TechnologicalAreaGeneration  &gt; TechnologicalAreaForFTA &gt;   NOAExtractedType</span> and specify the type of NOA.  
+        
+        <p>
+          <table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>
+            You need to specify the same NOA type as defined in the  <span>3D Tolerancing &amp; Annotation</span> <span>app</span>. </td></tr></table>
+
+        <p>Notes:
+		<ul><li>Only dedicated typed Note Object Attribute which is set in the generative view style, associated with the view, is used to generate 2D hatched areas. </li>
+<li>This  dedicated Note Object Attribute is taken into account by the extraction process and it can also be instantiated from a catalog. </li>
+</ul>
+ </p>
+</p>
+        
+      </p></li>
+
+      
+      <li class="stepexpand"><p>
+        Save this configured generative view style with a suitable name, say G1.
+        <p> 
+          You can use this generative view style for further operations.
+        </p>
+      </p></li>
+<li class="stepexpand"><p>From the <span class="wintitle">View Layout</span> section of the <span>action bar</span>, click <span class="uicontrol"><span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">Front View</span></span>   <img src="../Icons22/I_D3M_DrwFrontView.png"/>.<p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>Note that 3D typed NOA specifications are only extracted in exact projection views.
+    </td></tr></table>
+</p></p></li>
+<li class="stepexpand"><p>In the <span class="uicontrol">Generative view style</span> toolbar, select the generative view style G1 defined in step 4. </p></li>
+
+    <li class="stepexpand"><p>In the <span>work area</span>, select a plane of the 3D part or a plane surface, to define the reference plane.</p></li>
+<li class="stepexpand"><p>Click inside the <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span> to generate the view.<p>  3D NOA type specification is extracted in this 2D view as a hatched area.<br/><img src="../GdrUserImages/hatchedarea01.png"/><br/></p></p></li>
+</ol>
+
+    <p class="result">
+      </p>
+  </div>
+
+
+  <div/>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

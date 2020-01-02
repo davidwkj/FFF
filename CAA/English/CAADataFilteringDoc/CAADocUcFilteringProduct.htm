@@ -1,0 +1,294 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating Filtered Product</title>
+<style type="text/css">
+
+
+hr.top {
+	color:  #316AC5; 
+	background-color:  #316AC5;    
+	/* height: 1px; */
+	margin-left: 0px;
+	padding-left: 0px;
+	}
+
+.auto-style1 {
+	font-family: "Courier New", Courier;
+	font-weight: normal;
+	font-size: 9pt;
+	color: #000000;
+	vertical-align: top;
+	border: 1px solid #C8CCCE;
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 2px;
+	background-color: #F9F9F9;
+}
+.auto-style2 {
+	color: #1A79B1;
+	text-decoration: none;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Filtering a Product</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>The use case illustrates the steps involved in the CAA Customization 
+		to <span>protects the intellectual property of your product by providing 
+		a filtering mechanism&nbsp; to create Document </span>Object.  
+		[<a href="#References">3</a>]. </p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAProductToProductSample Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAAProductToProductSample Do</a></li>
+					<li><a href="#How">How to Launch CAAProductToProductSample</a></li>
+					<li><a href="#Where">Where to Find the 
+					CAAProductToProductSample 
+						Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to show you how to use CATIDECProductToProduct 
+services, to filter a V6 PLM object to an other V6 PLM object.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAProductToProductSample Use Case</h2>
+<p>CAAProductToProductSample&nbsp; is a use case of the CAADataFiltering.edu framework 
+that mainly illustrates CATDataExchControlUseItf frameworks capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAProductToProductSample Do</h3>
+<p>The CAAProductToProductSample use case creates a filtered PLM object from 
+an original PLM Object.</p>
+<table>
+	<caption>Fig. 1: illustration of how Product Filtering works</caption>
+	<tr>
+		<td>
+		<img alt="illustration of how Product Filtering works" src="images/PrdFiltering03NLS.png"/></td>
+	</tr>
+</table>
+<ul>
+	<li>First, CAAProductToProductSample initialize the PLM environment (V6 
+	session) with the given user parameters.</li>
+	<li>The goal of CAAProductToProductSample is to open a V6 PLM object and 
+	filtered to another V6 PLM object.</li>
+	<li>After the creation of the filtered PLM object, the PLM environment is 
+	closed.</li>
+</ul>
+<p>In case of failure, CAAProductToProductSample prints the occurred error 
+message.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAProductToProductSample</h3>
+<p>To launch CAAProductToProductSample , you will need to set up the build time environment, 
+then compile CAAProductToProductSample along with its prerequisites, set up the run 
+time environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>To launch the use case execute the command:</p>
+<p><code>mkrun -c &quot;CAAProductToProductSample Repository Server LoginTicket 
+PLMExternalIDProduct Version&quot;</code></p>
+<p>where:</p>
+<p>
+<table class="fill">
+	<tr>
+		<th>Repository</th>
+		<td>
+		<script type="text/javascript">insertRepository();</script>
+		</td>
+	</tr>
+	<tr>
+		<th>Server</th>
+		<td>The server as <i>Host:port_number/RootURI</i></td>
+	</tr>
+	<tr>
+		<th><strong>LoginTicket</strong></th>
+		<td>The String representing a Login Ticket</td>
+	</tr>
+	<tr>
+		<th>PLMExternalIDProduct</th>
+		<td> Product Reference from the PLM ID</td>
+	</tr>
+	<tr>
+		<th>Version</th>
+		<td>---</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAADataFiltering.edu' data-xplore-mod='CAAProductToProductSample.m'>
+<h3><a name="Where"></a>Where to Find the CAAProductToProductSample Code</h3>
+<p>The CAAProductToProductSample use case is made of a single file located in the 
+CAAProductToProductSample.m module of the CAADataFiltering.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAADataFiltering.edu\CAAProductToProductSample.m</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are several logical steps in CAAProductToProductSample use case.</p>
+<ol>
+	<li><a href="#Prolog">Setting up the connection parameters, create the PLM 
+	session</a> </li>
+	<li><a href="#Step1">Retrieving PLMCoreReference corresponding to the input 
+	Product from database</a></li>
+	<li><a href="#Step2">Creating the Filtered Document Object</a></li>
+	<li><a href="#Epilog">Closing the session</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Prolog"></a>Setting up the connection parameters create the PLM 
+session</h3>
+<p>Before the PLM session could be created, we need to specify the connection 
+parameters with <b>CATPLMSessionServices::SetPLMSessionParameter. </b></p>
+<p>First the Repository:</p>
+<pre class="auto-style1">...
+	hr = <b>CATPLMSessionServices::SetPLMSessionParameter</b>(&quot;<b>Repository</b>&quot;, repository);
+...</pre>
+<p>Then the server:</p>
+<pre class="auto-style1">...
+	hr = CATPLMSessionServices::SetPLMSessionParameter(&quot;<b>Server</b>&quot;, server);
+...</pre>
+<p>&nbsp;the loginTicket parameters :</p>
+<pre class="auto-style1">...
+	hr = CATPLMSessionServices::SetPLMSessionParamete<b>r</b>(&quot;<b>LoginTicket</b>&quot;, LoginTicket);
+...</pre>
+<p>Now that all connection parameters are set, we can proceed to create the PLM 
+session and connect to the repository. </p>
+<p>Creating the PLM session is simply done by calling <b>
+CATPLMSessionServices::InitPLMSession</b>.</p>
+<pre class="auto-style1">...
+	hr = <b>CATPLMSessionServices::InitPLMSession</b>();
+...</pre>
+<p>As there can only be one session for the runnnig program, the need for a 
+pointer on the session is irrelevant.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Retrieving PLMCoreReference corresponding to the input 
+Product from database</h3>
+<pre class="auto-style1">...   
+//---------------------------------------------------------------------------
+// Open the PLMCoreReference corresponding to the input Product from database
+//---------------------------------------------------------------------------
+
+CATIPLMProducts *piInputPLMProducts = NULL; 
+CATBoolean ExpandAllMode = FALSE;
+
+hr = ::CAAOpenPLMComponent(&quot;PLMCoreReference&quot;, comp_externalId, comp_version,
+                            IID_CATIPLMProducts, (void **)&amp;piInputPLMProducts, lifeCycleBag, ExpandAllMode);
+
+ ...</pre>
+<SCRIPT type=text/javascript>insertLinkToTop();</SCRIPT>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Creating the Filtered Document Object</h3>
+<pre class="auto-style1">...
+//---------------------------------------------------------------------------
+// Filter the Product into another Product
+//--------------------------------------------------------------------------- 
+
+CATIPLMProducts * piOuputPLMProducts = NULL;
+
+// creating the convertor
+CATIDECProductToProduct * pProductToProductConvertor = NULL;
+if(piInputPLMProducts)
+{
+HRESULT rc = piInputPLMProducts-&gt;QueryInterface(IID_CATIDECProductToProduct, (void**)&amp;pProductToProductConvertor);
+}
+
+if(pProductToProductConvertor)
+{
+// set options
+pProductToProductConvertor-&gt;SetOption(&quot;Suffix=&quot;, TRUE);
+pProductToProductConvertor-&gt;SetOption(&quot;KeepSubColors&quot;, FALSE);
+pProductToProductConvertor-&gt;SetOption(&quot;NoKeepSketchSpec&quot;, TRUE);
+
+// do the job 
+hr = pProductToProductConvertor-&gt;Run();
+...
+
+// Get the Result
+piOuputPLMProducts = pProductToProductConvertor-&gt;GetResult();
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Epilog"></a>Closing the session</h3>
+<pre class="auto-style1">...   
+
+hr = CATPLMSessionServices::ClosePLMSession();</pre>
+<p>Close the session, quit the PLM environment.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case shows how to create a new Filtered Product by using method 
+CATIDECProductToProduct&nbsp; interface.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm')">
+		Connecting to V6 Server</a> </td>
+	</tr>
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [September 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

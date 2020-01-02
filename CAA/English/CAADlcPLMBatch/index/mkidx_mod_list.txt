@@ -1,0 +1,9 @@
+G:\R421\BSF\.\CAADataLifeCycleDoc.edu\CAADlcPLMBatch.doc\src\CAADlcQrOptionList_CheckRepresentation.htm
+G:\R421\BSF\.\CAADataLifeCycleDoc.edu\CAADlcPLMBatch.doc\src\CAADlcQrOptionList_DWC.htm
+G:\R421\BSF\.\CAADataLifeCycleDoc.edu\CAADlcPLMBatch.doc\src\CAADlcQrOptionList_FBDI.htm
+G:\R421\BSF\.\CAADataLifeCycleDoc.edu\CAADlcPLMBatch.doc\src\CAADlcQrParameterOptionsList.htm
+G:\R421\BSF\.\CAADataLifeCycleDoc.edu\CAADlcPLMBatch.doc\src\CAADlcTaPLMBatchPrinciples.htm
+G:\R421\BSF\.\CAADataLifeCycleDoc.edu\CAADlcPLMBatch.doc\src\CAADlcTcPLMBatchToc.htm
+G:\R421\BSF\.\CAADataLifeCycleDoc.edu\CAADlcPLMBatch.doc\src\CAADlcUcPLMBatchDownwardComp.htm
+G:\R421\BSF\.\CAADataLifeCycleDoc.edu\CAADlcPLMBatch.doc\src\CAADlcUcPLMBatchFBDI.htm
+G:\R421\BSF\.\CAADataLifeCycleDoc.edu\CAADlcPLMBatch.doc\src\CAADlcUcUpdatePLMObject.htm

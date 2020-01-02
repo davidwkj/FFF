@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+    
+	<ITEM name="Third Party App Definition"  icon="CAAIcons/images/I_Reference.gif"  href="CAAi3DXCompassWSQrTPA.htm" />
+	<ITEM name="Get Third Party App"   icon="CAAIcons/images/I_Reference.gif" href="CAAi3DXCompassWSQrGetTPA.htm" />
+	<ITEM name="List Third Party Apps"  icon="CAAIcons/images/I_Reference.gif"  href="CAAi3DXCompassWSQrTPAs.htm" />
+	<ITEM name="Add Third Party App"  icon="CAAIcons/images/I_Reference.gif"  href="CAAi3DXCompassWSQrAddTPA.htm" />
+	<ITEM name="Edit Third Party App"   icon="CAAIcons/images/I_Reference.gif" href="CAAi3DXCompassWSQrEditTPA.htm" />
+	<ITEM name="Delete Third Party App" icon="CAAIcons/images/I_Reference.gif"   href="CAAi3DXCompassWSQrDeleteTPA.htm" />
+	 
+</Root>

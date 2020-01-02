@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<script src="pod.js" type="text/javascript">/* */</script>
+<title>Tagging Data Read from File</title>
+</head>
+<body onload="createToc();highlightSearchTerms();">
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Tagging Data Read from File</h1>
+		</td>
+	</tr>
+	<tr> 
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<table class="abstract">
+	<tr>
+		<td>
+			<h2>Abstract</h2>
+			<p>This article describes a widget displaying information (no edition, browsing only) coming from 
+			a JSON file hosted on a server. The widget contents is filtered according to the 
+			end-user tag selection.</p>     	
+			<ul>
+				<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+				<li><a href="#UseCase">The CAA6WTagAppliBuilding Use Case</a>
+				<ul>
+    <li><a href="#What">What Does CAA6WTagAppliBuilding Do</a></li>
+    <li><a href="#How">How to Launch CAA6WTagAppliBuilding</a></li>
+    <li><a href="#Where">Where to Find the CAA6WTagAppliBuilding Code</a></li>
+				</ul>
+				</li>
+				<li><a href="#Step">Step-by-Step</a></li>
+				<li><a href="#InShort">In Short</a></li>
+				<li><a href="#References">References</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case implements the 6WTags filtering as presented in the Implementing 6WTagger Filtering use case [<a href="#References">1</a>]. Additionally to 
+this basic use case you will learn:</p>
+<ul>
+<li>How to manage the error cases (when no JSON file or bad contents).</li>
+<li>How to create dynamically 6WTags for the 6WTagger component.</li>
+<li>How to update the UI according to a 6WTag selection.</li>
+</ul> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="UseCase"></a>The CAA6WTagAppliBuilding Use Case</h2>
+<p>6WTaggerFiltering is a use case of the CAATagNavigator.edu framework. 
+It illustrates 6WTagger integration inside widgets capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="What"></a>What Does CAA6WTagAppliBuilding Do</h3>
+<p>The widget is an application displaying information: date of creation, architect name, location city, owner, 
+and count of stories for different buildings. Each building having one identifier.</p>
+<a name="picture1"></a>
+<table>
+<tr>
+		<td>
+		<img alt="AllBuildings" src="images/CAA6WTagAppliBuildingWithoutFiltering.png"/></td>
+	</tr>
+</table>
+<p>Just above the widget when in the Preferences menu is entered the URL of the JSON file provided by the 
+CAA use case (see <a href="#Where">Where</a> section).</p> 
+ <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuildingPreferenceMenu.png"/></td>
+	</tr>
+</table> 
+<p>The JSON file can be hosted on the server serving the widget or another one. </p>
+<p>Now, open the 6WTagger, 6WTags created from JSON file data are visible:</p>
+  <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuilding6WTaggerOpen01.png"/></td>
+	</tr>
+</table> 
+<p>For the predicates:</p>
+<ul>
+<li><i>Architect</i> and <i>Owner</i> have been classified in the Who category</li>
+<li><i>Creation Date</i> has been classified in the When category</li>
+<li>Location <i>City</i> has been classified in the Where category</li>
+<li><i>Story Count</i> has been classified in the How category.</li>   
+</ul>
+<p>Below Story Count, you find 4 objects: each one represents a story count. There are building with 2 stories (4), with 4 stories (1), with 5 stories (1), and 20 stories (1).</p>
+<p><a name="picture2"></a>Now, the widget when the building of 2 stories are filtered:</p>
+  <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuilding6WTaggerOpen02.png"/></td>
+	</tr>
+</table> 
+<p>Now, make one of these actions, and then refresh the widget (Refresh menu)</p>
+<ul>
+<li>Remove the JSON file from the server,</li>
+<li>Change the URL of the JSON file, for a bad one, in the Preferences menu,</li>
+<li>Modify the hosted JSON file leading to a wrong formating JSON file (remove a bracket, a comma ,...)</li>
+</ul>
+<p>The widget (on right) displays the following message:</p>
+  <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuilding6WTaggerOpen03.png"/></td>
+	</tr>
+</table> 
+<p>You can observe the 6WTagger (on left) no longer displays 6WTags, but the previous selected 6WTags is still present.</p> 
+<p>Now, restore the original file, modify the JSON file to remove an "id" key in one JSON object, and then refresh the widget (Refresh menu).
+The widget displays the following message:</p>
+  <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuilding6WTaggerOpen04.png"/></td>
+	</tr>
+</table> 
+<p>Finally, </p>
+<ul>
+<li>Restore the original JSON file, </li>
+<li>Remove the "creation" key/value couple from the first building (caa-building-0001), </li>
+<li>Remove alls key/value couples ( except id ) from the second building (caa-building-0002), </li>
+<li>Remove the "owner" and "story" key/value couples from the last building (caa-building-0007), </li>
+<li>Then refresh the widget (Refresh menu).</p>
+</ul>
+<p>The widget (on right) displays all the buildings, and where there is no key, undefined is visible instead a value.</p>
+  <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuilding6WTaggerOpen05.png"/></td>
+	</tr>
+</table> 
+<p>You can observe there is no more object with 5 and 20 stories: when no value, so without object, the 6WTag is not created.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="How"></a>How to Launch 6WTaggerFiltering</h3>
+<p>To launch CAA6WTagAppliBuilding please follow the instructions described here  [<a href="#References">2</a>].
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Where"></a>Where to Find the CAA6WTagAppliBuilding Code</h3>
+<p>The CAA6WTagAppliBuilding use case is made of several files  located in: </p>
+<p><code>InstallRootFolder\CAADoc\CAATagNavigator.edu\CAA6WTagAppliBuilding.mweb\src</code></p>
+<ul>
+<li>CAA6WTagAppli.html, the widget HTML page,</li>
+<li>CAA6WTagHelper.js, the JavaScript file defining the DS/CAA6WTagAppliBuilding/CAAHelper AMD module,</li>
+<li>CAA6WTagAppliBuilding.css, defining some class types,</li>
+</ul>	
+<p>Where <code>InstallRootFolder</code> is the folder where the API CD-ROM is installed [<a href="#References">2</a>].
+</p>
+<p>Additionally a JSON file is provided:</p>
+<pre >
+InstallRootFolder\CAADoc\CAATagNavigator.edu\CAA6WTagAppliBuilding.mweb\src\assets\myBuildingData.json
+</pre>
+ 
+<p><a name="JSONStructure"></a>Below an extract showing the expected  keys to represent a building. By <a href="#" onclick="switchVisibility('disp1', 'disp2'); return false;">clicking</a> here 
+you get the complete file:</p>
+<pre id="disp1" class="code" style="display: block;">
+[
+    {
+        <b>"id"</b>:"caa-building-0001",
+        <b>"creation"</b>:"2000/05",
+        <b>"architect"</b>:"LeCorbusier",
+        <b>"city"</b>:"Paris",
+        <b>"owner"</b>:"Bank A",
+        <b>"story"</b>:"4"
+    },
+    ...
+]
+</pre>
+<pre id="disp2" class="code" style="display: none;">
+[
+    {
+        "id":"caa-building-0001",
+        "creation":"2000/05",
+        "architect":"LeCorbusier",
+        "city":"Paris",
+        "owner":"Bank A",
+        "story":"4"
+    },
+    {
+        "id":"caa-building-0002",
+        "creation":"2000/05",
+        "architect":"LeCorbusier",
+        "city":"New York",
+        "owner":"Bank B",
+        "story":"20"
+    },
+    {
+        "id":"caa-building-0003",
+        "creation":"2000/07",
+        "architect":"LeCorbusier",
+        "city":"New York",
+        "owner":"Bank C",
+        "story":"2"
+    },
+    {
+        "id":"caa-building-0004",
+        "creation":"2000/07",
+        "architect":"LeCorbusier",
+        "city":"Paris",
+        "owner":"Bank D",
+        "story":"2"
+    },
+    {
+        "id":"caa-building-0005",
+        "creation":"2000/07/20",
+        "architect":"Jean Nouvel",
+        "city":"Paris",
+        "owner":"Bank D",
+        "story":"2"
+    },
+    {
+        "id":"caa-building-0006",
+        "creation":"2001",
+        "architect":"Jean Nouvel",
+        "city":"Paris",
+        "owner":"Bank D",
+        "story":"2"
+    },
+    {
+        "id":"caa-building-0007",
+        "creation":"2002",
+        "architect":"Jean Nouvel",
+        "city":"Singapore",
+        "owner":"Bank E",
+        "story":"5"
+    }
+]
+</pre>
+<p>Each JSON object representing a building can have more keys, but if less, it must at least contain <code>id</code>.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are several logical steps in CAA6WTagAppliBuilding use case: </p>
+<ul>
+	<li><a href="#onLoad">When the widget is loaded (or reloaded)</li>
+	<li><a href="#onRefresh">When the widget is refreshed (through  widget menu)</li> 
+	<li><a href="#onTagSelect">When a 6WTag is selected/deselected</li> 
+	<li><a href="#onDataRead">Reading the JSON file</li>
+    <li><a href="#on6WTagsCreation">Creating 6WTags from JSON file</li>
+    <li><a href="#onUpdateUI">Updating UI with filtered subjects</li>	
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onLoad"></a>When the widget is loaded (or reloaded)</h3>
+<p>This step takes place in the onLoad callback function of the widget (see Widget Life Cycle section of 
+[<a href="#References">3</a>]). Its aim is to put in place the UI and
+to provide to the 6WTagger component the 6WTags computed from the data, themselves read from a JSON file hosted on a server. So such 
+actions described in the technical article [<a href="#References">4</a>] are ordered as follows:</p>
+<ol>
+<li>Create the Proxy (with filtering performed by 6WTagger)</li>
+<li>Provide the callback function to be informed by 6WTagger when a 6WTag is selected/deselected</li>
+<li>Read the data from the server</li>
+<li>Compute 6WTags from those data to provide them to 6WTagger</li>
+<li>Update UI with Data Read from File</li>
+</ol>
+<p>The onLoad callback function is defined in the widget HTML page: </p>
+<pre class="code">
+var MyWidget = {
+    var taggerProxy = null ;		
+    <b>onLoad: function() {	</b>		
+        // - 0 - Constant UI Elements
+        widget.body.innerHTML ="&lt;h3&gt;My Buildings&lt;/h3&gt;";  
+        widget.body.innerHTML +="&lt;div class='classElt'>&lt;/div&gt;" ;
+
+        // - 1 - Proxy creation
+        var options= {
+            widgetId : widget.id,
+            filteringMode :"WithFilteringServices"
+        };
+        taggerProxy = TagNavigatorProxy.<b>createProxy</b>(options);
+		
+        // - 2 - Provide the callback function
+        taggerProxy.<b>addEvent</b>('<b>onFilterSubjectsChange</b>',MyWidget.<a href="#onTagSelect">onFilterSubjectsChange</a>);						
+
+        // - 3,4,5 -  steps 
+        CAA6WTagHelper.<a href="#onDataRead">RetrieveSubject</a>(widget.body,taggerProxy,widget.getValue("URLServer"));
+    }
+    ...	
+},
+</pre>
+<p>Within the <i>RetrieveSubject</i> method, the widget UI is updated with raw data found in the JSON file. But if a filtering already exists, after 
+the <i>onLoad</i> execution the <i>onFilterSubjectsChange</i> callback function is invoked. Indead since 6WTags are associated with the proxy, the 6WTagger component emits a onFilterSubjectsChange event 
+to enable the widget to update its UI accordingly the refinement. In case of issue within <a href="#onDataRead">RetrieveSubject</a> it is detailed in this function.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onRefresh"></a>When the widget is refreshed (through  widget menu)</h3>
+<p>This step takes place in the onRefresh callback function of the widget (see Widget Life Cycle section of 
+[<a href="#References">3</a>]). Its aim is to read again the JSON file, provide the new 6WTags to the 6WTagger component and update the widget UI. </p>
+<pre class="code">
+var MyWidget = {
+    ...	
+    <b>onRefresh: function() {	</b>		
+        CAA6WTagHelper.<a href="#onDataRead">RetrieveSubject</a>(widget.body,taggerProxy,widget.getValue("URLServer"));  
+    },
+    ...	
+},
+</pre>
+<p>Within the <i>RetrieveSubject</i> method, the widget UI is updated with raw data found in the JSON file. But if a filtering already exists, after 
+the <i>onRefresh</i> execution the <i>onFilterSubjectsChange</i> callback function is invoked. Indead since 6WTags are associated with the proxy, the 6WTagger component emits a onFilterSubjectsChange event 
+to enable the widget to update its UI accordingly the refinement. In case of issue within <a href="#onDataRead">RetrieveSubject</a> it is detailed in this function.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onTagSelect"></a>When a 6WTag is selected/deselected</h3>
+<p>This step consists in to update the widget UI accordingly the current filtering.  The argument of the <i>onFilterSubjectsChange</i> callback function (<code>filter</code>)
+is a JSON object [<a href="#References">5</a>]  containing the filtering tags, and the subjects (buildings) filtered by the 6WTagger component. </p>
+<p>Below the contents of <code>filter</code> when 
+the story count of "2" is
+selected. See the <a href="#picture2">picture</a> above. </p>
+<pre class="code">
+{ 
+   "allfilters": {
+        "ds6w:how/Story Count": [ {"object"  : "2", "type"  : "string" }  ]
+    },
+   <b>"filteredSubjectList"</b>: [ 
+        "caa-building-0003", 
+        "caa-building-0004", 
+        "caa-building-0005",
+        "caa-building-0006"]                
+}
+
+</pre>
+<p>The <i>onFilterSubjectsChange</i>function is still a JavaScript function defined in the widget HML file. </p>
+<pre class="code">
+    ...
+    <b>onFilterSubjectsChange: function (filter) {</b>
+        CAA6WTagHelper.<a href="#onUpdateUI">updateUI_withfiltering</a>(widget.body,<b>filter.filteredSubjectList</b>);
+    } 
+    ...
+</pre>
+<p> <code>filteredSubjectList</code> is an array of building identifiers, in other 
+words values of the key "id" as explained in <a href="#on6WTagsCreation">Creating 6WTags from JSON File</a> step. This array, as well the widget body, are passed to 
+the function updating the widget DOM.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onDataRead"></a>Reading the JSON file</h3>
+<p>We use <a href="#" onclick="CAAlinkJS('WebAppsFoundations', 'WAFData', 'DS/WAFData/WAFData'); return false;">WAFData</a> to load 
+ the JSON file from a server. Its inputs are not explained here, read  the reference article  [<a href="#References">6</a>] for more details about this DS Javascript API. </p> 
+<p>Below the <i>RetrieveSubject</i> function exported by <a href="#Where">CAA6WTagHelper.js</a></p> 
+<pre class="code">
+<b>RetrieveSubject : function(container, proxyTagger,URLServer) { </b>
+    if ( URLServer ) {
+        WAFData.proxifiedRequest(URLServer , {
+            'method'       :'GET',	
+            'proxy'        : 'passport',
+            'type'         : 'json' ,
+            <b>'onComplete'   : function (response) {	</b>			
+                var The6WTags=<a href="#on6WTagsCreation">build6WTags</a>(response);
+
+                if ( The6WTags != null ) {
+                    DataFromFile=response ;
+                    exports.<a href="#onUpdateUI">updateUI_withfiltering</a>(container, null);
+                    proxyTagger.<b>setSubjectsTags(The6WTags);</b>
+                }else {
+                    DataFromFile=null;
+                    exports.<a href="#onUpdateUIKO">updateUI_KO</a>(container, "Check the JSON contents: not an array, or at least one JSON object is without id.");
+                    proxyTagger.<b>unsetTags();</b>
+                }
+            },	 					
+            <b>'onFailure'    : function (error) { </b>
+                DataFromFile=null;
+                exports.updateUI_KO(container, "Either the JSON file URL is wrong, or its contents is not well JSON formated.");
+                proxyTagger.unsetTags();
+            },	 					
+            ...
+        });		
+    } else {
+        DataFromFile=null; 
+        exports.updateUI_KO(container,"Enter JSON URL in Preferences menu"); 
+        proxyTagger.unsetTags();				
+}
+</pre>
+<p>In our use case <code>URLServer</code> is the string kept by the widget, and valuated by the end  user using the Preferences menu. 
+Read the User Preferences article [<a href="#References">7</a>] for more details.</p>
+<p>In case of <b>successful response</b> for loading the file (file exists, is reachable, and its contents is JSON formated), <code>response</code>, the
+ argument of the <i>onComplete</i> callback function, is the JSON read from the file. </p>
+<p>With the JSON data we create the 6WTags  with the <a href="#on6WTagsCreation">build6WTags</a> local function (not exported by <a href="#Where">CAA6WTagHelper.js</a>). If 
+there is at least one 6WTag, we update the widget UI and we set the 6WTags to the proxy for the 6WTagger component. At this stage, the UI displays 
+data as read from the JSON file. If a previous end-user refinement exists, as we mentioned previously in this article, the 6WTagger component emits 
+the onFilterSubjectsChange event, so the widget could update its UI accordingly.</p>  
+<p>In case of <b>failure</b> (any issue to get the JSON file, a wrong JSON format, at least one building without id) we update the widget UI to mention the issue. Then 
+we inform the proxy there
+is no (see <a href="#onLoad">onLoad</a> above), or no longer (see <a href="#onRefresh">onRefresh</a> above), 6WTags  using  <i>unsetTags</i> method. Note
+that using unsetTags on a just created proxy is not an issue.</p>
+<p>In case of success, as well in case of failure, <code>DataFromFile</code> is updated. This variable is local to <a href="#Where">CAA6WTagHelper.js</a>.
+In case of success (setSubjectsTags is called) its value is the contents of the JSON file, while  it is null. This local variable
+will be used in the <a href="#onUpdateUI">updateUI_withfiltering</a> function.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="on6WTagsCreation"></a>Creating 6WTags from JSON File</h3>
+<p>This steps consists in to create a JSON structure containing the 6WTags with their "complete"  form as explained in the referenced 
+technical article [<a href="#References">8</a>].</p>
+<p>From the <a href="#JSONStructure">input JSON</a> given as example, the first element JSON is as follows:</p>
+<pre class="code">
+{   "caa-building-0001":[
+        {"object":"2000/05","sixw":"ds6w:when/ds6w:created","dispValue":"","type":"date"},
+        {"object":"LeCorbusier","sixw":"ds6w:who/Architect","dispValue":"","type":"string"},
+        {"object":"Bank A","sixw":"ds6w:who/Owner","dispValue":"","type":"string"},
+        {"object":"Paris","sixw":"ds6w:where/ds6w:city","dispValue":"","type":"string"},
+        {"object":"4","sixw":"ds6w:how/Story Count","dispValue":"","type":"string"} ] ,     
+	...
+}
+</pre>
+<p><i>build6WTags</i> is an internal function of <a href="#Where">CAA6WTagHelper.js</a></p>
+<pre class="code">
+function  build6WTags (response) {
+    <b>var CompleteTags = {} </b> ;		
+    var issue_with_response = false ;
+    ...
+    var ListPredicatObject ;
+
+    if ( response.length ) {
+        i=0;
+        while ( ! issue_with_response && ( i&lt;response.length) ) {
+            if ( response[i].id ) { 
+                IdBuilding=response[i].id ;				
+                ListPredicatObject = create6WTag(response[i]);
+                if ( ListPredicatObject.length != 0  ) {
+				     theValueForBuilding= JSON.parse(JSON.stringify(ListPredicatObject));
+                    <b>CompleteTags[IdBuilding] = theValueForBuilding ;  </b>
+                }						
+            } else { 
+                issue_with_response=true;
+            }
+            i++
+        }
+    } else {
+        issue_with_response=true;
+    }		
+    if ( issue_with_response ) {
+        return null ;
+    } else {
+        return CompleteTags;
+    }
+}
+</pre>
+<p>The function returns null if the input data is not an array (a JSON object only) or as soon as a JSON object does not contain the key "id". Otherwise 
+the response (<code>CompleteTags</code>) is a JSON object. The latter can be empty (<code>CompleteTags = {} </code>) if the input JSON file 
+contains an empty array, or if all JSON object do not have the expected predicates. Indeed, if one JSON object is without  the expected predicates, 
+there is no 6WTag for this currrent building.</p>
+<p>The successful response is a JSON for which each key is a building identifier, with an array as value. This array is computed by  the <i>create6WTag</i> function: </p>
+<pre class="code">
+function create6WTag (eltBuilding) {
+    var arrayToReturn = [] ;
+
+    if ( eltBuilding.creation ) { 
+        var JSONForCreation = {'object': eltBuilding.creation,'sixw':<b>'ds6w:when/ds6w:created'</b>,'dispValue':'','type':'date'} ;
+        arrayToReturn.push( JSONForCreation );
+    }
+    if  (eltBuilding.architect ) {
+        var JSONForArchitect = {'object':eltBuilding.architect,'sixw':<b>'ds6w:who/Architect'</b>,'dispValue':'','type':'string'} ;
+        arrayToReturn.push( JSONForArchitect );
+    }
+    ...
+    return arrayToReturn ;
+</pre>
+<p>Just above an extract of the  <i>create6WTag</i> function. The predicate (the 'sixw' key value) is a path of 'basic' predicates: the first one being compulsary one among the 6 roots as
+explained in the referenced technical article [<a href="#References">9</a>]. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onUpdateUI"></a>Updating UI with Filtered Subjects</h3>
+<p>This step is performed by <i>updateUI_withfiltering</i> function exported by <a href="#Where">CAA6WTagHelper.js</a>. This function 
+is called by:</p>
+<ul>
+<li><a href="#onDataRead">RetrieveSubject</a>, when the UI must be updated with the data coming from the JSON file. In this case we are sure DataFromFile is not null.</li>
+<li><a href="#onTagSelect">onFilterSubjectsChange</a>, when a 6WTag is selected or deselected. In this case DataFromFile can be null. If it is the case, the UI
+is not up to dated, the widget contains the message about the issue.</li>
+</ul>
+<p>The code below displays the table (first row with id and predicates included) as you can see on the <a href="#picture1">picture without filtering</a>, or on the <a href="#picture2">picture with filtering</a>. </p> 
+<pre class="code">
+updateUI_withfiltering : function ( container, subjectToDisplay ) {
+    if ( DataFromFile != null ) {
+        var lineAll ="&lt;table&gt;&lt;tr&gt;&lt;th&gt;Identifier&lt;/th&gt;&lt;th&gt;Creation&lt;/th&gt..." ;
+        var theSelectedTagElt = container.querySelector('.classElt'); 
+        var line ; 
+        var listSubject = subjectToDisplay ;
+        if ( ! subjectToDisplay ) {
+            listSubject = [] ;
+            for ( var i=0 ; i &lt; DataFromFile.length ; i++ ) {
+                var Building=DataFromFile[i];
+                listSubject.push(Building.<b>id</b>);
+            }
+        }
+        for ( var i=0 ; i &lt; listSubject.length ; i++ ) {
+            var pos=<b>getPositionFromFile</b>(listSubject[i]);
+            line = "&lt;tr&gt;&lt;td&gt;" + listSubject[i] + "&lt;/td&gt;";
+            line+= "&lt;td&gt;"+DataFromFile[pos].creation+"&lt;/td&gt;";
+            line+="&lt;td&gt;"+DataFromFile[pos].architect+"&lt;/td&gt;";
+            ...
+        }
+        theSelectedTagElt.innerHTML = lineAll + "&lt;/table&gt;" ;
+}
+</pre> 
+<p>After the variable declarations and initializations, <b>listSubject</b> is defined. It must contain the building identifiers to list in the table.</p>
+<ul>
+<li>If  <code>subjectToDisplay</code>, the second argument of the function is not null, the call comes from  <a href="#onTagSelect">onFilterSubjectsChange</a>. This
+input argument is our list of building identifiers. Indeed, it contains the filtered building identifiers coming from the 6WTagger. </li>
+<li>Otherwise,  the call is from <a href="#onDataRead">RetrieveSubject</a>, and the value of <code>subjectToDisplay</code> is null. In this case we create an array
+of building identifiers using  <code>DataFromFile</code>, the data from the JSON file. Each element of the array is the value of the key "id", the mandatory key
+for each building as <a href="#JSONStructure">explained above</a>.</li>
+</ul>
+<p>Then for each building a row for the table is created. We first retrieve the position of the current identifier in the JSON array coming from the JSON file. <i>getPositionFromFile</i> is an internal function
+looking for the building id among the array of JSON objects. Then the elements of the current JSON object are displayed. </p>
+<p>Note: <i>updateUI_withfiltering</i> is obviously not adapted for huge count of buildings. </p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onUpdateUIKO"></a>Updating UI In case of Issue</h3>
+<p>This method consists in to display the text (<code>message</code>) in the widget DOM: </p>
+<pre class="code">
+updateUI_KO : function (container, message) {
+    var theSelectedTagElt = container.querySelector('.classElt'); 
+    theSelectedTagElt.innerHTML = message ;
+}
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p> </p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+   <tr>
+		<td>[1]</td>
+		<td><a href="CAA6WTaggerUcFiltering.htm">Implementing 6WTagger Filtering</a></td>
+	</tr> 
+   <tr>
+		<td>[2]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm');return false;">Installing and Launching Widget Use Case</a></td>
+	</tr>
+    <tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsTaWidgetClass.htm');return false;">Widget Object</a></td>
+	</tr>
+    <tr>
+		<td>[4]</td>
+		<td><a href="CAA6WTaggerAPI.htm#FilterClient">6WTagger Integration- API - Step by Step Scenarios - 6WTagger Filtering</a></td>
+	</tr>
+	 <tr>
+		<td>[5]</td>
+		<td><a href="CAA6WTaggerAPI.htm#onFilterSubjectsChange">6WTagger Integration- API - Data Format - Callback Argument - onFilterSubjectsChange - result data</a></td>
+	</tr>
+	 <tr>
+		<td>[6]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm');return false;">About Widget and HTTP Request</a></td>
+	</tr>
+	 <tr>
+		<td>[7]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsTaUserPreference.htm');return false;">User Preferences</a></td>
+	</tr>
+	 <tr>
+		<td>[8]</td>
+		<td><a href="CAA6WTaggerAPI.htm#Data-6WTaggerFiltering">6WTagger Integration- API - Data Format - For 6WTagger Filtering</a></td>
+	</tr>
+	 <tr>
+		<td>[9]</td>
+		<td><a href="CAA6WTaggerIntegration.htm">6WTagger Integration - Principles</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [March 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

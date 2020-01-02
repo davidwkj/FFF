@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>Delete Third Party App</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="table1">
+	<tr>
+		<td class="DocHeader3"><a name="Top"></a>
+		<table class="DocHeader">
+			<tr>
+				<td class="DocHeader1" colspan="2">
+				<h1>Delete Third Party App</h1>
+				</td>
+			</tr>
+			<tr>
+				<td class="DocHeader4" colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="DocHeader3">
+				<table class="DocHeaderIntro">
+					<tr>
+						<td class="Intro1">
+						
+						<div id="toc">
+						</div>
+						</td>
+					</tr>
+				</table>
+				</td>
+				<td class="DocHeader2">
+				<table class="DocTopics">
+					<tr>
+						<td class="TopicsTitle">Related Topics</td>
+					</tr>
+					 <tr>
+						<td><a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm">About 3DCompass Web Services</a></td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Role"></a>Role</h2>
+<p>Removes  a third party app from the compass.</p>
+ 
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Request"></a>Request</h2>
+
+<table class="fill">
+	<tr><th>&nbsp;Method&nbsp;</th><th>&nbsp;Path&nbsp;</th></tr>
+	
+	<tr>
+		<td>DELETE</td>
+		<td>/resources/AppsMngt/api/custom/applications/&lt;id&gt;</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<h2><a name="Response"></a>Responses</h2>
+<h3><a name="Resp-200"></a>Success</h3>
+<p>The OK response (status code 204) is without body message.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->	
+<h3><a name="Resp-ERR"></a>Failure</h3>
+<p>Besides the common <a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm#response-KO">3DCompass Web Service Failures</a> 
+the specific failures are:</p>
+<table class="fill">
+	<tr>
+		<th>Status Code</th>
+		<th>Status Message</th>
+		<th>Reason</th>		 
+	</tr>
+	<tr>
+		<td>403</td>
+		<td>Forbidden</td>
+		<td>The connected person is not admin platform.</td>	
+        		
+	</tr>
+	<tr>
+		<td>404</td>
+		<td>Not Found</td>
+		<td>The third party app does not exist.</td>	        		
+	</tr>
+	
+</table>
+<p>They all return a JSON body. The format is described by <a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm#response-3DComp">Specific 3DCompass Failure Cases</a></p>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<script type="text/javascript">insertLinkToTop();</script>
+<h2><a name="Example"></a>Example</h2>
+<pre class="code">
+##CLIENT REQUEST
+##------------------------------------------------------------
+[DELETE] https://sdbstelladsy.ux.dsone.3ds.com/3DSpace/resources/AppsMngt/api/custom/applications/MAP-EJBQRVVNU
+
+##SERVER RESPONSE [204] No Content
+##--------------------
+
+#RESPONSE HEADER : 
+#--------------------
+HTTP/1.1 204 No Content
+Date: Mon, 09 May 2016 15:12:07 GMT
+Server: Microsoft-IIS/7.0
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, OPTIONS, HEAD, PUT, DELETE, PATCH
+Access-Control-Allow-Headers: accept,x-requested-method,origin,x-requested-with,x-request,cache-control,content-type,SecurityContext,x-utc-offset
+Access-Control-Max-Age: 600
+Content-Length: 0
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+</pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+		</td>
+	</tr>
+</table>
+
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

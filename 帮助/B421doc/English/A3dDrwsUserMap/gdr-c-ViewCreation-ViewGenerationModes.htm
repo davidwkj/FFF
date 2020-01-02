@@ -1,0 +1,411 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="About the View Generation Modes"/>
+<meta name="abstract" content="You can specify the type of view generation mode when creating new views. This topic provides a detailed description of each view generation mode (including the advantages and restrictions pertaining to each one)."/>
+<meta name="description" content="You can specify the type of view generation mode when creating new views. This topic provides a detailed description of each view generation mode (including the advantages and restrictions pertaining to each one)."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-c-ViewCreation-ViewGenerationModes"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">About the View Generation Modes</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-c-ViewCreation-ViewGenerationModes">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-view generation modes"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-mode for view generation"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-exact view, about"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-CGR view, about"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Approximate view, about"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Raster view, about"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>About the View Generation Modes
+         </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>You can specify the type of view generation mode when creating new views. This topic provides a detailed description of each 
+             view generation mode (including the advantages and restrictions pertaining 
+             to each one).</span>
+
+             
+             
+             
+             
+             
+           
+         <p>
+      The following topics are discussed:</p></p>
+<ul><li><a href="#c-ConfigurationOfViewGenerationModes" id="toc_rg" title="You can configure the view generation modes through Me Preferences All Preferences 3D Modeling Mechanical Systems &gt; DraftingView tab.">Configuration of View Generation Modes</a></li><li><a href="#c-ExactView" id="toc_rg" title="Exact views are generated from the design mode, i.e. they are the views for which the geometry is available. The exact generation mode is the best option in most of the cases, because of the following features:">Exact View</a></li><li><a href="#c-ApproximateView" id="toc_rg" title="Approximate views are generated using the Approximate mode. Although Approximate views are not as high in precision and quality as exact views, this generation mode dramatically reduces memory consumption. performance may also be improved, depending on how you fine-tune precision. Therefore, the Approximate mode is particularly well-adapted to sophisticated products or assemblies involving large amounts of data.">Approximate View</a></li><li><a href="#c-RasterView" id="toc_rg" title="Raster views are generated as images. This enables you to quickly generate overall views for large products or assemblies, regardless of the drawing quality. Such views are associative to the 3D geometry and can be updated when the part or product changes.">Raster View</a></li><li><a href="#c-CGRView" id="toc_rg" title="CGR views are generated using the CGR format (CATIA Graphical Representation) of the 3D geometry. A CGR format only contains a graphical representation of the geometry, which is available with the Visualization mode (as opposed to the exact geometry, which is available with the Design mode). The CGR view uses and displays only the external appearance of the component and the geometry is not available. The corresponding .cgr file, if it exists, is inserted from the cache system.">CGR View</a></li><li><a href="#gdr-c-ViewCreatioc-AdvantagesAndRestrictionsCommonToCGRAndApproximate" id="toc_rg" title="Using CGR or Approximate to generate views offers the following advantages:">
+     Advantages and Restrictions Common to CGR and Approximate</a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+
+<div class="nested1" id="c-ConfigurationOfViewGenerationModes"><h2 class="topictitle2">Configuration of View Generation Modes</h2>
+
+<div><p><span>You can configure the view generation modes 
+             through <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">View</span></span> 
+             tab. </span>
+<a name="ix-view generation modes, configuration of"> </a></p>
+<p>In this case, it will be used when creating new views. For more information, see
+             <a href="../PreferencesMap/gdrpref-c-View.htm#gdrpref-c-View" title="You can customize view options for Drafting using this section. You can customize the geometry generation and dress-up options while generating views. You can also specify the type of view generation mode, display of dimensions in the clipping view, 2D geometry generation while creating a view from 3D and so on.">View</a>.</p><p>Once a view has been created, you can modify its 
+             properties through the <span class="uicontrol">Properties</span> dialog box. Right-click the view, select <span class="uicontrol">Properties</span>, click the <span class="uicontrol">
+             Generation</span> tab and then select the required options. </p><p><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>In the case of <span class="glossterm" id="CGR" onmouseout="hideTerm()" onmouseover="showTerm('CGR.xml')">CGR</span>, Approximate and Raster views, generated geometry is not associative and cannot be detected. For these views, only interactive geometry and axes can be detected.
+</td></tr></table>
+</p></div>
+</div>
+
+	<div class="nested1" id="c-ExactView"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Exact View</h2>
+<div><p><span>Exact views are generated from the design mode, i.e. they are the views for which 
+     the geometry is available. The exact generation mode is the best option 
+     in most of the cases, because of the following features:</span>
+<a name="ix-exact views"> </a><a name="ix-views::generating exact views"> </a></p>
+
+     
+     <ul>
+       <li>This is the most accurate view generation mode. </li>
+
+       <li>All types of views can be generated using this mode.</li>
+
+       <li>Functionalities like dress-up, dimensions, annotations, etc. are available.</li>
+<li>You can generate them in shaded background mode. That is you can create exact views with visualization of a raster views.</li>
+<li>Polyhedral data integration: Any kind of data from any exotic or regular CAD source (for example, polyhedral V4 <span class="filepath">.model</span> data) are supported.</li>
+
+     </ul>
+
+     <p>Note:
+		The edges of faces with a relative angle of less than 0.5 degrees 
+           are considered as being "smooth edges", and therefore are not represented.</p>
+<p>However, there are a few cases for which choosing the exact generation mode 
+     will not be appropriate:</p>
+     <ul>
+       <li>In the case of sophisticated products or assemblies involving large amounts 
+       of data, generating <span class="glossterm" id="exact-view" onmouseout="hideTerm()" onmouseover="showTerm('exact-view.xml')">exact views</span> may consume too much memory.</li>
+<li>The edges of faces with a relative angle of less than 0.5 degrees are considered as being "smooth edges", and therefore are not represented. </li>
+
+       
+     </ul>
+
+     
+     
+     <div class="section" id="c-ExactView__cs-ClashDetection"><h3 class="sectiontitle">Clash Detection</h3><p>Clashes correspond to the collisions between two parts in an assembly or two bodies in a part. Clashing bodies may be incorrectly projected in exact projection and <span class="glossterm" id="section-view" onmouseout="hideTerm()" onmouseover="showTerm('section-view.xml')">section views</span>: some edges of these bodies may appear whereas they should be hidden, or may disappear whereas they should not be hidden. </p>
+<p>The image below shows clashing bodies in a 3D <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>:</p><br/><img src="../GdrUserImages/clashing_bodies.png"/><br/><p>Using <span class="uicontrol">Clash detection</span> option in Exact view identifies the location of the clash and gives correct projection of the clashing bodies. When you select this option, the edges which are intersecting other surfaces or volumes are split at the intersection point, and each of the parts of the edges are correctly projected.</p><p>The following table depicts this scenario in each of the view modes:</p>
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="11.025358324145534%" id="d90994e172">View Mode</th>
+<th class="cellrowborder" colspan="3" valign="top" id="d90994e174">Visual Representation</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="11.025358324145534%" headers="d90994e172 ">CGR</td>
+<td class="cellrowborder" colspan="3" valign="top" headers="d90994e174 "><br/><img border="1" src="../GdrUserImages/clashing_bodies_cgr.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="11.025358324145534%" headers="d90994e172 ">Approximate</td>
+<td class="cellrowborder" colspan="3" valign="top" headers="d90994e174 "><br/><img border="1" src="../GdrUserImages/clashing_bodies_approximate.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="11.025358324145534%" headers="d90994e172 ">Raster</td>
+<td class="cellrowborder" colspan="3" valign="top" headers="d90994e174 "><br/><img border="1" src="../GdrUserImages/clashing_bodies_raster.png"/><br/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="11.025358324145534%" headers="d90994e172 ">Exact</td>
+<td class="cellrowborder" colspan="2" valign="top" headers="d90994e174 ">With <span class="uicontrol">Clash detection </span>option cleared:<br/><img border="1" src="../GdrUserImages/clashing_bodies_exact.png"/><br/></td>
+<td class="cellrowborder" valign="top" width="50.275633958103626%" headers="d90994e174 ">With <span class="uicontrol">Clash detection </span>option selected:<br/><img border="1" src="../GdrUserImages/clashing_bodies_exact_clash.png"/><br/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>To avoid such clashes and ensure that the edge representing the border of the collision will be projected, you can modify the assembly or part using either of the following methods: </p><ul><li>Move the parts or bodies in such a way that the clash will be avoided.</li>
+<li>If possible, use Boolean operations (such as <span class="uicontrol">Add</span>, <span class="uicontrol">Remove</span>, <span class="uicontrol">Intersect</span>, <span class="uicontrol">Assemble</span> and <span class="uicontrol">Union Trim</span> in Part Design) to generate a single body resulting from the intersection.</li>
+</ul>
+<p>To ensure that a screw in a threaded hole is not considered as a clash in a section view or a <span class="glossterm" id="breakout" onmouseout="hideTerm()" onmouseover="showTerm('breakout.xml')">breakout</span> view, you must design the screw as a whole 3D part representation, apply a thread feature to the screw, and create the hole as a threaded hole (see <cite>Part Design User's Guide: Creating threaded holes</cite>). Then, on the part instance associated to the screw, you must perform either of the following:</p><ul>
+           <li>From the 3D part, set its property to <span class="uicontrol">No cut</span>. For more information, see <a href="gdr-c-ViewCreation-Sections.htm#c-CutInSectionView" title="This sub-topic provides information about the Cut in section views capability.">Cut in Section Views Capability</a>.</li>
+<li>From the <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> representation, clear the <span class="uicontrol">Cut in section 
+               views</span> option via the <a href="gdr-t-ViewModification-ElementPropertiesOverload.htm#gdr-t-ViewModification-ElementPropertiesOverload" title="You can overload the properties of 3D components in a view generated from a 3D product.">Overloading Element Properties</a> command.</li>
+
+           
+           
+         </ul>
+</div>
+<div class="section" id="c-ExactView__cs-ShadedBackgroundMode"><h3 class="sectiontitle">Shaded Background Mode</h3><p>You can generate an exact view in the shaded background  mode. That is, you can create an exact view with the visualization of a raster view. This gives the look and feel of the 3D representation to the view. The view  is an image of 3D geometry, or the raster view, with the capabilities of an exact view. </p><p>You can customize the preferences for the shading background mode in the <span class="uicontrol">View Generation</span> section of the  <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span></span><span class="uicontrol"> &gt; View</span> tab. </p><p>In this mode, you can do the following:<ul><li>Create the views of the 3D representation with the generated items including front view, isometric view, projection view, auxiliary view, unfolded view, view from 3D, section views and cuts, detailed views, and clipping views.</li>
+<li>Hide or show the shaded background  image on the view, once the image is generated on the view. </li>
+<li>Apply operators on the view to create breakout views, broken views, and 3D clippings. </li>
+<li>Apply hatching and pattern to the sections. You can select the color for the hatching and dotting patterns. For color and image pattern, the selected color has no effect.</li>
+</ul>
+</p><p>You can either generate views in the shaded background mode or you can also create views and then apply shaded background image on them. To do so, right-click a view and select <span class="uicontrol">Properties</span>. In the <span class="uicontrol">Generation</span> tab, under the <span class="uicontrol">Generation Mode</span> section, select the <span class="uicontrol">Shaded Background Mode</span> check box.  This is available for selection only for an exact view. <dl><dt class="dlterm">Shaded Background Mode</dt>
+<dd>When you select this check box, in <span class="uicontrol">Generation Mode Options</span> dialog box, under <span class="uicontrol">Shaded Background Mode Options</span>, click <span class="uicontrol">Options</span>, and you can customize the following options:<ul><li><span class="uicontrol">Mode</span>: You can create views with <span class="uicontrol">Shading</span> or with <span class="uicontrol">Shading, no light source</span>. There can be a minor difference in the shading of the view because of light source. You can select the <span class="uicontrol">With texture</span> check box to represent the texture of the part in the view.</li>
+<li><span class="uicontrol">Level of detail (DPI)</span>: You can select the level of detail for the visualization mode and for print mode. There are four levels of detail for each mode:
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="NaN" id="d90994e374">Level of detail</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d90994e376">Default value for visualization and for print</th>
+<th class="cellrowborder" valign="top" width="39.93993993993994%" id="d90994e378">Editable values? (Yes or No)</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d90994e374 "><span class="uicontrol">Low quality</span></td>
+<td class="cellrowborder" align="center" valign="top" width="NaN" headers="d90994e376 ">36.29</td>
+<td class="cellrowborder" align="center" valign="top" width="39.93993993993994%" headers="d90994e378 ">No</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d90994e374 "><span class="uicontrol">Normal quality</span></td>
+<td class="cellrowborder" align="center" valign="top" width="NaN" headers="d90994e376 ">145.14</td>
+<td class="cellrowborder" align="center" valign="top" width="39.93993993993994%" headers="d90994e378 ">No</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d90994e374 "><span class="uicontrol">High quality</span></td>
+<td class="cellrowborder" align="center" valign="top" width="NaN" headers="d90994e376 ">580.57</td>
+<td class="cellrowborder" align="center" valign="top" width="39.93993993993994%" headers="d90994e378 ">No</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d90994e374 "><span class="uicontrol">Customize</span></td>
+<td class="cellrowborder" align="center" valign="top" width="NaN" headers="d90994e376 ">145</td>
+<td class="cellrowborder" align="center" valign="top" width="39.93993993993994%" headers="d90994e378 ">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+ </li>
+</ul>
+ <p>In the <span class="uicontrol">Hatching/Dotting Pattern Background for Operators</span> area, you can customize the  hatching or dotting pattern for background operators such as section views or cuts, callouts, details, and breakout operators. <ul><li>Select <span class="uicontrol">Color from 3D</span> to inherit the hatching or dotting pattern as defined on the 3D part. By default, this is selected.</li>
+<li>Select <span class="uicontrol">Color from Palette</span> to select the required color from the palette.</li>
+</ul>
+You can select the color for the hatching and dotting patterns. For fill color and image pattern, the selected color has no effect.</p></dd>
+</dl>
+<p>Note:
+		If you generate a view in background shaded mode from a 3D representation which has material applied to it, and then you change the material, you must manually update the drawing sheet to update the modifications.</p>
+</p></div>
+</div>
+</div>
+<div class="nested1" id="c-ApproximateView"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Approximate View</h2>
+<div><p><span>Approximate views are generated using the Approximate mode. Although Approximate 
+     views are not as high in precision and quality as exact views, this generation 
+     mode dramatically reduces memory consumption. performance may also be improved, 
+     depending on how you fine-tune precision. Therefore, the Approximate mode is 
+     particularly well-adapted to sophisticated products or assemblies involving 
+     large amounts of data. </span>
+<a name="ix-Approximate views"> </a><a name="ix-views::generating Approximate views"> </a></p>
+
+     
+     <p>3D wireframe geometry can be projected in Approximate views.</p><p>In case of projection of 3D wireframe geometry, the only option applicable is <span class="uicontrol">Can be hidden</span> which is available through  <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">View</span></span> section, under <span class="uicontrol">Dress-up</span>, <span class="uicontrol">Project 3D wireframe</span>, click <span class="uicontrol">Configure</span> (or by right-clicking the view and selecting <span class="uicontrol">Properties</span>, in the <span class="uicontrol">Generation</span> tab, under <span class="uicontrol">Dress-up</span>, <span class="uicontrol">3D Wireframe</span> check box).</p><p>Polyhedral elements (such as surfaces, wireframes, etc.) from V4 .model documents are supported.</p><p>The <span class="glossterm" id="approximate-mode" onmouseout="hideTerm()" onmouseover="showTerm('approximate-mode.xml')">Approximate mode</span> offers about the same advantages and restrictions like 
+     the CGR generation mode (see <a href="gdr-c-ViewCreation-ViewGenerationModes.htm#gdr-c-ViewCreation-ViewGenerationModes" title="You can specify the type of view generation mode when creating new views. This topic provides a detailed description of each view generation mode (including the advantages and restrictions pertaining to each one).">About the View Generation Modes</a>). However, there are some differences:
+     </p>
+     <ul>
+       <li>Approximate consumes even less memory than CGR. </li>
+
+       <li>Approximate is faster than CGR, but performance largely depend on fine-tuning.
+       </li>
+
+       <li>Approximate provides more approximate results than CGR, but these results 
+       largely depend on how you fine-tune the precision. </li>
+
+       <li>Approximate lets you generate section views, <span class="glossterm" id="section-cut" onmouseout="hideTerm()" onmouseover="showTerm('section-cut.xml')">section cuts</span> and breakout 
+       views. However, note that certain restrictions apply, which are documented 
+       in other parts of this user's guide, when appropriate.</li>
+
+     </ul>
+
+     <p>For more information about the advantages and restrictions associated with 
+     the Approximate generation mode, see
+     <a href="gdr-c-ViewCreation-ViewGenerationModes.htm#gdr-c-ViewCreatioc-AdvantagesAndRestrictionsCommonToCGRAndApproximate" title="Using CGR or Approximate to generate views offers the following advantages:">Advantages and Restrictions Common to CGR and Approximate</a> below. </p>
+     
+     </div>
+</div>
+<div class="nested1" id="c-RasterView"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Raster View</h2>
+<div><p><span>Raster views are generated as images. This enables you to quickly generate 
+     overall views for large products or assemblies, regardless of the drawing quality. 
+     Such views are associative to the 3D geometry and can be updated when the part 
+     or product changes. </span>
+<a name="ix-raster views"> </a><a name="ix-views::generating raster views"> </a></p>
+
+     
+     <div class="section" id="c-RasterView__cs-Restrictions"><h3 class="sectiontitle">Restrictions</h3>
+     <p>Raster views involve a number of restrictions: </p>
+     <ul>
+       <li>You cannot generate the following types of views using this option: view 
+       from 3D, section views, section cuts, <span class="glossterm" id="detail-view" onmouseout="hideTerm()" onmouseover="showTerm('detail-view.xml')">detail views</span>, breakout views, unfolded 
+       views. </li>
+
+       <li>Raster views cannot contain dress-up elements (axis, center lines, threads).</li>
+
+       <li>Creating dimensions is impossible. </li>
+
+       <li>Generally speaking, all commands requiring the selection of geometry 
+       are not available. </li>
+
+       <li>Raster views cannot be edited (you can work around this by isolating 
+       the view: double-clicking the image to launch an image editor).
+       However, views generated in raster mode can be rotated.</li>
+
+     </ul>
+
+     <p>As a consequence of these restrictions, selecting this option disables a 
+     number of other options in the <span class="uicontrol">View</span> and in the <span class="uicontrol">Generation</span> 
+     tab (available through <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span></span>) 
+     or in the <span class="uicontrol">Properties</span> dialog box (available by right-clicking the view and selecting <span class="uicontrol">Properties</span>).</p>
+     </div>
+<div class="section" id="c-RasterView__cs-OverloadingColorsgraphicProperties"><h3 class="sectiontitle">Overloading colors/graphic properties</h3>
+     <p>When the color of a product instance is overloaded at the product level, 
+     this color is applied in the raster view to the elements contained in this 
+     product (including edges, faces, points and lines).</p>
+     <p>When other graphic properties are overloaded at the product level, they 
+     are lost in the raster view (contrary to an exact view).</p>
+     
+     
+     </div>
+</div>
+</div>
+<div class="nested1" id="c-CGRView"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">CGR View</h2>
+<div><p><span>CGR views are generated using the CGR format (CATIA Graphical Representation) of the 3D geometry. 
+     A CGR format only contains a graphical representation of the geometry, which 
+     is available with the Visualization mode (as opposed to the exact geometry, 
+     which is available with the Design mode). The CGR view uses and displays only 
+     the external appearance of the component and  the geometry is not available. The 
+     corresponding .cgr file, if it exists, is inserted from the cache system. 
+     </span>
+<a name="ix-CGR views"> </a><a name="ix-views::generating CGR views"> </a></p>
+
+     
+     <p>To generate a correct CGR view from an assembly composed of .cgr files, 
+     use only the high quality .cgr files, containing data about edges and faces. For 
+     example, a .cgr file created with DMU Optimizer misses this information (to be 
+     as light as possible). In this particular case, the CGR view mode can produce 
+     unpredictable results.</p>
+     <p>CGR views are not as high in quality as exact views, but they consume much 
+     less memory during the generation. This may be useful when dealing with sophisticated 
+     products or assemblies involving large amounts of data. However, this generation 
+     mode is rather slow. </p>
+     <p>For more information about the advantages and restrictions associated with 
+     the CGR generation mode, see
+     <a href="gdr-c-ViewCreation-ViewGenerationModes.htm#gdr-c-ViewCreatioc-AdvantagesAndRestrictionsCommonToCGRAndApproximate" title="Using CGR or Approximate to generate views offers the following advantages:">Advantages and Restrictions Common to CGR and Approximate</a>.</p>
+     
+     </div>
+</div>
+<div class="nested1" id="gdr-c-ViewCreatioc-AdvantagesAndRestrictionsCommonToCGRAndApproximate"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">
+     Advantages and Restrictions Common to CGR and Approximate</h2>
+<div><p>Using CGR or Approximate to generate views offers the following advantages:
+     </p>
+
+     
+     <ul>
+       <li>Optimize memory consumption when generating and handling projection views 
+       for large products or assemblies. </li>
+
+       <li>Generate views from third-party data (such as MultiCAD), as well as from 
+       polyhedral elements (such as dittos, surfaces, etc.) in V4 .model documents.
+        
+       Be careful in using only the high quality .cgr files, containing data about edges 
+       and faces. For example, a .cgr file created with DMU Optimizer misses this 
+       information (to be as light as possible). In this particular case, the CGR 
+       and Approximate view modes can produce unpredictable results.</li>
+
+     </ul>
+
+     <p>However, the CGR or Approximate generation mode involves a number of restrictions:
+     </p>
+     <ul>
+       <li>You cannot generate the following types of views:<ul>
+         <li>For CGR: section views, section cuts, detail views, detail view profile, 
+         breakout views, <span class="glossterm" id="unfolded-view" onmouseout="hideTerm()" onmouseover="showTerm('unfolded-view.xml')">unfolded views</span> and views from 3D. </li>
+
+         <li>For Approximate: detail views, detail view profile, unfolded views 
+         and views from 3D. </li>
+
+       </ul>
+
+       </li>
+
+       <li>The following types of elements are not associative on CGR or Approximate 
+       views:<ul>
+         <li>For CGR: <span class="glossterm" id="auxiliary-view" onmouseout="hideTerm()" onmouseover="showTerm('auxiliary-view.xml')">Auxiliary view</span> profiles, annotations, dimensions, etc.</li>
+
+         <li>For Approximate: Auxiliary view profiles, annotations, etc.  
+         Dimensions may now be associative, depending on whether you select the
+         <span class="uicontrol">Allow the creation of associative dimension in approximate views</span> 
+         option in the <span class="uicontrol">Dimensions associativity</span> on 3D dialog box (see
+         <a href="../PreferencesMap/gdrpref-c-Dimension.htm#gdrpref-c-Dimension" title="You can customize dimension options for Drafting using this section. You can customize options for positioning a dimension, line-up a dimension during its creation. You can also define the way a dimension is moved, default parameters to line-up a dimension and so on.">Dimension</a> options).</li>
+
+       </ul>
+
+       </li>
+
+       <li>You cannot project 3D elements such as wireframe, points, etc. on CGR 
+       or Approximate views.</li>
+
+       <li>CGR or Approximate views cannot contain dress-up elements (axis, center 
+       lines, threads).</li>
+
+       <li>Persistency of graphical properties edition (color, line type, line thickness, 
+       no show) and Delete operations performed on generated elements are not available 
+       on CGR views but available on approximate views. However, as approximate views are based on the 3D representation (instead of the 3D topology for Exact Views) the <span class="glossterm" id="associativity-2" onmouseout="hideTerm()" onmouseover="showTerm('associativity-2.xml')">associativity</span> is limited. Therefore, if you modify a subpart of your 3D design, then the corresponding 2D representation will lose any graphical changes that may have been made on it.</li>
+
+       <li>
+       CGR or Approximate views being only a graphical representation 
+       of the geometry, only line segments are generated in such views. In  case 
+       of non-associative dimensions (as is always the case for CGR views, and may 
+       be the case for Approximate views when the <span class="uicontrol">Allow the creation of associative 
+       dimension in approximate views</span> check box is not selected), the only elements 
+       that can be dimensioned are these line segments.  
+       As a result, you may not be able create certain types of radius or diameter 
+       dimensions in such views.
+       </li>
+
+       <li>
+       <span class="uicontrol">CGR</span> or the <span class="uicontrol">Approximate</span> option disables 
+       a number of other options on the <span class="uicontrol">View</span> and on the <span class="uicontrol">Generation</span> 
+       tab (available through <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="uicontrol"> &gt; Drafting</span>) 
+       or in the <span class="uicontrol">Properties</span> dialog box (available by right-clicking the view and selecting <span class="uicontrol">Properties</span>).
+       </li>
+
+       <li>Approximate items cannot be selected using the mouse (trap selection). 
+       However you can click
+       <img src="../IconsNormal/I_Select.png"/> to 
+       select and edit the properties of a single item. Note that you can also multi-select 
+       several items using the 
+       <span class="uicontrol">Ctrl</span> 
+       key.
+       
+       </li>
+
+       <li>
+       Approximate items cannot be duplicated. The <span class="uicontrol">Duplicate</span> 
+       command is not available using <span>context menu</span> on an approximate item.
+       </li>
+<li>Approximate items cannot be searched using the <span class="uicontrol">Find</span> command. They cannot be filtered by their graphical properties such as, linetype, color, thickness, etc. </li>
+
+       <li>
+       The mesh thickness has an impact on the CGR and approximate 
+       view performance. Moreover, a CGR view cannot be computed from an extremely 
+       thin mesh, i.e. when the mesh on a single face consists of more than 6500 
+       triangles. In this special case, you must raise the 3D accuracy (through
+            <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3DEXPERIENCE Platform Common Preferences</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Display</span> &gt; <span class="uicontrol">Performance</span></span> section, under <span class="uicontrol">3D Accuracy</span>) before projecting 
+       a CGR view.
+       </li>
+
+     </ul>
+
+     <p>As a consequence of these restrictions, selecting either the <span class="uicontrol">CGR</span> 
+     or the <span class="uicontrol">Approximate</span> option disables a number of other options on 
+     the <span class="uicontrol">View</span> and on the <span class="uicontrol">Generation</span> tab (available through
+     <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="uicontrol"> &gt; Drafting</span>) or in the <span class="uicontrol">Properties</span> 
+     dialog box (available by right-clicking the view and selecting <span class="uicontrol">Properties</span>).</p>
+     
+     
+   
+ 
+
+ 
+
+
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

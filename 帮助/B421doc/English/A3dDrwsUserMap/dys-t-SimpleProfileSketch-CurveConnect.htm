@@ -1,0 +1,174 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Connecting Curves"/>
+<meta name="abstract" content="You can connect two elements using splines and arcs."/>
+<meta name="description" content="You can connect two elements using splines and arcs."/>
+<meta name="DC.Relation" scheme="URI" content="dys-c-CurveSplineConnect.htm#dys-c-CurveSplineConnect"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="dys-t-SimpleProfileSketch-CurveConnect"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Connecting Curves</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="dys-t-SimpleProfileSketch-CurveConnect">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Connecting Curves</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can connect two elements using splines and arcs.</span>
+<p>A connecting curve (spline) is associative, and 
+						it can be continuous in point, in curvature or in tangency 
+						with its support curves. You can define the tension value 
+						and the direction of the continuity at each connecting point, 
+						as well as add constraints to the connecting curve. Moving 
+						a connecting curve changes the shape of the support curves 
+						accordingly.</p></p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-Arc" id="toc_rg" title="You can connect two elements using an arc.">Connect with an Arc</a></li><li><a href="#t-Spline" id="toc_rg" title="You can connect two elements, using a connecting curve (a spline) that goes through their end points.">Connect with a Spline</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="dys-c-CurveSplineConnect.htm#dys-c-CurveSplineConnect" title="This topic provides information needed about connecting curves with a spline.">About Connecting Curves with a Spline</a></td></tr></table></td></tr></table>
+
+  
+
+  
+ 
+  
+
+  <div/>
+
+  <div class="nested1" id="t-Arc">
+    <h2 class="topictitle2">Connect with an Arc</h2>
+
+    
+    <div><p>You can connect two elements using an arc.</p>
+
+      <div class="p"><!--xxx--><span class="run-in">Before you begin: </span><ul><li><span class="glossterm" id="sketch" onmouseout="hideTerm()" onmouseover="showTerm('sketch.xml')">Sketch</span> three intersecting lines.
+					
+				<a name="ix-Command::Connect (with an arc)"> </a><a name="ix-connecting curves with an arc"> </a></li>
+<li>Make sure that the 
+  <span class="uicontrol">Open dialog boxes with legacy appearance</span> check box
+  available at 
+  <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span></span></span><span class="menucascade"><span class="uicontrol">
+		&gt; All Preferenes</span> &gt; <span class="uicontrol">3D Modelling</span> &gt; <span class="uicontrol">3D
+		Modeling Core</span> &gt; <span class="uicontrol">Sketcher</span> &gt; <span class="uicontrol">Dialogs
+		appearance</span></span>, is selected.
+</li>
+</ul>
+</div>
+<ol><li class="stepexpand"><p><span>From the <span class="wintitle">Sketch</span> section of the <span>action bar</span>,</span> click <span class="uicontrol">Connect</span>
+			<img src="../Icons22/I_SktConnect.png"/>. <p> 
+			<p>The connect options appear in the <span class="wintitle">Tools Palette</span>. </p>
+			<p>
+			By default, <span class="uicontrol">Connect with a Spline</span>
+			<img src="../Icons22/I_SktConnect.png"/> 
+			is active and its related options are displayed. </p>
+			
+				
+					
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Click <span class="uicontrol">Connect with an Arc</span>
+			<img src="../IconsNormal/I_SktConnectArc.png"/>. 
+			<p>The <span class="uicontrol">Connect with a Spline</span> option is no longer available 
+			in the <span class="wintitle">Tools Palette</span>. </p></p></li>
+<li class="stepexpand"><p>Select the  first element to connect (starting point), 
+			and then the second element (ending point).<p> 
+			
+				
+					
+					
+					<br/><img src="../DysUserImages/connect01.png"/><br/><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>The point on which you click to select the first and 
+			the second element is important. The closest point to where you click 
+			is used as the starting point and the end point of the connecting 
+			curve. Always click close to the point you want to connect, or click 
+			the point itself. 
+			A connecting arc appears, tangent to both selected elements.</td></tr></table>
+
+					
+				
+			
+			
+			
+				
+					
+					<p>
+					<br/><img src="../DysUserImages/connect02.png"/><br/></p>
+					
+				
+			
+			<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>  
+					You cannot trim
+					<img src="../Icons22/I_RelimitTrimEl1.png"/> 
+					nor break
+					<img src="../Icons22/I_Break.png"/> 
+					conic curves. To workaround this, you can project 
+					the conic curve of interest onto another sketch, then trim the 
+					projected elements.</td></tr></table>
+
+			</p></p></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="t-Spline">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Connect with a Spline</h2>
+
+    
+    <div><p>You can connect two 
+						elements, using a connecting curve (a 
+						spline) that goes through their end points.
+      </p>
+
+      <div class="p"><!--xxx--><span class="run-in">Before you begin: </span><span class="glossterm" id="sketch" onmouseout="hideTerm()" onmouseover="showTerm('sketch.xml')">Sketch</span> two splines.  </div>
+<ol><li class="stepexpand"><p><span>From the <span class="wintitle">Sketch</span> section of the <span>action bar</span>,</span> click <span class="uicontrol">Connect</span>
+			<img src="../Icons22/I_SktConnect.png"/>. 
+			 
+			<p> <a name="ix-Command::Connect"> </a><span class="wintitle">Tools Palette</span> displays connection and continuity options for defining 
+			the connection. </p></p></li>
+<li class="stepexpand"><p>Select <span class="uicontrol">Continuity in tangency</span>
+			<img src="../Icons22/I_ConnectCurveC1.png"/> as the connection type you want to perform.<p>By default,<span class="uicontrol">Continuity in tangency</span> is the default connection type.</p></p></li>
+<li class="stepexpand"><p>Select both splines you want to connect to each other.<p> 
+			
+				
+					
+					<br/><img src="../DysUserImages/connectcurve02.png"/><br/><table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Tip:
+				</span>Locations where you click to select the first and the second element 
+			are important. The closest point to where you click is automatically 
+			used as the starting point and the end point of the connecting curve. 
+			Always click close to the point you want to connect, or click the point 
+			itself.</td></tr></table>
+
+				
+			
+			<p> A connecting spline appears: it is continuous in curvature to 
+			both selected elements. 
+			Both splines are connected.<br/><img src="../DysUserImages/connectcurve03.png"/><br/></p>
+			
+				
+					
+					
+				
+			
+			</p></p></li>
+<li class="stepexpand"><p>Right-click the connecting curve and select <span class="menucascade"><span class="uicontrol">xxx.object</span> &gt; <span class="uicontrol">Isolate</span></span> to trim it, split it, or break it.</p></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,7 @@
+G:\R421\BSF\.\CAACompositesUseItfDoc.edu\CAACciCompositesUse.doc\src\CAACciTaCompositesDesign.htm
+G:\R421\BSF\.\CAACompositesUseItfDoc.edu\CAACciCompositesUse.doc\src\CAACciTcToc.htm
+G:\R421\BSF\.\CAACompositesUseItfDoc.edu\CAACciCompositesUse.doc\src\CAACciUcCompositesComputeCoreSample.htm
+G:\R421\BSF\.\CAACompositesUseItfDoc.edu\CAACciCompositesUse.doc\src\CAACciUcCompositesFlattenCreation.htm
+G:\R421\BSF\.\CAACompositesUseItfDoc.edu\CAACciCompositesUse.doc\src\CAACciUcCompositesNavigation.htm
+G:\R421\BSF\.\CAACompositesUseItfDoc.edu\CAACciCompositesUse.doc\src\CAACciUcCompositesObjectsCreation.htm
+G:\R421\BSF\.\CAACompositesUseItfDoc.edu\CAACciCompositesUse.doc\src\CAACciUcCompositesZoneWithLaminate.htm

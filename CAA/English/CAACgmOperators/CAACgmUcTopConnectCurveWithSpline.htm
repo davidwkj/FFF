@@ -1,0 +1,381 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Connecting Wires with Spline </title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Connecting Wires with Spline Curve&nbsp; </h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article explains how to connect wires between with a spline curve. 
+		The shape of the connecting piece can be 
+		computed as a spline curve from vertex of first curve to a given vertex 
+		of the second curve. The 
+		CATICGMTopologicalBlendCurve is the operator to use for such case. <ul>
+			<li><a href="#What_You_Will_Learn_With_This_Article">What You Will 
+			Learn With This Article</a></li>
+			<li><a href="#The_CAAGMOperatorsConnectCurve_Use_Case">The 
+			CAAGMOperatorsBlendCurve Use Case</a><ul>
+				<li><a href="#What_Does_CAAGMOperatorsConnectCurve_Do">What Does 
+				CAAGMOperatorsBlendCurve Do</a></li>
+				<li><a href="#How_to_Launch_CAAGMOperatorsConnectCurve_">How to 
+				Launch CAAGMOperatorsBlendCurve </a></li>
+				<li>
+				<a href="#Where_to_Find_the_CAAGMOperatorsConnectCurve__Code_">Where to Find the 
+				CAAGMOperatorsBlendCurve&nbsp; Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a><ul>
+				<li><a href="#Creating the curves making up the wire">Preleminary Operations</a>
+				</li>
+				<li><a href="#Creating the curves making up the wire0">Create a 
+				spline wire connecting 2 wires</a> </li>
+				<li>
+				<a href="#Connect_start_and_end_points_with_curve_similar_to_base_curve">
+				Create a spline wire connecting and trimming with 2 input wires</a></li>
+			</ul>
+			</li>
+			<li>
+			<a href="#Connect_start_and_end_points_with_curve_similar_to_base_curve">References</a></li>
+		</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		&nbsp;</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="What_You_Will_Learn_With_This_Article">What You Will Learn With 
+This Article</a></h2>
+<p>In this article, you learn how to use the operator <strong>
+CATICGMTopologicalBlendCurve</strong> to connect two wires with a spline. This operator 
+have to be used according to the general 
+scheme of topological operators. If need be, you can take a look at &quot;Overview of 
+the Topological Operators&quot; [<a href="#References">1</a>] for more information.</p>
+<h2><a name="The_CAAGMOperatorsConnectCurve_Use_Case">The 
+CAAGMOperatorsBlendCurve Use Case</a></h2>
+<p>The CAAGMOperatorsBlendCurve.m module in CAAGMOperatorsInterfaces.edu 
+illustrates how to connect two wires with a spline curve according to a given 
+direction, how to influence the curvature or the tangency constraint and how to 
+trimm the input bodies with the result computed spline curve. This use case 
+requires the BlendCurve.NCGM file as input data. This file is delivered in the FunctionTests/InputData 
+folder of CAAGMOperatorsInterfaces.edu framework.
+</font>
+If you are not already 
+familiar with geometric modeler use cases, go to
+<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Uses Cases</a>.<p>With the input data below 
+(wires to be connected in pink, base curve in yellow):</p>
+<table>
+  <caption><a name="Fig.1">Fig.1</a> Connect Curve : Input Data </caption>
+  <tr>
+    <td>
+	<img src="images/CATICGMTopologicalBlendCurve_img16.jpg"></td>
+   </tr>
+</table>
+<h3><a name="What_Does_CAAGMOperatorsConnectCurve_Do">What Does 
+CAAGMOperatorsBlendCurve Do</a></h3>
+<p>The use case:</p>
+<ul>
+	<li>Load the CGM container from the Connect-Curve-Sample.NCGM input file 
+	.</li>
+	<li>Create the config &amp; topdata.</li>
+	<li>Create a wire connecting 2 input wires (wire1 with Wire2) with 
+	specification of.<ul>
+		<li>Continuity</li>
+		<li>Tangency influence</li>
+		<li>Curvature influence</li>
+	</ul>
+	</li>
+	<li>Create another spline wire connecting and trimming 2 input wires (wire1 
+	with Wire3)&nbsp; with specification of :<ul>
+		<li>Continuity</li>
+		<li>Tangency influence</li>
+		<li>Curvature influence</li>
+	</ul>
+	</li>
+	<li>Close the application</li>
+	</ul>
+<p><strong>Note</strong>: This article only focuses on the operations related to 
+the CATICGMTopologicalBlendCurve operator. Refer to &quot;Overview of the Topological Operators&quot; 
+[<a href="#References">3</a>] for more information on the operations which are 
+not detailed in the article.</p>
+<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How_to_Launch_CAAGMOperatorsConnectCurve_">How to Launch 
+CAAGMOperatorsBlendCurve </a></h3>
+<p>To launch <a>CAAGMOperatorsBlendCurve </a>, you will need to set up the build time environment, 
+then compile <a>CAAGMOperatorsBlendCurve</a>.m, set up the run time environment, and then 
+execute the use case [<a href="#References">2</a>].</p>
+<p>If you simply type <a>CAAGMOperatorsBlendCurve </a>with only one argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example: </p>
+<p><a>CAAGMOperatorsBlendCurve </a>&nbsp;<code>InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\FunctionTests\InputData\BlendCurve.NCGM&nbsp; e:\BlendCurve_Result.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsCleanCrv.m'>
+<h3>&nbsp;</h3>
+	<h3><a name="Where_to_Find_the_CAAGMOperatorsConnectCurve__Code_">Where to Find the 
+	CAAGMOperatorsBlendCurve&nbsp; Code </a></h3>
+<p>The CAAGMOperatorsBlendCurve use case is made of a main named 
+CAAGMOperatorsBlendCurve.cpp 
+located in the CAAGMOperatorsBlendCurve.m module of the CAAGMOperatorsInterfaces.edu 
+framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\CAAGMOperatorsBlendCurve.m\</code></p>
+	<p>where <code>InstallRootFolder</code> [<a href="#References">2</a>] is the folder 
+where the API CD-ROM is installed.</p>
+	<p>&nbsp;</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step">Step-by-Step</a></h2>
+<p>The use case is divided into the following main steps:</p>
+<ul>
+	<li><a href="#Creating the curves making up the wire">Preleminary Operations </a></li>
+	<li><a href="#Creating the curves making up the wire0">Create a spline wire 
+	connecting 2 wires </a></li>
+	<li>
+	<a href="#Connect_start_and_end_points_with_curve_similar_to_base_curve">
+	Create a spline wire connecting and trimming 2 input wires</a></li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3 accesskey="Creating the curves making up the wire"><a name="Creating the curves making up the wire"></a>Preleminary Operations </h3>
+<p>In this operation, the geometrical container is loaded from the input NCGM 
+file in order to get the body that will be treated by operators.</p>
+	<p>The TopData&nbsp; is also created.</p>
+	<p>The following code illustrates how to&nbsp; retrieve these informations:</p>
+</article>
+<pre class="code">
+ cout &lt;&lt; &quot;\n\n==============================================================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Part 0 &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==========&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Preliminary operations : \n&quot; &lt;&lt; endl;
+
+//
+// (a) Loads the container 
+//
+CATGeoFactory* piGeomFactory = <strong>CATLoadCGMContainer</strong>(filetoread);
+if (NULL == piGeomFactory) return (1);
+cout &lt;&lt; &quot; - Get The Geo factory : OK &quot; &lt;&lt; endl;
+
+//
+// (b) Configuration management
+//
+CATSoftwareConfiguration * pConfig = new <strong>CATSoftwareConfiguration</strong>();
+cout &lt;&lt; &quot; - Get the software config : OK &quot; &lt;&lt; endl;
+
+//
+// (c) - Create the CATTopData
+//
+CATTopData <strong>topdata</strong>(pConfig, NULL);
+cout &lt;&lt; &quot; - Create the software configuration and CATTopData : OK &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;==============================================================================================&quot; &lt;&lt; endl;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creating the curves making up the wire0">Create a spline wire 
+connecting with 2 wires </a> </h3>
+<p>This part illustrate how to use operator CATICGMTopologicalBlendCurve. It 
+covers creation aspects of the operator, the specification of its parameters and 
+computation of resutlt spline curve ensuring the connection between wires set as 
+input.</p>
+<p>Before creation of the operator, the sample show how to retrieve the input 
+wires and vertices from input NCGM file.</p>
+<p><img src="images/CATICGMTopologicalBlendCurve_img15.jpg"></p>
+<pre class="code">
+cout &lt;&lt; &quot;\n 1.2 : Create the CATCGMCreateTopologicalBlendCurve &amp; Set Parameters&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;----------------------------------------------------------------------- &quot; &lt;&lt; endl;
+
+CATICGMTopologicalBlendCurve * pBlendCurveOper = <strong>CATCGMCreateTopologicalBlendCurve</strong> (piGeomFactory,
+&amp;topdata,
+piBodyfirstWire, // pointer to the first wire body 
+piBodyVertexToConnectWire1 , // pointer to a vertex body on piBodyfirstWire 
+piBodySecondWire, // pointer to the second wire body
+piBodyVertexToConnectWire2); // pointer to a vertex body on piBodySecondWire
+
+
+cout &lt;&lt; &quot;\nCreates a CATICGMTopologicalBlendCurve operator that connects the two wire bodies : OK&quot; &lt;&lt; endl;
+
+...</pre>
+<p><img src="images/CATICGMTopologicalBlendCurve_img17.jpg"></p>
+<p>After creation of the CATICGMTopologicalBlendCurve operator, it is possible 
+to specify its parameters such as for example the starting direction of the 
+connecting wire or continuity criteria between the input wires and the result 
+spline wire.</p>
+<pre class="code">
+
+// Modifies the starting direction of the connecting wire 
+// 
+pBlendCurveOper-&gt;<strong>SetTransitionOrientation</strong>(1, -1);
+cout &lt;&lt; &quot;Modifies the starting direction of the first connecting wire : OK&quot; &lt;&lt; endl;
+
+// Defines the continuity criteria to take into account for a first and second wire
+//
+pBlendCurveOper-&gt;<strong>SetTransitionContinuity</strong>(1, 2);
+cout &lt;&lt; &quot;Set Continuity G2 with the first wire : OK&quot; &lt;&lt; endl;
+
+pBlendCurveOper-&gt;<strong>SetTransitionContinuity</strong>(2, 2);
+cout &lt;&lt; &quot;Set Continuity G2 with the second wire : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pBlendCurveOper-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;\nRun the operator : OK&quot; &lt;&lt; endl;
+
+// Get the result body
+//
+CATBody * pBlendCurvBody = pBlendCurveOper-&gt;GetResult();
+...</pre>
+<p><img src="images/CATICGMTopologicalBlendCurve_img18.jpg"></p>
+	<h3><a name="Connect_start_and_end_points_with_curve_similar_to_base_curve">
+	Create a spline wire connecting and trimming with 2 input wires</a></h3>
+	<p>In this operation is detailed how to connect and trim the input wire 
+	curves with result spline curve. </p>
+<p>&nbsp;</p>
+<table>
+  <caption><a name="Fig.4">Fig.</a>2 How to create CATICGMTopSimilarCurve 
+  operator</caption>
+  <tr>
+    <td>
+	<img src="images/CATICGMTopologicalBlendCurve_img19.jpg"></td>
+	 <td>
+	&nbsp;</td>
+     </tr>
+</table>
+<p>&nbsp;</p>
+<p>and the code below:</p>
+<pre class="code">
+
+cout &lt;&lt; &quot;\n 2.2 : Create the CATCGMCreateTopologicalBlendCurve &amp; Set Parameters&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;----------------------------------------------------------------------- &quot; &lt;&lt; endl;
+
+<strong>CATICGMTopologicalBlendCurve</strong> * pBlendCurveOper2 = <strong>CATCGMCreateTopologicalBlendCurve</strong>(piGeomFactory,
+&amp;topdata,
+piBodyfirstWire, 		// pointer to the first wire body 
+piBodyVertexToConnectWire1, 	// pointer to a vertex body on piBodyfirstWire 
+piBodyWire3, 			// pointer to the second wire body
+piBodyVertexToConnectWire3);	// pointer to a vertex body on piBodySecondWire
+
+
+cout &lt;&lt; &quot;\nCreates a CATICGMTopologicalBlendCurve operator that connects First and Third wire : OK&quot; &lt;&lt; endl;
+
+
+cout &lt;&lt; &quot;\n 2.3 : Define Tangency &amp; curvature influence&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;--------------------- ----------------------- &quot; &lt;&lt; endl;
+
+// Defines the influence of the curvature constraint
+//
+InfluenceCurv = 2.;
+pBlendCurveOper2-&gt;<strong>SetCurvatureParameter</strong>(1, InfluenceCurv);
+cout &lt;&lt; &quot;Influence of the curvature constraint with First wire : &quot; &lt;&lt; InfluenceCurv &lt;&lt; endl;
+
+// Defines the influence of the tangency constraint
+//
+InfluenceTangency = 2.;
+pBlendCurveOper2-&gt;<strong>SetTangencyParameter</strong>(1, InfluenceTangency);
+cout &lt;&lt; &quot;Influence of the tangency constraint with first wire : &quot; &lt;&lt; InfluenceTangency &lt;&lt; endl;
+
+// Modifies the starting direction of the connecting wire 
+// 
+pBlendCurveOper2-&gt;<strong>SetTransitionOrientation</strong>(1, -1);
+cout &lt;&lt; &quot;Modifies the starting direction of the first connecting wire : OK&quot; &lt;&lt; endl;
+
+cout &lt;&lt; &quot;\n 2.4 : Trim the blend curve with first and second input bodies&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------------------------------------------- &quot; &lt;&lt; endl;
+// Trim the first and second input bodies
+//
+pBlendCurveOper2-&gt;<strong>SetSupportTrimmingMode</strong>(1, 1);
+cout &lt;&lt; &quot;\nTrim the first input body with blend curve : OK&quot; &lt;&lt; endl;
+
+pBlendCurveOper2-&gt;<strong>SetSupportTrimmingMode</strong>(2, 1);
+cout &lt;&lt; &quot;Trim the second input body with blend curve : OK&quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pBlendCurveOper2-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;\nRun the operator : OK&quot; &lt;&lt; endl;
+
+// Get the result body
+//
+CATBody * pBlendCurvBody2 = pBlendCurveOper2-&gt;<strong>GetResult</strong>();
+...
+</pre>
+<p>you get this result (connect curve in green):</p>
+<table>
+  <caption><a name="Fig.2">Fig.4</a>&nbsp; Connect Curve :&nbsp; Result</caption>
+  <tr>
+    <td>
+	<img src="images/CATICGMTopologicalBlendCurve_img1A.jpg"></td>
+	 <td>
+	 &nbsp;</td>
+     </tr>
+</table>
+<p><a name="References"></a></p>
+<p>&nbsp;</p>
+<h2>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaUseTopoOperators.htm">How to Use Topological Operators</a></td>
+	</tr>
+
+<tr>
+		<td>[4]</td>
+		<td>
+		<a href="CAACgmUcTopOverview.htm">Overview of Topological Operators</a></td>
+	</tr>
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: 1 [Apr 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

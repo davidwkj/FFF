@@ -1,0 +1,474 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="reference"/>
+<meta name="DC.Title" content="Dimension Tolerance Formats"/>
+<meta name="abstract" content="Dimension tolerance formats are located in the Tolerance formats node of the standard file."/>
+<meta name="description" content="Dimension tolerance formats are located in the Tolerance formats node of the standard file."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="standards-r-ad-ToleranceFormatParams"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Dimension Tolerance Formats</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="standards-r-ad-ToleranceFormatParams">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-standards::dimension tolerance formats"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-dimensions::tolerance formats in standards"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Dimension Tolerance Formats
+				
+				 </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3" colspan="2"><table class="DocThemeIntro" id="table12"><tr><td class="Intro1Only"><p class="header"><p><span>Dimension tolerance formats are located in the <span class="uicontrol">Tolerance formats</span> node 
+		of the standard file.</span>
+
+						<p>This section deals with dimension tolerance 
+						descriptions, which are user-defined formats to be applied 
+						to dimension tolerances.</p>
+						
+					
+				</p>
+<ul><li><a href="#r-FormatDefinitions" id="toc_rg" title="You can define a tolerance format.">Format Definitions</a></li><li><a href="#r-SeparatorCharacterTable" id="toc_rg" title="This table lists the characters that can be used as separators before, between or after the tolerance values.">Separator Character Table </a></li></ul>
+</p></td></tr></table></td></tr></table>
+
+<div/>
+<div class="nested1" id="r-FormatDefinitions"><h2 class="topictitle2">Format Definitions</h2>
+<div><p><span>You can define a tolerance format.</span>
+<p>To create a new tolerance format:<ol><li> In 
+			the <span class="uicontrol">Standard Definition</span> dialog box, select the <span class="uicontrol">drafting</span> category  (available via   <span><span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Standards</span></span></span>).</li>
+<li>Click <span class="uicontrol">Tolerance Formats</span> node.</li>
+<li>Then click <span class="uicontrol">Add Instance</span> 
+		to add a new format instance.</li>
+</ol>
+   This will create a sample format 
+		definition that you will then configure to suit your needs, by modifying 
+		one or several values of the parameters defining the format.</p><p>Once defined, a format can be applied to dimensions just as any dimension 
+		<span class="glossterm" id="attribute" onmouseout="hideTerm()" onmouseover="showTerm('attribute.xml')">attribute</span>, using the <span class="uicontrol">Dimension 
+		Properties</span> in the <span><span class="wintitle">Object Properties</span></span> panel. </p></p>
+<div class="section" id="r-FormatDefinitions__rs-DimensionToleranceFormats"><h3 class="sectiontitle">Dimension Tolerance Formats</h3>
+		
+		<p>The tolerance format parameters 
+		drive the <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> of a dimension tolerance, and include parameters 
+		such as:</p>
+		<ul>
+			<li>
+			<p>Type of tolerance (numerical/alphanumerical)</p>
+			</li>
+
+			<li>
+			<p>Separator between values</p>
+			</li>
+
+			<li>
+			<p>Position relatively to dimension 
+			value</p>
+			</li>
+
+			<li>
+			<p>Font size for tolerance</p>
+			</li>
+
+			<li>
+			<p>Trailing zeros display for 
+			numerical type</p>
+			</li>
+
+			
+		</ul>
+
+		<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span> Once a 
+				given description is embedded in a given <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span>, it cannot be 
+				modified or removed. Even a standard upgrade using a modified version 
+				of the xml standard cannot modify the existing description. To bypass 
+				this limitation, you have to create a new description with another 
+				name. </td></tr></table>
+
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="24.747474747474747%" id="d353472e132">Parameter </th>
+<th class="cellrowborder" valign="top" width="16.835016835016837%" id="d353472e134">Parameter Name</th>
+<th class="cellrowborder" valign="top" width="33.16498316498317%" id="d353472e136">Value</th>
+<th class="cellrowborder" valign="top" width="25.252525252525253%" id="d353472e138">Description</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="24.747474747474747%" headers="d353472e132 "><span class="uicontrol">Tolerance Format Name</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">TolName</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 ">(8 char string)</td>
+<td class="cellrowborder" valign="top" width="25.252525252525253%" headers="d353472e138 ">User-defined name that will be used as the description 
+					identifier.</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="24.747474747474747%" headers="d353472e132 "><span class="uicontrol">Tolerance Format Type
+					</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">Toltype </td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 "><p>[ 1 
+					/ 2 / 3 / 4 / 5 / 6 / 7 ] </p>
+					<p>
+					1 = Numerical side by side</p>
+					<p>
+					2 = Numerical super-imposed</p>
+					<p>
+					3 = Resolved Numerical side by side</p>
+					<p>
+					4 = Resolved numerical super-imposed</p>
+					<p>
+					5 =Alphanumerical  Single Value </p>
+					<p>
+					6 = Alphanumerical side by side</p>
+					<p>
+					7 = Alphanumerical super-imposed 
+					</p></td>
+<td class="cellrowborder" valign="top" width="25.252525252525253%" headers="d353472e138 "><img src="../StandardImages/ToleranceTypes.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" rowspan="2" valign="top" width="24.747474747474747%" headers="d353472e132 "><span class="uicontrol">Separators for super-imposed tolerances</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 "><cite>Before</cite><p>TolSepar_1</p></td>
+<td class="cellrowborder" rowspan="2" valign="top" width="33.16498316498317%" headers="d353472e136 "><p>[0...18 
+					] </p>
+					<p>
+					separator number as described in the <a href="standards-r-ad-ToleranceFormatParams.htm#standards-r-ad-ToleranceFormatParams" title="Dimension tolerance formats are located in the Tolerance formats node of the standard file.">Separator Character Table</a></p></td>
+<td class="cellrowborder" rowspan="2" valign="top" width="25.252525252525253%" headers="d353472e138 "><img src="../StandardImages/ToleranceSepSuper-imp.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 "><cite>After</cite><p>TolSepar_2</p></td>
+</tr>
+<tr><td class="cellrowborder" rowspan="3" valign="top" width="24.747474747474747%" headers="d353472e132 "><span class="uicontrol">Separators for side-by-side tolerances</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 "><cite>Before</cite><p>TolSepTo_1</p></td>
+<td class="cellrowborder" rowspan="3" valign="top" width="33.16498316498317%" headers="d353472e136 "><p>[0...18 
+					] </p>
+					<p>
+					separator number as described in the <a href="standards-r-ad-ToleranceFormatParams.htm#standards-r-ad-ToleranceFormatParams" title="Dimension tolerance formats are located in the Tolerance formats node of the standard file.">Separator Character Table</a></p></td>
+<td class="cellrowborder" rowspan="3" valign="top" width="25.252525252525253%" headers="d353472e138 "><img src="../StandardImages/ToleranceSepSidebySide.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 "><cite>Between</cite><p>TolSepTo_2</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 "><cite>After</cite><p>TolSepTo_3</p></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="24.747474747474747%" headers="d353472e132 ">
+					<span class="uicontrol">Fraction line on super-imposed tolerances
+					</span>
+					</td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">
+					TolFractLine
+					</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 ">
+					<p>[2/1]</p>
+					<p>
+					2= Fraction line</p>
+					<p>
+					1= No fraction line</p>
+					</td>
+<td class="cellrowborder" valign="top" width="25.252525252525253%" headers="d353472e138 ">
+					
+					<img src="../StandardImages/ToleranceFracSuper-imp.gif"/>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="24.747474747474747%" headers="d353472e132 ">
+					<span class="uicontrol">Separator Character Size  
+					(Ratio between Separator Character and Value Text font sizes)
+					</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">
+					TolSymbolH
+					</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 ">
+					<p>(real)</p>
+					<p> = 
+					separator height / value height</p>
+					<p> ( 
+					= B / A )</p>
+					</td>
+<td class="cellrowborder" valign="top" width="25.252525252525253%" headers="d353472e138 ">
+					
+					<img src="../StandardImages/ToleranceSeparatorRatio.gif"/>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="24.747474747474747%" headers="d353472e132 ">
+					<span class="uicontrol">Tolerance Size  
+					(Ratio between Tolerance Text and Value Text font sizes)
+					</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">
+					TolScale
+					</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 ">
+					<p>(real)</p>
+					<p> = 
+					tolerance height / value height</p>
+					<p> ( 
+					= C / A )</p>
+					</td>
+<td class="cellrowborder" valign="top" width="25.252525252525253%" headers="d353472e138 ">
+					
+					<img src="../StandardImages/ToleranceRatio.gif"/>
+					</td>
+</tr>
+<tr><td class="cellrowborder" rowspan="2" valign="top" width="24.747474747474747%" headers="d353472e132 "><span class="uicontrol">Tolerance Position Anchor Point (for offset 
+					computing)</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">TolPtOnValue</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 "><p>[ 7 
+					/ 8 / 9 ] </p>
+					<p>
+					7 =Top</p>
+					<p>
+					8 = Middle</p>
+					<p>
+					9 = Bottom</p></td>
+<td class="cellrowborder" rowspan="2" valign="top" width="25.252525252525253%" headers="d353472e138 "><img src="../StandardImages/ToleranceAnchor.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">TolAnchorPtTolExtX</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 "><p>[ 1 
+					/ 2 / 3 ] </p>
+					<p>
+					1 =Top</p>
+					<p>
+					2 = Middle</p>
+					<p>
+					3 = Bottom</p></td>
+</tr>
+<tr><td class="cellrowborder" rowspan="2" valign="top" width="24.747474747474747%" headers="d353472e132 "><span class="uicontrol">Offset between dimension value and tolerance</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">TolExtX</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="33.16498316498317%" headers="d353472e136 ">(mm)</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="25.252525252525253%" headers="d353472e138 "><img src="../StandardImages/ToleranceOffset.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">TolExtY</td>
+</tr>
+<tr><td class="cellrowborder" rowspan="2" valign="top" width="24.747474747474747%" headers="d353472e132 "><span class="uicontrol">Offset between the 2 tolerance values</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">TolIntX</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="33.16498316498317%" headers="d353472e136 ">(mm)</td>
+<td class="cellrowborder" rowspan="2" valign="top" width="25.252525252525253%" headers="d353472e138 "><img src="../StandardImages/ToleranceInnerPosition.gif"/></td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">TolIntY</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="24.747474747474747%" headers="d353472e132 ">
+					<span class="uicontrol">Display of tolerance trailing zeros</span>
+					</td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">
+					TolTrailing
+					</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 ">
+					<p>[ 0 / 1 / 2 ] </p>
+					<p>
+					0 = Display (number of digits specified in the value precision) 
+					1 = No Display 
+					2 = Same "display" mode as the dimension value</p>
+					</td>
+<td class="cellrowborder" valign="top" width="25.252525252525253%" headers="d353472e138 ">
+					
+					<img src="../StandardImages/ToleranceTrailingZeros.gif"/>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="24.747474747474747%" headers="d353472e132 ">
+					<span class="uicontrol">Display of identical Tolerance Values 
+					(for numerical tolerances only) 
+					</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">
+					TolMergeSame
+					</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 ">
+					<p>[ 1 / 2 ] </p>
+					<p>
+					1 = Display common value 
+					2 = Display separate values</p>
+					</td>
+<td class="cellrowborder" valign="top" width="25.252525252525253%" headers="d353472e138 ">
+					
+					<img src="../StandardImages/Toleranceplusminus.gif"/>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="24.747474747474747%" headers="d353472e132 ">
+					<span class="uicontrol">Display of null Tolerance Values 
+					(for numerical tolerances only) 
+					</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">
+					TolShowNull
+					</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 ">
+					<p>[ 1 / 2 / 3 ] </p>
+					<p>
+					1 = Display null value with sign</p>
+					<p>
+					2 = Display null value without sign</p>
+					<p>
+					3 = No Display of null value</p>
+					
+					</td>
+<td class="cellrowborder" valign="top" width="25.252525252525253%" headers="d353472e138 ">
+					
+					<img src="../StandardImages/ToleranceZeroSignDisplaygif.gif"/>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="24.747474747474747%" headers="d353472e132 "><span class="uicontrol">Tolerance Display Factor</span></td>
+<td class="cellrowborder" valign="top" width="16.835016835016837%" headers="d353472e134 ">TolDispFact</td>
+<td class="cellrowborder" valign="top" width="33.16498316498317%" headers="d353472e136 "><p>[&gt;0/&lt;1000000]</p><p>For example: </p><p>1 = Display tolerance value with a multiplying factor 1</p><p>1000 = Display tolerance value with a multiplying factor 1000</p></td>
+<td class="cellrowborder" valign="top" width="25.252525252525253%" headers="d353472e138 "><p>The specified tolerance value is multiplied by this factor prior to being displayed (the global multiplying factor is also used). Moreover, the precision of the tolerance limit values also takes this parameter into account.</p><p>Example: </p>
+<p>To display the tolerance value in the same unit as the dimension value, set TolDispFact = 1 and Precision = 0.001</p><p>Example: To display the tolerance value in a different  unit than the dimension value, for example in micron, set dimension value unit to mm,  TolDispFact = 1000 and Precision = 0.001</p><br/><img src="../StandardImages/ToleranceDispFact1000.png"/><br/><p>If the precision value is changed to 0.01, the tolerance value is displayed as follows:</p><br/><img src="../StandardImages/ToleranceDispFact1000Prec1.png"/><br/><p><p>Note:
+		This parameter is applicable only for linear dimension (NDType=1) and not for <span class="glossterm" id="angle-dimension" onmouseout="hideTerm()" onmouseover="showTerm('angle-dimension.xml')">angle dimension</span>.<p>Additionally, multiple factors display is not compatible with TolDispFact values other than 1.0 as well as mono-factor with suffix specified (NDSepar). </p></p>
+</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		</div>
+</div>
+</div>
+<div class="nested1" id="r-SeparatorCharacterTable"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Separator Character Table </h2>
+<div><p><span>This table lists the characters that can be used as separators before, 
+		between or after the tolerance values.</span>
+</p>
+
+		
+		
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><thead align="left"><tr><th class="cellrowborder" colspan="2" valign="top" id="d353472e503">Separators</th>
+</tr>
+<tr><th class="cellrowborder" valign="top" width="NaN" id="d353472e506">Symbol #</th>
+<th class="cellrowborder" valign="top" width="NaN" id="d353472e508">Character</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					00
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>(none)</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					01
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>/</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					02
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>:</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					03
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>(</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					04
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>)</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					05
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>"</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					06
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>,</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					07
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>&lt;</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					08
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>&gt;</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					09
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>X</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					10
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>*</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					11
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>.</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					12
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>;</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					13
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>+</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					14
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>[</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					15
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>]</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					16
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>-</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					17
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>_</p>
+					</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e506 ">
+					18
+					</td>
+<td class="cellrowborder" valign="top" width="NaN" headers="d353472e503 d353472e508 ">
+					<p>(space)</p>
+					</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		
+	
+
+
+
+
+
+</div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

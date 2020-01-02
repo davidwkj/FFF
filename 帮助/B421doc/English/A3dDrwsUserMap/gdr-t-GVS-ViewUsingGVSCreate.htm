@@ -1,0 +1,82 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating a View using Generative View Styles"/>
+<meta name="abstract" content="Generative view styles are defined by an administrator and specify the appearance and behavior of a generated view."/>
+<meta name="description" content="Generative view styles are defined by an administrator and specify the appearance and behavior of a generated view."/>
+<meta name="DC.Relation" scheme="URI" content="standards-t-ad-StandardsAdminister.htm"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-GVS.htm#gdr-c-GVS"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-GVS-ViewUsingGVSCreate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating a View using Generative View Styles</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-GVS-ViewUsingGVSCreate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-views::using generative view styles"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-creating::views using generative view styles"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-generative view styles::creating views"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Creating a View using Generative View Styles
+         
+         </h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>Generative view styles are defined by an 
+         administrator and specify the appearance and behavior of a generated 
+         view. </span>
+This task shows you how to create a view 
+         using generative view styles. You can use generative view styles to create any type of view.</p>
+
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span><ul><li>Open a 3D part <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span>.</li>
+<li>Define a new <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>.</li>
+</ul>
+       </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="standards-t-ad-StandardsAdminister.htm" title="You can customize standards and generative view styles and set their locations. The procedure is the same for standards or Generative View Styles (GVS). When applicable, differences are notified.">Working with Standards and Generative View Styles</a></td></tr><tr><td><a href="gdr-c-GVS.htm#gdr-c-GVS" title="Generative view styles are defined by an administrator and specify the appearance and behavior of a generated view.">About Generative View Styles</a></td></tr></table></td></tr></table>
+
+<div><div class="p"><!--xxx--></div>
+<ol><li class="stepexpand"><p>From <span>
+				<span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/>
+					</span> &gt; <span class="uicontrol">Preferences </span> &gt; <span class="uicontrol">All Preferences </span> &gt; <span class="uicontrol">3D Modeling </span> &gt; <span class="uicontrol">Mechanical Systems</span></span>
+			</span><span class="menucascade"><span class="uicontrol"> &gt; Drafting</span> &gt; <span class="uicontrol">Administration</span></span> section,  clear the <span class="uicontrol">Disable generative view 
+       style usage</span> check box. <p> This activates the generative view style 
+       functionality.</p></p></li>
+<li class="stepexpand"><p>To create a reference view like the front view: <ol type="a"><li class="substepexpand">From the <span class="wintitle">View Layout</span> section of the <span>action bar</span>, click <span class="uicontrol">Front View</span>
+		<img src="../Icons22/I_D3M_DrwFrontView.png"/>. </li>
+<li class="substepexpand">In the <span class="wintitle">Creation Options</span> 
+       panel, select one of the generative view styles available from 
+       the list. For example, select <span class="uicontrol">DefaultGenerativeStyle</span>. The 
+       parameters defined in this file will be used when creating the view. <p> <div class="fignone"><span class="figcap">Panel for reference views</span><br/><img src="../GdrUserImages/tbgvs_untitledNLS.png"/><br/></div>
+</p></li>
+<li class="substepexpand">In the <span>3D area</span>, select a plane of the 3D part or a 
+       plane surface, to define the reference plane.</li>
+<li class="substepexpand">Click anywhere on  the sheet to generate the view.<p> 		The view is created using the selected generative view 
+       style. This result depends on the parameters 
+       defined in the generative view style you selected.
+		
+			
+				
+				</p></li>
+</ol>
+</p></li>
+<li class="stepexpand"><p>To create a derived view from a reference view:<ol type="a"><li class="substepexpand">From the <span>action bar</span>, click a command that creates a derived view (projection, section view, and others) from the existing reference views. </li>
+<li class="substepexpand">In the <span class="wintitle">Creation Options</span> 
+       panel, select one of the generative view styles available from 
+       the list. For example, select <span class="uicontrol">DefaultGenerativeStyle</span>. The 
+       parameters defined in this file will be used when creating the view. <p> <div class="fignone"><span class="figcap">Panel for derived views</span><br/><img src="../GdrUserImages/tbgvs_derivedviewsNLS.png"/><br/></div>
+</p></li>
+<li class="substepexpand">Under the <span class="uicontrol">Propagate Graphic Properties</span> and <span class="uicontrol">Propagate Operator Specifications</span> list, click the properties or specifications of the reference view to be propagated to the derived view.<p>Only those properties and specifications are available for selection which are applied to the reference view.</p></li>
+<li class="substepexpand">Click anywhere on the sheet to generate the view.<p> 		The view is created using the selected generative view 
+       style. This result depends on the parameters 
+       defined in the generative view style you selected.
+		
+			
+				
+				</p></li>
+</ol>
+</p></li>
+</ol>
+</div>
+<div/>
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright &#169; 1999-2006, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<ITEM name="Heavy Industry Fluidic Fabrication Use Cases Overview" href="CAAPofMfgGeneralities.htm" icon="CAAIcons/images/I_Overview.gif"/>
+	<ITEM name="Navigating Pipe Manufacturing Features" href="CAAPofUcPipeNav.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"/>
+	<ITEM name="Navigating HVAC Manufacturing Features" href="CAAPofUcHVACNav.htm" topictype="Uc" icon="CAAIcons/images/I_UseCase.gif"/>
+</Root>

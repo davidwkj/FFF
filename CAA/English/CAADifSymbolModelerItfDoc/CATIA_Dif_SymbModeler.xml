@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright &#169; 2015-2018, Dassault Syst&#232;mes. All rights reserved. -->
+<Root xml:lang="en">
+	<DITEM	name="Symbol Modeler"
+			product="@name" appname="@name"
+			href="CAADifSymbolModelerItfDoc/CAADifSymbTcToc.htm"
+			topictype="all"
+			icon="CAAIcons/images/homelogoSymb.png"
+			dir="CAADifSymbolModelerItfDoc"
+			childtoc="CAADifSymbolModelerItfDoc/CATIA_Dif_SymbModelerToc.xml">
+		<PITEM name="CATDifSymbolModelerUseItf" type="framework" />
+	</DITEM>
+</Root>

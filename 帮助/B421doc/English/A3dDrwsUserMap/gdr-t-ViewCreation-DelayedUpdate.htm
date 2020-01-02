@@ -1,0 +1,171 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Creating Quick Generative Views"/>
+<meta name="abstract" content="You can quickly create and modify views of large assemblies or large data. This prevents the automatic update, thus enabling you to complete the definition of the drawing or views. Later, as per your choice, you can explicitly perform the update (even in batch mode)."/>
+<meta name="description" content="You can quickly create and modify views of large assemblies or large data. This prevents the automatic update, thus enabling you to complete the definition of the drawing or views. Later, as per your choice, you can explicitly perform the update (even in batch mode)."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-m-Clipping-sb.htm#gdr-m-Clipping-sb"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-m-BreakViews-sb.htm#gdr-m-BreakViews-sb"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewCreation-DelayedUpdate.htm#gdr-c-ViewCreation-DelayedUpdate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewCreation-DelayedUpdate"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Creating Quick Generative Views</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewCreation-DelayedUpdate">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Creating Views::simplified views"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-Modify simplified views"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Creating Quick Generative Views</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can quickly create and modify views of large assemblies or large data.  This prevents the automatic update, thus enabling you to complete the definition of the drawing or views. Later, as per your choice, you can explicitly perform the update (even in batch mode). </span>
+
+<p>When creating views, a simplified result is displayed till the views are updated.</p></p>
+<p>This task shows you how to:
+					</p><ul><li><a href="#t-CreateViews" id="toc_rg" title="You can quickly create a front view, isometric view, projection view, auxiliary view, and views using wizard.">Create Views</a></li><li><a href="#t-ModifyViews" id="toc_rg" title="You can modify the simplified views by creating clippings, breaks and so on.">Modify Simplified Views</a></li><li><a href="#t-IsolateViews" id="toc_rg" title="You can isolate a simplified view. However, the visualization of the view changes after isolation.">Isolate Views</a></li></ul>
+</p></td></tr><tr><td class="Intro2"><hr class="header"/><span class="run-in">Before you begin: </span>
+      <ul>
+        <li>
+          Open a 3D part <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representation</span> and generate a new <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> with an empty <span class="glossterm" id="sheet" onmouseout="hideTerm()" onmouseover="showTerm('sheet.xml')">sheet</span>. 
+      
+        </li>
+
+        <li>
+          Go to <span class="menucascade"><span class="uicontrol">Me <img src="../Icons22/IP_TopBarProfile.png"/></span> &gt; <span class="uicontrol">Preferences</span> &gt; <span class="uicontrol">Mechanical</span> &gt; <span class="uicontrol">Drafting</span> &gt; <span class="uicontrol">Generation</span></span> section and select the <span class="uicontrol">Disable automatic update when view is created</span> and <span class="uicontrol">Disable automatic updates when view is modified </span>check boxes in the <span class="uicontrol">Update</span> area.</li>
+
+      </ul>
+
+    </td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-m-Clipping-sb.htm#gdr-m-Clipping-sb" title="This section explains how to create and modify different types of clippings.">Creating and Modifying Clippings</a></td></tr><tr><td><a href="gdr-m-BreakViews-sb.htm#gdr-m-BreakViews-sb" title="This section explains how to create and modify different types of breaks.">Creating and Modifying Breaks</a></td></tr><tr><td><a href="gdr-c-ViewCreation-DelayedUpdate.htm#gdr-c-ViewCreation-DelayedUpdate" title="Creating up-to-date views of assemblies involving large amount of data takes a long time. To avoid this, you can quickly create views and later update them explicitly and improve the productivity.">About Creating Quick Generative Views</a></td></tr></table></td></tr></table>
+
+  
+
+  
+
+  <div>
+    <div class="p"><!--xxx--></div>
+
+  </div>
+
+
+  <div/>
+
+  <div class="nested1" id="t-CreateViews">
+    <h2 class="topictitle2">Create Views</h2>
+
+  
+    <div><p><span>
+    You can quickly create a front view, isometric view, projection view, auxiliary view, and  views using wizard. </span>
+<p>For this scenario, you will create a <span class="glossterm" id="front-view" onmouseout="hideTerm()" onmouseover="showTerm('front-view.xml')">front view</span>. </p></p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          From the <span class="wintitle">View Layout </span>section of the 
+            <span>action bar</span>, click <span class="uicontrol">Front View</span> <img src="../Icons22/I_D3M_DrwFrontView.png"/>.
+          
+          <p> For more information, see <a href="gdr-t-ViewCreation-FrontView.htm#gdr-t-ViewCreation-FrontView" title="You can create a front view of the 3D part using a reference plane.">Creating a Front View</a>.
+          
+          </p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Select a reference plane on the <span>3D area</span> geometry.
+          
+          
+          <p> You can visualize a quick preview.<br/><img src="../GdrUserImages/createview_preview01.png"/><br/></p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Click anywhere on the sheet to generate the view.
+          
+          
+          <p> The view is created quickly and a simplified result is generated, seen as a pixel image. This result and the preview are based on what is visualized in <span>3D area</span>. If <span>3D area</span> data is not opened, default visualization is taken into account.<br/><img src="../GdrUserImages/createview_simplifiedresult01.png"/><br/>
+          <p>Note:
+		The created view  is seen as not up-to-date  and the <span class="uicontrol">Update</span> icon <img src="../Icons22/I_D3M_UpdateSheet.png"/> is activated.  </p>
+<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>With this simplified result, it is not possible to:<ul><li>Create dimensions, annotations, and 2D <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">objects</span> requiring the selection of generated elements.</li>
+<li>Perform the following operations: <ul><li>Section </li>
+<li><span class="glossterm" id="breakout" onmouseout="hideTerm()" onmouseover="showTerm('breakout.xml')">Breakout</span> </li>
+<li>3D clipping box </li>
+</ul>
+</li>
+<li> Take into account  view properties such as: <ul><li>Overload properties</li>
+<li>Axis, center lines, threads, hidden lines, fillet, 3D color and so on.</li>
+</ul>
+</li>
+</ul>
+<p><p>Note:
+		Once you perform the update, these operations or properties will be taken into account and the view will be up-to-date.</p>
+</p></td></tr></table>
+</p>
+        </p></li>
+
+        
+        
+        
+      </ol>
+
+      
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="t-ModifyViews">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Modify Simplified Views</h2>
+
+  
+    <div><p><span>
+    You can modify the simplified views by creating clippings,  breaks and so on.</span>
+<p>For this scenario, you will create a clipping view. </p></p>
+
+      <ol>
+        <li class="stepexpand"><p>
+          
+            Activate the front view created in the earlier task.
+          
+          
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Click 
+          <span class="uicontrol">Clipping View</span> <img src="../Icons22/I_D3M_ClippingView.png"/>.
+          <p> 
+            <p>Note:
+		To create a clipping view by creating a profile, click <span class="uicontrol">Clipping View Profile</span> <img src="../IconsNormal/I_DrwClippingProfile.png"/>. For more information about how to create a clipping view, see <a href="gdr-t-ViewCreation-ClippingViewClippingViewProfile.htm#gdr-t-ViewCreation-ClippingViewClippingViewProfile" title="This task shows you how to create from the 3D a clipping view using a circle as callout, or a clipping view profile using a sketched profile as callout. The procedure varies slightly depending on the method you choose.">Creating a Clipping View/Clipping View Profile</a>.</p>
+</p>
+        </p></li>
+<li class="stepexpand"><p>Select a point or click in the  <span>work area</span> to define the circle center.</p></li>
+<li class="stepexpand"><p>Move the pointer to define the circle radius.  </p></li>
+
+      <li class="stepexpand"><p>Click to end the profile creation. <p> The clipping view is created. A simplified result is displayed taking into account the clipping operation. <br/><img src="../GdrUserImages/createview_clippingview.png"/><br/><p><p>Note:
+		The simplified results of clipping view and a quick clipping view show no difference. </p>
+</p>
+</p></p></li>
+</ol>
+
+      <p class="result">
+        
+      </p>
+    </div>
+
+  </div>
+
+
+  
+<div class="nested1" id="t-IsolateViews"><p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Isolate Views</h2>
+
+<div><p><span>You can isolate a simplified view. However, the visualization of the view changes after isolation.</span>
+</p>
+<div class="p"><ul><li>Right-click the view and select <span class="uicontrol">XXX object &gt; Isolate</span>.<p> The view is no more displayed in gray and becomes up-to-date.<br/><img src="../GdrUserImages/createview_isolated.png"/><br/></p></li></ul></div>
+<p class="result"/></div>
+</div>
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

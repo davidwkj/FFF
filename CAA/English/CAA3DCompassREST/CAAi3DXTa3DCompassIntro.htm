@@ -1,0 +1,150 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>3DCompass Role and Openness</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>3DCompass Role and Openness</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>3DCompass allows a person granted as platform administrator to create and manage <b>3D</b>EXPERIENCE applications. This article is an overview of its capabilities, and what sort of openness it proposes</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Role"></a>Role</h2>
+<p>3DCompass is the service in charge of managing the <b>applications</b> available from the Compass of a <b>3D</b>EXPERIENCE platform. Some keys information about such an application:</p>
+<ul>
+<li>It can be a native app ( require a local installation of the application), a web app ( open a new tab in the browser), or dashboard app ( launched in a dashboard) [<a href="#References">1</a>].</li>
+<li>It must be associated with a Compass quadrant, North (Social and Collaborative apps), East (Information Intelligence apps), South (Content and Simulation apps) or West (3D Modeling apps). Only the apps of the selected quadrant are available to be launched.</li>
+<li>It can be (or not) associated with a  role to sort them. Only the apps of the selected quadrant, and the selected roles, are available to be launched. An application associated with no role is visible when no role is selected.</li>
+<li>It can be available for all members granted to the platform instance, or for some of them.</li>
+</ul>
+<p>The reader will find information about the Compass  in the User Assistance documentation. The node is "3DEXPERIENCE Basics | Compass".</p>
+<p>In the Compass there are two kinds of applications: the DS ones, and the <b>third party apps</b> also, named <b>Additional App</b>. When the formers come with DS products, the 
+latters are those of the customers. Only people granted as platform administrator can create and manage third party apps.</p>
+<p>The reader will find information about third party apps  in the User Assistance documentation.
+ The node is "Installation and Administration | 3DEXPERIENCE Platform | 3DEXPERIENCE Platform - Administration | Platform Management".</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Platform"></a>Platform Isolation</h2>
+<p>The 3DCompass service is <b>not</b> based on the multi-tenancy [<a href="#References">2</a>] principle. The 3DCompass service is the <b>same</b>
+ whatever the platform instances of one <b>3D</b>EXPERIENCE platform. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Secured"></a>Secured Access</h2>
+<p>Like expressed by this whitepaper on our www.3ds.com web site [<a href="#References">3</a>], the security is on the heart of the <b>3D</b>EXPERIENCE platform. When using 3DCompass service you have to be familiar with 
+some points of security:</p>
+<ul>
+<li><b>Authentication</b>
+<p>3DCompass, like all the services of the <b>3D</b>EXPERIENCE platform, requires an authentication. The protocol is based on the CAS protocol, with a centralized management
+ through the 3DPassport  [<a href="#References">4</a>]. So, before using 3DCompass you must perform a login.</p>
+</li>
+
+<li><b>Cross-domain</b>
+<p>All the browsers recommended by the <b>3D</b>EXPERIENCE platform  prevent cross-domain access. The <b>3D</b>EXPERIENCE servers solve this 
+security point by implementing CORS. </p>
+<p>CORS (Cross-Origin Resource Sharing) enables secured, and controlled, cross-domain communications from the browser. For example it enables <i>direct access</i> to 3DCompass web services inside a widget from 3DDashboard. Let's see the
+referenced article  [<a href="#References">5</a>] dealing with HTTP requests from a widget application.</p>  
+</li>
+<li><a name="SC"></a><b>Security Context</b>
+<p>Security context is a 3DSpace concept, so you do not have to take it into account when invoking 3DCompass services. But if the HTTP request contains
+a security context as header field, its value must be valid for the connected person.</p>
+</li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="REST"></a>REST Web Services</h2>
+<p>3DCompass only exposes web services to manage <b>third party apps</b>:</p>
+<ul>
+ <li><a href="../CAA3DCompassRESTRef/CAAi3DXCompassWSQrAddTPA.htm">Creation</a>,</li>
+ <li><a href="../CAA3DCompassRESTRef/CAAi3DXCompassWSQrGetTPA.htm">Retrieving one</a> or <a href="../CAA3DCompassRESTRef/CAAi3DXCompassWSQrTPAs.htm">a collection</a></li>
+ <li><a href="../CAA3DCompassRESTRef/CAAi3DXCompassWSQrEditTPA.htm">Edition</a>,</li>
+ <li><a href="../CAA3DCompassRESTRef/CAAi3DXCompassWSQrDeleteTPA.htm">Deletion</a>,</li>
+</ul>  
+<p>Before using these web services, you are invited to read "About 3DCompass Web Services" [<a href="#References">6</a>]. The article is gathering the 
+common rules for  3DCompass web services.</p> 
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="6WTags"></a>6WTags</h2>
+<p>There is no 6WTags associated with the 3DCompass resources.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+<tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSRoot/CAAWebAppsJSTaOverview.htm')">3DEXPERIENCE Applications</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="#" onclick="javascript:CAAlinkUrl('http://en.wikipedia.org/wiki/Multitenancy');return false;">Multi-tenancy</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkUrl('http://www.3ds.com/products-services/3dexperience/resource-center/whitepapers/cloud-security/');return false;">Cloud Security Whitepaper</a></td>
+	</tr>
+     <tr>
+		<td>[4]</td>
+		<td><a href="../CAAiamPassport/CAAiamPassportCASProtocol.htm">3DPassport and CAS Protocol</a></td>
+	</tr>
+	 
+ <tr>
+		<td>[5]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm')">About Widget and HTTP Request</a></td>
+	</tr>
+	
+	<tr>
+		<td>[6]</td>
+		<td><a href="../CAA3DCompassREST/CAAi3DXTa3DCompassWService.htm">About 3DCompass Web Services</a></td>
+	</tr>
+	
+<tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [May 2016]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

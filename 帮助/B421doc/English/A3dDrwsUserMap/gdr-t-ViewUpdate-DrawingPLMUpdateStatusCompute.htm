@@ -1,0 +1,196 @@
+
+<!DOCTYPE html
+  PUBLIC "html5" "about:legacy-compat">
+<html xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2012"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2012"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Computing the Drawing PLM Update Status"/>
+<meta name="abstract" content="You can compute the drawing PLM update status that consists in querying the PLM database to know whether a drawing is up-to-date or not, as well as the time and date at which the status was computed."/>
+<meta name="description" content="You can compute the drawing PLM update status that consists in querying the PLM database to know whether a drawing is up-to-date or not, as well as the time and date at which the status was computed."/>
+<meta name="DC.Relation" scheme="URI" content="gdr-c-ViewUpdate.htm#gdr-c-ViewUpdate"/>
+<meta name="DC.Relation" scheme="URI" content="gdr-t-DrawingsUsingBatchMonitorUpdate.htm#gdr-t-DrawingsUsingBatchMonitorUpdate"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="gdr-t-ViewUpdate-DrawingPLMUpdateStatusCompute"/>
+<meta name="DC.Language" content="en"/>
+<link rel="stylesheet" type="text/css" href="../DSDocXML.css"/>
+<title xmlns:mml="http://www.w3.org/1998/Math/MathML">Computing the Drawing PLM Update Status</title>
+<script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocHighlight.js">
+  	/* */
+  	</script></head>
+<body onLoad="highlightSearchTerms();" id="gdr-t-ViewUpdate-DrawingPLMUpdateStatusCompute">
+<a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="hj-top"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-drawing PLM update status:: computing"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-PLM update status"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-update status"> </a><a xmlns:mml="http://www.w3.org/1998/Math/MathML" name="ix-drawings:: computing PLM update status"> </a><table xmlns:mml="http://www.w3.org/1998/Math/MathML" class="table1" id="table11"><tr><td><table class="DocHeader"><tr><td class="DocHeader1" colspan="2"><h1>Computing the Drawing PLM Update Status</h1></td></tr><tr><td class="DocHeader4" colspan="2"/></tr><tr><td class="DocHeader3"><table class="DocHeaderIntro" id="table12"><tr><td class="Intro1"><p class="header"><p><span>You can compute the drawing PLM update status that consists in querying the PLM database to know whether a drawing is up-to-date or not, as well as the time and date at which the status was computed. </span>
+<p><span class="run-in">Important:
+		</span>The PLM update status can only be considered valid at the time of computation.</p>
+<p>This task shows you how to:</p></p>
+<ul><li><a href="#gdr-t-ViewUpdate-DrawingPLMUpdateStatusCompute-UsingDwgUpdatePLMBatch" id="toc_rg" title="You can compute the drawing PLM update status using the drawing update PLM batch.">Compute the Drawing PLM Update Status Using the Drawing Update PLM Batch</a></li><li><a href="#gdr-t-ViewUpdate-DrawingPLMUpdateStatusCompute-UsingSearchRsltsWndw" id="toc_rg" title="You can compute the drawing PLM update status using the search results window.">Compute the Drawing PLM Update Status Using the Search Results Reader</a></li></ul>
+</p></td></tr></table></td><td class="DocHeader2"><table class="DocTopics" id="table13"><tr><td class="TopicsTitle">Related Topics</td></tr><tr><td><a href="gdr-c-ViewUpdate.htm#gdr-c-ViewUpdate" title="This topic provides information regarding update and PLM update in Drawings.">About Update and PLM Update</a></td></tr><tr><td><a href="gdr-t-DrawingsUsingBatchMonitorUpdate.htm#gdr-t-DrawingsUsingBatchMonitorUpdate" title="You can update a list of drawing representations and also bills of materials using the batch monitor. The batch monitor lets you create as many batch configurations as required, and follow the progress of an update. Updating drawings via the batch monitor will be particularly helpful in the following cases:">Updating Drawings Including the Bills of Materials Using the Batch Monitor</a></td></tr></table></td></tr></table>
+
+  
+
+  
+  
+
+
+  <div/>
+
+  <div class="nested1" id="gdr-t-ViewUpdate-DrawingPLMUpdateStatusCompute-UsingDwgUpdatePLMBatch">
+    <h2 class="topictitle2">Compute the Drawing PLM Update Status Using the Drawing Update PLM Batch</h2>
+
+    <div><p>You can compute the drawing PLM update status using the drawing update PLM batch.</p>
+
+      <div class="p"><!--xxx--><span class="run-in">Before you begin: </span><p>From the <span class="wintitle">Tools</span> section of the <span>action bar</span>, click <span class="uicontrol">Utility</span> and log on. The <span class="wintitle">Batch Monitor</span> appears.
+    </p></div>
+<ol>
+        <li class="stepexpand"><p>
+          From the list of available batches in the batch monitor, double-click <span class="uicontrol">Drawing
+Batch</span>.
+          <p> 
+            The <span class="wintitle">Drawing Batch</span> dialog box appears.
+          </p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            In the <span class="uicontrol">Selected Operation</span> area, select the
+impacted views and the action to launch from the appropriate drop-down list.
+          <p><p>For this scenario, select <span class="uicontrol">Views from whole drawing</span> and <span class="uicontrol">Update status</span>.<table class="Remark" id="table132"><tr><td class="Remark"><span class="run-in">Important:
+				</span>These parameters will be applied to every <span class="glossterm" id="drawing" onmouseout="hideTerm()" onmouseover="showTerm('drawing.xml')">drawing</span> selected in steps
+3 and 4.
+However, you can configure these parameters afterwards for one or
+several drawings. For this, select (or multi-select) a drawing in
+the list, then change its parameters in the <span class="uicontrol">Selected
+Operation</span> area.
+</td></tr></table>
+</p>
+
+
+            
+          </p>
+          
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Click <img src="../IconsNormal/I_TeamPDMFindDocument.png"/> to select the drawing <span class="glossterm" id="representation" onmouseout="hideTerm()" onmouseover="showTerm('representation.xml')">representations</span> you want to
+update or isolate by batch. 
+
+          
+          
+          <p> 
+            The
+<span class="wintitle">[Name_of_the_provider_you_are_connected_to] Object
+Management</span> dialog box appears. For more information about
+this dialog box, see
+<a href="../ComUserMap/com-t-Batch-ObjectSearch.htm#com-t-Batch-ObjectSearch" title="You can use a dedicated interface to search for objects stored in the environment you are connected to.">Searching for Objects</a>.</p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Define your search criteria, click <span class="uicontrol">Apply</span>, then
+<span class="uicontrol">OK </span>.
+
+
+          
+          
+          <p> 
+            The selected files are now listed in the <span class="uicontrol">Object
+Selection</span> table, along with the impacted views and action to
+execute.
+          </p>
+        </p></li>
+
+        <li class="stepexpand"><p>
+          <span class="run-in">Optional: </span>
+            Repeat steps 3 and 4 to include files from another
+location.
+          
+          <p> <p>Note:
+		You can remove files from the list of the files to update. To do
+so, select the unwanted file and click <img src="../IconsNormal/I_Erase.png"/>.
+</p>
+
+            
+          </p>
+        </p></li>
+
+        <li class="stepexpand"><p><span class="run-in">Optional: </span>
+          
+            In the <span class="uicontrol">Report directory</span>, modify the
+path of the directory in which the reports will be stored.
+          
+        </p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Modify the name that will be used for the report in the <span class="uicontrol">Report name</span> box. By default, the global
+report dealing with all the documents that have been processed is
+named GlobalResults.htm.
+</p></li>
+<li class="stepexpand"><p>For this scenario, select the <span class="uicontrol">Run local</span>.<p> Your drawing PLM  update status parameters are now defined.</p></p></li>
+<li class="stepexpand"><p><span class="run-in">Optional: </span>Click <span class="uicontrol">Save</span> if you want to save these parameters to re-use them later on.<ol type="a"><li>Browse to the directory in which you want to save the batch
+parameters file.</li>
+<li>Specify a file name in the appropriate box.</li>
+<li>Click <span class="uicontrol">Save</span>.</li>
+</ol>
+<p> Your parameters are saved in an xml file.</p></p></li>
+
+      <li class="stepexpand"><p> Click <span class="uicontrol">Run</span> to run the batch
+immediately.<p> The batch execution starts.
+<p>Note:
+		You could also click <span class="uicontrol">Cancel</span> to close the <span class="wintitle">Update
+Batch</span> dialog box and run the batch later on.</p>
+ </p></p></li>
+<li class="stepexpand"><p>Click the <span class="uicontrol">Processes</span> tab during or after the batch execution for more information
+on the process such as the batch name, the
+batch identification number, name on the host computer (if you run
+the batch on a remote computer), the status (in progress or ended)
+as well as the start and end times.</p></li>
+<li class="stepexpand"><p>To display the batch report and get a PLM update status for each updated drawing or view, double-click the
+batch in this list.<p> The batch report is displayed in your browser. You can then display the  
+      PLM update status for each listed <span class="glossterm" id="object" onmouseout="hideTerm()" onmouseover="showTerm('object.xml')">object</span>.</p></p></li>
+<li class="stepexpand"><p>When the batch execution is over, you can close the <span class="wintitle">Batch Monitor</span>.
+</p></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+
+  <div class="nested1" id="gdr-t-ViewUpdate-DrawingPLMUpdateStatusCompute-UsingSearchRsltsWndw">
+    <p><map name="FPMap1"><area href="#hj-top" title="Back to Top" shape="rect" coords="416, 0, 435, 10"/></map><img border="0" src="../IconsReference/butix_top_wline.png" width="436" height="11" usemap="#FPMap1"/></p><h2 class="topictitle2">Compute the Drawing PLM Update Status Using the Search Results Reader</h2>
+
+    <div><p>You can compute the drawing PLM update status using the search results window.</p>
+
+      <div class="p"><!--xxx--><span class="run-in">Before you begin: </span>From the <span>top bar</span>, in the <span class="uicontrol">Search Criteria</span> box, enter a search string and click <span class="uicontrol">Search</span> <img src="../IconsNormal/I_Search.png"/>.<p> The list of all objects corresponding to your search criteria appears.</p> </div>
+<ol>
+        <li class="stepexpand"><p>
+          In the <span><span class="wintitle">Search Results</span> panel</span>, 
+            right-click the drawing representation
+          whose PLM update status you want to compute.
+          
+        </p></li>
+
+        <li class="stepexpand"><p>
+          
+            Click <span class="uicontrol">Update status</span>.
+          <p> 
+            The PLM update status computation starts. 
+          </p>
+        </p></li>
+
+      </ol>
+
+      <p class="result">
+        When the 
+      computation is over, the PLM update status of the selected representation is displayed in an information message.</p>
+    </div>
+
+  </div>
+
+
+  
+
+</td></tr></table><script xmlns:mml="http://www.w3.org/1998/Math/MathML" type="text/javascript" src="../DSDocStats.js">/* */</script></body>
+</html>

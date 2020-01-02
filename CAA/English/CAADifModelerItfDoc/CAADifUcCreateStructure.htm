@@ -1,0 +1,442 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link href="../CAADocStyleSheets/caav5.css" rel="stylesheet" type="text/css"/>
+<script src="../CAADocJavaScript/DSDocTocToc.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/DSDocHighlight.js" type="text/javascript">/* */</script>
+<script src="../CAADocJavaScript/submit.js" type="text/javascript">/* */</script>
+<title>Creating a New 2D Presentation Structure and Attaching it to an Applicative Reference</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating a New 2D Presentation Structure and Attaching it to an 
+		Applicative Reference</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAADifStructureCreation use case. This use 
+		case explains how to create a new 2D presentation and attach it to an 
+		applicative reference.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAADifStructureCreation Use Case</a>
+				<ul>
+					<li><a href="#What">What Does CAADifStructureCreation Do</a></li>
+					<li><a href="#How">How to Launch CAADifStructureCreation</a></li>
+					<li><a href="#Where">Where to Find the CAADifStructureCreation Code</a></li>
+				</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case is intended to retrieve an applicative reference and attach generic 2D presentation to it. This use case create 
+and involved the following objects:</p>
+<ul>
+	<li>Layout</li>
+	<li>Sheet</li>
+	<li>Sheet instances.</li>
+</ul>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAADifStructureCreation Use Case</h2>
+<p>CAADifStructureCreation is a use case of the CAADifModeler.edu framework that 
+illustrates CATDibModelerUseItf and CATDifModelerUseItf frameworks capabilities.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAADifStructureCreation Do</h3>
+<p>The use case will open an applicative logical reference and create 2D 
+Presentation structure under it.</p>
+<ul>
+	<li>It creates a layout with 2 sheets under it and attaches it to the 
+	applicative reference.</li>
+	<li>It creates a standalone sheet and attaches it to the applicative 
+	reference.<br />
+	</li>
+</ul>
+<table>
+	<caption style="width: 482px"><a name="Fig1"></a>Fig. 1 The Applicative Reference before 
+	Running CAADifStructureCreation.</caption>
+	<tr>
+		<td>
+		<img alt="The Applicative Reference before 
+	Running CAADifStructureCreation" height="85" src="images/CAADifModeler02.jpg" width="450"/></td>
+	</tr>
+</table>
+<table>
+	<caption style="width: 479px"><a name="Fig2"></a>Fig. 2 represents the previous Applicative Reference after CAADifStructureCreation
+processing.</caption>
+	<tr>
+		<td>
+		<img alt="The Applicative Reference before 
+	Running CAADifStructureCreation" height="191" src="images/CAADifModeler03.jpg" width="385"/></td>
+	</tr>
+</table>
+<p>A generic 2D presentation structure has been created under the applicative reference.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAADifStructureCreation</h3>
+<p>To launch CAADifStructureCreation, you will need to set up the build time environment, 
+then compile CAADifStructureCreation along with its prerequisites, set up the run time 
+environment, and then execute the use case [<a href="#References">1</a>].</p>
+<pre>mkrun -c &quot;CAADifStructureCreation Repository Server LoginTicket PLMExternalIDValue Version&quot;</pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+	<colgroup align="center" span="1">
+	</colgroup>
+	<tr>
+		<th>Position</th>
+		<th>Description</th>
+		<th>Example</th>
+		<th>Category</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>PLM repository</td>
+		<td>PLM1</td>
+		<td rowspan="3">Connection</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>PLM server</td>
+		<td>The name and port of the server as <em>name</em>:<em>port_number</em></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>LoginTicket</td>
+		<td>The login ticket</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>PLMExternalIDValue</td>
+		<td>log-37946443-00000003</td>
+		<td rowspan="2">Component Attribute</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>Version</td>
+		<td>A</td>
+	</tr>
+</table>
+<p><strong>Import PLM Data:</strong> The use case may require input PLM Data: PLM 
+Reference or PLM Representation Reference. This data is stored in 3D XML files, 
+whose extension is &quot;3dxml&quot;. You must import these PLM Data in the database 
+using the Add / Import / 3D XML command prior to launching the use case.<br />
+The &quot;3dxml&quot; file is supplied in the the CAADifModeler.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAADifModeler.edu\InputData\CAADifStructureCreation.3dxml</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<p>This &quot;3dxml&quot; contains an applicative reference:</p>
+<ul>
+	<li><strong>PLMExternalIDValue</strong> : log-37946443-00000003</li>
+	<li><strong>Version</strong> : A </li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<!--  article data-xplore-fw='CAADifModeler.edu' data-xplore-mod='CAADifStructureCreation.m' -->
+<h3><a name="Where"></a>Where to Find the CAADifStructureCreation Code</h3>
+<p>The CAADifStructureCreation use case is made of a single source file named 
+CAADifStructureCreation.cpp 
+located in the CAADifStructureCreation.m module of the CAADifModeler.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAADifModeler.edu\CAADifStructureCreation.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are nine steps in CAADifStructureCreation:</p>
+<ol>
+	<li><a href="#Step1">Creating and Initializing the PLM Environment</a></li>
+	<li><a href="#Step2">Querying the Application Reference in Database and Loading 
+		It</a></li>
+	<li><a href="#Step3">Creating a Dif Layout</a></li>
+	<li><a href="#Step4">Attaching the Layout to the Application Reference</a></li>
+    <li><a href="#Step5">Creating Two Sheets under the Layout</a></li>
+	<li><a href="#Step6">Scanning the Application Reference</a></li>
+	<li><a href="#Step7">Creating a Standalone Sheet</a></li>
+    <li><a href="#Step8">Attaching the Sheet to the Application Reference</a></li>
+    <li><a href="#Step9">Saving the Newly Created Objects and Closing the PLM Session</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Creating and Initializing the PLM Environment</h3>
+<pre class="code">int main(int iargc, char *iargv[])
+{
+  HRESULT hr = E_FAIL;
+
+  cout &lt;&lt; &quot;CAADifStructureCreation started&quot; &lt;&lt; endl;
+  // 1. Creates a PLM session and connect to the input repository
+  // ====================================================
+
+  // Checks the input arguments
+  // =========================
+  if (6 != iargc) {
+    cout &lt;&lt; &quot;Usage: &quot; &lt;&lt; iargv[0] &lt;&lt; &quot; &lt;repository&gt; &lt;server&gt; &lt;login_ticket&gt; &lt;PLM External Id Product&gt; &lt;version&gt; &quot;&lt;&lt; endl;
+    return hr; 
+  }
+  const char* repository = iargv[1];
+  const char* server = iargv[2];
+  const char* login_ticket = iargv[3];
+  const char* comp_externalId = iargv[4];
+  const char* comp_version = iargv[5];
+
+  CATBoolean traceok = TRUE;
+  hr = ::CAAAdpCreateSession(repository,server,login_ticket,traceok);
+
+  if (SUCCEEDED(hr))
+  {
+    cout &lt;&lt; &quot;The Session has been opened&quot; &lt;&lt; endl;
+  } 
+  else
+  {
+    cout &lt;&lt; &quot;Failed to create session &amp; connect to input repository&quot; &lt;&lt; endl;
+    return hr;
+  }  
+...</pre>
+<p>This section represents the usual sequence for initializing a PLM environment.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Querying the Application Reference in Database and Loading It</h3>
+<pre class="code">...
+  // 2. Querying the Application Reference in Database and Loading It
+  cout &lt;&lt; &quot;PLM external ID &quot; &lt;&lt; comp_externalId &lt;&lt; endl;
+  cout &lt;&lt; &quot;comp_version &quot; &lt;&lt; comp_version &lt;&lt; endl;
+
+  // Entire model is loaded
+  CATBoolean ExpandAllMode = TRUE;
+  CATOmbLifeCycleRootsBag Bag;
+
+  // PLM data type, in this case the Applicative Reference is a Logical Reference :
+  CATUnicodeString PLMDataType = &quot;RFLVPMLogicalReference&quot;;
+
+  CATIDifPresentationAccess_var spApplicativeReference; 
+  {
+    CATIDifPresentationAccess *pApplicativeReference = NULL;
+    hr = ::CAAOpenPLMComponent(PLMDataType, comp_externalId, comp_version,
+    IID_CATIDifPresentationAccess, (void **)&amp;pApplicativeReference, Bag, ExpandAllMode);
+
+    // Manage life cycle by using smart pointer
+    if (NULL != pApplicativeReference)
+    {
+      spApplicativeReference = pApplicativeReference;
+      pApplicativeReference-&gt;Release(); pApplicativeReference = NULL;  
+    }
+
+    if (FAILED(hr) || NULL_var == spApplicativeReference)
+    {
+      cout &lt;&lt; &quot;Failure to open the Applicative Reference &quot; &lt;&lt; endl;
+    }
+  }
+
+  if (NULL_var != spApplicativeReference)
+  {
+  
+...</pre>
+<p>This section represents the usual sequence to query a PLM reference 
+in the database and open it.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Creating a Dif Layout</h3>
+<pre class="code">...
+    // 3. Create a layout.
+    // ====================================================
+    CATIDifLayout_var spLayout = CATDifFactoryServices::CreateLayout();
+    if (NULL_var != spLayout) 
+    {
+      cout &lt;&lt; &quot;Layout succefully created&quot; &lt;&lt; endl;
+    }
+    else
+    {
+      cout &lt;&lt; &quot;Unable to create the layout&quot; &lt;&lt; endl;
+    }
+...</pre>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Attaching the Layout to the Application Reference</h3>
+<pre class="code">...
+    // 4. Attaching the Layout to the Application Reference.
+    hr = spApplicativeReference-&gt;AttachDifPresentation(spLayout);
+    if (FAILED(hr)) 
+    {
+      cout &lt;&lt; &quot;Failure to attach the Layout to the Applicative Reference &quot; &lt;&lt; endl;  
+    }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Creating Two Sheets under the Layout</h3>
+<pre class="code">... 
+    // 5. Create 2 sheets under the layout.
+    // ====================================================
+    CATIDibSheetSet_var spSheetSet = spLayout;
+    if (NULL_var != spSheetSet) 
+    {
+      CATIDifSheet_var spSheet1 = CATDifFactoryServices::CreateSheet(spSheetSet, &quot;ISO&quot;);
+      if (NULL_var != spSheet1)
+      {
+        cout &lt;&lt; &quot;sheet succefully created&quot; &lt;&lt; endl;
+      }
+      else
+      {
+        cout &lt;&lt; &quot;Unable to create the sheet&quot; &lt;&lt; endl;
+        hr = E_FAIL;
+      }
+
+      CATIDifSheet_var spSheet2 = CATDifFactoryServices::CreateSheet(hSheetSet, &quot;ISO&quot;);
+      if (NULL_var != spSheet2)
+      {
+        cout &lt;&lt; &quot;sheet succefully created&quot; &lt;&lt; endl;
+      }
+      else
+      {
+        cout &lt;&lt; &quot;Unable to create the sheet&quot; &lt;&lt; endl;
+        hr = E_FAIL;
+      }
+    }
+    else
+    {
+      cout &lt;&lt; &quot;Cannot get layout as a sheet set&quot; &lt;&lt; endl;
+      hr = E_FAIL;
+    }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step6"></a>Scanning the Application Reference</h3>
+<pre class="code">...
+    // 6. Scanning the Application Reference.
+    CATListValCATBaseUnknown_var PresentationList;
+    hr = spApplicativeReference-&gt;ListDifPresentations(PresentationList, Bag);
+    if (FAILED(hr))
+    {
+      cout &lt;&lt; &quot;Failure to get the presentation list&quot; &lt;&lt; endl;
+    }
+
+    int size = PresentationList.Size();
+    // Iterate on the presentation List : (Array start at 1)
+    for (int i = 1; i &lt;= size; ++i)
+    {
+      CATBaseUnknown_var spPresentationObject = PresentationList[i];
+      if (NULL_var != spPresentationObject)
+        cout &lt;&lt; &quot;Presentation number : &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; spPresentationObject-&gt;GetImpl()-&gt;IsA();
+    }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step7"></a>Creating a Standalone Sheet</h3>
+<pre class="code">...
+    // 7. Creating a standalone Sheet.
+    // ====================================================
+    CATIDifSheet_var spSheetStandAlone = CATDifFactoryServices::CreateSheet(&quot;ISO&quot;);
+    if (NULL_var != spSheetStandAlone)
+      cout &lt;&lt; &quot;Sheet succefully created&quot; &lt;&lt; endl;
+    else
+      cout &lt;&lt; &quot;Unable to create the Sheet&quot; &lt;&lt; endl;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step8"></a>Attaching the Sheet to the Application Reference</h3>
+<pre class="code">...
+    // 8. Attaching the Sheet to the Application Reference
+    hr = spApplicativeReference-&gt;AttachDifPresentation(spSheetStandAlone);
+    if (FAILED(hr)) 
+    {
+      cout &lt;&lt; &quot;Failure to attach the Layout to the Applicative Reference &quot; &lt;&lt; endl;
+    }
+  }
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Saving the Newly Created Objects and Closing the PLM Session</h3>
+<pre class="code">...
+  // 9. Saving the newly created objects and Closing the PLM Session
+  CATAdpSaver saver;
+
+  // Save all modified components
+  if (FAILED(saver.Save()))
+  {
+    cout &lt;&lt; &quot;ERROR saving PLM Data&quot; &lt;&lt; endl;
+    hr = E_FAIL;
+  }
+  else
+    cout &lt;&lt; &quot;PLM Data saved&quot; &lt;&lt; endl;
+
+  //Bag Emptying Operation 
+  //==========================
+  if (SUCCEEDED(Bag.RemoveAll()))
+    cout &lt;&lt; &quot;Empties the Bag&quot; &lt;&lt; endl;
+  else
+  {
+    hr = E_FAIL;
+    cout &lt;&lt; &quot;Error During Empties the Bag&quot; &lt;&lt; endl;
+  }
+  // Close the PLM session
+  //=========================
+  hr = ::CAAAdpCloseSession();
+  if (FAILED(hr)) 
+  {
+    cout &lt;&lt; &quot;ERROR closing PLM session&quot; &lt;&lt; endl;
+  }
+  else
+    cout &lt;&lt; &quot;PLM session closed&quot; &lt;&lt; endl;
+  
+  cout &lt;&lt; &quot;CAADifStructureCreation ended&quot; &lt;&lt; endl;
+
+  return hr;
+}
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+    <!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+	<p>This use case is dedicated to create and manage the basic structure of a 
+	2D Presentation.</p>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Feb 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

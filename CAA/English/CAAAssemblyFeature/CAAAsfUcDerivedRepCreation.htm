@@ -1,0 +1,488 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<title>Creating Derived Representation</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating Derived Representation</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>This article discusses the CAADerivedRepCreation use case. This use case explains how to create a derived representation
+		from source representations in a specified target representation under the root and under a sub-assembly.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a> </li>
+			<li><a href="#UseCase">The CAADerivedRepCreation
+			Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAADerivedRepCreation
+				Do</a> </li>
+				<li><a href="#How">How to Launch CAADerivedRepCreation</a></li>
+				<li><a href="#Where">Where to Find the CAADerivedRepCreation
+				Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a> </li>
+			<li><a href="#InShort">In Short</a> </li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p> This use case is intended to show you how to create derived representation. 
+You will learn :</p>
+<ul>
+    <li>How to create a derived representation under the root product</li>
+    <li>How to add a new representation to the derived representation</li>
+    <li>How to create a derived representation in a target representation under a sub-assembly product</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAADerivedRepCreation Use Case</h2>
+<p>CAADerivedRepCreation is a use case of the CAAAssemblyFeature.edu framework that 
+illustrates CATAssemblyUseItf framework capabilities related to derived representation creation and its management.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAADerivedRepCreation Do</h3>
+<p>The goal of CAADerivedRepCreation use case is to prepare inputs and create a derived representation under 
+specified target shape.</p>
+<ul>
+    <li>Opening the PLM Product (Root).</li>
+    <li>Preparing target representation.</li>
+    <li>Preparing source representations.</li>    
+    <li>Creating a derived representation, in a target representation under the root.</li>        
+    <li>Creating a derived representation, in a target representation under the sub-assembly.</li>        
+    <li>Updating the assembly.</li>
+    <li>Saving the assembly and exiting.</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAADerivedRepCreation</h3>
+<p>To launch CAADerivedRepCreation, you will need to set up the build time environment, 
+then compile CAADerivedRepCreation.m along with its prerequisites, set up the run time 
+environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>Launch the use case as follows: </p>
+<pre class="code">mkrun -c <em>&quot;CAADerivedRepCreation Repository ServerName LoginTicket PLMType V_Name&quot;</em></pre>
+<p>where the description of the arguments is the following:</p>
+<table class="fill">
+	<colgroup align="center" span="1">
+	</colgroup>
+	<tr>
+		<th>Position</th>
+		<th>Description</th>
+		<th>Example</th>
+		<th>Category</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>repository</td>
+		<td><script type="text/javascript">insertRepository();</script></td>
+		<td rowspan="3">Connection</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>server</td>
+		<td>Server name in format protocol://serverName:portNumber/rootURI <br />e.g. http://ve4al14plp:10490/ematrix </td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>loginTicket</td>
+		<td>String representing a valid Login Ticket</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>PLMType</td>
+		<td>VPMReference</td>
+		<td>Component Type</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>V_Name</td>
+		<td>Title of the Root Product To Open e.g CAARoot</td>
+		<td>Component Attribute</td>
+	</tr>
+</table>
+<ul>
+	<li>The <strong>first three </strong>are related to the connection and described in the 
+	<cite>Connecting to V6 Server</cite> use case [<a href="#References">2</a>].
+	</li>
+	<li>PLMType defines the PLMType of Component to be opened.</li>
+	<li>V_name defines the <strong>value</strong> of the <strong>attribute 
+	name</strong>.</li>    
+</ul>
+<p><strong>Import PLM Data:</strong><br />
+The use case requires input PLM Data: PLM Reference. 
+This data is stored in 3D XML files, whose extension is &quot;3dxml&quot;. You must import 
+these PLM Data in the database using the Add / Import / 3D XML command prior 
+to launching the use case.<br />
+The &quot;3dxml&quot; file is supplied at location:</p>
+<p><code>InstallRootFolder\CAADoc\CAAAssemblyFeature.edu\InputData\TSTDataCAADerivedRepCreationUseCase.3dxml</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder where the API CD-ROM is installed. 
+This 3D XML file contains the root Product Reference with the following attributes:
+</p>
+<ul>
+    <li><code><strong>V_Name</strong></code>: Root_1</li>
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAAssemblyFeature.edu' data-xplore-mod='CAADerivedRepCreation.m'>
+<h3><a name="Where"></a>Where to Find the CAADerivedRepCreation Code</h3>
+<p>The CAADerivedRepCreation use case is made of a single code file named CAADerivedRepCreation.cpp
+located in the CAADerivedRepCreation.m module of the CAAAssemblyFeature.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAAssemblyFeature.edu\CAADerivedRepCreation.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the 
+folder where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are eleven main steps in CAADerivedRepCreation:</p>
+<ol>
+	<li><a href="#Step1">Parsing Input Arguments</a></li>
+	<li><a href="#Step2">Opening the PLM Root Product</a></li>
+    <li><a href="#Step3">Prepare Target Representation</a></li>
+	<li><a href="#Step4">Prepare Source Representations</a></li>    
+	<li><a href="#Step5">Creating Derived Representation under the Root Product</a></li>
+    <li><a href="#Step6">Adding More Representations to a Derived Representation</a></li>
+    <li><a href="#Step7">Creating Derived Representation under the Sub-assembly</a></li>	
+	<li><a href="#Step8">Updating the Assembly</a></li>
+	<li><a href="#Step9">Saving the Assembly and Exiting</a></li>
+</ol>
+<p>
+<img alt="Input Product" src="images/CAAPictureDerivedRepCreationBefore.jpg"/></p>
+<p>This picture shows the Product Structure used in the 
+use case.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step1"></a>Parsing Input Arguments</h3>
+<p><em>CAADerivedRepCreation</em> begins by checking that the command lines contains six 
+arguments. It then retrieves the environment, creates a session [<a href="#References">2</a>].</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step2"></a>Opening the PLM Product (Root)</h3>
+<p>Retrieve the PLM component based on specified attribute value.</p>
+<pre class="code">...
+  plmType         = argv[4];
+  rootProductName = argv[5];
+  // Retrieve the CATIType related with VPMReference
+  hr = CATCkePLMNavPublicServices::RetrieveKnowledgeType(plmType, hTypeModeler);
+  if((FAILED(hr) || (NULL_var == hTypeModeler))) {
+    retCode = 10;
+    goto EscapeWay;
+  }
+  
+  // Add an attribute field with the product's title
+  iAttributeSet.AddAttribute("V_Name", rootProductName.ConvertToChar());
+  // Query by attribute
+  hr = CATAdpPLMQueryServices::GetElementsFromAttributes(hTypeModeler, iAttributeSet, oQueryResults);
+  if(SUCCEEDED(hr) && oQueryResults.Size())
+  {
+    pQueryResult = oQueryResults[1];
+    if(NULL != pQueryResult)
+      hr = pQueryResult->GetIdentifier(piPLMIdent);
+  }
+...</pre>
+<p>Open your PLM Component in the session using service <em>CATAdpOpener::CompleteAndOpen</em>.</p>
+<pre class="code">...
+  // Open of the product
+  hr = adpOpener.CompleteAndOpen(piPLMIdent, IID_CATIPLMProducts, (void**)&piPLMProduct);
+  if((FAILED(hr)) || (NULL == piPLMProduct)) {
+    retCode = 12;
+    goto EscapeWay;
+  }                           
+ ...</pre>
+<p>Create occurrence for the root product.</p>
+<pre class="code">...
+  // Get root occurrence from the root product  
+  hr = piPLMProduct->QueryInterface(IID_CATIPLMNavReference, (void**)&pIPLMNavRefOnRoot);
+  if(SUCCEEDED(hr))
+  {
+    CATIPrdOccurrenceMngt * pIPrdOccurrenceMngt = NULL;
+    hr = CATPrdGetOccurrenceMngt(pIPrdOccurrenceMngt);
+    if(SUCCEEDED(hr) && (NULL != pIPrdOccurrenceMngt))
+    {
+      hr = pIPrdOccurrenceMngt->GetOrCreateRootOccurrence(pIPLMNavRefOnRoot, hRootNavOccurrence);      
+    }
+    if(pIPrdOccurrenceMngt) { pIPrdOccurrenceMngt->Release(); pIPrdOccurrenceMngt = NULL; }
+  }                           
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step3"></a>Prepare Target Representation</h3>
+<p>Derived representation is created in a 3D Shape representation. Such 3D Shape is referred as target representation.</p>
+<p>Target representation could be :</p>
+<ul>
+    <li>Any 3D Shape under a Product</li> or
+    <li>Any 3D Shape under a Part</li>
+</ul>
+<pre class="code">...
+  // ==========================================================================
+  // Prepare target shape occurrence under the root
+  // ==========================================================================
+  hr = GetTargetShape(hRootNavOccurrence, "TargetShape---.000", pTargetRepOcc);
+  if(FAILED(hr) && NULL == pTargetRepOcc) {
+    retCode = 21;
+    goto EscapeWay;
+  }
+  // Target shape must be loaded into Edit mode
+  hr = LoadRepresentation(pTargetRepOcc);
+  if(FAILED(hr)) {
+    retCode = 22;
+    goto EscapeWay;
+   }
+...</pre>
+
+<p>In above case, target representation is under the root product. 
+Internal method <em>GetTargetShape</em> is used to get the representation occurrence from the 3D shape name.
+<em>LoadRepresentation</em> internal method is used load target representation in the Edit mode.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step4"></a>Prepare Source Representations</h3>
+<p>Source representations could be any 3D Shapes directly or indirectly under the parent of the target representation.</p>
+<p>Source representation could be :</p>
+<ul>
+    <li>Any 3D Shape under a Product</li> or
+    <li>Any 3D Shape under a Part</li>
+</ul>
+<p>All source representations must be loaded into the Edit mode.</p>
+<pre class="code">...
+  // 3D shapes of various parts under the root in the list are collected in list of source representations.
+  ListOfSourceParts.Append("Part1.1");
+  ListOfSourceParts.Append("Part2.1");
+  ListOfSourceParts.Append("Part2.2");
+  hr = GetPartRepList(hRootNavOccurrence, ListOfSourceParts, iListOfSourceReps);
+  if(FAILED(hr) && 0 == iListOfSourceReps.Size()) {
+    retCode = 23;
+    goto EscapeWay;
+  }
+  // Source representation list is ready, now load each shape into the Edit mode.
+  hr = LoadRepresentation(iListOfSourceReps);
+  if(FAILED(hr)) {
+    retCode = 24;
+    goto EscapeWay;
+  }  
+...</pre>
+<p><em>GetPartRepList</em> internal method is used to create source representation list from specified part instance names.</p>
+<p><em>LoadRepresentation</em> internal method is used to load the source representations into the <em>Edit</em> mode.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step5"></a>Creating Derived Representation under the Root Product</h3>
+<p>First derived representation manager must be created.</p>
+<pre class="code">...
+  // Get derived representation manager
+  CATIDerivedRepManager *pDerivedRepManager = NULL;
+  hr = CATGetCATIDerivedRepManager(pDerivedRepManager);
+  if(FAILED(hr) && NULL == pDerivedRepManager)  {
+    retCode = 31;
+    goto EscapeWay;
+  }
+...</pre>
+<p>The manager is then used to create derived representation of source representations under a target representations.</p>
+<pre class="code">...
+  // Set import options
+  CATDerivedRepOption nOption = CATDerivedRep_AssociativeImport | CATDerivedRep_CopyTechnoResults;
+  // Create derived representation under the root 3D shape
+  hr = pDerivedRepManager->CreateDerivedRepresentation(pTargetRepOcc, iListOfSourceReps, nOption);
+  if(FAILED(hr)) {
+    retCode = 32;
+    goto EscapeWay;
+  }
+...</pre>
+<p>Derived representation will be successfully created. Since associativity option was used 
+the created derived representation will be associative with source representations. 
+It means any change in the source representation will automatically update the output derived representation.</p>    
+<script type="text/javascript">insertLinkToTop();</script>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->  
+<h3><a name="Step6"></a>Adding More Representations to a Derived Representation</h3>
+<p>It is possible to add more representation to the derived representation created above.</p>
+<pre class="code">...
+  ListOfSourceParts.RemoveAll(); // Reset to specify new parts
+  ListOfSourceParts.Append("Part1.2"); 
+  // The part is under a product 'SubAsm' under the root. Let's get 'SubAsm' occurrence.
+  hr = GetCompOccurrence(hRootNavOccurrence, "SubAsm", hSubAsmNavOccurrence);    
+  hr = GetPartRepList(hSubAsmNavOccurrence, ListOfSourceParts, iListOfSubAsmSourceReps);
+  if(FAILED(hr) && 0 == iListOfSubAsmSourceReps.Size()) {
+    retCode = 23;
+    goto EscapeWay;
+  }
+  // New source representation list is ready, now load each shape into the Edit mode.
+  hr = LoadRepresentation(iListOfSubAsmSourceReps);
+  if(FAILED(hr)) {
+    retCode = 24;
+    goto EscapeWay;
+  }
+  // Add extra representation(s) to existing derived representation
+  hr = pDerivedRepManager->AddAssociatedGeometry(pTargetRepOcc, iListOfSubAsmSourceReps);
+  if(FAILED(hr)) {
+    retCode = 33;
+    goto EscapeWay;
+  }
+...</pre>
+<p><em>AddAssociatedGeometry</em> method is used to add more representations. 
+As mentioned before, any extra source representation to be added must first be loaded into the Edit mode.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->    
+<h3><a name="Step7"></a>Creating Derived Representation under the Sub-assembly</h3>
+<p>Let's get suitable 3D Shape under the sub-assembly as target representation and also load it into the Edit mode.</p>
+<pre class="code">...
+  // Create derived representation under a sub-assembly's 3D shape 
+  // Get target shape occurrence under product 'SubAsm'
+  hr = GetTargetShape(hSubAsmNavOccurrence, "TargetShapeSubAsm---.000", pSubAsmTargetRepOcc);    
+  if(FAILED(hr) && NULL == pSubAsmTargetRepOcc) {
+    retCode = 21;
+    goto EscapeWay;
+  }
+  // Load new target shape into Edit mode
+  hr = LoadRepresentation(pSubAsmTargetRepOcc);
+  if(FAILED(hr)) {
+    retCode = 22;
+    goto EscapeWay;
+  }
+...</pre>
+<p>Now create derived representation this time without using associativity option.</p>
+<pre class="code">...
+  // Set import options    
+  CATDerivedRepOption nSubAsmOption = CATDerivedRep_CopyTechnoResults;
+  // Create derived representation under the sub-assembly 3D shape    
+  hr = pDerivedRepManager->CreateDerivedRepresentation(pSubAsmTargetRepOcc, iListOfSubAsmSourceReps, nSubAsmOption);
+  if(FAILED(hr)) {
+    retCode = 32;
+    goto EscapeWay;
+  }
+...</pre>
+<p>This derived representation will be successfully created under the sub-assembly. 
+Since associativity option was not used, the derived representation will not be associative and also cannot be changed. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step8"></a>Updating the Assembly</h3>
+<p>Although derived representation is already created, 
+it is recommended to perform PLM Update on the father product of the target representation.
+This will correctly update import links to source representations.</p>
+<pre class="code">...
+  // ==========================================================================
+  // PLM Update : After derived representation is created, 
+  // PLM update is recommended to update import links to source representations.
+  // ==========================================================================  
+  spRootActor = pIPLMNavRefOnRoot;
+  hr = CATPLMUpdateFactory::InstantiateUpdateEngine(piUpdateEngine);
+  if(FAILED(hr) || NULL == piUpdateEngine) {
+    retCode = 41;
+    goto EscapeWay;
+  }
+  hr = piUpdateEngine->Init(spRootActor);
+  hr = piUpdateEngine->GetGlobalPLMStatus(updateStatus);
+  switch(updateStatus)
+  {
+  case CATIPLMUpdateEngine::Status_UpToDate:
+  case CATIPLMUpdateEngine::Status_UpToDateWithWarnings:
+    break; // Already up to date.
+  case CATIPLMUpdateEngine::Status_OutOfDate:
+  case CATIPLMUpdateEngine::Status_OutOfDateDateWithWarnings:
+  {
+    HRESULT updateRC = piUpdateEngine->GlobalPLMUpdate();
+    if(S_OK == updateRC || S_FALSE == updateRC) {
+      hr = S_OK;    // update successful (warnings).
+    }
+    else
+      hr = E_FAIL;  // update unsuccessful (errors).
+  }
+  case CATIPLMUpdateEngine::Status_Error:
+    break;
+  case CATIPLMUpdateEngine::Status_UndefinedStatus:
+    break;
+  }
+
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Step9"></a>Saving the Assembly and Exiting</h3>
+<pre class="code">...
+  // ==========================================================================
+  // Saving the Root Product
+  // ==========================================================================
+  CATAdpSaver saver;
+  hr = saver.Save();
+  if(FAILED(hr)) return 1;
+  
+  // ==========================================================================
+  // Close the PLM session (Disconnect and Delete session)
+  // ==========================================================================
+  hr = CATPLMSessionServices::ClosePLMSession();
+</pre>
+<p>Before closing the session and after saving PLM component, the PLM Root component must be removed of the Bag, by using
+<code>RemoveRoot</code> method defined in <em>CATOmbLifeCycleRootsBag</em>.</p>
+<p>
+<img alt="Modified Product" src="images/CAAPictureDerivedRepCreationAfter.jpg"/></p>
+<p>Desired derived representation is created in specified target representation. 
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case has demonstrated the way to create derived representation from source representations under desired target representation. 
+Use of associativity option is also demonstrated.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+    <tr>
+        <td>[1]</td>
+        <td>
+            <a href="../CAADocUseCases/CAADocRunSample.htm">
+                Building and Launching a Use Case
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>[2]</td>
+        <td>
+            <a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAPlmServerAccess/CAAAdpUcBasicBatch.htm'); return false;">
+                Connecting to V6 Server
+            </a>
+        </td>
+    </tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Mar 2018]</td>
+		<td>Document created</td>
+	</tr>
+	</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

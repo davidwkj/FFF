@@ -1,0 +1,172 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Simplifying the topology of a Body</title>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Simplifying the topology of a Body</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>The topology of a body can 
+		be simplified in order to remove unnecessary faces and build a 
+		consistent body topology. The operator CATICGMTopSimplify &quot;simplifies&quot; a 
+		body or a part of a body and then enable to remove the cells which are 
+		not needed&nbsp; in order to build a new consistent body topology.
+		</font>
+		<ul>
+			<li><a href="#OpeToBeUsed">Operator to be Used</a></li>
+			<li><a href="#UseCaseDescription">Use Case Description</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		&nbsp;</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="OpeToBeUsed">Operator to be Used</a></h2>
+<p>The CATICGMTopSimplify operator is to be used.<h2><a name="UseCaseDescription">Use Case Description</a></h2>
+<p>The CAAGMOperatorsSimplifyBody.m module in CAAGMOperatorsInterfaces.edu 
+illustrates how to simplify the body and how to build a new body without 
+unnecessary faces. This use case 
+requires the BodyNotSimplified.NCGM file as input data. This file is delivered in the FunctionTests/InputData 
+folder of CAAGMOperatorsInterfaces.edu framework.
+</font>
+If you are not already 
+familiar with geometric modeler use cases, go to
+<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Uses Cases</a>.<p>With the input data below:</p>
+<table>
+  <caption><a name="Fig.1">Fig.1</a> Simplify the topology of body : Input Data</caption>
+  <tr>
+    <td>
+	<img alt="" src="images/CAAGMOperatorsSimplifyBody_img4.jpg"></td>
+   </tr>
+</table>
+<p>and the code below:</p>
+<pre class="code">
+
+...
+CATICGMTopSimplify * pTopSimplifyOp = ::<strong>CATCGMCreateTopSimplify</strong>(piGeomFactory, &amp;topdata, piInputBody);
+
+if (pTopSimplifyOp)
+{
+  cout &lt;&lt; &quot;\n\n call the operator CATICGMTopSimplify that simplifies the body : OK&quot; &lt;&lt; endl;
+  cout &lt;&lt; &quot;\n The simplification operation consists in removing the cells which are not needed for a consistent body topology.&quot; &lt;&lt; endl;
+
+  // run the operator 
+  // 
+  pTopSimplifyOp-&gt;<strong>Run</strong>();
+  cout &lt;&lt; &quot;\nrun the operator : OK&quot; &lt;&lt; endl;
+
+  CATBody * pNewBody = pTopSimplifyOp-&gt;<strong>GetResult</strong>();
+
+  pTopSimplifyOp-&gt;Release();
+  pTopSimplifyOp = NULL;
+
+  if (pNewBody)
+  {
+    cout &lt;&lt; &quot;run of the operator CATICGMTopSimplify return a valid body with tag = &quot; &lt;&lt; pNewBody-&gt;GetPersistentTag() &lt;&lt; endl;
+    cout &lt;&lt; &quot;\n Dump the simplified topology : &quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;=================================== &quot; &lt;&lt; endl;
+
+
+    cout &lt;&lt; &quot;\n--------------------------------------------------------------&quot; &lt;&lt; endl;
+
+
+    CATLISTP(CATCell) listOfFaces;
+    pNewBody-&gt;GetAllCells(listOfFaces, 2);
+    int nbFaces = listOfFaces.Size();
+    cout &lt;&lt; &quot;Number of Faces : &quot; &lt;&lt; nbFaces &lt;&lt; endl;
+    cout &lt;&lt; &quot;--------------------------------------------------------------&quot; &lt;&lt; endl;
+    if (nbFaces != 6)
+    {
+      cout &lt;&lt; &quot;ERROR !!! =&gt; PROBLEM WITH CATICGMTopSimplify OPERATOR !!!&quot; &lt;&lt; endl;
+      cout &lt;&lt; &quot;Nb face Expected for result simplified body is 6 !!!&quot; &lt;&lt; endl;
+      return 1;
+    }
+   cout &lt;&lt; &quot;\nThe input body has been successfully simplied!&quot; &lt;&lt; endl;
+
+  }
+  else
+  {
+   cout &lt;&lt; &quot;ERROR !!! =&gt; PROBLEM WITH CATICGMTopSimplify OPERATOR !!!&quot; &lt;&lt; endl;
+   return 1;
+  } </pre>
+<p>you get the following traces:</p>
+<p><img alt="" src="images/CAAGMOperatorsSimplifyBody_img5.gif"></p>
+<p>you get this result:</p>
+<table>
+  <caption><a name="Fig.2">Fig.2</a> Simplify the topology of body :&nbsp; Result</caption>
+  <tr>
+	 <td>
+	 <img alt="" src="images/CAAGMOperatorsSimplifyBody_imgA.gif"></td>
+     </tr>
+ </table>
+
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmUcGMUseCases.htm">About Geometric Modeler Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td>
+		<a href="../CAACgmModel/CAACgmTaUseTopoOperators.htm">How to Use Topological Operators</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="CAACgmUcTopOverview.htm">Overview of Topological Operators</a></td>
+	</tr>
+
+	</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Nov 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

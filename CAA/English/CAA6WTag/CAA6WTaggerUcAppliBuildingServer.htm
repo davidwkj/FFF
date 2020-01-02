@@ -1,0 +1,572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="js" />
+<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+<script src="pod.js" type="text/javascript">/* */</script>
+<title>Tagging Data Read from File (Server Filtering)</title>
+</head>
+<body onload="createToc();highlightSearchTerms();">
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Tagging Data Read from File (Server Filtering)</h1>
+		</td>
+	</tr>
+	<tr> 
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<table class="abstract">
+	<tr>
+		<td>
+			<h2>Abstract</h2>
+			<p>This article describes a widget displaying information (no edition, browsing only) coming from 
+			a JSON file hosted on a server. The widget contents is filtered according to the 
+			end-user tag selection. Conversely to the previous example [<a href="#References">1</a>] where the
+			filtering is performed by the 6WTagger component, here the filtering is performed by the server.</p>     	
+			<ul>
+				<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+				<li><a href="#UseCase">The CAA6WTagAppliBuildingServer Use Case</a>
+				<ul>
+    <li><a href="#What">What Does CAA6WTagAppliBuildingServer Do</a></li>
+    <li><a href="#How">How to Launch CAA6WTagAppliBuildingServer</a></li>
+    <li><a href="#Where">Where to Find the CAA6WTagAppliBuildingServer Code</a></li>
+				</ul>
+				</li>
+				<li><a href="#Step">Step-by-Step</a></li>
+				<li><a href="#InShort">In Short</a></li>
+				<li><a href="#References">References</a></li>
+			</ul>
+		</td>
+	</tr>
+</table>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case implements the 6WTags filtering as presented in the Implementing Service Side Filtering use case [<a href="#References">2</a>]. Additionally to 
+this basic use case you will learn:</p>
+<ul>
+<li>How to manage the error cases (when no JSON file or bad contents).</li>
+<li>How to implement a 6WTag filtering.</li>
+<li>How to update the UI according to 6WTag selection/deseclection.</li>
+</ul> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="UseCase"></a>The CAA6WTagAppliBuildingServer Use Case</h2>
+<p>CAA6WTagAppliBuildingServer is a use case of the CAATagNavigator.edu framework. 
+It illustrates 6WTagger integration inside widgets capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="What"></a>What Does CAA6WTagAppliBuildingServer Do</h3>
+<p>The widget is an application displaying information: date of creation, architect name, location city, owner, 
+and count of stories for different buildings. Each building having one identifier.</p>
+<a name="picture1"></a>
+<table>
+<tr>
+		<td>
+		<img alt="AllBuildings" src="images/CAA6WTagAppliBuildingServerWithoutFiltering.png"/></td>
+	</tr>
+</table>
+<p>Just above the widget when in the Preferences menu is entered the URL of the JSON file provided by the 
+CAA use case (see <a href="#Where">Where</a> section).</p> 
+ <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuildingServerPreferenceMenu.png"/></td>
+	</tr>
+</table> 
+<p>The JSON file can be hosted on the server serving the widget or another one. </p>
+<p>Now, open the 6WTagger, 6WTags are visible:</p>
+  <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuildingServer6WTaggerOpen01.png"/></td>
+	</tr>
+</table> 
+<p>For the predicates:</p>
+<ul>
+<li><i>Architect</i> has been classified in the Who category</li>
+<li><i>City</i> has been classified in the Where category</li>  
+</ul>
+<p><a name="picture2"></a>Now, the widget when "Paris" is chosen: </p>
+  <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuildingServer6WTaggerOpen02.png"/></td>
+	</tr>
+</table> 
+<p>Now, make one of these actions, and then refresh the widget (Refresh menu)</p>
+<ul>
+<li>Remove the JSON file from the server,</li>
+<li>Change the URL of the JSON file, for a bad one, in the Preferences menu,</li>
+<li>Modify the hosted JSON file leading to a wrong formating JSON file (remove a bracket, a comma ,...)</li>
+</ul>
+<p>The widget (on right) displays the following message:</p>
+  <table>
+<tr>
+		<td>
+		<img alt="PreferenceMenu" src="images/CAA6WTagAppliBuildingServer6WTaggerOpen03.png"/></td>
+	</tr>
+</table> 
+<p>You can observe the 6WTagger (on left) no longer displays 6WTags, but the previous selected 6WTag is still present.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="How"></a>How to Launch 6WTaggerFiltering</h3>
+<p>To launch CAA6WTagAppliBuildingServer please follow the instructions described here  [<a href="#References">3</a>].
+</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="Where"></a>Where to Find the CAA6WTagAppliBuildingServer Code</h3>
+<p>The CAA6WTagAppliBuildingServer use case is made of several files  located in: </p>
+<p><code>InstallRootFolder\CAADoc\CAATagNavigator.edu\CAA6WTagAppliBuildingServer.mweb\src</code></p>
+<ul>
+<li>CAA6WTagAppli.html, the widget HTML page,</li>
+<li>CAA6WTagHelper.js, the JavaScript file defining the DS/CAA6WTagAppliBuildingServer/CAA6WTagHelper AMD module,</li>
+<li>CAA6WTagAppliBuildingServer.css, defining some class types,</li>
+</ul>	
+<p>Where <code>InstallRootFolder</code> is the folder where the API CD-ROM is installed [<a href="#References">3</a>].
+</p>
+<p>Additionally a JSON file is provided:</p>
+<pre >
+InstallRootFolder\CAADoc\CAATagNavigator.edu\CAA6WTagAppliBuildingServer.mweb\src\assets\myBuildingDataServer.json
+</pre>
+ 
+<p><a name="JSONStructure"></a>Below an extract of this file. By <a href="#" onclick="switchVisibility('disp1', 'disp2'); return false;">clicking</a> here 
+you get the complete file:</p>
+<pre id="disp1" class="code" style="display: block;">
+{
+"data": [
+    {
+        <b>"id"</b>:"caa-building-server-0001",
+        <b>"creation"</b>:"2018/05",
+        <b>"architect"</b>:"Le Corbusier",
+        <b>"city"</b>:"Paris",
+        <b>"owner"</b>:"Company A",
+        <b>"story"</b>:"4"
+    }, ... ]
+"summary": [
+    {
+        "object"    : "Le Corbusier", 
+        "sixw"     : "ds6w:who/Architect",  
+        "dispValue" : "Le Corbusier",  
+        "type"      : "string", 
+        "count"     : 4  
+    }, ... ]
+}
+</pre>
+<pre id="disp2" class="code" style="display: none;">
+{
+ "data" : [
+		{
+			"id":"caa-building-server-0001",
+			"creation":"2018/05",
+			"architect":"Le Corbusier",
+			"city":"Paris",
+			"owner":"Company A",
+			"story":"4"
+		},
+		{
+			"id":"caa-building-server-0002",
+			"creation":"2018/05",
+			"architect":"Le Corbusier",
+			"city":"New York",
+			"owner":"Company B",
+			"story":"20"
+		},
+		{
+			"id":"caa-building-server-0003",
+			"creation":"2018/07",
+			"architect":"Le Corbusier",
+			"city":"New York",
+			"owner":"Company C",
+			"story":"2"
+		},
+		{
+			"id":"caa-building-server-0004",
+			"creation":"2018/07",
+			"architect":"Le Corbusier",
+			"city":"Paris",
+			"owner":"Company D",
+			"story":"2"
+		},
+		{
+			"id":"caa-building-server-0005",
+			"creation":"2018/07/20",
+			"architect":"Jean Nouvel",
+			"city":"Paris",
+			"owner":"Company D",
+			"story":"2"
+		},
+		{
+			"id":"caa-building-server-0006",
+			"creation":"2001",
+			"architect":"Jean Nouvel",
+			"city":"Paris",
+			"owner":"Company D",
+			"story":"2"
+		},
+		{
+			"id":"caa-building-server-0007",
+			"creation":"2002",
+			"architect":"Jean Nouvel",
+			"city":"Singapore",
+			"owner":"Company E",
+			"story":"5"
+		},
+		{
+			"id":"caa-building-server-0008",
+			"creation":"2004",
+			"architect":"Jean Nouvel",
+			"city":"Singapore",
+			"owner":"Company E",
+			"story":"6"
+		}
+    ],
+ "summary": [ 
+    {"object"    : "Le Corbusier", "sixw"     : "ds6w:who/Architect",  "dispValue" : "Le Corbusier",  "type"      : "string", "count"     : 4  }, 
+    {"object"    : "Jean Nouvel" , "sixw"     : "ds6w:who/Architect",  "dispValue" : "Jean Nouvel",    "type"     : "string", "count"     : 4 } ,
+    {"object"    : "Singapore"   , "sixw"     : "ds6w:where/City",     "dispValue" : "Singapore",  "type"      : "string", "count"     : 2  }, 
+    {"object"    : "Paris"       , "sixw"     : "ds6w:where/City",     "dispValue" : "Paris",    "type"     : "string", "count"     : 4 },
+    {"object"    : "New York"    , "sixw"     : "ds6w:where/City",     "dispValue" : "New York",    "type"     : "string", "count"     : 2 }
+    ] 
+}
+
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>There are several logical steps in CAA6WTagAppliBuildingServer use case: </p>
+<ul>
+	<li><a href="#onLoad">When the widget is loaded (or reloaded)</li>
+	<li><a href="#onRefresh">When the widget is refreshed (through  widget menu)</li> 
+	<li><a href="#onTagSelect">When a 6WTag is selected/deselected</li> 
+	<li><a href="#onDataRead">Reading the JSON file</li>
+    <li><a href="#onFilteringOp">Filtering Data</li>
+    <li><a href="#onUpdateUI">Updating UI with filtered subjects</li>
+    <li><a href="#onUpdateUIKO">Updating UI In case of Issue</li>	
+</ul>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onLoad"></a>When the widget is loaded (or reloaded)</h3>
+<p>This step takes place in the onLoad callback function of the widget (see Widget Life Cycle section of 
+[<a href="#References">4</a>]). Its aim is to put in place the UI, read the data from the server, 
+and  provide to the 6WTagger component the 6WTags as a summary. So such 
+actions described in the technical article [<a href="#References">5</a>] are ordered as follows:</p>
+<ol>
+<li>Create the Proxy (with filtering performed by server)</li>
+<li>Provide the callback function to be informed by 6WTagger when a 6WTag is selected/deselected</li>
+<li>Read the data from the server</li>
+<li>Filter the data with the current filter (if exists, this step should be included in previous step)</li>
+<li>Update UI with filtered data</li>
+<li>Provide 6Wtags (found on server side) to the 6WTagger</li>
+</ol>
+<p>The onLoad callback function is defined in the widget HTML page: </p>
+<pre class="code">
+var MyWidget = {
+    var taggerProxy = null ;		
+    <b>onLoad: function() {	</b>		
+        // - 0 - Constant UI Elements
+        widget.body.innerHTML ="&lt;h3&gt;My Buildings&lt;/h3&gt;";  
+        widget.body.innerHTML +="&lt;div class='classElt'>&lt;/div&gt;" ;
+
+        // - 1 - Proxy creation
+        var options= {
+            widgetId : widget.id,
+            filteringMode :"FilteringOnServer"
+        };
+        taggerProxy = TagNavigatorProxy.<b>createProxy</b>(options);
+		
+        // - 2 - Provide the callback function
+        taggerProxy.<b>addEvent</b>('<b>onFilterChange</b>',MyWidget.<a href="#onTagSelect">onFilterChange</a>);						
+
+        // - 3,4,5,6 -  steps 
+        MyWidget.onFilterChange();  
+    }
+    ...	
+},
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onRefresh"></a>When the widget is refreshed (through  widget menu)</h3>
+<p>We do as for the 3,4,5 and 6 steps of the loading operation: the callback function 
+for the "onRefresh" event is MyWidget.<a href="#onTagSelect">onFilterChange</a> as for the "onFilterChange" event. </p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onTagSelect"></a>When a 6WTag is selected/deselected</h3>
+<p>This step consists in to update the widget UI accordingly the current filtering. We read the data from the server, apply the current filter, update the UI, and
+provide new 6WTags to the 6WTagger. ALl these steps are performed by  a JavaScript function exported 
+by the CAA6WTagHelper JavaScript file.  
+
+</pre>
+<p>The <i>onFilterChange</i> function is a JavaScript function defined in the widget HML file. </p>
+<pre class="code">
+    ...
+    <b>onFilterChange: function () {</b>
+        CAA6WTagHelper.<a href="#onUpdateUI">RetrieveSubject</a>(widget.body, taggerProxy, widget.getValue("URLServer"));
+    } 
+    ...
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onDataRead"></a>Reading the JSON file</h3>
+<p>We use <a href="#" onclick="CAAlink('JS', 'WebAppsFoundations', 'WAFData', 'WAFData'); return false;">WAFData</a> to load 
+ the JSON file from a server. Its inputs are not explained here, read  the reference article  [<a href="#References">6</a>] for more details about this DS Javascript API. </p> 
+<p>Below the <i>RetrieveSubject</i> function exported by <a href="#Where">CAA6WTagHelper.js</a></p> 
+<pre class="code">
+<b>RetrieveSubject : function(container, proxyTagger,URLServer) { </b>
+    if ( URLServer ) {
+        WAFData.proxifiedRequest(URLServer , {
+            'method'       :'GET',	
+            'proxy'        : 'passport',
+            'type'         : 'json' ,
+            <b>'onComplete'   : function (response) {	</b>			
+                if ( response.data  &amp;&amp; response.summary ) {
+                    // Compute the filtering - this part should be done server side
+                    var dataToDisplay = <a href="#onFilteringOp">ComputeFiltering</a>(response.data, proxyTagger);					
+
+                    //Update table 
+                    <a href="#onUpdateUI">updateUI_withfiltering</a>(container,dataToDisplay);
+
+                    //Set 6WTags as summary for  the 6WTagger
+                    proxyTagger.<b>setTags</b>(null,<b>response.summary</b>);
+                } else {
+                    <a href="#onUpdateUIKO">updateUI_KO</a>(container, "Check the JSON contents: data and/or summary keys are missing");
+                    proxyTagger.unsetTags();
+                }                 
+            },	 					
+            <b>'onFailure'    : function (error) { </b>
+                <a href="#onUpdateUIKO">updateUI_KO</a>(container, "Either the JSON file URL is wrong, or its contents is not well JSON formated.");
+                proxyTagger.unsetTags();
+            },	 					
+            ...
+        });		
+    } else {
+	    <a href="#onUpdateUIKO">updateUI_KO</a>(container,"Enter JSON URL in Preferences menu");
+        proxyTagger.unsetTags();				
+}
+</pre>
+<p>In our use case <code>URLServer</code> is the string kept by the widget, and valuated by the end  user using the Preferences menu. 
+Read the User Preferences article [<a href="#References">7</a>] for more details.</p>
+<p>In case of <b>successful response</b> for loading the file (file exists, is reachable, and its contents is JSON formated), <code>response</code>, the
+ argument of the <i>onComplete</i> callback function, is the JSON read from the file.</p>
+<p>In our basic use case, the JSON file contains all the data (the value of the <a href="#JSONStructure">"data"</a> key) and 
+the <a href="#onFilteringOp">filtering</a> is performed on client side. 
+In <i>real</i> life, the data are loaded  already filtered: you should have a web service having the filter as input. Only 
+the filtered data are uploaded. </p>
+<p>With the data (filtered or not) we update the UI as you can see on different pictures in the <a href="#What">What</a> does the Use Case Do section. </p>
+<p>6WTags to provide to the 6WTagger component  represent ALL the data: not only the filtered one. Usually
+they come from the server (where all data are): we did that. 6WTags (as a summary [<a href="#References">9</a>] ) are the 
+value of the <a href="#JSONStructure">"summary"</a> key in the JSON file. They are passed to 6WTagger as second argument of the <i>setTags</i> method of the proxy.</p> 
+<p>In case of <b>failure</b> (any issue to get the JSON file, a wrong JSON format, at least one building without id) we update the widget UI to mention the issue. Then 
+we inform the proxy there
+is no, or no longer, 6WTags  using  <i>unsetTags</i> method. Note
+that using unsetTags on a just created proxy is not an issue.</p>
+<p><b>Pay attention</b>: after the proxy creation, after a tag selection, setting tags (setTags) or unsetting them (unsetTags) is mandatory, otherwise the
+6Wtagger UI component hangs. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onFilteringOp"></a>Filtering Data</h3>
+<p>First we recall that this step should be performed server side: only the filtered elements should be uploaded client side. </p>
+<p>The goal is to filter all the data (see <a href="#JSONStructure">an example in JSON file</a>) according to the current filter. The filter
+comes from the 6WTagger via the <i>getCurrentFilter</i> of the proxy. Its contents is as follows:</p>
+<pre class="code">
+{ 
+    "allfilters": {
+        "predicateValue1": [ {object"  : "objValueA", "type"    : "objValueType" } , {...},{...} ],
+        "predicateValue2": [ {"object" : "objValueB", "type"    : "objValueType" } , {...},{...} ]
+},       
+}
+</pre>
+<p>It is the same structure as the argument of the onFilterChange callback function. In our use case, we do not need it. We got it  from the 
+proxy method.</p>
+<p>As detailed in the technical article  [<a href="#References">10</a>], the filtering rules are:</p>
+<ul>
+<li>If one predicate is not valid for our data, the filtering returns an empty list.</li>
+<li>If all predicates are valid for our data, the rule between objects and predicate is as follows:
+ <ul>
+<li>OR between objects of the same predicate.</li>
+<li>AND between objects of different predicates.</li>
+</ul></li>
+</ul>
+<p>So the filtering is as follows:</p>
+<pre class="code">
+function  <b>ComputeFiltering</b>  (dataFromServer, proxyTagger) {
+    var listSubject = [] ;
+    var allFilters, len , predicate,i,goodPredicates ;
+
+    var filter = <b>proxyTagger.getCurrentFilter();</b>
+    if ( filter && filter.allfilters ) {
+        allFilters=filter.allfilters ;
+        len=Object.keys(allFilters).length;
+        if ( len == 0 ) {
+            // no filter, the raw data on the server
+            listSubject = dataFromServer ;
+        } else  if ( len &lt;=2 ) {
+            // The predicates must be "ds6w:who/Architect" and/or "ds6w:where/City"        			
+            goodPredicates= true ;
+            for ( predicate in allFilters ){
+                if ( ( predicate !== "ds6w:who/Architect" ) &amp;&amp;
+                     ( predicate !== "ds6w:where/City" ) ) {
+                    goodPredicates=false ;
+                } 
+            }
+            if ( goodPredicates ) {
+                listSubject = ComputePredicateFiltering(dataFromServer,"architect",allFilters["ds6w:who/Architect"]);
+                listSubject = ComputePredicateFiltering(listSubject,"city",allFilters["ds6w:where/City"]);
+            }
+        }  
+    } else {
+        // no filter, the raw data on the server
+        listSubject = dataFromServer ;
+    }
+    return listSubject ;
+};
+</pre>
+<p>We first get the filter from the proxy. Then we state: </p>
+<ul>
+<li>No filter, or filter without predicate: no filtering, we return the input data (those coming from the server).</li>
+<li>More than 3 predicates, at least one is not Architect or City, it filters all the input data, so we return an empty list. </li>  
+<li>If 1 or 2 predicates, if one if not  Architect or City, it filters all the input data, so we return an empty list.</li>
+<li>If valid predicate (s), we apply a predicate filtering, first on the input data, then with the result of the previous result (OR).</li>
+</ul>
+<p>The filtering for a predicate is a AND between all objects: </p>
+<pre class="code">
+function  <b>ComputePredicateFiltering</b>  (datatoFilter, dataAttribute, predicateObjects) {
+    var listSubjectForPredicate = []  ;
+    var couple,object,atLeastOnFilter ;
+
+   atLeastOnFilter=false ;
+   if ( predicateObjects ) {
+        atLeastOnFilter=true;
+        listSubjectForPredicate = [] ;
+        for ( couple in predicateObjects ) {
+            object=predicateObjects[couple].object;
+            for (var i=0 ; i &lt; datatoFilter.length ; i++ ){
+                var onData=datatoFilter[i] ;
+                if ( onData[dataAttribute] === object ) {
+                    listSubjectForPredicate.push(onData) ;
+                }
+            }							
+        }
+    }
+    // If no filter, input data are OK
+    if ( ! atLeastOnFilter ) {
+        listSubjectForPredicate=datatoFilter ;
+    }				
+    return listSubjectForPredicate ;
+};
+</pre>
+<p>If the last argument (<code>predicateObjects</code>) is undefined, the predicate was not in the filter. So, we return 
+the input data (<code>datatoFilter</code>). </p>
+<p>Otherwise, for all data having the key represented by <code>dataAttribute</code> with the current object as value 
+is pushed into the result list. </p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onUpdateUI"></a>Updating UI with Filtered Subjects</h3>
+<p>This step is performed by <i>updateUI_withfiltering</i> function defined by <a href="#Where">CAA6WTagHelper.js</a>.</p>
+<p>The code below displays the table (first row with id and predicates included) as you can see on the <a href="#picture1">picture without filtering</a>, or on the <a href="#picture2">picture with filtering</a>. </p> 
+<pre class="code">
+function <b>updateUI_withfiltering</b> ( container, DataToDisplay ) {
+
+    if ( DataToDisplay != null ) {
+        var lineAll ="&lt;table&gt;&lt;tr&gt;&lt;th&gt;Identifier&lt;/th&gt;&lt;th&gt;Creation&lt;/th&gt;&lt;th&gt;Architect&lt;/th&gt;&lt;th&gt;City&lt;/th&gt;&lt;th&gt;Owner&lt;/th&gt;&lt;th&gt;Story Count&lt;/th&gt;&lt;/tr&gt;" ;
+        var theSelectedTagElt = container.querySelector('.classElt'); 
+        var line ; 
+
+        for ( var i=0 ; i &lt; DataToDisplay.length ; i++ ) {
+
+            line = "&lt;tr&gt;&lt;td&gt;" + DataToDisplay[i].id + "&lt;/td&gt;";
+            line+= "&lt;td&gt;"+DataToDisplay[i].creation+"&lt;/td&gt;";
+            line+="&lt;td&gt;"+DataToDisplay[i].architect+"&lt;/td&gt;";
+            line+="&lt;td&gt;"+DataToDisplay[i].city+"&lt;/td&gt;";
+            line+="&lt;td&gt;"+DataToDisplay[i].owner+"&lt;/td&gt;";
+            line+="&lt;td&gt;"+DataToDisplay[i].story+"&lt;/td&gt;";
+            line+="&lt;/tr&gt;" ;
+
+            lineAll += line;
+        }
+        theSelectedTagElt.innerHTML = lineAll + "&lt;/table&gt;" ;
+    }
+} ;
+</pre> 
+<p>The second input, <code>DataToDisplay</code>, is an array containing all the data,  or a part of them,  each one with 
+the  <a href="#JSONStructure">JSON structure</a> described above.</p> 
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h3><a name="onUpdateUIKO"></a>Updating UI In case of Issue</h3>
+<p>This method consists in to display the text (<code>message</code>) in the widget DOM: </p>
+<pre class="code">
+function <b>updateUI_KO</b> (container, message) {
+    var theSelectedTagElt = container.querySelector('.classElt'); 
+    theSelectedTagElt.innerHTML = message ;
+} ;
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="InShort"></a>In Short</h2>
+<p> </p>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+    <tr>
+		<td>[1]</td>
+		<td><a href="CAA6WTaggerUcAppliBuilding.htm">Tagging Data Read from File</a></td>
+	</tr> 
+   <tr>
+		<td>[2]</td>
+		<td><a href="CAA6WTaggerUcServerSideFiltering.htm">Implementing Service Side Filtering</a></td>
+	</tr> 
+   <tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSGuides/CAADocRunWidgetAppSample.htm');return false;">Installing and Launching Widget Use Case</a></td>
+	</tr>
+    <tr>
+		<td>[4]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsTaWidgetClass.htm');return false;">Widget Object</a></td>
+	</tr>
+    <tr>
+		<td>[5]</td>
+		<td><a href="CAA6WTaggerAPI.htm#FilterServer">6WTagger Integration- API - Step by Step Scenarios - Server Side Filtering</a></td>
+	</tr>
+	 
+	 <tr>
+		<td>[6]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm');return false;">About Widget and HTTP Request</a></td>
+	</tr>
+	 <tr>
+		<td>[8]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJS/CAAWebAppsTaUserPreference.htm');return false;">User Preferences</a></td>
+	</tr>
+	 <tr>
+		<td>[9]</td>
+		<td><a href="CAA6WTaggerAPI.htm#Data-ServerSideFiltering">6WTagger Integration- API - Data Format - For Server Side Filtering</a></td>
+	</tr>
+	 <tr>
+		<td>[10]</td>
+		<td><a href="CAA6WTaggerIntegration.htm">6WTagger Integration - Principles</a></td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [March 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>

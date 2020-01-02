@@ -1,0 +1,655 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Creating the body of Elementary Solid</title>
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Creating the body of Elementary Solid</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>There are five elementary solids which are an associated operator 
+		dedicated to create their topology. This use case explains how to create 
+		topology of a sphere, a torus, a&nbsp; pyramid, a cuboid and a cylinder 
+		solid.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAGMOperatorsProperties Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMOperatorsProperties Do?</a></li>
+				<li><a href="#How">How to Launch CAAGMOperatorsProperties</a></li>
+				<li><a href="#Where">Where to Find the CAGMOperatorsProperties Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>In this use case, you learn how to create topology of an elementary solid.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAGMOperatorsProperties Use Case</h2>
+<p>CAAGMOperatorsProperties is a use case of the CAAGMOperatorsInterfaces.edu framework 
+that illustrates GMOperatorsInterfaces framework capabilities.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMOperatorsProperties Do?</h3>
+<p>This use case:</p>
+<ol>
+	<li>Preleminary operations : creates the geometric factory, software 
+	configuration and TopData.</li>
+	<li>Creates a solid sphere, dumps its&nbsp; topology and computes its 
+	geometric characteristics (center of gravity, volume,&nbsp; area of each 
+	face, length of each edge...)</li>
+	<li>Creates a solid Torus, dumps its&nbsp; topology and computes its 
+	geometric characteristics.</li>
+	<li>Creates a solid Pyramid, dumps its&nbsp; topology and computes its 
+	geometric characteristics.</li>
+	<li>Creates a solid Cuboid, dumps its&nbsp; topology and computes its 
+	geometric characteristics.</li>
+	<li>Creates a solid Cylinder, dumps its&nbsp; topology and computes its 
+	geometric characteristics.</li>
+	<li>Writes the model and closes the container.</li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMOperatorsProperties</h3>
+<p>To launch CAAGMOperatorsProperties, you will need to set up the build time environment, 
+then compile CAAGMOperatorsProperties.m along with its prerequisites, set up the 
+run time environment, and then execute the use case [<a href="#References">1</a>].</p>
+<p>If you simply type CAAGMOperatorsProperties with no argument, the use case executes, 
+but doesn&#39;t save the result in an NCGM file. If you want to save this result, provide 
+the full pathname of the NCGM file to create. For example:</p>
+<p><code>CAAGMOperatorsProperties e:\Properties.NCGM</code></p>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMOperatorsInterfaces.edu' data-xplore-mod='CAAGMOperatorsProperties.m'>
+<h3><a name="Where"></a>Where to Find the CAAGMOperatorsProperties Code</h3>
+<p>The CAAGMOperatorsProperties use case is made of a main named CAATopProperties.cpp 
+located in the CAAGMOperatorsProperties.m module of the GMOperatorsInterfaces framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMOperatorsInterfaces.edu\CAAGMProperties.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">1</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The program: </p>
+<ol>
+	<li><a href="#Creates the Geometry Factory">Creates the Geometry Factory</a></li>
+	<li><a href="#Creates a Skin Body">Creates a solid sphere(CATICGMSolidSphere)</a></li>
+	<li><a href="#Solid_Torus">Creates a solid Torus (CATICGMSolidTorus ) </a>
+	</li>
+	<li><a href="#Solid Pyramid">Creates a solid Pyramid (CATICGMSolidPyramid).</a>
+	</li>
+	<li><a href="#Solid_Cuboid">Creates a solid Cuboid (CATICGMSolidCuboid).</a></li>
+	<li><a href="#Solid_Cylinder">Creates a solid Cylinder 
+	(CATICGMSolidCylinder)</a> </li>
+	<li><a href="#Dump_Topology_of_a_body.">Dumps topology and computes 
+	geometric characteristics of a body (center of gravity, volume,&nbsp; area 
+	of each face, length of each edge...)</a></li>
+	<li><a href="#Writing_the_Model_and_Closing_the_Container">Writes the Model and 
+	Closes the Container</a></li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creates the Geometry Factory"></a>Creating the Geometry Factory</h3>
+<p>The geometry factory (CATGeoFactory) creates and manages all the <code>CATICGMObject</code>: 
+it creates the points, curves, surfaces and bodies and remove them.</p>
+<p>The CATGeoFactory creation itself is done by the global function <code>::CATCreateCGMContainer</code>.</p>
+<p>Notice that the factory can be defined by reading a NCGM file that was previously 
+stored. In that case, the global function <code>::CATLoadCGMContainer</code> must 
+be used.</p>
+<pre class="code"> cout &lt;&lt; &quot;Preliminary operations : \n&quot; &lt;&lt; endl;
+
+CATGeoFactory* piGeomFactory = ::<strong>CATCreateCGMContainer</strong>() ;
+if (NULL==piGeomFactory) return (1);
+cout &lt;&lt; &quot; - Get The Geo factory : OK &quot; &lt;&lt; endl;
+
+// Get the Config
+//
+CATSoftwareConfiguration * pConfig = new <strong>CATSoftwareConfiguration</strong>();
+if (NULL == pConfig) return (1);
+cout &lt;&lt; &quot; - Get the software config : OK &quot; &lt;&lt; endl;
+
+// Get the Topological journal
+//
+CATCGMJournalList* pJournal = new <strong>CATCGMJournalList</strong>(pConfig, NULL);
+if (NULL == pJournal) return (1);
+cout &lt;&lt; &quot; - Get the Topological journal : OK &quot; &lt;&lt; endl;
+
+CATTopData <strong>topdata</strong>(pConfig, pJournal);
+cout &lt;&lt; &quot; - Create the software configuration and CATTopData : OK &quot; &lt;&lt; endl;
+</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creates a Skin Body"></a>Creating a Sphere</h3>
+<p>The CATICGMSolidSphere creation follows the scheme of all topological operators. 
+You must create the operator by using the CATCGMCreateSolidSphere global function, 
+then run it and get the resulting body.</p>
+	<p><img alt="" src="images/CATICGMSolidShere_1.jpg"></p>
+	<p>Below the CAA code allowing to create a solid sphere.</p>
+<pre class="code"> cout &lt;&lt; &quot;\nCreation of a Sphere &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------&quot; &lt;&lt; endl;
+
+CATMathPoint p1(0,0,0); // the sphere center
+
+<strong>CATICGMSolidSphere</strong> * pSphereOperator = ::<strong>CATCGMTopCreateSolidSphere</strong>(piGeomFactory,
+&amp;topdata,
+p1,
+100.0); // the radius
+
+cout &lt;&lt; &quot;\nCreates the operator that creates a topological sphere (CATCGMTopCreateSolidSphere) : OK &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pSphereOperator-&gt; <strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+CATBody * pBodySphere = pSphereOperator-&gt; <strong>GetResult</strong>();
+
+cout &lt;&lt; &quot;\n === Get the body sphere result : OK \t Tag = &quot; &lt;&lt; pBodySphere-&gt;GetPersistentTag() &lt;&lt; endl;
+...</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<p><a name="Creates a Box and a Cylinder Primitives"></a>Below the output traces 
+:</p>
+	<p><img alt="" src="images/CATICGMSolidShere_2.jpg"></p>
+	<p>&nbsp;</p>
+	<h3><a name="Solid_Torus">Create a Solid Torus (CATICGMSolidTorus )</a></h3>
+<p>The CATICGMSolidTorus creation follows the scheme of all topological operators. 
+You must create the operator by using the CATCGMTopCreateSolidTorus global function, 
+then run it and get the resulting body.</p>
+	<p><img alt="" src="images/CATICGMSolidTorus_1.jpg"></p>
+	<p>To create a solid Torus., you must:</p>
+<ul>
+	<li>create the Torus axis at point P2</li>
+	<li>Define the <strong>major reference point</strong> which is the point 
+	defining the major ring, such that its distance to the third direction of 
+	torusAxis is the radius of the major ring .</li>
+	<li>Define the minorReference <strong>&nbsp;point</strong> which is the 
+	point defining the minor ring, such that its distance to majorReference is 
+	the radius of the minor ring.</li>
+</ul>
+	<p><img alt="" src="images/CATICGMSolidTorus_2.jpg"></p>
+	<p>Below the CAA code allowing to create a solid Torus:</p>
+<pre class="code"> cout &lt;&lt; &quot;\nCreation of a Torus &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------&quot; &lt;&lt; endl;
+
+// Create the Torus axis at point P2
+// 
+CATMathPoint p2(250., 122., 125.);
+CATMathVector iNormal(0, 0, 1);
+CATMathPlane tmpPlane(p2, iNormal);
+CATMathDirection majorDirection = tmpPlane.GetFirstDirection();
+CATMathDirection secondDirection = tmpPlane.GetSecondDirection();
+CATMathAxis <strong>torusAxis</strong> (p2, majorDirection, secondDirection, iNormal);
+
+// majorReference : is the point defining the major ring, such that its distance to the third direction
+// of torusAxis is the radius of the major ring.
+//
+double iMajorRadius = 120.;
+CATMathPoint <strong>majorReference</strong> = torusAxis.GetOrigin() + iMajorRadius * torusAxis.GetFirstDirection();
+
+// minorReference : is the point defining the minor ring, such that its distance to majorReference 
+// is the radius of the minor ring.
+//
+double iMinorRadius = 40.;
+CATMathPoint <strong>minorReference</strong> = majorReference + iMinorRadius * torusAxis.GetFirstDirection();
+
+<strong>CATICGMSolidTorus</strong> * pTorusOperator = ::<strong>CATCGMTopCreateSolidTorus</strong>(piGeomFactory,
+&amp;topdata,
+torusAxis,
+majorReference,
+minorReference);
+
+cout &lt;&lt; &quot;\nCreates the operator that creates a topological Torus (CATICGMSolidTorus) : OK &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pTorusOperator-&gt;<strong>Run</strong>();
+
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+CATBody* pBodyTorus = pTorusOperator-&gt;<strong>GetResult</strong>();
+
+cout &lt;&lt; &quot;\n === Get the body Torus result : OK \t Tag = &quot; &lt;&lt; pBodyTorus-&gt;GetPersistentTag() &lt;&lt; endl;</pre>
+	<p>Below the output traces :</p>
+	<p><img alt="" src="images/CATICGMSolidTorus_3.jpg"><br></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Solid Pyramid">Create a Solid Pyramid (CATICGMSolidPyramid)</a></h3>
+<p>The CATICGMSolidPyramid creation follows the scheme of all topological operators. 
+You must create the operator by using the CATCGMTopCreateSolidPyramid global function, 
+then run it and get the resulting body.</p>
+	<p><img alt="" src="images/CATICGMSolidPyramid_1.jpg"></p>
+	<p>To create a Solid Pyramid , you must:</p>
+<pre class="code"> cout &lt;&lt; &quot;\nCreation of a Pyramid &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------&quot; &lt;&lt; endl;
+
+CATMathPoint FirstPoint (250., 0. , 0.);
+CATMathPoint SecondPoint (250., 150. , 0.);
+CATMathPoint ThirdPoint (350., 0. , 0.);
+CATMathPoint TopPoint (280., 95. , 50.);
+
+<strong>CATICGMSolidPyramid</strong> * pPyramidOperator = <strong>CATCGMTopCreateSolidPyramid</strong>(piGeomFactory,
+&amp;topdata,
+FirstPoint,
+SecondPoint,
+ThirdPoint,
+TopPoint);
+
+cout &lt;&lt; &quot;\nCreates the operator that creates a topological Pyramid (CATICGMSolidPyramid) : OK &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pPyramidOperator-&gt;<strong>Run</strong>();
+
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+CATBody* pBodyPyramid = pPyramidOperator-&gt;<strong>GetResult</strong>();
+
+cout &lt;&lt; &quot;\n === Get the body Torus result : OK \t Tag = &quot; &lt;&lt; pBodyPyramid-&gt;GetPersistentTag() &lt;&lt; endl;
+ }</pre>
+<p>Below the output traces :</p>
+	<p><img alt="" src="images/CATICGMSolidPyramid_2.jpg"></p>
+	<p>&nbsp;</p>
+<h3><a name="Solid_Cuboid">Create a Solid Cuboid (CATICGMSolidCuboid)</a></h3>
+<p>The CATICGMSolidCuboid creation follows the scheme of all topological operators. 
+You must create the operator by using the CATCGMTopCreateSolidCuboid global function, 
+then run it and get the resulting body.</p>
+	<p><img alt="" src="images/CATICGMSolidCuboid_1.jpg"></p>
+	<p>To create a Solid Cuboid , you must:</p>
+<pre class="code"> cout &lt;&lt; &quot;\nCreation of a Cuboid &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------&quot; &lt;&lt; endl;
+
+CATMathPoint <strong>vO</strong>(-100., 100. , 0.), <strong>vOI</strong>(-250., 100., 0.), <strong>vOJ</strong>(-100., 250., 0.), <strong>vOK</strong>(-100.,100., 100.);
+
+<strong>CATICGMSolidCuboid</strong> *pCuboidOp = ::<strong>CATCGMTopCreateSolidCuboid</strong>(piGeomFactory,
+&amp;topdata,
+<strong>vO</strong>,
+<strong>vOI</strong>,
+<strong>vOJ</strong>,
+<strong>vOK</strong>);
+cout &lt;&lt; &quot;\nCreates the operator that creates a topological Cuboid (CATICGMSolidCuboid) : OK &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pCuboidOp-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+// Get The result
+// 
+CATBody *piCuboidBody = NULL;
+piCuboidBody = pCuboidOp-&gt;<strong>GetResult</strong>();
+
+cout &lt;&lt; &quot;\n === Get the body Cuboid result : OK \t Tag = &quot; &lt;&lt; piCuboidBody-&gt;GetPersistentTag() &lt;&lt; endl;
+</pre>
+<p>Below the output traces :</p>
+	<p><img alt="" src="images/CATICGMSolidCuboid_2.jpg"></p>
+	<p>&nbsp;</p>
+<h3><a name="Solid_Cylinder">Create a Solid Cylinder (CATICGMSolidCylinder)</a></h3>
+<p>The CATICGMSolidCylinder creation follows the scheme of all topological operators. 
+You must create the operator by using the CATCGMTopCreateSolidCylinder global function, 
+then run it and get the resulting body.</p>
+	<p><img alt="" src="images/CATICGMSolidCylinder_1.jpg"></p>
+	<p>To create a Solid Cuboid , you must:</p>
+<pre class="code"> cout &lt;&lt; &quot;\nCreation of a Cylinder &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------&quot; &lt;&lt; endl;
+// ---------- Cylinder
+CATMathPoint <strong>axisStart</strong>(-200, 10, 0), <strong>axisEnd</strong>(-200, 10, 150);
+double <strong>radius</strong> = 50.0;
+
+<strong>CATICGMSolidCylinder</strong> *pCylinderOp = ::<strong>CATCGMTopCreateSolidCylinder</strong>(piGeomFactory,
+&amp;topdata,
+<strong>axisStart</strong>,
+<strong>axisEnd</strong>,
+<strong>radius</strong>);
+
+cout &lt;&lt; &quot;\nCreates the operator that creates a topological Cylinder (CATICGMSolidCylinder) : OK &quot; &lt;&lt; endl;
+
+// Run the operator
+//
+pCylinderOp-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;Run the operator : OK&quot; &lt;&lt; endl;
+
+
+CATBody *piCylinderBody = NULL;
+piCylinderBody = pCylinderOp-&gt;<strong>GetResult</strong>();
+
+cout &lt;&lt; &quot;\n === Get the body Cylinder result : OK \t Tag = &quot; &lt;&lt; piCylinderBody-&gt;GetPersistentTag() &lt;&lt; endl;
+</pre>
+<p>Below the output traces :</p>
+	<p><img alt="" src="images/CATICGMSolidCylinder_2.jpg"></p>
+	<p>&nbsp;</p>
+<h3><a name="Dump_Topology_of_a_body.">Dump Topology and computes geometric 
+characteristics of a body.</a></h3>
+<p>The CATICGMDynMassProperties3D operators is dedicated for computing of&nbsp; 
+geometric characteristics of a body, a face or a edge. 
+You must create the operator by using the CATCGMDynCreateMassProperties3D global function, 
+then run it and get the resulting body.</p>
+	<p><img alt="" src="images/img1B.jpg"></p>
+	<p>To Dump topology and computing of its geometric characteristics&nbsp; , you must:</p>
+<pre class="code">  cout &lt;&lt; &quot;\n ==&gt; ScanTopology () : &quot;&lt;&lt; endl;
+
+// Dump the list of volume
+//
+cout &lt;&lt; &quot;\n Dump the list of Volume : &quot; &lt;&lt; endl; 
+
+CATLISTP(CATCell) <strong>listVolumes</strong> = NULL; // the list of Volume
+pBodyToScan-&gt;<strong>GetAllCells</strong>(listVolumes, <strong>3</strong>);
+
+CATLONG32 nbvolumes = listVolumes.Size();
+cout &lt;&lt; &quot;nb Volumes : &quot; &lt;&lt; nbvolumes &lt;&lt; endl;
+
+
+<strong>CATICGMDynMassProperties3D</strong> * pDynMassOpe = <strong>CATCGMDynCreateMassProperties3D</strong>(&amp;topdata, pBodyToScan);
+
+// Compute the volume of the analyzed body.
+//
+double Volume = pDynMassOpe-&gt;<strong>GetVolume</strong>();
+cout &lt;&lt; &quot;Volume of the analyzed Body : &quot; &lt;&lt; Volume &lt;&lt; endl;
+
+// Compute the surface of the analyzed body
+//
+double WetSurface = pDynMassOpe-&gt;<strong>GetWetArea</strong>();
+cout &lt;&lt; &quot;Surface of the analyzed body : &quot; &lt;&lt; WetSurface &lt;&lt; endl;
+
+// Compute the center of gravity of the analyzed body.
+//
+CATMathPoint COG = pDynMassOpe-&gt;<strong>GetCenterOfGravity</strong>();
+cout &lt;&lt; &quot;Center of gravity the analyzed body : \n\t\t\t\tX = \t&quot;&lt;&lt; COG.GetX()&lt;&lt; &quot;\n\t\t\t\tY = \t&quot; &lt;&lt; COG.GetY() &lt;&lt; &quot;\n\t\t\t\tZ = \t&quot; &lt;&lt; COG.GetZ() &lt;&lt; endl;
+
+// Dump the list of faces
+// 
+cout &lt;&lt; &quot;\n Dump the list of faces : &quot; &lt;&lt; endl;
+CATLISTP(CATCell) <strong>listFaces</strong> = NULL; // the list of faces
+pBodyToScan-&gt;<strong>GetAllCells</strong>(listFaces, <strong>2</strong>);
+
+CATLONG32 nbFaces = listFaces.Size();
+cout &lt;&lt; &quot;nb faces : &quot; &lt;&lt; nbFaces &lt;&lt; endl; 
+
+// Retrieve the area of each face 
+//
+cout &lt;&lt; &quot;\nRetrieve the area of each face : &quot; &lt;&lt; endl;
+int i = 1;
+for (; (i &lt;= nbFaces); i++)
+{
+CATFace * pFace = (CATFace *)listFaces[i];
+<strong>CATICGMDynMassProperties3D</strong> * pDynMassOpe0 = <strong>CATCGMDynCreateMassProperties3D</strong>(&amp;topdata, pFace);
+
+cout &lt;&lt; &quot;Face &quot; &lt;&lt; i &lt;&lt; &quot;\tTag = &quot; &lt;&lt; pFace-&gt;GetPersistentTag() &lt;&lt;&quot;\tarea: &quot; &lt;&lt; pDynMassOpe0-&gt;<strong>GetWetArea</strong>() &lt;&lt; endl;
+pDynMassOpe0-&gt;Release(); pDynMassOpe0 = NULL;
+}
+
+// Dump the list of edges
+//
+cout &lt;&lt; &quot;\n Dump the list of edges : &quot; &lt;&lt; endl;
+CATLISTP(CATCell) <strong>listEdges</strong> = NULL; // the list of edges
+pBodyToScan-&gt;<strong>GetAllCells</strong>(listEdges, <strong>1</strong>);
+
+CATLONG32 nbEdges = listEdges.Size();
+cout &lt;&lt; &quot;nb edges &quot; &lt;&lt; nbEdges &lt;&lt; endl; 
+
+
+// Retrieve the length of each edge
+//
+cout &lt;&lt; &quot;\nRetrieve the length of each edge : &quot; &lt;&lt; endl;
+for (i = 1; (i &lt;= nbEdges); i++)
+{
+CATEdge * pEdge = (CATEdge *)listEdges[i];
+if (pEdge == NULL) return 1;
+CATICGMDynMassProperties3D * <strong>pDynMassOpe1</strong> = <strong>CATCGMDynCreateMassProperties3D</strong>(&amp;topdata, <strong>pEdge</strong>);
+
+
+cout &lt;&lt; &quot;Edge &quot; &lt;&lt; i &lt;&lt; &quot;\tTag = &quot; &lt;&lt; pEdge-&gt;GetPersistentTag() &lt;&lt; &quot;\tlength: &quot; &lt;&lt; pDynMassOpe1-&gt;<strong>GetLength</strong>() &lt;&lt; endl;
+pDynMassOpe1-&gt;Release(); pDynMassOpe1 = NULL;
+}
+;
+</pre>
+	<ul>
+		<li>Dump topology and computing geometric characteristics&nbsp; of a 
+		solid sphere:</li>
+	</ul>
+<pre class="code"> 
+cout &lt;&lt; &quot;\nScan the Topology of the Sphere : &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------------------&quot; &lt;&lt; endl;
+ScanTopology (<strong>pBodySphere</strong>, piGeomFactory, topdata);
+</pre>
+	<p>Below the output traces for scan topology of a Sphere :</p>
+	<p><img alt="" src="images/img1C.jpg"></p>
+	<p>Area of the faces of the sphere : </p>
+<table>
+	<tr>
+		<td>
+		<img alt="" src="images/Sphere_img26.jpg"><br>
+		Face 1 Area : 31415.9</td>
+		<td>
+		<img alt="" src="images/Sphere_img27.jpg"><br>
+		Face 2 Ware: 31415.9</td>
+	</tr>
+	<tr>
+		<td>
+		<img alt="" src="images/Sphere_img28.jpg"><br>
+		Face 3 length: 31415.9</td>
+		<td>
+		<img alt="" src="images/Sphere_img29.jpg"><br>
+		Face 4 Area: 31415.9</td>
+	</tr>
+</table>
+	<br>Lengths of the edges of the sphere:<br>
+<table>
+	<tr>
+		<td>
+		<img alt="" src="images/Sphere_img1F.jpg"><br>
+		Edge 3 length: 157.08</td>
+		<td>
+		<img alt="" src="images/Sphere_img20.jpg"><br>
+		Edge 2 length: 157.08</td>
+	</tr>
+	<tr>
+		<td>
+		<img alt="" src="images/Sphere_img21.jpg"><br>
+		Edge 5 length: 157.08</td>
+		<td>
+		<img alt="" src="images/Sphere_img22.jpg"><br>
+		Edge 6 length: 157.08</td>
+	</tr>
+	<tr>
+		<td>
+		<img alt="" src="images/Sphere_img25.jpg"><br>
+		Edge 1 length: 314.159</td>
+		<td>
+		<img alt="" src="images/Sphere_img24.jpg"><br>
+		Edge 4 length: 314.159</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+	<ul>
+		<li>Dump topology and computing geometric characteristics&nbsp; of a 
+		solid Torus:</li>
+	</ul>
+<pre class="code"> 
+cout &lt;&lt; &quot;\nScan the Topology of the Torus : &quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;------------------------------------&quot; &lt;&lt; endl;
+ScanTopology (<strong>pBodyTorus</strong>, piGeomFactory, topdata);
+</pre>
+	<p>Below the output traces for scan topology of a Torus :</p>
+	<p><img alt="" height="434" src="images/Torus_img2C.jpg" width="374"></p>
+	<p>Area of the faces of the Torus :</p>
+<table>
+	<tr>
+		<td class="auto-style1">
+		<img alt="" src="images/Torus_img35.jpg"><br>
+		Face 1 Area : 47374.1</td>
+		<td class="auto-style1">
+		<img alt="" src="images/Torus_img36.jpg"><br>
+		Face 2 Ware: 47374.1</td>
+	</tr>
+	<tr>
+		<td class="auto-style1">
+		<img alt="" src="images/Torus_img38.jpg"><br>
+		Face 3 length: 47374.1</td>
+		<td class="auto-style1">
+		<img alt="" src="images/Torus_img39.jpg"><br>
+		Face 4 Area: 47374.1</td>
+	</tr>
+</table>
+	<p>Edges of the Torus:</p>
+<table>
+	<tr>
+		<td>
+		<img alt="" src="images/Torus_img3B.jpg"><br>
+		</td>
+		<td style="width: 297px">
+		<img alt="" src="images/Torus_img3C.jpg"><br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<img alt="" src="images/Torus_img3D.jpg"><br>
+		</td>
+		<td style="width: 297px">
+		<img alt="" src="images/Torus_img3E.jpg"><br>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 245px">
+		<img alt="" src="images/Torus_img3F.jpg"><br>
+		</td>
+		<td style="width: 297px; height: 245px">
+		<img alt="" src="images/Torus_img40.jpg"><br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<img alt="" src="images/Torus_img42.jpg"></td>
+		<td style="width: 297px">
+		<img alt="" src="images/Torus_img44.jpg"></td>
+	</tr>
+</table>
+	<ul>
+		<li>Dump topology and computing geometric characteristics&nbsp; of a 
+		solid Pyramid:</li>
+	</ul>
+	<p>Below the output traces for scan topology of a Pyramid :</p>
+	<p><img alt="" src="images/Pyramid_img32.jpg"></p>
+	<p><img alt="" src="images/Pyramid_img45.jpg"></p>
+	<p>&nbsp;</p>
+	<ul>
+		<li>Dump topology and computing geometric characteristics&nbsp; of a 
+		solid Cuboid:</li>
+	</ul>
+	<p>Below the output traces for scan topology of a Cuboid :</p>
+	<p><img alt="" src="images/Cuboid_img30.jpg"><br></p>
+	<p><img alt="" src="images/Cuboid_img46.jpg"></p>
+	<p>&nbsp;</p>
+	<ul>
+		<li>Dump topology and computing geometric characteristics&nbsp; of a 
+		solid Cylinder:</li>
+	</ul>
+	<p>Below the output traces for scan topology of a Cylinder :</p>
+	<p><img alt="" src="images/Cylinder_img2E.jpg"></p>
+	<p><img alt="" src="images/Cylinder_img47.jpg"></p>
+	<h3><a name="Writing_the_Model_and_Closing_the_Container">Writing the Model and 
+Closing the Container</a></h3>
+<p>Before ending, we must first release the software configuration.</p>
+<pre class="code">// Releases the configuration
+    pConfig-&gt;Release();</pre>
+<p>To save the model in a file, the <code>::CATSaveCGMContainer</code> global function 
+is used. Notice that in the use case, the save is conditioned by an input parameter 
+representing the file inside which the model must be saved.</p>
+<p>The use case ends with the closure of the geometry factory, done by the <code>
+::CATCloseCGMContainer</code> global function.</p>
+<pre class="code"> if(1==toStore)
+ {
+#ifdef _WINDOWS_SOURCE
+   ofstream filetowrite(pfileName, ios::binary ) ;
+#else
+   ofstream filetowrite(pfileName,ios::out,filebuf::openprot) ;
+#endif
+
+   <strong>::CATSaveCGMContainer</strong>(piGeomFactory,filetowrite);
+   filetowrite.close();
+ }	
+
+ //
+ // Close the container
+ //
+	
+ <strong>::CATCloseCGMContainer</strong>(piGeomFactory);</pre>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p>This use case explains how to create elementary solids such as sphere, torus 
+etc.. and how to dump their associated topology in order to compute their 
+geometric characteristics such as the volume, the center of gravity position,&nbsp; the area of a face 
+or the length of an 
+edge by using the CATICGMDynMassProperties3D class.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Feb 2018]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

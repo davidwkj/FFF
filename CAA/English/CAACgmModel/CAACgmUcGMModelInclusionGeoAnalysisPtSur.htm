@@ -1,0 +1,754 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="topictype" content="Uc" />
+<meta name="devlang" content="cpp" />
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="Stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css">
+<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js"></script>
+<script type="text/javascript" src="../CAADocJavaScript/submit.js"></script>
+<title>Checking the Confusion of Points on a Surface</title>
+<style type="text/css">
+.auto-style1 {
+	margin-bottom: 43px;
+}
+.auto-style2 {
+	margin-left: 160px;
+}
+</style>
+</head>
+
+<body onload="highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>Testing the Inclusion of a Point on a Surface with 
+		Local Analysis </h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="use">Use Case</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>The CAAGMModelTestInclusion use case illustrates how to test if a 
+		point is included or not on a surface and illustrates how to analyse localy a point of 
+		a surface&nbsp; in order to get its main geometrical characteristics 
+		such as First and Second Fundamental Form coefficients, principal curvatures 
+		values with 
+		their associated direction or the gaussian curvature.</p>
+		<ul>
+			<li><a href="#Learn">What You Will Learn With This Use Case</a></li>
+			<li><a href="#UseCase">The CAAGMModelTestInclusion Use Case</a>
+			<ul>
+				<li><a href="#What">What Does CAAGMModelTestInclusion Do</a></li>
+				<li><a href="#How">How to Launch CAAGMModelTestInclusion</a></li>
+				<li><a href="#Where">Where to Find the CAAGMModelTestInclusion Code</a></li>
+			</ul>
+			</li>
+			<li><a href="#Step">Step-by-Step</a></li>
+			<li><a href="#InShort">In Short</a></li>
+			<li><a href="#References">References</a></li>
+		</ul>
+		</td>
+	</tr>
+</table>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Learn"></a>What You Will Learn With This Use Case</h2>
+<p>This use case [<a href="#References">1</a>] is intended to help you to use the
+<em>CATICGMInclusionPtSur</em> and <em>CATICGMLocalAnalysis2D</em> operators. See [<a href="#References">2</a>] 
+for an overview of this type of operators.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="UseCase"></a>The CAAGMModelTestInclusion Use Case</h2>
+<p>CAAGMModelTestInclusion is a use case of the CAAGMModelInterfaces.edu framework. 
+The second part of the use case focuses on the treatment of point with NURBS 
+Surface and&nbsp; illustrates how to use <em>CATICGMInclusionPtSur</em> and <em>
+CATICGMLocalAnalysis2D </em>through two functions 
+TestInclusionAndLocalAnalysisPtSurf() and LocalAnalysisSurfaceAtPt().</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="What"></a>What Does CAAGMModelTestInclusion Do</h3>
+<table>
+	<tr>
+		<td>
+		<img alt="" src="images/CAAGMModelTestInclusion_img20.jpg"></td>
+		<td>This use case retrieves the input data to be passed to the <em>
+		CATICGMInclusionPtSur</em> operator from the file 
+		TestInclusionPtSurf_PtCrv.NCGM : <ul>
+			<li>A Nurbs Surface.</li>
+			<li>The points to be tested </li>
+		</ul>
+		<p>It creates the operator and performs the geometric tests. The result 
+		can be optionally saved into an NCGM container and displayed using the CAAGMModelGemBrowser 
+		use case [<a href="#References">3</a>]. .</p>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="How"></a>How to Launch CAAGMModelTestInclusion </h3>
+<p>To launch CAAGMModelTestInclusion , you will need to set up the build time 
+environment, then compile CAAGMModelTestInclusion.m along with its 
+prerequisites, set up the run time environment, and then execute the use case&nbsp;&nbsp; [<a href="#References">4</a>].</p>
+<p>If you simply type CAAGMModelConfusionOpe with argument only the input file 
+TestInclusionPtSurf_PtCrv.NCGM, the use case executes, but doesn't save the 
+result in an NCGM file. If you want to save this result, provide the full 
+pathname of the NCGM file to create. For example:</p>
+<pre>CAAGMModelTestInclusion TestInclusionPtSurf_PtCrv.NCGM e:\InclusionGeoAnalysisOutput.NCGM </pre>
+<p>This NCGM file can be displayed using the CAAGMModelGemBrowser use case [<a href="#References">3</a>].</p>
+<p><img alt="" src="images/CAAGMModelTestInclusion_img21.jpg"></p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<article data-xplore-fw='CAAGMModelInterfaces.edu' data-xplore-mod='CAAGMModelConfusionOpe.m'>
+<h3><a name="Where"></a>Where to Find the CAAGMModelTestInclusion Code</h3>
+<p>The CAAGMModelConfusionOpe use case is made of a main named 
+CAAGMModelTestInclusion.cpp 
+located in the CAAGMModelTestInclusion.m module of the CAAGMModelInterfaces.edu framework:</p>
+<p><code>InstallRootFolder\CAADoc\CAAGMModelInterfaces.edu\CAAGMModelTestInclusion.m\</code></p>
+<p>where <code>InstallRootFolder</code> [<a href="#References">4</a>] is the folder 
+where the API CD-ROM is installed.</p>
+<h2>&nbsp;</h2>
+	<h2><a name="Step"></a>Step-by-Step</h2>
+<p>The initial step which consists in creating the geometry factory as well as the 
+last step which consists in writing the model and closing the factory are described 
+in [<a href="#References">1</a>]. The coding steps dedicated to the CATICGMLocalAnalysis2D 
+operator are explained below:</p>
+<ol>
+	<li>Creating the Geometry Factory [<a href="#References">1</a>].</li>
+	<li><a href="#Creates the Line and Cylinder to Intersect">Getting the Surface 
+	and the Points to be Analyzed</a></li>
+	<li><a href="#Basic Mode">Creating and Using the CATICGMInclusionPtSur 
+	operator</a></li>
+	<li><a href="#CATICGMLocalAnalysis1D" name="CATICGMLocalAnalysis1D0">Creating and Using the 
+	CATICGMLocalAnalysis2D Operator<script type="text/javascript">insertLinkToTop();</script><!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= --></a><ul>
+		<li><a href="#CATICGMLocalAnalysis2D">How to create the 
+		CATICGMLocalAnalysis2D Operator?</a> </li>
+		<li><a href="#First_Fundamental_Form">First Fundamental Form at the 
+		point M of the surface.</a> </li>
+		<li><a href="#Second_Fundamental_Form">Second Fundamental Form at the 
+		point M of the surface.</a> </li>
+		<li><a href="#Principal_curvature">Principal curvature at the point M of 
+		the surface</a></li>
+		<li><a href="#Gaussian_curvature_">Gaussian curvature at the point M of 
+		the surface</a> </li>
+	</ul>
+	</li>
+	<li>Writing the Model and Closing the Factory [<a href="#References">1</a>].</li>
+</ol>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Creates the Line and Cylinder to Intersect"></a>Getting the Surface 
+and the Points to Be Analyzed</h3>
+<pre class="code">...
+// 2 - Identify the input surface for test
+// -----------------------------------------------------------
+CATSurface *piInputNurbsSurface = (CATSurface *)piGeomFactory-&gt;<strong>FindObjectFromTag</strong>(163);
+
+cout &lt;&lt; &quot;\n Get the surface (tag = &quot; &lt;&lt; piInputNurbsSurface-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+
+// 2 - Identify the CATPoint to test
+// 
+CATPoint * pPointPS1 = (CATPoint *)piGeomFactory-&gt;<strong>FindObjectFromTag</strong>(43185);
+
+cout &lt;&lt; &quot;\n Get the Point (tag = &quot; &lt;&lt; pPointPS1-&gt;GetPersistentTag() &lt;&lt; &quot; ) : OK&quot; &lt;&lt; endl;
+</pre>
+<p>The geometry is retrieved from its associated tag in the <code>
+TestInclusionPtSurf_PtCrv.NCGM </code>by the <code>CATGeoFactory</code>&nbsp; 
+method FindObjectFromTag().</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h3><a name="Basic Mode"></a>Creating and Using the CATICGMInclusionPtSur Operator</h3>
+<p>An example of function allowing&nbsp; to test in ADVANCED mode the inclusion 
+of a point on a Surface and performing&nbsp; local analysis of this point (if it 
+is included in the surface)&nbsp; is provided in the use case. </p>
+	<p>This method is <strong>TestInclusionAndLocalAnalysisPtSurf</strong>()</p>
+	<p>In this function, the <strong>CATCGMCreateInclusion</strong> global function is used to create the operator 
+	dedicated for test inclusion. </p>
+	<p>The following code illustrates how to test the inclusion between a point 
+	and a surface:</p>
+<pre class="code">//  Create the CATICGMInclusionPtSur operator
+ pTestInclusionPtSurOper = ::<strong>CATCGMCreateInclusion</strong>(piGeomFactory,
+piConfig,
+piPointToTest,
+piSurface,
+iTolerance,
+TRUE,
+ADVANCED);
+...
+
+cout &lt;&lt; &quot;Creates an operator for testing the inclusion of a Point in a Surface. : OK&quot; &lt;&lt; endl;
+
+// run the operator 
+// 
+pTestInclusionPtSurOper-&gt;<strong>Run</strong>();
+cout &lt;&lt; &quot;\nrun the operator : OK&quot; &lt;&lt; endl;
+
+CATLONG32 NbInclusionPt = pTestInclusionPtSurOper-&gt;GetNumberOfPoints();
+cout &lt;&lt; &quot;\nNumber of resulting points of CATICGMInclusionPtSur operator: &quot; &lt;&lt; NbInclusionPt &lt;&lt; endl;
+
+CATBoolean isNextPointFound = FALSE;
+isNextPointFound = pTestInclusionPtSurOper-&gt;<strong>NextPoint</strong>();
+
+if (TRUE == isNextPointFound)
+{
+cout &lt;&lt; &quot;\nSkips to the next solution point of CATICGMInclusionPtSur operator : TRUE&quot; &lt;&lt; endl;
+
+// Retrieves the parameter of the next solution point of CATICGMInclusionPtCrv operator.
+//
+CATSurParam surparam = pTestInclusionPtSurOper-&gt;GetSurParam();
+
+
+// Eval the mathematical point associated with a CATSurParam.
+//
+CATMathPoint MathPoint;
+piSurface-&gt;EvalPoint(surparam, MathPoint);
+
+double CoordMathPoint_X, CoordMathPoint_Y, CoordMathPoint_Z;
+
+// Display coordinates of the solution point find by the operator
+// 
+CoordMathPoint_X = MathPoint.GetX();
+CoordMathPoint_Y = MathPoint.GetY();
+CoordMathPoint_Z = MathPoint.GetZ();
+
+cout &lt;&lt; &quot;Coordinates of solution point : \n\n\t X = &quot; &lt;&lt; CoordMathPoint_X &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; CoordMathPoint_Y &lt;&lt; &quot;\n\t Z = &quot; &lt;&lt; CoordMathPoint_Z &lt;&lt; endl;
+
+
+// Eval Global Parameter of the solution point
+//
+double GlobalParamU, GlobalParamV;
+surparam.GetParams(GlobalParamU, GlobalParamV);
+cout &lt;&lt; &quot;\nRetrieves the parameter of the next solution point of CATICGMInclusionPtSur operator : OK&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;Parameters of the next solution point : \n\tU = &quot; &lt;&lt; GlobalParamU &lt;&lt; &quot; \tV = &quot; &lt;&lt; GlobalParamV &lt;&lt; endl;
+
+
+// Eval First Derivatives on the solution point
+//
+CATMathVector FistDerivVectU, FistDerivVectV;
+piSurface-&gt;EvalFirstDeriv(surparam, FistDerivVectU, FistDerivVectV);
+
+FistDerivVectU.Normalize();
+FistDerivVectV.Normalize();
+
+// Display Tangent along Direction U &amp; V
+//
+double CoordTangDirVectU_X, CoordTangDirVectU_Y, CoordTangDirVectU_Z;
+double CoordTangDirVectV_X, CoordTangDirVectV_Y, CoordTangDirVectV_Z;
+
+CoordTangDirVectU_X = FistDerivVectU.GetX();
+CoordTangDirVectU_Y = FistDerivVectU.GetY();
+CoordTangDirVectU_Z = FistDerivVectU.GetZ();
+
+cout &lt;&lt; &quot;\nDirection of Tangent along Direction U : \n\n\t X = &quot; &lt;&lt; CoordTangDirVectU_X &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; CoordTangDirVectU_Y &lt;&lt; &quot;\n\t Z = &quot; &lt;&lt; CoordTangDirVectU_Z &lt;&lt; endl;
+
+CoordTangDirVectV_X = FistDerivVectV.GetX();
+CoordTangDirVectV_Y = FistDerivVectV.GetY();
+CoordTangDirVectV_Z = FistDerivVectV.GetZ();
+cout &lt;&lt; &quot;\nDirection of Tangent along Direction U : \n\n\t X = &quot; &lt;&lt; CoordTangDirVectV_X &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; CoordTangDirVectV_Y &lt;&lt; &quot;\n\t Z = &quot; &lt;&lt; CoordTangDirVectV_Z &lt;&lt; endl;
+
+// Eval the signature of the solution point
+//
+CATLONG32 signaturePt = pTestInclusionPtSurOper-&gt;<strong>GetSignature</strong>();
+if (signaturePt == 0)
+cout &lt;&lt; &quot;\nSignature Pt = &quot; &lt;&lt; signaturePt &lt;&lt; &quot; Then The point is on the surface&quot; &lt;&lt; endl;
+else if (signaturePt == -1)
+cout &lt;&lt; &quot;\nSignature Pt = &quot; &lt;&lt; signaturePt &lt;&lt; &quot; Then The point is under the surface&quot; &lt;&lt; endl;
+else if (signaturePt == 1)
+cout &lt;&lt; &quot;\nSignature Pt = &quot; &lt;&lt; signaturePt &lt;&lt; &quot; Then The point is above the surface&quot; &lt;&lt; endl;
+
+
+// Retrieves the distance of a solution point and the Surface.
+//
+double DistancePtCurve = pTestInclusionPtSurOper-&gt;<strong>GetDistance</strong>();
+cout &lt;&lt; &quot;\nDistance between the solution point and the Surface = &quot; &lt;&lt; DistancePtCurve &lt;&lt; endl;
+</pre>
+<p>Here are the messages on the standard output:</p>
+<pre><img alt="" src="images/CAAGMModelTestInclusionimg25.jpg"></pre>
+	<p>Below the model tested by the use case:</p>
+	<p><img alt="" src="images/CAAGMModelTestInclusionimg27.jpg"></p>
+	<h3><a name="CATICGMLocalAnalysis1D">Creating and Using the 
+	CATICGMLocalAnalysis2D Operator<script type="text/javascript">insertLinkToTop();</script><!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= --></a></h3>
+<p>The coding steps dedicated to the CATICGMLocalAnalysis2D 
+operator are explained below:</p>
+	<ol>
+		<li><a href="#CATICGMLocalAnalysis2D">How to create the 
+		CATICGMLocalAnalysis2D Operator?</a> </li>
+		<li><a href="#First_Fundamental_Form">First Fundamental Form at the 
+		point M of the surface.</a> </li>
+		<li><a href="#Second_Fundamental_Form">Second Fundamental Form at the 
+		point M of the surface.</a> </li>
+		<li><a href="#Principal_curvature">Principal curvature at the point M of 
+		the surface</a></li>
+		<li><a href="#Gaussian_curvature_">Gaussian curvature at the point M of 
+		the surface</a> </li>
+	</ol>
+	<p>&nbsp;</p>
+	<h4><a name="CATICGMLocalAnalysis2D">How to create the 
+	CATICGMLocalAnalysis2D Operator?</a></h4>
+	<p>An example of function enabling the local Analysis of the surface on a 
+given parameter point (CATSurParam) is provided in the use case. </p>
+	<p>This method is <strong>LocalAnalysisSurfaceAtPt</strong>().</p>
+	<p>In this function, the <strong>CATCGMCreateLocalAnalysis</strong> global function is used to create the operator
+	<strong>CATICGMLocalAnalysis2D </strong>which is 
+	dedicated to the local analysis of a point on a CATSurface. </p>
+	<p>The following code illustrates how to use this operator and how to analyse localy a 
+	surface on a given point defined on it.</p>
+<pre class="code">
+
+// Create Operator enabling the local analysis on a point of a CATSurface.
+// 
+<strong>CATICGMLocalAnalysis2D</strong> * pGeomOperLocalAnalysisSur = ::<strong>CATCGMCreateLocalAnalysis</strong>(iConfig, piSurface, isurparam);
+
+if (pGeomOperLocalAnalysisSur)
+{
+cout &lt;&lt; &quot;\n\nCreate Operator enabling the local analysis on a point of a CATSurface. : OK&quot; &lt;&lt; endl;
+</pre>
+	<p>The CATICGMLocalAnalysis2D operator enables to get for a given point on a 
+	surface:</p>
+	<ul class="auto-style2">
+		<li>the First and Second Fundamental Form coefficients</li>
+		<li>the principal curvatures with their associated 2D and 3D direction 
+		value, </li>
+		<li>the Gaussian curvature value </li>
+		<li>the regularity of the surface.</li>
+	</ul>
+	<p>Let see how to retrieve these characteristics and review briefly their 
+	geometrical definitions : </p>
+	<p class="auto-style1">Let ru and rv are the basis of the tangent plane Tp 
+	of the surface S at the point P: &nbsp;</p>
+	<pre>&nbsp;</pre>
+	<p><img alt="" src="images/CurveOnSurfaceimg37.jpg"></p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<ul>
+		<li>
+		<h4><strong><a name="First_Fundamental_Form">First Fundamental Form at the point M of the surface. 
+		</a> </strong></h4>
+		</li>
+	</ul>
+	<p>The first fundamental form represents the expression of how in a given 
+	point P the surface S 
+	inherit the inner product of space.</p>
+	<p>Geometrically it allows compute metric on the surface such as length of 
+	curves, angle of tangent vectors or area of regions without refering back to 
+	the space where the surface lie. </p>
+	<p>The First fundamental form is intrinsic to the surface, and is the reason 
+	why all the previous mentionned measures can be computed without &quot;leaving&quot; 
+	the surface.</p>
+	<p>&nbsp;Tp is the tangent plane of surface S on the point P. The base of 
+	the tangent plane Tp is defined by the vectors (ru, rv).</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><img alt="" src="images/img40.jpg"></p>
+	<p>the computation of ds leads to the First Fundamental Form of the surface 
+	S on P:</p>
+	<p><img alt="" src="images/firstfundamentalformimg45.jpg"></p>
+	<p><img alt="" src="images/firstfundamentalformimg47.jpg"></p>
+	<p>E, F and G are the First Fundamental Form coefficients and the can be 
+	retrieved thanks to CATICGMLocalAnalysis2D&nbsp; operator as following :&nbsp; </p>
+	<p><img alt="" src="images/firstfundamentalformA.gif"></p>
+	<p>&nbsp;The following code illustrates how to get the First Fundamental 
+	Form coefficients with method <strong>GetFirstFundamentalForm() </strong>of 
+	CATICGMLocalAnalysis2D&nbsp; operator : </p>
+	<pre>
+...
+// Get the first fundamental form (coeff_E, coeff_F, coeff_G) of the point of the surface.
+// 
+// coeff_E - The first coordinate : 
+// ----------------------------------
+//
+// coeff_E = FirstDerivU.Norm() ^ 2
+// where
+// FirstDerivU is the first derivative with regards to the first parameter.
+//
+// coeff_F - The second coordinate : 
+// ------------------------------------
+//
+// coeff_F= FirstDerivU * FirstDerivV 
+//
+// where * is the dot product.
+// 
+// 
+// coeff_G : The third coordinate : 
+// -----------------------------------
+//
+// coeff_G = FirstDerivV.Norm() ^ 2 
+// where
+// FirstDerivV is the first derivative with regards to the second parameter.
+//
+
+double coeff_E, coeff_F, coeff_G;
+pGeomOperLocalAnalysisSur-&gt;<strong>GetFirstFundamentalForm</strong>(coeff_E, coeff_F, coeff_G);
+
+
+cout &lt;&lt; &quot;\n First fondamental form :&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n=========================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\nE = &quot; &lt;&lt; coeff_E  &lt;&lt; endl;
+cout &lt;&lt; &quot;F = &quot; &lt;&lt; coeff_F   &lt;&lt; endl;
+cout &lt;&lt; &quot;G = &quot; &lt;&lt; coeff_G   &lt;&lt; endl;
+
+
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<p><img alt="" src="images/firstFundFormimg2A.jpg"></p>
+	<ul>
+		<li>
+		<h4><strong><a name="Second_Fundamental_Form">Second Fundamental Form at the point M of the surface. 
+		</a> </strong></h4>
+		</li>
+	</ul>
+	<p>The Second Fundamental form allows a quantitative study of the form of a 
+	surface around a given point defined on it.</p>
+	<p>She enables in fact to measure the default of planeity of the surface and 
+	she is identically null when the surface is planar. She will also serve to 
+	the computation of the curvature of the curves defined on the surface S.</p>
+	<p>The Second Fundamental Form enables to quantify the curvature of a 
+	surface S on a point P defined on S. </p>
+	<p>Let see how to retrieve the Second Fundamental Form of a surface S on a 
+	point P defined in a curve C (on S).</p>
+	<p>The shema below illustrates the surface S, whith the point P defined on 
+	the curve C.</p>
+	<p>On the point P, we consider </p>
+	<ul>
+		<li>the vector t tangent to the curve on P,</li>
+		<li>&nbsp;the vector N normal to the surface S on P</li>
+		<li>k is the curvature of the curve C on P and this curvature can be 
+		seen as the sum of kn the normal curvature of surface S on P with kg the 
+		geodesic curvature of S on P.</li>
+	</ul>
+	<p>the Second Fundamental Form will enable to quantify the normal curvature 
+	of surface S on P.</p>
+	<p>&nbsp;</p>
+	<p><img alt="" src="images/SecondFundamentalForm_img2E.jpg"></p>
+	<p>The vectors N (normal of&nbsp; S on P) is orthogonal with tangent vector 
+	t, the scalar product between these vectors is then null. </p>
+	<p>By differentiating this dot product we obtain :</p>
+	<p>&nbsp;</p>
+	<p><img alt="" src="images/SecondFundamentalForm_img2F.jpg"></p>
+	<p><img alt="" src="images/SecondFundamentalForm_img31.jpg"></p>
+	<p>By definition the vector k representing the curvature of the curve C on P 
+	is :</p>
+	<p><img alt="" src="images/SecondFundamentalForm_img33.jpg"></p>
+	<p>the vector representing the geodesic curvature kg is orthogonal with 
+	vector N.</p>
+	<p>then the dot product between&nbsp; k and the normal of surface S on P is </p>
+	<p><img alt="" src="images/SecondFundamentalForm_img35.jpg"></p>
+	<p>this lead to :</p>
+	<p><img alt="" src="images/SecondFundamentalForm_img37.jpg"></p>
+	<p>&nbsp;</p>
+	<p>The dot product between kn and normal vector S is then the quotient 
+	between tw scalar product :</p>
+	<p><img alt="" src="images/SecondFundamentalForm_img39.jpg"></p>
+	<p>Thus conduct to following formula : </p>
+	<p><img alt="" src="images/SecondFundamentalForm_img3A.jpg"></p>
+	<p>L, M and N are called the <strong>Second Fundamental Form coefficients</strong>.</p>
+	<p>Therefore the normal curvature at point P of surface S&nbsp; is : </p>
+	<p><img alt="" src="images/SecondFundamentalForm_img3B.jpg"></p>
+	<p>the parametere alpha, is the direction of the tangent line to C at P.</p>
+	<p>The operator <strong>CATICGMLocalAnalysis2D</strong>&nbsp; provide the 
+	method <strong>GetSecondFundamentalForm() </strong>wich is dedicated to 
+	retrieve the Second Fundamental Form of a surface S on a given point defined 
+	on it.</p>
+	<p><br>The following code illustrates how to get the Second Fundamental Form 
+	coefficients with method <strong>GetSecondFundamentalForm() </strong>of 
+	CATICGMLocalAnalysis2D&nbsp; operator : </p>
+	<pre>
+// Retrieve the second fondamental form of the point of the surface.
+//
+// Let H = (FirstDerivU ^ FirstDerivV) / (FirstDerivU ^ FirstDerivV).Norm()
+// ===================================================================================================
+//
+// coeff_L - The first coordinate : 
+// ----------------------------------
+//
+// coeff_L = SecondDerivU2 * H 
+// where
+// SecondDerivU2 is the second derivative with regards to the first parameter.
+// * the dot product.
+// 
+// coeff_M - The second coordinate : 
+// ----------------------------------
+//
+// coeff_M = SecondDerivUV * H 
+// where
+// SecondDerivUV is the second derivative with regards to the first parameter and second parameters.
+// 
+// 
+// coeff_N - The third coordinate : 
+// ----------------------------------
+//
+// coeff_N = SecondDerivV2 * H 
+// where
+// SecondDerivV2 is the second derivative with regards to the second parameter.
+// 
+double <strong>coeff_L</strong>, <strong>coeff_M</strong>, <strong>coeff_N</strong>;
+pGeomOperLocalAnalysisSur-&gt;<strong>GetSecondFundamentalForm</strong>(<strong>coeff_L</strong>, <strong>coeff_M</strong>, <strong>coeff_N</strong>);</pre>
+	<p>Here are the messages on the standard output:</p>
+	<pre><img alt="" src="images/SecondFundamentalForm_img3C.jpg"></pre>
+	<p>The Second Fundamental Form allows also to determine the nature of the 
+	point P on the surface as following : </p>
+	<ul>
+		<li><strong>Elliptic point</strong> in case&nbsp; we have no 
+		intersection between the surface S and its tangent plane except at the 
+		point P.&nbsp; for example all the points defined on an ellipsoid 
+		surface are elliptic.</li>
+	</ul>
+	<pre><img alt="" src="images/SFF_img4D.jpg"></pre>
+	<ul>
+		<li><strong>Parabolic Point</strong> in case where the surface S 
+		intersect its tangent plane Tp with one line which passes through P.</li>
+	</ul>
+	<pre><img alt="" src="images/SFF_img4E.jpg"></pre>
+	<ul>
+		<li><strong>Hyperbolic Point</strong> in case where the surface S 
+		intersect its tangent plane Tp with two lines which intersect at point 
+		P.</li>
+	</ul>
+	<pre>&nbsp;</pre>
+	<pre><img alt="" src="images/SFF_img51.jpg"></pre>
+	<ul>
+		<li><strong>Planar Point</strong> in case where the surface S and the 
+		tangent plane&nbsp; have a contact. In such case the Second Fundament 
+		Form coeffecient of the surface S on P are all null.</li>
+	</ul>
+	<pre><img alt="" src="images/SFF_img54.jpg"></pre>
+	<pre>
+// delta = M² - LN
+// delta &lt; 0 =&gt; the point is elliptic : no intersection between the surface S and its tangent plane except at the point P
+// delta = 0 =&gt; the point is Parabolic : the surface S intersect its tangent plane Tp with one line which passes through P.
+// delta &gt; 0 =&gt; the point is Hyperbolic : the surface S intersect its tangent plane Tp with two lines which intersect at point P.
+//
+double delta = SecondFundamentalForm[1] * SecondFundamentalForm[1] - SecondFundamentalForm[0] * SecondFundamentalForm[2];
+cout &lt;&lt; &quot;\n delta = M² - LN :&quot; &lt;&lt; delta &lt;&lt; endl;
+if (delta &lt; -CATEpsilon)
+cout &lt;&lt; &quot;\n delta &lt; 0 =&gt; the point is elliptic : no intersection between the surface S and its tangent plane except at the point P&quot; &lt;&lt; endl;
+
+else if (fabs(delta) &lt; CATEpsilon)
+cout &lt;&lt; &quot;\n delta = 0 =&gt; the point is Parabolic : the surface S intersect its tangent plane Tp with one line which passes through P.&quot; &lt;&lt; endl;
+
+else if (delta &gt; CATEpsilon)
+cout &lt;&lt; &quot;\n delta &gt; 0 =&gt; the point is Hyperbolic : the surface S intersect its tangent plane Tp with two lines which intersect at point P.&quot; &lt;&lt; endl;
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<pre><img alt="" src="images/TypePointTraceimg57.jpg"></pre>
+	<ul>
+		<li>
+		<h4><strong><a name="Principal_curvature">Principal curvature at the point M of the surface</a></h4>
+&nbsp;</strong></li>
+	</ul>
+	<p>If we consider a surface S and a point P defined on it, we can define an 
+	infinity of curvature at this point because it existe a number infinite of 
+	plan that intersect perpendiculary the surface S on P and wich are 
+	perpendicular to the tangent plan of the surface S on P.</p>
+	<p><img alt="" src="images/MinMaxCurvatureimg5B.jpg"></p>
+	<p>The maximal and minimal curvatures of the point P on surface S are called 
+	Principal Curvatures.</p>
+	<p>Their value can be retrieved from First and Second Fundamental Form 
+	coefficients or&nbsp; can be directly found thanks to the method <strong>
+	GetMinMaxCurvaturesAndDirections </strong>or<strong> GetMinMaxCurvature</strong> 
+	of the operator<strong> CATICGMLocalAnalysis2D.</strong></p>
+	<p>The formula&nbsp;&nbsp; enabling to compute the min and max curvature 
+	directly from the First and Second Fundamental Form coefficients is 
+	following: </p>
+	<p><img alt="" src="images/MinMaxCurvatureimg5C.jpg"></p>
+	<p>The following code illustrates how to get the principal curvatures value 
+	with their associated direction (2D and 3D) with method <strong>
+	GetMinMaxCurvaturesAndDirections() </strong>of CATICGMLocalAnalysis2D&nbsp; 
+	operator : </p>
+	<pre> // Gets the min and max curvatures at the point along with the associated principal curvature directions
+// 
+pGeomOperLocalAnalysisSur-&gt; <strong>GetMinMaxCurvaturesAndDirections</strong>(
+MinMaxCurvature[0],
+MinMaxCurvature[1],
+MinDirection2D,
+MaxDirection2D,
+MinDirection3D,
+MaxDirection3D);
+...
+// Display Min &amp; Max Curvature
+//
+cout &lt;&lt; &quot;\n Min curvature with associated 2D &amp; 3D direction :&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n=========================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\nMin curvature with GetMinMaxCurvaturesAndDirections = &quot; &lt;&lt; MinMaxCurvature[0] &lt;&lt; endl;
+
+// Compute Min curvature with Formula : 
+//
+// kmin = H - sqrt(H²-K)
+// 
+// where 
+// - K = (LN-M²)/(EG-F²)
+// - H = (EN+GL-2FM)/2(EG-F²)
+//
+double coeffK = GaussCurvature;
+double coeffH = (FirstFondamentalForm[0] * SecondFundamentalForm[2] + FirstFondamentalForm[2] * SecondFundamentalForm[0] - 2 * FirstFondamentalForm[1] * SecondFundamentalForm[1]) /
+		(2*((FirstFondamentalForm[0] * FirstFondamentalForm[2] - FirstFondamentalForm[1] * FirstFondamentalForm[1])));
+
+double MinCurvatureByformula = coeffH - sqrt(coeffH*coeffH - coeffK);
+cout &lt;&lt; &quot;\nMin curvature with formula = &quot; &lt;&lt; MinCurvatureByformula &lt;&lt; endl;
+
+
+double CoordMinCurvatureDir2D_X, CoordMinCurvatureDir2D_Y;
+
+CoordMinCurvatureDir2D_X = MinDirection2D.GetX();
+CoordMinCurvatureDir2D_Y = MinDirection2D.GetY();
+cout &lt;&lt; &quot;\nMin Direction 2D = : \n\n\t X = &quot; &lt;&lt; CoordMinCurvatureDir2D_X &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; CoordMinCurvatureDir2D_Y &lt;&lt; endl;
+
+double CoordMinCurvatureDir3D_X, CoordMinCurvatureDir3D_Y, CoordMinCurvatureDir3D_Z;
+
+CoordMinCurvatureDir3D_X = MinDirection3D.GetX();
+CoordMinCurvatureDir3D_Y = MinDirection3D.GetY();
+CoordMinCurvatureDir3D_Z = MinDirection3D.GetZ();
+cout &lt;&lt; &quot;\nMin Direction 3D: \n\n\t X = &quot; &lt;&lt; CoordMinCurvatureDir3D_X &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; CoordMinCurvatureDir3D_Y &lt;&lt; &quot;\n\t Z = &quot; &lt;&lt; CoordMinCurvatureDir3D_Z &lt;&lt; endl;
+
+
+cout &lt;&lt; &quot;\n Max curvature with associated 2D &amp; 3D direction :&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\n=========================================================&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;\nMax curvature with GetMinMaxCurvaturesAndDirections = &quot; &lt;&lt; MinMaxCurvature[1] &lt;&lt; endl;
+
+double MaxCurvatureByformula = coeffH + sqrt(coeffH*coeffH - coeffK);
+cout &lt;&lt; &quot;\nMax curvature with formula = &quot; &lt;&lt; MaxCurvatureByformula &lt;&lt; endl;
+
+if (fabs(MinMaxCurvature[1] - MaxCurvatureByformula) &gt; CATEpsilon ||
+fabs(MinMaxCurvature[0] - MinCurvatureByformula) &gt; CATEpsilon)
+{
+cout &lt;&lt; &quot;ERROR !! Problem with Principal Curvatures !!! &quot; &lt;&lt; endl;
+return E_FAIL;
+}
+
+double CoordMaxCurvatureDir2D_X, CoordMaxCurvatureDir2D_Y;
+
+CoordMaxCurvatureDir2D_X = MaxDirection2D.GetX();
+CoordMaxCurvatureDir2D_Y = MaxDirection2D.GetY();
+cout &lt;&lt; &quot;\nMax Direction 2D = : \n\n\t X = &quot; &lt;&lt; CoordMaxCurvatureDir2D_X &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; CoordMaxCurvatureDir2D_Y &lt;&lt; endl;
+
+double CoordMaxCurvatureDir3D_X, CoordMaxCurvatureDir3D_Y, CoordMaxCurvatureDir3D_Z;
+
+CoordMaxCurvatureDir3D_X = MaxDirection3D.GetX();
+CoordMaxCurvatureDir3D_Y = MaxDirection3D.GetY();
+CoordMaxCurvatureDir3D_Z = MaxDirection3D.GetZ();
+
+cout &lt;&lt; &quot;\nMax Direction 3D: \n\n\t X = &quot; &lt;&lt; CoordMaxCurvatureDir3D_X &lt;&lt; &quot;\n\t Y = &quot; &lt;&lt; CoordMaxCurvatureDir3D_Y &lt;&lt; &quot;\n\t Z = &quot; &lt;&lt; CoordMaxCurvatureDir3D_Z &lt;&lt; endl;
+
+</pre>
+	<p>Here are the messages on the standard output:</p>
+	<pre><img alt="" src="images/MinMaxCurvatureimg5D.jpg"></pre>
+	<p>The line of curvature of a surface are the curves whose tangent at each 
+	point is in a principal direction. For a surface of revolution, the line of 
+	curvatures are the meridian and parallels of the surface. </p>
+	<pre>&nbsp;</pre>
+	<ul>
+		<li>
+		<h4><strong><a name="Gaussian_curvature_">Gaussian curvature</a> at the point M of the surface</strong></h4>
+		</li>
+	</ul>
+	<p>The Gaussian curvature and the mean curvature are the product and the 
+	average of the two principal curvatures.</p>
+	<p><img alt="" src="images/GaussCurvimg64.jpg"></p>
+	<p>a point P on a surface S is :</p>
+	<ul>
+		<li><strong>Elliptic point</strong> if K&gt;0</li>
+		<li><strong>Parabolic Point</strong> if K=0 and Mean Curvature H not 
+		equal to 0.</li>
+		<li><strong>Hyperbolic Point</strong> if K &lt; 0</li>
+		<li><strong>Planar Point</strong> if K=H=0</li>
+	</ul>
+	<p>The following code illustrates how to get the Gaussian curvature value 
+	with method <strong>GetGaussianCurvature() </strong>of 
+	CATICGMLocalAnalysis2D&nbsp; operator : </p>
+	<pre> // Get The Gauss Curvature
+//
+// The Gaussian curvature = Cmin*Cmax , 
+//
+// where 
+// Cmin is the minium curvature
+// Cmax is the maximum curvature at the point
+//
+Gaussian_Curvature = pGeomOperLocalAnalysisSur-&gt;<strong>GetGaussianCurvature</strong>();
+
+
+// Formula of Curvature Gauss
+// K = (LN -M²)/(EG -F²)
+// 
+double GaussCurvature = ((SecondFundamentalForm[0] * SecondFundamentalForm[2]) - SecondFundamentalForm[1] * SecondFundamentalForm[1]) / (FirstFondamentalForm[0] * FirstFondamentalForm[2] - FirstFondamentalForm[1] * FirstFondamentalForm[1]);
+cout &lt;&lt; &quot;\nCurvature Gauss with Formula = &quot; &lt;&lt; GaussCurvature &lt;&lt; endl;
+
+
+// Get the mean curvature at the point from GetMeanCurvature method
+//
+Main_Curvature = pGeomOperLocalAnalysisSur-&gt;<strong>GetMeanCurvature</strong>();
+cout &lt;&lt; &quot;\nMain Curvature from GetMeanCurvature = &quot; &lt;&lt; Main_Curvature &lt;&lt; endl;
+
+// Formula for Main Curvature from First &amp; Second Fundamental Form coefficients
+// H = (EN+GL-2FM)/2(EG-F²)
+//
+double MainCurvatureForm = (FirstFondamentalForm[0] * SecondFundamentalForm[2] + FirstFondamentalForm[2] * SecondFundamentalForm[0] - 2 * FirstFondamentalForm[1] * SecondFundamentalForm[1]) / (2 * ((FirstFondamentalForm[0] * FirstFondamentalForm[2] - FirstFondamentalForm[1] * FirstFondamentalForm[1])));
+cout &lt;&lt; &quot;\nMain Curvature from Formula = &quot; &lt;&lt; MainCurvatureForm &lt;&lt; endl;
+
+// The Main Curvature value is equal to (kmin +kmax)/2
+// 
+double MainCurvatureMinMax = (MinMaxCurvature[0] + MinMaxCurvature[1])*0.5;
+cout &lt;&lt; &quot;\nMain Curvature from (kmin +kmax)/2 = &quot; &lt;&lt; MainCurvatureMinMax &lt;&lt; endl;</pre>
+	<p>Here are the messages on the standard output:</p>
+	<pre><img alt="" src="images/GaussCurvimg66.jpg">
+</pre>
+	<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="InShort"></a>In Short</h2>
+<p><em>CATICGMInclusionPtSur</em> and <em>CATICGMLocalAnalysis2D </em>are a geometric operators which follows the same 
+scheme as all geometric operators: it is a transient object and its execution does 
+not modify the input operands. It must be operated within a single container. </p>
+	<p><em>CATICGMInclusionPtSur</em> purpose is to detect if&nbsp; points is on 
+	a surface.</p>
+	<p><em>CATICGMLocalAnalysis2D</em> purpose is to enable to analyse localy a 
+	surface on a point defined on it and to retrieve all informations related to 
+	its curvature.</p>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="References"></a>References</h2>
+<div id="ref">
+<table class="reference">
+	<tr>
+		<td>[1]</td>
+		<td><a href="CAACgmUcGMModelUseCaseOverw.htm">An Introduction to Geometric Modeler 
+		Use Cases</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="CAACgmUcGMModelOpeOverw.htm">How to Use Geometric Operators</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="CAACgmUcGemBrowser.htm">Browsing the 
+		Geometric Container</a></td>
+	</tr>
+	<tr>
+		<td>[4]</td>
+		<td>
+		<a href="../CAADocUseCases/CAADocRunSample.htm">
+		Building and Launching a Use Case</a></td>
+	</tr>
+</table>
+</div>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [Dec 2017]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<script type="text/javascript">insertCopyright();</script>
+
+</body>
+
+</html>

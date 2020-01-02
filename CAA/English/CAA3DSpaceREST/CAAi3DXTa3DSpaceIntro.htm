@@ -1,0 +1,163 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="topictype" content="Ta" />
+<meta name="devlang" content="ws" />
+	<link rel="stylesheet" type="text/css" href="../CAADocStyleSheets/caav5.css"/>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocTocToc.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/DSDocHighlight.js">/* */</script>
+	<script type="text/javascript" src="../CAADocJavaScript/submit.js">/* */</script>
+	<title>3DSpace Role and Openness</title>
+</head>
+
+<body onload="createToc();highlightSearchTerms();">
+
+<table class="DocHeader">
+	<tr>
+		<td class="DocHeader1">
+		<h1><a name="Top"></a>3DSpace Role and Openness</h1>
+		</td>
+	</tr>
+	<tr>
+		<td class="tech">Technical Article</td>
+	</tr>
+</table>
+
+<table class="abstract">
+	<tr>
+		<td>
+		<h2>Abstract</h2>
+		<p>3DSpace allows people to create and manage collaborative spaces that are dedicated to content storage and collaboration on content. This article is an overview of its capabilities, and what sort of openness it proposes.</p>
+		<div id="toc"></div>
+		</td>
+	</tr>
+</table>
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Role"></a>Role</h2>
+<p>3DSpace provides the following key capabilities:</p>
+<ul>
+<li>collaborative space creation,</li>
+<li>collaborative space properties edition,</li>
+<li>inviting people to collaborative spaces,</li>
+<li>content management in collaborative spaces,</li>
+<li>collaborative space privileges administration,</li>
+<li>compassing 3DSpace content.</li>
+</ul>
+<p>The reader will find information about 3DSpace as Social and Collaboration Applications in the User Assistance documentation. The node is "Social and Collaborative | 3DSpace".</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Platform"></a>Platform Isolation</h2>
+<p>3DSpace is based on the multi-tenancy [<a href="#References">1</a>] principle. Through the <b>3D</b>EXPERIENCE platform, a tenant is also named a <b>platform instance</b> [<a href="#References">2</a>].</p>
+<p>On the public cloud solution, there are as many platform instances as customer having pay for one instance. Otherwise, for the private 
+cloud and on-premises solutions, there is only one platform instance. For the latter case it is named 'onPremise'.</p>
+<p>A user must be first granted to be member of a platform instance. It is the role of the  <b>3D</b>EXPERIENCE platform  administrator to grant people.</p>
+<p>So, there are API [<a href="#References">2</a>] to get the platform instances for which the connected user is member, and
+ to get for each platform instance the valid 3DSpace URL.</p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="Secured"></a>Secured Access</h2>
+<p>Like expressed by this whitepaper on our www.3ds.com web site [<a href="#References">3</a>], the security is on the heart of
+ the <b>3D</b>EXPERIENCE platform. When using 3DSpace  you have to be familiar with 
+three points of security:</p>
+<ul>
+<li><b>Authentication</b>
+<p>3DSpace, like all <b>3D</b>EXPERIENCE platform services, requires an authentication. The protocol is based on the CAS protocol, with a centralized management
+ through the 3DPassport  [<a href="#References">4</a>]. So, before using 3DSpace you must perform a login [<a href="#References">5</a>].</p>
+</li>
+
+<li><b>Cross-domain</b>
+<p>All browsers recommended by the <b>3D</b>EXPERIENCE platform  prevent cross-domain access. The <b>3D</b>EXPERIENCE servers 
+solve this security point by implementing CORS. </p>
+<p>CORS (Cross-Origin Resource Sharing) enables secured, and controlled, cross-domain communications from the browser. For example it enables <i>direct access</i> to 3DSpace web services inside a widget from 3DDashboard. Let's see the
+referenced article  [<a href="#References">6</a>] dealing with HTTP requests from a widget application.</p>  
+</li>
+<li><a name="SC"></a><b>Security Context or Credentials</b>
+<p>This point is 3DSpace specific. In order to secure the data on 3DSpace, credentials are requested when creating or editing them. The credential is based on three components: a collaborative space, an organization and an access role. This triplet is usually named the <i>security context</i>. It controls the content that user can access. </p>
+<p>These three components are defined by the People and Organization modeler [<a href="#References">7</a>] which exposes API to retrieve user credentials. </p>   
+<p>If you are not familiar with the concept read in the User Assistance documentation the article "Installation and Administration | 3DEXPERIENCE Platform | 3DEXPERIENCE Platform - Administration | 3DSpace Administration | People & Organizations and Content - Administration | Managing Persons, Roles, Organizations, and Collaborative Spaces | User Working Environment"
+</li>
+</ul>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="REST"></a>REST Web Services</h2>
+<p>3DSpace exposes its resources through web services implementing the REST architecture [<a href="#References">8</a>]. You retrieve the exposed API below the "Web Service References" node of each modeler. Before using them, you are invited to read "About 3DSpace Web Services" [<a href="#References">9</a>]. The article is gathering the 
+common rules for all 3DSpace web services.</p> 
+<p>Besides, for your own data model, or for specific reasons, it can be necessary to develop your own web services. We recommend to use the infrastructure based on JAX-RS and JSON and developed on top of 3DSpace [<a href="#References">10</a>]. The main advantage is to take benefit of the API checking the authentication, and returning the matrix context. This context is mandatory for handling 3DSpace resources.  </p> 
+<p>Below in the Developper Assistance documentation  you find use cases and articles dealing with 3DSpace web service consumption. Let's see the <a href="CAAi3DX3DSpaceConsumeWSToc.htm">Consuming 3DSpace Web Services</a> node introducing the Widget application case, and detailing an example of batch. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+<h2><a name="6WTags"></a>6WTags</h2>
+<p>The 3DSpace web services do not return 6WTags. </p>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-comment-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+
+<h2><a name="InShort"></a>In Short</h2>
+
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="References"></a>References</h2>
+<table class="reference">
+<tr>
+		<td>[1]</td>
+		<td><a href="#" onclick="javascript:CAAlinkUrl('http://en.wikipedia.org/wiki/Multitenancy');return false;">Multi-tenancy</a></td>
+	</tr>
+	<tr>
+		<td>[2]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaServicePlatform.htm');return false;">About Service 
+		URL and Platform Instance</a></td>
+	</tr>
+	<tr>
+		<td>[3]</td>
+		<td><a href="#" onclick="javascript:CAAlinkUrl('http://www.3ds.com/products-services/3dexperience/resource-center/whitepapers/cloud-security/');return false;">Cloud Security Whitepaper</a></td>
+	</tr>
+     <tr>
+		<td>[4]</td>
+		<td><a href="../CAAiamPassport/CAAiamPassportCASProtocol.htm">3DPassport and CAS Protocol</a></td>
+	</tr>
+	 <tr>
+		<td>[5]</td>
+		<td><a href="CAAi3DXTaConsumingWS.htm">Consuming 3DSpace Web Services</a></td>
+	</tr>
+ <tr>
+		<td>[6]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAWebAppsJSWS/CAAWebAppsTaDataAccess.htm'); return false">About Widget and HTTP Request</a></td>
+	</tr>
+	 <tr>
+		<td>[7]</td>
+		<td><a href="#" onclick="javascript:CAAlinkOutOfPreqs('CAAi3DXPnOWS/CAAi3DXPnOWSTaPNOModeler.htm'); return false">People And Organization Modeler</a></td>
+	</tr>
+	<tr>
+		<td>[8]</td>
+		<td><a href="#" onclick="javascript:CAAlinkUrl('https://docs.oracle.com/javaee/6/tutorial/doc/gijqy.html');return false;">REST Web Services</a></td>
+	</tr>
+	<tr>
+		<td>[9]</td>
+		<td><a href="CAAi3DXTa3DSpaceWService.htm">About 3DSpace Web Services</a></td>
+	</tr>
+	<tr>
+		<td>[10]</td>
+		<td><a href="#" onclick="CAAlinkOutOfPreqs('CAAi3DX3DREST/CAAi3DXUcConnectedUserWS.htm'); return false">Creating a 3DSpace REST Web Service</a> (article available in ENOVIAStudioApplicationJavadoc.Linux64_package)</td>
+	</tr>
+<tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<h2><a name="History"></a>History</h2>
+<table class="history">
+	<tr>
+		<td>Version: <strong>1</strong> [October 2015]</td>
+		<td>Document created</td>
+	</tr>
+</table>
+<script type="text/javascript">insertLinkToTop();</script>
+<!-- ========== ========== ========== ========== ========== ========== ========== ========== ========== ========== -->
+<script type="text/javascript">insertCopyright();</script>
+</body>
+</html>
